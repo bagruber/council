@@ -173,5 +173,64 @@
         "voteId": "v11"
       }
     ]
+  },
+  {
+    "id": "t6",
+    "title": "Erweiterung Theresia-Gerhardinger-Grundschule",
+    "tags": ["building", "budget"],
+    "image": null,
+    "summary": "Die Theresia-Gerhardinger-Grundschule soll erweitert und generalsaniert werden. Die gesch\u00e4tzten Gesamtkosten liegen bei ca. 33 Mio. Euro. Eine Kostenkommission begleitet das Projekt.",
+    "history": [
+      {
+        "date": "2025-12-15",
+        "type": "vote",
+        "title": "Kostenkommission eingesetzt",
+        "text": "Der Stadtrat setzt eine Kostenkommission ein, die das Gro\u00dfprojekt mit gesch\u00e4tzten Kosten von ca. 33 Mio. Euro begleiten soll.",
+        "sessionId": "s3",
+        "voteId": "v16"
+      },
+      {
+        "date": "2025-12-15",
+        "type": "vote",
+        "title": "Planung beauftragt",
+        "text": "Der Stadtrat beauftragt die Verwaltung, die Planungen f\u00fcr Erweiterung und Generalsanierung weiterzuf\u00fchren.",
+        "sessionId": "s3",
+        "voteId": "v17"
+      }
+    ]
+  },
+  {
+    "id": "t7",
+    "title": "Haushaltssatzung 2026",
+    "tags": ["budget"],
+    "image": null,
+    "summary": "Der Haushalt 2026 wurde trotz angespannter Finanzlage verabschiedet. Die Neuverschuldung betr\u00e4gt 14 Mio. Euro, die Gesamtverschuldung steigt auf ca. 45,7 Mio. Euro.",
+    "history": [
+      {
+        "date": "2025-12-15",
+        "type": "vote",
+        "title": "Haushalt 2026 beschlossen",
+        "text": "Der Stadtrat beschlie\u00dft einstimmig die Haushaltssatzung mit Haushaltsplan f\u00fcr 2026.",
+        "sessionId": "s3",
+        "voteId": "v18"
+      }
+    ]
+  },
+  {
+    "id": "t8",
+    "title": "Schulwegsicherheit Schulzentrum S\u00fcd",
+    "tags": ["traffic"],
+    "image": null,
+    "summary": "Auf Antrag der Schulen werden verkehrsberuhigende Ma\u00dfnahmen im Bereich des Schulzentrums S\u00fcd gepr\u00fcft. Eine Einbahnregelung wird abgelehnt, stattdessen kleinere Ma\u00dfnahmen beschlossen.",
+    "history": [
+      {
+        "date": "2026-02-23",
+        "type": "vote",
+        "title": "Verkehrsberuhigung beschlossen",
+        "text": "Der Stadtrat beschlie\u00dft kleinere verkehrsberuhigende Ma\u00dfnahmen am Schulzentrum S\u00fcd. Eine Einbahnregelung wird mehrheitlich abgelehnt.",
+        "sessionId": "s4",
+        "voteId": "v19"
+      }
+    ]
   }
 ]

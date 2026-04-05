@@ -1,18 +1,59 @@
 // Main application: data loading, routing, search, views.
 
 (async function () {
-  const [topics, sessions, votes, tags, membersData] = await Promise.all([
-    fetch("data/topics.json").then(r => r.json()),
-    fetch("data/sessions.json").then(r => r.json()),
-    fetch("data/votes.json").then(r => r.json()),
-    fetch("data/tags.json").then(r => r.json()),
-    fetch("data/members.json").then(r => r.json()),
-  ]);
+  const main = document.getElementById("main");
+
+  let topics, sessions, votes, tags, membersData;
+  try {
+    [topics, sessions, votes, tags, membersData] = await Promise.all([
+      fetch("data/topics.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch("data/sessions.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch("data/votes.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch("data/tags.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch("data/members.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+    ]);
+  } catch (err) {
+    main.innerHTML = `<p style="color:var(--no);padding:40px 0">Daten konnten nicht geladen werden. Bitte mit einem lokalen Webserver öffnen (z.B. <code>npx serve</code>).</p>`;
+    console.error("Datenfehler:", err);
+    return;
+  }
 
   const members = membersData.members;
   const parties = membersData.parties;
+  const seatOrder = membersData.seatOrder || parties.map(p => p.id);
 
-  const main = document.getElementById("main");
+  // -- Settings modal --
+  const settingsBtn = document.querySelector(".nav-settings");
+  const settingsOverlay = document.getElementById("settings-overlay");
+  const settingsClose = document.getElementById("settings-close");
+  const largeFontsToggle = document.getElementById("setting-large-fonts");
+  const colorblindToggle = document.getElementById("setting-colorblind");
+
+  function applySetting(key, cls, toggle) {
+    const val = localStorage.getItem(key) === "1";
+    toggle.checked = val;
+    document.documentElement.classList.toggle(cls, val);
+  }
+
+  applySetting("largeFonts", "large-fonts", largeFontsToggle);
+  applySetting("colorblind", "colorblind", colorblindToggle);
+
+  largeFontsToggle.addEventListener("change", () => {
+    localStorage.setItem("largeFonts", largeFontsToggle.checked ? "1" : "0");
+    document.documentElement.classList.toggle("large-fonts", largeFontsToggle.checked);
+  });
+
+  colorblindToggle.addEventListener("change", () => {
+    localStorage.setItem("colorblind", colorblindToggle.checked ? "1" : "0");
+    document.documentElement.classList.toggle("colorblind", colorblindToggle.checked);
+  });
+
+  settingsBtn.addEventListener("click", () => settingsOverlay.classList.remove("hidden"));
+  settingsClose.addEventListener("click", () => settingsOverlay.classList.add("hidden"));
+  settingsOverlay.addEventListener("click", evt => {
+    if (evt.target === settingsOverlay) settingsOverlay.classList.add("hidden");
+  });
+
   const searchInput = document.getElementById("search");
   const dropdown = document.getElementById("search-dropdown");
   const tagBar = document.getElementById("tag-bar");
@@ -330,7 +371,7 @@
       if (vote.type === "anonymous") {
         VoteVis.drawBar(chartEl, vote.results);
       } else {
-        VoteVis.drawParliament(chartEl, vote, members, parties);
+        VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder);
       }
     });
   }
