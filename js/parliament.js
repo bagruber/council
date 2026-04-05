@@ -135,9 +135,9 @@ const VoteVis = (() => {
     const rowGap = 6;
     const rowSpacing = r * 2 + rowGap;
 
-    // arc: ~3/5 of circle
-    const arcSpan = (3 / 5) * 2 * Math.PI;
-    const startAngle = Math.PI / 2 + (Math.PI - arcSpan) / 2 + Math.PI;
+    // arc: 3/4 of circle, opening at bottom
+    const arcSpan = (3 / 4) * 2 * Math.PI;
+    const startAngle = (3 / 4) * Math.PI;
     const endAngle = startAngle + arcSpan;
 
     // row split: compute so arc-length spacing is similar
@@ -226,15 +226,16 @@ const VoteVis = (() => {
 
     // compute bounding box
     const all = [...innerPositions, ...outerPositions];
+    const mayorX = 0;
+    const mayorY = innerR * 0.6;
     let minX = Math.min(...all.map(p => p.x)) - r - 8;
     let maxX = Math.max(...all.map(p => p.x)) + r + 8;
     let minY = Math.min(...all.map(p => p.y)) - r - 8;
     let maxY = Math.max(...all.map(p => p.y)) + r + 8;
 
-    // mayor to the right
-    const mayorX = maxX + r * 2 + 20;
-    const mayorY = (minY + maxY) / 2;
-    if (mayors.length) maxX = mayorX + r + 8;
+    if (mayors.length) {
+      maxY = Math.max(maxY, mayorY + r + 28);
+    }
 
     const svgW = maxX - minX;
     const svgH = maxY - minY;

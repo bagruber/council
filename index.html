@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stadtrat Moosburg a.d. Isar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -65,20 +68,38 @@
 </div>
 
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-col">
-      <h4>Impressum</h4>
-      <p>Stadt Moosburg a.d. Isar<br>Stadtplatz 14<br>85368 Moosburg a.d. Isar</p>
-      <p>Vertreten durch Ersten Bürgermeister Josef Dollinger</p>
-      <p>Telefon: 08761 / 7610-0<br>E-Mail: info@moosburg.de</p>
+  <a href="#" onclick="document.getElementById('impressum-modal').classList.remove('hidden');return false">Impressum</a>
+  <span class="footer-sep">&middot;</span>
+  <a href="#" onclick="document.getElementById('kontakt-modal').classList.remove('hidden');return false">Kontakt</a>
+  <div class="footer-copy">&copy; 2026 Stadt Moosburg a.d. Isar</div>
+</footer>
+
+<div id="impressum-modal" class="modal-overlay hidden" onclick="if(event.target===this)this.classList.add('hidden')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Impressum</h2>
+      <button class="modal-close" onclick="this.closest('.modal-overlay').classList.add('hidden')">&times;</button>
     </div>
-    <div class="footer-col">
-      <h4>Kontakt &amp; Hinweise</h4>
-      <p>Für Fragen und Anregungen zum Ratsinformationssystem wenden Sie sich an die Geschäftsstelle des Stadtrats.</p>
-      <p>Alle Angaben ohne Gewähr. Die dargestellten Abstimmungsergebnisse entsprechen den offiziellen Niederschriften der öffentlichen Sitzungen.</p>
+    <div class="modal-body">
+      <p>Stadt Moosburg a.d. Isar<br>Stadtplatz 14<br>85368 Moosburg a.d. Isar</p>
+      <p style="margin-top:8px">Vertreten durch Ersten Bürgermeister Josef Dollinger</p>
+      <p style="margin-top:8px">Telefon: 08761 / 7610-0<br>E-Mail: info@moosburg.de</p>
     </div>
   </div>
-</footer>
+</div>
+
+<div id="kontakt-modal" class="modal-overlay hidden" onclick="if(event.target===this)this.classList.add('hidden')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Kontakt &amp; Hinweise</h2>
+      <button class="modal-close" onclick="this.closest('.modal-overlay').classList.add('hidden')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>Für Fragen und Anregungen zum Ratsinformationssystem wenden Sie sich an die Geschäftsstelle des Stadtrats.</p>
+      <p style="margin-top:8px">Alle Angaben ohne Gewähr. Die dargestellten Abstimmungsergebnisse entsprechen den offiziellen Niederschriften der öffentlichen Sitzungen.</p>
+    </div>
+  </div>
+</div>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="js/parliament.js"></script>
