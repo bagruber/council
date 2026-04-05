@@ -165,5 +165,95 @@
     "text": "Der Stadtrat beschließt die Übertragung der Haushaltsreste 2025 wie im Beschlussvorschlag dargestellt.",
     "type": "anonymous",
     "results": { "yes": 22, "no": 0, "absent": 3 }
+  },
+  {
+    "id": "v16",
+    "sessionId": "s3",
+    "topicId": "t6",
+    "date": "2025-12-15",
+    "title": "Kostenkommission Grundschule",
+    "text": "Der Stadtrat beschließt die Einsetzung einer Kostenkommission zur Begleitung der Erweiterung und Generalsanierung der Theresia-Gerhardinger-Grundschule.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v17",
+    "sessionId": "s3",
+    "topicId": "t6",
+    "date": "2025-12-15",
+    "title": "Planung Grundschule beauftragen",
+    "text": "Der Stadtrat beauftragt die Verwaltung, die Planungen für die Erweiterung und Generalsanierung der Theresia-Gerhardinger-Grundschule mit geschätzten Gesamtkosten von ca. 33 Mio. Euro weiterzuführen.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v18",
+    "sessionId": "s3",
+    "topicId": "t7",
+    "date": "2025-12-15",
+    "title": "Haushaltssatzung 2026",
+    "text": "Der Stadtrat beschließt die Haushaltssatzung mit Haushaltsplan für das Haushaltsjahr 2026. Die Neuverschuldung beträgt 14 Mio. Euro, die Gesamtverschuldung steigt auf ca. 45,7 Mio. Euro.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v19",
+    "sessionId": "s4",
+    "topicId": "t8",
+    "date": "2026-02-23",
+    "title": "Verkehrsberuhigung Schulzentrum Süd",
+    "text": "Der Stadtrat beschließt verkehrsberuhigende Maßnahmen im Bereich des Schulzentrums Süd. Eine Einbahnregelung wird abgelehnt, stattdessen werden kleinere Maßnahmen zur Schulwegsicherheit umgesetzt.",
+    "type": "anonymous",
+    "results": { "yes": 17, "no": 1, "absent": 7 }
+  },
+  {
+    "id": "v20",
+    "sessionId": "s3",
+    "topicId": null,
+    "date": "2025-12-15",
+    "title": "Gebührenordnung Stadtbücherei",
+    "text": "Der Stadtrat beschließt die neue Gebühren- und Entgeltordnung für die Stadtbücherei Moosburg a.d. Isar.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v21",
+    "sessionId": "s4",
+    "topicId": null,
+    "date": "2026-02-23",
+    "title": "Clariant – Bebauungsplan",
+    "text": "Der Stadtrat beschließt die Aufstellung eines Bebauungsplans für das Clariant-Gelände.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v22",
+    "sessionId": "s4",
+    "topicId": null,
+    "date": "2026-02-23",
+    "title": "Ablehnung Wohnanlage Merianstraße",
+    "text": "Der Stadtrat versagt das gemeindliche Einvernehmen für das Bauvorhaben einer Wohnanlage in der Merianstraße im Bauturbo-Verfahren.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v23",
+    "sessionId": "s4",
+    "topicId": null,
+    "date": "2026-02-23",
+    "title": "Aufstellung B-Plan Aich",
+    "text": "Der Stadtrat beschließt die Aufstellung eines Bebauungsplans für den Bereich Aich.",
+    "type": "anonymous",
+    "results": { "yes": 12, "no": 6, "absent": 7 }
+  },
+  {
+    "id": "v24",
+    "sessionId": "s4",
+    "topicId": null,
+    "date": "2026-02-23",
+    "title": "17. Änderung Flächennutzungsplan",
+    "text": "Der Stadtrat beschließt die 17. Änderung des Flächennutzungsplans.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
   }
 ]

@@ -38,6 +38,32 @@
 
 <div id="tooltip" class="tooltip hidden"></div>
 
+<div id="settings-overlay" class="modal-overlay hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Einstellungen</h2>
+      <button class="modal-close" id="settings-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="settings-info">
+        <p>Ratsinformationssystem der Stadt Moosburg a.d. Isar. Hier finden Sie Themen, Sitzungen und Abstimmungsergebnisse des Stadtrats auf Basis der offiziellen Niederschriften.</p>
+        <p>Alle Angaben ohne Gewähr.</p>
+      </div>
+      <h3>Barrierefreiheit</h3>
+      <label class="toggle-row">
+        <span>Größere Schrift</span>
+        <input type="checkbox" id="setting-large-fonts">
+        <span class="toggle-switch"></span>
+      </label>
+      <label class="toggle-row">
+        <span>Farbenblind-sichere Farben</span>
+        <input type="checkbox" id="setting-colorblind">
+        <span class="toggle-switch"></span>
+      </label>
+    </div>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-col">

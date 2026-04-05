@@ -31,5 +31,36 @@
       { "number": 9, "title": "Übertragung Haushaltsreste 2025", "voteId": "v15" },
       { "number": 10, "title": "Anfragen", "type": "formal" }
     ]
+  },
+  {
+    "id": "s3",
+    "date": "2025-12-15",
+    "title": "Stadtratssitzung – Dezember 2025",
+    "agenda": [
+      { "number": 1, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
+      { "number": 2, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
+      { "number": 3, "title": "Genehmigung der öffentlichen Niederschriften", "type": "formal" },
+      { "number": 4, "title": "Erweiterung und Generalsanierung Theresia-Gerhardinger-Grundschule", "topicId": "t6", "voteId": "v17" },
+      { "number": 5, "title": "Zuschussantrag TSV Moosburg", "type": "discussion" },
+      { "number": 6, "title": "Gebühren- und Entgeltordnung Stadtbücherei", "voteId": "v20" },
+      { "number": 7, "title": "Haushaltssatzung und Haushaltsplan 2026", "topicId": "t7", "voteId": "v18" },
+      { "number": 8, "title": "Anfragen", "type": "formal" }
+    ]
+  },
+  {
+    "id": "s4",
+    "date": "2026-02-23",
+    "title": "3. Stadtratssitzung – Februar 2026",
+    "agenda": [
+      { "number": 1, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
+      { "number": 2, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
+      { "number": 3, "title": "Genehmigung der öffentlichen Niederschriften", "type": "formal" },
+      { "number": 4, "title": "Schulwegsicherheit Schulzentrum Süd", "topicId": "t8", "voteId": "v19" },
+      { "number": 5, "title": "Wohnanlage Merianstraße – Bauturbo", "voteId": "v22" },
+      { "number": 6, "title": "Bebauungsplan Clariant-Gelände", "voteId": "v21" },
+      { "number": 7, "title": "Aufstellung Bebauungsplan Aich", "voteId": "v23" },
+      { "number": 8, "title": "17. Änderung Flächennutzungsplan", "voteId": "v24" },
+      { "number": 9, "title": "Anfragen", "type": "formal" }
+    ]
   }
 ]
