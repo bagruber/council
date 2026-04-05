@@ -1,0 +1,41 @@
+{
+  "parties": [
+    { "id": "csu",    "name": "CSU",          "color": "#0088CE" },
+    { "id": "gruene", "name": "Grüne",        "color": "#46962B" },
+    { "id": "fw",     "name": "Freie Wähler", "color": "#FF8C00" },
+    { "id": "spd",    "name": "SPD",          "color": "#E3000F" },
+    { "id": "fresh",  "name": "fresh",        "color": "#00B4D8" },
+    { "id": "afd",    "name": "AfD",          "color": "#5B9BD5" },
+    { "id": "fdp",    "name": "FDP",          "color": "#FFD700" },
+    { "id": "oedp",   "name": "ÖDP",          "color": "#F07D00" },
+    { "id": "linke",  "name": "Linke",        "color": "#BE3075" }
+  ],
+  "members": [
+    { "id": "dollinger",      "name": "Josef Dollinger",         "party": "csu",    "role": "mayor" },
+    { "id": "hadersdorfer",   "name": "Georg Hadersdorfer",      "party": "fdp",    "role": "councillor", "title": "Zweiter Bürgermeister" },
+    { "id": "stanglmaier",    "name": "Dr. Michael Stanglmaier", "party": "oedp",   "role": "councillor", "title": "Dritter Bürgermeister" },
+    { "id": "becher_a",       "name": "Alexandra Becher",        "party": "gruene", "role": "councillor" },
+    { "id": "becher_j",       "name": "Johannes Becher",         "party": "gruene", "role": "councillor" },
+    { "id": "beibl",          "name": "Verena Beibl",            "party": "fresh",  "role": "councillor" },
+    { "id": "fincke",         "name": "Philipp Fincke",          "party": "gruene", "role": "councillor" },
+    { "id": "gruber",         "name": "Benedict Gruber",         "party": "fresh",  "role": "councillor" },
+    { "id": "grundner",       "name": "Thomas Grundner",         "party": "fw",     "role": "councillor" },
+    { "id": "haberl",         "name": "Ludwig Haberl",           "party": "csu",    "role": "councillor" },
+    { "id": "heinz",          "name": "Rudi Heinz",              "party": "csu",    "role": "councillor" },
+    { "id": "hobmaier",       "name": "Michael Hobmaier",        "party": "afd",    "role": "councillor" },
+    { "id": "kaestl",         "name": "Jörg Kästl",              "party": "linke",  "role": "councillor" },
+    { "id": "kieninger",      "name": "Ludwig Kieninger",        "party": "csu",    "role": "councillor" },
+    { "id": "lauterbach",     "name": "Reinhard Lauterbach",     "party": "fw",     "role": "councillor" },
+    { "id": "linz_karin",     "name": "Karin Linz",              "party": "gruene", "role": "councillor" },
+    { "id": "linz_kilian",    "name": "Kilian Linz",             "party": "gruene", "role": "councillor" },
+    { "id": "marcus",         "name": "Gunnar Marcus",           "party": "csu",    "role": "councillor" },
+    { "id": "pschorr",        "name": "Martin Pschorr",          "party": "fw",     "role": "councillor" },
+    { "id": "reif",           "name": "Hans Reif",               "party": "spd",    "role": "councillor" },
+    { "id": "strobl",         "name": "Alexander Strobl",        "party": "gruene", "role": "councillor" },
+    { "id": "tristl",         "name": "Manfred Tristl",          "party": "csu",    "role": "councillor" },
+    { "id": "von_pressentin", "name": "Nathalie von Pressentin", "party": "spd",    "role": "councillor" },
+    { "id": "weber",          "name": "Erwin Weber",             "party": "fw",     "role": "councillor" },
+    { "id": "welter",         "name": "Gerhard-Michael Welter",  "party": "csu",    "role": "councillor" }
+  ],
+  "_planned": "Per-member voting history will be computed from votes.json at runtime"
+}

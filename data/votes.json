@@ -1,0 +1,169 @@
+[
+  {
+    "id": "v1",
+    "sessionId": "s1",
+    "topicId": null,
+    "date": "2026-01-12",
+    "title": "Genehmigung Niederschriften",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschriften der Stadtratssitzungen vom 10.11.2025 und 01.12.2025 sowie des HVFA vom 20.11.2025 und 27.11.2025.",
+    "type": "anonymous",
+    "results": { "yes": 21, "no": 0, "absent": 4 }
+  },
+  {
+    "id": "v2",
+    "sessionId": "s1",
+    "topicId": "t1",
+    "date": "2026-01-12",
+    "title": "Zurückstellung SGT-Vereinsheim",
+    "text": "Der Stadtrat beschließt, die Entscheidung über die Variante zum Bau des Vereinsheims zurückzustellen. Eine nochmalige Besprechung mit den Beteiligten wird angesetzt.",
+    "type": "anonymous",
+    "results": { "yes": 21, "no": 0, "absent": 4 }
+  },
+  {
+    "id": "v3",
+    "sessionId": "s1",
+    "topicId": null,
+    "date": "2026-01-12",
+    "title": "Einvernehmen Anbau Mühlbachbogen",
+    "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen und stimmt der Befreiung von den Festsetzungen des Bebauungsplans zu.",
+    "type": "anonymous",
+    "results": { "yes": 21, "no": 0, "absent": 4 }
+  },
+  {
+    "id": "v4",
+    "sessionId": "s1",
+    "topicId": null,
+    "date": "2026-01-12",
+    "title": "Förderung AMC Elektrokart",
+    "text": "Der Stadtrat beschließt dem AMC Moosburg eine Großgeräteförderung für die Anschaffung eines neuen Elektrokarts in Höhe von 33 % der Anschaffungskosten zu gewähren.",
+    "type": "anonymous",
+    "results": { "yes": 21, "no": 0, "absent": 4 }
+  },
+  {
+    "id": "v5",
+    "sessionId": "s1",
+    "topicId": "t2",
+    "date": "2026-01-12",
+    "title": "Konzeptausschreibung Bahnhof",
+    "text": "Der Stadtrat beauftragt die Verwaltung, einen Entwurf einer Konzeptausschreibung für die Überlassung des Bahnhofs an einen Investor vorzubereiten. Bis zur Realisierung soll der Bauhof Verschönerungsmaßnahmen durchführen.",
+    "type": "named",
+    "results": {
+      "yes":    ["dollinger","hadersdorfer","stanglmaier","beibl","fincke","gruber","haberl","heinz","linz_karin","linz_kilian","pschorr","reif","strobl","tristl","von_pressentin","weber","welter"],
+      "no":     ["grundner","kieninger","lauterbach","marcus"],
+      "absent": ["becher_a","becher_j","hobmaier","kaestl"]
+    }
+  },
+  {
+    "id": "v6",
+    "sessionId": "s1",
+    "topicId": "t3",
+    "date": "2026-01-12",
+    "title": "Temporäre Parkflächen Auf dem Plan",
+    "text": "Der Stadtrat beschließt, die Ausweisung weiterer Flächen Auf dem Plan für temporäre Parkflächen insbesondere für die Wintermonate mit den Planern und der Städtebauförderung zu prüfen.",
+    "type": "named",
+    "results": {
+      "yes":    ["dollinger","grundner","hadersdorfer","haberl","heinz","kieninger","lauterbach","marcus","pschorr","reif","tristl","von_pressentin","weber"],
+      "no":     ["beibl","fincke","gruber","linz_kilian","stanglmaier","strobl"],
+      "absent": ["becher_a","becher_j","hobmaier","kaestl","linz_karin","welter"]
+    }
+  },
+  {
+    "id": "v7",
+    "sessionId": "s1",
+    "topicId": "t3",
+    "date": "2026-01-12",
+    "title": "Barken-Abtrennung und Ahndung",
+    "text": "Der Bereich zwischen den mobilen Bäumen, der nicht beparkt werden soll, wird mit Barken abgetrennt, die übrigen Verstöße sollen geahndet werden.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes":    ["beibl","fincke","gruber","linz_kilian","reif","stanglmaier","strobl"],
+      "no":     ["dollinger","grundner","hadersdorfer","haberl","heinz","kieninger","lauterbach","marcus","pschorr","tristl","von_pressentin","weber"],
+      "absent": ["becher_a","becher_j","hobmaier","kaestl","linz_karin","welter"]
+    }
+  },
+  {
+    "id": "v8",
+    "sessionId": "s2",
+    "topicId": "t1",
+    "date": "2026-02-02",
+    "title": "SGT-Vereinsheim Variante 4",
+    "text": "Der Stadtrat beschließt, die vorliegende Variante 4 weiterzuverfolgen. Die Verwaltung wird beauftragt, die erforderlichen weiteren Schritte einzuleiten.",
+    "type": "anonymous",
+    "results": { "yes": 22, "no": 0, "absent": 3 }
+  },
+  {
+    "id": "v9",
+    "sessionId": "s2",
+    "topicId": null,
+    "date": "2026-02-02",
+    "title": "Ablehnung Mehrfamilienhaus Sternstraße",
+    "text": "Der Stadtrat stimmt dem Vorhaben nach § 36a Abs. 1 BauGB nicht zu. Das Vorhaben ist mit den Vorstellungen der Stadt nicht vereinbar.",
+    "type": "anonymous",
+    "results": { "yes": 22, "no": 0, "absent": 3 }
+  },
+  {
+    "id": "v10",
+    "sessionId": "s2",
+    "topicId": null,
+    "date": "2026-02-02",
+    "title": "Einvernehmen Mühlbachbogen – erneut",
+    "text": "Der Stadtrat stimmt dem beantragten Vorhaben nach § 36a Abs. 1 BauGB zu.",
+    "type": "anonymous",
+    "results": { "yes": 22, "no": 0, "absent": 3 }
+  },
+  {
+    "id": "v11",
+    "sessionId": "s2",
+    "topicId": "t5",
+    "date": "2026-02-02",
+    "title": "Klage Studentenwohnheim Rockermaier",
+    "text": "Der Stadtrat beschließt, gegen die erteilte Baugenehmigung zum Neubau eines Studentenwohnheims im Geltungsbereich des B-Plans Nr. 77 fristgerecht Klage beim Verwaltungsgericht München einzureichen.",
+    "type": "named",
+    "results": {
+      "yes":    ["dollinger","stanglmaier","becher_a","becher_j","fincke","gruber","grundner","haberl","kaestl","kieninger","lauterbach","linz_karin","linz_kilian","marcus","pschorr","reif","strobl","tristl","von_pressentin","weber"],
+      "no":     ["hadersdorfer","welter"],
+      "absent": ["beibl","heinz","hobmaier"]
+    }
+  },
+  {
+    "id": "v12",
+    "sessionId": "s2",
+    "topicId": null,
+    "date": "2026-02-02",
+    "title": "Regionalplan Windenergie",
+    "text": "Der Stadtrat nimmt den Fortschreibungsentwurf zur 26. Änderung des Regionalplans München zur Kenntnis und stellt fest, dass Moosburg nicht unmittelbar betroffen ist.",
+    "type": "anonymous",
+    "results": { "yes": 20, "no": 0, "absent": 5 }
+  },
+  {
+    "id": "v13",
+    "sessionId": "s2",
+    "topicId": "t4",
+    "date": "2026-02-02",
+    "title": "Tempo 20 Stadtplatz",
+    "text": "Der Stadtrat beschließt, den verkehrsberuhigten Geschäftsbereich mit Tempo 20 km/h für den Stadtplatz, beginnend von der Rentamtstraße bis zum Stadtplatz 17, zu erweitern.",
+    "type": "anonymous",
+    "results": { "yes": 21, "no": 1, "absent": 3 }
+  },
+  {
+    "id": "v14",
+    "sessionId": "s2",
+    "topicId": "t4",
+    "date": "2026-02-02",
+    "title": "Prüfung Bahnhofstraße",
+    "text": "Der Stadtrat beschließt, die Verwaltung zu beauftragen, über die verkehrliche Situation in der Bahnhofstraße nochmals mit der Polizei zu sprechen.",
+    "type": "anonymous",
+    "results": { "yes": 20, "no": 2, "absent": 3 }
+  },
+  {
+    "id": "v15",
+    "sessionId": "s2",
+    "topicId": null,
+    "date": "2026-02-02",
+    "title": "Haushaltsreste 2025",
+    "text": "Der Stadtrat beschließt die Übertragung der Haushaltsreste 2025 wie im Beschlussvorschlag dargestellt.",
+    "type": "anonymous",
+    "results": { "yes": 22, "no": 0, "absent": 3 }
+  }
+]

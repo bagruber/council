@@ -1,0 +1,177 @@
+[
+  {
+    "id": "t1",
+    "title": "Vereinsheim SGT Istanbul",
+    "tags": ["sports", "building"],
+    "image": null,
+    "summary": "Bau eines Vereinsheims f\u00fcr den SGT Istanbul auf dem SGM-Gel\u00e4nde. Nach mehreren Standortvarianten und Abstimmungsgespr\u00e4chen zwischen SGT, SGM und Jugendhaus wurde ein Kompromiss gefunden.",
+    "history": [
+      {
+        "date": "2024-01-01",
+        "type": "proposal",
+        "title": "SGT beantragt Vereinsheim",
+        "text": "Der SGT Istanbul plant seit l\u00e4ngerem ein eigenes Vereinsheim f\u00fcr seine rund 250 Mitglieder auf dem SGM-Gel\u00e4nde. Verschiedene Standortvarianten werden gepr\u00fcft."
+      },
+      {
+        "date": "2025-12-01",
+        "type": "committee",
+        "title": "Machbarkeitsstudie beauftragt",
+        "text": "Landschaftsplaner Berger untersucht verschiedene Standortvarianten. Variante 2 wird von der Verwaltung und der SGM favorisiert."
+      },
+      {
+        "date": "2026-01-12",
+        "type": "vote",
+        "title": "Zur\u00fcckstellung im Stadtrat",
+        "text": "Der Stadtrat vertagt die Entscheidung. Eine nochmalige Besprechung mit SGT, SGM und Jugendhaus soll eine einvernehmliche L\u00f6sung herbeif\u00fchren.",
+        "sessionId": "s1",
+        "voteId": "v2"
+      },
+      {
+        "date": "2026-02-02",
+        "type": "vote",
+        "title": "Variante 4 beschlossen",
+        "text": "Nach Einigung aller Beteiligten beschlie\u00dft der Stadtrat einstimmig, Variante 4 weiterzuverfolgen.",
+        "sessionId": "s2",
+        "voteId": "v8"
+      }
+    ]
+  },
+  {
+    "id": "t2",
+    "title": "Sanierung Bahnhof Moosburg",
+    "tags": ["infrastructure", "innercity"],
+    "image": null,
+    "summary": "Seit dem Erwerb des Bahnhofsgeb\u00e4udes 2019 wird \u00fcber die Zukunft des Moosburger Bahnhofs diskutiert. Varianten reichen von Pinselsanierung \u00fcber Investorenmodelle bis zu Abriss und Container.",
+    "history": [
+      {
+        "date": "2019-01-01",
+        "type": "milestone",
+        "title": "Erwerb des Bahnhofs",
+        "text": "Die Stadt Moosburg erwirbt das Bahnhofsgeb\u00e4ude von der Deutschen Bahn."
+      },
+      {
+        "date": "2025-06-23",
+        "type": "proposal",
+        "title": "Antr\u00e4ge zur Sanierung",
+        "text": "Die Freien W\u00e4hler bringen einen Antrag zur Pinselsanierung ein. Kurz zuvor hat die CSU ein Investorenkonzept in der Presse vorgeschlagen."
+      },
+      {
+        "date": "2025-12-01",
+        "type": "committee",
+        "title": "Rechtliche Pr\u00fcfung",
+        "text": "Das Sachgebiet Liegenschaften l\u00e4sst die Investorenoption von einer Rechtsanwaltskanzlei pr\u00fcfen. Eine Bestandsanalyse der DB ergibt Schadensstufe 3."
+      },
+      {
+        "date": "2026-01-12",
+        "type": "vote",
+        "title": "Konzeptausschreibung beschlossen",
+        "text": "Der Stadtrat beschlie\u00dft die Vorbereitung einer Konzeptausschreibung f\u00fcr einen Investor. Parallel soll der Bauhof die Au\u00dfenfassade streichen. Im Haushalt stehen 500.000 Euro bereit.",
+        "sessionId": "s1",
+        "voteId": "v5"
+      }
+    ]
+  },
+  {
+    "id": "t3",
+    "title": "Parksituation Auf dem Plan",
+    "tags": ["traffic", "innercity"],
+    "image": null,
+    "summary": "Nach der Umgestaltung des Platzes Auf dem Plan mit Mitteln der St\u00e4dtebauf\u00f6rderung (ca. 2,4 Mio Euro) kam es zu kontroversen Diskussionen \u00fcber Falschparker und die Anzahl der Parkpl\u00e4tze.",
+    "history": [
+      {
+        "date": "2024-06-01",
+        "type": "milestone",
+        "title": "Fertigstellung Platzumbau",
+        "text": "Der Platz Auf dem Plan wird nach umfangreicher Umgestaltung fertiggestellt. Die Parkplatzanzahl wurde deutlich reduziert, neue Aufenthaltsqualit\u00e4t geschaffen."
+      },
+      {
+        "date": "2025-09-01",
+        "type": "proposal",
+        "title": "Probleme mit Falschparkern",
+        "text": "Seit der Fertigstellung h\u00e4ufen sich Beschwerden \u00fcber Falschparker, besonders in der Platzmitte. Die PI Moosburg empfiehlt die Ausweisung als verkehrsberuhigten Bereich."
+      },
+      {
+        "date": "2025-12-15",
+        "type": "milestone",
+        "title": "Stellungnahme Gesch\u00e4ftsleute",
+        "text": "Die Moosburger Gesch\u00e4ftsleute fordern eine \u00dcberpr\u00fcfung der Parksituation. Vor Weihnachten werden noch keine Verwarnungen ausgesprochen."
+      },
+      {
+        "date": "2026-01-12",
+        "type": "vote",
+        "title": "Tempor\u00e4re Parkfl\u00e4chen pr\u00fcfen",
+        "text": "Der Stadtrat beschlie\u00dft, zus\u00e4tzliche tempor\u00e4re Parkfl\u00e4chen f\u00fcr die Wintermonate mit Planern und St\u00e4dtebauf\u00f6rderung zu pr\u00fcfen.",
+        "sessionId": "s1",
+        "voteId": "v6"
+      },
+      {
+        "date": "2026-01-12",
+        "type": "vote",
+        "title": "Barken-Abtrennung abgelehnt",
+        "text": "Der Vorschlag, den nicht zu beparkenden Bereich mit Barken abzutrennen und Verst\u00f6\u00dfe zu ahnden, wird abgelehnt.",
+        "sessionId": "s1",
+        "voteId": "v7"
+      },
+      {
+        "date": "2026-02-23",
+        "type": "milestone",
+        "title": "Markierungen werden erneuert",
+        "text": "Laut Erg\u00e4nzung bei Genehmigung der Niederschrift werden die Fahrbahnmarkierungen zeitnah erneuert. Erst danach sollen Verwarnungen ausgestellt werden."
+      }
+    ]
+  },
+  {
+    "id": "t4",
+    "title": "Verkehrsberuhigung Innenstadt",
+    "tags": ["traffic", "innercity"],
+    "image": null,
+    "summary": "Auf Antrag von SPD und Gr\u00fcnen werden Tempo-20- und Tempo-30-Zonen in der Innenstadt ausgeweitet. Auch die Bahnhofstra\u00dfe soll verkehrlich \u00fcberpr\u00fcft werden.",
+    "history": [
+      {
+        "date": "2025-11-01",
+        "type": "proposal",
+        "title": "Antrag SPD / Gr\u00fcne",
+        "text": "SPD und B\u00fcndnis 90/Die Gr\u00fcnen stellen einen gemeinsamen Antrag auf Umgestaltung der verkehrlichen Planung und Verkehrsberuhigung in der Innenstadt."
+      },
+      {
+        "date": "2026-02-02",
+        "type": "vote",
+        "title": "Tempo 20 am Stadtplatz",
+        "text": "Der verkehrsberuhigte Gesch\u00e4ftsbereich mit Tempo 20 wird auf den Stadtplatz (Rentamtstra\u00dfe bis Stadtplatz 17) erweitert.",
+        "sessionId": "s2",
+        "voteId": "v13"
+      },
+      {
+        "date": "2026-02-02",
+        "type": "vote",
+        "title": "Pr\u00fcfung Bahnhofstra\u00dfe",
+        "text": "Die Verwaltung wird beauftragt, die verkehrliche Situation in der Bahnhofstra\u00dfe nochmals mit der Polizei zu besprechen.",
+        "sessionId": "s2",
+        "voteId": "v14"
+      }
+    ]
+  },
+  {
+    "id": "t5",
+    "title": "Studentenwohnheim Rockermaier Areal",
+    "tags": ["building"],
+    "image": null,
+    "summary": "Gegen die vom Landratsamt Freising erteilte Baugenehmigung f\u00fcr ein Studentenwohnheim auf dem Rockermaier Areal erhebt die Stadt Klage beim Verwaltungsgericht M\u00fcnchen.",
+    "history": [
+      {
+        "date": "2025-06-01",
+        "type": "proposal",
+        "title": "Baugenehmigung erteilt",
+        "text": "Das Landratsamt Freising erteilt die Baugenehmigung f\u00fcr den Neubau eines Studentenwohnheims aus vier Geb\u00e4uden mit Tiefgarage im Geltungsbereich des B-Plans Nr. 77."
+      },
+      {
+        "date": "2026-02-02",
+        "type": "vote",
+        "title": "Klage beschlossen",
+        "text": "Der Stadtrat beschlie\u00dft, fristgerecht Klage beim Verwaltungsgericht M\u00fcnchen gegen die erteilte Baugenehmigung einzureichen.",
+        "sessionId": "s2",
+        "voteId": "v11"
+      }
+    ]
+  }
+]
