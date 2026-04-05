@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -45,9 +45,9 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  height: 56px;
-  background: var(--surface);
-  border-bottom: 2px solid var(--primary-bright);
+  height: 48px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-logo {
@@ -56,8 +56,9 @@ body {
   gap: 10px;
   text-decoration: none;
   color: var(--primary);
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-family: 'Noto Serif', Georgia, serif;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .nav-settings {
@@ -250,10 +251,12 @@ main {
 }
 
 .section-heading {
+  font-family: 'Noto Serif', Georgia, serif;
   font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--accent);
   margin-bottom: 16px;
 }
 
@@ -264,6 +267,7 @@ main {
 }
 
 .topic-header h1 {
+  font-family: 'Noto Serif', Georgia, serif;
   font-size: 1.6rem;
   margin-bottom: 8px;
   color: var(--primary-dark);
@@ -381,6 +385,7 @@ main {
 }
 
 .session-header h1 {
+  font-family: 'Noto Serif', Georgia, serif;
   font-size: 1.4rem;
   margin-bottom: 4px;
   color: var(--primary-dark);
@@ -578,33 +583,31 @@ main {
 /* -- Footer -- */
 
 .footer {
-  background: var(--primary-dark);
-  color: #dfc9b0;
-  padding: 40px 24px;
-  font-size: 0.85rem;
-  line-height: 1.7;
-}
-
-.footer-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.footer h4 {
-  color: var(--accent-light);
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-}
-
-.footer p {
-  margin-bottom: 8px;
+  padding: 16px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #aaa;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
 }
 
 .footer a {
-  color: var(--accent-light);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-sep {
+  margin: 0 8px;
+  color: #ccc;
+}
+
+.footer-copy {
+  margin-top: 6px;
+  font-size: 0.7rem;
 }
 
 /* -- Responsive -- */
@@ -613,7 +616,6 @@ main {
   .navbar { padding: 0 16px; }
   .search-wrap { padding: 24px 16px 16px; }
   main { padding: 24px 16px 48px; }
-  .footer-inner { grid-template-columns: 1fr; gap: 24px; }
   .topic-header h1 { font-size: 1.3rem; }
 }
 
@@ -651,8 +653,9 @@ main {
 }
 
 .modal-header h2 {
+  font-family: 'Noto Serif', Georgia, serif;
   font-size: 1.15rem;
-  color: var(--primary-dark);
+  color: var(--primary);
 }
 
 .modal-close {

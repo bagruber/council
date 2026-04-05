@@ -62,9 +62,9 @@
     "text": "Der Stadtrat beschließt, die Ausweisung weiterer Flächen Auf dem Plan für temporäre Parkflächen insbesondere für die Wintermonate mit den Planern und der Städtebauförderung zu prüfen.",
     "type": "named",
     "results": {
-      "yes":    ["dollinger","grundner","hadersdorfer","haberl","heinz","kieninger","lauterbach","marcus","pschorr","reif","tristl","von_pressentin","weber"],
-      "no":     ["beibl","fincke","gruber","linz_kilian","stanglmaier","strobl"],
-      "absent": ["becher_a","becher_j","hobmaier","kaestl","linz_karin","welter"]
+      "yes":    ["dollinger","grundner","hadersdorfer","haberl","heinz","kieninger","lauterbach","reif","tristl","pschorr","welter","fincke","weber"],
+      "no":     ["gruber","linz_kilian","von_pressentin","beibl","stanglmaier","marcus"],
+      "absent": ["linz_karin","becher_a","becher_j","hobmaier","kaestl","strobl"]
     }
   },
   {
@@ -77,9 +77,9 @@
     "type": "named",
     "result": "rejected",
     "results": {
-      "yes":    ["beibl","fincke","gruber","linz_kilian","reif","stanglmaier","strobl"],
-      "no":     ["dollinger","grundner","hadersdorfer","haberl","heinz","kieninger","lauterbach","marcus","pschorr","tristl","von_pressentin","weber"],
-      "absent": ["becher_a","becher_j","hobmaier","kaestl","linz_karin","welter"]
+      "yes":    ["gruber","linz_kilian","von_pressentin","beibl","stanglmaier","marcus","fincke"],
+      "no":     ["dollinger","grundner","hadersdorfer","haberl","heinz","kieninger","lauterbach","reif","tristl","pschorr","welter","weber"],
+      "absent": ["linz_karin","becher_a","becher_j","hobmaier","kaestl","strobl"]
     }
   },
   {
