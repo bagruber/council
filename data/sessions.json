@@ -1,0 +1,35 @@
+[
+  {
+    "id": "s1",
+    "date": "2026-01-12",
+    "title": "1. Stadtratssitzung – Januar 2026",
+    "agenda": [
+      { "number": 1,   "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
+      { "number": 2,   "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
+      { "number": 3,   "title": "Genehmigung der öffentlichen Niederschriften", "voteId": "v1" },
+      { "number": 4,   "title": "Vereinsheim SGT Istanbul – Beschluss zur weiteren Vorgehensweise", "topicId": "t1", "voteId": "v2" },
+      { "number": 5,   "title": "Anbau Einfamilienhaus Am Mühlbachbogen 91", "voteId": "v3" },
+      { "number": 6,   "title": "Förderantrag AMC Moosburg – Elektrokart", "voteId": "v4" },
+      { "number": 7.1, "title": "Bahnhof Moosburg – Konzeptausschreibung und Pinselsanierung", "topicId": "t2", "voteId": "v5" },
+      { "number": 8,   "title": "Parksituation Auf dem Plan", "topicId": "t3", "voteId": "v6" },
+      { "number": 9,   "title": "Anfragen", "type": "formal" }
+    ]
+  },
+  {
+    "id": "s2",
+    "date": "2026-02-02",
+    "title": "2. Stadtratssitzung – Februar 2026",
+    "agenda": [
+      { "number": 3, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
+      { "number": 4, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
+      { "number": 5, "title": "Vereinsheim SGT Istanbul – Variante 4", "topicId": "t1", "voteId": "v8" },
+      { "number": 6.1, "title": "Vorbescheid Mehrfamilienhaus Sternstraße 12", "voteId": "v9" },
+      { "number": 6.2, "title": "Anbau Einfamilienhaus Am Mühlbachbogen 91 – erneute Beteiligung", "voteId": "v10" },
+      { "number": 6.3, "title": "Studentenwohnheim Rockermaier Areal – Klage", "topicId": "t5", "voteId": "v11" },
+      { "number": 7, "title": "26. Änderung Regionalplan – Windenergie", "voteId": "v12" },
+      { "number": 8, "title": "Verkehrsberuhigung Innenstadt – Antrag SPD / Grüne", "topicId": "t4", "voteId": "v13" },
+      { "number": 9, "title": "Übertragung Haushaltsreste 2025", "voteId": "v15" },
+      { "number": 10, "title": "Anfragen", "type": "formal" }
+    ]
+  }
+]

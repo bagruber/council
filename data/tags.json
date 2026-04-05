@@ -1,0 +1,10 @@
+[
+  { "id": "infrastructure", "name": "Infrastruktur" },
+  { "id": "traffic",        "name": "Verkehr" },
+  { "id": "building",       "name": "Bauen & Planen" },
+  { "id": "sports",         "name": "Sport & Vereine" },
+  { "id": "innercity",      "name": "Innenstadt" },
+  { "id": "budget",         "name": "Haushalt" },
+  { "id": "environment",    "name": "Umwelt & Energie" },
+  { "id": "culture",        "name": "Kultur & Soziales" }
+]
