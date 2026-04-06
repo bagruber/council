@@ -64,5 +64,13 @@
 
     { "id": "john",           "name": "Stefan John",             "party": "linke",  "role": "councillor", "from": "2020-05", "to": "2023-01" },
     { "id": "strobl",         "name": "Alexander Strobl",        "party": "linke",  "role": "councillor", "from": "2023-01", "to": null }
-  ]
+  ],
+  "committees": {
+    "bpu": {
+      "name": "Bau-, Planungs- und Umweltausschuss",
+      "shortName": "Bauausschuss",
+      "members": ["beibl", "hobmaier", "kieninger", "linz_karin", "linz_kilian", "marcus", "reif", "tristl", "welter"],
+      "chair": "dollinger"
+    }
+  }
 }

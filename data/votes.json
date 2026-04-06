@@ -255,5 +255,238 @@
     "text": "Der Stadtrat beschließt die 17. Änderung des Flächennutzungsplans.",
     "type": "anonymous",
     "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+
+  {
+    "id": "v25",
+    "sessionId": "s5",
+    "topicId": null,
+    "date": "2025-11-10",
+    "title": "Genehmigung Niederschrift BA 06.10.",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift des Bau-, Planungs- und Umweltausschusses vom 06.10.2025.",
+    "type": "anonymous",
+    "results": { "yes": 19, "no": 0, "absent": 6 }
+  },
+  {
+    "id": "v26",
+    "sessionId": "s5",
+    "topicId": null,
+    "date": "2025-11-10",
+    "title": "Neufassung BGS-EWS",
+    "text": "Der Stadtrat beschließt die Neufassung der Beitrags- und Gebührensatzung zur Entwässerungssatzung zum 01.01.2026.",
+    "type": "anonymous",
+    "results": { "yes": 20, "no": 0, "absent": 5 }
+  },
+  {
+    "id": "v27",
+    "sessionId": "s5",
+    "topicId": null,
+    "date": "2025-11-10",
+    "title": "Änderungssatzung Wasserabgabe",
+    "text": "Der Stadtrat beschließt die 3. Änderungssatzung zur Wasserabgabesatzung.",
+    "type": "anonymous",
+    "results": { "yes": 20, "no": 0, "absent": 5 }
+  },
+  {
+    "id": "v28",
+    "sessionId": "s5",
+    "topicId": null,
+    "date": "2025-11-10",
+    "title": "Neuerlass BGS-WAS",
+    "text": "Der Stadtrat beschließt den Neuerlass der Beitrags- und Gebührensatzung zur Wasserabgabesatzung.",
+    "type": "anonymous",
+    "results": { "yes": 20, "no": 0, "absent": 5 }
+  },
+  {
+    "id": "v29",
+    "sessionId": "s5",
+    "topicId": "t9",
+    "date": "2025-11-10",
+    "title": "Kreisverkehr Landshuter Str./Stadtwaldstr.",
+    "text": "Der Stadtrat beschließt, den Knoten Landshuter Straße/Stadtwaldstraße zu einem kleinen Kreisverkehr umzubauen. Die Möglichkeit eines aufgemalten Kreisverkehrs wird vorab noch geprüft.",
+    "type": "anonymous",
+    "results": { "yes": 17, "no": 4, "absent": 4 }
+  },
+  {
+    "id": "v30",
+    "sessionId": "s5",
+    "topicId": null,
+    "date": "2025-11-10",
+    "title": "Kläranlage Satzungsänderung",
+    "text": "Der Stadtrat beschließt die Änderung der Unternehmenssatzung der Kläranlage Moosburg GmbH. Die Prüfpflicht durch einen Wirtschaftsprüfer entfällt.",
+    "type": "anonymous",
+    "results": { "yes": 20, "no": 0, "absent": 5 }
+  },
+  {
+    "id": "v31",
+    "sessionId": "s5",
+    "topicId": null,
+    "date": "2025-11-10",
+    "title": "Wahlhelferentschädigung 2026",
+    "text": "Die Wahlhelferentschädigung wird auf 80 € für die Kommunalwahl und 40 € für eine mögliche Stichwahl festgesetzt.",
+    "type": "anonymous",
+    "results": { "yes": 20, "no": 0, "absent": 5 }
+  },
+  {
+    "id": "v32",
+    "sessionId": "s5",
+    "topicId": null,
+    "date": "2025-11-10",
+    "title": "Bundesprogramm Sanierung Sportstätten",
+    "text": "Der Stadtrat beschließt die Teilnahme am Bundesprogramm Sanierung kommunaler Sportstätten (Projektaufruf 2025/2026) für die Freibadsanierung.",
+    "type": "anonymous",
+    "results": { "yes": 20, "no": 0, "absent": 5 }
+  },
+
+  {
+    "id": "v33",
+    "sessionId": "s6",
+    "topicId": null,
+    "date": "2025-12-01",
+    "title": "Genehmigung Niederschrift StR 13.10.",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift der Stadtratssitzung vom 13.10.2025.",
+    "type": "anonymous",
+    "results": { "yes": 22, "no": 0, "absent": 3 }
+  },
+  {
+    "id": "v34",
+    "sessionId": "s6",
+    "topicId": null,
+    "date": "2025-12-01",
+    "title": "Städtebauförderung Bedarfsanmeldung 2026",
+    "text": "Der Stadtrat beschließt den Antrag auf Aufnahme in das Städtebauförderungsprogramm „Lebendige Zentren" für 2026. Angemeldete Kosten: 505 Tsd. €.",
+    "type": "anonymous",
+    "results": { "yes": 22, "no": 0, "absent": 3 }
+  },
+  {
+    "id": "v35",
+    "sessionId": "s6",
+    "topicId": "t8",
+    "date": "2025-12-01",
+    "title": "Gehwegausbau Industriestraße",
+    "text": "Der Stadtrat beschließt den Ausbau des Gehwegs an der Industriestraße von der Driescherstraße bis zur Graf-Konrad-Straße mit mindestens 2,00 m Breite.",
+    "type": "anonymous",
+    "results": { "yes": 21, "no": 0, "absent": 4 }
+  },
+  {
+    "id": "v36",
+    "sessionId": "s6",
+    "topicId": "t8",
+    "date": "2025-12-01",
+    "title": "Fahrradschutzstreifen Industriestraße",
+    "text": "Ein Fahrradschutzstreifen wird probeweise für ein Jahr angebracht, beginnend an der Driescherstraße bis zur Gutenbergstraße.",
+    "type": "anonymous",
+    "results": { "yes": 14, "no": 8, "absent": 3 }
+  },
+  {
+    "id": "v37",
+    "sessionId": "s6",
+    "topicId": "t8",
+    "date": "2025-12-01",
+    "title": "Fahrrad-Piktogramm-Kette Industriestraße",
+    "text": "Eine Fahrrad-Piktogramm-Kette wird probeweise für ein Jahr angebracht, ab der Gutenbergstraße bis zur Steinbockstraße und zurück.",
+    "type": "anonymous",
+    "results": { "yes": 22, "no": 0, "absent": 3 }
+  },
+  {
+    "id": "v38",
+    "sessionId": "s6",
+    "topicId": "t8",
+    "date": "2025-12-01",
+    "title": "Ampelschaltung Thalbacher/Industriestraße",
+    "text": "Die Ampelschaltung wird so umprogrammiert, dass beide Fußgängerfurten von der Industriestraße zum Netto gleichzeitig Grün haben.",
+    "type": "anonymous",
+    "results": { "yes": 22, "no": 0, "absent": 3 }
+  },
+  {
+    "id": "v39",
+    "sessionId": "s6",
+    "topicId": null,
+    "date": "2025-12-01",
+    "title": "Teileinziehung Degernpointweg",
+    "text": "Der Stadtrat stimmt der Einleitung eines Teileinziehungsverfahrens des öffentlichen Feld- und Waldwegs Nr. 16 Degernpointweg I zu.",
+    "type": "anonymous",
+    "results": { "yes": 22, "no": 0, "absent": 3 }
+  },
+  {
+    "id": "v40",
+    "sessionId": "s6",
+    "topicId": "t10",
+    "date": "2025-12-01",
+    "title": "Vollzeitstelle Wirtschaftsförderer",
+    "text": "Der Stadtrat beschließt, im Stellenplan 2026 die zusätzliche Vollzeitstelle eines Wirtschaftsförderers zu schaffen.",
+    "type": "anonymous",
+    "results": { "yes": 16, "no": 6, "absent": 3 }
+  },
+  {
+    "id": "v41",
+    "sessionId": "s6",
+    "topicId": "t10",
+    "date": "2025-12-01",
+    "title": "Budget Wirtschaftsförderung",
+    "text": "Im Verwaltungshaushalt 2026 werden 30.000 € als Budget für Wirtschaftsförderung und Start-up-Förderung bereitgestellt.",
+    "type": "anonymous",
+    "results": { "yes": 17, "no": 5, "absent": 3 }
+  },
+  {
+    "id": "v42",
+    "sessionId": "s6",
+    "topicId": null,
+    "date": "2025-12-01",
+    "title": "Haushaltsmittel über-/außerplanmäßig",
+    "text": "Der Stadtrat genehmigt die über- und außerplanmäßigen Ausgaben sowie die Mittelverschiebung zu deren Deckung im Haushalt 2025.",
+    "type": "anonymous",
+    "results": { "yes": 22, "no": 0, "absent": 3 }
+  },
+
+  {
+    "id": "v43",
+    "sessionId": "s7",
+    "topicId": null,
+    "date": "2025-12-08",
+    "title": "Absperrbauwerk Amperüberleitungskanal",
+    "text": "Der Bauausschuss stimmt dem Neubau des Absperrbauwerks des Amperüberleitungskanals an der Brücke UP05 sowie dem Rückbau der alten Wehranlage zu. Fertigstellung bis Frühjahr 2027.",
+    "type": "anonymous",
+    "results": { "yes": 8, "no": 0, "absent": 1 }
+  },
+  {
+    "id": "v44",
+    "sessionId": "s7",
+    "topicId": null,
+    "date": "2025-12-08",
+    "title": "Ablehnung MFH Sternstraße 12",
+    "text": "Der Bauausschuss verweigert das gemeindliche Einvernehmen. Der überdimensionierte Baukörper fügt sich nicht in die Umgebungsbebauung ein.",
+    "type": "anonymous",
+    "results": { "yes": 8, "no": 0, "absent": 1 }
+  },
+  {
+    "id": "v45",
+    "sessionId": "s7",
+    "topicId": null,
+    "date": "2025-12-08",
+    "title": "Hackschnitzelheizung Berg 1",
+    "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen für den Neubau einer Hackschnitzelheizung mit Spänebunker im Außenbereich.",
+    "type": "anonymous",
+    "results": { "yes": 8, "no": 0, "absent": 1 }
+  },
+  {
+    "id": "v46",
+    "sessionId": "s7",
+    "topicId": null,
+    "date": "2025-12-08",
+    "title": "Doppelhäuser und EFH Tonsilweg 7",
+    "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen für den Vorbescheid zum Neubau von 2 Doppelhäusern und einem Einfamilienhaus.",
+    "type": "anonymous",
+    "results": { "yes": 8, "no": 0, "absent": 1 }
+  },
+  {
+    "id": "v47",
+    "sessionId": "s7",
+    "topicId": null,
+    "date": "2025-12-08",
+    "title": "Ablehnung MFH Landshuter Str. 6/8",
+    "text": "Der Bauausschuss verweigert erneut das gemeindliche Einvernehmen. Das Maß der baulichen Nutzung fügt sich nicht in die Umgebung ein. Eine Klage wird geprüft.",
+    "type": "anonymous",
+    "results": { "yes": 8, "no": 0, "absent": 1 }
   }
 ]

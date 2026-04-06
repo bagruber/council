@@ -77,7 +77,7 @@ const VoteVis = (() => {
         .attr("stroke-dasharray", "3 2").attr("opacity", 0.8);
     }
 
-    const wrap = container.querySelector(".vote-bar-wrap");
+    const wrap = container.querySelector(".vote-bar-wrap:last-child");
     function barTip(evt) {
       const pctYes = voting > 0 ? ((results.yes / voting) * 100).toFixed(1) : 0;
       const pctNo  = voting > 0 ? ((results.no / voting) * 100).toFixed(1) : 0;
@@ -102,140 +102,122 @@ const VoteVis = (() => {
     const memberMap = {};
     members.forEach(m => { memberMap[m.id] = m; });
 
-    // build seats from vote results only (handles historical composition)
-    const voteMap = {};
-    vote.results.yes.forEach(id => { voteMap[id] = "yes"; });
-    vote.results.no.forEach(id => { voteMap[id] = "no"; });
-    vote.results.absent.forEach(id => { voteMap[id] = "absent"; });
+    const voteResults = {};
+    vote.results.yes.forEach(id => { voteResults[id] = "yes"; });
+    vote.results.no.forEach(id => { voteResults[id] = "no"; });
+    vote.results.absent.forEach(id => { voteResults[id] = "absent"; });
 
-    const allIds = Object.keys(voteMap);
+    const allIds = Object.keys(voteResults);
     const councillors = [];
     const mayors = [];
 
     allIds.forEach(id => {
       const m = memberMap[id];
       if (!m) return;
-      const entry = { member: m, vote: voteMap[id], party: partyMap[m.party] };
+      const entry = { member: m, vote: voteResults[id], party: partyMap[m.party] };
       if (m.role === "mayor") mayors.push(entry);
       else councillors.push(entry);
     });
 
-    // sort by seating order
+    // sort by seating order, stable within party
     const order = seatOrder || parties.map(p => p.id);
     councillors.sort((a, b) => {
       const ia = order.indexOf(a.member.party);
       const ib = order.indexOf(b.member.party);
-      return ia - ib;
+      if (ia !== ib) return ia - ib;
+      return a.member.name.localeCompare(b.member.name);
     });
 
     const n = councillors.length;
     if (n === 0) return;
 
-    const r = 10;
-    const rowGap = 6;
-    const rowSpacing = r * 2 + rowGap;
+    // draw stacked bar summary above the arc
+    const barResults = {
+      yes: vote.results.yes.length,
+      no: vote.results.no.length,
+      absent: vote.results.absent.length,
+    };
+    drawBar(container, barResults);
 
-    // arc: 3/4 of circle, opening at bottom
+    const r = 10;
     const arcSpan = (3 / 4) * 2 * Math.PI;
     const startAngle = (3 / 4) * Math.PI;
     const endAngle = startAngle + arcSpan;
 
-    // row split: compute so arc-length spacing is similar
-    const innerR = Math.max(50, n * 1.8);
-    const outerR = innerR + rowSpacing;
-    const innerCount = Math.round(n * innerR / (innerR + outerR));
-    const outerCount = n - innerCount;
+    // single row for committees / small bodies, two rows for full council
+    const singleRow = n <= 12;
 
-    // distribute parties across rows
-    const partyGroups = [];
-    let prev = null;
-    councillors.forEach(seat => {
-      if (!prev || prev.party.id !== seat.party.id) {
-        partyGroups.push({ partyId: seat.party.id, seats: [seat] });
-      } else {
-        partyGroups[partyGroups.length - 1].seats.push(seat);
+    let positioned;
+    let mayorY;
+
+    if (singleRow) {
+      const radius = Math.max(40, n * 3.5);
+      const pos = arcPos(n, radius, startAngle, endAngle);
+      positioned = councillors.map((seat, i) => ({ ...seat, x: pos[i].x, y: pos[i].y }));
+      mayorY = radius * 0.55;
+    } else {
+      const rowGap = 6;
+      const rowSpacing = r * 2 + rowGap;
+      const innerR = Math.max(50, n * 1.8);
+      const outerR = innerR + rowSpacing;
+      const innerTarget = Math.round(n * innerR / (innerR + outerR));
+      const outerTarget = n - innerTarget;
+
+      // group consecutive same-party members
+      const groups = [];
+      councillors.forEach(seat => {
+        const last = groups[groups.length - 1];
+        if (last && last[0].party.id === seat.party.id) last.push(seat);
+        else groups.push([seat]);
+      });
+
+      // allocate inner/outer per party group, keeping blocks together
+      const alloc = groups.map(g => {
+        let inner = Math.round(g.length * innerTarget / n);
+        if (g.length >= 2) inner = Math.max(1, Math.min(inner, g.length - 1));
+        else inner = 0;
+        return { seats: g, inner, outer: g.length - inner };
+      });
+
+      // balance row sizes
+      let innerSum = alloc.reduce((s, a) => s + a.inner, 0);
+      while (innerSum < innerTarget) {
+        const c = alloc.filter(a => a.outer > 1);
+        if (!c.length) break;
+        c.sort((a, b) => b.outer - a.outer);
+        c[0].inner++; c[0].outer--; innerSum++;
       }
-      prev = seat;
-    });
-
-    // allocate inner/outer per party group
-    const alloc = partyGroups.map(g => {
-      let inner = Math.round(g.seats.length * innerCount / n);
-      if (g.seats.length >= 2) {
-        inner = Math.max(1, Math.min(inner, g.seats.length - 1));
-      } else {
-        // single-seat parties: put in outer row by default
-        inner = 0;
+      while (innerSum > innerTarget) {
+        const c = alloc.filter(a => a.inner > 1 || (a.inner === 1 && a.seats.length === 1));
+        if (!c.length) break;
+        c.sort((a, b) => b.inner - a.inner);
+        c[0].inner--; c[0].outer++; innerSum--;
       }
-      return { ...g, inner, outer: g.seats.length - inner };
-    });
 
-    // adjust totals to match targets
-    let innerSum = alloc.reduce((s, a) => s + a.inner, 0);
-    while (innerSum < innerCount) {
-      // move a seat from outer to inner in the group with most outer headroom
-      const cands = alloc.filter(a => a.outer > 1);
-      if (!cands.length) break;
-      cands.sort((a, b) => b.outer - a.outer);
-      cands[0].inner++;
-      cands[0].outer--;
-      innerSum++;
-    }
-    while (innerSum > innerCount) {
-      const cands = alloc.filter(a => a.inner > 1 || (a.inner === 1 && a.seats.length === 1));
-      if (!cands.length) break;
-      cands.sort((a, b) => b.inner - a.inner);
-      cands[0].inner--;
-      cands[0].outer++;
-      innerSum--;
-    }
+      // fill rows keeping party groups contiguous
+      const innerSeats = [];
+      const outerSeats = [];
+      alloc.forEach(g => {
+        for (let i = 0; i < g.outer; i++) outerSeats.push(g.seats[i]);
+        for (let i = g.outer; i < g.seats.length; i++) innerSeats.push(g.seats[i]);
+      });
 
-    // build row arrays in seating order
-    const innerSeats = [];
-    const outerSeats = [];
-    alloc.forEach(g => {
-      // alternate: first seat outer, second inner, etc.
-      for (let i = 0; i < g.seats.length; i++) {
-        if (i % 2 === 0 && outerSeats.length < outerCount) {
-          outerSeats.push(g.seats[i]);
-        } else if (innerSeats.length < innerCount) {
-          innerSeats.push(g.seats[i]);
-        } else {
-          outerSeats.push(g.seats[i]);
-        }
-      }
-    });
+      const innerPos = arcPos(innerSeats.length, innerR, startAngle, endAngle);
+      const outerPos = arcPos(outerSeats.length, outerR, startAngle, endAngle);
 
-    // place seats along arcs
-    function arcPositions(count, radius) {
-      const positions = [];
-      for (let i = 0; i < count; i++) {
-        const angle = count === 1
-          ? (startAngle + endAngle) / 2
-          : startAngle + (endAngle - startAngle) * i / (count - 1);
-        positions.push({
-          x: Math.cos(angle) * radius,
-          y: Math.sin(angle) * radius,
-        });
-      }
-      return positions;
+      positioned = [
+        ...innerSeats.map((s, i) => ({ ...s, x: innerPos[i].x, y: innerPos[i].y })),
+        ...outerSeats.map((s, i) => ({ ...s, x: outerPos[i].x, y: outerPos[i].y })),
+      ];
+      mayorY = innerR * 0.6;
     }
 
-    const innerPositions = arcPositions(innerSeats.length, innerR);
-    const outerPositions = arcPositions(outerSeats.length, outerR);
-
-    // compute bounding box
-    const all = [...innerPositions, ...outerPositions];
-    const mayorX = 0;
-    const mayorY = innerR * 0.6;
-    let minX = Math.min(...all.map(p => p.x)) - r - 8;
-    let maxX = Math.max(...all.map(p => p.x)) + r + 8;
-    let minY = Math.min(...all.map(p => p.y)) - r - 8;
-    let maxY = Math.max(...all.map(p => p.y)) + r + 8;
-
-    if (mayors.length) {
-      maxY = Math.max(maxY, mayorY + r + 28);
-    }
+    // bounding box
+    let minX = Math.min(...positioned.map(p => p.x)) - r - 8;
+    let maxX = Math.max(...positioned.map(p => p.x)) + r + 8;
+    let minY = Math.min(...positioned.map(p => p.y)) - r - 8;
+    let maxY = Math.max(...positioned.map(p => p.y)) + r + 8;
+    if (mayors.length) maxY = Math.max(maxY, mayorY + r + 28);
 
     const svgW = maxX - minX;
     const svgH = maxY - minY;
@@ -270,7 +252,6 @@ const VoteVis = (() => {
         .attr("fill", fill).attr("stroke", stroke)
         .attr("stroke-width", 2.5).attr("opacity", opacity);
 
-      // badge
       const bx = cx + r * 0.6;
       const by = cy + r * 0.6;
       g.append("circle")
@@ -288,16 +269,26 @@ const VoteVis = (() => {
         .on("touchstart", evt => seatTip(evt, entry));
     }
 
-    innerPositions.forEach((pos, i) => drawSeat(pos.x, pos.y, innerSeats[i]));
-    outerPositions.forEach((pos, i) => drawSeat(pos.x, pos.y, outerSeats[i]));
+    positioned.forEach(s => drawSeat(s.x, s.y, s));
 
     mayors.forEach(m => {
-      drawSeat(mayorX, mayorY, m);
+      drawSeat(0, mayorY, m);
       svg.append("text")
-        .attr("x", mayorX).attr("y", mayorY + r + 16)
+        .attr("x", 0).attr("y", mayorY + r + 16)
         .attr("text-anchor", "middle").attr("font-size", 9)
         .attr("fill", "var(--text-muted)").text("BM");
     });
+  }
+
+  function arcPos(count, radius, start, end) {
+    const positions = [];
+    for (let i = 0; i < count; i++) {
+      const angle = count === 1
+        ? (start + end) / 2
+        : start + (end - start) * i / (count - 1);
+      positions.push({ x: Math.cos(angle) * radius, y: Math.sin(angle) * radius });
+    }
+    return positions;
   }
 
   return { drawBar, drawParliament };

@@ -1,7 +1,86 @@
 [
   {
+    "id": "s5",
+    "date": "2025-11-10",
+    "type": "stadtrat",
+    "title": "16. Stadtratssitzung – November 2025",
+    "agenda": [
+      { "number": 1, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
+      { "number": 2, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
+      { "number": 3, "title": "Genehmigung der öffentlichen Niederschriften (BA 06.10.)", "voteId": "v25" },
+      { "number": "4.1", "title": "Neuerlass BGS zur Entwässerungssatzung", "voteId": "v26" },
+      { "number": "4.2", "title": "Änderungssatzung zur Wasserabgabesatzung", "voteId": "v27" },
+      { "number": "4.3", "title": "Neuerlass BGS zur Wasserabgabesatzung", "voteId": "v28" },
+      { "number": 5, "title": "Kleiner Kreisverkehr Landshuter Straße/Stadtwaldstraße", "topicId": "t9", "voteId": "v29" },
+      { "number": "5.1", "title": "Machbarkeitsstudie Kreisverkehr Bahnhof-/Thalbacher Straße", "type": "discussion" },
+      { "number": 6, "title": "Kläranlage – Änderung Unternehmenssatzung", "voteId": "v30" },
+      { "number": 7, "title": "Wahlhelferentschädigung Kommunalwahl 2026", "voteId": "v31" },
+      { "number": 8, "title": "Antragstellung Bundesprogramm Sanierung Sportstätten", "voteId": "v32" },
+      { "number": 9, "title": "Anfragen", "type": "formal" }
+    ]
+  },
+  {
+    "id": "s6",
+    "date": "2025-12-01",
+    "type": "stadtrat",
+    "title": "17. Stadtratssitzung – Dezember 2025",
+    "agenda": [
+      { "number": 2, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
+      { "number": 3, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
+      { "number": 4, "title": "Genehmigung der öffentlichen Niederschriften (StR 13.10.)", "voteId": "v33" },
+      { "number": 5, "title": "Städtebauförderung – Bedarfsanmeldung 2026", "voteId": "v34" },
+      { "number": "6.1", "title": "Gehwegausbau Industriestraße", "topicId": "t8", "voteId": "v35" },
+      { "number": "6.2", "title": "Fahrradschutzstreifen Industriestraße", "topicId": "t8", "voteId": "v36" },
+      { "number": "6.3", "title": "Fahrrad-Piktogramm-Kette Industriestraße", "topicId": "t8", "voteId": "v37" },
+      { "number": "6.4", "title": "Ampelschaltung Thalbacher/Industriestraße", "topicId": "t8", "voteId": "v38" },
+      { "number": 7, "title": "Einziehung Teilabschnitt Degernpointweg", "voteId": "v39" },
+      { "number": "8.1", "title": "Vollzeitstelle Wirtschaftsförderer", "topicId": "t10", "voteId": "v40" },
+      { "number": "8.2", "title": "Budget Wirtschaftsförderung und Start-ups", "topicId": "t10", "voteId": "v41" },
+      { "number": 9, "title": "Haushaltsmittel über-/außerplanmäßige Ausgaben 2025", "voteId": "v42" },
+      { "number": 10, "title": "Anfragen", "type": "formal" }
+    ]
+  },
+  {
+    "id": "s7",
+    "date": "2025-12-08",
+    "type": "bpu",
+    "title": "6. Sitzung Bau-, Planungs- und Umweltausschuss",
+    "substitutes": [
+      { "member": "hobmaier", "substitute": "gruber" },
+      { "member": "kieninger", "substitute": "lauterbach" },
+      { "member": "linz_karin", "substitute": "weber" }
+    ],
+    "agenda": [
+      { "number": 1, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
+      { "number": 2, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
+      { "number": 3, "title": "Absperrbauwerk Amperüberleitungskanal", "voteId": "v43" },
+      { "number": "4.1", "title": "Ablehnung MFH Sternstraße 12 (Vorbescheid)", "voteId": "v44" },
+      { "number": "4.2", "title": "Hackschnitzelheizung Berg 1, Pfrombach", "voteId": "v45" },
+      { "number": "4.3", "title": "Doppelhäuser und EFH Tonsilweg 7 (Vorbescheid)", "voteId": "v46" },
+      { "number": "4.4", "title": "Ablehnung MFH Landshuter Str. 6/8 (Vorbescheid)", "voteId": "v47" },
+      { "number": 5, "title": "Anfragen und Sonstiges", "type": "formal" }
+    ]
+  },
+  {
+    "id": "s3",
+    "date": "2025-12-15",
+    "type": "stadtrat",
+    "title": "Stadtratssitzung – Dezember 2025",
+    "agenda": [
+      { "number": 1, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
+      { "number": 2, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
+      { "number": 3, "title": "Genehmigung der öffentlichen Niederschriften", "type": "formal" },
+      { "number": 4, "title": "Erweiterung und Generalsanierung Theresia-Gerhardinger-Grundschule", "topicId": "t6", "voteId": "v17" },
+      { "number": 5, "title": "Zuschussantrag TSV Moosburg", "type": "discussion" },
+      { "number": 6, "title": "Gebühren- und Entgeltordnung Stadtbücherei", "voteId": "v20" },
+      { "number": 7, "title": "Haushaltssatzung und Haushaltsplan 2026", "topicId": "t7", "voteId": "v18" },
+      { "number": 8, "title": "Anfragen", "type": "formal" }
+    ]
+  },
+  {
     "id": "s1",
     "date": "2026-01-12",
+    "type": "stadtrat",
     "title": "1. Stadtratssitzung – Januar 2026",
     "agenda": [
       { "number": 1,   "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
@@ -18,6 +97,7 @@
   {
     "id": "s2",
     "date": "2026-02-02",
+    "type": "stadtrat",
     "title": "2. Stadtratssitzung – Februar 2026",
     "agenda": [
       { "number": 3, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
@@ -33,23 +113,9 @@
     ]
   },
   {
-    "id": "s3",
-    "date": "2025-12-15",
-    "title": "Stadtratssitzung – Dezember 2025",
-    "agenda": [
-      { "number": 1, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
-      { "number": 2, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
-      { "number": 3, "title": "Genehmigung der öffentlichen Niederschriften", "type": "formal" },
-      { "number": 4, "title": "Erweiterung und Generalsanierung Theresia-Gerhardinger-Grundschule", "topicId": "t6", "voteId": "v17" },
-      { "number": 5, "title": "Zuschussantrag TSV Moosburg", "type": "discussion" },
-      { "number": 6, "title": "Gebühren- und Entgeltordnung Stadtbücherei", "voteId": "v20" },
-      { "number": 7, "title": "Haushaltssatzung und Haushaltsplan 2026", "topicId": "t7", "voteId": "v18" },
-      { "number": 8, "title": "Anfragen", "type": "formal" }
-    ]
-  },
-  {
     "id": "s4",
     "date": "2026-02-23",
+    "type": "stadtrat",
     "title": "3. Stadtratssitzung – Februar 2026",
     "agenda": [
       { "number": 1, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
