@@ -97,6 +97,13 @@
         "text": "Die Moosburger Gesch\u00e4ftsleute fordern eine \u00dcberpr\u00fcfung der Parksituation. Vor Weihnachten werden noch keine Verwarnungen ausgesprochen."
       },
       {
+        "date": "2025-12-08",
+        "type": "committee",
+        "title": "Bauausschuss diskutiert Parkprobleme",
+        "text": "StRin Beibl berichtet von dreireihigem Zuparken und zu schnellem Fahren. Absperrungen mit B\u00e4umen und Pollern werden diskutiert, Parkplatzmarkierungen sollen verbessert werden.",
+        "sessionId": "s7"
+      },
+      {
         "date": "2026-01-12",
         "type": "vote",
         "title": "Tempor\u00e4re Parkfl\u00e4chen pr\u00fcfen",
@@ -218,18 +225,90 @@
   },
   {
     "id": "t8",
-    "title": "Schulwegsicherheit Schulzentrum S\u00fcd",
+    "title": "Schulwegsicherheit",
     "tags": ["traffic"],
     "image": null,
-    "summary": "Auf Antrag der Schulen werden verkehrsberuhigende Ma\u00dfnahmen im Bereich des Schulzentrums S\u00fcd gepr\u00fcft. Eine Einbahnregelung wird abgelehnt, stattdessen kleinere Ma\u00dfnahmen beschlossen.",
+    "summary": "Auf Antrag von Gr\u00fcnen und Eltern werden Gehwege, Radschutzstreifen und Ampelschaltungen an der Industriestra\u00dfe verbessert. Am Schulzentrum S\u00fcd werden weitere Ma\u00dfnahmen beschlossen.",
     "history": [
+      {
+        "date": "2025-12-01",
+        "type": "vote",
+        "title": "Gehwegausbau Industriestra\u00dfe",
+        "text": "Einstimmig: Der Gehweg an der Industriestra\u00dfe wird auf mindestens 2 m Breite ausgebaut.",
+        "sessionId": "s6",
+        "voteId": "v35"
+      },
+      {
+        "date": "2025-12-01",
+        "type": "vote",
+        "title": "Fahrradschutzstreifen beschlossen",
+        "text": "Knapp angenommen (14:8): Ein Fahrradschutzstreifen wird probeweise f\u00fcr ein Jahr angebracht.",
+        "sessionId": "s6",
+        "voteId": "v36"
+      },
+      {
+        "date": "2025-12-01",
+        "type": "vote",
+        "title": "Piktogramm-Kette und Ampelschaltung",
+        "text": "Einstimmig: Fahrrad-Piktogramme und eine verbesserte Ampelschaltung an der Thalbacher Stra\u00dfe werden umgesetzt.",
+        "sessionId": "s6",
+        "voteId": "v37"
+      },
       {
         "date": "2026-02-23",
         "type": "vote",
-        "title": "Verkehrsberuhigung beschlossen",
+        "title": "Verkehrsberuhigung Schulzentrum S\u00fcd",
         "text": "Der Stadtrat beschlie\u00dft kleinere verkehrsberuhigende Ma\u00dfnahmen am Schulzentrum S\u00fcd. Eine Einbahnregelung wird mehrheitlich abgelehnt.",
         "sessionId": "s4",
         "voteId": "v19"
+      }
+    ]
+  },
+  {
+    "id": "t9",
+    "title": "Kreisverkehr Landshuter Stra\u00dfe",
+    "tags": ["traffic", "infrastructure"],
+    "image": null,
+    "summary": "Am Knoten Landshuter Stra\u00dfe/Stadtwaldstra\u00dfe wird ein Mini-Kreisverkehr geplant. Gesch\u00e4tzte Kosten ca. 230.000 \u20ac, Bauzeit 2\u20133 Monate, Realisierung fr\u00fchestens Fr\u00fchjahr 2028.",
+    "history": [
+      {
+        "date": "2023-06-01",
+        "type": "proposal",
+        "title": "Planungsauftrag erteilt",
+        "text": "Der Stadtrat beauftragt eine verkehrstechnische Untersuchung f\u00fcr den Knotenpunkt Landshuter Stra\u00dfe/Stadtwaldstra\u00dfe."
+      },
+      {
+        "date": "2025-11-10",
+        "type": "vote",
+        "title": "Kreisverkehr beschlossen",
+        "text": "Planungsb\u00fcro BBI stellt die Planung vor. Der Stadtrat beschlie\u00dft den Umbau zum Mini-Kreisverkehr (17:4). Die M\u00f6glichkeit eines aufgemalten Kreisverkehrs wird noch gepr\u00fcft.",
+        "sessionId": "s5",
+        "voteId": "v29"
+      }
+    ]
+  },
+  {
+    "id": "t10",
+    "title": "Wirtschaftsf\u00f6rderung Moosburg",
+    "tags": ["budget"],
+    "image": null,
+    "summary": "Der Stadtrat beschlie\u00dft die Schaffung einer Vollzeitstelle f\u00fcr Wirtschaftsf\u00f6rderung sowie ein Budget von 30.000 \u20ac f\u00fcr Start-up-F\u00f6rderung.",
+    "history": [
+      {
+        "date": "2025-12-01",
+        "type": "vote",
+        "title": "Stelle Wirtschaftsf\u00f6rderer beschlossen",
+        "text": "Eine Vollzeitstelle f\u00fcr einen Wirtschaftsf\u00f6rderer wird im Stellenplan 2026 geschaffen (16:6).",
+        "sessionId": "s6",
+        "voteId": "v40"
+      },
+      {
+        "date": "2025-12-01",
+        "type": "vote",
+        "title": "Budget f\u00fcr Start-up-F\u00f6rderung",
+        "text": "30.000 \u20ac werden als Budget f\u00fcr Wirtschaftsf\u00f6rderung und Start-up-F\u00f6rderung bereitgestellt (17:5).",
+        "sessionId": "s6",
+        "voteId": "v41"
       }
     ]
   }

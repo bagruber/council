@@ -1,4 +1,4 @@
-// Main application: data loading, routing, search, views.
+// Main application: data loading, routing, search, tabs, calendar.
 
 (async function () {
   const main = document.getElementById("main");
@@ -20,12 +20,11 @@
 
   const members = membersData.members;
   const parties = membersData.parties;
+  const committees = membersData.committees || {};
   const seatOrder = membersData.seatOrder || parties.map(p => p.id);
 
-  // -- Settings modal --
-  const settingsBtn = document.querySelector(".nav-settings");
-  const settingsOverlay = document.getElementById("settings-overlay");
-  const settingsClose = document.getElementById("settings-close");
+  // -- Settings --
+
   const largeFontsToggle = document.getElementById("setting-large-fonts");
   const colorblindToggle = document.getElementById("setting-colorblind");
 
@@ -48,17 +47,27 @@
     document.documentElement.classList.toggle("colorblind", colorblindToggle.checked);
   });
 
-  settingsBtn.addEventListener("click", () => settingsOverlay.classList.remove("hidden"));
-  settingsClose.addEventListener("click", () => settingsOverlay.classList.add("hidden"));
-  settingsOverlay.addEventListener("click", evt => {
-    if (evt.target === settingsOverlay) settingsOverlay.classList.add("hidden");
+  // -- Tab switching --
+
+  const tabBtns = document.querySelectorAll(".tab-btn");
+  const tabPanes = {
+    themen: document.getElementById("tab-themen"),
+    kalender: document.getElementById("tab-kalender"),
+    einstellungen: document.getElementById("tab-einstellungen"),
+  };
+
+  function switchTab(name) {
+    tabBtns.forEach(b => b.classList.toggle("active", b.dataset.tab === name));
+    Object.entries(tabPanes).forEach(([k, el]) => el.classList.toggle("hidden", k !== name));
+    if (name === "kalender") renderCalendar();
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener("click", () => switchTab(btn.dataset.tab));
   });
 
-  const searchInput = document.getElementById("search");
-  const dropdown = document.getElementById("search-dropdown");
-  const tagBar = document.getElementById("tag-bar");
+  // -- Lookup maps --
 
-  // lookup helpers
   const topicMap = {};
   topics.forEach(t => { topicMap[t.id] = t; });
   const sessionMap = {};
@@ -67,8 +76,15 @@
   votes.forEach(v => { voteMap[v.id] = v; });
   const tagMap = {};
   tags.forEach(t => { tagMap[t.id] = t; });
+  const memberMap = {};
+  members.forEach(m => { memberMap[m.id] = m; });
 
-  // -- Render tags in bar --
+  // -- Search & tags --
+
+  const searchInput = document.getElementById("search");
+  const dropdown = document.getElementById("search-dropdown");
+  const tagBar = document.getElementById("tag-bar");
+
   tags.forEach(tag => {
     const pill = document.createElement("button");
     pill.className = "tag-pill";
@@ -79,7 +95,7 @@
       if (active.length === 0) {
         navigate("/");
       } else {
-        const activeIds = Array.from(active).map((el, i) => tags.find(t => t.name === el.textContent).id);
+        const activeIds = Array.from(active).map(el => tags.find(t => t.name === el.textContent).id);
         showFilteredTopics(activeIds);
       }
     });
@@ -90,13 +106,10 @@
     tagBar.querySelectorAll(".tag-pill.active").forEach(p => p.classList.remove("active"));
   }
 
-  // -- Search --
   searchInput.addEventListener("input", () => {
     const q = searchInput.value.trim().toLowerCase();
-    if (q.length < 1) {
-      dropdown.classList.add("hidden");
-      return;
-    }
+    if (q.length < 1) { dropdown.classList.add("hidden"); return; }
+
     const results = [];
     tags.forEach(t => {
       if (t.name.toLowerCase().includes(q)) results.push({ type: "tag", item: t });
@@ -108,10 +121,7 @@
       if (s.title.toLowerCase().includes(q)) results.push({ type: "session", item: s });
     });
 
-    if (results.length === 0) {
-      dropdown.classList.add("hidden");
-      return;
-    }
+    if (results.length === 0) { dropdown.classList.add("hidden"); return; }
 
     dropdown.innerHTML = "";
     results.slice(0, 10).forEach(r => {
@@ -128,8 +138,10 @@
           if (pill) pill.classList.add("active");
           showFilteredTopics([r.item.id]);
         } else if (r.type === "topic") {
+          switchTab("themen");
           navigate("/topic/" + r.item.id);
         } else {
+          switchTab("themen");
           navigate("/session/" + r.item.id);
         }
       });
@@ -138,12 +150,12 @@
     dropdown.classList.remove("hidden");
   });
 
-  // close dropdown on outside click
   document.addEventListener("click", evt => {
     if (!evt.target.closest(".search-container")) dropdown.classList.add("hidden");
   });
 
-  // -- Routing via hash --
+  // -- Routing --
+
   function navigate(path) {
     window.location.hash = path;
   }
@@ -151,13 +163,10 @@
   function route() {
     const hash = window.location.hash.slice(1) || "/";
     main.innerHTML = "";
-
     if (hash.startsWith("/topic/")) {
-      const id = hash.split("/topic/")[1];
-      renderTopic(id);
+      renderTopic(hash.split("/topic/")[1]);
     } else if (hash.startsWith("/session/")) {
-      const id = hash.split("/session/")[1];
-      renderSession(id);
+      renderSession(hash.split("/session/")[1]);
     } else {
       renderHome();
     }
@@ -206,13 +215,13 @@
     main.appendChild(wrap);
   }
 
-  // -- Topic detail with timeline --
+  // -- Topic detail --
 
   const tlIcons = {
-    proposal:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
-    committee: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-    vote:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>',
-    milestone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>',
+    proposal: "description",
+    committee: "groups",
+    vote: "check_circle",
+    milestone: "flag",
   };
 
   function renderTopic(id) {
@@ -222,10 +231,9 @@
     const back = document.createElement("a");
     back.className = "back-link";
     back.href = "#/";
-    back.innerHTML = "← Übersicht";
+    back.innerHTML = '<span class="material-icons">arrow_back</span> Übersicht';
     main.appendChild(back);
 
-    // header
     const header = document.createElement("div");
     header.className = "topic-header";
     header.innerHTML = `
@@ -234,7 +242,6 @@
       <div class="topic-tags">${topic.tags.map(tid => `<span class="tag-sm">${tagMap[tid] ? tagMap[tid].name : tid}</span>`).join("")}</div>`;
     main.appendChild(header);
 
-    // image
     if (topic.image) {
       const img = document.createElement("img");
       img.className = "topic-image";
@@ -243,7 +250,6 @@
       main.appendChild(img);
     }
 
-    // timeline
     const timeline = document.createElement("div");
     timeline.className = "timeline";
 
@@ -253,7 +259,8 @@
 
       const dot = document.createElement("div");
       dot.className = "tl-dot " + entry.type;
-      dot.innerHTML = tlIcons[entry.type] || "";
+      const iconName = tlIcons[entry.type];
+      if (iconName) dot.innerHTML = `<span class="material-icons">${iconName}</span>`;
       el.appendChild(dot);
 
       const dateEl = document.createElement("div");
@@ -269,7 +276,6 @@
       p.textContent = entry.text;
       el.appendChild(p);
 
-      // if this entry has a vote, render it inline
       if (entry.voteId && voteMap[entry.voteId]) {
         const voteEl = document.createElement("div");
         voteEl.className = "tl-vote-inline";
@@ -277,12 +283,11 @@
         el.appendChild(voteEl);
       }
 
-      // link to session
       if (entry.sessionId && sessionMap[entry.sessionId]) {
         const link = document.createElement("a");
         link.className = "tl-session-link";
         link.href = "#/session/" + entry.sessionId;
-        link.textContent = "→ " + sessionMap[entry.sessionId].title;
+        link.innerHTML = '<span class="material-icons" style="font-size:14px;vertical-align:-2px">open_in_new</span> ' + sessionMap[entry.sessionId].title;
         el.appendChild(link);
       }
 
@@ -301,13 +306,32 @@
     const back = document.createElement("a");
     back.className = "back-link";
     back.href = "#/";
-    back.innerHTML = "← Übersicht";
+    back.innerHTML = '<span class="material-icons">arrow_back</span> Übersicht';
     main.appendChild(back);
 
     const header = document.createElement("div");
     header.className = "session-header";
-    header.innerHTML = `<h1>${session.title}</h1><div class="session-date">${formatDate(session.date)}</div>`;
+    let badge = "";
+    if (session.type === "bpu") {
+      const comm = committees.bpu;
+      badge = `<div class="session-badge"><span class="material-icons">groups</span> ${comm ? comm.shortName : "Ausschuss"}</div>`;
+    }
+    header.innerHTML = `<h1>${session.title}</h1><div class="session-date">${formatDate(session.date)}</div>${badge}`;
     main.appendChild(header);
+
+    if (session.substitutes && session.substitutes.length) {
+      const subs = document.createElement("div");
+      subs.className = "session-subs";
+      session.substitutes.forEach(s => {
+        const member = memberMap[s.member];
+        const sub = memberMap[s.substitute];
+        const row = document.createElement("div");
+        row.className = "sub-row";
+        row.innerHTML = `<span class="material-icons">swap_horiz</span> ${sub ? sub.name : s.substitute} für ${member ? member.name : s.member}`;
+        subs.appendChild(row);
+      });
+      main.appendChild(subs);
+    }
 
     const list = document.createElement("div");
     list.className = "agenda-list";
@@ -316,8 +340,7 @@
       const el = document.createElement("div");
       el.className = "agenda-item";
 
-      const hasTopicLink = item.topicId && topicMap[item.topicId];
-      if (hasTopicLink) {
+      if (item.topicId && topicMap[item.topicId]) {
         el.classList.add("has-link");
         el.addEventListener("click", () => navigate("/topic/" + item.topicId));
       }
@@ -327,12 +350,11 @@
         <h3>${item.title}</h3>`;
 
       if (item.type === "formal") {
-        el.innerHTML += `<span class="ai-type">Formell</span>`;
+        el.innerHTML += '<span class="ai-type">Formell</span>';
       } else if (item.type === "discussion") {
-        el.innerHTML += `<span class="ai-type">Beratung</span>`;
+        el.innerHTML += '<span class="ai-type">Beratung</span>';
       }
 
-      // vote for this agenda item
       if (item.voteId && voteMap[item.voteId]) {
         const voteEl = document.createElement("div");
         renderVoteBlock(voteEl, voteMap[item.voteId]);
@@ -345,7 +367,7 @@
     main.appendChild(list);
   }
 
-  // -- Vote block rendering --
+  // -- Vote block --
 
   function renderVoteBlock(container, vote) {
     const block = document.createElement("div");
@@ -366,7 +388,6 @@
     block.appendChild(chartEl);
     container.appendChild(block);
 
-    // defer D3 rendering until element is in DOM
     requestAnimationFrame(() => {
       if (vote.type === "anonymous") {
         VoteVis.drawBar(chartEl, vote.results);
@@ -376,6 +397,138 @@
     });
   }
 
+  // -- Calendar --
+
+  let calYear, calMonth;
+  const calTitle = document.getElementById("cal-title");
+  const calGrid = document.getElementById("cal-grid");
+  const calSheet = document.getElementById("cal-sheet");
+  const calSheetBody = document.getElementById("cal-sheet-body");
+  const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni",
+    "Juli", "August", "September", "Oktober", "November", "Dezember"];
+
+  const sessionsByDate = {};
+  sessions.forEach(s => {
+    if (!sessionsByDate[s.date]) sessionsByDate[s.date] = [];
+    sessionsByDate[s.date].push(s);
+  });
+
+  (function initCalendar() {
+    const now = new Date();
+    calYear = now.getFullYear();
+    calMonth = now.getMonth();
+
+    document.getElementById("cal-prev").addEventListener("click", () => {
+      if (--calMonth < 0) { calMonth = 11; calYear--; }
+      renderCalendar();
+    });
+    document.getElementById("cal-next").addEventListener("click", () => {
+      if (++calMonth > 11) { calMonth = 0; calYear++; }
+      renderCalendar();
+    });
+
+    // swipe between months
+    let startX = 0;
+    const pane = document.getElementById("tab-kalender");
+    pane.addEventListener("touchstart", e => { startX = e.touches[0].clientX; }, { passive: true });
+    pane.addEventListener("touchend", e => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) < 60) return;
+      if (dx < 0) { if (++calMonth > 11) { calMonth = 0; calYear++; } }
+      else { if (--calMonth < 0) { calMonth = 11; calYear--; } }
+      renderCalendar();
+    });
+  })();
+
+  function renderCalendar() {
+    calTitle.textContent = monthNames[calMonth] + " " + calYear;
+    calGrid.innerHTML = "";
+
+    const first = new Date(calYear, calMonth, 1);
+    const last = new Date(calYear, calMonth + 1, 0);
+    const startDow = (first.getDay() + 6) % 7; // 0=Monday
+
+    const today = new Date();
+    const todayStr = isoDate(today.getFullYear(), today.getMonth(), today.getDate());
+
+    // previous month padding
+    const prevLast = new Date(calYear, calMonth, 0);
+    for (let i = startDow - 1; i >= 0; i--) {
+      const day = prevLast.getDate() - i;
+      addDay(day, isoDate(calYear, calMonth - 1, day), true, todayStr);
+    }
+
+    // current month
+    for (let d = 1; d <= last.getDate(); d++) {
+      addDay(d, isoDate(calYear, calMonth, d), false, todayStr);
+    }
+
+    // next month padding
+    const cells = calGrid.children.length;
+    const pad = (7 - (cells % 7)) % 7;
+    for (let d = 1; d <= pad; d++) {
+      addDay(d, isoDate(calYear, calMonth + 1, d), true, todayStr);
+    }
+  }
+
+  function isoDate(y, m, d) {
+    const dt = new Date(y, m, d);
+    return dt.getFullYear() + "-" +
+      String(dt.getMonth() + 1).padStart(2, "0") + "-" +
+      String(dt.getDate()).padStart(2, "0");
+  }
+
+  function addDay(num, dateStr, otherMonth, todayStr) {
+    const cell = document.createElement("div");
+    cell.className = "cal-day";
+    if (otherMonth) cell.classList.add("other-month");
+    if (dateStr === todayStr) cell.classList.add("today");
+
+    const span = document.createElement("span");
+    span.textContent = num;
+    cell.appendChild(span);
+
+    const events = sessionsByDate[dateStr];
+    if (events) {
+      const dots = document.createElement("div");
+      dots.className = "cal-dots";
+      events.forEach(s => {
+        const dot = document.createElement("span");
+        dot.className = "cal-dot " + (s.type || "stadtrat");
+        dots.appendChild(dot);
+      });
+      cell.appendChild(dots);
+      cell.addEventListener("click", () => openDaySheet(dateStr, events));
+    }
+
+    calGrid.appendChild(cell);
+  }
+
+  function openDaySheet(dateStr, events) {
+    calSheetBody.innerHTML = "";
+
+    const heading = document.createElement("div");
+    heading.className = "sheet-date";
+    heading.textContent = formatDate(dateStr);
+    calSheetBody.appendChild(heading);
+
+    events.forEach(s => {
+      const row = document.createElement("div");
+      row.className = "sheet-event";
+      row.innerHTML = `
+        <span class="sheet-event-dot ${s.type || 'stadtrat'}"></span>
+        <div><div class="sheet-event-text">${s.title}</div></div>`;
+      row.addEventListener("click", () => {
+        calSheet.classList.add("hidden");
+        switchTab("themen");
+        navigate("/session/" + s.id);
+      });
+      calSheetBody.appendChild(row);
+    });
+
+    calSheet.classList.remove("hidden");
+  }
+
   // -- Helpers --
 
   function formatDate(iso) {
@@ -383,6 +536,5 @@
     return d.toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" });
   }
 
-  // initial route
   route();
 })();
