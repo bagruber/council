@@ -488,5 +488,36 @@
     "text": "Der Bauausschuss verweigert erneut das gemeindliche Einvernehmen. Das Maß der baulichen Nutzung fügt sich nicht in die Umgebung ein. Eine Klage wird geprüft.",
     "type": "anonymous",
     "results": { "yes": 8, "no": 0, "absent": 1 }
+  },
+
+  {
+    "id": "v48",
+    "sessionId": "s8",
+    "topicId": null,
+    "date": "2024-12-16",
+    "title": "Genehmigung Niederschrift HVFA 25.11.2024",
+    "text": "Der Stadtrat genehmigt den \u00f6ffentlichen Teil der Niederschrift des Hauptverwaltungs- und Finanzausschusses vom 25.11.2024.",
+    "type": "anonymous",
+    "results": { "yes": 19, "no": 0, "absent": 6 }
+  },
+  {
+    "id": "v49",
+    "sessionId": "s8",
+    "topicId": null,
+    "date": "2024-12-16",
+    "title": "Haushaltssatzung 2025",
+    "text": "Der Stadtrat beschlie\u00dft die Haushaltssatzung 2025 samt Verwaltungshaushalt, Verm\u00f6genshaushalt, Investitionsplan, Finanzplan, Stellenplan und Wirtschaftsplan der Kl\u00e4ranlage Moosburg GmbH.",
+    "type": "anonymous",
+    "results": { "yes": 19, "no": 0, "absent": 6 }
+  },
+  {
+    "id": "v50",
+    "sessionId": "s8",
+    "topicId": null,
+    "date": "2024-12-16",
+    "title": "Benutzungsordnung Hallenbad",
+    "text": "Der Stadtrat beschlie\u00dft die Haus- und Badeordnung f\u00fcr das Hallenbad Moosburg in der vorliegenden Fassung.",
+    "type": "anonymous",
+    "results": { "yes": 19, "no": 0, "absent": 6 }
   }
 ]
