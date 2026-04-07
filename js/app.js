@@ -720,7 +720,6 @@
     const card = document.createElement("div");
     card.className = "body-card";
 
-    // get members for this body
     const current = [];
     const former = [];
 
@@ -729,46 +728,33 @@
         if (isActive(m)) current.push(m);
         else former.push(m);
       });
-    } else if (body.members) {
-      body.members.forEach(mid => {
-        const m = memberMap[mid];
+    } else if (body.seats) {
+      const allIds = new Set();
+      body.seats.forEach(s => {
+        allIds.add(s.member);
+        if (s.sub) allIds.add(s.sub);
+      });
+      if (body.chair) allIds.add(body.chair);
+      if (body.chairSub) allIds.add(body.chairSub);
+      if (body.vicechairs) body.vicechairs.forEach(v => { allIds.add(v.member); if (v.sub) allIds.add(v.sub); });
+
+      allIds.forEach(id => {
+        const m = memberMap[id];
         if (!m) return;
-        // check if membership is still active
         const period = body.memberPeriod;
         if (period && period.to && period.to <= nowStr) {
-          former.push(m);
+          if (!former.find(c => c.id === m.id)) former.push(m);
         } else if (isActive(m)) {
-          current.push(m);
+          if (!current.find(c => c.id === m.id)) current.push(m);
         } else {
-          former.push(m);
-        }
-      });
-      // also add chair
-      if (body.chair && memberMap[body.chair]) {
-        const chair = memberMap[body.chair];
-        if (!current.find(c => c.id === chair.id) && !former.find(c => c.id === chair.id)) {
-          if (isActive(chair)) current.push(chair);
-          else former.push(chair);
-        }
-      }
-    }
-
-    // also collect members from profile.committees references
-    if (body.type !== "plenum") {
-      members.forEach(m => {
-        if (m.profile && m.profile.committees && m.profile.committees.includes(body.id)) {
-          if (!current.find(c => c.id === m.id) && !former.find(c => c.id === m.id)) {
-            if (isActive(m)) current.push(m);
-            else former.push(m);
-          }
+          if (!former.find(c => c.id === m.id)) former.push(m);
         }
       });
     }
 
     current.sort((a, b) => a.name.localeCompare(b.name));
     former.sort((a, b) => a.name.localeCompare(b.name));
-
-    const count = current.length;
+    const count = body.seats ? body.seats.length + (body.vicechairs ? body.vicechairs.length : 0) + 1 : current.length;
 
     card.innerHTML = `
       <div class="body-card-header">
@@ -783,7 +769,6 @@
 
     const detail = card.querySelector(".body-card-detail");
 
-    // description
     if (body.description) {
       const desc = document.createElement("div");
       desc.className = "body-card-desc";
@@ -791,28 +776,100 @@
       detail.appendChild(desc);
     }
 
-    // current members
-    if (current.length) {
-      const list = document.createElement("div");
-      list.className = "body-member-list";
-      const heading = document.createElement("div");
-      heading.className = "bml-heading";
-      heading.textContent = "Aktuelle Mitglieder";
-      list.appendChild(heading);
-      current.forEach(m => list.appendChild(makeMemberRow(m)));
-      detail.appendChild(list);
-    }
+    // seats table with substitutes
+    if (body.seats && body.type !== "plenum") {
+      const hasSubs = body.seats.some(s => s.sub);
+      const table = document.createElement("table");
+      table.className = "seat-table";
 
-    // former members
-    if (former.length) {
-      const list = document.createElement("div");
-      list.className = "body-member-list";
-      const heading = document.createElement("div");
-      heading.className = "bml-heading";
-      heading.textContent = "Ehemalige";
-      list.appendChild(heading);
-      former.forEach(m => list.appendChild(makeMemberRow(m, true)));
-      detail.appendChild(list);
+      let html = "<thead><tr><th>Mitglied</th>";
+      if (hasSubs) html += "<th></th><th>Stellvertretung</th>";
+      html += "</tr></thead><tbody>";
+
+      // chair
+      if (body.chair && memberMap[body.chair]) {
+        const ch = memberMap[body.chair];
+        const chp = partyMap[ch.party];
+        html += `<tr><td class="seat-name" data-mid="${ch.id}"><span class="member-dot" style="background:${chp ? chp.color : '#ccc'}"></span> ${ch.name} <span style="font-size:0.72rem;color:var(--text-muted)">(Vorsitz)</span></td>`;
+        if (hasSubs) {
+          if (body.chairSub && memberMap[body.chairSub]) {
+            const cs = memberMap[body.chairSub];
+            html += `<td><span class="material-icons swap-icon">swap_horiz</span></td><td class="seat-sub" data-mid="${cs.id}">${cs.name}</td>`;
+          } else {
+            html += "<td></td><td></td>";
+          }
+        }
+        html += "</tr>";
+      }
+
+      // vice-chairs
+      if (body.vicechairs) {
+        body.vicechairs.forEach(vc => {
+          const m = memberMap[vc.member];
+          if (!m) return;
+          const p = partyMap[m.party];
+          html += `<tr><td class="seat-name" data-mid="${m.id}"><span class="member-dot" style="background:${p ? p.color : '#ccc'}"></span> ${m.name} <span style="font-size:0.72rem;color:var(--text-muted)">(Stellv. Vorsitz)</span></td>`;
+          if (vc.sub && memberMap[vc.sub]) {
+            const s = memberMap[vc.sub];
+            html += `<td><span class="material-icons swap-icon">swap_horiz</span></td><td class="seat-sub" data-mid="${s.id}">${s.name}</td>`;
+          } else {
+            html += "<td></td><td></td>";
+          }
+          html += "</tr>";
+        });
+      }
+
+      // regular seats
+      body.seats.forEach(seat => {
+        const m = memberMap[seat.member];
+        if (!m) return;
+        const p = partyMap[m.party];
+        const roleTag = seat.role ? ` <span style="font-size:0.72rem;color:var(--text-muted)">(${seat.role})</span>` : "";
+        html += `<tr><td class="seat-name" data-mid="${m.id}"><span class="member-dot" style="background:${p ? p.color : '#ccc'}"></span> ${m.name}${roleTag}</td>`;
+        if (hasSubs) {
+          if (seat.sub && memberMap[seat.sub]) {
+            const s = memberMap[seat.sub];
+            html += `<td><span class="material-icons swap-icon">swap_horiz</span></td><td class="seat-sub" data-mid="${s.id}">${s.name}</td>`;
+          } else {
+            html += "<td></td><td></td>";
+          }
+        }
+        html += "</tr>";
+      });
+
+      html += "</tbody>";
+      table.innerHTML = html;
+
+      table.querySelectorAll("[data-mid]").forEach(el => {
+        el.addEventListener("click", e => {
+          e.stopPropagation();
+          navigate("/member/" + el.dataset.mid);
+        });
+      });
+
+      detail.appendChild(table);
+    } else {
+      // plenum: simple member list
+      if (current.length) {
+        const list = document.createElement("div");
+        list.className = "body-member-list";
+        const heading = document.createElement("div");
+        heading.className = "bml-heading";
+        heading.textContent = "Aktuelle Mitglieder";
+        list.appendChild(heading);
+        current.forEach(m => list.appendChild(makeMemberRow(m)));
+        detail.appendChild(list);
+      }
+      if (former.length) {
+        const list = document.createElement("div");
+        list.className = "body-member-list";
+        const heading = document.createElement("div");
+        heading.className = "bml-heading";
+        heading.textContent = "Ehemalige";
+        list.appendChild(heading);
+        former.forEach(m => list.appendChild(makeMemberRow(m, true)));
+        detail.appendChild(list);
+      }
     }
 
     card.querySelector(".body-card-header").addEventListener("click", () => {
@@ -878,14 +935,28 @@
     header.className = "profile-header";
     const initial = m.name.charAt(0);
     const neeSuffix = m.nee ? ` <span style="font-size:0.85em;color:var(--text-muted)">(geb. ${m.nee})</span>` : "";
+    const photoPath = "img/members/" + m.id + ".png";
+    const avatarColor = party ? party.color : '#999';
+
     header.innerHTML = `
-      <div class="profile-avatar" style="background:${party ? party.color : '#999'}">${initial}</div>
+      <div class="profile-avatar" id="profile-avatar" style="background:${avatarColor}">${initial}</div>
       <div class="profile-info">
         <h1>${m.name}${neeSuffix}</h1>
         <div class="profile-party">${party ? party.name : ""} ${m.title ? "\u2013 " + m.title : ""}</div>
         ${profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
       </div>`;
     wrap.appendChild(header);
+
+    // try loading photo
+    const avatarEl = header.querySelector("#profile-avatar");
+    const testImg = new Image();
+    testImg.onload = () => {
+      avatarEl.innerHTML = `<img src="${photoPath}" alt="${m.name}">`;
+      avatarEl.classList.add("has-photo");
+      avatarEl.style.borderColor = avatarColor;
+      avatarEl.style.background = "transparent";
+    };
+    testImg.src = photoPath;
 
     // identity badges
     if (profile.identity && profile.identity.length) {
@@ -935,13 +1006,17 @@
       });
     }
 
-    if (profile.committees) {
-      profile.committees.forEach(cid => {
-        const body = bodyMap[cid];
-        const name = body ? body.name : cid;
-        rolesSection.appendChild(makeRoleRow("groups", name, m.from, m.to));
-      });
-    }
+    // committees from seats data
+    bodies.forEach(b => {
+      if (b.type === "plenum") return;
+      const inSeats = b.seats && b.seats.some(s => s.member === m.id);
+      const isChair = b.chair === m.id;
+      const isVice = b.vicechairs && b.vicechairs.some(v => v.member === m.id);
+      if (inSeats || isChair || isVice) {
+        const role = isChair ? " (Vorsitz)" : isVice ? " (Stellv. Vorsitz)" : "";
+        rolesSection.appendChild(makeRoleRow("groups", b.name + role, m.from, m.to));
+      }
+    });
 
     wrap.appendChild(rolesSection);
 

@@ -519,5 +519,86 @@
     "text": "Der Stadtrat beschlie\u00dft die Haus- und Badeordnung f\u00fcr das Hallenbad Moosburg in der vorliegenden Fassung.",
     "type": "anonymous",
     "results": { "yes": 19, "no": 0, "absent": 6 }
+  },
+
+  {
+    "id": "v51",
+    "sessionId": "s9",
+    "topicId": null,
+    "date": "2024-12-09",
+    "title": "Genehmigung Niederschrift HVFA 21.11.2024",
+    "text": "Der Stadtrat genehmigt den \u00f6ffentlichen Teil der Niederschrift des HVFA vom 21.11.2024.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v52",
+    "sessionId": "s9",
+    "topicId": null,
+    "date": "2024-12-09",
+    "title": "Generalsanierung Freibad",
+    "text": "Der Stadtrat nimmt die vorgestellte Planung f\u00fcr die Sanierung des Freibades zustimmend zur Kenntnis. Die Verwaltung wird erm\u00e4chtigt, die Kostenberechnung zu erstellen.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v53",
+    "sessionId": "s9",
+    "topicId": null,
+    "date": "2024-12-09",
+    "title": "Nutzungs\u00e4nderung MFH Viehmarktstra\u00dfe 8",
+    "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen zur Nutzungs\u00e4nderung von 4 WE zu 5 WE und stimmt der Stellplatzabl\u00f6se (15.000 \u20ac) zu.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v54",
+    "sessionId": "s9",
+    "topicId": null,
+    "date": "2024-12-09",
+    "title": "St\u00e4dtebauf\u00f6rderung Bedarfsanmeldung 2025",
+    "text": "Der Stadtrat beschlie\u00dft den Antrag auf Aufnahme in das St\u00e4dtebauf\u00f6rderungsprogramm \u201eLebendige Zentren\u201c f\u00fcr 2025. Angemeldete Kosten: 330 Tsd. \u20ac.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v55",
+    "sessionId": "s9",
+    "topicId": null,
+    "date": "2024-12-09",
+    "title": "Bauleitplanung Nr. 70 \u201eContainerbau ELA\u201c \u2013 Satzungsbeschluss",
+    "text": "Der Stadtrat beschlie\u00dft den vorhabenbezogenen Bebauungsplan Nr. 70 \u201eContainerbau ELA\u201c als Satzung sowie die 12. \u00c4nderung des Fl\u00e4chennutzungsplans. Vorangegangen waren 21 Einzelabstimmungen \u00fcber Stellungnahmen (10:8 bis 18:0).",
+    "type": "anonymous",
+    "results": { "yes": 11, "no": 7, "absent": 7 }
+  },
+  {
+    "id": "v56",
+    "sessionId": "s9",
+    "topicId": null,
+    "date": "2024-12-09",
+    "title": "Legal Wall \u2013 Spraykunst/Graffiti/Street Art",
+    "text": "Der Stadtrat beschlie\u00dft, dem Antrag zur Errichtung einer \u00f6ffentlich zug\u00e4nglichen Anlage f\u00fcr Spraykunst/Graffiti/Street Art (sog. \u201elegal wall\u201c) zuzustimmen. Haushaltsmittel: 2.000 \u20ac.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v57",
+    "sessionId": "s9",
+    "topicId": null,
+    "date": "2024-12-09",
+    "title": "F\u00f6rderung Stalag Moosburg e.V.",
+    "text": "Der Stadtrat beschlie\u00dft eine F\u00f6rderung von 2.500 \u20ac f\u00fcr den Stalag-Verein zur R\u00e4umung einer denkmalgesch\u00fctzten Baracke, zuz\u00fcglich 6.000 \u20ac Bauhofl\u00f6hne und 1.500 \u20ac Entsorgung.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
+  },
+  {
+    "id": "v58",
+    "sessionId": "s9",
+    "topicId": null,
+    "date": "2024-12-09",
+    "title": "Kreditaufnahme Kinderkrippe Sonnensiedlung",
+    "text": "Der Stadtrat stimmt der Kreditaufnahme gem. Finanzierungsplan der Regierung von Oberbayern mit einer Darlehenssumme von 825.100 \u20ac zu.",
+    "type": "anonymous",
+    "results": { "yes": 18, "no": 0, "absent": 7 }
   }
 ]
