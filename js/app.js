@@ -21,7 +21,7 @@
 
   const members = membersData.members;
   const parties = membersData.parties;
-  const committees = membersData.committees || {};
+  const bodies = membersData.bodies || [];
   const seatOrder = membersData.seatOrder || parties.map(p => p.id);
 
   // -- Settings --
@@ -86,11 +86,23 @@
   members.forEach(m => { memberMap[m.id] = m; });
   const partyMap = {};
   parties.forEach(p => { partyMap[p.id] = p; });
+  const bodyMap = {};
+  bodies.forEach(b => { bodyMap[b.id] = b; });
 
-  // sort sessions chronologically (newest first for timeline)
   const sessionsSorted = [...sessions].sort((a, b) => b.date.localeCompare(a.date));
 
-  // -- Search & tags --
+  const nowStr = (() => {
+    const n = new Date();
+    return n.getFullYear() + "-" + String(n.getMonth() + 1).padStart(2, "0");
+  })();
+
+  function isActive(m) {
+    if (m.to && m.to <= nowStr) return false;
+    if (m.from > nowStr) return false;
+    return true;
+  }
+
+  // -- Search (Themen tab) --
 
   const searchInput = document.getElementById("search");
   const dropdown = document.getElementById("search-dropdown");
@@ -168,7 +180,39 @@
   });
 
   document.addEventListener("click", evt => {
-    if (!evt.target.closest(".search-container")) dropdown.classList.add("hidden");
+    if (!evt.target.closest(".search-container")) {
+      dropdown.classList.add("hidden");
+      gremienDropdown.classList.add("hidden");
+    }
+  });
+
+  // -- Gremien search --
+
+  const gremienSearchInput = document.getElementById("gremien-search");
+  const gremienDropdown = document.getElementById("gremien-search-dropdown");
+
+  gremienSearchInput.addEventListener("input", () => {
+    const q = gremienSearchInput.value.trim().toLowerCase();
+    if (q.length < 1) { gremienDropdown.classList.add("hidden"); return; }
+
+    const results = members.filter(m => m.name.toLowerCase().includes(q));
+    if (!results.length) { gremienDropdown.classList.add("hidden"); return; }
+
+    gremienDropdown.innerHTML = "";
+    results.slice(0, 10).forEach(m => {
+      const div = document.createElement("div");
+      div.className = "dd-item";
+      const party = partyMap[m.party];
+      const status = isActive(m) ? "" : " (ehem.)";
+      div.innerHTML = `<span class="member-dot" style="background:${party ? party.color : '#ccc'}"></span><span>${m.name}${status}</span>`;
+      div.addEventListener("click", () => {
+        gremienDropdown.classList.add("hidden");
+        gremienSearchInput.value = "";
+        navigate("/member/" + m.id);
+      });
+      gremienDropdown.appendChild(div);
+    });
+    gremienDropdown.classList.remove("hidden");
   });
 
   // -- Routing --
@@ -180,7 +224,7 @@
   function route() {
     const hash = window.location.hash.slice(1) || "/";
     if (hash.startsWith("/member/")) {
-      switchTab("gremien");
+      if (activeTab !== "gremien") switchTab("gremien");
       renderMemberProfile(hash.split("/member/")[1]);
       return;
     }
@@ -245,7 +289,6 @@
   const tlIcons = {
     proposal: "description",
     committee: "groups",
-    vote: "check_circle",
     milestone: "flag",
   };
 
@@ -282,15 +325,19 @@
       const el = document.createElement("div");
       el.className = "tl-entry";
 
-      // determine dot class based on type + vote result
       let dotClass = entry.type;
+      let iconName = tlIcons[entry.type];
       if (entry.type === "vote" && entry.voteId && voteMap[entry.voteId]) {
-        dotClass = voteMap[entry.voteId].result === "rejected" ? "vote-rejected" : "vote-approved";
+        const rejected = voteMap[entry.voteId].result === "rejected";
+        dotClass = rejected ? "vote-rejected" : "vote-approved";
+        iconName = rejected ? "cancel" : "check_circle";
+      } else if (entry.type === "vote") {
+        dotClass = "vote-approved";
+        iconName = "check_circle";
       }
 
       const dot = document.createElement("div");
       dot.className = "tl-dot " + dotClass;
-      const iconName = tlIcons[entry.type];
       if (iconName) dot.innerHTML = `<span class="material-icons">${iconName}</span>`;
       el.appendChild(dot);
 
@@ -343,9 +390,10 @@
     const header = document.createElement("div");
     header.className = "session-header";
     let badge = "";
-    if (session.type === "bpu") {
-      const comm = committees.bpu;
-      badge = `<div class="session-badge"><span class="material-icons">groups</span> ${comm ? comm.shortName : "Ausschuss"}</div>`;
+    if (session.type && session.type !== "stadtrat") {
+      const body = bodyMap[session.type];
+      const label = body ? body.shortName : session.type;
+      badge = `<div class="session-badge"><span class="material-icons">groups</span> ${label}</div>`;
     }
     header.innerHTML = `<h1>${session.title}</h1><div class="session-date">${formatDate(session.date)}</div>${badge}`;
     main.appendChild(header);
@@ -486,8 +534,7 @@
 
     const prevLast = new Date(calYear, calMonth, 0);
     for (let i = startDow - 1; i >= 0; i--) {
-      const day = prevLast.getDate() - i;
-      addDay(day, isoDate(calYear, calMonth - 1, day), true, todayStr);
+      addDay(prevLast.getDate() - i, isoDate(calYear, calMonth - 1, prevLast.getDate() - i), true, todayStr);
     }
 
     for (let d = 1; d <= last.getDate(); d++) {
@@ -545,8 +592,8 @@
     events.forEach(s => {
       const row = document.createElement("div");
       row.className = "sheet-event";
-      if (s.type === "bpu") row.classList.add("bpu");
-      const icon = s.type === "bpu" ? "groups" : "account_balance";
+      if (s.type && s.type !== "stadtrat") row.classList.add(s.type);
+      const icon = s.type === "bpu" ? "engineering" : "account_balance";
       row.innerHTML = `
         <span class="material-icons">${icon}</span>
         <div class="sheet-event-text">${s.title}</div>
@@ -562,7 +609,7 @@
     calSheet.classList.remove("hidden");
   }
 
-  // -- Gremien --
+  // -- Gremien tab --
 
   let gremienRendered = false;
 
@@ -574,54 +621,42 @@
     }
     if (gremienRendered) return;
     gremienRendered = true;
-
     gremienMain.innerHTML = "";
 
-    const now = new Date();
-    const nowStr = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0");
-
-    // determine active vs former
-    const active = members.filter(m => {
-      if (m.to && m.to <= nowStr) return false;
-      if (m.from > nowStr) return false;
-      return true;
-    });
-    const former = members.filter(m => m.to && m.to <= nowStr);
-
     const wrap = document.createElement("div");
-    wrap.style.cssText = "max-width:800px;margin:0 auto;padding:32px 24px 64px;";
+    wrap.style.cssText = "max-width:800px;margin:0 auto;padding:24px 24px 64px;";
 
-    // mayors first
-    const activeMayors = active.filter(m => m.role === "mayor");
-    const activeCouncillors = active.filter(m => m.role === "councillor");
+    const plenum = bodies.filter(b => b.type === "plenum");
+    const ausschuesse = bodies.filter(b => b.type === "ausschuss");
+    const sonstige = bodies.filter(b => b.type === "sonstige");
 
-    if (activeMayors.length) {
-      const sec = makeSection("B\u00fcrgermeister");
-      activeMayors.forEach(m => sec.appendChild(makeMemberRow(m)));
+    // Plenum
+    if (plenum.length) {
+      const sec = makeSection("");
+      const cards = document.createElement("div");
+      cards.className = "body-cards full-width";
+      plenum.forEach(b => cards.appendChild(makeBodyCard(b)));
+      sec.appendChild(cards);
       wrap.appendChild(sec);
     }
 
-    // group councillors by party in seatOrder
-    const byParty = {};
-    activeCouncillors.forEach(m => {
-      if (!byParty[m.party]) byParty[m.party] = [];
-      byParty[m.party].push(m);
-    });
-
-    seatOrder.forEach(pid => {
-      const group = byParty[pid];
-      if (!group || !group.length) return;
-      const party = partyMap[pid];
-      const sec = makeSection(party ? party.name : pid);
-      group.forEach(m => sec.appendChild(makeMemberRow(m)));
+    // Ausschuesse
+    if (ausschuesse.length) {
+      const sec = makeSection("Aussch\u00fcsse");
+      const cards = document.createElement("div");
+      cards.className = "body-cards";
+      ausschuesse.forEach(b => cards.appendChild(makeBodyCard(b)));
+      sec.appendChild(cards);
       wrap.appendChild(sec);
-    });
+    }
 
-    // former members
-    if (former.length) {
-      const sec = makeSection("Ehemalige");
-      former.sort((a, b) => (b.to || "").localeCompare(a.to || ""));
-      former.forEach(m => sec.appendChild(makeMemberRow(m, true)));
+    // Sonstige
+    if (sonstige.length) {
+      const sec = makeSection("Besondere Gremien");
+      const cards = document.createElement("div");
+      cards.className = "body-cards";
+      sonstige.forEach(b => cards.appendChild(makeBodyCard(b)));
+      sec.appendChild(cards);
       wrap.appendChild(sec);
     }
 
@@ -631,11 +666,119 @@
   function makeSection(title) {
     const sec = document.createElement("div");
     sec.className = "gremien-section";
-    const h = document.createElement("p");
-    h.className = "section-heading";
-    h.textContent = title;
-    sec.appendChild(h);
+    if (title) {
+      const h = document.createElement("p");
+      h.className = "section-heading";
+      h.textContent = title;
+      sec.appendChild(h);
+    }
     return sec;
+  }
+
+  function makeBodyCard(body) {
+    const card = document.createElement("div");
+    card.className = "body-card";
+
+    // get members for this body
+    const current = [];
+    const former = [];
+
+    if (body.type === "plenum") {
+      members.forEach(m => {
+        if (isActive(m)) current.push(m);
+        else former.push(m);
+      });
+    } else if (body.members) {
+      body.members.forEach(mid => {
+        const m = memberMap[mid];
+        if (!m) return;
+        // check if membership is still active
+        const period = body.memberPeriod;
+        if (period && period.to && period.to <= nowStr) {
+          former.push(m);
+        } else if (isActive(m)) {
+          current.push(m);
+        } else {
+          former.push(m);
+        }
+      });
+      // also add chair
+      if (body.chair && memberMap[body.chair]) {
+        const chair = memberMap[body.chair];
+        if (!current.find(c => c.id === chair.id) && !former.find(c => c.id === chair.id)) {
+          if (isActive(chair)) current.push(chair);
+          else former.push(chair);
+        }
+      }
+    }
+
+    // also collect members from profile.committees references
+    if (body.type !== "plenum") {
+      members.forEach(m => {
+        if (m.profile && m.profile.committees && m.profile.committees.includes(body.id)) {
+          if (!current.find(c => c.id === m.id) && !former.find(c => c.id === m.id)) {
+            if (isActive(m)) current.push(m);
+            else former.push(m);
+          }
+        }
+      });
+    }
+
+    current.sort((a, b) => a.name.localeCompare(b.name));
+    former.sort((a, b) => a.name.localeCompare(b.name));
+
+    const count = current.length;
+
+    card.innerHTML = `
+      <div class="body-card-header">
+        <span class="material-icons">${body.icon || 'groups'}</span>
+        <div>
+          <div class="body-card-title">${body.name}</div>
+          ${count ? `<div class="body-card-count">${count} Mitglieder</div>` : ''}
+        </div>
+        <span class="material-icons expand-icon">expand_more</span>
+      </div>
+      <div class="body-card-detail"></div>`;
+
+    const detail = card.querySelector(".body-card-detail");
+
+    // description
+    if (body.description) {
+      const desc = document.createElement("div");
+      desc.className = "body-card-desc";
+      desc.textContent = body.description;
+      detail.appendChild(desc);
+    }
+
+    // current members
+    if (current.length) {
+      const list = document.createElement("div");
+      list.className = "body-member-list";
+      const heading = document.createElement("div");
+      heading.className = "bml-heading";
+      heading.textContent = "Aktuelle Mitglieder";
+      list.appendChild(heading);
+      current.forEach(m => list.appendChild(makeMemberRow(m)));
+      detail.appendChild(list);
+    }
+
+    // former members
+    if (former.length) {
+      const list = document.createElement("div");
+      list.className = "body-member-list";
+      const heading = document.createElement("div");
+      heading.className = "bml-heading";
+      heading.textContent = "Ehemalige";
+      list.appendChild(heading);
+      former.forEach(m => list.appendChild(makeMemberRow(m, true)));
+      detail.appendChild(list);
+    }
+
+    card.querySelector(".body-card-header").addEventListener("click", () => {
+      card.classList.toggle("expanded");
+    });
+
+    return card;
   }
 
   function makeMemberRow(m, showDates) {
@@ -645,15 +788,17 @@
     const color = party ? party.color : "#ccc";
     let meta = "";
     if (m.title) meta = m.title;
-    else if (m.role === "mayor") meta = "B\u00fcrgermeister";
+    else if (m.role === "mayor") meta = "BM";
     if (showDates) meta = formatPeriod(m.from, m.to);
 
     row.innerHTML = `
       <span class="member-dot" style="background:${color}"></span>
       <span class="member-row-name">${m.name}</span>
-      <span class="member-row-meta">${meta}</span>
-      <span class="material-icons">chevron_right</span>`;
-    row.addEventListener("click", () => navigate("/member/" + m.id));
+      <span class="member-row-meta">${meta}</span>`;
+    row.addEventListener("click", e => {
+      e.stopPropagation();
+      navigate("/member/" + m.id);
+    });
     return row;
   }
 
@@ -667,7 +812,6 @@
     const wrap = document.createElement("div");
     wrap.style.cssText = "max-width:800px;margin:0 auto;padding:32px 24px 64px;";
 
-    // back link
     const back = document.createElement("a");
     back.className = "back-link";
     back.href = "#/";
@@ -702,23 +846,12 @@
       badges.className = "identity-badges";
       badges.style.marginTop = "-16px";
       badges.style.marginBottom = "20px";
-      const labels = {
-        queer: "LGBTQ+",
-        migrant: "Migrantisch",
-        flinta: "FLINTA",
-        disability: "Barrierefrei",
-      };
-      const icons = {
-        queer: "favorite",
-        migrant: "public",
-        flinta: "female",
-        disability: "accessible",
-      };
+      const labels = { queer: "LGBTQ+", migrant: "Migrantisch", flinta: "FLINTA", disability: "Barrierefrei" };
+      const icons = { queer: "favorite", migrant: "public", flinta: "female", disability: "accessible" };
       profile.identity.forEach(id => {
         const b = document.createElement("span");
         b.className = "id-badge " + id;
-        const iconName = icons[id];
-        b.innerHTML = (iconName ? `<span class="material-icons">${iconName}</span> ` : "") + (labels[id] || id);
+        b.innerHTML = (icons[id] ? `<span class="material-icons">${icons[id]}</span> ` : "") + (labels[id] || id);
         badges.appendChild(b);
       });
       wrap.appendChild(badges);
@@ -742,7 +875,6 @@
     rolesSection.className = "profile-section";
     rolesSection.innerHTML = "<h3>Mandate & Funktionen</h3>";
 
-    // main role
     const roleLabel = m.role === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
     rolesSection.appendChild(makeRoleRow("account_balance", roleLabel, m.from, m.to));
 
@@ -750,18 +882,16 @@
       rolesSection.appendChild(makeRoleRow("star", m.title, m.from, m.to));
     }
 
-    // additional titles from profile
     if (profile.titles) {
       profile.titles.forEach(t => {
         rolesSection.appendChild(makeRoleRow("badge", t.title, t.from, t.to));
       });
     }
 
-    // committees
     if (profile.committees) {
       profile.committees.forEach(cid => {
-        const comm = committees[cid];
-        const name = comm ? comm.name : cid;
+        const body = bodyMap[cid];
+        const name = body ? body.name : cid;
         rolesSection.appendChild(makeRoleRow("groups", name, m.from, m.to));
       });
     }
@@ -827,7 +957,6 @@
   // -- Member timeline --
 
   function renderMemberTimeline(container, member) {
-    // find sessions during this member's tenure
     const from = member.from;
     const to = member.to || "9999-12";
 
@@ -855,14 +984,13 @@
         container.appendChild(header);
       }
 
-      // find votes in this session
       const votedItems = session.agenda.filter(a => a.voteId && voteMap[a.voteId]);
       if (!votedItems.length) return;
 
       const sessionEl = document.createElement("div");
       sessionEl.className = "mtl-session";
 
-      const icon = session.type === "bpu" ? "groups" : "account_balance";
+      const icon = (session.type && session.type !== "stadtrat") ? "groups" : "account_balance";
       const sHeader = document.createElement("div");
       sHeader.className = "mtl-session-header";
       sHeader.innerHTML = `<span class="material-icons">${icon}</span> <a href="#/session/${session.id}">${session.title}</a>`;
@@ -880,12 +1008,11 @@
           <span class="mtl-vote-chip ${chipClass}">${chipLabel}</span>
           <span class="mtl-vote-title">${vote.title}</span>`;
 
-        // expandable detail
         const detail = document.createElement("div");
         detail.className = "mtl-vote-detail hidden";
         let detailHTML = `<p>${vote.text}</p>`;
         if (vote.type === "anonymous") {
-          detailHTML += `<p style="margin-top:4px">Abstimmung: ${vote.results.yes} Ja, ${vote.results.no} Nein, ${vote.results.absent} Abwesend</p>`;
+          detailHTML += `<p style="margin-top:4px">${vote.results.yes} Ja, ${vote.results.no} Nein, ${vote.results.absent} Abwesend</p>`;
         }
         if (item.topicId && topicMap[item.topicId]) {
           detailHTML += `<a href="#/topic/${item.topicId}"><span class="material-icons" style="font-size:14px">open_in_new</span> ${topicMap[item.topicId].title}</a>`;

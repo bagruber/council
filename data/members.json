@@ -123,24 +123,72 @@
     { "id": "john", "name": "Stefan John", "party": "linke", "role": "councillor", "from": "2020-05", "to": "2023-01" },
     { "id": "strobl", "name": "Alexander Strobl", "party": "linke", "role": "councillor", "from": "2023-01", "to": null }
   ],
-  "committees": {
-    "bpu": {
+  "bodies": [
+    {
+      "id": "plenum",
+      "name": "Stadtrat",
+      "shortName": "Plenum",
+      "type": "plenum",
+      "icon": "account_balance",
+      "description": "Das Plenum des Stadtrats ist das h\u00f6chste Beschlussgremium der Stadt Moosburg. Es besteht aus 24 ehrenamtlichen Stadtr\u00e4tinnen und Stadtr\u00e4ten sowie dem Ersten B\u00fcrgermeister."
+    },
+    {
+      "id": "pa",
+      "name": "Personalausschuss",
+      "shortName": "Personalausschuss",
+      "type": "ausschuss",
+      "icon": "person",
+      "description": "Der Personalausschuss befasst sich mit Personalangelegenheiten der st\u00e4dtischen Besch\u00e4ftigten.",
+      "members": ["gruber"],
+      "chair": "dollinger"
+    },
+    {
+      "id": "hvfa",
+      "name": "Hauptverwaltungs- und Finanzausschuss",
+      "shortName": "HVFA",
+      "type": "ausschuss",
+      "icon": "payments",
+      "description": "Der HVFA bereitet Haushaltsentscheidungen vor und behandelt Finanz- sowie allgemeine Verwaltungsangelegenheiten.",
+      "members": ["gruber"],
+      "chair": "dollinger"
+    },
+    {
+      "id": "bpu",
       "name": "Bau-, Planungs- und Umweltausschuss",
       "shortName": "Bauausschuss",
+      "type": "ausschuss",
+      "icon": "engineering",
+      "description": "Der Bauausschuss entscheidet \u00fcber Bauantr\u00e4ge, Bebauungspl\u00e4ne, Verkehrsplanung und Umweltfragen. Er besteht aus 9 stimmberechtigten Mitgliedern plus dem Vorsitzenden.",
       "members": ["beibl", "hobmaier", "kieninger", "linz_karin", "linz_kilian", "marcus", "reif", "tristl", "welter"],
       "chair": "dollinger"
     },
-    "hvfa": {
-      "name": "Hauptverwaltungs- und Finanzausschuss",
-      "shortName": "HVFA"
+    {
+      "id": "rpa",
+      "name": "Rechnungspr\u00fcfungsausschuss",
+      "shortName": "RPA",
+      "type": "ausschuss",
+      "icon": "fact_check",
+      "description": "Der Rechnungspr\u00fcfungsausschuss pr\u00fcft die Haushalts- und Wirtschaftsf\u00fchrung der Stadt."
     },
-    "pa": {
-      "name": "Personalausschuss",
-      "shortName": "Personalausschuss"
+    {
+      "id": "ar_klaeranlage",
+      "name": "Aufsichtsrat Kl\u00e4ranlage GmbH",
+      "shortName": "AR Kl\u00e4ranlage",
+      "type": "sonstige",
+      "icon": "water_drop",
+      "description": "Der Aufsichtsrat \u00fcberwacht die Gesch\u00e4ftsf\u00fchrung der Kl\u00e4ranlage Moosburg GmbH.",
+      "members": ["gruber"],
+      "chair": "dollinger"
     },
-    "ar_klaeranlage": {
-      "name": "Aufsichtsrat Kläranlage GmbH",
-      "shortName": "AR Kläranlage"
+    {
+      "id": "vr_sparkasse",
+      "name": "Verbandsrat der Sparkasse",
+      "shortName": "VR Sparkasse",
+      "type": "sonstige",
+      "icon": "savings",
+      "description": "Der Verbandsrat vertritt die Stadt Moosburg im Zweckverband Sparkasse Freising Moosburg Neufahrn.",
+      "members": ["kieninger", "hadersdorfer"],
+      "memberPeriod": { "from": "2020-05", "to": "2026-05" }
     }
-  }
+  ]
 }
