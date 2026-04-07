@@ -1091,28 +1091,31 @@ main {
 
 /* -- Member profile -- */
 
+#gremien-main {
+  overflow-x: hidden;
+}
+
 .profile-header {
   position: relative;
   margin-bottom: 24px;
   min-height: 180px;
-  overflow: hidden;
 }
 
 .profile-avatar-wrap {
   position: absolute;
-  top: -20px;
+  top: 10px;
   left: -60px;
-  width: 240px;
-  height: 240px;
+  width: 220px;
+  height: 220px;
 }
 
 .avatar-brush {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  top: -40px;
-  left: 20px;
-  z-index: 0;
+  width: 280px;
+  height: 280px;
+  top: -50px;
+  left: 30px;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -1147,7 +1150,7 @@ main {
 
 .profile-info {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   margin-left: 170px;
   padding-top: 20px;
 }
@@ -1165,9 +1168,9 @@ main {
   }
   .profile-avatar-wrap {
     left: -80px;
-    top: -10px;
-    width: 260px;
-    height: 260px;
+    top: 0;
+    width: 240px;
+    height: 240px;
   }
   .profile-avatar {
     width: 240px;
@@ -1175,13 +1178,13 @@ main {
     font-size: 4rem;
   }
   .avatar-brush {
-    width: 320px;
-    height: 320px;
+    width: 310px;
+    height: 310px;
     top: -50px;
     left: 30px;
   }
   .profile-info {
-    margin-left: 150px;
+    margin-left: 140px;
     padding-top: 16px;
   }
   .profile-info h1 {
