@@ -20,6 +20,7 @@
   }
 
   const members = membersData.members;
+  members.forEach(m => { if (!m.name) m.name = m.firstName + " " + m.lastName; });
   const parties = membersData.parties;
   const bodies = membersData.bodies || [];
   const seatOrder = membersData.seatOrder || parties.map(p => p.id);
@@ -916,6 +917,17 @@
 
   // -- Member profile --
 
+  function nameColorFromParty(hex) {
+    if (!hex) return "#555";
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+    if (lum < 40) return "#666";
+    const f = lum > 180 ? 0.4 : lum > 120 ? 0.55 : 0.7;
+    return "#" + [r, g, b].map(c => Math.round(c * f).toString(16).padStart(2, "0")).join("");
+  }
+
   function renderMemberProfile(id) {
     const m = memberMap[id];
     if (!m) { gremienMain.innerHTML = "<p style='padding:40px 24px'>Person nicht gefunden.</p>"; return; }
@@ -947,10 +959,11 @@
     // header
     const header = document.createElement("div");
     header.className = "profile-header";
-    const initial = m.name.charAt(0);
-    const neeSuffix = m.nee ? ` <span style="font-size:0.85em;color:var(--text-muted)">(geb. ${m.nee})</span>` : "";
+    const initial = (m.firstName || m.name).charAt(0);
+    const neeSuffix = m.nee ? ` <span class="profile-nee">(geb. ${m.nee})</span>` : "";
     const photoPath = "img/members/" + m.id + ".png";
     const avatarColor = party ? party.color : '#999';
+    const nameColor = nameColorFromParty(avatarColor);
 
     const brushFiles = ["A1","A2","A3","A4","A6","A7","A8","A9","A10"];
     const memberIdx = members.indexOf(m);
@@ -963,8 +976,11 @@
         <div class="profile-avatar" id="profile-avatar" style="background:${avatarColor}">${initial}</div>
       </div>
       <div class="profile-info">
-        <h1>${m.name}${neeSuffix}</h1>
-        <div class="profile-party">${party ? party.name : ""} ${m.title ? "\u2013 " + m.title : ""}</div>
+        <div class="profile-name-block"><div class="profile-name-inner">
+          <div class="profile-given-name" style="color:${nameColor}">${m.firstName || ""}</div>
+          <div class="profile-surname" style="color:${nameColor}">${m.lastName || m.name}${neeSuffix}</div>
+          <div class="profile-party">${party ? party.name : ""}${m.title ? " \u2013 " + m.title : ""}</div>
+        </div></div>
         ${profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
       </div>`;
     wrap.appendChild(header);
