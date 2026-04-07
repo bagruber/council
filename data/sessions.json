@@ -1,5 +1,24 @@
 [
   {
+    "id": "s9",
+    "date": "2024-12-09",
+    "type": "stadtrat",
+    "title": "20. Stadtratssitzung \u2013 Dezember 2024",
+    "agenda": [
+      { "number": 1, "title": "Mitteilungen des Ersten B\u00fcrgermeisters", "type": "formal" },
+      { "number": 2, "title": "B\u00fcrgerfragen gem. \u00a7 27 Abs. 2 GeschO/StR", "type": "formal" },
+      { "number": 3, "title": "Genehmigung der \u00f6ffentlichen Niederschriften (HVFA 21.11.2024)", "voteId": "v51" },
+      { "number": 4, "title": "Generalsanierung des st\u00e4dtischen Freibades", "voteId": "v52" },
+      { "number": 5, "title": "Nutzungs\u00e4nderung MFH Viehmarktstra\u00dfe 8", "voteId": "v53" },
+      { "number": 6, "title": "St\u00e4dtebauf\u00f6rderung \u2013 Bedarfsanmeldung 2025", "voteId": "v54" },
+      { "number": "7", "title": "Bauleitplanung Nr. 70 \u201eContainerbau ELA\u201c \u2013 Satzungsbeschluss", "voteId": "v55" },
+      { "number": "8.1", "title": "Antrag Legal Wall \u2013 Spraykunst/Graffiti/Street Art", "voteId": "v56" },
+      { "number": "8.2", "title": "F\u00f6rderantrag Stalag Moosburg e.V.", "voteId": "v57" },
+      { "number": 9, "title": "Kreditaufnahme Kinderkrippe Sonnensiedlung", "voteId": "v58" },
+      { "number": 10, "title": "Anfragen", "type": "formal" }
+    ]
+  },
+  {
     "id": "s8",
     "date": "2024-12-16",
     "type": "stadtrat",
