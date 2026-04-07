@@ -1178,14 +1178,14 @@ main {
     width: 260px;
     height: 260px;
     font-size: 4rem;
-    opacity: 0.25;
+    opacity: 0.9;
   }
   .avatar-brush {
     width: 330px;
     height: 330px;
     top: -50px;
     left: 40px;
-    opacity: 0.35;
+    opacity: 0.9;
   }
   .profile-info {
     position: relative;
