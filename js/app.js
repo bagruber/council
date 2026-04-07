@@ -975,8 +975,7 @@
         const brushEl = header.querySelector("#avatar-brush");
         if (!brushEl) return;
         const colored = svgText
-          .replace(/fill:\s*#333/g, "fill: " + avatarColor)
-          .replace(/\.st0/g, ".brush-" + m.id);
+          .replace(/fill:\s*#333/g, "fill: " + avatarColor);
         brushEl.innerHTML = colored;
         const svg = brushEl.querySelector("svg");
         if (svg) {
