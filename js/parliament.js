@@ -263,10 +263,35 @@ const VoteVis = (() => {
         .attr("font-size", 7).attr("fill", "#fff").attr("font-weight", "bold")
         .text(voteBadge[entry.vote] || "");
 
+      // desktop: hover for tooltip, click navigates to profile
       g.on("mouseenter", evt => seatTip(evt, entry))
         .on("mousemove", moveTip)
         .on("mouseleave", hideTip)
-        .on("touchstart", evt => seatTip(evt, entry));
+        .on("click", () => {
+          hideTip();
+          window.location.hash = "/member/" + entry.member.id;
+        });
+
+      // mobile: short touch = tooltip, long press = navigate
+      let pressTimer = null;
+      let didLongPress = false;
+      const node = g.node();
+      node.addEventListener("touchstart", evt => {
+        didLongPress = false;
+        seatTip(evt, entry);
+        pressTimer = setTimeout(() => {
+          didLongPress = true;
+          hideTip();
+          window.location.hash = "/member/" + entry.member.id;
+        }, 500);
+      }, { passive: true });
+      node.addEventListener("touchend", () => {
+        clearTimeout(pressTimer);
+        if (!didLongPress) setTimeout(hideTip, 1500);
+      });
+      node.addEventListener("touchmove", () => {
+        clearTimeout(pressTimer);
+      }, { passive: true });
     }
 
     positioned.forEach(s => drawSeat(s.x, s.y, s));
