@@ -300,6 +300,9 @@
     back.className = "back-link";
     back.href = "#/";
     back.innerHTML = '<span class="material-icons">arrow_back</span> \u00dcbersicht';
+    back.addEventListener("click", e => {
+      if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
+    });
     main.appendChild(back);
 
     const header = document.createElement("div");
@@ -385,6 +388,9 @@
     back.className = "back-link";
     back.href = "#/";
     back.innerHTML = '<span class="material-icons">arrow_back</span> \u00dcbersicht';
+    back.addEventListener("click", e => {
+      if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
+    });
     main.appendChild(back);
 
     const header = document.createElement("div");
@@ -660,6 +666,41 @@
       wrap.appendChild(sec);
     }
 
+    // faction list
+    const factionSec = makeSection("Fraktionen");
+    const activeMembers = members.filter(m => isActive(m) && m.role !== "mayor");
+    const activeMayor = members.find(m => isActive(m) && m.role === "mayor");
+
+    const grouped = {};
+    seatOrder.forEach(pid => { grouped[pid] = []; });
+    activeMembers.forEach(m => {
+      if (!grouped[m.party]) grouped[m.party] = [];
+      grouped[m.party].push(m);
+    });
+
+    seatOrder.forEach(pid => {
+      const group = grouped[pid];
+      if (!group || !group.length) return;
+      const party = partyMap[pid];
+      const fh = document.createElement("div");
+      fh.style.cssText = "display:flex;align-items:center;gap:8px;margin:16px 0 6px;";
+      fh.innerHTML = `<span class="member-dot" style="background:${party.color};width:10px;height:10px"></span><span style="font-weight:600;font-size:0.9rem">${party.name}</span><span style="font-size:0.78rem;color:var(--text-muted)">${group.length}</span>`;
+      factionSec.appendChild(fh);
+      group.sort((a, b) => a.name.localeCompare(b.name));
+      group.forEach(m => factionSec.appendChild(makeMemberRow(m)));
+    });
+
+    if (activeMayor) {
+      const mh = document.createElement("div");
+      mh.style.cssText = "display:flex;align-items:center;gap:8px;margin:16px 0 6px;";
+      const mp = partyMap[activeMayor.party];
+      mh.innerHTML = `<span class="member-dot" style="background:${mp ? mp.color : '#999'};width:10px;height:10px"></span><span style="font-weight:600;font-size:0.9rem">B\u00fcrgermeister</span>`;
+      factionSec.appendChild(mh);
+      factionSec.appendChild(makeMemberRow(activeMayor));
+    }
+
+    wrap.appendChild(factionSec);
+
     gremienMain.appendChild(wrap);
   }
 
@@ -818,9 +859,14 @@
     back.innerHTML = '<span class="material-icons">arrow_back</span> Gremien';
     back.addEventListener("click", e => {
       e.preventDefault();
-      gremienRendered = false;
-      window.location.hash = "/";
-      renderGremien();
+      if (window.history.length > 1) {
+        gremienRendered = false;
+        window.history.back();
+      } else {
+        gremienRendered = false;
+        window.location.hash = "/";
+        renderGremien();
+      }
     });
     wrap.appendChild(back);
 
@@ -831,10 +877,11 @@
     const header = document.createElement("div");
     header.className = "profile-header";
     const initial = m.name.charAt(0);
+    const neeSuffix = m.nee ? ` <span style="font-size:0.85em;color:var(--text-muted)">(geb. ${m.nee})</span>` : "";
     header.innerHTML = `
       <div class="profile-avatar" style="background:${party ? party.color : '#999'}">${initial}</div>
       <div class="profile-info">
-        <h1>${m.name}</h1>
+        <h1>${m.name}${neeSuffix}</h1>
         <div class="profile-party">${party ? party.name : ""} ${m.title ? "\u2013 " + m.title : ""}</div>
         ${profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
       </div>`;
@@ -862,11 +909,11 @@
       const c = profile.contact;
       const links = document.createElement("div");
       links.className = "profile-contact";
-      if (c.email) links.appendChild(makeContactLink("email", "mailto:" + c.email, c.email));
-      if (c.website) links.appendChild(makeContactLink("language", "https://" + c.website, c.website));
-      if (c.instagram) links.appendChild(makeContactLink("photo_camera", "https://instagram.com/" + c.instagram.replace("@", ""), c.instagram));
-      if (c.threads) links.appendChild(makeContactLink("forum", "https://threads.net/" + c.threads.replace("@", ""), "Threads"));
-      if (c.linkedin) links.appendChild(makeContactLink("work", "https://linkedin.com/in" + c.linkedin, "LinkedIn"));
+      if (c.email) links.appendChild(makeContactLink("email", "mailto:" + c.email));
+      if (c.website) links.appendChild(makeContactLink("website", "https://" + c.website));
+      if (c.instagram) links.appendChild(makeContactLink("instagram", "https://instagram.com/" + c.instagram.replace("@", "")));
+      if (c.threads) links.appendChild(makeContactLink("threads", "https://threads.net/" + c.threads.replace("@", "")));
+      if (c.linkedin) links.appendChild(makeContactLink("linkedin", "https://linkedin.com/in" + c.linkedin));
       wrap.appendChild(links);
     }
 
@@ -909,12 +956,16 @@
         const coNames = mot.coSigners
           .map(sid => memberMap[sid] ? memberMap[sid].name : sid)
           .join(", ");
+        const sessionLink = mot.sessionId && sessionMap[mot.sessionId]
+          ? `<a href="#/session/${mot.sessionId}" style="display:inline-flex;align-items:center;gap:3px;color:var(--primary);text-decoration:none;font-size:0.78rem;margin-top:2px"><span class="material-icons" style="font-size:13px">open_in_new</span>${sessionMap[mot.sessionId].title}</a>`
+          : "";
         el.innerHTML = `
           <span class="material-icons">edit_note</span>
           <div>
             <div class="mtl-motion-title">${mot.title}</div>
             <div class="mtl-motion-meta">${mot.body} \u2013 ${formatDate(mot.date)}</div>
             ${coNames ? `<div class="mtl-motion-meta">gemeinsam mit ${coNames}</div>` : ""}
+            ${sessionLink}
           </div>`;
         motionSec.appendChild(el);
       });
@@ -934,13 +985,20 @@
     gremienMain.appendChild(wrap);
   }
 
-  function makeContactLink(icon, href, label) {
+  function makeContactLink(type, href) {
     const a = document.createElement("a");
-    a.className = "contact-link";
+    a.className = "contact-link cl-" + type;
     a.href = href;
     a.target = "_blank";
     a.rel = "noopener";
-    a.innerHTML = `<span class="material-icons">${icon}</span> ${label}`;
+    const icons = {
+      email: '<i class="fas fa-envelope"></i>',
+      website: '<i class="fas fa-globe"></i>',
+      instagram: '<i class="fab fa-instagram"></i>',
+      threads: '<i class="fab fa-threads"></i>',
+      linkedin: '<i class="fab fa-linkedin-in"></i>',
+    };
+    a.innerHTML = icons[type] || '<i class="fas fa-link"></i>';
     return a;
   }
 
@@ -1036,6 +1094,9 @@
       if (vote.results.yes.includes(memberId)) return "ja";
       if (vote.results.no.includes(memberId)) return "nein";
       if (vote.results.absent.includes(memberId)) return "abwesend";
+    }
+    if (vote.type === "anonymous" && vote.results.no === 0) {
+      return "ja";
     }
     return "?";
   }
