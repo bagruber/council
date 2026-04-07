@@ -1,5 +1,19 @@
 [
   {
+    "id": "s8",
+    "date": "2024-12-16",
+    "type": "stadtrat",
+    "title": "21. Stadtratssitzung \u2013 Dezember 2024",
+    "agenda": [
+      { "number": 1, "title": "Mitteilungen des Ersten B\u00fcrgermeisters", "type": "formal" },
+      { "number": 2, "title": "B\u00fcrgerfragen gem. \u00a7 27 Abs. 2 GeschO/StR", "type": "formal" },
+      { "number": 3, "title": "Genehmigung der \u00f6ffentlichen Niederschriften (HVFA 25.11.2024)", "voteId": "v48" },
+      { "number": 4, "title": "Erlass der Haushaltssatzung 2025", "voteId": "v49" },
+      { "number": 5, "title": "Benutzungsordnung Hallenbad Moosburg", "voteId": "v50" },
+      { "number": 6, "title": "Anfragen", "type": "formal" }
+    ]
+  },
+  {
     "id": "s5",
     "date": "2025-11-10",
     "type": "stadtrat",

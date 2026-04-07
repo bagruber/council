@@ -12,58 +12,116 @@
   ],
   "seatOrder": ["gruene", "fw", "fresh", "linke", "oedp", "fdp", "afd", "spd", "csu"],
   "members": [
-    { "id": "dollinger",      "name": "Josef Dollinger",         "party": "fw",     "role": "mayor",      "from": "2020-05", "to": "2026-05" },
-    { "id": "mader",          "name": "Maximilian Mader",        "party": "csu",    "role": "mayor",      "from": "2026-05", "to": null },
+    { "id": "dollinger", "name": "Josef Dollinger", "party": "fw", "role": "mayor", "from": "2020-05", "to": "2026-05" },
+    { "id": "mader", "name": "Maximilian Mader", "party": "csu", "role": "mayor", "from": "2026-05", "to": null },
 
-    { "id": "linz_karin",     "name": "Karin Linz",              "party": "csu",    "role": "councillor", "from": "2020-05", "to": null },
-    { "id": "heinz",          "name": "Rudolf Heinz",            "party": "csu",    "role": "councillor", "from": "2020-05", "to": null },
-    { "id": "hadersdorfer",   "name": "Georg Hadersdorfer",      "party": "csu",    "role": "councillor", "from": "2020-05", "to": null, "title": "Zweiter Bürgermeister" },
-    { "id": "tristl",         "name": "Manfred Tristl",          "party": "csu",    "role": "councillor", "from": "2020-05", "to": null },
-    { "id": "weber",          "name": "Erwin Weber",             "party": "csu",    "role": "councillor", "from": "2020-05", "to": "2026-05" },
-    { "id": "haberl",         "name": "Ludwig Haberl",           "party": "csu",    "role": "councillor", "from": "2020-05", "to": "2026-05" },
-    { "id": "kehlringer",     "name": "Lorena Kehlringer",       "party": "csu",    "role": "councillor", "from": "2026-05", "to": null },
-    { "id": "reither",        "name": "Dr. Dominikus Reither",   "party": "csu",    "role": "councillor", "from": "2026-05", "to": null },
+    { "id": "linz_karin", "name": "Karin Linz", "party": "csu", "role": "councillor", "from": "2020-05", "to": null,
+      "profile": { "committees": ["bpu"] }
+    },
+    { "id": "heinz", "name": "Rudolf Heinz", "party": "csu", "role": "councillor", "from": "2020-05", "to": null,
+      "profile": { "titles": [{ "title": "Kulturreferent", "from": "2020-05", "to": null }] }
+    },
+    { "id": "hadersdorfer", "name": "Georg Hadersdorfer", "party": "csu", "role": "councillor", "from": "2020-05", "to": null, "title": "Zweiter Bürgermeister",
+      "profile": { "titles": [{ "title": "Ehrenamtsreferent", "from": "2020-05", "to": null }] }
+    },
+    { "id": "tristl", "name": "Manfred Tristl", "party": "csu", "role": "councillor", "from": "2020-05", "to": null,
+      "profile": { "committees": ["bpu"] }
+    },
+    { "id": "weber", "name": "Erwin Weber", "party": "csu", "role": "councillor", "from": "2020-05", "to": "2026-05",
+      "profile": { "titles": [{ "title": "Partnerschaftsreferent", "from": "2020-05", "to": "2026-05" }] }
+    },
+    { "id": "haberl", "name": "Ludwig Haberl", "party": "csu", "role": "councillor", "from": "2020-05", "to": "2026-05" },
+    { "id": "kehlringer", "name": "Lorena Kehlringer", "party": "csu", "role": "councillor", "from": "2026-05", "to": null },
+    { "id": "reither", "name": "Dr. Dominikus Reither", "party": "csu", "role": "councillor", "from": "2026-05", "to": null },
 
-    { "id": "beibl",          "name": "Verena Beibl",            "party": "gruene", "role": "councillor", "from": "2020-05", "to": null },
-    { "id": "stanglmaier",    "name": "Dr. Michael Stanglmaier", "party": "gruene", "role": "councillor", "from": "2020-05", "to": null, "title": "Dritter Bürgermeister" },
-    { "id": "wagner",         "name": "Alfred Wagner",           "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2022-05" },
-    { "id": "altenbeck",      "name": "Evelin Altenbeck",        "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2022-05" },
+    { "id": "beibl", "name": "Verena Beibl", "party": "gruene", "role": "councillor", "from": "2020-05", "to": null,
+      "profile": { "committees": ["bpu"] }
+    },
+    { "id": "stanglmaier", "name": "Dr. Michael Stanglmaier", "party": "gruene", "role": "councillor", "from": "2020-05", "to": null, "title": "Dritter Bürgermeister" },
+    { "id": "wagner", "name": "Alfred Wagner", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2022-05" },
+    { "id": "altenbeck", "name": "Evelin Altenbeck", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2022-05" },
     { "id": "von_pressentin", "name": "Nathalie von Pressentin", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2026-05" },
-    { "id": "becher_j",       "name": "Johannes Becher",         "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2026-05" },
-    { "id": "becher_a",       "name": "Alexandra Becher",        "party": "gruene", "role": "councillor", "from": "2022-05", "to": "2026-05" },
-    { "id": "linz_kilian",    "name": "Kilian Linz",             "party": "gruene", "role": "councillor", "from": "2022-05", "to": null },
-    { "id": "roeck",          "name": "Matthias Röck",          "party": "gruene", "role": "councillor", "from": "2026-05", "to": null },
-    { "id": "ruemelin",       "name": "Ramona Rümelin",         "party": "gruene", "role": "councillor", "from": "2026-05", "to": null },
+    { "id": "becher_j", "name": "Johannes Becher", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2026-05" },
+    { "id": "becher_a", "name": "Alexandra Becher", "party": "gruene", "role": "councillor", "from": "2022-05", "to": "2026-05" },
+    { "id": "linz_kilian", "name": "Kilian Linz", "party": "gruene", "role": "councillor", "from": "2022-05", "to": null,
+      "profile": { "committees": ["bpu"] }
+    },
+    { "id": "roeck", "name": "Matthias Röck", "party": "gruene", "role": "councillor", "from": "2026-05", "to": null },
+    { "id": "ruemelin", "name": "Ramona Rümelin", "party": "gruene", "role": "councillor", "from": "2026-05", "to": null },
 
-    { "id": "grundner",       "name": "Thomas Grundner",         "party": "fw",     "role": "councillor", "from": "2020-05", "to": null },
-    { "id": "lauterbach",     "name": "Reinhard Lauterbach",     "party": "fw",     "role": "councillor", "from": "2020-05", "to": null },
-    { "id": "reif",           "name": "Johann Reif",             "party": "fw",     "role": "councillor", "from": "2020-05", "to": "2026-05" },
-    { "id": "kieninger",      "name": "Ludwig Kieninger",        "party": "fw",     "role": "councillor", "from": "2020-05", "to": "2026-05" },
-    { "id": "sixt",           "name": "Josef Sixt",              "party": "fw",     "role": "councillor", "from": "2026-05", "to": null },
-    { "id": "meier",          "name": "Christian Meier",          "party": "fw",     "role": "councillor", "from": "2026-05", "to": null },
+    { "id": "grundner", "name": "Thomas Grundner", "party": "fw", "role": "councillor", "from": "2020-05", "to": null },
+    { "id": "lauterbach", "name": "Reinhard Lauterbach", "party": "fw", "role": "councillor", "from": "2020-05", "to": null },
+    { "id": "reif", "name": "Johann Reif", "party": "fw", "role": "councillor", "from": "2020-05", "to": "2026-05",
+      "profile": { "committees": ["bpu"] }
+    },
+    { "id": "kieninger", "name": "Ludwig Kieninger", "party": "fw", "role": "councillor", "from": "2020-05", "to": "2026-05",
+      "profile": { "committees": ["bpu"] }
+    },
+    { "id": "sixt", "name": "Josef Sixt", "party": "fw", "role": "councillor", "from": "2026-05", "to": null },
+    { "id": "meier", "name": "Christian Meier", "party": "fw", "role": "councillor", "from": "2026-05", "to": null },
 
-    { "id": "beubl",          "name": "Gerhard Beubl",           "party": "spd",    "role": "councillor", "from": "2020-05", "to": "2025-01" },
-    { "id": "pschorr",        "name": "Martin Pschorr",          "party": "spd",    "role": "councillor", "from": "2020-05", "to": "2026-05" },
-    { "id": "marcus",         "name": "Gunnar Marcus",           "party": "spd",    "role": "councillor", "from": "2025-01", "to": null },
-    { "id": "marschoun",      "name": "Christoph Marschoun",     "party": "spd",    "role": "councillor", "from": "2026-05", "to": null },
+    { "id": "beubl", "name": "Gerhard Beubl", "party": "spd", "role": "councillor", "from": "2020-05", "to": "2025-01" },
+    { "id": "pschorr", "name": "Martin Pschorr", "party": "spd", "role": "councillor", "from": "2020-05", "to": "2026-05" },
+    { "id": "marcus", "name": "Gunnar Marcus", "party": "spd", "role": "councillor", "from": "2025-01", "to": null,
+      "profile": { "committees": ["bpu"] }
+    },
+    { "id": "marschoun", "name": "Christoph Marschoun", "party": "spd", "role": "councillor", "from": "2026-05", "to": null },
 
-    { "id": "wittmann",       "name": "Thomas Wittmann",         "party": "fresh",  "role": "councillor", "from": "2020-05", "to": "2021-01" },
-    { "id": "neumayr",        "name": "Julia Neumayr",           "party": "fresh",  "role": "councillor", "from": "2020-05", "to": "2022-01" },
-    { "id": "gruebl",         "name": "Julian Grübl",           "party": "fresh",  "role": "councillor", "from": "2021-01", "to": "2024-01" },
-    { "id": "gruber",         "name": "Benedict Arya Gruber",    "party": "fresh",  "role": "councillor", "from": "2022-01", "to": "2026-05" },
-    { "id": "hobmaier",       "name": "Michael Hobmaier",        "party": "fresh",  "role": "councillor", "from": "2024-01", "to": "2026-05" },
-    { "id": "dick",           "name": "Johanna Dick",            "party": "fresh",  "role": "councillor", "from": "2026-05", "to": null },
-    { "id": "sabanovic",      "name": "Benjamin Sabanovic",      "party": "fresh",  "role": "councillor", "from": "2026-05", "to": null },
+    { "id": "wittmann", "name": "Thomas Wittmann", "party": "fresh", "role": "councillor", "from": "2020-05", "to": "2021-01" },
+    { "id": "neumayr", "name": "Julia Neumayr", "party": "fresh", "role": "councillor", "from": "2020-05", "to": "2022-01" },
+    { "id": "gruebl", "name": "Julian Grübl", "party": "fresh", "role": "councillor", "from": "2021-01", "to": "2024-01",
+      "profile": { "titles": [{ "title": "Jugendbeauftragter", "from": "2021-01", "to": "2024-01" }] }
+    },
+    { "id": "gruber", "name": "Benedict Arya Gruber", "party": "fresh", "role": "councillor", "from": "2022-01", "to": "2026-05",
+      "profile": {
+        "pronouns": "alle Pronomen",
+        "identity": ["queer", "migrant"],
+        "contact": {
+          "email": "benedict.gruber@fresh.bayern",
+          "instagram": "@decent.bi",
+          "threads": "@decent.bi",
+          "linkedin": "/benedict-gruber",
+          "website": "www.gruber.am"
+        },
+        "titles": [
+          { "title": "Digitalisierungsreferent", "from": "2022-01", "to": "2026-05" }
+        ],
+        "committees": ["bpu", "hvfa", "pa", "ar_klaeranlage"],
+        "motions": [
+          {
+            "title": "MakerSpace",
+            "date": "2025-12-15",
+            "body": "Hauptverwaltungs- und Finanzausschuss",
+            "coSigners": ["hadersdorfer", "weber", "linz_kilian", "marcus", "fincke", "strobl", "kaestl", "hobmaier"]
+          },
+          {
+            "title": "Legal Wall",
+            "date": "2024-12-16",
+            "body": "Stadtrat",
+            "coSigners": ["heinz", "kaestl", "beibl", "hobmaier", "fincke", "strobl", "gruebl"]
+          }
+        ]
+      }
+    },
+    { "id": "hobmaier", "name": "Michael Hobmaier", "party": "fresh", "role": "councillor", "from": "2024-01", "to": "2026-05",
+      "profile": { "committees": ["bpu"] }
+    },
+    { "id": "dick", "name": "Johanna Dick", "party": "fresh", "role": "councillor", "from": "2026-05", "to": null },
+    { "id": "sabanovic", "name": "Benjamin Sabanovic", "party": "fresh", "role": "councillor", "from": "2026-05", "to": null },
 
-    { "id": "welter",         "name": "Gerhard-Michael Welter",  "party": "afd",    "role": "councillor", "from": "2020-05", "to": null },
-    { "id": "ghadieh",        "name": "Dr. Daoud Ghadieh Moutasem", "party": "afd", "role": "councillor", "from": "2026-05", "to": null },
+    { "id": "welter", "name": "Gerhard-Michael Welter", "party": "afd", "role": "councillor", "from": "2020-05", "to": null,
+      "profile": { "committees": ["bpu"] }
+    },
+    { "id": "ghadieh", "name": "Dr. Daoud Ghadieh Moutasem", "party": "afd", "role": "councillor", "from": "2026-05", "to": null },
 
-    { "id": "kaestl",         "name": "Jörg Kästl",             "party": "oedp",   "role": "councillor", "from": "2020-05", "to": "2026-05" },
+    { "id": "kaestl", "name": "Jörg Kästl", "party": "oedp", "role": "councillor", "from": "2020-05", "to": "2026-05",
+      "profile": { "titles": [{ "title": "Finanzreferent", "from": "2020-05", "to": "2026-05" }] }
+    },
 
-    { "id": "fincke",         "name": "Philipp Fincke",          "party": "fdp",    "role": "councillor", "from": "2020-05", "to": "2026-05" },
+    { "id": "fincke", "name": "Philipp Fincke", "party": "fdp", "role": "councillor", "from": "2020-05", "to": "2026-05" },
 
-    { "id": "john",           "name": "Stefan John",             "party": "linke",  "role": "councillor", "from": "2020-05", "to": "2023-01" },
-    { "id": "strobl",         "name": "Alexander Strobl",        "party": "linke",  "role": "councillor", "from": "2023-01", "to": null }
+    { "id": "john", "name": "Stefan John", "party": "linke", "role": "councillor", "from": "2020-05", "to": "2023-01" },
+    { "id": "strobl", "name": "Alexander Strobl", "party": "linke", "role": "councillor", "from": "2023-01", "to": null }
   ],
   "committees": {
     "bpu": {
@@ -71,6 +129,18 @@
       "shortName": "Bauausschuss",
       "members": ["beibl", "hobmaier", "kieninger", "linz_karin", "linz_kilian", "marcus", "reif", "tristl", "welter"],
       "chair": "dollinger"
+    },
+    "hvfa": {
+      "name": "Hauptverwaltungs- und Finanzausschuss",
+      "shortName": "HVFA"
+    },
+    "pa": {
+      "name": "Personalausschuss",
+      "shortName": "Personalausschuss"
+    },
+    "ar_klaeranlage": {
+      "name": "Aufsichtsrat Kläranlage GmbH",
+      "shortName": "AR Kläranlage"
     }
   }
 }

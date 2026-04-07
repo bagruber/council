@@ -1,7 +1,8 @@
-// Main application: data loading, routing, search, tabs, calendar.
+// Main application: data loading, routing, search, tabs, calendar, gremien.
 
 (async function () {
   const main = document.getElementById("main");
+  const gremienMain = document.getElementById("gremien-main");
 
   let topics, sessions, votes, tags, membersData;
   try {
@@ -13,7 +14,7 @@
       fetch("data/members.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     ]);
   } catch (err) {
-    main.innerHTML = `<p style="color:var(--no);padding:40px 0">Daten konnten nicht geladen werden. Bitte mit einem lokalen Webserver öffnen (z.B. <code>npx serve</code>).</p>`;
+    main.innerHTML = `<p style="color:var(--no);padding:40px 0">Daten konnten nicht geladen werden. Bitte mit einem lokalen Webserver \u00f6ffnen (z.B. <code>npx serve</code>).</p>`;
     console.error("Datenfehler:", err);
     return;
   }
@@ -53,13 +54,18 @@
   const tabPanes = {
     themen: document.getElementById("tab-themen"),
     kalender: document.getElementById("tab-kalender"),
+    gremien: document.getElementById("tab-gremien"),
     einstellungen: document.getElementById("tab-einstellungen"),
   };
 
+  let activeTab = "themen";
+
   function switchTab(name) {
+    activeTab = name;
     tabBtns.forEach(b => b.classList.toggle("active", b.dataset.tab === name));
     Object.entries(tabPanes).forEach(([k, el]) => el.classList.toggle("hidden", k !== name));
     if (name === "kalender") renderCalendar();
+    if (name === "gremien") renderGremien();
   }
 
   tabBtns.forEach(btn => {
@@ -78,6 +84,11 @@
   tags.forEach(t => { tagMap[t.id] = t; });
   const memberMap = {};
   members.forEach(m => { memberMap[m.id] = m; });
+  const partyMap = {};
+  parties.forEach(p => { partyMap[p.id] = p; });
+
+  // sort sessions chronologically (newest first for timeline)
+  const sessionsSorted = [...sessions].sort((a, b) => b.date.localeCompare(a.date));
 
   // -- Search & tags --
 
@@ -120,15 +131,18 @@
     sessions.forEach(s => {
       if (s.title.toLowerCase().includes(q)) results.push({ type: "session", item: s });
     });
+    members.forEach(m => {
+      if (m.name.toLowerCase().includes(q)) results.push({ type: "member", item: m });
+    });
 
     if (results.length === 0) { dropdown.classList.add("hidden"); return; }
 
     dropdown.innerHTML = "";
-    results.slice(0, 10).forEach(r => {
+    results.slice(0, 12).forEach(r => {
       const div = document.createElement("div");
       div.className = "dd-item";
-      const typeLabel = r.type === "tag" ? "Tag" : r.type === "topic" ? "Thema" : "Sitzung";
-      div.innerHTML = `<span class="dd-type">${typeLabel}</span><span>${r.item.title || r.item.name}</span>`;
+      const labels = { tag: "Tag", topic: "Thema", session: "Sitzung", member: "Person" };
+      div.innerHTML = `<span class="dd-type">${labels[r.type]}</span><span>${r.item.title || r.item.name}</span>`;
       div.addEventListener("click", () => {
         dropdown.classList.add("hidden");
         searchInput.value = "";
@@ -140,9 +154,12 @@
         } else if (r.type === "topic") {
           switchTab("themen");
           navigate("/topic/" + r.item.id);
-        } else {
+        } else if (r.type === "session") {
           switchTab("themen");
           navigate("/session/" + r.item.id);
+        } else {
+          switchTab("gremien");
+          navigate("/member/" + r.item.id);
         }
       });
       dropdown.appendChild(div);
@@ -162,6 +179,14 @@
 
   function route() {
     const hash = window.location.hash.slice(1) || "/";
+    if (hash.startsWith("/member/")) {
+      switchTab("gremien");
+      renderMemberProfile(hash.split("/member/")[1]);
+      return;
+    }
+    if (hash.startsWith("/topic/") || hash.startsWith("/session/")) {
+      if (activeTab !== "themen") switchTab("themen");
+    }
     main.innerHTML = "";
     if (hash.startsWith("/topic/")) {
       renderTopic(hash.split("/topic/")[1]);
@@ -231,7 +256,7 @@
     const back = document.createElement("a");
     back.className = "back-link";
     back.href = "#/";
-    back.innerHTML = '<span class="material-icons">arrow_back</span> Übersicht';
+    back.innerHTML = '<span class="material-icons">arrow_back</span> \u00dcbersicht';
     main.appendChild(back);
 
     const header = document.createElement("div");
@@ -257,8 +282,14 @@
       const el = document.createElement("div");
       el.className = "tl-entry";
 
+      // determine dot class based on type + vote result
+      let dotClass = entry.type;
+      if (entry.type === "vote" && entry.voteId && voteMap[entry.voteId]) {
+        dotClass = voteMap[entry.voteId].result === "rejected" ? "vote-rejected" : "vote-approved";
+      }
+
       const dot = document.createElement("div");
-      dot.className = "tl-dot " + entry.type;
+      dot.className = "tl-dot " + dotClass;
       const iconName = tlIcons[entry.type];
       if (iconName) dot.innerHTML = `<span class="material-icons">${iconName}</span>`;
       el.appendChild(dot);
@@ -306,7 +337,7 @@
     const back = document.createElement("a");
     back.className = "back-link";
     back.href = "#/";
-    back.innerHTML = '<span class="material-icons">arrow_back</span> Übersicht';
+    back.innerHTML = '<span class="material-icons">arrow_back</span> \u00dcbersicht';
     main.appendChild(back);
 
     const header = document.createElement("div");
@@ -327,7 +358,7 @@
         const sub = memberMap[s.substitute];
         const row = document.createElement("div");
         row.className = "sub-row";
-        row.innerHTML = `<span class="material-icons">swap_horiz</span> ${sub ? sub.name : s.substitute} für ${member ? member.name : s.member}`;
+        row.innerHTML = `<span class="material-icons">swap_horiz</span> ${sub ? sub.name : s.substitute} f\u00fcr ${member ? member.name : s.member}`;
         subs.appendChild(row);
       });
       main.appendChild(subs);
@@ -373,10 +404,13 @@
     const block = document.createElement("div");
     block.className = "vote-block";
 
-    const rejectedTag = vote.result === "rejected" ? '<span class="rejected-tag">Abgelehnt</span>' : "";
+    const isRejected = vote.result === "rejected";
+    const tagClass = isRejected ? "rejected" : "approved";
+    const tagText = isRejected ? "Abgelehnt" : "Zugestimmt";
+    const resultTag = `<span class="vote-result-tag ${tagClass}">${tagText}</span>`;
 
     block.innerHTML = `
-      <h4>${vote.title}${rejectedTag}</h4>
+      <h4>${vote.title}${resultTag}</h4>
       <div class="vote-text">${vote.text}</div>
       <div class="vote-legend">
         <span><span class="legend-dot yes"></span> Ja</span>
@@ -404,7 +438,7 @@
   const calGrid = document.getElementById("cal-grid");
   const calSheet = document.getElementById("cal-sheet");
   const calSheetBody = document.getElementById("cal-sheet-body");
-  const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni",
+  const monthNames = ["Januar", "Februar", "M\u00e4rz", "April", "Mai", "Juni",
     "Juli", "August", "September", "Oktober", "November", "Dezember"];
 
   const sessionsByDate = {};
@@ -427,7 +461,6 @@
       renderCalendar();
     });
 
-    // swipe between months
     let startX = 0;
     const pane = document.getElementById("tab-kalender");
     pane.addEventListener("touchstart", e => { startX = e.touches[0].clientX; }, { passive: true });
@@ -446,24 +479,21 @@
 
     const first = new Date(calYear, calMonth, 1);
     const last = new Date(calYear, calMonth + 1, 0);
-    const startDow = (first.getDay() + 6) % 7; // 0=Monday
+    const startDow = (first.getDay() + 6) % 7;
 
     const today = new Date();
     const todayStr = isoDate(today.getFullYear(), today.getMonth(), today.getDate());
 
-    // previous month padding
     const prevLast = new Date(calYear, calMonth, 0);
     for (let i = startDow - 1; i >= 0; i--) {
       const day = prevLast.getDate() - i;
       addDay(day, isoDate(calYear, calMonth - 1, day), true, todayStr);
     }
 
-    // current month
     for (let d = 1; d <= last.getDate(); d++) {
       addDay(d, isoDate(calYear, calMonth, d), false, todayStr);
     }
 
-    // next month padding
     const cells = calGrid.children.length;
     const pad = (7 - (cells % 7)) % 7;
     for (let d = 1; d <= pad; d++) {
@@ -515,9 +545,12 @@
     events.forEach(s => {
       const row = document.createElement("div");
       row.className = "sheet-event";
+      if (s.type === "bpu") row.classList.add("bpu");
+      const icon = s.type === "bpu" ? "groups" : "account_balance";
       row.innerHTML = `
-        <span class="sheet-event-dot ${s.type || 'stadtrat'}"></span>
-        <div><div class="sheet-event-text">${s.title}</div></div>`;
+        <span class="material-icons">${icon}</span>
+        <div class="sheet-event-text">${s.title}</div>
+        <span class="material-icons">chevron_right</span>`;
       row.addEventListener("click", () => {
         calSheet.classList.add("hidden");
         switchTab("themen");
@@ -529,11 +562,368 @@
     calSheet.classList.remove("hidden");
   }
 
+  // -- Gremien --
+
+  let gremienRendered = false;
+
+  function renderGremien() {
+    const hash = window.location.hash.slice(1) || "/";
+    if (hash.startsWith("/member/")) {
+      renderMemberProfile(hash.split("/member/")[1]);
+      return;
+    }
+    if (gremienRendered) return;
+    gremienRendered = true;
+
+    gremienMain.innerHTML = "";
+
+    const now = new Date();
+    const nowStr = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0");
+
+    // determine active vs former
+    const active = members.filter(m => {
+      if (m.to && m.to <= nowStr) return false;
+      if (m.from > nowStr) return false;
+      return true;
+    });
+    const former = members.filter(m => m.to && m.to <= nowStr);
+
+    const wrap = document.createElement("div");
+    wrap.style.cssText = "max-width:800px;margin:0 auto;padding:32px 24px 64px;";
+
+    // mayors first
+    const activeMayors = active.filter(m => m.role === "mayor");
+    const activeCouncillors = active.filter(m => m.role === "councillor");
+
+    if (activeMayors.length) {
+      const sec = makeSection("B\u00fcrgermeister");
+      activeMayors.forEach(m => sec.appendChild(makeMemberRow(m)));
+      wrap.appendChild(sec);
+    }
+
+    // group councillors by party in seatOrder
+    const byParty = {};
+    activeCouncillors.forEach(m => {
+      if (!byParty[m.party]) byParty[m.party] = [];
+      byParty[m.party].push(m);
+    });
+
+    seatOrder.forEach(pid => {
+      const group = byParty[pid];
+      if (!group || !group.length) return;
+      const party = partyMap[pid];
+      const sec = makeSection(party ? party.name : pid);
+      group.forEach(m => sec.appendChild(makeMemberRow(m)));
+      wrap.appendChild(sec);
+    });
+
+    // former members
+    if (former.length) {
+      const sec = makeSection("Ehemalige");
+      former.sort((a, b) => (b.to || "").localeCompare(a.to || ""));
+      former.forEach(m => sec.appendChild(makeMemberRow(m, true)));
+      wrap.appendChild(sec);
+    }
+
+    gremienMain.appendChild(wrap);
+  }
+
+  function makeSection(title) {
+    const sec = document.createElement("div");
+    sec.className = "gremien-section";
+    const h = document.createElement("p");
+    h.className = "section-heading";
+    h.textContent = title;
+    sec.appendChild(h);
+    return sec;
+  }
+
+  function makeMemberRow(m, showDates) {
+    const row = document.createElement("div");
+    row.className = "member-row";
+    const party = partyMap[m.party];
+    const color = party ? party.color : "#ccc";
+    let meta = "";
+    if (m.title) meta = m.title;
+    else if (m.role === "mayor") meta = "B\u00fcrgermeister";
+    if (showDates) meta = formatPeriod(m.from, m.to);
+
+    row.innerHTML = `
+      <span class="member-dot" style="background:${color}"></span>
+      <span class="member-row-name">${m.name}</span>
+      <span class="member-row-meta">${meta}</span>
+      <span class="material-icons">chevron_right</span>`;
+    row.addEventListener("click", () => navigate("/member/" + m.id));
+    return row;
+  }
+
+  // -- Member profile --
+
+  function renderMemberProfile(id) {
+    const m = memberMap[id];
+    if (!m) { gremienMain.innerHTML = "<p style='padding:40px 24px'>Person nicht gefunden.</p>"; return; }
+
+    gremienMain.innerHTML = "";
+    const wrap = document.createElement("div");
+    wrap.style.cssText = "max-width:800px;margin:0 auto;padding:32px 24px 64px;";
+
+    // back link
+    const back = document.createElement("a");
+    back.className = "back-link";
+    back.href = "#/";
+    back.innerHTML = '<span class="material-icons">arrow_back</span> Gremien';
+    back.addEventListener("click", e => {
+      e.preventDefault();
+      gremienRendered = false;
+      window.location.hash = "/";
+      renderGremien();
+    });
+    wrap.appendChild(back);
+
+    const party = partyMap[m.party];
+    const profile = m.profile || {};
+
+    // header
+    const header = document.createElement("div");
+    header.className = "profile-header";
+    const initial = m.name.charAt(0);
+    header.innerHTML = `
+      <div class="profile-avatar" style="background:${party ? party.color : '#999'}">${initial}</div>
+      <div class="profile-info">
+        <h1>${m.name}</h1>
+        <div class="profile-party">${party ? party.name : ""} ${m.title ? "\u2013 " + m.title : ""}</div>
+        ${profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
+      </div>`;
+    wrap.appendChild(header);
+
+    // identity badges
+    if (profile.identity && profile.identity.length) {
+      const badges = document.createElement("div");
+      badges.className = "identity-badges";
+      badges.style.marginTop = "-16px";
+      badges.style.marginBottom = "20px";
+      const labels = {
+        queer: "LGBTQ+",
+        migrant: "Migrantisch",
+        flinta: "FLINTA",
+        disability: "Barrierefrei",
+      };
+      const icons = {
+        queer: "favorite",
+        migrant: "public",
+        flinta: "female",
+        disability: "accessible",
+      };
+      profile.identity.forEach(id => {
+        const b = document.createElement("span");
+        b.className = "id-badge " + id;
+        const iconName = icons[id];
+        b.innerHTML = (iconName ? `<span class="material-icons">${iconName}</span> ` : "") + (labels[id] || id);
+        badges.appendChild(b);
+      });
+      wrap.appendChild(badges);
+    }
+
+    // contact
+    if (profile.contact) {
+      const c = profile.contact;
+      const links = document.createElement("div");
+      links.className = "profile-contact";
+      if (c.email) links.appendChild(makeContactLink("email", "mailto:" + c.email, c.email));
+      if (c.website) links.appendChild(makeContactLink("language", "https://" + c.website, c.website));
+      if (c.instagram) links.appendChild(makeContactLink("photo_camera", "https://instagram.com/" + c.instagram.replace("@", ""), c.instagram));
+      if (c.threads) links.appendChild(makeContactLink("forum", "https://threads.net/" + c.threads.replace("@", ""), "Threads"));
+      if (c.linkedin) links.appendChild(makeContactLink("work", "https://linkedin.com/in" + c.linkedin, "LinkedIn"));
+      wrap.appendChild(links);
+    }
+
+    // roles & committees
+    const rolesSection = document.createElement("div");
+    rolesSection.className = "profile-section";
+    rolesSection.innerHTML = "<h3>Mandate & Funktionen</h3>";
+
+    // main role
+    const roleLabel = m.role === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
+    rolesSection.appendChild(makeRoleRow("account_balance", roleLabel, m.from, m.to));
+
+    if (m.title) {
+      rolesSection.appendChild(makeRoleRow("star", m.title, m.from, m.to));
+    }
+
+    // additional titles from profile
+    if (profile.titles) {
+      profile.titles.forEach(t => {
+        rolesSection.appendChild(makeRoleRow("badge", t.title, t.from, t.to));
+      });
+    }
+
+    // committees
+    if (profile.committees) {
+      profile.committees.forEach(cid => {
+        const comm = committees[cid];
+        const name = comm ? comm.name : cid;
+        rolesSection.appendChild(makeRoleRow("groups", name, m.from, m.to));
+      });
+    }
+
+    wrap.appendChild(rolesSection);
+
+    // motions
+    if (profile.motions && profile.motions.length) {
+      const motionSec = document.createElement("div");
+      motionSec.className = "profile-section";
+      motionSec.innerHTML = "<h3>Antr\u00e4ge</h3>";
+      profile.motions.forEach(mot => {
+        const el = document.createElement("div");
+        el.className = "mtl-motion";
+        const coNames = mot.coSigners
+          .map(sid => memberMap[sid] ? memberMap[sid].name : sid)
+          .join(", ");
+        el.innerHTML = `
+          <span class="material-icons">edit_note</span>
+          <div>
+            <div class="mtl-motion-title">${mot.title}</div>
+            <div class="mtl-motion-meta">${mot.body} \u2013 ${formatDate(mot.date)}</div>
+            ${coNames ? `<div class="mtl-motion-meta">gemeinsam mit ${coNames}</div>` : ""}
+          </div>`;
+        motionSec.appendChild(el);
+      });
+      wrap.appendChild(motionSec);
+    }
+
+    // personal timeline
+    const tlSection = document.createElement("div");
+    tlSection.className = "profile-section";
+    tlSection.innerHTML = "<h3>Abstimmungsverhalten</h3>";
+    wrap.appendChild(tlSection);
+
+    const tlWrap = document.createElement("div");
+    renderMemberTimeline(tlWrap, m);
+    wrap.appendChild(tlWrap);
+
+    gremienMain.appendChild(wrap);
+  }
+
+  function makeContactLink(icon, href, label) {
+    const a = document.createElement("a");
+    a.className = "contact-link";
+    a.href = href;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.innerHTML = `<span class="material-icons">${icon}</span> ${label}`;
+    return a;
+  }
+
+  function makeRoleRow(icon, text, from, to) {
+    const row = document.createElement("div");
+    row.className = "role-row";
+    row.innerHTML = `
+      <span class="material-icons">${icon}</span>
+      <span>${text}</span>
+      <span class="role-dates">${formatPeriod(from, to)}</span>`;
+    return row;
+  }
+
+  // -- Member timeline --
+
+  function renderMemberTimeline(container, member) {
+    // find sessions during this member's tenure
+    const from = member.from;
+    const to = member.to || "9999-12";
+
+    const relevant = sessionsSorted.filter(s => {
+      const ym = s.date.substring(0, 7);
+      return ym >= from && ym <= to;
+    });
+
+    if (!relevant.length) {
+      container.innerHTML = '<p style="color:var(--text-muted);font-size:0.88rem">Keine Sitzungsdaten vorhanden.</p>';
+      return;
+    }
+
+    let currentMonth = "";
+
+    relevant.forEach(session => {
+      const d = new Date(session.date + "T00:00:00");
+      const monthKey = monthNames[d.getMonth()] + " " + d.getFullYear();
+
+      if (monthKey !== currentMonth) {
+        currentMonth = monthKey;
+        const header = document.createElement("div");
+        header.className = "mtl-month-header";
+        header.textContent = monthKey;
+        container.appendChild(header);
+      }
+
+      // find votes in this session
+      const votedItems = session.agenda.filter(a => a.voteId && voteMap[a.voteId]);
+      if (!votedItems.length) return;
+
+      const sessionEl = document.createElement("div");
+      sessionEl.className = "mtl-session";
+
+      const icon = session.type === "bpu" ? "groups" : "account_balance";
+      const sHeader = document.createElement("div");
+      sHeader.className = "mtl-session-header";
+      sHeader.innerHTML = `<span class="material-icons">${icon}</span> <a href="#/session/${session.id}">${session.title}</a>`;
+      sessionEl.appendChild(sHeader);
+
+      votedItems.forEach(item => {
+        const vote = voteMap[item.voteId];
+        const voteStatus = getMemberVoteStatus(member.id, vote);
+        const chipClass = { ja: "ja", nein: "nein", abwesend: "abwesend", "?": "unknown" }[voteStatus];
+        const chipLabel = { ja: "Ja", nein: "Nein", abwesend: "\u2013", "?": "?" }[voteStatus];
+
+        const voteRow = document.createElement("div");
+        voteRow.className = "mtl-vote";
+        voteRow.innerHTML = `
+          <span class="mtl-vote-chip ${chipClass}">${chipLabel}</span>
+          <span class="mtl-vote-title">${vote.title}</span>`;
+
+        // expandable detail
+        const detail = document.createElement("div");
+        detail.className = "mtl-vote-detail hidden";
+        let detailHTML = `<p>${vote.text}</p>`;
+        if (vote.type === "anonymous") {
+          detailHTML += `<p style="margin-top:4px">Abstimmung: ${vote.results.yes} Ja, ${vote.results.no} Nein, ${vote.results.absent} Abwesend</p>`;
+        }
+        if (item.topicId && topicMap[item.topicId]) {
+          detailHTML += `<a href="#/topic/${item.topicId}"><span class="material-icons" style="font-size:14px">open_in_new</span> ${topicMap[item.topicId].title}</a>`;
+        }
+        detail.innerHTML = detailHTML;
+
+        voteRow.querySelector(".mtl-vote-title").addEventListener("click", () => {
+          detail.classList.toggle("hidden");
+        });
+
+        sessionEl.appendChild(voteRow);
+        sessionEl.appendChild(detail);
+      });
+
+      container.appendChild(sessionEl);
+    });
+  }
+
+  function getMemberVoteStatus(memberId, vote) {
+    if (vote.type === "named") {
+      if (vote.results.yes.includes(memberId)) return "ja";
+      if (vote.results.no.includes(memberId)) return "nein";
+      if (vote.results.absent.includes(memberId)) return "abwesend";
+    }
+    return "?";
+  }
+
   // -- Helpers --
 
   function formatDate(iso) {
     const d = new Date(iso + "T00:00:00");
     return d.toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" });
+  }
+
+  function formatPeriod(from, to) {
+    const f = from ? from.substring(0, 4) : "";
+    const t = to ? to.substring(0, 4) : "heute";
+    return f + "\u2013" + t;
   }
 
   route();
