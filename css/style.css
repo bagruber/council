@@ -960,6 +960,11 @@ main {
 .body-card-title {
   font-size: 0.95rem;
   font-weight: 600;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  lang: de;
 }
 
 .body-card-count {
@@ -1093,18 +1098,38 @@ main {
   margin-bottom: 24px;
 }
 
+.profile-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 130px;
+  height: 130px;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.avatar-brush {
+  position: absolute;
+  width: 200px;
+  height: 140px;
+  top: -10px;
+  left: -30px;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .profile-avatar {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   font-weight: 700;
   flex-shrink: 0;
   position: relative;
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -1113,13 +1138,6 @@ main {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  position: relative;
-  z-index: 1;
-}
-
-.profile-avatar.has-photo {
-  border: 3px solid;
-  background: transparent;
 }
 
 .profile-info { flex: 1; }
@@ -1193,11 +1211,11 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 8px;
   color: #fff;
   transition: opacity 0.15s, transform 0.1s;
 }
