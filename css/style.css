@@ -1219,7 +1219,7 @@ main {
 }
 
 .profile-nee {
-  font-size: 0.45em;
+  font-size: 0.48em;
   font-weight: 400;
   color: var(--text-muted);
   text-transform: none;
@@ -1227,7 +1227,7 @@ main {
 }
 
 .profile-pronouns {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   font-style: italic;
   margin-top: 1px;
@@ -1236,7 +1236,7 @@ main {
 
 .profile-party {
   text-align: left;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 4px;
   display: flex;
@@ -1249,8 +1249,7 @@ main {
   height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
-  stroke-color: var(--bg);
-  stroke-width: 1px;
+  border: 2px solid var(--bg);
 }
 
 .profile-meta {
@@ -1279,10 +1278,22 @@ main {
 }
 
 .id-badge.queer {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 6'%3E%3Crect width='6' height='1' y='0' fill='%23E6001E'/%3E%3Crect width='6' height='1' y='1' fill='%23FFAA00'/%3E%3Crect width='6' height='1' y='2' fill='%23FFEB00'/%3E%3Crect width='6' height='1' y='3' fill='%2378BE1E'/%3E%3Crect width='6' height='1' y='4' fill='%23008CE6'/%3E%3Crect width='6' height='1' y='5' fill='%23621D80'/%3E%3C/svg%3E");
-  background-size: cover;
+  position: relative;
   color: #fff;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.id-badge.queer::before {
+  content: "";
+  position: absolute;
+  inset: -50%; /* größer machen, damit keine Ecken sichtbar sind */
+  
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 6'%3E%3Crect width='6' height='1' y='0' fill='%23E6001E'/%3E%3Crect width='6' height='1' y='1' fill='%23FFAA00'/%3E%3Crect width='6' height='1' y='2' fill='%23FFEB00'/%3E%3Crect width='6' height='1' y='3' fill='%2378BE1E'/%3E%3Crect width='6' height='1' y='4' fill='%23008CE6'/%3E%3Crect width='6' height='1' y='5' fill='%23621D80'/%3E%3C/svg%3E");
+  background-size: cover;
+
+  transform: rotate(30deg);
+  z-index: -1;
 }
 
 .id-badge.migrant {
