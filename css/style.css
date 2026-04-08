@@ -1203,7 +1203,7 @@ main {
 
 .profile-given-name {
   font-size: 0.88rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1;
   margin-bottom: 1px;
   text-align: right;
@@ -1219,11 +1219,14 @@ main {
 }
 
 .profile-nee {
-  font-size: 0.48em;
-  font-weight: 400;
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 500;
   color: var(--text-muted);
   text-transform: none;
   letter-spacing: 0;
+  text-align: right;
+  margin-top: 1px;
 }
 
 .profile-pronouns {
@@ -1250,7 +1253,7 @@ main {
   height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
-  box-shadow: 0 0 0 1.0px var(--surface), 0 0 0 1.5px var(--border);
+  box-shadow: 0 0 0 0.5px rgba(0,0,0,0.1);
 }
 
 .profile-meta {
@@ -1279,22 +1282,11 @@ main {
 }
 
 .id-badge.queer {
-  position: relative;
   color: #fff;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  overflow: hidden;
-}
-
-.id-badge.queer::before {
-  content: "";
-  position: absolute;
-  inset: -50%; /* größer machen, damit keine Ecken sichtbar sind */
-  
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 6'%3E%3Crect width='6' height='1' y='0' fill='%23E6001E'/%3E%3Crect width='6' height='1' y='1' fill='%23FFAA00'/%3E%3Crect width='6' height='1' y='2' fill='%23FFEB00'/%3E%3Crect width='6' height='1' y='3' fill='%2378BE1E'/%3E%3Crect width='6' height='1' y='4' fill='%23008CE6'/%3E%3Crect width='6' height='1' y='5' fill='%23621D80'/%3E%3C/svg%3E");
-  background-size: cover;
-
-  transform: rotate(30deg);
-  z-index: -1;
+  background: linear-gradient(180deg,
+    #E6001E 0% 16.66%, #FFAA00 16.66% 33.33%, #FFEB00 33.33% 50%,
+    #78BE1E 50% 66.66%, #008CE6 66.66% 83.33%, #621D80 83.33% 100%);
 }
 
 .id-badge.migrant {

@@ -943,16 +943,19 @@
 
   // -- Member profile --
 
-  function nameColorFromParty(hex) {
-    if (!hex) return "#555";
+  function nameColorFromParty(hex, darker) {
+    if (!hex) return darker ? "#333" : "#555";
     const r = parseInt(hex.slice(1, 3), 16);
     const g = parseInt(hex.slice(3, 5), 16);
     const b = parseInt(hex.slice(5, 7), 16);
     const lum = 0.299 * r + 0.587 * g + 0.114 * b;
     if (lum < 30) {
-      return "#" + [r, g, b].map(c => Math.min(255, c + 120).toString(16).padStart(2, "0")).join("");
+      const boost = darker ? 80 : 120;
+      return "#" + [r, g, b].map(c => Math.min(255, c + boost).toString(16).padStart(2, "0")).join("");
     }
-    const f = lum > 180 ? 0.35 : lum > 120 ? 0.5 : 0.65;
+    const f = darker
+      ? (lum > 180 ? 0.22 : lum > 120 ? 0.35 : 0.45)
+      : (lum > 180 ? 0.45 : lum > 120 ? 0.6 : 0.75);
     return "#" + [r, g, b].map(c => Math.round(c * f).toString(16).padStart(2, "0")).join("");
   }
 
@@ -988,10 +991,10 @@
     const header = document.createElement("div");
     header.className = "profile-header";
     const initial = (m.firstName || m.name).charAt(0);
-    const neeSuffix = m.nee ? ` <span class="profile-nee">(geb. ${m.nee})</span>` : "";
     const photoPath = "img/members/" + m.id + ".png";
     const avatarColor = party ? party.color : '#999';
-    const nameColor = nameColorFromParty(avatarColor);
+    const nameColor = nameColorFromParty(avatarColor, false);
+    const surnameColor = nameColorFromParty(avatarColor, true);
 
     const brushFiles = ["A1","A2","A3","A4","A6","A7","A8","A9","A10"];
     const memberIdx = members.indexOf(m);
@@ -1006,7 +1009,8 @@
       <div class="profile-info">
         <div class="profile-name-block"><div class="profile-name-inner">
           <div class="profile-given-name" style="color:${nameColor}">${m.firstName || ""}</div>
-          <div class="profile-surname" style="color:${nameColor}">${m.lastName || m.name}${neeSuffix}</div>
+          <div class="profile-surname" style="color:${surnameColor}">${m.lastName || m.name}</div>
+          ${m.nee ? `<div class="profile-nee" style="color:${nameColor}">(geb. ${m.nee})</div>` : ""}
           ${profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
           <div class="profile-party"><span class="profile-party-dot" style="background:${avatarColor}"></span>${party ? party.name : ""}${m.title ? " \u2013 " + m.title : ""}</div>
         </div></div>
