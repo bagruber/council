@@ -1,5 +1,7 @@
 // Main application: data loading, routing, search, tabs, calendar, gremien.
 
+const SHOW_PRONOUNS = true;
+
 (async function () {
   const main = document.getElementById("main");
   const gremienMain = document.getElementById("gremien-main");
@@ -1011,7 +1013,7 @@
           <div class="profile-given-name" style="color:${nameColor}">${m.firstName || ""}</div>
           <div class="profile-surname" style="color:${surnameColor}">${m.lastName || m.name}</div>
           ${m.nee ? `<div class="profile-nee" style="color:${nameColor}">(geb. ${m.nee})</div>` : ""}
-          ${profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
+          ${SHOW_PRONOUNS && profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
           <div class="profile-party"><span class="profile-party-dot" style="background:${avatarColor}"></span>${party ? party.name : ""}${m.title ? " \u2013 " + m.title : ""}</div>
         </div></div>
         <div class="profile-meta" id="profile-meta"></div>
