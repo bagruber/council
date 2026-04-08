@@ -258,5 +258,11 @@
       ],
       "memberPeriod": { "from": "2020-05", "to": "2026-05" }
     }
+  ],
+  "media": [
+    { "id": "merkur", "name": "Münchner Merkur", "color": "#008bd0", "logo": "img/logos/merkur.svg" },
+    { "id": "sz", "name": "Süddeutsche Zeitung", "color": "#29293a", "logo": "img/logos/sz.svg" },
+    { "id": "br", "name": "Bayerischer Rundfunk", "color": "#0082c6", "logo": "img/logos/br.svg" },
+    { "id": "mz", "name": "Moosburger Zeitung", "color": "#e20c15", "logo": "img/logos/moosburger.svg" }
   ]
 }

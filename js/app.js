@@ -24,6 +24,9 @@
   const parties = membersData.parties;
   const bodies = membersData.bodies || [];
   const seatOrder = membersData.seatOrder || parties.map(p => p.id);
+  const mediaSources = membersData.media || [];
+  const mediaMap = {};
+  mediaSources.forEach(m => { mediaMap[m.id] = m; });
 
   // -- Settings --
 
@@ -307,6 +310,26 @@
     milestone: "flag",
   };
 
+  function renderPressLinks(pressArr) {
+    if (!pressArr || !pressArr.length) return null;
+    const wrap = document.createElement("div");
+    wrap.className = "press-links";
+    pressArr.forEach(p => {
+      const src = mediaMap[p.media];
+      if (!src) return;
+      const a = document.createElement("a");
+      a.className = "press-link";
+      a.href = p.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.title = p.title || src.name;
+      a.style.background = src.color;
+      a.innerHTML = `<img src="${src.logo}" alt="${src.name}">`;
+      wrap.appendChild(a);
+    });
+    return wrap;
+  }
+
   function renderTopic(id) {
     const topic = topicMap[id];
     if (!topic) { main.innerHTML = "<p>Thema nicht gefunden.</p>"; return; }
@@ -386,6 +409,9 @@
         link.innerHTML = '<span class="material-icons" style="font-size:14px;vertical-align:-2px">open_in_new</span> ' + sessionMap[entry.sessionId].title;
         el.appendChild(link);
       }
+
+      const pressEl = renderPressLinks(entry.press);
+      if (pressEl) el.appendChild(pressEl);
 
       timeline.appendChild(el);
     });
@@ -979,11 +1005,38 @@
         <div class="profile-name-block"><div class="profile-name-inner">
           <div class="profile-given-name" style="color:${nameColor}">${m.firstName || ""}</div>
           <div class="profile-surname" style="color:${nameColor}">${m.lastName || m.name}${neeSuffix}</div>
+          ${profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
           <div class="profile-party">${party ? party.name : ""}${m.title ? " \u2013 " + m.title : ""}</div>
         </div></div>
-        ${profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
+        <div class="profile-meta" id="profile-meta"></div>
       </div>`;
     wrap.appendChild(header);
+
+    const metaEl = header.querySelector("#profile-meta");
+    if (profile.identity && profile.identity.length) {
+      const badges = document.createElement("div");
+      badges.className = "identity-badges";
+      const labels = { queer: "LGBTQ+", migrant: "Migrantisch", flinta: "FLINTA", disability: "Barrierefrei" };
+      const badgeIcons = { queer: "favorite", migrant: "public", flinta: "female", disability: "accessible" };
+      profile.identity.forEach(id => {
+        const b = document.createElement("span");
+        b.className = "id-badge " + id;
+        b.innerHTML = (badgeIcons[id] ? `<span class="material-icons">${badgeIcons[id]}</span> ` : "") + (labels[id] || id);
+        badges.appendChild(b);
+      });
+      metaEl.appendChild(badges);
+    }
+    if (profile.contact) {
+      const c = profile.contact;
+      const links = document.createElement("div");
+      links.className = "profile-contact";
+      if (c.email) links.appendChild(makeContactLink("email", "mailto:" + c.email));
+      if (c.website) links.appendChild(makeContactLink("website", "https://" + c.website));
+      if (c.instagram) links.appendChild(makeContactLink("instagram", "https://instagram.com/" + c.instagram.replace("@", "")));
+      if (c.threads) links.appendChild(makeContactLink("threads", "https://threads.net/" + c.threads.replace("@", "")));
+      if (c.linkedin) links.appendChild(makeContactLink("linkedin", "https://linkedin.com/in" + c.linkedin));
+      metaEl.appendChild(links);
+    }
 
     fetch("img/brushstroke" + brushFile + ".svg")
       .then(r => r.text())
@@ -1015,36 +1068,6 @@
     testImg.src = photoPath;
 
     header.addEventListener("contextmenu", e => e.preventDefault());
-
-    // identity badges
-    if (profile.identity && profile.identity.length) {
-      const badges = document.createElement("div");
-      badges.className = "identity-badges";
-      badges.style.marginTop = "-16px";
-      badges.style.marginBottom = "20px";
-      const labels = { queer: "LGBTQ+", migrant: "Migrantisch", flinta: "FLINTA", disability: "Barrierefrei" };
-      const icons = { queer: "favorite", migrant: "public", flinta: "female", disability: "accessible" };
-      profile.identity.forEach(id => {
-        const b = document.createElement("span");
-        b.className = "id-badge " + id;
-        b.innerHTML = (icons[id] ? `<span class="material-icons">${icons[id]}</span> ` : "") + (labels[id] || id);
-        badges.appendChild(b);
-      });
-      wrap.appendChild(badges);
-    }
-
-    // contact
-    if (profile.contact) {
-      const c = profile.contact;
-      const links = document.createElement("div");
-      links.className = "profile-contact";
-      if (c.email) links.appendChild(makeContactLink("email", "mailto:" + c.email));
-      if (c.website) links.appendChild(makeContactLink("website", "https://" + c.website));
-      if (c.instagram) links.appendChild(makeContactLink("instagram", "https://instagram.com/" + c.instagram.replace("@", "")));
-      if (c.threads) links.appendChild(makeContactLink("threads", "https://threads.net/" + c.threads.replace("@", "")));
-      if (c.linkedin) links.appendChild(makeContactLink("linkedin", "https://linkedin.com/in" + c.linkedin));
-      wrap.appendChild(links);
-    }
 
     // roles & committees
     const rolesSection = document.createElement("div");

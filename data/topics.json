@@ -88,7 +88,11 @@
         "date": "2025-09-01",
         "type": "proposal",
         "title": "Probleme mit Falschparkern",
-        "text": "Seit der Fertigstellung h\u00e4ufen sich Beschwerden \u00fcber Falschparker, besonders in der Platzmitte. Die PI Moosburg empfiehlt die Ausweisung als verkehrsberuhigten Bereich."
+        "text": "Seit der Fertigstellung h\u00e4ufen sich Beschwerden \u00fcber Falschparker, besonders in der Platzmitte. Die PI Moosburg empfiehlt die Ausweisung als verkehrsberuhigten Bereich.",
+        "press": [
+          { "media": "br", "url": "https://www.ardmediathek.de/video/quer-mit-christoph-suess/legales-falschparken-moosburger-stadtplatz-wird-zugestellt/br/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNVdPMDIyMjY2QTAvc2VjdGlvbi9iZTA1ZGJmNC04Y2QyLTQyZDAtODg4Yi03NDZmYzg0ZDAyMDU", "title": "quer: Legales Falschparken" },
+          { "media": "sz", "url": "https://www.sueddeutsche.de/muenchen/freising/moosburg-falschparken-platz-plan-li.3390834", "title": "SZ: Falschparken am Plan" }
+        ]
       },
       {
         "date": "2025-12-15",
@@ -109,7 +113,10 @@
         "title": "Tempor\u00e4re Parkfl\u00e4chen pr\u00fcfen",
         "text": "Der Stadtrat beschlie\u00dft, zus\u00e4tzliche tempor\u00e4re Parkfl\u00e4chen f\u00fcr die Wintermonate mit Planern und St\u00e4dtebauf\u00f6rderung zu pr\u00fcfen.",
         "sessionId": "s1",
-        "voteId": "v6"
+        "voteId": "v6",
+        "press": [
+          { "media": "merkur", "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/parken-am-plan-bald-verstaerkt-im-winter-stadt-moosburg-verzichtet-vorerst-auf-strafzettel-94140705.html", "title": "Merkur: Stadt verzichtet vorerst auf Strafzettel" }
+        ]
       },
       {
         "date": "2026-01-12",
@@ -123,7 +130,10 @@
         "date": "2026-02-23",
         "type": "milestone",
         "title": "Markierungen werden erneuert",
-        "text": "Laut Erg\u00e4nzung bei Genehmigung der Niederschrift werden die Fahrbahnmarkierungen zeitnah erneuert. Erst danach sollen Verwarnungen ausgestellt werden."
+        "text": "Laut Erg\u00e4nzung bei Genehmigung der Niederschrift werden die Fahrbahnmarkierungen zeitnah erneuert. Erst danach sollen Verwarnungen ausgestellt werden.",
+        "press": [
+          { "media": "merkur", "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/nach-posse-um-moosburger-plan-falschparker-muessen-ab-montag-blechen-94190182.html", "title": "Merkur: Falschparker müssen ab Montag blechen" }
+        ]
       }
     ]
   },
