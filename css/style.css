@@ -1210,7 +1210,7 @@ main {
 
 .profile-surname {
   font-family: 'Noto Serif', Georgia, serif;
-  font-size: 1.55rem;
+  font-size: 2.4rem;
   font-weight: 800;
   line-height: 1;
   text-transform: uppercase;
@@ -1358,7 +1358,7 @@ main {
     justify-content: flex-start;
   }
   .profile-surname {
-    font-size: 1.4rem;
+    font-size: 2.4rem;
   }
 }
 
