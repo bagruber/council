@@ -1035,6 +1035,7 @@
       if (c.instagram) links.appendChild(makeContactLink("instagram", "https://instagram.com/" + c.instagram.replace("@", "")));
       if (c.threads) links.appendChild(makeContactLink("threads", "https://threads.net/" + c.threads.replace("@", "")));
       if (c.linkedin) links.appendChild(makeContactLink("linkedin", "https://linkedin.com/in" + c.linkedin));
+      if (c.facebook) links.appendChild(makeContactLink("facebook", "https://facebook.com" + c.facebook));
       metaEl.appendChild(links);
     }
 

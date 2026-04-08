@@ -29,7 +29,7 @@
         "committees": ["bpu"],
         "contact": {
           "email": "karin.linz@csu-moosburg.de",
-          "facebook": "https://www.facebook.com/karin.linz"
+          "facebook": "/karin.linz"
         }
       }
     },
@@ -39,7 +39,7 @@
         "contact": {
           "email": "kontakt@rudolf-heinz.de",
           "website": "www.rudolf-heinz.de",
-          "facebook": "https://www.facebook.com/rudolf.heinz.33"
+          "facebook": "/rudolf.heinz.33"
         }
       }
     },
@@ -49,7 +49,7 @@
         "contact": {
           "email": "c.g.hadersdorfer@gmx.de",
           "website": "www.georg-hadersdorfer.de",
-          "facebook": "https://www.facebook.com/georg.hadersdorfer.7"
+          "facebook": "/georg.hadersdorfer.7"
         }
       }
     },
@@ -66,7 +66,7 @@
         "titles": [{ "title": "Partnerschaftsreferent", "from": "2020-05", "to": "2026-05" }],
         "contact": {
           "email": "email@erwin-weber.net",
-          "facebook": "https://www.facebook.com/erwin.weber.735"
+          "facebook": "/erwin.weber.735"
         }
       }
     },
@@ -82,7 +82,7 @@
         "committees": ["bpu"],
         "contact": {
           "email": "verena.beibl@gruene-moosburg.de",
-          "facebook": "https://www.facebook.com/verena.kuch.1",
+          "facebook": "/verena.kuch.1",
           "instagram": "@verena.kuch"
         }
       }
@@ -92,7 +92,7 @@
         "contact": {
           "email": "michael.stanglmaier@gruene-moosburg.de",
           "website": "http://www.michael-stanglmaier.eu/",
-          "facebook": "https://www.facebook.com/michael.stanglmaier.5",
+          "facebook": "/michael.stanglmaier.5",
           "instagram": "@michaelstanglmaier"
         }
       }
@@ -103,7 +103,7 @@
       "profile": {
         "contact": {
           "email": "nathalie.vonpressentin@gruene-moosburg.de",
-          "facebook": "https://www.facebook.com/nathalie.vonpressentin"
+          "facebook": "/nathalie.vonpressentin"
         }
       }
     },
@@ -112,7 +112,7 @@
         "contact": {
           "email": "johannes.becher@gruene-moosburg.de",
           "website": "https://johannes-becher.de/",
-          "facebook": "https://www.facebook.com/jojobecher",
+          "facebook": "/jojobecher",
           "instagram": "@jojobecher"
         }
       }
@@ -129,7 +129,7 @@
         "committees": ["bpu"],
         "contact": {
           "email": "kilian.linz@gruene-moosburg.de",
-          "facebook": "https://www.facebook.com/kili.linz"
+          "facebook": "/kili.linz"
         }
       }
     },
@@ -188,7 +188,7 @@
       "profile": {
         "contact": {
           "instagram": "@fresher.tom",
-          "linkedin": "https://de.linkedin.com/in/thomas-wittmann-6785283b4"
+          "linkedin": "/thomas-wittmann-6785283b4"
         }
       }
     },
@@ -235,7 +235,7 @@
       "profile": {
         "committees": ["bpu"],
         "contact": {
-          "linkedin": "https://de.linkedin.com/in/michael-hobmaier-9895a9226"
+          "linkedin": "/michael-hobmaier-9895a9226"
         }
       }
     },
@@ -269,8 +269,8 @@
       "profile": {
         "contact": {
           "email": "philipp.fincke@outlook.de",
-          "linkedin": "https://de.linkedin.com/in/philipp-fincke-347579143",
-          "facebook": "https://www.facebook.com/philipp.fincke",
+          "linkedin": "/philipp-fincke-347579143",
+          "facebook": "/philipp.fincke",
           "instagram": "@philippfincke_stadtrat"
         }
       }
