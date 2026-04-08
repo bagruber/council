@@ -1144,29 +1144,29 @@ main {
 .profile-avatar-wrap {
   position: relative;
   flex-shrink: 0;
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
 }
 
 .avatar-brush {
   position: absolute;
-  width: 200px;
-  height: 200px;
-  top: -35px;
-  left: 10px;
+  width: 280px;
+  height: 280px;
+  top: -45px;
+  left: 15px;
   z-index: 0;
   pointer-events: none;
 }
 
 .profile-avatar {
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 3.2rem;
   font-weight: 700;
   flex-shrink: 0;
   position: relative;
@@ -1242,6 +1242,7 @@ main {
   display: flex;
   align-items: center;
   gap: 5px;
+  mix-blend-mode: multiply;
 }
 
 .profile-party-dot {
@@ -1249,7 +1250,7 @@ main {
   height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
-  border: 2px solid var(--border);
+  box-shadow: 0 0 0 1.5px var(--surface), 0 0 0 2.5px var(--border);
 }
 
 .profile-meta {
