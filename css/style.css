@@ -1146,6 +1146,7 @@ main {
   flex-shrink: 0;
   width: 200px;
   height: 200px;
+  mix-blend-mode: multiply;
 }
 
 .avatar-brush {
@@ -1379,7 +1380,7 @@ main {
     padding-left: 70px;
   }
   .profile-name-block {
-    text-align: left;
+    text-align: center;
   }
   .profile-name-inner {
     text-align: right;
