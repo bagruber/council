@@ -1011,10 +1011,11 @@ const SHOW_PRONOUNS = true;
       <div class="profile-info">
         <div class="profile-name-block"><div class="profile-name-inner">
           <div class="profile-given-name" style="color:${nameColor}">${m.firstName || ""}</div>
-          <div class="profile-surname" style="color:${surnameColor}">${m.lastName || m.name}</div>
+          <div class="profile-surname${(m.lastName || m.name).length > 10 ? ' long-name' : ''}" style="color:${surnameColor}">${m.lastName || m.name}</div>
           ${m.nee ? `<div class="profile-nee" style="color:${nameColor}">(geb. ${m.nee})</div>` : ""}
           ${SHOW_PRONOUNS && profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
-          <div class="profile-party"><span class="profile-party-dot" style="background:${avatarColor}"></span>${party ? party.name : ""}${m.title ? " \u2013 " + m.title : ""}</div>
+          <div class="profile-party"><span class="profile-party-dot" style="background:${avatarColor}"></span>${party ? party.name : ""}</div>
+          ${m.title ? `<div class="profile-title">${m.title}</div>` : ""}
         </div></div>
         <div class="profile-meta" id="profile-meta"></div>
       </div>`;

@@ -24,7 +24,10 @@
         "title": "Zur\u00fcckstellung im Stadtrat",
         "text": "Der Stadtrat vertagt die Entscheidung. Eine nochmalige Besprechung mit SGT, SGM und Jugendhaus soll eine einvernehmliche L\u00f6sung herbeif\u00fchren.",
         "sessionId": "s1",
-        "voteId": "v2"
+        "voteId": "v2",
+        "press": [
+          { "media": "merkur", "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/sgt-istanbul-moosburg-drei-vorschlaege-fuer-neues-vereinsheim-clubvertreter-reagieren-ueberrascht-94124799.html", "title": "Merkur: Drei Vorschl\u00e4ge f\u00fcr neues Vereinsheim" }
+        ]
       },
       {
         "date": "2026-02-02",
@@ -32,7 +35,10 @@
         "title": "Variante 4 beschlossen",
         "text": "Nach Einigung aller Beteiligten beschlie\u00dft der Stadtrat einstimmig, Variante 4 weiterzuverfolgen.",
         "sessionId": "s2",
-        "voteId": "v8"
+        "voteId": "v8",
+        "press": [
+          { "media": "merkur", "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/haengepartie-beendet-fussballer-duerfen-neues-vereinsheim-auf-moosburger-stadtgrund-bauen-94163882.html", "title": "Merkur: H\u00e4ngepartie beendet" }
+        ]
       }
     ]
   },
@@ -187,7 +193,10 @@
         "title": "Klage beschlossen",
         "text": "Der Stadtrat beschlie\u00dft, fristgerecht Klage beim Verwaltungsgericht M\u00fcnchen gegen die erteilte Baugenehmigung einzureichen.",
         "sessionId": "s2",
-        "voteId": "v11"
+        "voteId": "v11",
+        "press": [
+          { "media": "merkur", "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/immer-katastrophaler-und-verrueckter-moosburger-aerger-ueber-baugenehmigungen-des-landratsamts-94165710.html", "title": "Merkur: \u00c4rger \u00fcber Baugenehmigungen des Landratsamts" }
+        ]
       }
     ]
   },
