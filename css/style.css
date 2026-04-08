@@ -1198,7 +1198,7 @@ main {
 
 .profile-name-inner {
   display: inline-block;
-  text-align: left;
+  text-align: right;
 }
 
 .profile-given-name {
@@ -1206,6 +1206,7 @@ main {
   font-weight: 400;
   line-height: 1;
   margin-bottom: 1px;
+  text-align: right;
 }
 
 .profile-surname {
@@ -1230,20 +1231,30 @@ main {
   color: var(--text-muted);
   font-style: italic;
   margin-top: 1px;
+  text-align: right;
 }
 
 .profile-party {
-  text-align: right;
+  text-align: left;
   font-size: 0.78rem;
   color: var(--text-muted);
-  margin-top: 6px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-party-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .profile-meta {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 6px;
   margin-top: 10px;
 }
@@ -1252,6 +1263,7 @@ main {
   display: flex;
   gap: 4px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .id-badge {
@@ -1265,23 +1277,24 @@ main {
 }
 
 .id-badge.queer {
-  background: linear-gradient(90deg, #E40303, #FF8C00, #FFED00, #008026, #004DFF, #750787);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 6'%3E%3Crect width='6' height='1' y='0' fill='%23E6001E'/%3E%3Crect width='6' height='1' y='1' fill='%23FFAA00'/%3E%3Crect width='6' height='1' y='2' fill='%23FFEB00'/%3E%3Crect width='6' height='1' y='3' fill='%2378BE1E'/%3E%3Crect width='6' height='1' y='4' fill='%23008CE6'/%3E%3Crect width='6' height='1' y='5' fill='%23621D80'/%3E%3C/svg%3E");
+  background-size: cover;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .id-badge.migrant {
-  background: var(--teal);
+  background: #FFAA00;
   color: #fff;
 }
 
 .id-badge.flinta {
-  background: var(--purple);
+  background: #CD0078;
   color: #fff;
 }
 
 .id-badge.disability {
-  background: var(--info);
+  background: #621D80;
   color: #fff;
 }
 
@@ -1291,6 +1304,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  justify-content: center;
 }
 
 .contact-link {
@@ -1351,14 +1365,23 @@ main {
   .profile-name-block {
     text-align: left;
   }
-  .profile-party {
+  .profile-name-inner {
+    text-align: left;
+  }
+  .profile-given-name {
     text-align: left;
   }
   .profile-meta {
+    align-items: flex-start;
+  }
+  .identity-badges {
+    justify-content: flex-start;
+  }
+  .profile-contact {
     justify-content: flex-start;
   }
   .profile-surname {
-    font-size: 2.4rem;
+    font-size: 1.4rem;
   }
 }
 
