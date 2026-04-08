@@ -1249,6 +1249,8 @@ main {
   height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
+  stroke-color: var(--bg);
+  stroke-width: 1px;
 }
 
 .profile-meta {

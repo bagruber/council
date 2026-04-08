@@ -11,24 +11,65 @@
     { "id": "linke",  "name": "Linke",        "color": "#BE3075", "accent": "#D81B60" }
   ],
   "seatOrder": ["gruene", "fw", "fresh", "linke", "oedp", "fdp", "afd", "spd", "csu"],
+
   "members": [
-    { "id": "dollinger", "firstName": "Josef", "lastName": "Dollinger", "nickname": "Sepp", "party": "fw", "role": "mayor", "from": "2020-05", "to": "2026-05" },
+    { "id": "dollinger", "firstName": "Josef", "lastName": "Dollinger", "nickname": "Sepp", "party": "fw", "role": "mayor", "from": "2020-05", "to": "2026-05",
+      "profile": {
+        "contact": {
+          "email": "info@josef-dollinger.de",
+          "website": "https://josef-dollinger.de/",
+          "instagram": "@dollinger.moosburg"
+        }
+      }
+    },
     { "id": "mader", "firstName": "Maximilian", "lastName": "Mader", "nickname": "Max", "party": "csu", "role": "mayor", "from": "2026-05", "to": null },
 
     { "id": "linz_karin", "firstName": "Karin", "lastName": "Linz", "party": "csu", "role": "councillor", "from": "2020-05", "to": null,
-      "profile": { "identity": ["flinta"], "committees": ["bpu"] }
+      "profile": {
+        "identity": ["flinta"],
+        "committees": ["bpu"],
+        "contact": {
+          "email": "karin.linz@csu-moosburg.de",
+          "facebook": "https://www.facebook.com/karin.linz"
+        }
+      }
     },
     { "id": "heinz", "firstName": "Rudolf", "lastName": "Heinz", "nickname": "Rudi", "party": "csu", "role": "councillor", "from": "2020-05", "to": null,
-      "profile": { "titles": [{ "title": "Kulturreferent", "from": "2020-05", "to": null }] }
+      "profile": {
+        "titles": [{ "title": "Kulturreferent", "from": "2020-05", "to": null }],
+        "contact": {
+          "email": "kontakt@rudolf-heinz.de",
+          "website": "www.rudolf-heinz.de",
+          "facebook": "https://www.facebook.com/rudolf.heinz.33"
+        }
+      }
     },
     { "id": "hadersdorfer", "firstName": "Georg", "lastName": "Hadersdorfer", "nickname": "Hadschi", "party": "csu", "role": "councillor", "from": "2020-05", "to": null, "title": "Zweiter Bürgermeister",
-      "profile": { "titles": [{ "title": "Ehrenamtsreferent", "from": "2020-05", "to": null }] }
+      "profile": {
+        "titles": [{ "title": "Ehrenamtsreferent", "from": "2020-05", "to": null }],
+        "contact": {
+          "email": "c.g.hadersdorfer@gmx.de",
+          "website": "www.georg-hadersdorfer.de",
+          "facebook": "https://www.facebook.com/georg.hadersdorfer.7"
+        }
+      }
     },
     { "id": "tristl", "firstName": "Manfred", "lastName": "Tristl", "nickname": "Mane", "party": "csu", "role": "councillor", "from": "2020-05", "to": null,
-      "profile": { "committees": ["bpu"] }
+      "profile": {
+        "committees": ["bpu"],
+        "contact": {
+          "email": "mga.tristl@t-online.de"
+        }
+      }
     },
     { "id": "weber", "firstName": "Erwin", "lastName": "Weber", "party": "csu", "role": "councillor", "from": "2020-05", "to": "2026-05",
-      "profile": { "titles": [{ "title": "Partnerschaftsreferent", "from": "2020-05", "to": "2026-05" }] }
+      "profile": {
+        "titles": [{ "title": "Partnerschaftsreferent", "from": "2020-05", "to": "2026-05" }],
+        "contact": {
+          "email": "email@erwin-weber.net",
+          "facebook": "https://www.facebook.com/erwin.weber.735"
+        }
+      }
     },
     { "id": "haberl", "firstName": "Ludwig", "lastName": "Haberl", "nickname": "Wick", "party": "csu", "role": "councillor", "from": "2020-05", "to": "2026-05" },
     { "id": "kehlringer", "firstName": "Lorena", "lastName": "Kehlringer", "party": "csu", "role": "councillor", "from": "2026-05", "to": null,
@@ -40,51 +81,128 @@
       "profile": {
         "identity": ["flinta"],
         "titles": [{ "title": "Sportreferentin", "from": "2020-05", "to": null }],
-        "committees": ["bpu"]
+        "committees": ["bpu"],
+        "contact": {
+          "email": "verena.beibl@gruene-moosburg.de",
+          "facebook": "https://www.facebook.com/verena.kuch.1",
+          "instagram": "@verena.kuch"
+        }
       }
     },
-    { "id": "stanglmaier", "firstName": "Dr. Michael", "lastName": "Stanglmaier", "party": "gruene", "role": "councillor", "from": "2020-05", "to": null, "title": "Dritter Bürgermeister" },
+    { "id": "stanglmaier", "firstName": "Dr. Michael", "lastName": "Stanglmaier", "party": "gruene", "role": "councillor", "from": "2020-05", "to": null, "title": "Dritter Bürgermeister",
+      "profile": {
+        "contact": {
+          "email": "michael.stanglmaier@gruene-moosburg.de",
+          "website": "http://www.michael-stanglmaier.eu/",
+          "facebook": "https://www.facebook.com/michael.stanglmaier.5",
+          "instagram": "@michaelstanglmaier"
+        }
+      }
+    },
     { "id": "wagner", "firstName": "Alfred", "lastName": "Wagner", "nickname": "Tscharlie", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2022-05" },
     { "id": "altenbeck", "firstName": "Evelin", "lastName": "Altenbeck", "nickname": "Evi", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2022-05" },
     { "id": "von_pressentin", "firstName": "Nathalie", "lastName": "von Pressentin", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2026-05",
-      "profile": { "identity": ["flinta", "migrant"] }
+      "profile": {
+        "identity": ["flinta", "migrant"],
+        "contact": {
+          "email": "nathalie.vonpressentin@gruene-moosburg.de",
+          "facebook": "https://www.facebook.com/nathalie.vonpressentin"
+        }
+      }
     },
-    { "id": "becher_j", "firstName": "Johannes", "lastName": "Becher", "nickname": "Jojo", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2026-05" },
+    { "id": "becher_j", "firstName": "Johannes", "lastName": "Becher", "nickname": "Jojo", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2026-05",
+      "profile": {
+        "contact": {
+          "email": "johannes.becher@gruene-moosburg.de",
+          "website": "https://johannes-becher.de/",
+          "facebook": "https://www.facebook.com/jojobecher",
+          "instagram": "@jojobecher"
+        }
+      }
+    },
     { "id": "becher_a", "firstName": "Alexandra", "lastName": "Becher", "party": "gruene", "role": "councillor", "from": "2022-05", "to": "2026-05",
-      "profile": { "identity": ["flinta"] }
+      "profile": {
+        "identity": ["flinta"],
+        "contact": {
+          "email": "alexandra.becher@gruene-moosburg.de"
+        }
+      }
     },
     { "id": "linz_kilian", "firstName": "Kilian", "lastName": "Linz", "nickname": "Kili", "party": "gruene", "role": "councillor", "from": "2022-05", "to": null,
-      "profile": { "committees": ["bpu"] }
+      "profile": {
+        "committees": ["bpu"],
+        "contact": {
+          "email": "kilian.linz@gruene-moosburg.de",
+          "facebook": "https://www.facebook.com/kili.linz"
+        }
+      }
     },
     { "id": "roeck", "firstName": "Matthias", "lastName": "Röck", "party": "gruene", "role": "councillor", "from": "2026-05", "to": null },
     { "id": "ruemelin", "firstName": "Ramona", "lastName": "Rümelin", "party": "gruene", "role": "councillor", "from": "2026-05", "to": null,
       "profile": { "identity": ["flinta"] }
     },
 
-    { "id": "grundner", "firstName": "Thomas", "lastName": "Grundner", "party": "fw", "role": "councillor", "from": "2020-05", "to": null },
-    { "id": "lauterbach", "firstName": "Reinhard", "lastName": "Lauterbach", "party": "fw", "role": "councillor", "from": "2020-05", "to": null },
+    { "id": "grundner", "firstName": "Thomas", "lastName": "Grundner", "party": "fw", "role": "councillor", "from": "2020-05", "to": null,
+      "profile": {
+        "contact": {
+          "email": "th.grundner@t-online.de"
+        }
+      }
+    },
+    { "id": "lauterbach", "firstName": "Reinhard", "lastName": "Lauterbach", "party": "fw", "role": "councillor", "from": "2020-05", "to": null,
+      "profile": {
+        "contact": {
+          "email": "reinhard.lauterbach@fw-moosburg.de"
+        }
+      }
+    },
     { "id": "reif", "firstName": "Johann", "lastName": "Reif", "nickname": "Hans", "party": "fw", "role": "councillor", "from": "2020-05", "to": "2026-05",
-      "profile": { "committees": ["bpu"] }
+      "profile": {
+        "committees": ["bpu"],
+        "contact": {
+          "email": "johann.reif@moosburg.org"
+        }
+      }
     },
     { "id": "kieninger", "firstName": "Ludwig", "lastName": "Kieninger", "party": "fw", "role": "councillor", "from": "2020-05", "to": "2026-05",
-      "profile": { "committees": ["bpu"] }
+      "profile": {
+        "committees": ["bpu"],
+        "contact": {
+          "email": "Ludwig.Kieninger@t-online.de"
+        }
+      }
     },
     { "id": "sixt", "firstName": "Josef", "lastName": "Sixt", "party": "fw", "role": "councillor", "from": "2026-05", "to": null },
     { "id": "meier", "firstName": "Christian", "lastName": "Meier", "party": "fw", "role": "councillor", "from": "2026-05", "to": null },
 
     { "id": "beubl", "firstName": "Gerhard", "lastName": "Beubl", "nickname": "Gerd", "party": "spd", "role": "councillor", "from": "2020-05", "to": "2025-01" },
-    { "id": "pschorr", "firstName": "Martin", "lastName": "Pschorr", "party": "spd", "role": "councillor", "from": "2020-05", "to": "2026-05" },
+    { "id": "pschorr", "firstName": "Martin", "lastName": "Pschorr", "party": "spd", "role": "councillor", "from": "2020-05", "to": "2026-05",
+      "profile": {
+        "contact": {
+          "email": "martin.pschorr@gmx.de"
+        }
+      }
+    },
     { "id": "marcus", "firstName": "Gunnar", "lastName": "Marcus", "party": "spd", "role": "councillor", "from": "2025-01", "to": null,
       "profile": { "committees": ["bpu"] }
     },
     { "id": "marschoun", "firstName": "Christoph", "lastName": "Marschoun", "party": "spd", "role": "councillor", "from": "2026-05", "to": null },
 
-    { "id": "wittmann", "firstName": "Thomas", "lastName": "Wittmann", "nickname": "Tom", "party": "fresh", "role": "councillor", "from": "2020-05", "to": "2021-01" },
+    { "id": "wittmann", "firstName": "Thomas", "lastName": "Wittmann", "nickname": "Tom", "party": "fresh", "role": "councillor", "from": "2020-05", "to": "2021-01",
+      "profile": {
+        "contact": {
+          "instagram": "@fresher.tom",
+          "linkedin": "https://de.linkedin.com/in/thomas-wittmann-6785283b4"
+        }
+      }
+    },
     { "id": "neumayr", "firstName": "Julia", "lastName": "Neumayr", "party": "fresh", "role": "councillor", "from": "2020-05", "to": "2022-01",
       "profile": { "identity": ["flinta"] }
     },
     { "id": "gruebl", "firstName": "Julian", "lastName": "Grübl", "party": "fresh", "role": "councillor", "from": "2021-01", "to": "2024-01",
-      "profile": { "titles": [{ "title": "Jugendbeauftragter", "from": "2021-01", "to": "2024-01" }] }
+      "profile": {
+        "titles": [{ "title": "Jugendbeauftragter", "from": "2021-01", "to": "2024-01" }]
+      }
     },
     { "id": "gruber", "firstName": "Benedict Arya", "lastName": "Gruber", "nickname": "Bene", "party": "fresh", "role": "councillor", "from": "2022-01", "to": "2026-05",
       "profile": {
@@ -119,7 +237,12 @@
       }
     },
     { "id": "hobmaier", "firstName": "Michael", "lastName": "Hobmaier", "nickname": "Michi", "party": "fresh", "role": "councillor", "from": "2024-01", "to": "2026-05",
-      "profile": { "committees": ["bpu"] }
+      "profile": {
+        "committees": ["bpu"],
+        "contact": {
+          "linkedin": "https://de.linkedin.com/in/michael-hobmaier-9895a9226"
+        }
+      }
     },
     { "id": "dick", "firstName": "Johanna", "lastName": "Dick", "party": "fresh", "role": "councillor", "from": "2026-05", "to": null,
       "profile": { "identity": ["queer", "flinta"] }
@@ -129,19 +252,46 @@
     },
 
     { "id": "welter", "firstName": "Gerhard-Michael", "lastName": "Welter", "party": "afd", "role": "councillor", "from": "2020-05", "to": null,
-      "profile": { "committees": ["bpu"] }
+      "profile": {
+        "committees": ["bpu"],
+        "contact": {
+          "email": "stadtrat@welter-moosburg.de"
+        }
+      }
     },
     { "id": "ghadieh", "firstName": "Dr. Daoud Ghadieh", "lastName": "Moutasem", "party": "afd", "role": "councillor", "from": "2026-05", "to": null },
 
     { "id": "kaestl", "firstName": "Jörg", "lastName": "Kästl", "party": "oedp", "role": "councillor", "from": "2020-05", "to": "2026-05",
-      "profile": { "titles": [{ "title": "Finanzreferent", "from": "2020-05", "to": "2026-05" }] }
+      "profile": {
+        "titles": [{ "title": "Finanzreferent", "from": "2020-05", "to": "2026-05" }],
+        "contact": {
+          "email": "joerg.kaestl@oedp-moosburg.de"
+        }
+      }
     },
 
-    { "id": "fincke", "firstName": "Philipp", "lastName": "Fincke", "party": "fdp", "role": "councillor", "from": "2020-05", "to": "2026-05" },
+    { "id": "fincke", "firstName": "Philipp", "lastName": "Fincke", "party": "fdp", "role": "councillor", "from": "2020-05", "to": "2026-05",
+      "profile": {
+        "contact": {
+          "email": "philipp.fincke@outlook.de",
+          "linkedin": "https://de.linkedin.com/in/philipp-fincke-347579143",
+          "facebook": "https://www.facebook.com/philipp.fincke",
+          "instagram": "@philippfincke_stadtrat"
+        }
+      }
+    },
 
     { "id": "john", "firstName": "Stefan", "lastName": "John", "party": "linke", "role": "councillor", "from": "2020-05", "to": "2023-01" },
-    { "id": "strobl", "firstName": "Alexander", "lastName": "Strobl", "nickname": "Alex", "party": "linke", "role": "councillor", "from": "2023-01", "to": null }
-  ],
+    { "id": "strobl", "firstName": "Alexander", "lastName": "Strobl", "nickname": "Alex", "party": "linke", "role": "councillor", "from": "2023-01", "to": null,
+      "profile": {
+        "contact": {
+          "email": "strobl-moosburgerlinke@mail.de"
+        }
+      }
+    }
+  ]
+
+,
   "bodies": [
     {
       "id": "plenum",
