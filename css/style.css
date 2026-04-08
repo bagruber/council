@@ -1243,6 +1243,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   margin-top: 10px;
 }
@@ -1352,6 +1353,9 @@ main {
   }
   .profile-party {
     text-align: left;
+  }
+  .profile-meta {
+    justify-content: flex-start;
   }
   .profile-surname {
     font-size: 1.4rem;
