@@ -1157,6 +1157,7 @@
       instagram: '<i class="fab fa-instagram"></i>',
       threads: '<i class="fab fa-threads"></i>',
       linkedin: '<i class="fab fa-linkedin-in"></i>',
+      facebook: '<i class="fab fa-facebook"></i>',
     };
     a.innerHTML = icons[type] || '<i class="fas fa-link"></i>';
     return a;
