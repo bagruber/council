@@ -1171,9 +1171,9 @@ main {
 
 .profile-surname {
   font-family: 'Noto Serif', Georgia, serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .profile-nee {
