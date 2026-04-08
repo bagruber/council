@@ -397,16 +397,27 @@ main {
   height: 26px;
   border-radius: 6px;
   text-decoration: none;
-  transition: opacity 0.15s, transform 0.1s;
+  transition: background 0.15s, transform 0.1s;
   overflow: hidden;
 }
 
-.press-link:hover { opacity: 0.8; transform: scale(1.08); }
+.press-link:hover { transform: scale(1.08); }
+
+.press-link:active {
+  background: #fff !important;
+  box-shadow: inset 0 0 0 1.5px var(--border);
+}
 
 .press-link img {
   width: 18px;
   height: 18px;
   object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.15s;
+}
+
+.press-link:active img {
+  filter: none;
 }
 
 /* -- Session detail -- */
