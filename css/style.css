@@ -1250,7 +1250,7 @@ main {
   height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
-  box-shadow: 0 0 0 1.5px var(--surface), 0 0 0 2.5px var(--border);
+  box-shadow: 0 0 0 1.0px var(--surface), 0 0 0 1.5px var(--border);
 }
 
 .profile-meta {
