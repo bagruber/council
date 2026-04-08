@@ -1249,7 +1249,7 @@ main {
   height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
-  border: 2px solid var(--bg);
+  border: 2px solid var(--border);
 }
 
 .profile-meta {
