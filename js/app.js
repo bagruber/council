@@ -949,8 +949,10 @@
     const g = parseInt(hex.slice(3, 5), 16);
     const b = parseInt(hex.slice(5, 7), 16);
     const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-    if (lum < 40) return "#666";
-    const f = lum > 180 ? 0.4 : lum > 120 ? 0.55 : 0.7;
+    if (lum < 30) {
+      return "#" + [r, g, b].map(c => Math.min(255, c + 120).toString(16).padStart(2, "0")).join("");
+    }
+    const f = lum > 180 ? 0.35 : lum > 120 ? 0.5 : 0.65;
     return "#" + [r, g, b].map(c => Math.round(c * f).toString(16).padStart(2, "0")).join("");
   }
 
