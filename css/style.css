@@ -1329,6 +1329,7 @@ main {
 .contact-link.cl-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 .contact-link.cl-threads { background: #000; }
 .contact-link.cl-linkedin { background: #0A66C2; }
+.contact-link.cl-facebook { background: #0865fe; }
 
 @media (max-width: 600px) {
   .profile-header {
