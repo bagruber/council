@@ -1215,7 +1215,7 @@ main {
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
 }
 
 .profile-nee {
@@ -1238,7 +1238,7 @@ main {
 }
 
 .profile-party {
-  text-align: left;
+  text-align: center;
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 4px;
