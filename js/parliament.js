@@ -30,7 +30,7 @@ const VoteVis = (() => {
   // -- Stacked bar for anonymous votes --
 
   function drawBar(container, results) {
-    const total = results.yes + results.no + results.absent;
+    const capacity = 25;
     const voting = results.yes + results.no;
     const w = container.clientWidth || 400;
     const barH = 28;
@@ -43,10 +43,14 @@ const VoteVis = (() => {
       .append("svg").attr("width", w).attr("height", h)
       .attr("viewBox", `0 0 ${w} ${h}`);
 
+    const voteW = (voting / capacity) * w;
+    const voteX = (w - voteW) / 2;
+
     if (results.absent > 0) {
-      const absentW = (results.absent / total) * w;
+      const absentW = (results.absent / capacity) * w;
+      const absentX = (w - absentW) / 2;
       svg.append("rect")
-        .attr("x", 0).attr("y", 0)
+        .attr("x", absentX).attr("y", 0)
         .attr("width", absentW).attr("height", absentH)
         .attr("rx", 3)
         .attr("fill", "var(--absent)");
@@ -54,22 +58,23 @@ const VoteVis = (() => {
 
     const mainY = absentH + gap;
     if (voting > 0) {
-      const yesW = (results.yes / voting) * w;
+      const yesW = (results.yes / capacity) * w;
       svg.append("rect")
-        .attr("x", 0).attr("y", mainY)
+        .attr("x", voteX).attr("y", mainY)
         .attr("width", yesW).attr("height", barH)
         .attr("rx", 4)
         .attr("fill", "var(--yes)");
 
       if (results.no > 0) {
+        const noW = (results.no / capacity) * w;
         svg.append("rect")
-          .attr("x", yesW).attr("y", mainY)
-          .attr("width", w - yesW).attr("height", barH)
+          .attr("x", voteX + yesW).attr("y", mainY)
+          .attr("width", noW).attr("height", barH)
           .attr("rx", 4)
           .attr("fill", "var(--no)");
       }
 
-      // 50% majority mark
+      // centre mark (50% of capacity)
       svg.append("line")
         .attr("x1", w / 2).attr("x2", w / 2)
         .attr("y1", mainY - 2).attr("y2", mainY + barH + 2)
@@ -85,7 +90,7 @@ const VoteVis = (() => {
         <div><strong>Ja:</strong> ${results.yes} (${pctYes} %)</div>
         <div><strong>Nein:</strong> ${results.no} (${pctNo} %)</div>
         <div><strong>Abwesend:</strong> ${results.absent}</div>
-        <div style="margin-top:4px;opacity:.7">${total} Mitglieder gesamt</div>`);
+        <div style="margin-top:4px;opacity:.7">${capacity} Mitglieder gesamt</div>`);
     }
     wrap.addEventListener("mouseenter", barTip);
     wrap.addEventListener("mousemove", moveTip);
@@ -232,13 +237,18 @@ const VoteVis = (() => {
     const voteStroke = { yes: "var(--yes)", no: "var(--no)", absent: "var(--absent)" };
     const voteBadge = { yes: "\u2713", no: "\u2717", absent: "\u2013" };
 
-    function seatTip(evt, entry) {
+    const isTouchDevice = "ontouchstart" in window;
+
+    function seatTip(evt, entry, withLink) {
       const label = entry.vote === "yes" ? "Ja" : entry.vote === "no" ? "Nein" : "Abwesend";
       const title = entry.member.title ? ` (${entry.member.title})` : "";
+      const link = withLink
+        ? `<a href="#/member/${entry.member.id}" style="display:block;margin-top:4px;font-size:0.75rem;color:var(--primary)">Zum Profil →</a>`
+        : "";
       showTip(evt, `
         <div class="tt-name">${entry.member.name}${title}</div>
         <div class="tt-party">${entry.party ? entry.party.name : ""}</div>
-        <div class="tt-vote">${label}</div>`);
+        <div class="tt-vote">${label}</div>${link}`);
     }
 
     function drawSeat(cx, cy, entry) {
@@ -263,35 +273,23 @@ const VoteVis = (() => {
         .attr("font-size", 7).attr("fill", "#fff").attr("font-weight", "bold")
         .text(voteBadge[entry.vote] || "");
 
-      // desktop: hover for tooltip, click navigates to profile
-      g.on("mouseenter", evt => seatTip(evt, entry))
-        .on("mousemove", moveTip)
-        .on("mouseleave", hideTip)
-        .on("click", () => {
-          hideTip();
-          window.location.hash = "/member/" + entry.member.id;
+      if (isTouchDevice) {
+        const node = g.node();
+        node.addEventListener("touchstart", evt => {
+          seatTip(evt, entry, true);
+        }, { passive: true });
+        node.addEventListener("touchend", () => {
+          setTimeout(hideTip, 3000);
         });
-
-      // mobile: short touch = tooltip, long press = navigate
-      let pressTimer = null;
-      let didLongPress = false;
-      const node = g.node();
-      node.addEventListener("touchstart", evt => {
-        didLongPress = false;
-        seatTip(evt, entry);
-        pressTimer = setTimeout(() => {
-          didLongPress = true;
-          hideTip();
-          window.location.hash = "/member/" + entry.member.id;
-        }, 500);
-      }, { passive: true });
-      node.addEventListener("touchend", () => {
-        clearTimeout(pressTimer);
-        if (!didLongPress) setTimeout(hideTip, 1500);
-      });
-      node.addEventListener("touchmove", () => {
-        clearTimeout(pressTimer);
-      }, { passive: true });
+      } else {
+        g.on("mouseenter", evt => seatTip(evt, entry, false))
+          .on("mousemove", moveTip)
+          .on("mouseleave", hideTip)
+          .on("click", () => {
+            hideTip();
+            window.location.hash = "/member/" + entry.member.id;
+          });
+      }
     }
 
     positioned.forEach(s => drawSeat(s.x, s.y, s));
