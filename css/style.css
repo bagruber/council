@@ -1367,16 +1367,16 @@ main {
     position: relative;
     z-index: 1;
     padding-top: 24px;
-    padding-left: 100px;
+    padding-left: 80px;
   }
   .profile-name-block {
     text-align: left;
   }
   .profile-name-inner {
-    text-align: left;
+    text-align: right;
   }
   .profile-given-name {
-    text-align: left;
+    text-align: right;
   }
   .profile-meta {
     align-items: flex-start;
