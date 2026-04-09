@@ -986,7 +986,10 @@ const SHOW_PRONOUNS = true;
     });
     wrap.appendChild(back);
 
-    const party = partyMap[m.party];
+    const currentPartyId = m.partyHistory && m.partyHistory.length
+      ? m.partyHistory[m.partyHistory.length - 1].party
+      : m.party;
+    const party = partyMap[currentPartyId] || partyMap[m.party];
     const profile = m.profile || {};
 
     // header
@@ -1087,6 +1090,22 @@ const SHOW_PRONOUNS = true;
     const roleLabel = m.role === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
     rolesSection.appendChild(makeRoleRow("account_balance", roleLabel, m.from, m.to));
 
+    if (m.partyHistory && m.partyHistory.length) {
+      const phWrap = document.createElement("div");
+      phWrap.className = "party-history";
+      m.partyHistory.forEach(ph => {
+        const p = partyMap[ph.party];
+        const color = p ? p.color : "#999";
+        const name = p ? p.name : ph.party;
+        const period = formatPeriod(ph.from, ph.to);
+        const row = document.createElement("div");
+        row.className = "party-history-row";
+        row.innerHTML = `<span class="profile-party-dot" style="background:${color}"></span><span>${name}</span><span class="role-dates">${period}</span>`;
+        phWrap.appendChild(row);
+      });
+      rolesSection.appendChild(phWrap);
+    }
+
     if (m.title) {
       rolesSection.appendChild(makeRoleRow("star", m.title, m.from, m.to));
     }
@@ -1109,6 +1128,14 @@ const SHOW_PRONOUNS = true;
       if (inSeats || isSub || isChair || isChairSub || isVice || isViceSub) {
         const role = isChair ? " (Vorsitz)" : isVice ? " (Stellv. Vorsitz)" : "";
         rolesSection.appendChild(makeRoleRow("groups", b.name + role, m.from, m.to));
+      }
+      // past memberships
+      if (b.pastSeats) {
+        b.pastSeats.forEach(ps => {
+          if (ps.member !== m.id) return;
+          const suffix = ps.role ? ` (${ps.role})` : ps.sub === true ? " (Stellv.)" : "";
+          rolesSection.appendChild(makeRoleRow("history", b.name + suffix, ps.from || m.from, ps.to));
+        });
       }
     });
 

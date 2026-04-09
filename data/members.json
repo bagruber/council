@@ -8,14 +8,24 @@
     { "id": "afd",    "name": "AfD",          "color": "#009DE0", "accent": "#33B5E5" },
     { "id": "fdp",    "name": "FDP",          "color": "#FFED00", "accent": "#FFF176" },
     { "id": "oedp",   "name": "ÖDP",         "color": "#F07D00", "accent": "#F9A825" },
-    { "id": "linke",  "name": "Linke",        "color": "#BE3075", "accent": "#D81B60" }
+    { "id": "linke",  "name": "Linke",        "color": "#BE3075", "accent": "#D81B60" },
+    { "id": "umb",    "name": "UMB",          "color": "#4A7FB5", "accent": "#6BA3D6" },
+    { "id": "parteilos", "name": "parteilos",  "color": "#999999", "accent": "#bbbbbb" }
   ],
   "seatOrder": ["gruene", "fw", "fresh", "linke", "oedp", "fdp", "afd", "spd", "csu"],
 
   "members": [
-    { "id": "dollinger", "firstName": "Josef", "lastName": "Dollinger", "nickname": "Sepp", "party": "fw", "role": "mayor", "from": "2020-05", "to": "2026-05","title": "Erster Bürgermeister",
+    { "id": "meinelt", "firstName": "Anita", "lastName": "Meinelt", "party": "csu", "role": "mayor", "from": "2002-05", "to": "2020-05", "title": "Erste Bürgermeisterin",
+      "profile": { "pronouns": "sie/ihr" }
+    },
+    { "id": "dollinger", "firstName": "Josef", "lastName": "Dollinger", "nickname": "Sepp", "party": "fw", "role": "mayor", "from": "2014-05", "to": "2026-05", "title": "Erster Bürgermeister",
+      "partyHistory": [
+        { "party": "fw", "from": "2014-05", "to": "2025-01" },
+        { "party": "parteilos", "from": "2025-01", "to": null }
+      ],
       "profile": {
         "pronouns": "er/ihn",
+        "titles": [{ "title": "Zweiter Bürgermeister", "from": "2014-05", "to": "2020-05" }],
         "contact": {
           "email": "info@josef-dollinger.de",
           "website": "josef-dollinger.de/",
@@ -27,7 +37,7 @@
       "profile": { "pronouns": "er/ihn" }
     },
 
-    { "id": "linz_karin", "firstName": "Karin", "lastName": "Linz", "party": "csu", "role": "councillor", "from": "2020-05", "to": null,
+    { "id": "linz_karin", "firstName": "Karin", "lastName": "Linz", "party": "csu", "role": "councillor", "from": "2014-05", "to": null,
       "profile": {
         "pronouns": "sie/ihr",
         "identity": ["flinta"],
@@ -49,7 +59,11 @@
         }
       }
     },
-    { "id": "hadersdorfer", "firstName": "Georg", "lastName": "Hadersdorfer", "nickname": "Hadschi", "party": "csu", "role": "councillor", "from": "2020-05", "to": null, "title": "Zweiter Bürgermeister",
+    { "id": "hadersdorfer", "firstName": "Georg", "lastName": "Hadersdorfer", "nickname": "Hadschi", "party": "csu", "role": "councillor", "from": "2014-05", "to": null, "title": "Zweiter Bürgermeister",
+      "partyHistory": [
+        { "party": "fw", "from": "2014-05", "to": "2017-01" },
+        { "party": "csu", "from": "2017-01", "to": null }
+      ],
       "profile": {
         "pronouns": "er/ihn",
         "titles": [{ "title": "Ehrenamtsreferent", "from": "2020-05", "to": null }],
@@ -69,7 +83,7 @@
         }
       }
     },
-    { "id": "weber", "firstName": "Erwin", "lastName": "Weber", "party": "csu", "role": "councillor", "from": "2020-05", "to": "2026-05",
+    { "id": "weber", "firstName": "Erwin", "lastName": "Weber", "party": "csu", "role": "councillor", "from": "2002-05", "to": "2026-05",
       "profile": {
         "pronouns": "er/ihn",
         "titles": [{ "title": "Partnerschaftsreferent", "from": "2020-05", "to": "2026-05" }],
@@ -105,7 +119,7 @@
         }
       }
     },
-    { "id": "stanglmaier", "firstName": "Dr. Michael", "lastName": "Stanglmaier", "party": "gruene", "role": "councillor", "from": "2020-05", "to": null, "title": "Dritter Bürgermeister",
+    { "id": "stanglmaier", "firstName": "Dr. Michael", "lastName": "Stanglmaier", "party": "gruene", "role": "councillor", "from": "2000-05", "to": null, "title": "Dritter Bürgermeister",
       "profile": {
         "pronouns": "er/ihn",
         "contact": {
@@ -117,9 +131,13 @@
       }
     },
     { "id": "wagner", "firstName": "Alfred", "lastName": "Wagner", "nickname": "Tscharlie", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2022-05",
+      "partyHistory": [
+        { "party": "umb", "to": "2017-01" },
+        { "party": "gruene", "from": "2017-01", "to": null }
+      ],
       "profile": { "pronouns": "er/ihn" }
     },
-    { "id": "altenbeck", "firstName": "Evelin", "lastName": "Altenbeck", "nickname": "Evi", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2022-05",
+    { "id": "altenbeck", "firstName": "Evelin", "lastName": "Altenbeck", "nickname": "Evi", "party": "gruene", "role": "councillor", "from": "1991-05", "to": "2022-05",
       "profile": { "pronouns": "sie/ihr" }
     },
     { "id": "von_pressentin", "firstName": "Nathalie", "lastName": "von Pressentin", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2026-05",
@@ -132,7 +150,7 @@
         }
       }
     },
-    { "id": "becher_j", "firstName": "Johannes", "lastName": "Becher", "nickname": "Jojo", "party": "gruene", "role": "councillor", "from": "2020-05", "to": "2026-05",
+    { "id": "becher_j", "firstName": "Johannes", "lastName": "Becher", "nickname": "Jojo", "party": "gruene", "role": "councillor", "from": "2008-05", "to": "2026-05",
       "profile": {
         "pronouns": "er/ihn",
         "contact": {
@@ -188,7 +206,7 @@
         }
       }
     },
-    { "id": "reif", "firstName": "Johann", "lastName": "Reif", "nickname": "Hans", "party": "fw", "role": "councillor", "from": "2020-05", "to": "2026-05",
+    { "id": "reif", "firstName": "Johann", "lastName": "Reif", "nickname": "Hans", "party": "fw", "role": "councillor", "from": "2014-05", "to": "2026-05",
       "profile": {
         "pronouns": "er/ihn",
         "committees": ["bpu"],
@@ -197,7 +215,7 @@
         }
       }
     },
-    { "id": "kieninger", "firstName": "Ludwig", "lastName": "Kieninger", "party": "fw", "role": "councillor", "from": "2020-05", "to": "2026-05",
+    { "id": "kieninger", "firstName": "Ludwig", "lastName": "Kieninger", "party": "fw", "role": "councillor", "from": "2014-05", "to": "2026-05",
       "profile": {
         "pronouns": "er/ihn",
         "committees": ["bpu"],
@@ -213,10 +231,10 @@
       "profile": { "pronouns": "er/ihn" }
     },
 
-    { "id": "beubl", "firstName": "Gerhard", "lastName": "Beubl", "nickname": "Gerd", "party": "spd", "role": "councillor", "from": "2020-05", "to": "2025-01",
+    { "id": "beubl", "firstName": "Gerhard", "lastName": "Beubl", "nickname": "Gerd", "party": "spd", "role": "councillor", "from": "1989-05", "to": "2025-03",
       "profile": { "pronouns": "er/ihn" }
     },
-    { "id": "pschorr", "firstName": "Martin", "lastName": "Pschorr", "party": "spd", "role": "councillor", "from": "2020-05", "to": "2026-05",
+    { "id": "pschorr", "firstName": "Martin", "lastName": "Pschorr", "party": "spd", "role": "councillor", "from": "1972-05", "to": "2026-05",
       "profile": {
         "pronouns": "er/ihn",
         "contact": {
@@ -234,7 +252,7 @@
       "profile": { "pronouns": "er/ihn" }
     },
 
-    { "id": "wittmann", "firstName": "Thomas", "lastName": "Wittmann", "nickname": "Tom", "party": "fresh", "role": "councillor", "from": "2020-05", "to": "2021-01",
+    { "id": "wittmann", "firstName": "Thomas", "lastName": "Wittmann", "nickname": "Tom", "party": "fresh", "role": "councillor", "from": "2020-05", "to": "2021-10",
       "profile": {
         "pronouns": "er/ihn",
         "contact": {
@@ -249,10 +267,10 @@
         "identity": ["flinta"]
       }
     },
-    { "id": "gruebl", "firstName": "Julian", "lastName": "Grübl", "party": "fresh", "role": "councillor", "from": "2021-01", "to": "2024-01",
+    { "id": "gruebl", "firstName": "Julian", "lastName": "Grübl", "party": "fresh", "role": "councillor", "from": "2021-10", "to": "2024-10",
       "profile": {
         "pronouns": "er/ihn",
-        "titles": [{ "title": "Jugendbeauftragter", "from": "2021-01", "to": "2024-01" }]
+        "titles": [{ "title": "Jugendbeauftragter", "from": "2021-10", "to": "2024-10" }]
       }
     },
     { "id": "gruber", "firstName": "Benedict Arya", "lastName": "Gruber", "nickname": "Bene", "party": "fresh", "role": "councillor", "from": "2022-01", "to": "2026-05",
@@ -333,6 +351,10 @@
     },
 
     { "id": "fincke", "firstName": "Philipp", "lastName": "Fincke", "party": "fdp", "role": "councillor", "from": "2020-05", "to": "2026-05",
+      "partyHistory": [
+        { "party": "fdp", "from": "2020-05", "to": "2025-01" },
+        { "party": "parteilos", "from": "2025-01", "to": null }
+      ],
       "profile": {
         "pronouns": "er/ihn",
         "contact": {
@@ -344,10 +366,10 @@
       }
     },
 
-    { "id": "john", "firstName": "Stefan", "lastName": "John", "party": "linke", "role": "councillor", "from": "2020-05", "to": "2023-01",
+    { "id": "john", "firstName": "Stefan", "lastName": "John", "party": "linke", "role": "councillor", "from": "2020-05", "to": "2023-07",
       "profile": { "pronouns": "er/ihn" }
     },
-    { "id": "strobl", "firstName": "Alexander", "lastName": "Strobl", "nickname": "Alex", "party": "linke", "role": "councillor", "from": "2023-01", "to": null,
+    { "id": "strobl", "firstName": "Alexander", "lastName": "Strobl", "nickname": "Alex", "party": "linke", "role": "councillor", "from": "2023-07", "to": null,
       "profile": {
         "pronouns": "er/ihn",
         "contact": {
@@ -388,6 +410,13 @@
         { "member": "reif", "sub": "grundner" },
         { "member": "tristl", "sub": "haberl" },
         { "member": "welter" }
+      ],
+      "pastSeats": [
+        { "member": "altenbeck", "to": "2022-05" },
+        { "member": "beubl", "to": "2025-03" },
+        { "member": "gruebl", "from": "2021-10", "to": "2024-10" },
+        { "member": "wittmann", "from": "2020-05", "to": "2021-10" },
+        { "member": "wagner", "sub": true, "to": "2022-05" }
       ]
     },
     {
@@ -406,6 +435,13 @@
         { "member": "reif", "sub": "grundner" },
         { "member": "stanglmaier", "sub": "beibl" },
         { "member": "weber", "sub": "linz_karin" }
+      ],
+      "pastSeats": [
+        { "member": "wagner", "to": "2022-05" },
+        { "member": "altenbeck", "sub": true, "to": "2022-05" },
+        { "member": "beubl", "sub": true, "to": "2025-03" },
+        { "member": "gruebl", "sub": true, "from": "2021-10", "to": "2024-10" },
+        { "member": "wittmann", "sub": true, "from": "2020-05", "to": "2021-10" }
       ]
     },
     {
@@ -422,6 +458,12 @@
         { "member": "kieninger", "sub": "reif" },
         { "member": "pschorr", "sub": "marcus" },
         { "member": "weber", "sub": "linz_karin" }
+      ],
+      "pastSeats": [
+        { "member": "altenbeck", "to": "2022-05" },
+        { "member": "beubl", "sub": true, "to": "2025-03" },
+        { "member": "john", "sub": true, "to": "2023-07" },
+        { "member": "wittmann", "sub": true, "from": "2020-05", "to": "2021-10" }
       ]
     },
     {
@@ -440,6 +482,12 @@
         { "member": "linz_karin", "sub": "weber" },
         { "member": "marcus", "sub": "pschorr" },
         { "member": "tristl", "sub": "heinz" }
+      ],
+      "pastSeats": [
+        { "member": "beubl", "role": "Vorsitz", "to": "2025-03" },
+        { "member": "gruebl", "from": "2021-10", "to": "2024-10" },
+        { "member": "wagner", "to": "2022-05" },
+        { "member": "wittmann", "sub": true, "from": "2020-05", "to": "2021-10" }
       ]
     },
     {
@@ -458,6 +506,12 @@
         { "member": "reif", "sub": "grundner" },
         { "member": "stanglmaier", "sub": "beibl" },
         { "member": "weber", "sub": "linz_karin" }
+      ],
+      "pastSeats": [
+        { "member": "beubl", "to": "2025-03" },
+        { "member": "gruebl", "from": "2021-10", "to": "2024-10" },
+        { "member": "wagner", "to": "2022-05" },
+        { "member": "wittmann", "from": "2020-05", "to": "2021-10" }
       ]
     },
     {
