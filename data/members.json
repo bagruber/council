@@ -18,7 +18,7 @@
     { "id": "meinelt", "firstName": "Anita", "lastName": "Meinelt", "party": "csu", "role": "mayor", "from": "2002-05", "to": "2020-05", "title": "Erste Bürgermeisterin",
       "profile": { "pronouns": "sie/ihr" }
     },
-    { "id": "dollinger", "firstName": "Josef", "lastName": "Dollinger", "nickname": "Sepp", "party": "fw", "role": "mayor", "from": "2014-05", "to": "2026-05", "title": "Erster Bürgermeister",
+    { "id": "dollinger", "firstName": "Josef", "lastName": "Dollinger", "nickname": "Sepp", "party": "fw", "role": "mayor", "from": "2020-05", "to": "2026-05", "title": "Erster Bürgermeister",
       "partyHistory": [
         { "party": "fw", "from": "2014-05", "to": "2025-01" },
         { "party": "parteilos", "from": "2025-01", "to": null }
