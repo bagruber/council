@@ -61,9 +61,9 @@ data/
 
 1. **Themen sind die Aggregationseinheit** — nicht Sitzungen oder Dokumente
 2. **Vernetzung über IDs** — `sessionId`, `voteId`, `topicId`, `memberId` verknüpfen alles
-3. **Presse als Kontext** — Artikel werden History-Einträgen oder Sessions zugeordnet
+3. **Presse als Kontext** — Artikel werden History-Einträgen oder Sessions zugeordnet, immer mit `date` (Erscheinungsdatum)
 4. **Aufwärtskompatibel** — neue Felder ergänzen, bestehende nie umbenennen
-5. **Keine Duplikation** — externe Quellen verlinken, nicht kopieren
+5. **Keine Duplikation** — externe Quellen verlinken, nicht kopieren. Jede Referenz enthält neben URL auch ein Datum
 6. **Rückwärts erweiterbar** — historische Daten können jederzeit nachgetragen werden
 
 ### Vote-Inferenz
