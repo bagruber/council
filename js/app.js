@@ -1106,13 +1106,17 @@ const SHOW_PRONOUNS = true;
       rolesSection.appendChild(phWrap);
     }
 
-    if (m.title) {
-      rolesSection.appendChild(makeRoleRow("star", m.title, m.from, m.to));
+    if (m.roleHistory) {
+      m.roleHistory.forEach(rh => {
+        const rl = rh.role === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
+        rolesSection.appendChild(makeRoleRow("account_balance", rl, rh.from, rh.to));
+      });
     }
 
     if (profile.titles) {
       profile.titles.forEach(t => {
-        rolesSection.appendChild(makeRoleRow("badge", t.title, t.from, t.to));
+        const icon = t.title.includes("rgermeister") ? "star" : "badge";
+        rolesSection.appendChild(makeRoleRow(icon, t.title, t.from, t.to));
       });
     }
 
