@@ -1227,8 +1227,11 @@ const SHOW_PRONOUNS = true;
       votedItems.forEach(item => {
         const vote = voteMap[item.voteId];
         const voteStatus = getMemberVoteStatus(member.id, vote, session);
-        const chipClass = { ja: "ja", nein: "nein", abwesend: "abwesend", "?": "unknown" }[voteStatus];
-        const chipLabel = { ja: "Ja", nein: "Nein", abwesend: "\u2013", "?": "?" }[voteStatus];
+        if (voteStatus === null) return;
+        const baseStatus = voteStatus.replace("*", "");
+        const inferred = voteStatus.endsWith("*");
+        const chipClass = { ja: "ja", nein: "nein", abwesend: "abwesend", "?": "unknown" }[baseStatus] + (inferred ? " inferred" : "");
+        const chipLabel = { ja: "Ja", nein: "Nein", abwesend: "\u2013", "?": "?" }[baseStatus];
 
         const voteRow = document.createElement("div");
         voteRow.className = "mtl-vote";
@@ -1259,16 +1262,34 @@ const SHOW_PRONOUNS = true;
     });
   }
 
+  function isMemberActive(memberId, dateStr) {
+    const m = memberMap[memberId];
+    if (!m) return false;
+    if (m.from && dateStr < m.from) return false;
+    if (m.to && dateStr >= m.to) return false;
+    return true;
+  }
+
   function getMemberVoteStatus(memberId, vote, session) {
+    if (!isMemberActive(memberId, vote.date)) return null;
+
+    // session-level absence (full session)
     if (session && session.absent && session.absent.includes(memberId)) return "abwesend";
+
     if (vote.type === "named") {
       if (vote.results.yes.includes(memberId)) return "ja";
       if (vote.results.no.includes(memberId)) return "nein";
       if (vote.results.absent.includes(memberId)) return "abwesend";
+      return null;
     }
-    if (vote.type === "anonymous" && vote.results.no === 0) {
-      return "ja";
-    }
+
+    // anonymous: per-vote absent list (from detailed protocols, temporary absence)
+    if (vote.results.absent_ids && vote.results.absent_ids.includes(memberId)) return "abwesend";
+
+    // infer where unambiguous: all present voted the same way
+    const { yes, no } = vote.results;
+    if (yes > 0 && no === 0) return "ja*";
+    if (no > 0 && yes === 0) return "nein*";
     return "?";
   }
 
