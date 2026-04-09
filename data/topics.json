@@ -94,11 +94,8 @@
         "date": "2025-09-01",
         "type": "proposal",
         "title": "Probleme mit Falschparkern",
-        "text": "Seit der Fertigstellung h\u00e4ufen sich Beschwerden \u00fcber Falschparker, besonders in der Platzmitte. Die PI Moosburg empfiehlt die Ausweisung als verkehrsberuhigten Bereich.",
-        "press": [
-          { "media": "br", "url": "https://www.ardmediathek.de/video/quer-mit-christoph-suess/legales-falschparken-moosburger-stadtplatz-wird-zugestellt/br/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNVdPMDIyMjY2QTAvc2VjdGlvbi9iZTA1ZGJmNC04Y2QyLTQyZDAtODg4Yi03NDZmYzg0ZDAyMDU", "title": "quer: Legales Falschparken" },
-          { "media": "sz", "url": "https://www.sueddeutsche.de/muenchen/freising/moosburg-falschparken-platz-plan-li.3390834", "title": "SZ: Falschparken am Plan" }
-        ]
+        "text": "Seit der Fertigstellung h\u00e4ufen sich Beschwerden \u00fcber Falschparker, besonders in der Platzmitte. Die PI Moosburg empfiehlt die Ausweisung als verkehrsberuhigten Bereich."
+        
       },
       {
         "date": "2025-12-15",
@@ -130,7 +127,10 @@
         "title": "Barken-Abtrennung abgelehnt",
         "text": "Der Vorschlag, den nicht zu beparkenden Bereich mit Barken abzutrennen und Verst\u00f6\u00dfe zu ahnden, wird abgelehnt.",
         "sessionId": "s1",
-        "voteId": "v7"
+        "voteId": "v7",
+        "press": [
+          { "media": "br", "url": "https://www.ardmediathek.de/video/quer-mit-christoph-suess/legales-falschparken-moosburger-stadtplatz-wird-zugestellt/br/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNVdPMDIyMjY2QTAvc2VjdGlvbi9iZTA1ZGJmNC04Y2QyLTQyZDAtODg4Yi03NDZmYzg0ZDAyMDU", "title": "quer: Legales Falschparken" },
+        ]
       },
       {
         "date": "2026-02-23",
@@ -195,8 +195,12 @@
         "sessionId": "s2",
         "voteId": "v11",
         "press": [
-          { "media": "merkur", "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/immer-katastrophaler-und-verrueckter-moosburger-aerger-ueber-baugenehmigungen-des-landratsamts-94165710.html", "title": "Merkur: \u00c4rger \u00fcber Baugenehmigungen des Landratsamts" }
-        ]
+      {
+        "media": "merkur",
+        "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/151-studentenwohnungen-gegen-landratsamt-ueberhaupt-nicht-kontrollierbar-stadt-klagt-wegen-94153206.html",
+        "title": "Merkur: Stadt klagt wegen Studentenwohnungen"
+      }
+    ]
       }
     ]
   },
