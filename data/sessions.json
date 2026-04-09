@@ -114,6 +114,7 @@
     "id": "s1",
     "date": "2026-01-12",
     "type": "stadtrat",
+    "absent": ["hobmaier,kaestl,becher_a,becher_j"],
     "title": "1. Stadtratssitzung – Januar 2026",
     "agenda": [
       { "number": 1,   "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
@@ -132,6 +133,7 @@
     "date": "2026-02-02",
     "type": "stadtrat",
     "title": "2. Stadtratssitzung – Februar 2026",
+    "absent": ["Beibl","Heinz","Hobmaier"],
     "agenda": [
       { "number": 3, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
       { "number": 4, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
