@@ -133,7 +133,7 @@
     "date": "2026-02-02",
     "type": "stadtrat",
     "title": "2. Stadtratssitzung – Februar 2026",
-    "absent": ["Beibl","Heinz","Hobmaier"],
+    "absent": ["beibl","heinz","hobmaier"],
     "agenda": [
       { "number": 3, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
       { "number": 4, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
@@ -152,7 +152,7 @@
     "date": "2026-02-23",
     "type": "stadtrat",
     "title": "3. Stadtratssitzung – Februar 2026",
-    "absent": ["gruber"],
+    "absent": ["becher_a","becher_j","gruber","hadersdorfer","heinz","von_pressentin"],
     "agenda": [
       { "number": 1, "title": "Mitteilungen des Ersten Bürgermeisters", "type": "formal" },
       { "number": 2, "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR", "type": "formal" },
