@@ -268,6 +268,7 @@
     { "id": "wittmann", "firstName": "Thomas", "lastName": "Wittmann", "nickname": "Tom", "party": "fresh", "role": "councillor", "from": "2020-05", "to": "2021-10",
       "profile": {
         "pronouns": "er/ihn",
+        "titles": [{ "title": "Jugendbeauftragter", "from": "2020-05", "to": "2021-10" }],
         "contact": {
           "instagram": "@fresher.tom",
           "linkedin": "/thomas-wittmann-6785283b4"
@@ -283,7 +284,7 @@
     { "id": "gruebl", "firstName": "Julian", "lastName": "Grübl", "party": "fresh", "role": "councillor", "from": "2021-10", "to": "2024-10",
       "profile": {
         "pronouns": "er/ihn",
-        "titles": [{ "title": "Jugendbeauftragter", "from": "2021-10", "to": "2024-10" }]
+        "titles": [{ "title": "Jugendbeauftragter", "from": "2021-10", "to": "2026-5" }]
       }
     },
     { "id": "gruber", "firstName": "Benedict Arya", "lastName": "Gruber", "nickname": "Bene", "party": "fresh", "role": "councillor", "from": "2022-01", "to": "2026-05",
