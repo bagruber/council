@@ -302,7 +302,19 @@
         "title": "Kreisverkehr beschlossen",
         "text": "Planungsb\u00fcro BBI stellt die Planung vor. Der Stadtrat beschlie\u00dft den Umbau zum Mini-Kreisverkehr (17:4). Die M\u00f6glichkeit eines aufgemalten Kreisverkehrs wird noch gepr\u00fcft.",
         "sessionId": "s5",
-        "voteId": "v29"
+        "voteId": "v29",
+        "press": [
+      {
+        "media": "merkur",
+        "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/totalsperre-trotz-grosser-bedenken-neuer-kreisverkehr-in-moosburg-beschlossen-autofahrern-droht-94032557.html",
+        "title": "Merkur: Neuer Kreisverkehr beschlossen"
+      },
+      {
+        "media": "idowa",
+        "url": "https://www.idowa.de/regionen/moosburg/kreiseln-zur-entlastung-des-verkehrs-in-moosburg-art-365250",
+        "title": "idowa: Kreisverkehr zur Entlastung des Verkehrs"
+      }
+    ]
       }
     ]
   },
@@ -319,7 +331,14 @@
         "title": "Stelle Wirtschaftsf\u00f6rderer beschlossen",
         "text": "Eine Vollzeitstelle f\u00fcr einen Wirtschaftsf\u00f6rderer wird im Stellenplan 2026 geschaffen (16:6).",
         "sessionId": "s6",
-        "voteId": "v40"
+        "voteId": "v40",
+        "press": [
+      {
+        "media": "merkur",
+        "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/gewerbesteuer-flaute-und-leerstand-jetzt-soll-es-in-moosburg-ein-wirtschaftsfoerderer-richten-94067543.html",
+        "title": "Merkur: Wirtschaftsf\u00f6rderer soll es richten"
+      }
+    ]
       },
       {
         "date": "2025-12-01",
