@@ -1501,6 +1501,7 @@ main {
 .mtl-vote-chip.nein { background: var(--no); }
 .mtl-vote-chip.abwesend { background: var(--absent); }
 .mtl-vote-chip.unknown { background: var(--border); color: var(--text-muted); }
+.mtl-vote-chip.inferred { opacity: 0.55; }
 
 .mtl-vote-title {
   flex: 1;
