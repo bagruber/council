@@ -16,16 +16,25 @@
 
   "members": [
     { "id": "meinelt", "firstName": "Anita", "lastName": "Meinelt", "party": "csu", "role": "mayor", "from": "2002-05", "to": "2020-05", "title": "Erste Bürgermeisterin",
-      "profile": { "pronouns": "sie/ihr" }
+      "profile": {
+        "pronouns": "sie/ihr",
+        "titles": [{ "title": "Erste Bürgermeisterin", "from": "2002-05", "to": "2020-05" }]
+      }
     },
     { "id": "dollinger", "firstName": "Josef", "lastName": "Dollinger", "nickname": "Sepp", "party": "fw", "role": "mayor", "from": "2020-05", "to": "2026-05", "title": "Erster Bürgermeister",
+      "roleHistory": [
+        { "role": "councillor", "from": "2014-05", "to": "2020-05" }
+      ],
       "partyHistory": [
         { "party": "fw", "from": "2014-05", "to": "2025-01" },
         { "party": "parteilos", "from": "2025-01", "to": null }
       ],
       "profile": {
         "pronouns": "er/ihn",
-        "titles": [{ "title": "Zweiter Bürgermeister", "from": "2014-05", "to": "2020-05" }],
+        "titles": [
+          { "title": "Zweiter Bürgermeister", "from": "2014-05", "to": "2020-05" },
+          { "title": "Erster Bürgermeister", "from": "2020-05", "to": "2026-05" }
+        ],
         "contact": {
           "email": "info@josef-dollinger.de",
           "website": "josef-dollinger.de/",
@@ -66,7 +75,10 @@
       ],
       "profile": {
         "pronouns": "er/ihn",
-        "titles": [{ "title": "Ehrenamtsreferent", "from": "2020-05", "to": null }],
+        "titles": [
+          { "title": "Zweiter Bürgermeister", "from": "2020-05", "to": null },
+          { "title": "Ehrenamtsreferent", "from": "2020-05", "to": null }
+        ],
         "contact": {
           "email": "c.g.hadersdorfer@gmx.de",
           "website": "www.georg-hadersdorfer.de",
@@ -122,6 +134,7 @@
     { "id": "stanglmaier", "firstName": "Dr. Michael", "lastName": "Stanglmaier", "party": "gruene", "role": "councillor", "from": "2000-05", "to": null, "title": "Dritter Bürgermeister",
       "profile": {
         "pronouns": "er/ihn",
+        "titles": [{ "title": "Dritter Bürgermeister", "from": "2020-05", "to": null }],
         "contact": {
           "email": "michael.stanglmaier@gruene-moosburg.de",
           "website": "http://www.michael-stanglmaier.eu/",
