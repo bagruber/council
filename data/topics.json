@@ -263,7 +263,14 @@
         "title": "Fahrradschutzstreifen beschlossen",
         "text": "Knapp angenommen (14:8): Ein Fahrradschutzstreifen wird probeweise f\u00fcr ein Jahr angebracht.",
         "sessionId": "s6",
-        "voteId": "v36"
+        "voteId": "v36",
+        "press": [
+      {
+        "media": "merkur",
+        "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/trotz-bedenken-stadt-beschliesst-fahrradschutzstreifen-auf-probe-94072881.html",
+        "title": "Merkur: Fahrradschutzstreifen auf Probe beschlossen"
+      }
+    ]
       },
       {
         "date": "2025-12-01",
@@ -279,7 +286,14 @@
         "title": "Verkehrsberuhigung Schulzentrum S\u00fcd",
         "text": "Der Stadtrat beschlie\u00dft kleinere verkehrsberuhigende Ma\u00dfnahmen am Schulzentrum S\u00fcd. Eine Einbahnregelung wird mehrheitlich abgelehnt.",
         "sessionId": "s4",
-        "voteId": "v19"
+        "voteId": "v19",
+        "press": [
+      {
+        "media": "merkur",
+        "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/gefahrenzone-an-moosburger-schulzentrum-kleine-massnahmen-sollen-schulweg-sicherer-machen-94194456.html",
+        "title": "Merkur: Ma\u00dfnahmen sollen Schulweg sicherer machen"
+      }
+    ]
       }
     ]
   },
@@ -310,9 +324,9 @@
         "title": "Merkur: Neuer Kreisverkehr beschlossen"
       },
       {
-        "media": "idowa",
+        "media": "mz",
         "url": "https://www.idowa.de/regionen/moosburg/kreiseln-zur-entlastung-des-verkehrs-in-moosburg-art-365250",
-        "title": "idowa: Kreisverkehr zur Entlastung des Verkehrs"
+        "title": "Moosburger Zeitung: Kreisverkehr zur Entlastung des Verkehrs"
       }
     ]
       }
