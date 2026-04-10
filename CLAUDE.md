@@ -16,6 +16,10 @@
 - `data/sessions.json` — Sitzungen mit Tagesordnung
 - `data/votes.json` — Abstimmungen mit Einzelstimmen
 - `data/tags.json` — Themen-Tags
+- `data/press.json` — Presseartikel als eigenständige Entitäten (ID-Format: `{media}_{YYYY-MM-DD}_{slug}`)
+
+### Bilder
+- `img/topics/` — Bilder für Themen-Timelines, referenziert über `image`-Feld in topics.json
 
 ### Geplant: OParl API
 - Standardisierte REST/JSON-Schnittstelle für Ratsinformationssysteme

@@ -6,14 +6,15 @@ const SHOW_PRONOUNS = true;
   const main = document.getElementById("main");
   const gremienMain = document.getElementById("gremien-main");
 
-  let topics, sessions, votes, tags, membersData;
+  let topics, sessions, votes, tags, membersData, pressData;
   try {
-    [topics, sessions, votes, tags, membersData] = await Promise.all([
+    [topics, sessions, votes, tags, membersData, pressData] = await Promise.all([
       fetch("data/topics.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
       fetch("data/sessions.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
       fetch("data/votes.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
       fetch("data/tags.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
       fetch("data/members.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch("data/press.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     ]);
   } catch (err) {
     main.innerHTML = `<p style="color:var(--no);padding:40px 0">Daten konnten nicht geladen werden. Bitte mit einem lokalen Webserver \u00f6ffnen (z.B. <code>npx serve</code>).</p>`;
@@ -29,6 +30,8 @@ const SHOW_PRONOUNS = true;
   const mediaSources = membersData.media || [];
   const mediaMap = {};
   mediaSources.forEach(m => { mediaMap[m.id] = m; });
+  const pressMap = {};
+  pressData.forEach(p => { pressMap[p.id] = p; });
 
   // -- Settings --
 
@@ -316,7 +319,9 @@ const SHOW_PRONOUNS = true;
     if (!pressArr || !pressArr.length) return null;
     const wrap = document.createElement("div");
     wrap.className = "press-links";
-    pressArr.forEach(p => {
+    pressArr.forEach(ref => {
+      const p = typeof ref === "string" ? pressMap[ref] : ref;
+      if (!p) return;
       const src = mediaMap[p.media];
       if (!src) return;
       const a = document.createElement("a");
