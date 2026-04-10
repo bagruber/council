@@ -321,5 +321,62 @@
         "voteId": "v41"
       }
     ]
+  },
+  {
+    "id": "t11",
+    "title": "Legal Wall",
+    "tags": ["culture"],
+    "image": null,
+    "summary": "Auf Antrag von StR Gruber (fresh) und Unterst\u00fctzern aus sechs Fraktionen beschlie\u00dft der Stadtrat einstimmig die Errichtung einer \u00f6ffentlichen Spr\u00fchwand f\u00fcr Graffiti und Street Art.",
+    "history": [
+      {
+        "date": "2024-11-29",
+        "type": "proposal",
+        "title": "Antrag auf Legal Wall",
+        "text": "StR Gruber (fresh) beantragt die Errichtung einer \u00f6ffentlich zug\u00e4nglichen Anlage f\u00fcr Spraykunst, Graffiti und Street Art. Unterst\u00fctzt wird der Antrag von StR Heinz (CSU), StR K\u00e4stl (\u00d6DP), StRin Beibl (Gr\u00fcne), StR Hobmaier (fresh), StR Fincke (FDP), StR Strobl (Linke) sowie dem Jugendbeauftragten Gr\u00fcbl und dem Jugendparlament. Favorisierter Standort: Gel\u00e4nde der alten Staatsstra\u00dfe an der BayWa-Unterf\u00fchrung.",
+        "press": ["merkur_2024-12-09_legal-wall"]
+      },
+      {
+        "date": "2024-12-09",
+        "type": "vote",
+        "title": "Stadtrat stimmt einstimmig zu",
+        "text": "Der Stadtrat beschlie\u00dft die Errichtung einer Legal Wall. 2.000 \u20ac Haushaltsmittel werden f\u00fcr 2025 eingestellt. Die Antragsteller benennen eine verantwortliche Person, die Inhalte pr\u00fcft und eine Benutzungsordnung erstellt.",
+        "sessionId": "s9",
+        "voteId": "v56",
+        "press": ["merkur_2024-12-09_legal-wall", "sz_2024-12-17_legal-wall"]
+      },
+      {
+        "date": "2025-06-01",
+        "type": "milestone",
+        "title": "Errichtung der Legal Wall",
+        "text": "Die Legal Wall wird am Standort an der alten Staatsstra\u00dfe bei der BayWa-Unterf\u00fchrung errichtet und steht allen Interessierten zur Verf\u00fcgung.",
+        "image": "legal-wall.jpg"
+      }
+    ]
+  },
+  {
+    "id": "t12",
+    "title": "Generalsanierung Freibad",
+    "tags": ["infrastructure", "budget"],
+    "image": null,
+    "summary": "Das st\u00e4dtische Freibad an der Stadtbadstra\u00dfe soll generalsaniert werden. Der Stadtrat nimmt die Planung zustimmend zur Kenntnis und bewirbt sich um Bundesmittel.",
+    "history": [
+      {
+        "date": "2024-12-09",
+        "type": "vote",
+        "title": "Planung vorgestellt und gebilligt",
+        "text": "Der Stadtrat nimmt die Planung f\u00fcr die Sanierung des Freibades zustimmend zur Kenntnis und erm\u00e4chtigt die Verwaltung zur Erstellung der Kostenberechnung.",
+        "sessionId": "s9",
+        "voteId": "v52"
+      },
+      {
+        "date": "2025-11-10",
+        "type": "vote",
+        "title": "Bundesprogramm Sportstättensanierung",
+        "text": "Der Stadtrat beschlie\u00dft die Teilnahme am Bundesprogramm Sanierung kommunaler Sportst\u00e4tten (Projektaufruf 2025/2026) f\u00fcr die Freibadsanierung.",
+        "sessionId": "s5",
+        "voteId": "v32"
+      }
+    ]
   }
 ]
