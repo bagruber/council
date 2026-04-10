@@ -25,9 +25,7 @@
         "text": "Der Stadtrat vertagt die Entscheidung. Eine nochmalige Besprechung mit SGT, SGM und Jugendhaus soll eine einvernehmliche L\u00f6sung herbeif\u00fchren.",
         "sessionId": "s1",
         "voteId": "v2",
-        "press": [
-          { "media": "merkur", "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/sgt-istanbul-moosburg-drei-vorschlaege-fuer-neues-vereinsheim-clubvertreter-reagieren-ueberrascht-94124799.html", "title": "Merkur: Drei Vorschl\u00e4ge f\u00fcr neues Vereinsheim" }
-        ]
+        "press": ["merkur_2026-01-12_sgt-vereinsheim"]
       },
       {
         "date": "2026-02-02",
@@ -36,9 +34,7 @@
         "text": "Nach Einigung aller Beteiligten beschlie\u00dft der Stadtrat einstimmig, Variante 4 weiterzuverfolgen.",
         "sessionId": "s2",
         "voteId": "v8",
-        "press": [
-          { "media": "merkur", "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/haengepartie-beendet-fussballer-duerfen-neues-vereinsheim-auf-moosburger-stadtgrund-bauen-94163882.html", "title": "Merkur: H\u00e4ngepartie beendet" }
-        ]
+        "press": ["merkur_2026-02-02_sgt-vereinsheim"]
       }
     ]
   },
@@ -95,7 +91,6 @@
         "type": "proposal",
         "title": "Probleme mit Falschparkern",
         "text": "Seit der Fertigstellung h\u00e4ufen sich Beschwerden \u00fcber Falschparker, besonders in der Platzmitte. Die PI Moosburg empfiehlt die Ausweisung als verkehrsberuhigten Bereich."
-        
       },
       {
         "date": "2025-12-15",
@@ -117,9 +112,7 @@
         "text": "Der Stadtrat beschlie\u00dft, zus\u00e4tzliche tempor\u00e4re Parkfl\u00e4chen f\u00fcr die Wintermonate mit Planern und St\u00e4dtebauf\u00f6rderung zu pr\u00fcfen.",
         "sessionId": "s1",
         "voteId": "v6",
-        "press": [
-          { "media": "merkur", "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/parken-am-plan-bald-verstaerkt-im-winter-stadt-moosburg-verzichtet-vorerst-auf-strafzettel-94140705.html", "title": "Merkur: Stadt verzichtet vorerst auf Strafzettel" }
-        ]
+        "press": ["merkur_2026-01-12_parken-plan"]
       },
       {
         "date": "2026-01-12",
@@ -128,18 +121,14 @@
         "text": "Der Vorschlag, den nicht zu beparkenden Bereich mit Barken abzutrennen und Verst\u00f6\u00dfe zu ahnden, wird abgelehnt.",
         "sessionId": "s1",
         "voteId": "v7",
-        "press": [
-          { "media": "br", "url": "https://www.ardmediathek.de/video/quer-mit-christoph-suess/legales-falschparken-moosburger-stadtplatz-wird-zugestellt/br/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNVdPMDIyMjY2QTAvc2VjdGlvbi9iZTA1ZGJmNC04Y2QyLTQyZDAtODg4Yi03NDZmYzg0ZDAyMDU", "title": "quer: Legales Falschparken" },
-        ]
+        "press": ["br_2025-09_falschparken-plan"]
       },
       {
         "date": "2026-02-23",
         "type": "milestone",
         "title": "Markierungen werden erneuert",
         "text": "Laut Erg\u00e4nzung bei Genehmigung der Niederschrift werden die Fahrbahnmarkierungen zeitnah erneuert. Erst danach sollen Verwarnungen ausgestellt werden.",
-        "press": [
-          { "media": "merkur", "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/nach-posse-um-moosburger-plan-falschparker-muessen-ab-montag-blechen-94190182.html", "title": "Merkur: Falschparker müssen ab Montag blechen" }
-        ]
+        "press": ["merkur_2026-02-23_parken-plan"]
       }
     ]
   },
@@ -194,13 +183,7 @@
         "text": "Der Stadtrat beschlie\u00dft, fristgerecht Klage beim Verwaltungsgericht M\u00fcnchen gegen die erteilte Baugenehmigung einzureichen.",
         "sessionId": "s2",
         "voteId": "v11",
-        "press": [
-      {
-        "media": "merkur",
-        "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/151-studentenwohnungen-gegen-landratsamt-ueberhaupt-nicht-kontrollierbar-stadt-klagt-wegen-94153206.html",
-        "title": "Merkur: Stadt klagt wegen Studentenwohnungen"
-      }
-    ]
+        "press": ["merkur_2026-02-02_studentenwohnheim"]
       }
     ]
   },
@@ -268,13 +251,7 @@
         "text": "Knapp angenommen (14:8): Ein Fahrradschutzstreifen wird probeweise f\u00fcr ein Jahr angebracht.",
         "sessionId": "s6",
         "voteId": "v36",
-        "press": [
-      {
-        "media": "merkur",
-        "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/trotz-bedenken-stadt-beschliesst-fahrradschutzstreifen-auf-probe-94072881.html",
-        "title": "Merkur: Fahrradschutzstreifen auf Probe beschlossen"
-      }
-    ]
+        "press": ["merkur_2025-12-01_fahrradschutzstreifen"]
       },
       {
         "date": "2025-12-01",
@@ -291,13 +268,7 @@
         "text": "Der Stadtrat beschlie\u00dft kleinere verkehrsberuhigende Ma\u00dfnahmen am Schulzentrum S\u00fcd. Eine Einbahnregelung wird mehrheitlich abgelehnt.",
         "sessionId": "s4",
         "voteId": "v19",
-        "press": [
-      {
-        "media": "merkur",
-        "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/gefahrenzone-an-moosburger-schulzentrum-kleine-massnahmen-sollen-schulweg-sicherer-machen-94194456.html",
-        "title": "Merkur: Ma\u00dfnahmen sollen Schulweg sicherer machen"
-      }
-    ]
+        "press": ["merkur_2026-02-23_schulweg"]
       }
     ]
   },
@@ -321,18 +292,7 @@
         "text": "Planungsb\u00fcro BBI stellt die Planung vor. Der Stadtrat beschlie\u00dft den Umbau zum Mini-Kreisverkehr (17:4). Die M\u00f6glichkeit eines aufgemalten Kreisverkehrs wird noch gepr\u00fcft.",
         "sessionId": "s5",
         "voteId": "v29",
-        "press": [
-      {
-        "media": "merkur",
-        "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/totalsperre-trotz-grosser-bedenken-neuer-kreisverkehr-in-moosburg-beschlossen-autofahrern-droht-94032557.html",
-        "title": "Merkur: Neuer Kreisverkehr beschlossen"
-      },
-      {
-        "media": "mz",
-        "url": "https://www.idowa.de/regionen/moosburg/kreiseln-zur-entlastung-des-verkehrs-in-moosburg-art-365250",
-        "title": "Moosburger Zeitung: Kreisverkehr zur Entlastung des Verkehrs"
-      }
-    ]
+        "press": ["merkur_2025-11-10_kreisverkehr", "mz_2025-11-10_kreisverkehr"]
       }
     ]
   },
@@ -350,13 +310,7 @@
         "text": "Eine Vollzeitstelle f\u00fcr einen Wirtschaftsf\u00f6rderer wird im Stellenplan 2026 geschaffen (16:6).",
         "sessionId": "s6",
         "voteId": "v40",
-        "press": [
-      {
-        "media": "merkur",
-        "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/gewerbesteuer-flaute-und-leerstand-jetzt-soll-es-in-moosburg-ein-wirtschaftsfoerderer-richten-94067543.html",
-        "title": "Merkur: Wirtschaftsf\u00f6rderer soll es richten"
-      }
-    ]
+        "press": ["merkur_2025-12-01_wirtschaftsfoerderer"]
       },
       {
         "date": "2025-12-01",
