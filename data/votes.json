@@ -7,7 +7,11 @@
     "title": "Genehmigung Niederschriften",
     "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschriften der Stadtratssitzungen vom 10.11.2025 und 01.12.2025 sowie des HVFA vom 20.11.2025 und 27.11.2025.",
     "type": "anonymous",
-    "results": { "yes": 21, "no": 0, "absent": 4 }
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
   },
   {
     "id": "v2",
@@ -17,7 +21,11 @@
     "title": "Zurückstellung SGT-Vereinsheim",
     "text": "Der Stadtrat beschließt, die Entscheidung über die Variante zum Bau des Vereinsheims zurückzustellen. Eine nochmalige Besprechung mit den Beteiligten wird angesetzt.",
     "type": "anonymous",
-    "results": { "yes": 21, "no": 0, "absent": 4 }
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
   },
   {
     "id": "v3",
@@ -27,7 +35,11 @@
     "title": "Einvernehmen Anbau Mühlbachbogen",
     "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen und stimmt der Befreiung von den Festsetzungen des Bebauungsplans zu.",
     "type": "anonymous",
-    "results": { "yes": 21, "no": 0, "absent": 4 }
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
   },
   {
     "id": "v4",
@@ -37,7 +49,11 @@
     "title": "Förderung AMC Elektrokart",
     "text": "Der Stadtrat beschließt dem AMC Moosburg eine Großgeräteförderung für die Anschaffung eines neuen Elektrokarts in Höhe von 33 % der Anschaffungskosten zu gewähren.",
     "type": "anonymous",
-    "results": { "yes": 21, "no": 0, "absent": 4 }
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
   },
   {
     "id": "v5",
@@ -48,9 +64,37 @@
     "text": "Der Stadtrat beauftragt die Verwaltung, einen Entwurf einer Konzeptausschreibung für die Überlassung des Bahnhofs an einen Investor vorzubereiten. Bis zur Realisierung soll der Bauhof Verschönerungsmaßnahmen durchführen.",
     "type": "named",
     "results": {
-      "yes":    ["dollinger","hadersdorfer","stanglmaier","beibl","fincke","gruber","haberl","heinz","linz_karin","linz_kilian","pschorr","reif","strobl","tristl","von_pressentin","weber","welter"],
-      "no":     ["grundner","kieninger","lauterbach","marcus"],
-      "absent": ["becher_a","becher_j","hobmaier","kaestl"]
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "fincke",
+        "gruber",
+        "haberl",
+        "heinz",
+        "linz_karin",
+        "linz_kilian",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl",
+        "von_pressentin",
+        "weber",
+        "welter"
+      ],
+      "no": [
+        "grundner",
+        "kieninger",
+        "lauterbach",
+        "marcus"
+      ],
+      "absent": [
+        "becher_a",
+        "becher_j",
+        "hobmaier",
+        "kaestl"
+      ]
     }
   },
   {
@@ -62,9 +106,37 @@
     "text": "Der Stadtrat beschließt, die Ausweisung weiterer Flächen Auf dem Plan für temporäre Parkflächen insbesondere für die Wintermonate mit den Planern und der Städtebauförderung zu prüfen.",
     "type": "named",
     "results": {
-      "yes":    ["dollinger","grundner","hadersdorfer","haberl","heinz","kieninger","lauterbach","reif","tristl","pschorr","welter","fincke","weber"],
-      "no":     ["gruber","linz_kilian","von_pressentin","beibl","stanglmaier","marcus"],
-      "absent": ["linz_karin","becher_a","becher_j","hobmaier","kaestl","strobl"]
+      "yes": [
+        "dollinger",
+        "grundner",
+        "hadersdorfer",
+        "haberl",
+        "heinz",
+        "kieninger",
+        "lauterbach",
+        "reif",
+        "tristl",
+        "pschorr",
+        "welter",
+        "fincke",
+        "weber"
+      ],
+      "no": [
+        "gruber",
+        "linz_kilian",
+        "von_pressentin",
+        "beibl",
+        "stanglmaier",
+        "marcus"
+      ],
+      "absent": [
+        "linz_karin",
+        "becher_a",
+        "becher_j",
+        "hobmaier",
+        "kaestl",
+        "strobl"
+      ]
     }
   },
   {
@@ -77,9 +149,37 @@
     "type": "named",
     "result": "rejected",
     "results": {
-      "yes":    ["gruber","linz_kilian","von_pressentin","beibl","stanglmaier","marcus","fincke"],
-      "no":     ["dollinger","grundner","hadersdorfer","haberl","heinz","kieninger","lauterbach","reif","tristl","pschorr","welter","weber"],
-      "absent": ["linz_karin","becher_a","becher_j","hobmaier","kaestl","strobl"]
+      "yes": [
+        "gruber",
+        "linz_kilian",
+        "von_pressentin",
+        "beibl",
+        "stanglmaier",
+        "marcus",
+        "fincke"
+      ],
+      "no": [
+        "dollinger",
+        "grundner",
+        "hadersdorfer",
+        "haberl",
+        "heinz",
+        "kieninger",
+        "lauterbach",
+        "reif",
+        "tristl",
+        "pschorr",
+        "welter",
+        "weber"
+      ],
+      "absent": [
+        "linz_karin",
+        "becher_a",
+        "becher_j",
+        "hobmaier",
+        "kaestl",
+        "strobl"
+      ]
     }
   },
   {
@@ -90,7 +190,11 @@
     "title": "SGT-Vereinsheim Variante 4",
     "text": "Der Stadtrat beschließt, die vorliegende Variante 4 weiterzuverfolgen. Die Verwaltung wird beauftragt, die erforderlichen weiteren Schritte einzuleiten.",
     "type": "anonymous",
-    "results": { "yes": 22, "no": 0, "absent": 3 }
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   },
   {
     "id": "v9",
@@ -100,7 +204,11 @@
     "title": "Ablehnung Mehrfamilienhaus Sternstraße",
     "text": "Der Stadtrat stimmt dem Vorhaben nach § 36a Abs. 1 BauGB nicht zu. Das Vorhaben ist mit den Vorstellungen der Stadt nicht vereinbar.",
     "type": "anonymous",
-    "results": { "yes": 22, "no": 0, "absent": 3 }
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   },
   {
     "id": "v10",
@@ -110,7 +218,11 @@
     "title": "Einvernehmen Mühlbachbogen – erneut",
     "text": "Der Stadtrat stimmt dem beantragten Vorhaben nach § 36a Abs. 1 BauGB zu.",
     "type": "anonymous",
-    "results": { "yes": 22, "no": 0, "absent": 3 }
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   },
   {
     "id": "v11",
@@ -121,9 +233,37 @@
     "text": "Der Stadtrat beschließt, gegen die erteilte Baugenehmigung zum Neubau eines Studentenwohnheims im Geltungsbereich des B-Plans Nr. 77 fristgerecht Klage beim Verwaltungsgericht München einzureichen.",
     "type": "named",
     "results": {
-      "yes":    ["dollinger","stanglmaier","becher_a","becher_j","fincke","gruber","grundner","haberl","kaestl","kieninger","lauterbach","linz_karin","linz_kilian","marcus","pschorr","reif","strobl","tristl","von_pressentin","weber"],
-      "no":     ["hadersdorfer","welter"],
-      "absent": ["beibl","heinz","hobmaier"]
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "kaestl",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl",
+        "von_pressentin",
+        "weber"
+      ],
+      "no": [
+        "hadersdorfer",
+        "welter"
+      ],
+      "absent": [
+        "beibl",
+        "heinz",
+        "hobmaier"
+      ]
     }
   },
   {
@@ -134,7 +274,11 @@
     "title": "Regionalplan Windenergie",
     "text": "Der Stadtrat nimmt den Fortschreibungsentwurf zur 26. Änderung des Regionalplans München zur Kenntnis und stellt fest, dass Moosburg nicht unmittelbar betroffen ist.",
     "type": "anonymous",
-    "results": { "yes": 20, "no": 0, "absent": 5 }
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
   },
   {
     "id": "v13",
@@ -144,7 +288,11 @@
     "title": "Tempo 20 Stadtplatz",
     "text": "Der Stadtrat beschließt, den verkehrsberuhigten Geschäftsbereich mit Tempo 20 km/h für den Stadtplatz, beginnend von der Rentamtstraße bis zum Stadtplatz 17, zu erweitern.",
     "type": "anonymous",
-    "results": { "yes": 21, "no": 1, "absent": 3 }
+    "results": {
+      "yes": 21,
+      "no": 1,
+      "absent": 3
+    }
   },
   {
     "id": "v14",
@@ -154,7 +302,11 @@
     "title": "Prüfung Bahnhofstraße",
     "text": "Der Stadtrat beschließt, die Verwaltung zu beauftragen, über die verkehrliche Situation in der Bahnhofstraße nochmals mit der Polizei zu sprechen.",
     "type": "anonymous",
-    "results": { "yes": 20, "no": 2, "absent": 3 }
+    "results": {
+      "yes": 20,
+      "no": 2,
+      "absent": 3
+    }
   },
   {
     "id": "v15",
@@ -164,7 +316,11 @@
     "title": "Haushaltsreste 2025",
     "text": "Der Stadtrat beschließt die Übertragung der Haushaltsreste 2025 wie im Beschlussvorschlag dargestellt.",
     "type": "anonymous",
-    "results": { "yes": 22, "no": 0, "absent": 3 }
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   },
   {
     "id": "v16",
@@ -174,7 +330,11 @@
     "title": "Kostenkommission Grundschule",
     "text": "Der Stadtrat beschließt die Einsetzung einer Kostenkommission zur Begleitung der Erweiterung und Generalsanierung der Theresia-Gerhardinger-Grundschule.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v17",
@@ -184,7 +344,11 @@
     "title": "Planung Grundschule beauftragen",
     "text": "Der Stadtrat beauftragt die Verwaltung, die Planungen für die Erweiterung und Generalsanierung der Theresia-Gerhardinger-Grundschule mit geschätzten Gesamtkosten von ca. 33 Mio. Euro weiterzuführen.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v18",
@@ -194,7 +358,11 @@
     "title": "Haushaltssatzung 2026",
     "text": "Der Stadtrat beschließt die Haushaltssatzung mit Haushaltsplan für das Haushaltsjahr 2026. Die Neuverschuldung beträgt 14 Mio. Euro, die Gesamtverschuldung steigt auf ca. 45,7 Mio. Euro.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v19",
@@ -204,7 +372,11 @@
     "title": "Verkehrsberuhigung Schulzentrum Süd",
     "text": "Der Stadtrat beschließt verkehrsberuhigende Maßnahmen im Bereich des Schulzentrums Süd. Eine Einbahnregelung wird abgelehnt, stattdessen werden kleinere Maßnahmen zur Schulwegsicherheit umgesetzt.",
     "type": "anonymous",
-    "results": { "yes": 17, "no": 1, "absent": 7 }
+    "results": {
+      "yes": 17,
+      "no": 1,
+      "absent": 7
+    }
   },
   {
     "id": "v20",
@@ -214,7 +386,11 @@
     "title": "Gebührenordnung Stadtbücherei",
     "text": "Der Stadtrat beschließt die neue Gebühren- und Entgeltordnung für die Stadtbücherei Moosburg a.d. Isar.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v21",
@@ -224,7 +400,11 @@
     "title": "Clariant – Bebauungsplan",
     "text": "Der Stadtrat beschließt die Aufstellung eines Bebauungsplans für das Clariant-Gelände.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v22",
@@ -234,7 +414,11 @@
     "title": "Ablehnung Wohnanlage Merianstraße",
     "text": "Der Stadtrat versagt das gemeindliche Einvernehmen für das Bauvorhaben einer Wohnanlage in der Merianstraße im Bauturbo-Verfahren.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v23",
@@ -244,7 +428,11 @@
     "title": "Aufstellung B-Plan Aich",
     "text": "Der Stadtrat beschließt die Aufstellung eines Bebauungsplans für den Bereich Aich.",
     "type": "anonymous",
-    "results": { "yes": 12, "no": 6, "absent": 7 }
+    "results": {
+      "yes": 12,
+      "no": 6,
+      "absent": 7
+    }
   },
   {
     "id": "v24",
@@ -254,9 +442,12 @@
     "title": "17. Änderung Flächennutzungsplan",
     "text": "Der Stadtrat beschließt die 17. Änderung des Flächennutzungsplans.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
-
   {
     "id": "v25",
     "sessionId": "s5",
@@ -265,7 +456,11 @@
     "title": "Genehmigung Niederschrift BA 06.10.",
     "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift des Bau-, Planungs- und Umweltausschusses vom 06.10.2025.",
     "type": "anonymous",
-    "results": { "yes": 19, "no": 0, "absent": 6 }
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    }
   },
   {
     "id": "v26",
@@ -275,7 +470,11 @@
     "title": "Neufassung BGS-EWS",
     "text": "Der Stadtrat beschließt die Neufassung der Beitrags- und Gebührensatzung zur Entwässerungssatzung zum 01.01.2026.",
     "type": "anonymous",
-    "results": { "yes": 20, "no": 0, "absent": 5 }
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
   },
   {
     "id": "v27",
@@ -285,7 +484,11 @@
     "title": "Änderungssatzung Wasserabgabe",
     "text": "Der Stadtrat beschließt die 3. Änderungssatzung zur Wasserabgabesatzung.",
     "type": "anonymous",
-    "results": { "yes": 20, "no": 0, "absent": 5 }
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
   },
   {
     "id": "v28",
@@ -295,7 +498,11 @@
     "title": "Neuerlass BGS-WAS",
     "text": "Der Stadtrat beschließt den Neuerlass der Beitrags- und Gebührensatzung zur Wasserabgabesatzung.",
     "type": "anonymous",
-    "results": { "yes": 20, "no": 0, "absent": 5 }
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
   },
   {
     "id": "v29",
@@ -305,7 +512,11 @@
     "title": "Kreisverkehr Landshuter Str./Stadtwaldstr.",
     "text": "Der Stadtrat beschließt, den Knoten Landshuter Straße/Stadtwaldstraße zu einem kleinen Kreisverkehr umzubauen. Die Möglichkeit eines aufgemalten Kreisverkehrs wird vorab noch geprüft.",
     "type": "anonymous",
-    "results": { "yes": 17, "no": 4, "absent": 4 }
+    "results": {
+      "yes": 17,
+      "no": 4,
+      "absent": 4
+    }
   },
   {
     "id": "v30",
@@ -315,7 +526,11 @@
     "title": "Kläranlage Satzungsänderung",
     "text": "Der Stadtrat beschließt die Änderung der Unternehmenssatzung der Kläranlage Moosburg GmbH. Die Prüfpflicht durch einen Wirtschaftsprüfer entfällt.",
     "type": "anonymous",
-    "results": { "yes": 20, "no": 0, "absent": 5 }
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
   },
   {
     "id": "v31",
@@ -325,19 +540,26 @@
     "title": "Wahlhelferentschädigung 2026",
     "text": "Die Wahlhelferentschädigung wird auf 80 € für die Kommunalwahl und 40 € für eine mögliche Stichwahl festgesetzt.",
     "type": "anonymous",
-    "results": { "yes": 20, "no": 0, "absent": 5 }
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
   },
   {
     "id": "v32",
     "sessionId": "s5",
-    "topicId": null,
+    "topicId": "t12",
     "date": "2025-11-10",
     "title": "Bundesprogramm Sanierung Sportstätten",
     "text": "Der Stadtrat beschließt die Teilnahme am Bundesprogramm Sanierung kommunaler Sportstätten (Projektaufruf 2025/2026) für die Freibadsanierung.",
     "type": "anonymous",
-    "results": { "yes": 20, "no": 0, "absent": 5 }
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
   },
-
   {
     "id": "v33",
     "sessionId": "s6",
@@ -346,7 +568,11 @@
     "title": "Genehmigung Niederschrift StR 13.10.",
     "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift der Stadtratssitzung vom 13.10.2025.",
     "type": "anonymous",
-    "results": { "yes": 22, "no": 0, "absent": 3 }
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   },
   {
     "id": "v34",
@@ -354,9 +580,13 @@
     "topicId": null,
     "date": "2025-12-01",
     "title": "Städtebauförderung Bedarfsanmeldung 2026",
-    "text": "Der Stadtrat beschließt den Antrag auf Aufnahme in das Städtebauförderungsprogramm „Lebendige Zentren\u201C für 2026. Angemeldete Kosten: 505 Tsd. €.",
+    "text": "Der Stadtrat beschließt den Antrag auf Aufnahme in das Städtebauförderungsprogramm „Lebendige Zentren“ für 2026. Angemeldete Kosten: 505 Tsd. €.",
     "type": "anonymous",
-    "results": { "yes": 22, "no": 0, "absent": 3 }
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   },
   {
     "id": "v35",
@@ -366,7 +596,11 @@
     "title": "Gehwegausbau Industriestraße",
     "text": "Der Stadtrat beschließt den Ausbau des Gehwegs an der Industriestraße von der Driescherstraße bis zur Graf-Konrad-Straße mit mindestens 2,00 m Breite.",
     "type": "anonymous",
-    "results": { "yes": 21, "no": 0, "absent": 4 }
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
   },
   {
     "id": "v36",
@@ -376,7 +610,11 @@
     "title": "Fahrradschutzstreifen Industriestraße",
     "text": "Ein Fahrradschutzstreifen wird probeweise für ein Jahr angebracht, beginnend an der Driescherstraße bis zur Gutenbergstraße.",
     "type": "anonymous",
-    "results": { "yes": 14, "no": 8, "absent": 3 }
+    "results": {
+      "yes": 14,
+      "no": 8,
+      "absent": 3
+    }
   },
   {
     "id": "v37",
@@ -386,7 +624,11 @@
     "title": "Fahrrad-Piktogramm-Kette Industriestraße",
     "text": "Eine Fahrrad-Piktogramm-Kette wird probeweise für ein Jahr angebracht, ab der Gutenbergstraße bis zur Steinbockstraße und zurück.",
     "type": "anonymous",
-    "results": { "yes": 22, "no": 0, "absent": 3 }
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   },
   {
     "id": "v38",
@@ -396,7 +638,11 @@
     "title": "Ampelschaltung Thalbacher/Industriestraße",
     "text": "Die Ampelschaltung wird so umprogrammiert, dass beide Fußgängerfurten von der Industriestraße zum Netto gleichzeitig Grün haben.",
     "type": "anonymous",
-    "results": { "yes": 22, "no": 0, "absent": 3 }
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   },
   {
     "id": "v39",
@@ -406,7 +652,11 @@
     "title": "Teileinziehung Degernpointweg",
     "text": "Der Stadtrat stimmt der Einleitung eines Teileinziehungsverfahrens des öffentlichen Feld- und Waldwegs Nr. 16 Degernpointweg I zu.",
     "type": "anonymous",
-    "results": { "yes": 22, "no": 0, "absent": 3 }
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   },
   {
     "id": "v40",
@@ -416,7 +666,11 @@
     "title": "Vollzeitstelle Wirtschaftsförderer",
     "text": "Der Stadtrat beschließt, im Stellenplan 2026 die zusätzliche Vollzeitstelle eines Wirtschaftsförderers zu schaffen.",
     "type": "anonymous",
-    "results": { "yes": 16, "no": 6, "absent": 3 }
+    "results": {
+      "yes": 16,
+      "no": 6,
+      "absent": 3
+    }
   },
   {
     "id": "v41",
@@ -426,7 +680,11 @@
     "title": "Budget Wirtschaftsförderung",
     "text": "Im Verwaltungshaushalt 2026 werden 30.000 € als Budget für Wirtschaftsförderung und Start-up-Förderung bereitgestellt.",
     "type": "anonymous",
-    "results": { "yes": 17, "no": 5, "absent": 3 }
+    "results": {
+      "yes": 17,
+      "no": 5,
+      "absent": 3
+    }
   },
   {
     "id": "v42",
@@ -436,9 +694,12 @@
     "title": "Haushaltsmittel über-/außerplanmäßig",
     "text": "Der Stadtrat genehmigt die über- und außerplanmäßigen Ausgaben sowie die Mittelverschiebung zu deren Deckung im Haushalt 2025.",
     "type": "anonymous",
-    "results": { "yes": 22, "no": 0, "absent": 3 }
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   },
-
   {
     "id": "v43",
     "sessionId": "s7",
@@ -447,7 +708,11 @@
     "title": "Absperrbauwerk Amperüberleitungskanal",
     "text": "Der Bauausschuss stimmt dem Neubau des Absperrbauwerks des Amperüberleitungskanals an der Brücke UP05 sowie dem Rückbau der alten Wehranlage zu. Fertigstellung bis Frühjahr 2027.",
     "type": "anonymous",
-    "results": { "yes": 8, "no": 0, "absent": 1 }
+    "results": {
+      "yes": 8,
+      "no": 0,
+      "absent": 1
+    }
   },
   {
     "id": "v44",
@@ -457,7 +722,11 @@
     "title": "Ablehnung MFH Sternstraße 12",
     "text": "Der Bauausschuss verweigert das gemeindliche Einvernehmen. Der überdimensionierte Baukörper fügt sich nicht in die Umgebungsbebauung ein.",
     "type": "anonymous",
-    "results": { "yes": 8, "no": 0, "absent": 1 }
+    "results": {
+      "yes": 8,
+      "no": 0,
+      "absent": 1
+    }
   },
   {
     "id": "v45",
@@ -467,7 +736,11 @@
     "title": "Hackschnitzelheizung Berg 1",
     "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen für den Neubau einer Hackschnitzelheizung mit Spänebunker im Außenbereich.",
     "type": "anonymous",
-    "results": { "yes": 8, "no": 0, "absent": 1 }
+    "results": {
+      "yes": 8,
+      "no": 0,
+      "absent": 1
+    }
   },
   {
     "id": "v46",
@@ -477,7 +750,11 @@
     "title": "Doppelhäuser und EFH Tonsilweg 7",
     "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen für den Vorbescheid zum Neubau von 2 Doppelhäusern und einem Einfamilienhaus.",
     "type": "anonymous",
-    "results": { "yes": 8, "no": 0, "absent": 1 }
+    "results": {
+      "yes": 8,
+      "no": 0,
+      "absent": 1
+    }
   },
   {
     "id": "v47",
@@ -487,18 +764,25 @@
     "title": "Ablehnung MFH Landshuter Str. 6/8",
     "text": "Der Bauausschuss verweigert erneut das gemeindliche Einvernehmen. Das Maß der baulichen Nutzung fügt sich nicht in die Umgebung ein. Eine Klage wird geprüft.",
     "type": "anonymous",
-    "results": { "yes": 8, "no": 0, "absent": 1 }
+    "results": {
+      "yes": 8,
+      "no": 0,
+      "absent": 1
+    }
   },
-
   {
     "id": "v48",
     "sessionId": "s8",
     "topicId": null,
     "date": "2024-12-16",
     "title": "Genehmigung Niederschrift HVFA 25.11.2024",
-    "text": "Der Stadtrat genehmigt den \u00f6ffentlichen Teil der Niederschrift des Hauptverwaltungs- und Finanzausschusses vom 25.11.2024.",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift des Hauptverwaltungs- und Finanzausschusses vom 25.11.2024.",
     "type": "anonymous",
-    "results": { "yes": 19, "no": 0, "absent": 6 }
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    }
   },
   {
     "id": "v49",
@@ -506,9 +790,13 @@
     "topicId": null,
     "date": "2024-12-16",
     "title": "Haushaltssatzung 2025",
-    "text": "Der Stadtrat beschlie\u00dft die Haushaltssatzung 2025 samt Verwaltungshaushalt, Verm\u00f6genshaushalt, Investitionsplan, Finanzplan, Stellenplan und Wirtschaftsplan der Kl\u00e4ranlage Moosburg GmbH.",
+    "text": "Der Stadtrat beschließt die Haushaltssatzung 2025 samt Verwaltungshaushalt, Vermögenshaushalt, Investitionsplan, Finanzplan, Stellenplan und Wirtschaftsplan der Kläranlage Moosburg GmbH.",
     "type": "anonymous",
-    "results": { "yes": 19, "no": 0, "absent": 6 }
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    }
   },
   {
     "id": "v50",
@@ -516,80 +804,111 @@
     "topicId": null,
     "date": "2024-12-16",
     "title": "Benutzungsordnung Hallenbad",
-    "text": "Der Stadtrat beschlie\u00dft die Haus- und Badeordnung f\u00fcr das Hallenbad Moosburg in der vorliegenden Fassung.",
+    "text": "Der Stadtrat beschließt die Haus- und Badeordnung für das Hallenbad Moosburg in der vorliegenden Fassung.",
     "type": "anonymous",
-    "results": { "yes": 19, "no": 0, "absent": 6 }
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    }
   },
-
   {
     "id": "v51",
     "sessionId": "s9",
     "topicId": null,
     "date": "2024-12-09",
     "title": "Genehmigung Niederschrift HVFA 21.11.2024",
-    "text": "Der Stadtrat genehmigt den \u00f6ffentlichen Teil der Niederschrift des HVFA vom 21.11.2024.",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift des HVFA vom 21.11.2024.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v52",
     "sessionId": "s9",
-    "topicId": null,
+    "topicId": "t12",
     "date": "2024-12-09",
     "title": "Generalsanierung Freibad",
-    "text": "Der Stadtrat nimmt die vorgestellte Planung f\u00fcr die Sanierung des Freibades zustimmend zur Kenntnis. Die Verwaltung wird erm\u00e4chtigt, die Kostenberechnung zu erstellen.",
+    "text": "Der Stadtrat nimmt die vorgestellte Planung für die Sanierung des Freibades zustimmend zur Kenntnis. Die Verwaltung wird ermächtigt, die Kostenberechnung zu erstellen.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v53",
     "sessionId": "s9",
     "topicId": null,
     "date": "2024-12-09",
-    "title": "Nutzungs\u00e4nderung MFH Viehmarktstra\u00dfe 8",
-    "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen zur Nutzungs\u00e4nderung von 4 WE zu 5 WE und stimmt der Stellplatzabl\u00f6se (15.000 \u20ac) zu.",
+    "title": "Nutzungsänderung MFH Viehmarktstraße 8",
+    "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen zur Nutzungsänderung von 4 WE zu 5 WE und stimmt der Stellplatzablöse (15.000 €) zu.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v54",
     "sessionId": "s9",
     "topicId": null,
     "date": "2024-12-09",
-    "title": "St\u00e4dtebauf\u00f6rderung Bedarfsanmeldung 2025",
-    "text": "Der Stadtrat beschlie\u00dft den Antrag auf Aufnahme in das St\u00e4dtebauf\u00f6rderungsprogramm \u201eLebendige Zentren\u201c f\u00fcr 2025. Angemeldete Kosten: 330 Tsd. \u20ac.",
+    "title": "Städtebauförderung Bedarfsanmeldung 2025",
+    "text": "Der Stadtrat beschließt den Antrag auf Aufnahme in das Städtebauförderungsprogramm „Lebendige Zentren“ für 2025. Angemeldete Kosten: 330 Tsd. €.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v55",
     "sessionId": "s9",
     "topicId": null,
     "date": "2024-12-09",
-    "title": "Bauleitplanung Nr. 70 \u201eContainerbau ELA\u201c \u2013 Satzungsbeschluss",
-    "text": "Der Stadtrat beschlie\u00dft den vorhabenbezogenen Bebauungsplan Nr. 70 \u201eContainerbau ELA\u201c als Satzung sowie die 12. \u00c4nderung des Fl\u00e4chennutzungsplans. Vorangegangen waren 21 Einzelabstimmungen \u00fcber Stellungnahmen (10:8 bis 18:0).",
+    "title": "Bauleitplanung Nr. 70 „Containerbau ELA“ – Satzungsbeschluss",
+    "text": "Der Stadtrat beschließt den vorhabenbezogenen Bebauungsplan Nr. 70 „Containerbau ELA“ als Satzung sowie die 12. Änderung des Flächennutzungsplans. Vorangegangen waren 21 Einzelabstimmungen über Stellungnahmen (10:8 bis 18:0).",
     "type": "anonymous",
-    "results": { "yes": 11, "no": 7, "absent": 7 }
+    "results": {
+      "yes": 11,
+      "no": 7,
+      "absent": 7
+    }
   },
   {
     "id": "v56",
     "sessionId": "s9",
-    "topicId": null,
+    "topicId": "t11",
     "date": "2024-12-09",
-    "title": "Legal Wall \u2013 Spraykunst/Graffiti/Street Art",
-    "text": "Der Stadtrat beschlie\u00dft, dem Antrag zur Errichtung einer \u00f6ffentlich zug\u00e4nglichen Anlage f\u00fcr Spraykunst/Graffiti/Street Art (sog. \u201elegal wall\u201c) zuzustimmen. Haushaltsmittel: 2.000 \u20ac.",
+    "title": "Legal Wall – Spraykunst/Graffiti/Street Art",
+    "text": "Der Stadtrat beschließt, dem Antrag zur Errichtung einer öffentlich zugänglichen Anlage für Spraykunst/Graffiti/Street Art (sog. „legal wall“) zuzustimmen. Haushaltsmittel: 2.000 €.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v57",
     "sessionId": "s9",
     "topicId": null,
     "date": "2024-12-09",
-    "title": "F\u00f6rderung Stalag Moosburg e.V.",
-    "text": "Der Stadtrat beschlie\u00dft eine F\u00f6rderung von 2.500 \u20ac f\u00fcr den Stalag-Verein zur R\u00e4umung einer denkmalgesch\u00fctzten Baracke, zuz\u00fcglich 6.000 \u20ac Bauhofl\u00f6hne und 1.500 \u20ac Entsorgung.",
+    "title": "Förderung Stalag Moosburg e.V.",
+    "text": "Der Stadtrat beschließt eine Förderung von 2.500 € für den Stalag-Verein zur Räumung einer denkmalgeschützten Baracke, zuzüglich 6.000 € Bauhoflöhne und 1.500 € Entsorgung.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   },
   {
     "id": "v58",
@@ -597,8 +916,391 @@
     "topicId": null,
     "date": "2024-12-09",
     "title": "Kreditaufnahme Kinderkrippe Sonnensiedlung",
-    "text": "Der Stadtrat stimmt der Kreditaufnahme gem. Finanzierungsplan der Regierung von Oberbayern mit einer Darlehenssumme von 825.100 \u20ac zu.",
+    "text": "Der Stadtrat stimmt der Kreditaufnahme gem. Finanzierungsplan der Regierung von Oberbayern mit einer Darlehenssumme von 825.100 € zu.",
     "type": "anonymous",
-    "results": { "yes": 18, "no": 0, "absent": 7 }
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "v59",
+    "sessionId": "s10",
+    "topicId": null,
+    "date": "2025-03-24",
+    "title": "Genehmigung Niederschrift StR 20.01.2025",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift der Stadtratssitzung vom 20.01.2025.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "v60",
+    "sessionId": "s10",
+    "topicId": null,
+    "date": "2025-03-24",
+    "title": "Genehmigung Niederschrift StR 10.02.2025",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift der Stadtratssitzung vom 10.02.2025.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "v61",
+    "sessionId": "s10",
+    "topicId": null,
+    "date": "2025-03-24",
+    "title": "Niederlegung Beubl – Nachrücker Marcus",
+    "text": "Der Stadtrat stellt die Niederlegung des Stadtratsmandates von Herrn Gerhard Beubl fest. Als Listennachfolger rückt Herr Gunnar Marcus in den Stadtrat nach.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
+  },
+  {
+    "id": "v62",
+    "sessionId": "s10",
+    "topicId": null,
+    "date": "2025-03-24",
+    "title": "Neubesetzung Ausschüsse",
+    "text": "Der Stadtrat stimmt der Änderung der Ausschussbesetzung gemäß der Anlage zu.",
+    "type": "anonymous",
+    "results": {
+      "yes": 23,
+      "no": 0,
+      "absent": 2
+    }
+  },
+  {
+    "id": "v63",
+    "sessionId": "s10",
+    "topicId": null,
+    "date": "2025-03-24",
+    "title": "Neubesetzung AR Kläranlage",
+    "text": "Herr Gerhard Beubl scheidet aus dem Aufsichtsrat Kläranlage aus, als neues Mitglied wird Herr Gunnar Marcus berufen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 23,
+      "no": 0,
+      "absent": 2
+    }
+  },
+  {
+    "id": "v64",
+    "sessionId": "s10",
+    "topicId": null,
+    "date": "2025-03-24",
+    "title": "Vorsitz Rechnungsprüfungsausschuss",
+    "text": "StR Reinhard Lauterbach wird zum Vorsitzenden des Rechnungsprüfungsausschusses bestellt, StR Michael Hobmaier zum stellvertretenden Vorsitzenden.",
+    "type": "anonymous",
+    "results": {
+      "yes": 23,
+      "no": 0,
+      "absent": 2
+    }
+  },
+  {
+    "id": "v65",
+    "sessionId": "s10",
+    "topicId": null,
+    "date": "2025-03-24",
+    "title": "Rathaus Sanierung 3. BA",
+    "text": "Der Stadtrat nimmt die aktuelle Kostenberechnung und Planung mit Gesamtkosten von 3.988.000 € zustimmend zur Kenntnis.",
+    "type": "anonymous",
+    "results": {
+      "yes": 24,
+      "no": 0,
+      "absent": 1
+    }
+  },
+  {
+    "id": "v66",
+    "sessionId": "s10",
+    "topicId": null,
+    "date": "2025-03-24",
+    "title": "Verkaufsoffener Sonntag 13.04.2025",
+    "text": "Der Stadtrat beschließt den Erlass der Verordnung über den verkaufsoffenen Sonntag am 13.04.2025.",
+    "type": "anonymous",
+    "results": {
+      "yes": 23,
+      "no": 1,
+      "absent": 1
+    }
+  },
+  {
+    "id": "v67",
+    "sessionId": "s11",
+    "topicId": null,
+    "date": "2025-10-06",
+    "title": "Genehmigung Niederschrift BPU 21.07.2025",
+    "text": "Der Bauausschuss genehmigt den öffentlichen Teil der Niederschrift der Sitzung vom 21.07.2025.",
+    "type": "anonymous",
+    "results": {
+      "yes": 11,
+      "no": 0,
+      "absent": 1
+    }
+  },
+  {
+    "id": "v68",
+    "sessionId": "s11",
+    "topicId": null,
+    "date": "2025-10-06",
+    "title": "Lagerhalle Kochbauerstr. 1",
+    "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen zum Neubau einer landwirtschaftlichen Lagerhalle.",
+    "type": "anonymous",
+    "results": {
+      "yes": 11,
+      "no": 0,
+      "absent": 1
+    }
+  },
+  {
+    "id": "v69",
+    "sessionId": "s11",
+    "topicId": null,
+    "date": "2025-10-06",
+    "title": "Ablehnung MFH Landshuter Str. 6/8",
+    "text": "Der Bauausschuss verweigert das gemeindliche Einvernehmen. Das Maß der baulichen Nutzung fügt sich nicht in die Umgebung ein.",
+    "type": "anonymous",
+    "results": {
+      "yes": 11,
+      "no": 0,
+      "absent": 1
+    }
+  },
+  {
+    "id": "v70",
+    "sessionId": "s11",
+    "topicId": null,
+    "date": "2025-10-06",
+    "title": "Ablehnung MFH Sudetenlandstr. 28",
+    "text": "Der Bauausschuss verweigert das gemeindliche Einvernehmen, da die Baulinie verlassen wird.",
+    "type": "anonymous",
+    "results": {
+      "yes": 6,
+      "no": 5,
+      "absent": 1
+    }
+  },
+  {
+    "id": "v71",
+    "sessionId": "s11",
+    "topicId": null,
+    "date": "2025-10-06",
+    "title": "Lagerhalle Kirchamper 8",
+    "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen zum Neubau einer landwirtschaftlichen Lagerhalle.",
+    "type": "anonymous",
+    "results": {
+      "yes": 11,
+      "no": 0,
+      "absent": 1
+    }
+  },
+  {
+    "id": "v72",
+    "sessionId": "s11",
+    "topicId": null,
+    "date": "2025-10-06",
+    "title": "Stadthotel Weingraben 14",
+    "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen zur Errichtung eines Stadthotels.",
+    "type": "anonymous",
+    "results": {
+      "yes": 11,
+      "no": 0,
+      "absent": 1
+    }
+  },
+  {
+    "id": "v73",
+    "sessionId": "s11",
+    "topicId": null,
+    "date": "2025-10-06",
+    "title": "Ablehnung MFH Mainburger Str. 5",
+    "text": "Der Bauausschuss verweigert das gemeindliche Einvernehmen. Das LRA hatte die Ersetzung des Einvernehmens angekündigt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 11,
+      "no": 0,
+      "absent": 1
+    }
+  },
+  {
+    "id": "v74",
+    "sessionId": "s12",
+    "topicId": null,
+    "date": "2025-10-13",
+    "title": "Genehmigung Niederschriften StR 08.09./22.09.",
+    "text": "Der Stadtrat genehmigt die öffentlichen Teile der Niederschriften vom 08.09.2025 und 22.09.2025.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "v75",
+    "sessionId": "s12",
+    "topicId": null,
+    "date": "2025-10-13",
+    "title": "Sondernutzungsgebühren",
+    "text": "Der Stadtrat beschließt die Änderung der Sondernutzungsgebührensatzung. Gewerbliche Bauzaunbanner 10 €/Woche, nichtgewerbliche 5 €/Woche.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "v76",
+    "sessionId": "s12",
+    "topicId": null,
+    "date": "2025-10-13",
+    "title": "Tariftreue bei Vergabe",
+    "text": "Die Stadt sieht von einer verpflichtenden Tariftreue ab. Künftige Ausschreibungen erhalten den Zusatz, dass tarifvertragliche Regelungen einzuhalten sind.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 3,
+      "absent": 4
+    }
+  },
+  {
+    "id": "v77",
+    "sessionId": "s13",
+    "topicId": null,
+    "date": "2025-10-29",
+    "title": "B-Plan Degernpoint Nord",
+    "text": "Der Stadtrat beschließt die Aufstellung des Bebauungsplans Nr. 82 im Regelverfahren. Ein städtebaulicher Vertrag ist vor Satzungsbeschluss abzuschließen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "v78",
+    "sessionId": "s13",
+    "topicId": null,
+    "date": "2025-10-29",
+    "title": "Feuerwehr Erster Kommandant",
+    "text": "Der Stadtrat bestätigt Christian Braun als Ersten Kommandanten der Freiwilligen Feuerwehr Moosburg.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "v79",
+    "sessionId": "s13",
+    "topicId": null,
+    "date": "2025-10-29",
+    "title": "Feuerwehr Zweiter Kommandant",
+    "text": "Der Stadtrat bestätigt Maximilian Braun als Zweiten Kommandanten der Freiwilligen Feuerwehr Moosburg.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "v80",
+    "sessionId": "s13",
+    "topicId": null,
+    "date": "2025-10-29",
+    "title": "Sondervermögen Infrastruktur",
+    "text": "Der Stadtrat fordert die Bayerische Staatsregierung auf, mindestens 70% der 15,7 Mrd. € aus dem Sondervermögen den Kommunen zur Verfügung zu stellen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "v81",
+    "sessionId": "s13",
+    "topicId": null,
+    "date": "2025-10-29",
+    "title": "Vereinsförderrichtlinien – Vereinsstunde",
+    "text": "Der Vereinsstundenbeitrag wird ab 01.01.2026 auf 6 €/Std. und ab 01.01.2027 auf 7 €/Std. erhöht.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "v82",
+    "sessionId": "s13",
+    "topicId": null,
+    "date": "2025-10-29",
+    "title": "Vereinsförderrichtlinien – Großgeräte",
+    "text": "Die Großgeräteförderung wird auf 25% reduziert, mit einer Bagatellgrenze von 500 €.",
+    "type": "anonymous",
+    "results": {
+      "yes": 15,
+      "no": 3,
+      "absent": 7
+    }
+  },
+  {
+    "id": "v83",
+    "sessionId": "s13",
+    "topicId": null,
+    "date": "2025-10-29",
+    "title": "Vereinsförderrichtlinien – Baukostenzuschuss",
+    "text": "Der Antrag, den Baukostenzuschuss auf 15% zu reduzieren und 5% als Darlehen auszugeben, wird abgelehnt.",
+    "type": "anonymous",
+    "result": "rejected",
+    "results": {
+      "yes": 7,
+      "no": 11,
+      "absent": 7
+    }
+  },
+  {
+    "id": "v84",
+    "sessionId": "s13",
+    "topicId": null,
+    "date": "2025-10-29",
+    "title": "Vereinsförderrichtlinien gesamt",
+    "text": "Der Stadtrat beschließt die Vereinsförderrichtlinien mit den beschlossenen Änderungen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 1,
+      "absent": 7
+    }
+  },
+  {
+    "id": "v85",
+    "sessionId": "s13",
+    "topicId": null,
+    "date": "2025-10-29",
+    "title": "Zuschuss Keglerverein",
+    "text": "Der Moosburger Keglerverein erhält einen Zuschuss von 20% der Baukosten (max. 40.000 €) für die Erneuerung der Kegelbahnen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
   }
 ]

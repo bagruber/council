@@ -494,6 +494,9 @@ const SHOW_PRONOUNS = true;
         el.appendChild(voteEl);
       }
 
+      const agendaPress = renderPressLinks(item.press);
+      if (agendaPress) el.appendChild(agendaPress);
+
       list.appendChild(el);
     });
 
@@ -1172,6 +1175,8 @@ const SHOW_PRONOUNS = true;
             ${coNames ? `<div class="mtl-motion-meta">gemeinsam mit ${coNames}</div>` : ""}
             ${sessionLink}
           </div>`;
+        const motPress = renderPressLinks(mot.press);
+        if (motPress) el.appendChild(motPress);
         motionSec.appendChild(el);
       });
       wrap.appendChild(motionSec);
