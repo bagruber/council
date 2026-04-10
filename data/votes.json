@@ -1169,11 +1169,39 @@
     "date": "2025-10-13",
     "title": "Tariftreue bei Vergabe",
     "text": "Die Stadt sieht von einer verpflichtenden Tariftreue ab. Künftige Ausschreibungen erhalten den Zusatz, dass tarifvertragliche Regelungen einzuhalten sind.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 18,
-      "no": 3,
-      "absent": 4
+      "yes": [
+        "dollinger",
+        "becher_a",
+        "becher_j",
+        "gruber",
+        "grundner",
+        "hadersdorfer",
+        "hobmaier",
+        "haberl",
+        "kaestl",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl",
+        "weber"
+      ],
+      "no": [
+        "heinz",
+        "kieninger",
+        "lauterbach"
+      ],
+      "absent": [
+        "fincke",
+        "beibl",
+        "von_pressentin",
+        "stanglmaier",
+        "welter"
+      ]
     }
   },
   {
