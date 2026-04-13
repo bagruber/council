@@ -9,11 +9,12 @@
   --primary: #9B0000;
   --primary-bright: #E6001E;
   --accent: #B39F7A;
+  --accent-text: #968b69;
   --accent-light: #E8DFCF;
   --bg: #FAF8F5;
   --surface: #fff;
   --text: #2D2D2D;
-  --text-muted: #777;
+  --text-muted: #757575;
   --border: #E8E2D8;
   --yes: #78BE1E;
   --no: #9B0000;
@@ -290,7 +291,7 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-bottom: 16px;
 }
 
@@ -359,7 +360,7 @@ main {
 .tl-dot .material-icons { font-size: 13px; }
 
 .tl-dot.proposal       { border-color: var(--info);   color: var(--info); }
-.tl-dot.committee      { border-color: var(--accent);  color: var(--accent); }
+.tl-dot.committee      { border-color: var(--accent);  color: var(--accent-text); }
 .tl-dot.milestone      { border-color: var(--teal);    color: var(--teal); }
 .tl-dot.vote-approved  { border-color: var(--yes);     color: var(--yes); }
 .tl-dot.vote-rejected  { border-color: var(--no);      color: var(--no); }
@@ -454,7 +455,7 @@ main {
   padding: 2px 10px;
   border-radius: 4px;
   background: var(--accent-light);
-  color: var(--accent);
+  color: var(--accent-text);
   margin-top: 6px;
 }
 
