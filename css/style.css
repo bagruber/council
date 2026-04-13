@@ -369,6 +369,17 @@ main {
 .tl-entry p { font-size: 0.92rem; color: var(--text-muted); }
 .tl-vote-inline { margin-top: 12px; }
 
+.tl-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
 .tl-session-link {
   display: inline-flex;
   align-items: center;

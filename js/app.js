@@ -402,6 +402,15 @@ const SHOW_PRONOUNS = true;
       p.textContent = entry.text;
       el.appendChild(p);
 
+      if (entry.image) {
+        const img = document.createElement("img");
+        img.className = "tl-image";
+        img.src = entry.image.includes("/") ? entry.image : "img/topics/" + entry.image;
+        img.alt = entry.title;
+        img.loading = "lazy";
+        el.appendChild(img);
+      }
+
       if (entry.voteId && voteMap[entry.voteId]) {
         const voteEl = document.createElement("div");
         voteEl.className = "tl-vote-inline";
