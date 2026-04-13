@@ -1,7 +1,7 @@
 [
   {
-    "id": "v1",
-    "sessionId": "s1",
+    "id": "sr_20260112_01",
+    "sessionId": "sr_20260112",
     "topicId": null,
     "date": "2026-01-12",
     "title": "Genehmigung Niederschriften",
@@ -14,8 +14,8 @@
     }
   },
   {
-    "id": "v2",
-    "sessionId": "s1",
+    "id": "sr_20260112_02",
+    "sessionId": "sr_20260112",
     "topicId": "t1",
     "date": "2026-01-12",
     "title": "Zurückstellung SGT-Vereinsheim",
@@ -28,8 +28,8 @@
     }
   },
   {
-    "id": "v3",
-    "sessionId": "s1",
+    "id": "sr_20260112_03",
+    "sessionId": "sr_20260112",
     "topicId": null,
     "date": "2026-01-12",
     "title": "Einvernehmen Anbau Mühlbachbogen",
@@ -42,8 +42,8 @@
     }
   },
   {
-    "id": "v4",
-    "sessionId": "s1",
+    "id": "sr_20260112_04",
+    "sessionId": "sr_20260112",
     "topicId": null,
     "date": "2026-01-12",
     "title": "Förderung AMC Elektrokart",
@@ -56,8 +56,8 @@
     }
   },
   {
-    "id": "v5",
-    "sessionId": "s1",
+    "id": "sr_20260112_05",
+    "sessionId": "sr_20260112",
     "topicId": "t2",
     "date": "2026-01-12",
     "title": "Konzeptausschreibung Bahnhof",
@@ -98,8 +98,8 @@
     }
   },
   {
-    "id": "v6",
-    "sessionId": "s1",
+    "id": "sr_20260112_06",
+    "sessionId": "sr_20260112",
     "topicId": "t3",
     "date": "2026-01-12",
     "title": "Temporäre Parkflächen Auf dem Plan",
@@ -140,8 +140,8 @@
     }
   },
   {
-    "id": "v7",
-    "sessionId": "s1",
+    "id": "sr_20260112_07",
+    "sessionId": "sr_20260112",
     "topicId": "t3",
     "date": "2026-01-12",
     "title": "Barken-Abtrennung und Ahndung",
@@ -183,8 +183,8 @@
     }
   },
   {
-    "id": "v8",
-    "sessionId": "s2",
+    "id": "sr_20260202_01",
+    "sessionId": "sr_20260202",
     "topicId": "t1",
     "date": "2026-02-02",
     "title": "SGT-Vereinsheim Variante 4",
@@ -197,8 +197,8 @@
     }
   },
   {
-    "id": "v9",
-    "sessionId": "s2",
+    "id": "sr_20260202_02",
+    "sessionId": "sr_20260202",
     "topicId": null,
     "date": "2026-02-02",
     "title": "Ablehnung Mehrfamilienhaus Sternstraße",
@@ -211,8 +211,8 @@
     }
   },
   {
-    "id": "v10",
-    "sessionId": "s2",
+    "id": "sr_20260202_03",
+    "sessionId": "sr_20260202",
     "topicId": null,
     "date": "2026-02-02",
     "title": "Einvernehmen Mühlbachbogen – erneut",
@@ -225,8 +225,8 @@
     }
   },
   {
-    "id": "v11",
-    "sessionId": "s2",
+    "id": "sr_20260202_04",
+    "sessionId": "sr_20260202",
     "topicId": "t5",
     "date": "2026-02-02",
     "title": "Klage Studentenwohnheim Rockermaier",
@@ -238,7 +238,6 @@
         "stanglmaier",
         "becher_a",
         "becher_j",
-        "fincke",
         "gruber",
         "grundner",
         "haberl",
@@ -253,11 +252,12 @@
         "strobl",
         "tristl",
         "von_pressentin",
-        "weber"
+        "weber",
+        "welter"
       ],
       "no": [
-        "hadersdorfer",
-        "welter"
+        "fincke",
+        "hadersdorfer"
       ],
       "absent": [
         "beibl",
@@ -267,8 +267,8 @@
     }
   },
   {
-    "id": "v12",
-    "sessionId": "s2",
+    "id": "sr_20260202_05",
+    "sessionId": "sr_20260202",
     "topicId": null,
     "date": "2026-02-02",
     "title": "Regionalplan Windenergie",
@@ -281,8 +281,8 @@
     }
   },
   {
-    "id": "v13",
-    "sessionId": "s2",
+    "id": "sr_20260202_06",
+    "sessionId": "sr_20260202",
     "topicId": "t4",
     "date": "2026-02-02",
     "title": "Tempo 20 Stadtplatz",
@@ -295,8 +295,8 @@
     }
   },
   {
-    "id": "v14",
-    "sessionId": "s2",
+    "id": "sr_20260202_07",
+    "sessionId": "sr_20260202",
     "topicId": "t4",
     "date": "2026-02-02",
     "title": "Prüfung Bahnhofstraße",
@@ -309,8 +309,8 @@
     }
   },
   {
-    "id": "v15",
-    "sessionId": "s2",
+    "id": "sr_20260202_08",
+    "sessionId": "sr_20260202",
     "topicId": null,
     "date": "2026-02-02",
     "title": "Haushaltsreste 2025",
@@ -323,8 +323,8 @@
     }
   },
   {
-    "id": "v16",
-    "sessionId": "s3",
+    "id": "sr_20251215_01",
+    "sessionId": "sr_20251215",
     "topicId": "t6",
     "date": "2025-12-15",
     "title": "Kostenkommission Grundschule",
@@ -337,8 +337,8 @@
     }
   },
   {
-    "id": "v17",
-    "sessionId": "s3",
+    "id": "sr_20251215_02",
+    "sessionId": "sr_20251215",
     "topicId": "t6",
     "date": "2025-12-15",
     "title": "Planung Grundschule beauftragen",
@@ -351,8 +351,8 @@
     }
   },
   {
-    "id": "v18",
-    "sessionId": "s3",
+    "id": "sr_20251215_03",
+    "sessionId": "sr_20251215",
     "topicId": "t7",
     "date": "2025-12-15",
     "title": "Haushaltssatzung 2026",
@@ -365,8 +365,8 @@
     }
   },
   {
-    "id": "v19",
-    "sessionId": "s4",
+    "id": "sr_20260223_01",
+    "sessionId": "sr_20260223",
     "topicId": "t8",
     "date": "2026-02-23",
     "title": "Verkehrsberuhigung Schulzentrum Süd",
@@ -379,8 +379,8 @@
     }
   },
   {
-    "id": "v20",
-    "sessionId": "s3",
+    "id": "sr_20251215_04",
+    "sessionId": "sr_20251215",
     "topicId": null,
     "date": "2025-12-15",
     "title": "Gebührenordnung Stadtbücherei",
@@ -393,8 +393,8 @@
     }
   },
   {
-    "id": "v21",
-    "sessionId": "s4",
+    "id": "sr_20260223_02",
+    "sessionId": "sr_20260223",
     "topicId": null,
     "date": "2026-02-23",
     "title": "Clariant – Bebauungsplan",
@@ -407,8 +407,8 @@
     }
   },
   {
-    "id": "v22",
-    "sessionId": "s4",
+    "id": "sr_20260223_03",
+    "sessionId": "sr_20260223",
     "topicId": null,
     "date": "2026-02-23",
     "title": "Ablehnung Wohnanlage Merianstraße",
@@ -421,8 +421,8 @@
     }
   },
   {
-    "id": "v23",
-    "sessionId": "s4",
+    "id": "sr_20260223_04",
+    "sessionId": "sr_20260223",
     "topicId": null,
     "date": "2026-02-23",
     "title": "Aufstellung B-Plan Aich",
@@ -435,8 +435,8 @@
     }
   },
   {
-    "id": "v24",
-    "sessionId": "s4",
+    "id": "sr_20260223_05",
+    "sessionId": "sr_20260223",
     "topicId": null,
     "date": "2026-02-23",
     "title": "17. Änderung Flächennutzungsplan",
@@ -449,8 +449,8 @@
     }
   },
   {
-    "id": "v25",
-    "sessionId": "s5",
+    "id": "sr_20251110_01",
+    "sessionId": "sr_20251110",
     "topicId": null,
     "date": "2025-11-10",
     "title": "Genehmigung Niederschrift BA 06.10.",
@@ -463,8 +463,8 @@
     }
   },
   {
-    "id": "v26",
-    "sessionId": "s5",
+    "id": "sr_20251110_02",
+    "sessionId": "sr_20251110",
     "topicId": null,
     "date": "2025-11-10",
     "title": "Neufassung BGS-EWS",
@@ -477,8 +477,8 @@
     }
   },
   {
-    "id": "v27",
-    "sessionId": "s5",
+    "id": "sr_20251110_03",
+    "sessionId": "sr_20251110",
     "topicId": null,
     "date": "2025-11-10",
     "title": "Änderungssatzung Wasserabgabe",
@@ -491,8 +491,8 @@
     }
   },
   {
-    "id": "v28",
-    "sessionId": "s5",
+    "id": "sr_20251110_04",
+    "sessionId": "sr_20251110",
     "topicId": null,
     "date": "2025-11-10",
     "title": "Neuerlass BGS-WAS",
@@ -505,8 +505,8 @@
     }
   },
   {
-    "id": "v29",
-    "sessionId": "s5",
+    "id": "sr_20251110_05",
+    "sessionId": "sr_20251110",
     "topicId": "t9",
     "date": "2025-11-10",
     "title": "Kreisverkehr Landshuter Str./Stadtwaldstr.",
@@ -519,8 +519,8 @@
     }
   },
   {
-    "id": "v30",
-    "sessionId": "s5",
+    "id": "sr_20251110_06",
+    "sessionId": "sr_20251110",
     "topicId": null,
     "date": "2025-11-10",
     "title": "Kläranlage Satzungsänderung",
@@ -533,8 +533,8 @@
     }
   },
   {
-    "id": "v31",
-    "sessionId": "s5",
+    "id": "sr_20251110_07",
+    "sessionId": "sr_20251110",
     "topicId": null,
     "date": "2025-11-10",
     "title": "Wahlhelferentschädigung 2026",
@@ -547,8 +547,8 @@
     }
   },
   {
-    "id": "v32",
-    "sessionId": "s5",
+    "id": "sr_20251110_08",
+    "sessionId": "sr_20251110",
     "topicId": "t12",
     "date": "2025-11-10",
     "title": "Bundesprogramm Sanierung Sportstätten",
@@ -561,8 +561,8 @@
     }
   },
   {
-    "id": "v33",
-    "sessionId": "s6",
+    "id": "sr_20251201_01",
+    "sessionId": "sr_20251201",
     "topicId": null,
     "date": "2025-12-01",
     "title": "Genehmigung Niederschrift StR 13.10.",
@@ -575,8 +575,8 @@
     }
   },
   {
-    "id": "v34",
-    "sessionId": "s6",
+    "id": "sr_20251201_02",
+    "sessionId": "sr_20251201",
     "topicId": null,
     "date": "2025-12-01",
     "title": "Städtebauförderung Bedarfsanmeldung 2026",
@@ -589,8 +589,8 @@
     }
   },
   {
-    "id": "v35",
-    "sessionId": "s6",
+    "id": "sr_20251201_03",
+    "sessionId": "sr_20251201",
     "topicId": "t8",
     "date": "2025-12-01",
     "title": "Gehwegausbau Industriestraße",
@@ -603,8 +603,8 @@
     }
   },
   {
-    "id": "v36",
-    "sessionId": "s6",
+    "id": "sr_20251201_04",
+    "sessionId": "sr_20251201",
     "topicId": "t8",
     "date": "2025-12-01",
     "title": "Fahrradschutzstreifen Industriestraße",
@@ -617,8 +617,8 @@
     }
   },
   {
-    "id": "v37",
-    "sessionId": "s6",
+    "id": "sr_20251201_05",
+    "sessionId": "sr_20251201",
     "topicId": "t8",
     "date": "2025-12-01",
     "title": "Fahrrad-Piktogramm-Kette Industriestraße",
@@ -631,8 +631,8 @@
     }
   },
   {
-    "id": "v38",
-    "sessionId": "s6",
+    "id": "sr_20251201_06",
+    "sessionId": "sr_20251201",
     "topicId": "t8",
     "date": "2025-12-01",
     "title": "Ampelschaltung Thalbacher/Industriestraße",
@@ -645,8 +645,8 @@
     }
   },
   {
-    "id": "v39",
-    "sessionId": "s6",
+    "id": "sr_20251201_07",
+    "sessionId": "sr_20251201",
     "topicId": null,
     "date": "2025-12-01",
     "title": "Teileinziehung Degernpointweg",
@@ -659,8 +659,8 @@
     }
   },
   {
-    "id": "v40",
-    "sessionId": "s6",
+    "id": "sr_20251201_08",
+    "sessionId": "sr_20251201",
     "topicId": "t10",
     "date": "2025-12-01",
     "title": "Vollzeitstelle Wirtschaftsförderer",
@@ -673,8 +673,8 @@
     }
   },
   {
-    "id": "v41",
-    "sessionId": "s6",
+    "id": "sr_20251201_09",
+    "sessionId": "sr_20251201",
     "topicId": "t10",
     "date": "2025-12-01",
     "title": "Budget Wirtschaftsförderung",
@@ -687,8 +687,8 @@
     }
   },
   {
-    "id": "v42",
-    "sessionId": "s6",
+    "id": "sr_20251201_10",
+    "sessionId": "sr_20251201",
     "topicId": null,
     "date": "2025-12-01",
     "title": "Haushaltsmittel über-/außerplanmäßig",
@@ -701,8 +701,8 @@
     }
   },
   {
-    "id": "v43",
-    "sessionId": "s7",
+    "id": "bpu_20251208_01",
+    "sessionId": "bpu_20251208",
     "topicId": null,
     "date": "2025-12-08",
     "title": "Absperrbauwerk Amperüberleitungskanal",
@@ -715,8 +715,8 @@
     }
   },
   {
-    "id": "v44",
-    "sessionId": "s7",
+    "id": "bpu_20251208_02",
+    "sessionId": "bpu_20251208",
     "topicId": null,
     "date": "2025-12-08",
     "title": "Ablehnung MFH Sternstraße 12",
@@ -729,8 +729,8 @@
     }
   },
   {
-    "id": "v45",
-    "sessionId": "s7",
+    "id": "bpu_20251208_03",
+    "sessionId": "bpu_20251208",
     "topicId": null,
     "date": "2025-12-08",
     "title": "Hackschnitzelheizung Berg 1",
@@ -743,8 +743,8 @@
     }
   },
   {
-    "id": "v46",
-    "sessionId": "s7",
+    "id": "bpu_20251208_04",
+    "sessionId": "bpu_20251208",
     "topicId": null,
     "date": "2025-12-08",
     "title": "Doppelhäuser und EFH Tonsilweg 7",
@@ -757,8 +757,8 @@
     }
   },
   {
-    "id": "v47",
-    "sessionId": "s7",
+    "id": "bpu_20251208_05",
+    "sessionId": "bpu_20251208",
     "topicId": null,
     "date": "2025-12-08",
     "title": "Ablehnung MFH Landshuter Str. 6/8",
@@ -771,8 +771,8 @@
     }
   },
   {
-    "id": "v48",
-    "sessionId": "s8",
+    "id": "sr_20241216_01",
+    "sessionId": "sr_20241216",
     "topicId": null,
     "date": "2024-12-16",
     "title": "Genehmigung Niederschrift HVFA 25.11.2024",
@@ -785,8 +785,8 @@
     }
   },
   {
-    "id": "v49",
-    "sessionId": "s8",
+    "id": "sr_20241216_02",
+    "sessionId": "sr_20241216",
     "topicId": null,
     "date": "2024-12-16",
     "title": "Haushaltssatzung 2025",
@@ -799,8 +799,8 @@
     }
   },
   {
-    "id": "v50",
-    "sessionId": "s8",
+    "id": "sr_20241216_03",
+    "sessionId": "sr_20241216",
     "topicId": null,
     "date": "2024-12-16",
     "title": "Benutzungsordnung Hallenbad",
@@ -813,8 +813,8 @@
     }
   },
   {
-    "id": "v51",
-    "sessionId": "s9",
+    "id": "sr_20241209_01",
+    "sessionId": "sr_20241209",
     "topicId": null,
     "date": "2024-12-09",
     "title": "Genehmigung Niederschrift HVFA 21.11.2024",
@@ -827,8 +827,8 @@
     }
   },
   {
-    "id": "v52",
-    "sessionId": "s9",
+    "id": "sr_20241209_02",
+    "sessionId": "sr_20241209",
     "topicId": "t12",
     "date": "2024-12-09",
     "title": "Generalsanierung Freibad",
@@ -841,8 +841,8 @@
     }
   },
   {
-    "id": "v53",
-    "sessionId": "s9",
+    "id": "sr_20241209_03",
+    "sessionId": "sr_20241209",
     "topicId": null,
     "date": "2024-12-09",
     "title": "Nutzungsänderung MFH Viehmarktstraße 8",
@@ -855,8 +855,8 @@
     }
   },
   {
-    "id": "v54",
-    "sessionId": "s9",
+    "id": "sr_20241209_04",
+    "sessionId": "sr_20241209",
     "topicId": null,
     "date": "2024-12-09",
     "title": "Städtebauförderung Bedarfsanmeldung 2025",
@@ -869,8 +869,8 @@
     }
   },
   {
-    "id": "v55",
-    "sessionId": "s9",
+    "id": "sr_20241209_05",
+    "sessionId": "sr_20241209",
     "topicId": null,
     "date": "2024-12-09",
     "title": "Bauleitplanung Nr. 70 „Containerbau ELA“ – Satzungsbeschluss",
@@ -883,8 +883,8 @@
     }
   },
   {
-    "id": "v56",
-    "sessionId": "s9",
+    "id": "sr_20241209_06",
+    "sessionId": "sr_20241209",
     "topicId": "t11",
     "date": "2024-12-09",
     "title": "Legal Wall – Spraykunst/Graffiti/Street Art",
@@ -897,8 +897,8 @@
     }
   },
   {
-    "id": "v57",
-    "sessionId": "s9",
+    "id": "sr_20241209_07",
+    "sessionId": "sr_20241209",
     "topicId": null,
     "date": "2024-12-09",
     "title": "Förderung Stalag Moosburg e.V.",
@@ -911,8 +911,8 @@
     }
   },
   {
-    "id": "v58",
-    "sessionId": "s9",
+    "id": "sr_20241209_08",
+    "sessionId": "sr_20241209",
     "topicId": null,
     "date": "2024-12-09",
     "title": "Kreditaufnahme Kinderkrippe Sonnensiedlung",
@@ -925,8 +925,8 @@
     }
   },
   {
-    "id": "v59",
-    "sessionId": "s10",
+    "id": "sr_20250324_01",
+    "sessionId": "sr_20250324",
     "topicId": null,
     "date": "2025-03-24",
     "title": "Genehmigung Niederschrift StR 20.01.2025",
@@ -939,8 +939,8 @@
     }
   },
   {
-    "id": "v60",
-    "sessionId": "s10",
+    "id": "sr_20250324_02",
+    "sessionId": "sr_20250324",
     "topicId": null,
     "date": "2025-03-24",
     "title": "Genehmigung Niederschrift StR 10.02.2025",
@@ -953,8 +953,8 @@
     }
   },
   {
-    "id": "v61",
-    "sessionId": "s10",
+    "id": "sr_20250324_03",
+    "sessionId": "sr_20250324",
     "topicId": null,
     "date": "2025-03-24",
     "title": "Niederlegung Beubl – Nachrücker Marcus",
@@ -967,8 +967,8 @@
     }
   },
   {
-    "id": "v62",
-    "sessionId": "s10",
+    "id": "sr_20250324_04",
+    "sessionId": "sr_20250324",
     "topicId": null,
     "date": "2025-03-24",
     "title": "Neubesetzung Ausschüsse",
@@ -981,8 +981,8 @@
     }
   },
   {
-    "id": "v63",
-    "sessionId": "s10",
+    "id": "sr_20250324_05",
+    "sessionId": "sr_20250324",
     "topicId": null,
     "date": "2025-03-24",
     "title": "Neubesetzung AR Kläranlage",
@@ -995,8 +995,8 @@
     }
   },
   {
-    "id": "v64",
-    "sessionId": "s10",
+    "id": "sr_20250324_06",
+    "sessionId": "sr_20250324",
     "topicId": null,
     "date": "2025-03-24",
     "title": "Vorsitz Rechnungsprüfungsausschuss",
@@ -1009,8 +1009,8 @@
     }
   },
   {
-    "id": "v65",
-    "sessionId": "s10",
+    "id": "sr_20250324_07",
+    "sessionId": "sr_20250324",
     "topicId": null,
     "date": "2025-03-24",
     "title": "Rathaus Sanierung 3. BA",
@@ -1023,8 +1023,8 @@
     }
   },
   {
-    "id": "v66",
-    "sessionId": "s10",
+    "id": "sr_20250324_08",
+    "sessionId": "sr_20250324",
     "topicId": null,
     "date": "2025-03-24",
     "title": "Verkaufsoffener Sonntag 13.04.2025",
@@ -1037,8 +1037,8 @@
     }
   },
   {
-    "id": "v67",
-    "sessionId": "s11",
+    "id": "bpu_20251006_01",
+    "sessionId": "bpu_20251006",
     "topicId": null,
     "date": "2025-10-06",
     "title": "Genehmigung Niederschrift BPU 21.07.2025",
@@ -1051,8 +1051,8 @@
     }
   },
   {
-    "id": "v68",
-    "sessionId": "s11",
+    "id": "bpu_20251006_02",
+    "sessionId": "bpu_20251006",
     "topicId": null,
     "date": "2025-10-06",
     "title": "Lagerhalle Kochbauerstr. 1",
@@ -1065,8 +1065,8 @@
     }
   },
   {
-    "id": "v69",
-    "sessionId": "s11",
+    "id": "bpu_20251006_03",
+    "sessionId": "bpu_20251006",
     "topicId": null,
     "date": "2025-10-06",
     "title": "Ablehnung MFH Landshuter Str. 6/8",
@@ -1079,8 +1079,8 @@
     }
   },
   {
-    "id": "v70",
-    "sessionId": "s11",
+    "id": "bpu_20251006_04",
+    "sessionId": "bpu_20251006",
     "topicId": null,
     "date": "2025-10-06",
     "title": "Ablehnung MFH Sudetenlandstr. 28",
@@ -1093,8 +1093,8 @@
     }
   },
   {
-    "id": "v71",
-    "sessionId": "s11",
+    "id": "bpu_20251006_05",
+    "sessionId": "bpu_20251006",
     "topicId": null,
     "date": "2025-10-06",
     "title": "Lagerhalle Kirchamper 8",
@@ -1107,8 +1107,8 @@
     }
   },
   {
-    "id": "v72",
-    "sessionId": "s11",
+    "id": "bpu_20251006_06",
+    "sessionId": "bpu_20251006",
     "topicId": null,
     "date": "2025-10-06",
     "title": "Stadthotel Weingraben 14",
@@ -1121,8 +1121,8 @@
     }
   },
   {
-    "id": "v73",
-    "sessionId": "s11",
+    "id": "bpu_20251006_07",
+    "sessionId": "bpu_20251006",
     "topicId": null,
     "date": "2025-10-06",
     "title": "Ablehnung MFH Mainburger Str. 5",
@@ -1135,8 +1135,8 @@
     }
   },
   {
-    "id": "v74",
-    "sessionId": "s12",
+    "id": "sr_20251013_01",
+    "sessionId": "sr_20251013",
     "topicId": null,
     "date": "2025-10-13",
     "title": "Genehmigung Niederschriften StR 08.09./22.09.",
@@ -1149,8 +1149,8 @@
     }
   },
   {
-    "id": "v75",
-    "sessionId": "s12",
+    "id": "sr_20251013_02",
+    "sessionId": "sr_20251013",
     "topicId": null,
     "date": "2025-10-13",
     "title": "Sondernutzungsgebühren",
@@ -1163,8 +1163,8 @@
     }
   },
   {
-    "id": "v76",
-    "sessionId": "s12",
+    "id": "sr_20251013_03",
+    "sessionId": "sr_20251013",
     "topicId": null,
     "date": "2025-10-13",
     "title": "Tariftreue bei Vergabe",
@@ -1205,8 +1205,8 @@
     }
   },
   {
-    "id": "v77",
-    "sessionId": "s13",
+    "id": "sr_20251029_01",
+    "sessionId": "sr_20251029",
     "topicId": null,
     "date": "2025-10-29",
     "title": "B-Plan Degernpoint Nord",
@@ -1219,8 +1219,8 @@
     }
   },
   {
-    "id": "v78",
-    "sessionId": "s13",
+    "id": "sr_20251029_02",
+    "sessionId": "sr_20251029",
     "topicId": null,
     "date": "2025-10-29",
     "title": "Feuerwehr Erster Kommandant",
@@ -1233,8 +1233,8 @@
     }
   },
   {
-    "id": "v79",
-    "sessionId": "s13",
+    "id": "sr_20251029_03",
+    "sessionId": "sr_20251029",
     "topicId": null,
     "date": "2025-10-29",
     "title": "Feuerwehr Zweiter Kommandant",
@@ -1247,8 +1247,8 @@
     }
   },
   {
-    "id": "v80",
-    "sessionId": "s13",
+    "id": "sr_20251029_04",
+    "sessionId": "sr_20251029",
     "topicId": null,
     "date": "2025-10-29",
     "title": "Sondervermögen Infrastruktur",
@@ -1261,8 +1261,8 @@
     }
   },
   {
-    "id": "v81",
-    "sessionId": "s13",
+    "id": "sr_20251029_05",
+    "sessionId": "sr_20251029",
     "topicId": null,
     "date": "2025-10-29",
     "title": "Vereinsförderrichtlinien – Vereinsstunde",
@@ -1275,8 +1275,8 @@
     }
   },
   {
-    "id": "v82",
-    "sessionId": "s13",
+    "id": "sr_20251029_06",
+    "sessionId": "sr_20251029",
     "topicId": null,
     "date": "2025-10-29",
     "title": "Vereinsförderrichtlinien – Großgeräte",
@@ -1289,8 +1289,8 @@
     }
   },
   {
-    "id": "v83",
-    "sessionId": "s13",
+    "id": "sr_20251029_07",
+    "sessionId": "sr_20251029",
     "topicId": null,
     "date": "2025-10-29",
     "title": "Vereinsförderrichtlinien – Baukostenzuschuss",
@@ -1304,8 +1304,8 @@
     }
   },
   {
-    "id": "v84",
-    "sessionId": "s13",
+    "id": "sr_20251029_08",
+    "sessionId": "sr_20251029",
     "topicId": null,
     "date": "2025-10-29",
     "title": "Vereinsförderrichtlinien gesamt",
@@ -1318,8 +1318,8 @@
     }
   },
   {
-    "id": "v85",
-    "sessionId": "s13",
+    "id": "sr_20251029_09",
+    "sessionId": "sr_20251029",
     "topicId": null,
     "date": "2025-10-29",
     "title": "Zuschuss Keglerverein",
@@ -1329,6 +1329,705 @@
       "yes": 18,
       "no": 0,
       "absent": 7
+    }
+  },
+  {
+    "id": "sr_20250908_01",
+    "sessionId": "sr_20250908",
+    "topicId": null,
+    "date": "2025-09-08",
+    "title": "Genehmigung Niederschriften",
+    "text": "Der Stadtrat genehmigt die öffentlichen Niederschriften der Stadtratssitzungen vom 02.06.2025, 14.07.2025 und 28.07.2025.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "von_pressentin",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "weber"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250908_02",
+    "sessionId": "sr_20250908",
+    "topicId": "t8",
+    "date": "2025-09-08",
+    "title": "Informationsveranstaltung Schulzentrum Süd",
+    "text": "Der Stadtrat beschließt, in Abstimmung mit den Schulen eine Informationsveranstaltung zu möglichen Verkehrsmaßnahmen durchzuführen. Die bevorzugte Variante ist dem Stadtrat danach zur Beschlussfassung vorzulegen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "von_pressentin",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "weber"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250908_03",
+    "sessionId": "sr_20250908",
+    "topicId": null,
+    "date": "2025-09-08",
+    "title": "Einvernehmen MFH Weihmühlstraße 18",
+    "text": "Der Stadtrat erteilt zum Neubau eines Mehrfamilienhauses mit 5 Wohneinheiten an der Weihmühlstraße 18 das gemeindliche Einvernehmen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "von_pressentin",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "weber",
+        "heinz"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250908_04",
+    "sessionId": "sr_20250908",
+    "topicId": null,
+    "date": "2025-09-08",
+    "title": "Abweichung BayBO Spielplatz Weihmühlstraße 18",
+    "text": "Der Stadtrat stimmt dem Abweichungsantrag zur BayBO zu: Aufgrund der zukünftig geltenden Satzung kann auf die Errichtung eines Spielplatzes verzichtet werden.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "von_pressentin",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "weber",
+        "heinz"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250908_05",
+    "sessionId": "sr_20250908",
+    "topicId": null,
+    "date": "2025-09-08",
+    "title": "Einvernehmen Wohnanlage Stadtwaldstraße 9",
+    "text": "Antrag auf Erteilung des gemeindlichen Einvernehmens für den Neubau einer Wohnanlage mit 21 Wohneinheiten und Tiefgarage (Haus A, B, C) an der Stadtwaldstraße 9, 9a, 9b.",
+    "type": "anonymous",
+    "result": "rejected",
+    "results": {
+      "yes": 8,
+      "no": 9,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20250908_06",
+    "sessionId": "sr_20250908",
+    "topicId": null,
+    "date": "2025-09-08",
+    "title": "Verweigerung Einvernehmen Stadtwaldstraße 9",
+    "text": "Der Stadtrat verweigert das gemeindliche Einvernehmen. Die massive Gesamtlänge des Baukörpers 1 (Haus A+B) fügt sich nicht in die nähere Umgebungsbebauung ein. Die Stadtwaldstraße gilt als Zäsur beim Einfügegebot.",
+    "type": "anonymous",
+    "results": {
+      "yes": 12,
+      "no": 5,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20250908_07",
+    "sessionId": "sr_20250908",
+    "topicId": null,
+    "date": "2025-09-08",
+    "title": "Keine Einwendungen ED 99 Nordumfahrung Erding",
+    "text": "Die Stadt Moosburg erhebt gegen den Planfeststellungsbeschluss „ED 99 Nordumfahrung Erding mit Verlegung der Staatsstraße 2331“ keine Einwendungen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "von_pressentin",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "weber"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250908_08",
+    "sessionId": "sr_20250908",
+    "topicId": null,
+    "date": "2025-09-08",
+    "title": "Wahlleiterin Kommunalwahl 2026",
+    "text": "Der Stadtrat beruft Frau Evelyn Stadler zur Wahlleiterin gemäß Art. 5 Abs. 1 GLKrWG für die Gemeindewahlen 2026.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "becher_j",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "von_pressentin",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "weber",
+        "beibl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250908_09",
+    "sessionId": "sr_20250908",
+    "topicId": null,
+    "date": "2025-09-08",
+    "title": "Stellvertretender Wahlleiter Kommunalwahl 2026",
+    "text": "Der Stadtrat beruft Herrn Maximilian Götz zum stellvertretenden Wahlleiter gemäß Art. 5 Abs. 1 GLKrWG für die Gemeindewahlen 2026.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "becher_j",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "von_pressentin",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "weber",
+        "beibl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250922_01",
+    "sessionId": "sr_20250922",
+    "topicId": null,
+    "date": "2025-09-22",
+    "title": "Zinssatz Abwassergebühren 3 %",
+    "text": "Der Stadtrat beschließt den kalkulatorischen Zinssatz für die Abwassergebührenkalkulation ab 2026 auf 3 % festzusetzen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "weber",
+        "welter",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250922_02",
+    "sessionId": "sr_20250922",
+    "topicId": null,
+    "date": "2025-09-22",
+    "title": "Auflösung Rücklage Abschreibungen",
+    "text": "Der Stadtrat beschließt die Auflösung der Rücklage für Abschreibungen auf zuwendungsfinanziertes Anlagevermögen ab dem 01.01.2026.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "weber",
+        "welter",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250922_03",
+    "sessionId": "sr_20250922",
+    "topicId": null,
+    "date": "2025-09-22",
+    "title": "Gebührensatz Abwasserentsorgung 2026–2029",
+    "text": "Der Stadtrat setzt die Gebühren für die Abwasserentsorgung 2026–2029 fest: Schmutzwassergebühr 3,32 €/m³, Niederschlagswassergebühr 0,57 €/m².",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "weber",
+        "welter",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250922_04",
+    "sessionId": "sr_20250922",
+    "topicId": null,
+    "date": "2025-09-22",
+    "title": "Aufhebung Fäkalschlammentsorgungssatzung",
+    "text": "Der Stadtrat beschließt die Aufhebung der Fäkalschlammentsorgungssatzung (FES) und der Gebührensatzung (GS-FES) vom 22.05.2017 zum 01.10.2025.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "weber",
+        "welter",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250922_05",
+    "sessionId": "sr_20250922",
+    "topicId": null,
+    "date": "2025-09-22",
+    "title": "Neuerlass Kläranlagenbenutzungsordnung",
+    "text": "Der Stadtrat erlässt die Benutzungsordnung für die Kläranlage zur Direktannahme von Fäkalschlamm in der Fassung vom 22.09.2025 mit Inkrafttreten zum 01.10.2025.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "weber",
+        "welter",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250922_06",
+    "sessionId": "sr_20250922",
+    "topicId": "t13",
+    "date": "2025-09-22",
+    "title": "Abwägung Stellungnahmen Sanierungsgebiet",
+    "text": "Der Stadtrat nimmt alle Stellungnahmen zur Kenntnis und passt den Umgriff an: Die Schloss Aschwiese wird auf Einwendung des AELF Ebersberg-Erding herausgenommen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "weber",
+        "welter"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250922_07",
+    "sessionId": "sr_20250922",
+    "topicId": "t13",
+    "date": "2025-09-22",
+    "title": "Billigung Ziele Sanierungssatzung",
+    "text": "Der Stadtrat billigt die in der Begründung zur Sanierungssatzung genannten Ziele und Zwecke der Sanierung auf Grundlage der Vorbereitenden Untersuchungen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "weber",
+        "welter"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250922_08",
+    "sessionId": "sr_20250922",
+    "topicId": "t13",
+    "date": "2025-09-22",
+    "title": "Festlegung Sanierungsgebiet „Zwischen Innenstadt und Bahnhof“",
+    "text": "Der Stadtrat legt das Sanierungsgebiet „Zwischen Innenstadt und Bahnhof“ gemäß § 142 Abs. 3 BauGB förmlich als Satzung fest. Vereinfachtes Verfahren, Laufzeit zunächst 15 Jahre.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "weber",
+        "welter"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250922_09",
+    "sessionId": "sr_20250922",
+    "topicId": "t14",
+    "date": "2025-09-22",
+    "title": "Zweckvereinbarung Erhalt Wachbaracken Stalag VII A",
+    "text": "Der Stadtrat ermächtigt den Ersten Bürgermeister zum Abschluss der Zweckvereinbarung mit dem Landkreis Freising zum Erhalt der historischen Wachbaracken des Stalag VII A.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "strobl",
+        "tristl",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "weber",
+        "welter"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250922_10",
+    "sessionId": "sr_20250922",
+    "topicId": null,
+    "date": "2025-09-22",
+    "title": "Verordnung Sonntagsöffnung Verkaufsstellen",
+    "text": "Der Stadtrat beschließt den Erlass der Verordnung über die Öffnung von Verkaufsstellen an Sonntagen aus Anlass von Märkten, Messen oder ähnlichen Veranstaltungen (19:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 1,
+      "absent": 5
     }
   }
 ]

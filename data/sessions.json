@@ -1,10 +1,18 @@
 [
   {
-    "id": "s9",
+    "id": "sr_20241209",
     "date": "2024-12-09",
     "type": "stadtrat",
     "title": "20. Stadtratssitzung – Dezember 2024",
-    "absent": ["becher_j", "heinz", "hobmaier", "kaestl", "kieninger", "linz_karin", "reif"],
+    "absent": [
+      "becher_j",
+      "heinz",
+      "hobmaier",
+      "kaestl",
+      "kieninger",
+      "linz_karin",
+      "reif"
+    ],
     "agenda": [
       {
         "number": 1,
@@ -19,33 +27,33 @@
       {
         "number": 3,
         "title": "Genehmigung der öffentlichen Niederschriften (HVFA 21.11.2024)",
-        "voteId": "v51"
+        "voteId": "sr_20241209_01"
       },
       {
         "number": 4,
         "title": "Generalsanierung des städtischen Freibades",
-        "voteId": "v52",
+        "voteId": "sr_20241209_02",
         "topicId": "t12"
       },
       {
         "number": 5,
         "title": "Nutzungsänderung MFH Viehmarktstraße 8",
-        "voteId": "v53"
+        "voteId": "sr_20241209_03"
       },
       {
         "number": 6,
         "title": "Städtebauförderung – Bedarfsanmeldung 2025",
-        "voteId": "v54"
+        "voteId": "sr_20241209_04"
       },
       {
         "number": "7",
         "title": "Bauleitplanung Nr. 70 „Containerbau ELA“ – Satzungsbeschluss",
-        "voteId": "v55"
+        "voteId": "sr_20241209_05"
       },
       {
         "number": "8.1",
         "title": "Antrag Legal Wall – Spraykunst/Graffiti/Street Art",
-        "voteId": "v56",
+        "voteId": "sr_20241209_06",
         "press": [
           "merkur_2024-12-09_legal-wall",
           "sz_2024-12-17_legal-wall"
@@ -55,12 +63,12 @@
       {
         "number": "8.2",
         "title": "Förderantrag Stalag Moosburg e.V.",
-        "voteId": "v57"
+        "voteId": "sr_20241209_07"
       },
       {
         "number": 9,
         "title": "Kreditaufnahme Kinderkrippe Sonnensiedlung",
-        "voteId": "v58"
+        "voteId": "sr_20241209_08"
       },
       {
         "number": 10,
@@ -70,7 +78,7 @@
     ]
   },
   {
-    "id": "s8",
+    "id": "sr_20241216",
     "date": "2024-12-16",
     "type": "stadtrat",
     "title": "21. Stadtratssitzung – Dezember 2024",
@@ -88,17 +96,17 @@
       {
         "number": 3,
         "title": "Genehmigung der öffentlichen Niederschriften (HVFA 25.11.2024)",
-        "voteId": "v48"
+        "voteId": "sr_20241216_01"
       },
       {
         "number": 4,
         "title": "Erlass der Haushaltssatzung 2025",
-        "voteId": "v49"
+        "voteId": "sr_20241216_02"
       },
       {
         "number": 5,
         "title": "Benutzungsordnung Hallenbad Moosburg",
-        "voteId": "v50"
+        "voteId": "sr_20241216_03"
       },
       {
         "number": 6,
@@ -108,7 +116,7 @@
     ]
   },
   {
-    "id": "s5",
+    "id": "sr_20251110",
     "date": "2025-11-10",
     "type": "stadtrat",
     "title": "16. Stadtratssitzung – November 2025",
@@ -126,28 +134,28 @@
       {
         "number": 3,
         "title": "Genehmigung der öffentlichen Niederschriften (BA 06.10.)",
-        "voteId": "v25"
+        "voteId": "sr_20251110_01"
       },
       {
         "number": "4.1",
         "title": "Neuerlass BGS zur Entwässerungssatzung",
-        "voteId": "v26"
+        "voteId": "sr_20251110_02"
       },
       {
         "number": "4.2",
         "title": "Änderungssatzung zur Wasserabgabesatzung",
-        "voteId": "v27"
+        "voteId": "sr_20251110_03"
       },
       {
         "number": "4.3",
         "title": "Neuerlass BGS zur Wasserabgabesatzung",
-        "voteId": "v28"
+        "voteId": "sr_20251110_04"
       },
       {
         "number": 5,
         "title": "Kleiner Kreisverkehr Landshuter Straße/Stadtwaldstraße",
         "topicId": "t9",
-        "voteId": "v29",
+        "voteId": "sr_20251110_05",
         "press": [
           "merkur_2025-11-10_kreisverkehr",
           "mz_2025-11-10_kreisverkehr"
@@ -161,17 +169,17 @@
       {
         "number": 6,
         "title": "Kläranlage – Änderung Unternehmenssatzung",
-        "voteId": "v30"
+        "voteId": "sr_20251110_06"
       },
       {
         "number": 7,
         "title": "Wahlhelferentschädigung Kommunalwahl 2026",
-        "voteId": "v31"
+        "voteId": "sr_20251110_07"
       },
       {
         "number": 8,
         "title": "Antragstellung Bundesprogramm Sanierung Sportstätten",
-        "voteId": "v32",
+        "voteId": "sr_20251110_08",
         "topicId": "t12"
       },
       {
@@ -182,7 +190,7 @@
     ]
   },
   {
-    "id": "s6",
+    "id": "sr_20251201",
     "date": "2025-12-01",
     "type": "stadtrat",
     "title": "17. Stadtratssitzung – Dezember 2025",
@@ -200,24 +208,24 @@
       {
         "number": 4,
         "title": "Genehmigung der öffentlichen Niederschriften (StR 13.10.)",
-        "voteId": "v33"
+        "voteId": "sr_20251201_01"
       },
       {
         "number": 5,
         "title": "Städtebauförderung – Bedarfsanmeldung 2026",
-        "voteId": "v34"
+        "voteId": "sr_20251201_02"
       },
       {
         "number": "6.1",
         "title": "Gehwegausbau Industriestraße",
         "topicId": "t8",
-        "voteId": "v35"
+        "voteId": "sr_20251201_03"
       },
       {
         "number": "6.2",
         "title": "Fahrradschutzstreifen Industriestraße",
         "topicId": "t8",
-        "voteId": "v36",
+        "voteId": "sr_20251201_04",
         "press": [
           "merkur_2025-12-01_fahrradschutzstreifen"
         ]
@@ -226,24 +234,24 @@
         "number": "6.3",
         "title": "Fahrrad-Piktogramm-Kette Industriestraße",
         "topicId": "t8",
-        "voteId": "v37"
+        "voteId": "sr_20251201_05"
       },
       {
         "number": "6.4",
         "title": "Ampelschaltung Thalbacher/Industriestraße",
         "topicId": "t8",
-        "voteId": "v38"
+        "voteId": "sr_20251201_06"
       },
       {
         "number": 7,
         "title": "Einziehung Teilabschnitt Degernpointweg",
-        "voteId": "v39"
+        "voteId": "sr_20251201_07"
       },
       {
         "number": "8.1",
         "title": "Vollzeitstelle Wirtschaftsförderer",
         "topicId": "t10",
-        "voteId": "v40",
+        "voteId": "sr_20251201_08",
         "press": [
           "merkur_2025-12-01_wirtschaftsfoerderer"
         ]
@@ -252,12 +260,12 @@
         "number": "8.2",
         "title": "Budget Wirtschaftsförderung und Start-ups",
         "topicId": "t10",
-        "voteId": "v41"
+        "voteId": "sr_20251201_09"
       },
       {
         "number": 9,
         "title": "Haushaltsmittel über-/außerplanmäßige Ausgaben 2025",
-        "voteId": "v42"
+        "voteId": "sr_20251201_10"
       },
       {
         "number": 10,
@@ -267,7 +275,7 @@
     ]
   },
   {
-    "id": "s7",
+    "id": "bpu_20251208",
     "date": "2025-12-08",
     "type": "bpu",
     "title": "6. Sitzung Bau-, Planungs- und Umweltausschuss",
@@ -299,27 +307,27 @@
       {
         "number": 3,
         "title": "Absperrbauwerk Amperüberleitungskanal",
-        "voteId": "v43"
+        "voteId": "bpu_20251208_01"
       },
       {
         "number": "4.1",
         "title": "Ablehnung MFH Sternstraße 12 (Vorbescheid)",
-        "voteId": "v44"
+        "voteId": "bpu_20251208_02"
       },
       {
         "number": "4.2",
         "title": "Hackschnitzelheizung Berg 1, Pfrombach",
-        "voteId": "v45"
+        "voteId": "bpu_20251208_03"
       },
       {
         "number": "4.3",
         "title": "Doppelhäuser und EFH Tonsilweg 7 (Vorbescheid)",
-        "voteId": "v46"
+        "voteId": "bpu_20251208_04"
       },
       {
         "number": "4.4",
         "title": "Ablehnung MFH Landshuter Str. 6/8 (Vorbescheid)",
-        "voteId": "v47"
+        "voteId": "bpu_20251208_05"
       },
       {
         "number": 5,
@@ -329,11 +337,19 @@
     ]
   },
   {
-    "id": "s3",
+    "id": "sr_20251215",
     "date": "2025-12-15",
     "type": "stadtrat",
     "title": "18. Stadtratssitzung – Dezember 2025",
-    "absent": ["becher_a", "becher_j", "fincke", "grundner", "kieninger", "strobl", "von_pressentin"],
+    "absent": [
+      "becher_a",
+      "becher_j",
+      "fincke",
+      "grundner",
+      "kieninger",
+      "strobl",
+      "von_pressentin"
+    ],
     "agenda": [
       {
         "number": 1,
@@ -354,7 +370,7 @@
         "number": 4,
         "title": "Erweiterung und Generalsanierung Theresia-Gerhardinger-Grundschule",
         "topicId": "t6",
-        "voteId": "v17"
+        "voteId": "sr_20251215_02"
       },
       {
         "number": 5,
@@ -364,13 +380,13 @@
       {
         "number": 6,
         "title": "Gebühren- und Entgeltordnung Stadtbücherei",
-        "voteId": "v20"
+        "voteId": "sr_20251215_04"
       },
       {
         "number": 7,
         "title": "Haushaltssatzung und Haushaltsplan 2026",
         "topicId": "t7",
-        "voteId": "v18"
+        "voteId": "sr_20251215_03"
       },
       {
         "number": 8,
@@ -380,10 +396,15 @@
     ]
   },
   {
-    "id": "s1",
+    "id": "sr_20260112",
     "date": "2026-01-12",
     "type": "stadtrat",
-    "absent": ["hobmaier", "kaestl", "becher_a", "becher_j"],
+    "absent": [
+      "hobmaier",
+      "kaestl",
+      "becher_a",
+      "becher_j"
+    ],
     "title": "1. Stadtratssitzung – Januar 2026",
     "agenda": [
       {
@@ -399,13 +420,13 @@
       {
         "number": 3,
         "title": "Genehmigung der öffentlichen Niederschriften",
-        "voteId": "v1"
+        "voteId": "sr_20260112_01"
       },
       {
         "number": 4,
         "title": "Vereinsheim SGT Istanbul – Beschluss zur weiteren Vorgehensweise",
         "topicId": "t1",
-        "voteId": "v2",
+        "voteId": "sr_20260112_02",
         "press": [
           "merkur_2026-01-12_sgt-vereinsheim"
         ]
@@ -413,24 +434,24 @@
       {
         "number": 5,
         "title": "Anbau Einfamilienhaus Am Mühlbachbogen 91",
-        "voteId": "v3"
+        "voteId": "sr_20260112_03"
       },
       {
         "number": 6,
         "title": "Förderantrag AMC Moosburg – Elektrokart",
-        "voteId": "v4"
+        "voteId": "sr_20260112_04"
       },
       {
         "number": 7.1,
         "title": "Bahnhof Moosburg – Konzeptausschreibung und Pinselsanierung",
         "topicId": "t2",
-        "voteId": "v5"
+        "voteId": "sr_20260112_05"
       },
       {
         "number": 8,
         "title": "Parksituation Auf dem Plan",
         "topicId": "t3",
-        "voteId": "v6",
+        "voteId": "sr_20260112_06",
         "press": [
           "merkur_2026-01-12_parken-plan"
         ]
@@ -443,7 +464,7 @@
     ]
   },
   {
-    "id": "s2",
+    "id": "sr_20260202",
     "date": "2026-02-02",
     "type": "stadtrat",
     "title": "2. Stadtratssitzung – Februar 2026",
@@ -467,7 +488,7 @@
         "number": 5,
         "title": "Vereinsheim SGT Istanbul – Variante 4",
         "topicId": "t1",
-        "voteId": "v8",
+        "voteId": "sr_20260202_01",
         "press": [
           "merkur_2026-02-02_sgt-vereinsheim"
         ]
@@ -475,18 +496,18 @@
       {
         "number": 6.1,
         "title": "Vorbescheid Mehrfamilienhaus Sternstraße 12",
-        "voteId": "v9"
+        "voteId": "sr_20260202_02"
       },
       {
         "number": 6.2,
         "title": "Anbau Einfamilienhaus Am Mühlbachbogen 91 – erneute Beteiligung",
-        "voteId": "v10"
+        "voteId": "sr_20260202_03"
       },
       {
         "number": 6.3,
         "title": "Studentenwohnheim Rockermaier Areal – Klage",
         "topicId": "t5",
-        "voteId": "v11",
+        "voteId": "sr_20260202_04",
         "press": [
           "merkur_2026-02-02_studentenwohnheim"
         ]
@@ -494,18 +515,18 @@
       {
         "number": 7,
         "title": "26. Änderung Regionalplan – Windenergie",
-        "voteId": "v12"
+        "voteId": "sr_20260202_05"
       },
       {
         "number": 8,
         "title": "Verkehrsberuhigung Innenstadt – Antrag SPD / Grüne",
         "topicId": "t4",
-        "voteId": "v13"
+        "voteId": "sr_20260202_06"
       },
       {
         "number": 9,
         "title": "Übertragung Haushaltsreste 2025",
-        "voteId": "v15"
+        "voteId": "sr_20260202_08"
       },
       {
         "number": 10,
@@ -515,7 +536,7 @@
     ]
   },
   {
-    "id": "s4",
+    "id": "sr_20260223",
     "date": "2026-02-23",
     "type": "stadtrat",
     "title": "3. Stadtratssitzung – Februar 2026",
@@ -547,7 +568,7 @@
         "number": 4,
         "title": "Schulwegsicherheit Schulzentrum Süd",
         "topicId": "t8",
-        "voteId": "v19",
+        "voteId": "sr_20260223_01",
         "press": [
           "merkur_2026-02-23_schulweg"
         ]
@@ -555,22 +576,22 @@
       {
         "number": 5,
         "title": "Wohnanlage Merianstraße – Bauturbo",
-        "voteId": "v22"
+        "voteId": "sr_20260223_03"
       },
       {
         "number": 6,
         "title": "Bebauungsplan Clariant-Gelände",
-        "voteId": "v21"
+        "voteId": "sr_20260223_02"
       },
       {
         "number": 7,
         "title": "Aufstellung Bebauungsplan Aich",
-        "voteId": "v23"
+        "voteId": "sr_20260223_04"
       },
       {
         "number": 8,
         "title": "17. Änderung Flächennutzungsplan",
-        "voteId": "v24"
+        "voteId": "sr_20260223_05"
       },
       {
         "number": 9,
@@ -580,7 +601,7 @@
     ]
   },
   {
-    "id": "s10",
+    "id": "sr_20250324",
     "date": "2025-03-24",
     "type": "stadtrat",
     "title": "4. Stadtratssitzung – März 2025",
@@ -601,17 +622,17 @@
       {
         "number": "3.1",
         "title": "Genehmigung der öffentlichen Niederschrift (StR 20.01.2025)",
-        "voteId": "v59"
+        "voteId": "sr_20250324_01"
       },
       {
         "number": "3.2",
         "title": "Genehmigung der öffentlichen Niederschrift (StR 10.02.2025)",
-        "voteId": "v60"
+        "voteId": "sr_20250324_02"
       },
       {
         "number": "4.1",
         "title": "Niederlegung Stadtratsmandats Beubl – Nachrücker Marcus",
-        "voteId": "v61"
+        "voteId": "sr_20250324_03"
       },
       {
         "number": "4.2",
@@ -621,22 +642,22 @@
       {
         "number": "4.3",
         "title": "Neubesetzung von Ausschüssen und AR Kläranlage",
-        "voteId": "v62"
+        "voteId": "sr_20250324_04"
       },
       {
         "number": "4.4",
         "title": "Vorsitz Rechnungsprüfungsausschuss",
-        "voteId": "v64"
+        "voteId": "sr_20250324_06"
       },
       {
         "number": 5,
         "title": "Sanierung Rathaus – Fassade und 1./2. OG (3. BA)",
-        "voteId": "v65"
+        "voteId": "sr_20250324_07"
       },
       {
         "number": 6,
         "title": "Verkaufsoffener Sonntag 13. April 2025",
-        "voteId": "v66"
+        "voteId": "sr_20250324_08"
       },
       {
         "number": 7,
@@ -646,7 +667,7 @@
     ]
   },
   {
-    "id": "s11",
+    "id": "bpu_20251006",
     "date": "2025-10-06",
     "type": "bpu",
     "title": "5. Sitzung Bau-, Planungs- und Umweltausschuss",
@@ -667,37 +688,37 @@
       {
         "number": 3,
         "title": "Genehmigung Niederschrift BPU 21.07.2025",
-        "voteId": "v67"
+        "voteId": "bpu_20251006_01"
       },
       {
         "number": "4.1",
         "title": "Lagerhalle Kochbauerstr. 1, Aich",
-        "voteId": "v68"
+        "voteId": "bpu_20251006_02"
       },
       {
         "number": "4.2",
         "title": "Vorbescheid MFH Landshuter Str. 6/8",
-        "voteId": "v69"
+        "voteId": "bpu_20251006_03"
       },
       {
         "number": "4.3",
         "title": "MFH Sudetenlandstr. 28",
-        "voteId": "v70"
+        "voteId": "bpu_20251006_04"
       },
       {
         "number": "4.4",
         "title": "Lagerhalle Kirchamper 8",
-        "voteId": "v71"
+        "voteId": "bpu_20251006_05"
       },
       {
         "number": "4.5",
         "title": "Stadthotel Weingraben 14",
-        "voteId": "v72"
+        "voteId": "bpu_20251006_06"
       },
       {
         "number": "4.6",
         "title": "MFH Mainburger Str. 5 – Ersetzung Einvernehmen",
-        "voteId": "v73"
+        "voteId": "bpu_20251006_07"
       },
       {
         "number": 5,
@@ -707,7 +728,7 @@
     ]
   },
   {
-    "id": "s12",
+    "id": "sr_20251013",
     "date": "2025-10-13",
     "type": "stadtrat",
     "title": "14. Stadtratssitzung – Oktober 2025",
@@ -731,17 +752,17 @@
       {
         "number": 3,
         "title": "Genehmigung der öffentlichen Niederschriften (StR 08.09., StR 22.09.)",
-        "voteId": "v74"
+        "voteId": "sr_20251013_01"
       },
       {
         "number": "4.1",
         "title": "Sondernutzungsgebühren (Antrag FW)",
-        "voteId": "v75"
+        "voteId": "sr_20251013_02"
       },
       {
         "number": "4.2",
         "title": "Tariftreue bei Vergabe (Antrag Strobl/Linke)",
-        "voteId": "v76"
+        "voteId": "sr_20251013_03"
       },
       {
         "number": "4.3",
@@ -766,7 +787,7 @@
     ]
   },
   {
-    "id": "s13",
+    "id": "sr_20251029",
     "date": "2025-10-29",
     "type": "stadtrat",
     "title": "15. Stadtratssitzung – Oktober 2025",
@@ -793,30 +814,188 @@
       {
         "number": 3,
         "title": "B-Plan Nr. 82 „Degernpoint Nord“",
-        "voteId": "v77"
+        "voteId": "sr_20251029_01"
       },
       {
         "number": 4,
         "title": "Feuerwehr – Bestätigung Kommandanten",
-        "voteId": "v78"
+        "voteId": "sr_20251029_02"
       },
       {
         "number": 5,
         "title": "Sondervermögen Infrastruktur (Antrag Marcus/SPD)",
-        "voteId": "v80"
+        "voteId": "sr_20251029_04"
       },
       {
         "number": "6.1",
         "title": "Änderung Vereinsförderrichtlinien",
-        "voteId": "v84"
+        "voteId": "sr_20251029_08"
       },
       {
         "number": "6.2",
         "title": "Bezuschussung Keglerverein",
-        "voteId": "v85"
+        "voteId": "sr_20251029_09"
       },
       {
         "number": 7,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20250908",
+    "date": "2025-09-08",
+    "type": "stadtrat",
+    "title": "12. Stadtratssitzung – September 2025",
+    "absent": [
+      "hadersdorfer",
+      "stanglmaier",
+      "becher_a",
+      "kaestl",
+      "lauterbach",
+      "linz_kilian",
+      "tristl",
+      "weber"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung der öffentlichen Niederschriften (StR 02.06., 14.07. und 28.07.2025)",
+        "voteId": "sr_20250908_01"
+      },
+      {
+        "number": 4,
+        "title": "Verkehrsberuhigung Schulzentrum Süd – Informationsveranstaltung",
+        "topicId": "t8",
+        "voteId": "sr_20250908_02"
+      },
+      {
+        "number": "5.1",
+        "title": "Neubau MFH Weihmühlstraße 18 – Einvernehmen",
+        "voteId": "sr_20250908_03"
+      },
+      {
+        "number": "5.1b",
+        "title": "Neubau MFH Weihmühlstraße 18 – Abweichung BayBO Spielplatz",
+        "voteId": "sr_20250908_04"
+      },
+      {
+        "number": "5.2",
+        "title": "Wohnanlage Stadtwaldstraße 9, 9a, 9b – Einvernehmen verweigert (8:9 / 12:5)",
+        "voteId": "sr_20250908_06"
+      },
+      {
+        "number": 6,
+        "title": "ED 99 Nordumfahrung Erding – keine Einwendungen zum Planfeststellungsbeschluss",
+        "voteId": "sr_20250908_07"
+      },
+      {
+        "number": "7.1",
+        "title": "Berufung Wahlleiterin Kommunalwahl 2026",
+        "voteId": "sr_20250908_08"
+      },
+      {
+        "number": "7.2",
+        "title": "Berufung stellvertretender Wahlleiter Kommunalwahl 2026",
+        "voteId": "sr_20250908_09"
+      },
+      {
+        "number": 8,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20250922",
+    "date": "2025-09-22",
+    "type": "stadtrat",
+    "title": "13. Stadtratssitzung – September 2025",
+    "absent": [
+      "hadersdorfer",
+      "heinz",
+      "von_pressentin",
+      "weber",
+      "welter"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3.1",
+        "title": "Zinssatz Abwassergebühren ab 2026 (3 %)",
+        "voteId": "sr_20250922_01"
+      },
+      {
+        "number": "3.2",
+        "title": "Auflösung Rücklage Abschreibungen",
+        "voteId": "sr_20250922_02"
+      },
+      {
+        "number": "3.3",
+        "title": "Gebührensatz Abwasserentsorgung 2026–2029",
+        "voteId": "sr_20250922_03"
+      },
+      {
+        "number": "4.1",
+        "title": "Aufhebung Fäkalschlammentsorgungssatzung (FES/GS-FES)",
+        "voteId": "sr_20250922_04"
+      },
+      {
+        "number": "4.2",
+        "title": "Neuerlass Kläranlagenbenutzungsordnung",
+        "voteId": "sr_20250922_05"
+      },
+      {
+        "number": "5.1",
+        "title": "Sanierungsgebiet Innenstadt–Bahnhof – Abwägung Stellungnahmen",
+        "topicId": "t13",
+        "voteId": "sr_20250922_06"
+      },
+      {
+        "number": "5.2",
+        "title": "Sanierungsgebiet – Billigung Ziele und Zwecke",
+        "topicId": "t13",
+        "voteId": "sr_20250922_07"
+      },
+      {
+        "number": "5.3",
+        "title": "Sanierungsgebiet – Förmliche Festlegung als Satzung",
+        "topicId": "t13",
+        "voteId": "sr_20250922_08"
+      },
+      {
+        "number": 6,
+        "title": "Zweckvereinbarung Erhalt Wachbaracken Stalag VII A",
+        "topicId": "t14",
+        "voteId": "sr_20250922_09"
+      },
+      {
+        "number": 7,
+        "title": "Verordnung Sonntagsöffnung Verkaufsstellen",
+        "voteId": "sr_20250922_10"
+      },
+      {
+        "number": 8,
         "title": "Anfragen",
         "type": "formal"
       }
