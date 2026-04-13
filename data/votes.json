@@ -2001,11 +2001,39 @@
     "date": "2025-03-24",
     "title": "Verkaufsoffener Sonntag 13.04.2025",
     "text": "Der Stadtrat beschließt den Erlass der Verordnung über den verkaufsoffenen Sonntag am 13.04.2025.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 23,
-      "no": 1,
-      "absent": 1
+      "yes": [
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke"
+            ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "dollinger"
+      ]
     }
   },
   {
@@ -3211,11 +3239,39 @@
     "date": "2025-09-22",
     "title": "Verordnung Sonntagsöffnung Verkaufsstellen",
     "text": "Der Stadtrat beschließt den Erlass der Verordnung über die Öffnung von Verkaufsstellen an Sonntagen aus Anlass von Märkten, Messen oder ähnlichen Veranstaltungen (19:1).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 19,
-      "no": 1,
-      "absent": 5
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "hobmaier",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "marcus",
+        "pschorr",
+        "reif",
+        "tristl",
+        "kaestl"
+      ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "weber",
+        "welter"
+      ]
     }
   },
   {
