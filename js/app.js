@@ -330,6 +330,7 @@ const SHOW_PRONOUNS = true;
       a.target = "_blank";
       a.rel = "noopener";
       a.title = p.title || src.name;
+      a.setAttribute("aria-label", p.title || ("Artikel bei " + src.name));
       a.style.background = src.color;
       a.innerHTML = `<img src="${src.logo}" alt="${src.name}">`;
       wrap.appendChild(a);
@@ -1210,6 +1211,11 @@ const SHOW_PRONOUNS = true;
     a.href = href;
     a.target = "_blank";
     a.rel = "noopener";
+    const labels = {
+      email: "E-Mail", website: "Website", instagram: "Instagram",
+      threads: "Threads", linkedin: "LinkedIn", facebook: "Facebook",
+    };
+    a.setAttribute("aria-label", labels[type] || type);
     const icons = {
       email: '<i class="fas fa-envelope"></i>',
       website: '<i class="fas fa-globe"></i>',

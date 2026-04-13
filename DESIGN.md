@@ -16,7 +16,8 @@ Gradient für Hero-Bereiche: `linear-gradient(135deg, --primary-dark, --primary,
 ### Akzent (Gold)
 | Token | Hex | Verwendung |
 |---|---|---|
-| `--accent` | `#B39F7A` | Section-Headings, Badges |
+| `--accent` | `#B39F7A` | Shapes: Borders, Dots, Kalender-Markierungen |
+| `--accent-text` | `#968b69` | Text auf hellem Grund: Section-Headings, Badges, Icons (Kontrast AA) |
 | `--accent-light` | `#E8DFCF` | Hintergründe, Tag-Chips, Hover |
 
 ### Oberfläche
