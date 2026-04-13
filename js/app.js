@@ -521,7 +521,7 @@ const SHOW_PRONOUNS = true;
 
     const isRejected = vote.result === "rejected";
     const tagClass = isRejected ? "rejected" : "approved";
-    const tagText = isRejected ? "Abgelehnt" : "Zugestimmt";
+    const tagText = isRejected ? "Abgelehnt" : "Angenommen";
     const resultTag = `<span class="vote-result-tag ${tagClass}">${tagText}</span>`;
 
     block.innerHTML = `
@@ -1285,8 +1285,10 @@ const SHOW_PRONOUNS = true;
         const voteStatus = getMemberVoteStatus(member.id, vote, session);
         if (voteStatus === null) return;
         const baseStatus = voteStatus.replace("*", "");
-        const inferred = voteStatus.endsWith("*");
-        const chipClass = { ja: "ja", nein: "nein", abwesend: "abwesend", "?": "unknown" }[baseStatus] + (inferred ? " inferred" : "");
+        const isUnanimous = vote.type === "named"
+          ? (vote.results.no.length === 0 || vote.results.yes.length === 0)
+          : (vote.results.no === 0 || vote.results.yes === 0);
+        const chipClass = { ja: "ja", nein: "nein", abwesend: "abwesend", "?": "unknown" }[baseStatus] + (isUnanimous ? " inferred" : "");
         const chipLabel = { ja: "Ja", nein: "Nein", abwesend: "\u2013", "?": "?" }[baseStatus];
 
         const voteRow = document.createElement("div");

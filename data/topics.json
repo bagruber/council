@@ -224,6 +224,14 @@
     "summary": "Die Theresia-Gerhardinger-Grundschule soll erweitert und generalsaniert werden. Die geschätzten Gesamtkosten liegen bei ca. 33 Mio. Euro. Eine Kostenkommission begleitet das Projekt.",
     "history": [
       {
+        "date": "2025-07-14",
+        "type": "vote",
+        "title": "Kostenberechnung und Förderantrag genehmigt",
+        "text": "Der Stadtrat nimmt die Kostenberechnung zustimmend zur Kenntnis. Zur Kosteneinsparung werden Klimatisierung (10:13) und Dachbegrünung (5:18) abgelehnt; Tiefgarage (23:0), Campus-Vernetzung Variante 2 (21:2) und Rückbau der Bühnentechnik (23:0) werden beschlossen. Die Verwaltung wird ermächtigt, den Förderantrag bei der Regierung von Oberbayern zu stellen.",
+        "sessionId": "sr_20250714",
+        "voteId": "sr_20250714_07"
+      },
+      {
         "date": "2025-12-15",
         "type": "vote",
         "title": "Kostenkommission eingesetzt",
@@ -487,6 +495,14 @@
         "text": "Der Stadtrat beschließt über einen Förderantrag des Stalag Moosburg e.V., der sich für die Erinnerungsarbeit rund um das Stalag VII A engagiert.",
         "sessionId": "sr_20241209",
         "voteId": "sr_20241209_07"
+      },
+      {
+        "date": "2025-07-28",
+        "type": "vote",
+        "title": "Abbruchbeschluss 2012 aufgehoben",
+        "text": "Der Stadtrat hebt den Beschluss vom 10.12.2012 zum Abbruch der historischen Wachbaracken an der Schlesierstraße auf. Stattdessen soll eine denkmalgerechte Sanierung angestrebt werden. Ein Nutzungskonzept wird erarbeitet; eine Zweckvereinbarung mit dem Landkreis Freising soll folgen.",
+        "sessionId": "sr_20250728",
+        "voteId": "sr_20250728_03"
       },
       {
         "date": "2025-09-22",

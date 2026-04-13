@@ -272,6 +272,11 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "absent": [
+      "gruber",
+      "grundner",
+      "kieninger"
     ]
   },
   {
@@ -546,7 +551,8 @@
       "gruber",
       "hadersdorfer",
       "heinz",
-      "von_pressentin"
+      "von_pressentin",
+      "hobmaier"
     ],
     "agenda": [
       {
@@ -996,6 +1002,163 @@
       },
       {
         "number": 8,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20250714",
+    "date": "2025-07-14",
+    "type": "stadtrat",
+    "title": "10. Stadtratssitzung – Juli 2025",
+    "absent": [
+      "hobmaier",
+      "reif"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung der öffentlichen Niederschriften (StR 12.05. und 02.06.2025)",
+        "voteId": "sr_20250714_01"
+      },
+      {
+        "number": 4,
+        "title": "Sanierungsgebiet Innenstadt–Bahnhof – Beschlussfassung vertagt",
+        "topicId": "t13",
+        "type": "discussion"
+      },
+      {
+        "number": "5a",
+        "title": "Grundschule – Klimatisierung (abgelehnt 10:13)",
+        "topicId": "t6",
+        "voteId": "sr_20250714_02"
+      },
+      {
+        "number": "5b",
+        "title": "Grundschule – Dachbegrünung (abgelehnt 5:18)",
+        "topicId": "t6",
+        "voteId": "sr_20250714_03"
+      },
+      {
+        "number": "5c",
+        "title": "Grundschule – Tiefgarage",
+        "topicId": "t6",
+        "voteId": "sr_20250714_04"
+      },
+      {
+        "number": "5d",
+        "title": "Grundschule – Campus-Vernetzung Variante 2",
+        "topicId": "t6",
+        "voteId": "sr_20250714_05"
+      },
+      {
+        "number": "5e",
+        "title": "Grundschule – Rückbau Bühnentechnik",
+        "topicId": "t6",
+        "voteId": "sr_20250714_06"
+      },
+      {
+        "number": 5,
+        "title": "Erweiterung und Generalsanierung Theresia-Gerhardinger-Grundschule – Förderantrag",
+        "topicId": "t6",
+        "voteId": "sr_20250714_07"
+      },
+      {
+        "number": 6,
+        "title": "Sanierung Parkplatz Alte Polizei",
+        "voteId": "sr_20250714_08"
+      },
+      {
+        "number": 7,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20250728",
+    "date": "2025-07-28",
+    "type": "stadtrat",
+    "title": "11. Stadtratssitzung – Juli 2025",
+    "absent": [
+      "stanglmaier",
+      "becher_a"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung der öffentlichen Niederschrift (StR 23.06.2025)",
+        "voteId": "sr_20250728_01"
+      },
+      {
+        "number": 4,
+        "title": "Umrüstung Straßenbeleuchtung auf LED",
+        "voteId": "sr_20250728_02"
+      },
+      {
+        "number": 5,
+        "title": "Rücknahme Abbruchbeschluss Wachbaracken Schlesierstraße (2012)",
+        "topicId": "t14",
+        "voteId": "sr_20250728_03"
+      },
+      {
+        "number": "6.1",
+        "title": "Kläranlage Moosburg GmbH – Jahresabschluss 2024",
+        "voteId": "sr_20250728_04"
+      },
+      {
+        "number": "6.2",
+        "title": "Kläranlage Moosburg GmbH – Entlastung Aufsichtsrat 2024",
+        "voteId": "sr_20250728_05"
+      },
+      {
+        "number": "7a",
+        "title": "Stellplatzsatzung – Abstufung nach Wohnungsgröße",
+        "voteId": "sr_20250728_06"
+      },
+      {
+        "number": 7,
+        "title": "1. Änderung der Stellplatzsatzung",
+        "voteId": "sr_20250728_07"
+      },
+      {
+        "number": 8,
+        "title": "Satzung Spielplatzpflicht für Wohngebäude",
+        "voteId": "sr_20250728_08"
+      },
+      {
+        "number": 9,
+        "title": "Wasserrecht – Antrag Stadtwerke München",
+        "voteId": "sr_20250728_09"
+      },
+      {
+        "number": 10,
+        "title": "Bahnübergang Unterreit/Reiteraustraße – Schließung",
+        "voteId": "sr_20250728_10"
+      },
+      {
+        "number": 11,
         "title": "Anfragen",
         "type": "formal"
       }
