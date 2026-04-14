@@ -3322,12 +3322,39 @@
     "date": "2025-07-14",
     "title": "Grundschule – Klimatisierung abgelehnt",
     "text": "Der Antrag, die Grundschule mit einer zentralen Klimatisierungsanlage auszustatten, wird abgelehnt.",
-    "type": "anonymous",
-    "result": "rejected",
+    "type": "named",
     "results": {
-      "yes": 10,
-      "no": 13,
-      "absent": 2
+      "yes": [
+        "beibl",
+        "fincke",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "marcus",
+        "gruber",
+        "strobl"
+      ],
+      "no": [
+        "dollinger",
+        "grundner",
+        "haberl",
+        "hadersdorfer",
+        "heinz",
+        "kaestl",
+        "kieninger",
+        "lauterbach",
+        "linz_karin",
+        "pschorr",
+        "tristl",
+        "weber",
+        "welter"
+      ],
+      "absent": [
+        "hobmaier",
+        "reif"
+      ]
     }
   },
   {
@@ -3337,12 +3364,40 @@
     "date": "2025-07-14",
     "title": "Grundschule – Dachbegrünung abgelehnt",
     "text": "Der Antrag, eine Dachbegrünung als Kosteneinsparmaßnahme vorzusehen, wird abgelehnt.",
-    "type": "anonymous",
+    "type": "named",
     "result": "rejected",
     "results": {
-      "yes": 5,
-      "no": 18,
-      "absent": 2
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "kaestl",
+        "strobl"
+      ],
+      "no": [
+        "fincke",
+        "grundner",
+        "kieninger",
+        "lauterbach",
+        "welter"
+      ],
+      "absent": [
+        "hobmaier",
+        "reif"
+      ]
     }
   },
   {
@@ -3393,11 +3448,39 @@
     "date": "2025-07-14",
     "title": "Grundschule – Campus-Vernetzung Variante 2",
     "text": "Der Stadtrat beschließt die Umsetzung der Campus-Vernetzung nach Variante 2.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 21,
-      "no": 2,
-      "absent": 2
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [
+        "heinz",
+        "kaestl"
+      ],
+      "absent": [
+        "hobmaier",
+        "reif"
+      ]
     }
   },
   {
