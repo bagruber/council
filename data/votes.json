@@ -3362,12 +3362,19 @@
     "sessionId": "sr_20250714",
     "topicId": "t6",
     "date": "2025-07-14",
-    "title": "Grundschule – Dachbegrünung abgelehnt",
+    "title": "Grundschule – Dachbegrünung einsparen",
     "text": "Der Antrag, eine Dachbegrünung als Kosteneinsparmaßnahme vorzusehen, wird abgelehnt.",
     "type": "named",
     "result": "rejected",
     "results": {
       "yes": [
+        "fincke",
+        "grundner",
+        "kieninger",
+        "lauterbach",
+        "welter"
+      ],
+      "no": [
         "dollinger",
         "hadersdorfer",
         "tristl",
@@ -3386,13 +3393,7 @@
         "gruber",
         "kaestl",
         "strobl"
-      ],
-      "no": [
-        "fincke",
-        "grundner",
-        "kieninger",
-        "lauterbach",
-        "welter"
+
       ],
       "absent": [
         "hobmaier",
@@ -3405,7 +3406,7 @@
     "sessionId": "sr_20250714",
     "topicId": "t6",
     "date": "2025-07-14",
-    "title": "Grundschule – Tiefgarage beschlossen",
+    "title": "Grundschule – Tiefgarage vorsehen",
     "text": "Der Stadtrat beschließt, eine Tiefgarage im Rahmen der Schulerweiterung vorzusehen.",
     "type": "named",
     "results": {
