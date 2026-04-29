@@ -513,5 +513,34 @@
         "voteId": "sr_20250922_09"
       }
     ]
+  },
+  {
+    "id": "t15",
+    "title": "Photovoltaik-Freiflächenanlage Kuttenweide",
+    "tags": [
+      "energy",
+      "infrastructure",
+      "building"
+    ],
+    "image": null,
+    "summary": "Die Stadt stellt einen Bebauungsplan für eine Freiflächen-Photovoltaikanlage am Standort Kuttenweide auf. Im Parallelverfahren wird der Flächennutzungsplan angepasst. Der Vorhabenträger trägt die Planungskosten via städtebaulichem Vertrag.",
+    "history": [
+      {
+        "date": "2025-02-10",
+        "type": "vote",
+        "title": "Aufstellungsbeschluss B-Plan",
+        "text": "Der Stadtrat beschließt einstimmig die Aufstellung des Bebauungsplans „SO Freiflächen-PV-Anlage Kuttenweide“ im Parallelverfahren mit der Änderung des Flächennutzungsplans.",
+        "sessionId": "sr_20250210",
+        "voteId": "sr_20250210_04"
+      },
+      {
+        "date": "2025-02-10",
+        "type": "vote",
+        "title": "Städtebaulicher Vertrag",
+        "text": "Der Bürgermeister wird ermächtigt, mit dem Vorhabenträger einen städtebaulichen Vertrag abzuschließen. Der Investor trägt sämtliche Planungskosten.",
+        "sessionId": "sr_20250210",
+        "voteId": "sr_20250210_05"
+      }
+    ]
   }
 ]

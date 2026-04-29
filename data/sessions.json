@@ -1163,5 +1163,305 @@
         "type": "formal"
       }
     ]
+  },
+  {
+    "id": "sr_20250210",
+    "date": "2025-02-10",
+    "type": "stadtrat",
+    "title": "2. Stadtratssitzung – Februar 2025",
+    "absent": [
+      "dollinger",
+      "beubl",
+      "fincke",
+      "linz_kilian",
+      "reif"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung der öffentlichen Niederschriften (StR 16.12.2024, BPU 16.01.2025)",
+        "voteId": "sr_20250210_01"
+      },
+      {
+        "number": "4.1",
+        "title": "Bestätigung Erster Kommandant FFW Pfrombach-Aich (Rainer Göbl)",
+        "voteId": "sr_20250210_02"
+      },
+      {
+        "number": "4.2",
+        "title": "Bestätigung Stellv. Kommandant FFW Pfrombach-Aich (Tobias Tristl)",
+        "voteId": "sr_20250210_03"
+      },
+      {
+        "number": "5.1",
+        "title": "Aufstellungsbeschluss B-Plan „SO Freiflächen-PV-Anlage Kuttenweide“",
+        "topicId": "t15",
+        "voteId": "sr_20250210_04"
+      },
+      {
+        "number": "5.2",
+        "title": "Städtebaulicher Vertrag PV-Anlage Kuttenweide",
+        "topicId": "t15",
+        "voteId": "sr_20250210_05"
+      },
+      {
+        "number": 6,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20250224",
+    "date": "2025-02-24",
+    "type": "stadtrat",
+    "title": "3. Stadtratssitzung – Februar 2025",
+    "absent": [
+      "grundner",
+      "haberl",
+      "heinz",
+      "kaestl",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Kostenloser Hallenbadeintritt für Kinder (Antrag StRin Beibl)",
+        "voteId": "sr_20250224_01"
+      },
+      {
+        "number": "4.1",
+        "title": "Dienstleistungsvertrag enPORTAL – Bündelausschreibungen Strom/Gas",
+        "voteId": "sr_20250224_02"
+      },
+      {
+        "number": "4.2",
+        "title": "Ermächtigung BGT Kommunal-GmbH Strombündelung",
+        "voteId": "sr_20250224_03"
+      },
+      {
+        "number": "4.3a",
+        "title": "Strom-Ausschreibung Variante 1 – 100% Ökostrom mit Neuanlagenquote (abgelehnt)",
+        "voteId": "sr_20250224_04"
+      },
+      {
+        "number": "4.3b",
+        "title": "Strom-Ausschreibung Variante 2 – 100% Ökostrom ohne Neuanlagenquote",
+        "voteId": "sr_20250224_05"
+      },
+      {
+        "number": "4.4",
+        "title": "Ermächtigung Bürgermeister – Beschaffungskonzept",
+        "voteId": "sr_20250224_06"
+      },
+      {
+        "number": "4.5",
+        "title": "Vergabe an wirtschaftlichsten Bieter",
+        "voteId": "sr_20250224_07"
+      },
+      {
+        "number": "4.6",
+        "title": "Ermächtigung enPORTAL Verbrauchsdatenabfrage",
+        "voteId": "sr_20250224_08"
+      },
+      {
+        "number": 5,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "bpu_20250317",
+    "date": "2025-03-17",
+    "type": "bpu",
+    "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss",
+    "substitutes": [
+      {
+        "member": "tristl",
+        "substitute": "haberl"
+      }
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen gem. § 27 Abs. 2 / § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3.1",
+        "title": "Wohn- und Geschäftshaus Bahnhofstr. 12",
+        "voteId": "bpu_20250317_01"
+      },
+      {
+        "number": "3.2",
+        "title": "Ersatzneubau AWO Küche und Einzelwohnen Krankenhausweg 10",
+        "voteId": "bpu_20250317_02"
+      },
+      {
+        "number": "3.3",
+        "title": "Vorbescheid MFH Moosstr. 15b, Aich – Einvernehmen verweigert",
+        "voteId": "bpu_20250317_03"
+      },
+      {
+        "number": "3.4a",
+        "title": "MFH Neustadtstr. 17 – Einvernehmen erteilt (abgelehnt 3:9)",
+        "voteId": "bpu_20250317_04"
+      },
+      {
+        "number": "3.4b",
+        "title": "MFH Neustadtstr. 17 – Einvernehmen verweigert",
+        "voteId": "bpu_20250317_05"
+      },
+      {
+        "number": 4,
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20250602",
+    "date": "2025-06-02",
+    "type": "stadtrat",
+    "title": "8. Stadtratssitzung – Juni 2025",
+    "absent": [
+      "hadersdorfer",
+      "stanglmaier",
+      "heinz",
+      "hobmaier",
+      "strobl",
+      "welter"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung der öffentlichen Niederschriften (StR 10.04. und 28.04.2025)",
+        "voteId": "sr_20250602_01"
+      },
+      {
+        "number": 4,
+        "title": "Information Hebesätze Grundsteuer A und B ab 2025",
+        "type": "discussion"
+      },
+      {
+        "number": "5.1",
+        "title": "Feststellung Jahresrechnung 2023",
+        "voteId": "sr_20250602_02"
+      },
+      {
+        "number": "5.2",
+        "title": "Entlastung Bürgermeister zur Jahresrechnung 2023",
+        "voteId": "sr_20250602_03"
+      },
+      {
+        "number": "5.3",
+        "title": "Verwendung Gewinne 2023 (BgA Photovoltaik)",
+        "voteId": "sr_20250602_04"
+      },
+      {
+        "number": 6,
+        "title": "Badegebühren Freibad – Redaktionelle Anpassung",
+        "topicId": "t12",
+        "voteId": "sr_20250602_05"
+      },
+      {
+        "number": 7,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20250623",
+    "date": "2025-06-23",
+    "type": "stadtrat",
+    "title": "9. Stadtratssitzung – Juni 2025",
+    "absent": [
+      "hadersdorfer",
+      "stanglmaier",
+      "becher_a",
+      "kieninger",
+      "von_pressentin",
+      "weber"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Kommunale Wärmeplanung – Kenntnisnahme und Roadmap",
+        "voteId": "sr_20250623_01"
+      },
+      {
+        "number": 4,
+        "title": "Vorlage Jahresrechnung 2024",
+        "type": "discussion"
+      },
+      {
+        "number": 5,
+        "title": "Sanierung Bahnhof – Antrag Freie Wähler (vertagt)",
+        "topicId": "t2",
+        "type": "discussion"
+      },
+      {
+        "number": 6,
+        "title": "Sanierung Parkplatz Alte Polizei (zurückgestellt)",
+        "voteId": "sr_20250623_02"
+      },
+      {
+        "number": 7,
+        "title": "Kostenloses Parken während Stadtplatzsanierung – Antrag Freie Wähler (abgelehnt)",
+        "voteId": "sr_20250623_03"
+      },
+      {
+        "number": 8,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   }
 ]

@@ -2027,7 +2027,7 @@
         "welter",
         "kaestl",
         "fincke"
-            ],
+      ],
       "no": [
         "strobl"
       ],
@@ -3392,7 +3392,6 @@
         "gruber",
         "kaestl",
         "strobl"
-
       ],
       "absent": [
         "hobmaier",
@@ -3825,6 +3824,832 @@
         "stanglmaier",
         "becher_a"
       ]
+    }
+  },
+  {
+    "id": "sr_20250210_01",
+    "sessionId": "sr_20250210",
+    "topicId": null,
+    "date": "2025-02-10",
+    "title": "Genehmigung Niederschriften (StR 16.12.2024, BPU 16.01.2025)",
+    "text": "Der Stadtrat genehmigt die öffentlichen Teile der Niederschriften der Stadtratssitzung vom 16.12.2024 und der BPU-Sitzung vom 16.01.2025.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "beubl",
+        "fincke",
+        "linz_kilian",
+        "reif",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250210_02",
+    "sessionId": "sr_20250210",
+    "topicId": null,
+    "date": "2025-02-10",
+    "title": "Bestätigung Erster Kommandant FFW Pfrombach-Aich",
+    "text": "Der Stadtrat bestätigt Rainer Göbl als Ersten Kommandanten der Freiwilligen Feuerwehr Pfrombach-Aich gemäß Art. 8 BayFwG.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "beubl",
+        "fincke",
+        "linz_kilian",
+        "reif",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250210_03",
+    "sessionId": "sr_20250210",
+    "topicId": null,
+    "date": "2025-02-10",
+    "title": "Bestätigung Stellv. Kommandant FFW Pfrombach-Aich",
+    "text": "Der Stadtrat bestätigt Tobias Tristl als stellvertretenden Kommandanten der Freiwilligen Feuerwehr Pfrombach-Aich gemäß Art. 8 BayFwG.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "beubl",
+        "fincke",
+        "linz_kilian",
+        "reif",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250210_04",
+    "sessionId": "sr_20250210",
+    "topicId": "t15",
+    "date": "2025-02-10",
+    "title": "Aufstellungsbeschluss B-Plan PV Kuttenweide",
+    "text": "Der Stadtrat beschließt die Aufstellung eines Bebauungsplans „SO Freiflächen-PV-Anlage Kuttenweide“ gem. § 2 BauGB im Parallelverfahren mit der Änderung des Flächennutzungsplans.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "beubl",
+        "fincke",
+        "linz_kilian",
+        "reif",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250210_05",
+    "sessionId": "sr_20250210",
+    "topicId": "t15",
+    "date": "2025-02-10",
+    "title": "Städtebaulicher Vertrag PV Kuttenweide",
+    "text": "Der Bürgermeister wird ermächtigt, mit dem Vorhabenträger einen städtebaulichen Vertrag zur Freiflächen-PV-Anlage Kuttenweide abzuschließen. Der Vorhabenträger trägt sämtliche Planungskosten.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "beubl",
+        "fincke",
+        "linz_kilian",
+        "reif",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250224_01",
+    "sessionId": "sr_20250224",
+    "topicId": null,
+    "date": "2025-02-24",
+    "title": "Kostenloser Hallenbadeintritt für Kinder (abgelehnt)",
+    "text": "Der Antrag der Sportreferentin Beibl auf kostenlosen Hallenbadeintritt für Kinder in den Faschingsferien 2025 (im Verlauf geändert auf Osterferien) wird abgelehnt.",
+    "type": "anonymous",
+    "result": "rejected",
+    "results": {
+      "yes": 9,
+      "no": 10,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20250224_02",
+    "sessionId": "sr_20250224",
+    "topicId": null,
+    "date": "2025-02-24",
+    "title": "Dienstleistungsvertrag enPORTAL – Strom-/Gasausschreibung",
+    "text": "Der Stadtrat beschließt den Abschluss eines Dienstleistungsvertrags mit der enPORTAL GmbH zur Durchführung von Bündelausschreibungen für Strom- und Gasbeschaffung.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250224_03",
+    "sessionId": "sr_20250224",
+    "topicId": null,
+    "date": "2025-02-24",
+    "title": "Ermächtigung BGT Kommunal-GmbH",
+    "text": "Der Stadtrat ermächtigt die Kommunal-GmbH des Bayerischen Gemeindetags zur Entscheidungsfindung bei der Strombündelausschreibung ab 01.01.2026.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250224_04",
+    "sessionId": "sr_20250224",
+    "topicId": null,
+    "date": "2025-02-24",
+    "title": "Stromqualität Variante 1 – Mit Neuanlagenquote (abgelehnt)",
+    "text": "Variante 1 mit 100% Ökostrom inklusive Neuanlagenquote wird abgelehnt.",
+    "type": "anonymous",
+    "result": "rejected",
+    "results": {
+      "yes": 8,
+      "no": 12,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20250224_05",
+    "sessionId": "sr_20250224",
+    "topicId": null,
+    "date": "2025-02-24",
+    "title": "Stromqualität Variante 2 – Ohne Neuanlagenquote",
+    "text": "Variante 2 mit 100% Ökostrom ohne Neuanlagenquote wird beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250224_06",
+    "sessionId": "sr_20250224",
+    "topicId": null,
+    "date": "2025-02-24",
+    "title": "Ermächtigung Bürgermeister – Beschaffungskonzept",
+    "text": "Der Bürgermeister wird ermächtigt, das Beschaffungskonzept innerhalb der vertraglichen Fristen zu genehmigen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250224_07",
+    "sessionId": "sr_20250224",
+    "topicId": null,
+    "date": "2025-02-24",
+    "title": "Vergabe an wirtschaftlichsten Bieter",
+    "text": "Der Auftrag wird vorbehaltlich der Beschaffungsvorgaben an den wirtschaftlichsten Bieter vergeben.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250224_08",
+    "sessionId": "sr_20250224",
+    "topicId": null,
+    "date": "2025-02-24",
+    "title": "Vollmacht enPORTAL – Verbrauchsdatenabfrage",
+    "text": "Die enPORTAL GmbH wird bevollmächtigt, Verbrauchsdaten von Energieversorgern und Netzbetreibern abzurufen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250317_01",
+    "sessionId": "bpu_20250317",
+    "topicId": null,
+    "date": "2025-03-17",
+    "title": "Wohn- und Geschäftshaus Bahnhofstr. 12",
+    "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen zum Neubau eines Wohn- und Geschäftshauses mit Stellplätzen an der Bahnhofstraße 12. Befreiungen werden zugestimmt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 8,
+      "no": 4,
+      "absent": 0
+    }
+  },
+  {
+    "id": "bpu_20250317_02",
+    "sessionId": "bpu_20250317",
+    "topicId": null,
+    "date": "2025-03-17",
+    "title": "Ersatzneubau AWO Küche und Einzelwohnen Krankenhausweg 10",
+    "text": "Der Bauausschuss erteilt einstimmig das gemeindliche Einvernehmen zum Ersatzneubau der AWO Küche und des Einzelwohnens (STE) am Krankenhausweg 10.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "beubl",
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "reif",
+        "welter",
+        "haberl"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20250317_03",
+    "sessionId": "bpu_20250317",
+    "topicId": null,
+    "date": "2025-03-17",
+    "title": "Vorbescheid MFH Moosstr. 15b – Einvernehmen verweigert",
+    "text": "Der Bauausschuss verweigert einstimmig das gemeindliche Einvernehmen für den Vorbescheid zum Neubau eines Mehrfamilienhauses an der Moosstr. 15b in Aich. Das Maß der baulichen Nutzung fügt sich nicht in den Umgebungscharakter ein.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "beubl",
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "reif",
+        "welter",
+        "haberl"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20250317_04",
+    "sessionId": "bpu_20250317",
+    "topicId": null,
+    "date": "2025-03-17",
+    "title": "MFH Neustadtstr. 17 – Einvernehmen erteilt (abgelehnt)",
+    "text": "Der Antrag, das gemeindliche Einvernehmen zum Neubau eines Mehrfamilienhauses an der Neustadtstr. 17 zu erteilen, wird abgelehnt.",
+    "type": "anonymous",
+    "result": "rejected",
+    "results": {
+      "yes": 3,
+      "no": 9,
+      "absent": 0
+    }
+  },
+  {
+    "id": "bpu_20250317_05",
+    "sessionId": "bpu_20250317",
+    "topicId": null,
+    "date": "2025-03-17",
+    "title": "MFH Neustadtstr. 17 – Einvernehmen verweigert",
+    "text": "Der Bauausschuss verweigert das gemeindliche Einvernehmen zum Neubau eines Mehrfamilienhauses an der Neustadtstr. 17. Probleme bei Dichte, Versiegelung, Stellplatzpflicht und Spielplatznachweis.",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 3,
+      "absent": 0
+    }
+  },
+  {
+    "id": "sr_20250602_01",
+    "sessionId": "sr_20250602",
+    "topicId": null,
+    "date": "2025-06-02",
+    "title": "Genehmigung Niederschriften (StR 10.04. und 28.04.2025)",
+    "text": "Der Stadtrat genehmigt die öffentlichen Teile der Niederschriften der Stadtratssitzungen vom 10.04.2025 und 28.04.2025.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "sr_20250602_02",
+    "sessionId": "sr_20250602",
+    "topicId": null,
+    "date": "2025-06-02",
+    "title": "Feststellung Jahresrechnung 2023",
+    "text": "Der Stadtrat beschließt die Feststellung der Jahresrechnung 2023 gemäß Art. 102 Abs. 3 Satz 1 GO.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "heinz",
+        "hobmaier",
+        "strobl",
+        "welter"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250602_03",
+    "sessionId": "sr_20250602",
+    "topicId": null,
+    "date": "2025-06-02",
+    "title": "Entlastung Bürgermeister – Jahresrechnung 2023",
+    "text": "Der Stadtrat erteilt dem Ersten Bürgermeister Entlastung für die Jahresrechnung 2023. Bürgermeister Dollinger nimmt wegen persönlicher Beteiligung an der Abstimmung nicht teil.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "heinz",
+        "hobmaier",
+        "strobl",
+        "welter",
+        "dollinger"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250602_04",
+    "sessionId": "sr_20250602",
+    "topicId": null,
+    "date": "2025-06-02",
+    "title": "Verwendung Gewinne 2023 – BgA Photovoltaik",
+    "text": "Die Gewinne aus dem Jahr 2023 der Betriebe gewerblicher Art (Photovoltaikanlagen, 26.101 €) werden den Rücklagen zugeführt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "heinz",
+        "hobmaier",
+        "strobl",
+        "welter"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250602_05",
+    "sessionId": "sr_20250602",
+    "topicId": "t12",
+    "date": "2025-06-02",
+    "title": "Badegebühren Freibad – Redaktionelle Anpassung",
+    "text": "Der Stadtrat beschließt die redaktionelle Anpassung der Badegebührenordnung mit Wirkung zur Saison 2025.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "heinz",
+        "hobmaier",
+        "strobl",
+        "welter"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250623_01",
+    "sessionId": "sr_20250623",
+    "topicId": null,
+    "date": "2025-06-23",
+    "title": "Kommunale Wärmeplanung – Kenntnisnahme",
+    "text": "Der Stadtrat nimmt den Abschlussbericht der kommunalen Wärmeplanung zur Kenntnis und anerkennt ihn als strategische Grundlage für künftige Energie- und Infrastrukturentscheidungen. Die Verwaltung wird beauftragt, Maßnahmen zu priorisieren, Fördermöglichkeiten zu prüfen und die Stakeholder-Beteiligung fortzuführen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "tristl",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "kieninger",
+        "von_pressentin",
+        "weber"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250623_02",
+    "sessionId": "sr_20250623",
+    "topicId": null,
+    "date": "2025-06-23",
+    "title": "Sanierung Parkplatz Alte Polizei – zurückgestellt",
+    "text": "Über den Antrag der Freien Wähler zur Sanierung des Parkplatzes Alte Polizei wird zunächst nicht entschieden – der Punkt wird zurückgestellt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 12,
+      "no": 7,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20250623_03",
+    "sessionId": "sr_20250623",
+    "topicId": null,
+    "date": "2025-06-23",
+    "title": "Kostenloses Parken während Stadtplatzsanierung (abgelehnt)",
+    "text": "Der Antrag der Freien Wähler, während der Stadtplatzsanierung kostenloses Parken auf den Parkplätzen Zehentstadel und Alte Polizei (mit Parkscheibe, max. 2 Std., bis 31.07.2025) zu ermöglichen, wird abgelehnt.",
+    "type": "anonymous",
+    "result": "rejected",
+    "results": {
+      "yes": 9,
+      "no": 10,
+      "absent": 6
     }
   }
 ]
