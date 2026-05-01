@@ -9,7 +9,7 @@ Statisches Mockup zur Vorstellung des App-Konzepts für München.
 - `profile.html` — Beispielprofil Christian Ude (SPD, Alt-OB)
 - `css/munich.css` — Farb-Overrides (Schwarz / München-Gold)
 
-Erbt sonst `../css/style.css` und `../img/members/ude.png.png` aus dem Hauptprojekt.
+`munich/` ist eigenständig (eigene `css/style.css`-Kopie und `img/members/ude.png.png`).
 
 ## Lokal anschauen
 
