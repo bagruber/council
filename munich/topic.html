@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tram-Westtangente – Stadtrat München</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/munich.css">
+</head>
+<body>
+
+<div class="mockup-banner">
+  <strong>Mockup-Demo</strong> · Beispielinhalte
+</div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <span class="city-mark">M</span>
+    <span>Stadtrat München</span>
+  </a>
+</nav>
+
+<main style="max-width:800px;margin:0 auto;padding:24px;">
+
+  <a href="index.html" class="back-link" style="display:inline-flex;align-items:center;gap:4px;color:var(--text-muted);text-decoration:none;font-size:0.9rem;margin-bottom:24px;">
+    <span class="material-icons" style="font-size:18px">arrow_back</span> Übersicht
+  </a>
+
+  <div class="topic-header">
+    <h1>Tram-Westtangente</h1>
+    <div class="topic-summary">Ausbau einer neuen Tramverbindung vom Süden über den Westen bis zum Romanplatz. Über zwei Jahrzehnte Planungs- und Beschlussgeschichte mit wechselnden Trassenvarianten und kontroversen Debatten um Bürgerbeteiligung und Baumfällungen.</div>
+    <div class="topic-tags" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;">
+      <span style="background:var(--accent-light);color:var(--accent-text);padding:3px 12px;border-radius:12px;font-size:0.78rem;">Verkehr</span>
+      <span style="background:var(--accent-light);color:var(--accent-text);padding:3px 12px;border-radius:12px;font-size:0.78rem;">Infrastruktur</span>
+      <span style="background:var(--accent-light);color:var(--accent-text);padding:3px 12px;border-radius:12px;font-size:0.78rem;">ÖPNV</span>
+    </div>
+  </div>
+
+  <div class="section-heading" style="margin-top:32px;margin-bottom:16px;">Timeline</div>
+
+  <div class="timeline" style="position:relative;">
+
+    <!-- Entry 1 -->
+    <div class="tl-entry">
+      <div class="tl-dot milestone"><span class="material-icons">flag</span></div>
+      <div class="tl-date">15. März 2018</div>
+      <h3>Grundsatzbeschluss zum Ausbau</h3>
+      <p>Der Stadtrat beschließt grundsätzlich die Realisierung der Tram-Westtangente. Die MVG wird mit der Erstellung eines Variantenvergleichs beauftragt.</p>
+    </div>
+
+    <!-- Entry 2 -->
+    <div class="tl-entry">
+      <div class="tl-dot proposal"><span class="material-icons">description</span></div>
+      <div class="tl-date">22. November 2019</div>
+      <h3>Antrag zur Bürgerbeteiligung</h3>
+      <p>Antrag der Grünen-Fraktion auf Erweiterung der Bürgerbeteiligung entlang des geplanten Trassenkorridors – insbesondere im Bereich der Margaretenstraße.</p>
+    </div>
+
+    <!-- Entry 3: vote with inline block -->
+    <div class="tl-entry">
+      <div class="tl-dot vote-approved"><span class="material-icons">check_circle</span></div>
+      <div class="tl-date">8. Juli 2021</div>
+      <h3>Trassenführung Variante 3 beschlossen</h3>
+      <p>Der Stadtrat beschließt die Realisierung der Variante 3 mit Verlauf über die Würmtalstraße statt der ursprünglich vorgesehenen Margaretenstraße. Reduzierte Baumfällungen im Vergleich zur ursprünglichen Planung.</p>
+
+      <div class="tl-vote-inline" style="margin-top:14px;">
+        <div class="vote-block" style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px;box-shadow:var(--shadow);">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+            <h4 style="font-size:0.95rem;">Variante 3 (Würmtalstraße)</h4>
+            <span style="display:inline-block;padding:2px 10px;border-radius:12px;background:var(--yes);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;">Beschlossen</span>
+          </div>
+          <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:14px;">Der Stadtrat beschließt mit 47:32 Stimmen die Trassenvariante 3.</p>
+
+          <!-- Hufeisen-Sitzplan -->
+          <div style="display:flex;justify-content:center;margin:8px 0 12px;">
+            <svg viewBox="0 0 360 200" width="100%" style="max-width:360px;height:auto;">
+              <!-- 80 seats in 4 rows of horseshoe -->
+              <g id="seats"></g>
+              <text x="180" y="110" text-anchor="middle" font-family="Noto Serif,serif" font-weight="700" font-size="22" fill="#1a1a1a">47:32</text>
+              <text x="180" y="130" text-anchor="middle" font-size="11" fill="#757575">2 abwesend</text>
+            </svg>
+          </div>
+
+          <div class="vote-legend" style="display:flex;justify-content:center;gap:18px;font-size:0.78rem;color:var(--text-muted);">
+            <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--yes);display:inline-block;"></span> Ja 47</span>
+            <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--no);display:inline-block;"></span> Nein 32</span>
+            <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--absent);display:inline-block;"></span> Abw. 2</span>
+          </div>
+        </div>
+      </div>
+
+      <a class="tl-session-link" href="#" style="display:inline-flex;align-items:center;gap:4px;color:var(--info);font-size:0.82rem;text-decoration:none;border-bottom:1px dashed currentColor;margin-top:10px;">
+        <span class="material-icons" style="font-size:14px;vertical-align:-2px">open_in_new</span> Vollversammlung 8. Juli 2021
+      </a>
+    </div>
+
+    <!-- Entry 4 -->
+    <div class="tl-entry">
+      <div class="tl-dot milestone"><span class="material-icons">flag</span></div>
+      <div class="tl-date">14. Mai 2023</div>
+      <h3>Spatenstich Bauabschnitt Süd</h3>
+      <p>Offizieller Baubeginn für den südlichen Bauabschnitt zwischen Aidenbachstraße und Hofmannstraße. Voraussichtliche Inbetriebnahme: 2027.</p>
+    </div>
+
+    <!-- Entry 5 -->
+    <div class="tl-entry">
+      <div class="tl-dot vote-rejected"><span class="material-icons">cancel</span></div>
+      <div class="tl-date">9. Februar 2024</div>
+      <h3>Antrag auf Bauverzögerung abgelehnt</h3>
+      <p>Antrag der CSU-Fraktion auf einjährige Verschiebung des nördlichen Bauabschnitts wegen Baumschutzbedenken. Mit 28:51 Stimmen abgelehnt.</p>
+    </div>
+
+  </div>
+</main>
+
+<div class="tab-bar">
+  <button class="tab-btn active">
+    <span class="material-icons">how_to_vote</span>
+    <span>Themen</span>
+  </button>
+  <button class="tab-btn">
+    <span class="material-icons">calendar_month</span>
+    <span>Kalender</span>
+  </button>
+  <button class="tab-btn">
+    <span class="material-icons">groups</span>
+    <span>Gremien</span>
+  </button>
+  <button class="tab-btn">
+    <span class="material-icons">settings</span>
+    <span>Einstellungen</span>
+  </button>
+</div>
+
+<script>
+// Mini Hufeisen-Visualisierung – 81 Sitze (47 Ja, 32 Nein, 2 Abwesend)
+(function(){
+  const seats = document.getElementById("seats");
+  if (!seats) return;
+  const cx = 180, cy = 140;
+  const rows = 4;
+  const seatsPerRow = [16, 19, 22, 24];   // 81 total
+  const radii = [55, 80, 105, 130];
+  const yesCount = 47, noCount = 32; // rest = abwesend
+  let i = 0;
+  const colors = [];
+  for (let s=0; s<yesCount; s++) colors.push("#78BE1E");
+  for (let s=0; s<noCount; s++) colors.push("#9B0000");
+  while (colors.length < 81) colors.push("#B0B0B0");
+
+  for (let r=0; r<rows; r++) {
+    const n = seatsPerRow[r];
+    const radius = radii[r];
+    for (let s=0; s<n; s++) {
+      const angle = Math.PI - (Math.PI * (s + 0.5) / n);
+      const x = cx + Math.cos(angle) * radius;
+      const y = cy - Math.sin(angle) * radius;
+      const c = document.createElementNS("http://www.w3.org/2000/svg","circle");
+      c.setAttribute("cx", x.toFixed(1));
+      c.setAttribute("cy", y.toFixed(1));
+      c.setAttribute("r", "5");
+      c.setAttribute("fill", colors[i] || "#B0B0B0");
+      seats.appendChild(c);
+      i++;
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
