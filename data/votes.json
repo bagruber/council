@@ -1371,11 +1371,38 @@
     "date": "2024-12-16",
     "title": "Genehmigung Niederschrift HVFA 25.11.2024",
     "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift des Hauptverwaltungs- und Finanzausschusses vom 25.11.2024.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 19,
-      "no": 0,
-      "absent": 6
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "becher_a",
+        "beubl",
+        "heinz",
+        "hobmaier",
+        "reif",
+        "tristl"
+      ]
     }
   },
   {
@@ -1385,11 +1412,38 @@
     "date": "2024-12-16",
     "title": "Haushaltssatzung 2025",
     "text": "Der Stadtrat beschließt die Haushaltssatzung 2025 samt Verwaltungshaushalt, Vermögenshaushalt, Investitionsplan, Finanzplan, Stellenplan und Wirtschaftsplan der Kläranlage Moosburg GmbH.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 19,
-      "no": 0,
-      "absent": 6
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "becher_a",
+        "beubl",
+        "heinz",
+        "hobmaier",
+        "reif",
+        "tristl"
+      ]
     }
   },
   {
@@ -1399,11 +1453,38 @@
     "date": "2024-12-16",
     "title": "Benutzungsordnung Hallenbad",
     "text": "Der Stadtrat beschließt die Haus- und Badeordnung für das Hallenbad Moosburg in der vorliegenden Fassung.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 19,
-      "no": 0,
-      "absent": 6
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "becher_a",
+        "beubl",
+        "heinz",
+        "hobmaier",
+        "reif",
+        "tristl"
+      ]
     }
   },
   {
@@ -4650,6 +4731,2480 @@
       "yes": 9,
       "no": 10,
       "absent": 6
+    }
+  },
+  {
+    "id": "bpu_20240930_01",
+    "sessionId": "bpu_20240930",
+    "topicId": null,
+    "date": "2024-09-30",
+    "title": "Solarleuchten Rennweg / Schloss-Asch-Wiese",
+    "text": "Auftragsvergabe für LED-Solarleuchten an HL LICHTTECHNIK (40.864,60 €).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "pschorr",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "gruber"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20240930_02",
+    "sessionId": "bpu_20240930",
+    "topicId": null,
+    "date": "2024-09-30",
+    "title": "Allwetterausläufe Pferde Amperstr. 24",
+    "text": "Gemeindliches Einvernehmen für Pferdeauslauf erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "pschorr",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "gruber"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20240930_03",
+    "sessionId": "bpu_20240930",
+    "topicId": null,
+    "date": "2024-09-30",
+    "title": "MFH 12 WE Bahnhofstr. 60 – Einvernehmen erteilt (abgelehnt)",
+    "text": "Antrag, Einvernehmen für 12-Wohneinheiten-MFH zu erteilen, wird abgelehnt (4:8).",
+    "type": "anonymous",
+    "results": {
+      "yes": 4,
+      "no": 8,
+      "absent": 0
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "bpu_20240930_04",
+    "sessionId": "bpu_20240930",
+    "topicId": null,
+    "date": "2024-09-30",
+    "title": "MFH 12 WE Bahnhofstr. 60 – Einvernehmen verweigert",
+    "text": "Einvernehmen wird verweigert; Baukörper und 3-geschossigkeit fügen sich nicht in Eigenart ein (8:4).",
+    "type": "anonymous",
+    "results": {
+      "yes": 8,
+      "no": 4,
+      "absent": 0
+    }
+  },
+  {
+    "id": "bpu_20240930_05",
+    "sessionId": "bpu_20240930",
+    "topicId": null,
+    "date": "2024-09-30",
+    "title": "MFH 6 WE Mainburger Str. 5 – Einvernehmen verweigert",
+    "text": "Einvernehmen einstimmig verweigert; Maß baulicher Nutzung nicht ortstypisch.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "gruber",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "pschorr",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20240930_06",
+    "sessionId": "bpu_20240930",
+    "topicId": null,
+    "date": "2024-09-30",
+    "title": "Bullenmastall Kirchamper 6",
+    "text": "Gemeindliches Einvernehmen einstimmig erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "gruber",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "pschorr",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20240930_07",
+    "sessionId": "bpu_20240930",
+    "topicId": null,
+    "date": "2024-09-30",
+    "title": "Wohngebäude 9 WE St.-Georg-Str. 26",
+    "text": "Einvernehmen einstimmig erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "gruber",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "pschorr",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20240930_08",
+    "sessionId": "bpu_20240930",
+    "topicId": null,
+    "date": "2024-09-30",
+    "title": "Maschinenhalle St.-Georg-Str. 60",
+    "text": "Einvernehmen einstimmig erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "gruber",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "pschorr",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20240930_09",
+    "sessionId": "bpu_20240930",
+    "topicId": null,
+    "date": "2024-09-30",
+    "title": "Wohnhaus 2 WE Blütenstr. 46",
+    "text": "Einvernehmen mit Befreiungen einstimmig erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "gruber",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "pschorr",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20240930_10",
+    "sessionId": "bpu_20240930",
+    "topicId": null,
+    "date": "2024-09-30",
+    "title": "6 Sozialwohnungen Unterreiterweg 13",
+    "text": "Einvernehmen einstimmig erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "gruber",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "pschorr",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "sr_20240902_01",
+    "sessionId": "sr_20240902",
+    "topicId": null,
+    "date": "2024-09-02",
+    "title": "Genehmigung Niederschrift StR 22.07.2024",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift vom 22.07.2024.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240902_02",
+    "sessionId": "sr_20240902",
+    "topicId": null,
+    "date": "2024-09-02",
+    "title": "Bürogebäude Jungheinrich Degernpoint",
+    "text": "Gemeindliches Einvernehmen für Büro- und Ausstellungsgebäude erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240902_03",
+    "sessionId": "sr_20240902",
+    "topicId": null,
+    "date": "2024-09-02",
+    "title": "Werbeanlagen Jungheinrich",
+    "text": "Einvernehmen für Werbeanlagen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240902_04",
+    "sessionId": "sr_20240902",
+    "topicId": "t5",
+    "date": "2024-09-02",
+    "title": "B-Plan 77 Rockermaier – Stellungnahme Wasserwirtschaft",
+    "text": "Stellungnahme der Wasserwirtschaftsbehörde zur Kenntnis genommen; keine Einwendungen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240902_05",
+    "sessionId": "sr_20240902",
+    "topicId": "t5",
+    "date": "2024-09-02",
+    "title": "B-Plan 77 Rockermaier – Stellungnahme Altlasten",
+    "text": "Stellungnahme zu Altlasten zur Kenntnis genommen; keine Bedenken.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240902_06",
+    "sessionId": "sr_20240902",
+    "topicId": "t5",
+    "date": "2024-09-02",
+    "title": "B-Plan 77 Rockermaier – Stellungnahmen Brandschutz/Sonstige",
+    "text": "Sonstige fachliche Stellungnahmen ohne Einwendungen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240902_07",
+    "sessionId": "sr_20240902",
+    "topicId": "t5",
+    "date": "2024-09-02",
+    "title": "B-Plan 77 Rockermaier – Stellungnahme Naturschutz",
+    "text": "Naturschutzbehörde stimmt Plan zu.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240902_08",
+    "sessionId": "sr_20240902",
+    "topicId": "t5",
+    "date": "2024-09-02",
+    "title": "B-Plan 77 Rockermaier – Stellungnahme Gesundheit",
+    "text": "Gesundheitliche Stellungnahme zur Kenntnis genommen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240902_09",
+    "sessionId": "sr_20240902",
+    "topicId": "t5",
+    "date": "2024-09-02",
+    "title": "B-Plan 77 Rockermaier – Stellungnahme Wasserrecht",
+    "text": "Wasserrechtliche Stellungnahme ohne Einwendungen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240902_10",
+    "sessionId": "sr_20240902",
+    "topicId": "t5",
+    "date": "2024-09-02",
+    "title": "B-Plan 77 Rockermaier – Satzungsbeschluss",
+    "text": "Der Stadtrat beschließt den Bebauungsplan Nr. 77 „Rockermaier Areal\" als Satzung (12:2).",
+    "type": "anonymous",
+    "results": {
+      "yes": 12,
+      "no": 2,
+      "absent": 11
+    }
+  },
+  {
+    "id": "sr_20240902_11",
+    "sessionId": "sr_20240902",
+    "topicId": null,
+    "date": "2024-09-02",
+    "title": "Beteiligungsberichte 2015–2023",
+    "text": "Beteiligungsberichte zur Kenntnis genommen; werden öffentlich gemacht.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "fincke",
+        "gruber",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "lauterbach",
+        "linz_kilian",
+        "tristl",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240923_01",
+    "sessionId": "sr_20240923",
+    "topicId": null,
+    "date": "2024-09-23",
+    "title": "Genehmigung Niederschrift StR 17.06.2024",
+    "text": "Niederschrift einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "gruebl",
+        "heinz",
+        "kaestl",
+        "linz_karin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20240923_02",
+    "sessionId": "sr_20240923",
+    "topicId": null,
+    "date": "2024-09-23",
+    "title": "B-Plan 79 GE Unterreit – Entwurfsbilligung",
+    "text": "Der Stadtrat billigt den Entwurf des B-Plans 79 (GE Unterreit) mit 12:7 Stimmen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 12,
+      "no": 7,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20240923_03",
+    "sessionId": "sr_20240923",
+    "topicId": null,
+    "date": "2024-09-23",
+    "title": "B-Plan 79 Unterreit – Lärmschutzwand erforderlich",
+    "text": "Eine Lärmschutzwand entlang ST 2350 wird erforderlich (16:3).",
+    "type": "anonymous",
+    "results": {
+      "yes": 16,
+      "no": 3,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20240923_04",
+    "sessionId": "sr_20240923",
+    "topicId": null,
+    "date": "2024-09-23",
+    "title": "Mietkonditionen Böhmerwaldstr. – Neuvermietung 11,50 €/m²",
+    "text": "Neue Miete auf 11,50 €/m² festgesetzt; Tiefgarage 25 €/Monat (12:7).",
+    "type": "anonymous",
+    "results": {
+      "yes": 12,
+      "no": 7,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20240923_05",
+    "sessionId": "sr_20240923",
+    "topicId": null,
+    "date": "2024-09-23",
+    "title": "Mietkonditionen Böhmerwaldstr. – Auslaufen Mietabsenkung",
+    "text": "Bestehende Mietabsenkungen laufen zum 01.04.2025 aus; Mieten künftig 10 €/m² (18:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 1,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20240923_06",
+    "sessionId": "sr_20240923",
+    "topicId": null,
+    "date": "2024-09-23",
+    "title": "Verkaufsoffener Sonntag 20.10.2024",
+    "text": "Verordnung beschlossen (18:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 1,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20240923_07",
+    "sessionId": "sr_20240923",
+    "topicId": "t17",
+    "date": "2024-09-23",
+    "title": "Sanierung Rathaus – Fassade und 1./2. OG",
+    "text": "Verwaltung wird einstimmig beauftragt, Fachplaner für Kostenberechnung und Planung zu beauftragen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "gruebl",
+        "heinz",
+        "kaestl",
+        "linz_karin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20241007_01",
+    "sessionId": "sr_20241007",
+    "topicId": null,
+    "date": "2024-10-07",
+    "title": "Genehmigung Niederschrift StR 02.09.2024",
+    "text": "Niederschrift einstimmig genehmigt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20241007_02",
+    "sessionId": "sr_20241007",
+    "topicId": "t13",
+    "date": "2024-10-07",
+    "title": "Vorbereitende Untersuchungen Innenstadt–Bahnhof",
+    "text": "Der Stadtrat nimmt den Entwurf der Vorbereitenden Untersuchungen zur Kenntnis und beauftragt die Verwaltung mit TÖB- und Öffentlichkeitsbeteiligung.",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20241007_03",
+    "sessionId": "sr_20241007",
+    "topicId": null,
+    "date": "2024-10-07",
+    "title": "Vermietungskonditionen Sonnensiedlung 1",
+    "text": "Miete 11,50 €/m² für die 5 Wohneinheiten der neuen Anlage festgesetzt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "becher_j",
+        "beubl",
+        "gruebl",
+        "heinz"
+      ]
+    }
+  },
+  {
+    "id": "sr_20241007_04",
+    "sessionId": "sr_20241007",
+    "topicId": "t7",
+    "date": "2024-10-07",
+    "title": "Überplanmäßige Ausgaben Betriebsstrom",
+    "text": "Genehmigung von 160.000 € überplanmäßiger Ausgaben für Betriebsstromkosten (Energiekrise).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "becher_j",
+        "beubl",
+        "gruebl",
+        "heinz"
+      ]
+    }
+  },
+  {
+    "id": "sr_20241021_01",
+    "sessionId": "sr_20241021",
+    "topicId": null,
+    "date": "2024-10-21",
+    "title": "Genehmigung Niederschriften (BA 15.07., StR 23.09.2024)",
+    "text": "Niederschriften einstimmig genehmigt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20241021_02",
+    "sessionId": "sr_20241021",
+    "topicId": null,
+    "date": "2024-10-21",
+    "title": "Niederlegung Mandat Grübl – Hobmaier rückt nach",
+    "text": "Niederlegung des Mandats von StR Grübl wird festgestellt; Michael Hobmaier rückt als Listennachfolger nach.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20241021_03",
+    "sessionId": "sr_20241021",
+    "topicId": null,
+    "date": "2024-10-21",
+    "title": "Schaffung Stelle Jugendreferent",
+    "text": "Schaffung der Funktion Jugendreferent (15:2).",
+    "type": "anonymous",
+    "results": {
+      "yes": 15,
+      "no": 2,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20241021_04",
+    "sessionId": "sr_20241021",
+    "topicId": null,
+    "date": "2024-10-21",
+    "title": "Berufung Grübl als Jugendreferent",
+    "text": "Julian Grübl wird einstimmig zum Jugendreferenten berufen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20241021_05",
+    "sessionId": "sr_20241021",
+    "topicId": null,
+    "date": "2024-10-21",
+    "title": "Aufwandsentschädigung Jugendreferent",
+    "text": "Monatliche Aufwandsentschädigung in Höhe der Referentenpauschale festgesetzt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20241021_06",
+    "sessionId": "sr_20241021",
+    "topicId": null,
+    "date": "2024-10-21",
+    "title": "Neubesetzung Ausschüsse / AR Kläranlage",
+    "text": "Hobmaier ersetzt Grübl im Aufsichtsrat Kläranlage; weitere Besetzungsänderungen gemäß Anlage.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20241021_07",
+    "sessionId": "sr_20241021",
+    "topicId": null,
+    "date": "2024-10-21",
+    "title": "B-Plan 66 Oberes Gereut Nordost – Verfahrenswechsel",
+    "text": "Wechsel ins Regelverfahren beschlossen; bisherige Auslegung gilt als § 3/§ 4 Abs. 1 BauGB.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20241021_08",
+    "sessionId": "sr_20241021",
+    "topicId": "t7",
+    "date": "2024-10-21",
+    "title": "Hebesatz Grundsteuer A 2025",
+    "text": "Anhebung Grundsteuer A auf 390 % (12:6).",
+    "type": "anonymous",
+    "results": {
+      "yes": 12,
+      "no": 6,
+      "absent": 7
+    }
+  },
+  {
+    "id": "sr_20241021_09",
+    "sessionId": "sr_20241021",
+    "topicId": "t7",
+    "date": "2024-10-21",
+    "title": "Hebesatzsatzung 2025",
+    "text": "Grundsteuer A 390 %, B 400 %, Gewerbesteuer 380 % (Schlussabstimmung).",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "sr_20241021_10",
+    "sessionId": "sr_20241021",
+    "topicId": null,
+    "date": "2024-10-21",
+    "title": "6 Sozialwohnungen Unterreiterweg 13 – Bauauftrag",
+    "text": "Bau von 6 Sozialwohnungen für 2025 beschlossen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "sr_20241021_11",
+    "sessionId": "sr_20241021",
+    "topicId": "t16",
+    "date": "2024-10-21",
+    "title": "Hallenbad Öffnungszeiten",
+    "text": "Vorläufige Öffnungszeiten festgesetzt: Mo geschlossen, Di–Fr 7–20/21 Uhr, Sa/So 9–18 Uhr (19:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 1,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20241021_12",
+    "sessionId": "sr_20241021",
+    "topicId": "t16",
+    "date": "2024-10-21",
+    "title": "Hallenbad Gebühren und Tarife",
+    "text": "Gebührenstruktur und Tarifordnung beschlossen; Verwaltung prüft 2-Stunden-Rabatt-Ticket.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20241104_01",
+    "sessionId": "sr_20241104",
+    "topicId": "t6",
+    "date": "2024-11-04",
+    "title": "Flächennutzungsplan-Änderung – Schul-/Sportflächen",
+    "text": "Flächen 703 und 704/6 (Gemarkung Moosburg) werden im FNP als Gemeinbedarfsfläche Schule/Sport ausgewiesen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20241104_02",
+    "sessionId": "sr_20241104",
+    "topicId": null,
+    "date": "2024-11-04",
+    "title": "Vorbescheid MFH Mainburger Str. 5 – Anhörung Ersetzung Einvernehmen",
+    "text": "Stadtrat lehnt Bauvorhaben einstimmig ab; Maß baulicher Nutzung nicht ortstypisch.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20241104_03",
+    "sessionId": "sr_20241104",
+    "topicId": null,
+    "date": "2024-11-04",
+    "title": "Vorbescheid MFH 12 WE Bahnhofstr. 60 – Anhörung Ersetzung Einvernehmen",
+    "text": "Drei-geschossiges Bauvorhaben fügt sich nicht in Eigenart ein (19:2).",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 2,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20241104_04",
+    "sessionId": "sr_20241104",
+    "topicId": null,
+    "date": "2024-11-04",
+    "title": "Straßenname „Semptanger\"",
+    "text": "Innere Erschließungsstraße erhält Namen „Semptanger\".",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20241104_05",
+    "sessionId": "sr_20241104",
+    "topicId": "t16",
+    "date": "2024-11-04",
+    "title": "Hallenbad – Freier Eintritt Kinder Weihnachtsferien (vertagt)",
+    "text": "Antrag StRin Beibl auf kostenlosen Hallenbadeintritt für Kinder/Jugendliche in den Weihnachtsferien wird auf Januar vertagt (12:9).",
+    "type": "anonymous",
+    "results": {
+      "yes": 12,
+      "no": 9,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20241118_01",
+    "sessionId": "sr_20241118",
+    "topicId": null,
+    "date": "2024-11-18",
+    "title": "Genehmigung Niederschriften (BA 30.09., StR 07.10. + 21.10.)",
+    "text": "Niederschriften einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "reif",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20241118_02",
+    "sessionId": "sr_20241118",
+    "topicId": null,
+    "date": "2024-11-18",
+    "title": "Autohaus-Erweiterung Sempt 7",
+    "text": "Gemeindliches Einvernehmen für Lager-/Servicehalle des Autohauses erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "reif",
+        "tristl",
+        "becher_j",
+        "von_pressentin",
+        "lauterbach",
+        "weber",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20241118_03",
+    "sessionId": "sr_20241118",
+    "topicId": "t7",
+    "date": "2024-11-18",
+    "title": "Rücklagenbildung Regiebetriebe",
+    "text": "BgA-Gewinne werden vollständig in Rücklagen eingestellt; weitere Beschlüsse nach Jahresabschluss.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "reif",
+        "tristl",
+        "becher_j",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20241118_04",
+    "sessionId": "sr_20241118",
+    "topicId": null,
+    "date": "2024-11-18",
+    "title": "Zuschuss DAV Kletter-/Boulderhalle",
+    "text": "Stadt unterstützt DAV-Sektion mit 20 % der förderfähigen Baukosten (max. ca. 292.000 €).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "reif",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20241118_05",
+    "sessionId": "sr_20241118",
+    "topicId": null,
+    "date": "2024-11-18",
+    "title": "Kläranlage GmbH – Satzungsänderung Nachhaltigkeitsbericht",
+    "text": "Befreiung von Nachhaltigkeitsberichtspflicht (§ 289b ff HGB), sofern nicht gesetzlich gefordert.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "reif",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "hvfa_20241128_01",
+    "sessionId": "hvfa_20241128",
+    "topicId": "t10",
+    "date": "2024-11-28",
+    "title": "Antrag Seniorenbeirat – Amtsblatt-Verteilung (abgelehnt)",
+    "text": "HVFA lehnt Verteilung eines kommunalen Amtsblatts an alle Haushalte ab; Aufwand und Kosten nicht verhältnismäßig.",
+    "type": "anonymous",
+    "results": {
+      "yes": 8,
+      "no": 0,
+      "absent": 0
+    }
+  },
+  {
+    "id": "sr_20241202_01",
+    "sessionId": "sr_20241202",
+    "topicId": null,
+    "date": "2024-12-02",
+    "title": "Genehmigung Niederschrift StR 04.11.2024",
+    "text": "Niederschrift einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "becher_a",
+        "heinz",
+        "reif",
+        "kaestl",
+        "fincke"
+      ]
+    }
+  },
+  {
+    "id": "sr_20241202_02",
+    "sessionId": "sr_20241202",
+    "topicId": null,
+    "date": "2024-12-02",
+    "title": "BayKIT e.G. – Mitgliedschaft",
+    "text": "Stadt tritt der bayerischen kommunalen IT-Genossenschaft bei (Einmalige 1.000 €, jährliche Beiträge).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "becher_a",
+        "heinz",
+        "reif",
+        "kaestl",
+        "fincke"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250116_01",
+    "sessionId": "bpu_20250116",
+    "topicId": null,
+    "date": "2025-01-16",
+    "title": "Abgrabungsrecht Grube Stünzbach – Tektur",
+    "text": "Einvernehmen für Tektur und Aufwertung des Abbaugebiets erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "becher_j",
+        "beibl",
+        "beubl",
+        "hobmaier",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "linz_karin"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250116_02",
+    "sessionId": "bpu_20250116",
+    "topicId": null,
+    "date": "2025-01-16",
+    "title": "3. Wohneinheit Thalbacher Str. 85 – Einvernehmen verweigert",
+    "text": "Einvernehmen verweigert; Befreiung würde Grundzüge des Bebauungsplans berühren (10:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 10,
+      "no": 1,
+      "absent": 1
+    }
+  },
+  {
+    "id": "bpu_20250116_03",
+    "sessionId": "bpu_20250116",
+    "topicId": null,
+    "date": "2025-01-16",
+    "title": "Wohnanlage Stadtwaldstr. 9 – Einvernehmen erteilt (abgelehnt)",
+    "text": "Antrag, Einvernehmen für 21-WE-Wohnanlage zu erteilen, wird abgelehnt (3:8).",
+    "type": "anonymous",
+    "results": {
+      "yes": 3,
+      "no": 8,
+      "absent": 1
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "bpu_20250116_04",
+    "sessionId": "bpu_20250116",
+    "topicId": null,
+    "date": "2025-01-16",
+    "title": "Wohnanlage Stadtwaldstr. 9 – Einvernehmen verweigert",
+    "text": "Einvernehmen verweigert; Gesamtlänge Baukörper 1 fügt sich nicht in Umgebung ein (8:3).",
+    "type": "anonymous",
+    "results": {
+      "yes": 8,
+      "no": 3,
+      "absent": 1
+    }
+  },
+  {
+    "id": "bpu_20250116_05",
+    "sessionId": "bpu_20250116",
+    "topicId": null,
+    "date": "2025-01-16",
+    "title": "Lagerhalle Oberpolln 2",
+    "text": "Einvernehmen einstimmig erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "beubl",
+        "hobmaier",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "linz_karin"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250116_06",
+    "sessionId": "bpu_20250116",
+    "topicId": null,
+    "date": "2025-01-16",
+    "title": "Hofladen Vorbescheid Amperstr. 6",
+    "text": "Einvernehmen einstimmig erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "beubl",
+        "hobmaier",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "linz_karin"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250116_07",
+    "sessionId": "bpu_20250116",
+    "topicId": null,
+    "date": "2025-01-16",
+    "title": "Fahrzeughalle FFW",
+    "text": "Gemeindliches Einvernehmen einstimmig erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "beubl",
+        "hobmaier",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "linz_karin"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250116_08",
+    "sessionId": "bpu_20250116",
+    "topicId": null,
+    "date": "2025-01-16",
+    "title": "Vorbescheid MFH Moosstr. 15b – Einvernehmen verweigert",
+    "text": "Einvernehmen einstimmig verweigert; Baukörper überschreitet Ausdehnung und Höhe.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "becher_j",
+        "beibl",
+        "beubl",
+        "hobmaier",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "linz_karin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250120_01",
+    "sessionId": "sr_20250120",
+    "topicId": null,
+    "date": "2025-01-20",
+    "title": "Genehmigung Niederschriften (HVFA 28.11. + StR 18.11., 02.12., 09.12.2024)",
+    "text": "Niederschriften einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "tristl",
+        "weber",
+        "haberl",
+        "heinz",
+        "beibl",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "linz_karin",
+        "von_pressentin",
+        "hadersdorfer",
+        "becher_j",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250120_02",
+    "sessionId": "sr_20250120",
+    "topicId": "t6",
+    "date": "2025-01-20",
+    "title": "TG-Grundschule – Vorstellung Entwurfsplanung",
+    "text": "Entwurfsplanung wird zustimmend zur Kenntnis genommen; Verwaltung wird mit Kostenberechnung und Untersuchung Parkdeck-Alternative beauftragt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "heinz",
+        "beibl",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "linz_karin",
+        "von_pressentin",
+        "becher_j",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250120_03",
+    "sessionId": "sr_20250120",
+    "topicId": null,
+    "date": "2025-01-20",
+    "title": "B-Plan 81 MI Moos – Verfahrenseinstellung",
+    "text": "Bauleitplanverfahren wird eingestellt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "heinz",
+        "beibl",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "linz_karin",
+        "von_pressentin",
+        "becher_j",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250120_04",
+    "sessionId": "sr_20250120",
+    "topicId": null,
+    "date": "2025-01-20",
+    "title": "4. Änderung B-Plan 50 Degernpoint – Verfahrenswechsel",
+    "text": "Wechsel ins Regelverfahren mit flexibler Parzellierung; SWM-Umspannwerk eingeplant.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "heinz",
+        "beibl",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "linz_karin",
+        "von_pressentin",
+        "becher_j",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250120_05",
+    "sessionId": "sr_20250120",
+    "topicId": null,
+    "date": "2025-01-20",
+    "title": "4. Änderung B-Plan 50 Degernpoint – Aufstellungsbeschluss",
+    "text": "Aufstellungsbeschluss; frühzeitige Öffentlichkeits- und Behördenbeteiligung wird angeordnet.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "heinz",
+        "beibl",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "linz_karin",
+        "von_pressentin",
+        "becher_j",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250120_06",
+    "sessionId": "sr_20250120",
+    "topicId": null,
+    "date": "2025-01-20",
+    "title": "Umlegungsverfahren Degernpoint II – Anordnung",
+    "text": "Umlegungsverfahren nach BauGB angeordnet; Befugnis auf ADBV Freising übertragen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "heinz",
+        "beibl",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "linz_karin",
+        "von_pressentin",
+        "becher_j",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250120_07",
+    "sessionId": "sr_20250120",
+    "topicId": null,
+    "date": "2025-01-20",
+    "title": "Umlegungsverfahren Degernpoint II – Kostenverteilung",
+    "text": "Stadt trägt Verfahrenskosten; Verfahrensbeteiligte erstatten anteilige Kosten.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "heinz",
+        "beibl",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "linz_karin",
+        "von_pressentin",
+        "becher_j",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250120_08",
+    "sessionId": "sr_20250120",
+    "topicId": "t7",
+    "date": "2025-01-20",
+    "title": "Übertragung Haushaltsreste 2024",
+    "text": "Übertragung der Haushaltsreste 2024 gemäß Beschlussvorschlag beschlossen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20250410_01",
+    "sessionId": "sr_20250410",
+    "topicId": null,
+    "date": "2025-04-10",
+    "title": "Genehmigung Niederschriften (StR 24.02., BPU 17.03.2025)",
+    "text": "Niederschriften einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "gruber",
+        "hobmaier",
+        "kaestl",
+        "lauterbach",
+        "weber"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250410_02",
+    "sessionId": "sr_20250410",
+    "topicId": null,
+    "date": "2025-04-10",
+    "title": "E-Auto Parken – 2. Änderung Parkgebühren-Satzung",
+    "text": "Anpassung der Parkgebührenverordnung und Satzung Parkhaus/Parkplatz Am Bahnhof beschlossen (15:4).",
+    "type": "anonymous",
+    "results": {
+      "yes": 15,
+      "no": 4,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20250410_03",
+    "sessionId": "sr_20250410",
+    "topicId": null,
+    "date": "2025-04-10",
+    "title": "E-Auto Parken – Protest gegen Staatsregierung",
+    "text": "Protestbeschluss gegen die Staatsregierung; Forderung nach Ausgleich entgangener Einnahmen und unbürokratischem Verfahren.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "gruber",
+        "hobmaier",
+        "kaestl",
+        "lauterbach",
+        "weber"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250410_04",
+    "sessionId": "sr_20250410",
+    "topicId": null,
+    "date": "2025-04-10",
+    "title": "Erhöhung Parkgebühren Bahnhof/Stadionstraße",
+    "text": "1. Änderung Parkgebührenverordnung – Erhöhung der Gebühren im Bahnhofbereich.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "sr_20250428_01",
+    "sessionId": "sr_20250428",
+    "topicId": null,
+    "date": "2025-04-28",
+    "title": "Genehmigung Niederschrift StR 24.03.2025",
+    "text": "Niederschrift einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "gruber",
+        "heinz",
+        "hobmaier",
+        "von_pressentin",
+        "welter",
+        "becher_j",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250428_02",
+    "sessionId": "sr_20250428",
+    "topicId": null,
+    "date": "2025-04-28",
+    "title": "Plakatanschlagtafeln Jägerstr. 2 – Einvernehmen verweigert",
+    "text": "Einvernehmen einstimmig verweigert; Nähe zur Ampelkreuzung beeinträchtigt Verkehrssicherheit.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "gruber",
+        "heinz",
+        "hobmaier",
+        "von_pressentin",
+        "welter",
+        "becher_j",
+        "kaestl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20250428_03",
+    "sessionId": "sr_20250428",
+    "topicId": null,
+    "date": "2025-04-28",
+    "title": "B-Plan Isarstraße – Antrag Deutinger abgelehnt",
+    "text": "Antrag auf Aufstellung eines B-Plans für Wohnbebauung an der Isarstraße abgelehnt (18:2).",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 2,
+      "absent": 5
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20250428_04",
+    "sessionId": "sr_20250428",
+    "topicId": "t12",
+    "date": "2025-04-28",
+    "title": "Badegebühren Freibad – Änderungsantrag Marcus (abgelehnt)",
+    "text": "Antrag StR Marcus auf Einzelpreise (Erw. 5 €, Kinder 2,50 €) wird abgelehnt (2:18).",
+    "type": "anonymous",
+    "results": {
+      "yes": 2,
+      "no": 18,
+      "absent": 5
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20250428_05",
+    "sessionId": "sr_20250428",
+    "topicId": "t12",
+    "date": "2025-04-28",
+    "title": "Badegebühren Freibad – Änderungsantrag Stanglmaier",
+    "text": "Antrag Dr. Stanglmaier: Abendkarte ab 17 Uhr (statt 18 Uhr); angenommen (19:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 1,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20250428_06",
+    "sessionId": "sr_20250428",
+    "topicId": "t12",
+    "date": "2025-04-28",
+    "title": "Badegebührenordnung Freibad",
+    "text": "Beschluss der Badegebührenordnung mit Stanglmaier-Änderung; Variante A mit günstigeren Saisonkarten (19:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 1,
+      "absent": 5
+    }
+  },
+  {
+    "id": "bpu_20250522_01",
+    "sessionId": "bpu_20250522",
+    "topicId": "t4",
+    "date": "2025-05-22",
+    "title": "Tempo 30 Neustadtstraße",
+    "text": "Geschwindigkeitsbeschränkung 30 km/h von Driescherstraße bis Schlesierstraße in beide Richtungen einstimmig zugestimmt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "marcus",
+        "reif",
+        "tristl",
+        "welter",
+        "linz_kilian",
+        "lauterbach",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "hobmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250522_02",
+    "sessionId": "bpu_20250522",
+    "topicId": "t4",
+    "date": "2025-05-22",
+    "title": "Fußgängerüberweg Sudetenlandstraße – abgelehnt",
+    "text": "Antrag der Initiative auf Errichtung eines Fußgängerüberwegs wird abgelehnt (9:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 1,
+      "absent": 2
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "bpu_20250522_03",
+    "sessionId": "bpu_20250522",
+    "topicId": "t4",
+    "date": "2025-05-22",
+    "title": "Fahrradstraße Stadtbadstraße – abgelehnt",
+    "text": "Antrag auf Fahrradstraße und Zufahrtssperrung des Parkplatzes wird einstimmig abgelehnt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "marcus",
+        "reif",
+        "tristl",
+        "welter",
+        "linz_kilian",
+        "lauterbach",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "hobmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250522_04",
+    "sessionId": "bpu_20250522",
+    "topicId": null,
+    "date": "2025-05-22",
+    "title": "Doppelhaushälften Auenstr. 32/32a",
+    "text": "Einvernehmen einstimmig erteilt; Stellplatznachweis erforderlich.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "marcus",
+        "reif",
+        "tristl",
+        "welter",
+        "linz_kilian",
+        "lauterbach",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "hobmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250522_05",
+    "sessionId": "bpu_20250522",
+    "topicId": null,
+    "date": "2025-05-22",
+    "title": "Doppelhaushälften Auenstr. 34/34a",
+    "text": "Einvernehmen einstimmig erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "marcus",
+        "reif",
+        "tristl",
+        "welter",
+        "linz_kilian",
+        "lauterbach",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "hobmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250522_06",
+    "sessionId": "bpu_20250522",
+    "topicId": null,
+    "date": "2025-05-22",
+    "title": "MFH Merkurstr. 8 (6 WE) – Einvernehmen verweigert",
+    "text": "Einvernehmen einstimmig verweigert; Wandhöhe und Dachneigung sowie nicht-konforme Fahrradabstellplätze.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "marcus",
+        "reif",
+        "tristl",
+        "welter",
+        "linz_kilian",
+        "lauterbach",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "hobmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250522_07",
+    "sessionId": "bpu_20250522",
+    "topicId": null,
+    "date": "2025-05-22",
+    "title": "MFH Bahnhofstr. 60 (12 WE) – Einvernehmen verweigert",
+    "text": "GRZ/GFZ und 3-geschossigkeit fügen sich nicht in Eigenart ein (9:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 1,
+      "absent": 2
+    }
+  },
+  {
+    "id": "bpu_20250522_08",
+    "sessionId": "bpu_20250522",
+    "topicId": null,
+    "date": "2025-05-22",
+    "title": "MFH Mainburger Str. 5 (8 WE) – Einvernehmen verweigert",
+    "text": "Einvernehmen einstimmig verweigert; tatsächliche Grundfläche fügt sich nicht in Eigenart.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "marcus",
+        "reif",
+        "tristl",
+        "welter",
+        "linz_kilian",
+        "lauterbach",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "hobmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250522_09",
+    "sessionId": "bpu_20250522",
+    "topicId": null,
+    "date": "2025-05-22",
+    "title": "MFH Neustadtstr. 17 – Einvernehmen erteilt (abgelehnt)",
+    "text": "Antrag, das Einvernehmen zu erteilen, wird einstimmig abgelehnt (0:10).",
+    "type": "anonymous",
+    "results": {
+      "yes": 0,
+      "no": 10,
+      "absent": 2
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "bpu_20250522_10",
+    "sessionId": "bpu_20250522",
+    "topicId": null,
+    "date": "2025-05-22",
+    "title": "MFH Neustadtstr. 17 – Einvernehmen verweigert",
+    "text": "Einvernehmen einstimmig verweigert; Maß baulicher Nutzung, Versiegelung, Stellplatz-/Spielplatzpflicht.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "marcus",
+        "reif",
+        "tristl",
+        "welter",
+        "linz_kilian",
+        "lauterbach",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "hobmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20250522_11",
+    "sessionId": "bpu_20250522",
+    "topicId": "t13",
+    "date": "2025-05-22",
+    "title": "Lebendige Zentren – Giebelsanierung Herrnstr. 23",
+    "text": "Bewilligungsantrag zur Städtebauförderung „Lebendige Zentren\"; pauschal 20.000 € Förderung, Stadt-Eigenanteil 8.000 €.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "marcus",
+        "reif",
+        "tristl",
+        "welter",
+        "linz_kilian",
+        "lauterbach",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "hobmaier"
+      ]
     }
   }
 ]

@@ -195,6 +195,14 @@
     "summary": "Gegen die vom Landratsamt Freising erteilte Baugenehmigung für ein Studentenwohnheim auf dem Rockermaier Areal erhebt die Stadt Klage beim Verwaltungsgericht München.",
     "history": [
       {
+        "date": "2024-09-02",
+        "type": "vote",
+        "title": "B-Plan 77 als Satzung beschlossen",
+        "text": "Der Stadtrat beschließt nach Abwägung aller Stellungnahmen den Bebauungsplan Nr. 77 „Rockermaier Areal\" als Satzung (12:2).",
+        "sessionId": "sr_20240902",
+        "voteId": "sr_20240902_10"
+      },
+      {
         "date": "2025-06-01",
         "type": "proposal",
         "title": "Baugenehmigung erteilt",
@@ -224,6 +232,29 @@
     "summary": "Die Theresia-Gerhardinger-Grundschule soll erweitert und generalsaniert werden. Die geschätzten Gesamtkosten liegen bei ca. 33 Mio. Euro. Eine Kostenkommission begleitet das Projekt.",
     "history": [
       {
+        "date": "2024-10-21",
+        "type": "committee",
+        "title": "Containeranlage als Interimslösung – vertagt",
+        "text": "Der Stadtrat vertagt die Entscheidung über eine Containeranlage als Interimslösung während der Sanierung.",
+        "sessionId": "sr_20241021"
+      },
+      {
+        "date": "2024-11-04",
+        "type": "vote",
+        "title": "Flächennutzungsplan-Änderung Schul-/Sportflächen",
+        "text": "Flurstücke 703 und 704/6 werden im FNP als Gemeinbedarfsfläche Schule/Sport ausgewiesen – Grundlage für die Erweiterung.",
+        "sessionId": "sr_20241104",
+        "voteId": "sr_20241104_01"
+      },
+      {
+        "date": "2025-01-20",
+        "type": "vote",
+        "title": "Entwurfsplanung vorgestellt",
+        "text": "Entwurfsplanung wird zustimmend zur Kenntnis genommen; Verwaltung mit Kostenberechnung und Untersuchung Parkdeck-Alternative beauftragt.",
+        "sessionId": "sr_20250120",
+        "voteId": "sr_20250120_02"
+      },
+      {
         "date": "2025-07-14",
         "type": "vote",
         "title": "Kostenberechnung und Förderantrag genehmigt",
@@ -251,13 +282,68 @@
   },
   {
     "id": "t7",
-    "title": "Haushaltssatzung 2026",
+    "title": "Haushalt",
     "tags": [
       "budget"
     ],
     "image": null,
-    "summary": "Der Haushalt 2026 wurde trotz angespannter Finanzlage verabschiedet. Die Neuverschuldung beträgt 14 Mio. Euro, die Gesamtverschuldung steigt auf ca. 45,7 Mio. Euro.",
+    "summary": "Jahreshaushaltssatzungen, Jahresrechnungen, Hebesätze und über-/außerplanmäßige Ausgaben der Stadt Moosburg. Die Stadt steht angesichts der Großprojekte vor einer angespannten Finanzlage.",
     "history": [
+      {
+        "date": "2024-10-07",
+        "type": "vote",
+        "title": "Überplanmäßige Ausgaben Betriebsstrom",
+        "text": "Genehmigung von 160.000 € überplanmäßiger Ausgaben für gestiegene Betriebsstromkosten.",
+        "sessionId": "sr_20241007",
+        "voteId": "sr_20241007_04"
+      },
+      {
+        "date": "2024-10-21",
+        "type": "vote",
+        "title": "Hebesatzsatzung 2025",
+        "text": "Hebesätze für 2025 festgesetzt: Grundsteuer A 390 % (12:6 angehoben), B 400 %, Gewerbesteuer 380 %.",
+        "sessionId": "sr_20241021",
+        "voteId": "sr_20241021_09"
+      },
+      {
+        "date": "2024-11-18",
+        "type": "vote",
+        "title": "Rücklagenbildung Regiebetriebe",
+        "text": "BgA-Gewinne werden vollständig in Rücklagen eingestellt.",
+        "sessionId": "sr_20241118",
+        "voteId": "sr_20241118_03"
+      },
+      {
+        "date": "2024-12-16",
+        "type": "vote",
+        "title": "Haushaltssatzung 2025",
+        "text": "Stadtrat beschließt einstimmig die Haushaltssatzung 2025 mit allen Anlagen.",
+        "sessionId": "sr_20241216",
+        "voteId": "sr_20241216_02"
+      },
+      {
+        "date": "2025-01-20",
+        "type": "vote",
+        "title": "Übertragung Haushaltsreste 2024",
+        "text": "Haushaltsreste 2024 werden übertragen.",
+        "sessionId": "sr_20250120",
+        "voteId": "sr_20250120_08"
+      },
+      {
+        "date": "2025-06-02",
+        "type": "vote",
+        "title": "Jahresrechnung 2023 festgestellt",
+        "text": "Stadtrat stellt die Jahresrechnung 2023 fest; Bürgermeister Dollinger nimmt wegen persönlicher Beteiligung an der Entlastung nicht teil.",
+        "sessionId": "sr_20250602",
+        "voteId": "sr_20250602_02"
+      },
+      {
+        "date": "2025-06-23",
+        "type": "committee",
+        "title": "Vorlage Jahresrechnung 2024",
+        "text": "Jahresrechnung 2024 wird zur Kenntnisnahme vorgelegt.",
+        "sessionId": "sr_20250623"
+      },
       {
         "date": "2025-12-15",
         "type": "vote",
@@ -365,6 +451,14 @@
     "summary": "Der Stadtrat beschließt die Schaffung einer Vollzeitstelle für Wirtschaftsförderung sowie ein Budget von 30.000 € für Start-up-Förderung.",
     "history": [
       {
+        "date": "2025-01-20",
+        "type": "vote",
+        "title": "Gewerbegebiet Degernpoint – 4. Änderung B-Plan 50",
+        "text": "Aufstellungsbeschluss für die 4. Änderung des B-Plans 50 mit flexibler Parzellierung für Handwerk/Gewerbe.",
+        "sessionId": "sr_20250120",
+        "voteId": "sr_20250120_05"
+      },
+      {
         "date": "2025-12-01",
         "type": "vote",
         "title": "Stelle Wirtschaftsförderer beschlossen",
@@ -426,13 +520,13 @@
   },
   {
     "id": "t12",
-    "title": "Generalsanierung Freibad",
+    "title": "Freibad",
     "tags": [
       "infrastructure",
       "budget"
     ],
     "image": null,
-    "summary": "Das städtische Freibad an der Stadtbadstraße soll generalsaniert werden. Der Stadtrat nimmt die Planung zustimmend zur Kenntnis und bewirbt sich um Bundesmittel.",
+    "summary": "Das städtische Freibad an der Stadtbadstraße. Sanierungsplanung, Bundesförderung sowie Anpassungen der Badegebühren.",
     "history": [
       {
         "date": "2024-12-09",
@@ -441,6 +535,22 @@
         "text": "Der Stadtrat nimmt die Planung für die Sanierung des Freibades zustimmend zur Kenntnis und ermächtigt die Verwaltung zur Erstellung der Kostenberechnung.",
         "sessionId": "sr_20241209",
         "voteId": "sr_20241209_02"
+      },
+      {
+        "date": "2025-04-28",
+        "type": "vote",
+        "title": "Badegebührenordnung 2025 beschlossen",
+        "text": "Anpassung der Badegebührenordnung; Abendkarte ab 17 Uhr, Variante A mit günstigeren Saisonkarten (19:1).",
+        "sessionId": "sr_20250428",
+        "voteId": "sr_20250428_06"
+      },
+      {
+        "date": "2025-06-02",
+        "type": "vote",
+        "title": "Redaktionelle Anpassung Badegebühren",
+        "text": "Redaktionelle Anpassung der Badegebührenordnung mit Wirkung zur Saison 2025.",
+        "sessionId": "sr_20250602",
+        "voteId": "sr_20250602_05"
       },
       {
         "date": "2025-11-10",
@@ -464,10 +574,26 @@
     "summary": "Das Sanierungsgebiet „Zwischen Innenstadt und Bahnhof“ wird nach vorbereitenden Untersuchungen und öffentlicher Beteiligung förmlich festgelegt. Ziel ist die städtebauliche Aufwertung des Bereichs zwischen Stadtplatz und Bahnhofsgelände. Die Schloss Aschwiese wird nach Einwendungen aus dem Umgriff herausgenommen.",
     "history": [
       {
+        "date": "2024-10-07",
+        "type": "vote",
+        "title": "Vorbereitende Untersuchungen beschlossen",
+        "text": "Vorbereitende Untersuchungen nach §§ 137, 139 BauGB werden beauftragt; TÖB- und Öffentlichkeitsbeteiligung folgen.",
+        "sessionId": "sr_20241007",
+        "voteId": "sr_20241007_02"
+      },
+      {
         "date": "2025-01-01",
         "type": "milestone",
         "title": "Vorbereitende Untersuchungen abgeschlossen",
         "text": "Auf Grundlage der Vorbereitenden Untersuchungen gemäß §§ 137, 139 BauGB werden Ziele und Zwecke der Sanierung erarbeitet. Das Sanierungsgebiet umfasst den Bereich zwischen Innenstadt und Bahnhof."
+      },
+      {
+        "date": "2025-05-22",
+        "type": "vote",
+        "title": "Lebendige Zentren – Giebelsanierung Herrnstr. 23",
+        "text": "Bauausschuss beschließt im Förderprogramm „Lebendige Zentren\" eine Giebelsanierung an der Herrnstraße 23.",
+        "sessionId": "bpu_20250522",
+        "voteId": "bpu_20250522_11"
       },
       {
         "date": "2025-09-22",
@@ -540,6 +666,86 @@
         "text": "Der Bürgermeister wird ermächtigt, mit dem Vorhabenträger einen städtebaulichen Vertrag abzuschließen. Der Investor trägt sämtliche Planungskosten.",
         "sessionId": "sr_20250210",
         "voteId": "sr_20250210_05"
+      }
+    ]
+  },
+  {
+    "id": "t16",
+    "title": "Hallenbad",
+    "tags": [
+      "sports",
+      "infrastructure"
+    ],
+    "image": null,
+    "summary": "Eröffnungsbetrieb des neuen Hallenbads. Öffnungszeiten, Tarife und Benutzungsordnung wurden festgelegt; immer wieder beantragte kostenlose Eintritte für Kinder in Ferienzeiten werden kontrovers diskutiert.",
+    "history": [
+      {
+        "date": "2024-10-21",
+        "type": "vote",
+        "title": "Öffnungszeiten festgelegt",
+        "text": "Vorläufige Öffnungszeiten beschlossen (19:1): Mo geschlossen, Di–Fr 7–20/21 Uhr, Sa/So 9–18 Uhr.",
+        "sessionId": "sr_20241021",
+        "voteId": "sr_20241021_11"
+      },
+      {
+        "date": "2024-10-21",
+        "type": "vote",
+        "title": "Gebühren und Tarife beschlossen",
+        "text": "Gebühren- und Tarifordnung einstimmig beschlossen; Verwaltung soll 2-Stunden-Rabatt-Ticket prüfen.",
+        "sessionId": "sr_20241021",
+        "voteId": "sr_20241021_12"
+      },
+      {
+        "date": "2024-11-04",
+        "type": "vote",
+        "title": "Antrag freier Kinder-Eintritt vertagt",
+        "text": "Antrag StRin Beibl auf kostenlosen Eintritt für Kinder/Jugendliche in den Weihnachtsferien wird auf Januar vertagt (12:9).",
+        "sessionId": "sr_20241104",
+        "voteId": "sr_20241104_05"
+      },
+      {
+        "date": "2024-12-16",
+        "type": "vote",
+        "title": "Haus- und Badeordnung beschlossen",
+        "text": "Stadtrat beschließt einstimmig die Haus- und Badeordnung nach DGfdB-Vorlage.",
+        "sessionId": "sr_20241216",
+        "voteId": "sr_20241216_03"
+      },
+      {
+        "date": "2025-02-24",
+        "type": "vote",
+        "title": "Antrag freier Kinder-Eintritt abgelehnt",
+        "text": "Antrag auf kostenlosen Hallenbadeintritt für Kinder in den Faschings-/Osterferien wird abgelehnt (9:10).",
+        "sessionId": "sr_20250224",
+        "voteId": "sr_20250224_01"
+      }
+    ]
+  },
+  {
+    "id": "t17",
+    "title": "Rathaus-Sanierung",
+    "tags": [
+      "building",
+      "infrastructure"
+    ],
+    "image": null,
+    "summary": "Mehrjähriges Sanierungsprojekt am historischen Rathaus: Fassade sowie 1. und 2. Obergeschoss in mehreren Bauabschnitten. Die Verwaltung wurde mit Planung und Kostenberechnung beauftragt.",
+    "history": [
+      {
+        "date": "2024-09-23",
+        "type": "vote",
+        "title": "Sanierung Rathaus – Fachplaner beauftragt",
+        "text": "Verwaltung wird einstimmig beauftragt, Fachplaner für Kostenberechnung und Planung von Fassade und 1./2. OG einzusetzen.",
+        "sessionId": "sr_20240923",
+        "voteId": "sr_20240923_07"
+      },
+      {
+        "date": "2025-03-24",
+        "type": "vote",
+        "title": "Rathaus 3. BA – Kostenberechnung",
+        "text": "Kostenberechnung und Planung mit Gesamtkosten 3.988.000 € einstimmig zustimmend zur Kenntnis genommen.",
+        "sessionId": "sr_20250324",
+        "voteId": "sr_20250324_07"
       }
     ]
   }
