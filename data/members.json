@@ -321,7 +321,7 @@
         ]
       }
     },
-    { "id": "hobmaier", "firstName": "Michael", "lastName": "Hobmaier", "nickname": "Michi", "party": "fresh", "role": "councillor", "from": "2024-01", "to": "2026-05",
+    { "id": "hobmaier", "firstName": "Michael", "lastName": "Hobmaier", "nickname": "Michi", "party": "fresh", "role": "councillor", "from": "2024-10", "to": "2026-05",
       "profile": {
         "pronouns": "er/ihn",
         "committees": ["bpu"],
