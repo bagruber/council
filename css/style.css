@@ -585,12 +585,16 @@ main {
   display: flex;
   justify-content: center;
   margin: 4px 0 8px;
+  color: var(--text-muted);   /* used by row-guide stroke=currentColor */
 }
 .parliament-wrap svg {
   display: block;
   width: 100%;
-  max-width: 560px;
+  max-width: 400px;
   height: auto;
+}
+@media (max-width: 600px) {
+  .parliament-wrap svg { max-width: 100%; }
 }
 .parliament-wrap .seat { cursor: pointer; transition: opacity 0.15s; }
 .parliament-wrap .seat.seat-absent { opacity: 0.45; }
