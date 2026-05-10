@@ -17,12 +17,13 @@ const VoteVis = (() => {
   const DEFAULTS = {
     layout: "horseshoe",
     rows: null,                   // null = auto-pick
-    seatRadius: 16,
-    seatGap: 8,
+    seatRadius: 14,
+    seatGap: 7,
     arcDeg: 270,
     iconPosition: "concentric-outer",   // or "corner-tr"
     iconRatio: 0.46,              // mini-circle / seat radius
     mayorOffsetFactor: 0.55,      // mayor distance from chamber center, in units of R0
+    showRowGuides: true,          // subtle arcs behind each row
   };
 
   // ─── Layout registry ─────────────────────────────────────────────────────
@@ -197,6 +198,30 @@ const VoteVis = (() => {
       <div class="seat-vote vote-${seat.vote}">${VOTE_LABEL[seat.vote] || seat.vote}</div>`;
   }
 
+  // ─── Row guides (subtle arcs behind each row) ────────────────────────────
+
+  function drawRowGuides(svg, layout, opts) {
+    const arc = opts.arcDeg * DEG;
+    const arcStart = 90 * DEG - arc / 2;
+    const arcEnd   = 90 * DEG + arc / 2;
+    const steps    = 80;
+    layout.radii.forEach(r => {
+      const pts = [];
+      for (let i = 0; i <= steps; i++) {
+        const a = arcStart + (arcEnd - arcStart) * (i / steps);
+        pts.push(`${(Math.cos(a) * r).toFixed(2)} ${(-Math.sin(a) * r).toFixed(2)}`);
+      }
+      const path = svgEl("path");
+      path.setAttribute("d", "M " + pts.join(" L "));
+      path.setAttribute("fill", "none");
+      path.setAttribute("stroke", "currentColor");
+      path.setAttribute("stroke-width", "0.7");
+      path.setAttribute("opacity", "0.18");
+      path.setAttribute("class", "row-guide");
+      svg.appendChild(path);
+    });
+  }
+
   // ─── Seat rendering ──────────────────────────────────────────────────────
 
   function svgEl(tag) { return document.createElementNS(NS, tag); }
@@ -321,6 +346,9 @@ const VoteVis = (() => {
     svg.setAttribute("viewBox", `${minX} ${minY} ${maxX - minX} ${maxY - minY}`);
     svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
     wrap.appendChild(svg);
+
+    // subtle row guides (behind seats)
+    if (o.showRowGuides) drawRowGuides(svg, layout, o);
 
     // seats (order in array = seating order)
     o.seats.forEach((seat, i) => drawSeat(svg, layout.positions[i], seat, o));
