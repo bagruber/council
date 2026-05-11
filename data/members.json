@@ -405,51 +405,51 @@
       "description": "Das Plenum des Stadtrats ist das höchste Beschlussgremium der Stadt Moosburg. Es besteht aus 24 ehrenamtlichen Stadträtinnen und Stadträten sowie dem Ersten Bürgermeister.",
       "rows": 2,
       "chair": "dollinger",
-      "seats": [
-        { "occupants": [{ "member": "heinz" }] },
-        { "occupants": [{ "member": "hadersdorfer" }] },
-        { "occupants": [
-          { "member": "beubl",  "to":   "2025-03" },
-          { "member": "marcus", "from": "2025-03" }
-        ]},
-        { "occupants": [{ "member": "welter" }] },
-        { "occupants": [{ "member": "kaestl" }] },
-        { "occupants": [
-          { "member": "neumayr", "to":   "2022-01" },
-          { "member": "gruber",  "from": "2022-01" }
-        ]},
-        { "occupants": [{ "member": "reif" }] },
-        { "occupants": [{ "member": "lauterbach" }] },
-        { "occupants": [{ "member": "beibl" }] },
-        { "occupants": [{ "member": "stanglmaier" }] },
-        { "occupants": [
-          { "member": "altenbeck", "to":   "2022-05" },
-          { "member": "becher_a",  "from": "2022-05" }
-        ]},
-        { "occupants": [{ "member": "becher_j" }] },
-        { "occupants": [
-          { "member": "wagner",      "to":   "2022-05" },
-          { "member": "linz_kilian", "from": "2022-05" }
-        ]},
-        { "occupants": [{ "member": "von_pressentin" }] },
-        { "occupants": [{ "member": "kieninger" }] },
-        { "occupants": [{ "member": "grundner" }] },
-        { "occupants": [
-          { "member": "wittmann", "to":   "2021-10" },
-          { "member": "gruebl",   "from": "2021-10", "to": "2024-10" },
-          { "member": "hobmaier", "from": "2024-10" }
-        ]},
-        { "occupants": [
-          { "member": "john",   "to":   "2023-07" },
-          { "member": "strobl", "from": "2023-07" }
-        ]},
-        { "occupants": [{ "member": "fincke" }] },
-        { "occupants": [{ "member": "pschorr" }] },
-        { "occupants": [{ "member": "haberl" }] },
-        { "occupants": [{ "member": "tristl" }] },
-        { "occupants": [{ "member": "linz_karin" }] },
-        { "occupants": [{ "member": "weber" }] }
-      ]
+"seats": [
+  { "occupants": [{ "member": "heinz" }] },
+  { "occupants": [{ "member": "hadersdorfer" }] },
+  { "occupants": [
+    { "member": "beubl",  "to":   "2025-03" },
+    { "member": "marcus", "from": "2025-03" }
+  ]},
+  { "occupants": [{ "member": "welter" }] },
+  { "occupants": [{ "member": "kaestl" }] },
+  { "occupants": [
+    { "member": "neumayr", "to":   "2022-01" },
+    { "member": "gruber",  "from": "2022-01" }
+  ]},
+  { "occupants": [{ "member": "reif" }] },
+  { "occupants": [{ "member": "lauterbach" }] },
+  { "occupants": [{ "member": "beibl" }] },
+  { "occupants": [{ "member": "stanglmaier" }] },
+  { "occupants": [{ "member": "weber" }] },
+  { "occupants": [{ "member": "linz_karin" }] },
+  { "occupants": [{ "member": "tristl" }] },
+  { "occupants": [{ "member": "haberl" }] },
+  { "occupants": [{ "member": "pschorr" }] },
+  { "occupants": [{ "member": "fincke" }] },
+  { "occupants": [
+    { "member": "john",   "to":   "2023-07" },
+    { "member": "strobl", "from": "2023-07" }
+  ]},
+  { "occupants": [
+    { "member": "wittmann", "to":   "2021-10" },
+    { "member": "gruebl",   "from": "2021-10", "to": "2024-10" },
+    { "member": "hobmaier", "from": "2024-10" }
+  ]},
+  { "occupants": [{ "member": "grundner" }] },
+  { "occupants": [{ "member": "kieninger" }] },
+  { "occupants": [{ "member": "von_pressentin" }] },
+  { "occupants": [
+    { "member": "wagner",      "to":   "2022-05" },
+    { "member": "linz_kilian", "from": "2022-05" }
+  ]},
+  { "occupants": [{ "member": "becher_j" }] },
+  { "occupants": [
+    { "member": "altenbeck", "to":   "2022-05" },
+    { "member": "becher_a",  "from": "2022-05" }
+  ]}
+]
     },
     {
       "id": "bpu",
