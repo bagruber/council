@@ -423,18 +423,15 @@
         { "occupants": [{ "member": "beibl" }] },
         { "occupants": [{ "member": "stanglmaier" }] },
         { "occupants": [
-          { "member": "von_pressentin", "from": "2020-05", "to": "2022-05" },
-          { "member": "becher_a",       "from": "2022-05" }
+          { "member": "altenbeck", "to":   "2022-05" },
+          { "member": "becher_a",  "from": "2022-05" }
         ]},
         { "occupants": [{ "member": "becher_j" }] },
         { "occupants": [
-          { "member": "altenbeck",   "to":   "2022-05" },
+          { "member": "wagner",      "to":   "2022-05" },
           { "member": "linz_kilian", "from": "2022-05" }
         ]},
-        { "occupants": [
-          { "member": "wagner",         "to":   "2022-05" },
-          { "member": "von_pressentin", "from": "2022-05" }
-        ]},
+        { "occupants": [{ "member": "von_pressentin" }] },
         { "occupants": [{ "member": "kieninger" }] },
         { "occupants": [{ "member": "grundner" }] },
         { "occupants": [
