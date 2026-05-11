@@ -515,6 +515,14 @@ const SHOW_PRONOUNS = true;
 
   // -- Vote block --
 
+  function bodyForVote(vote) {
+    const sid = vote.sessionId || "";
+    if (sid.startsWith("bpu_"))  return bodyMap["bpu"];
+    if (sid.startsWith("hvfa_")) return bodyMap["hvfa"];
+    if (sid.startsWith("sr_"))   return bodyMap["plenum"];
+    return null;
+  }
+
   function renderVoteBlock(container, vote) {
     const block = document.createElement("div");
     block.className = "vote-block";
@@ -525,6 +533,9 @@ const SHOW_PRONOUNS = true;
     const resultTag = `<span class="vote-result-tag ${tagClass}">${tagText}</span>`;
 
     block.innerHTML = `
+      <button class="vote-help-btn" aria-label="Legende" title="Was bedeutet was?">
+        <span class="material-icons">help_outline</span>
+      </button>
       <h4>${vote.title}${resultTag}</h4>
       <div class="vote-text">${vote.text}</div>
       <div class="vote-legend">
@@ -532,6 +543,10 @@ const SHOW_PRONOUNS = true;
         <span><span class="legend-dot no"></span> Nein</span>
         <span><span class="legend-dot absent"></span> Abwesend</span>
       </div>`;
+
+    block.querySelector(".vote-help-btn").addEventListener("click", () => {
+      document.getElementById("vote-legend-modal").classList.remove("hidden");
+    });
 
     const chartEl = document.createElement("div");
     block.appendChild(chartEl);
@@ -541,7 +556,8 @@ const SHOW_PRONOUNS = true;
       if (vote.type === "anonymous") {
         VoteVis.drawBar(chartEl, vote.results);
       } else {
-        VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder);
+        const body = bodyForVote(vote);
+        VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder, body ? { body } : {});
       }
     });
   }
