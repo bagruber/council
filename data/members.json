@@ -405,7 +405,7 @@
       "description": "Das Plenum des Stadtrats ist das höchste Beschlussgremium der Stadt Moosburg. Es besteht aus 24 ehrenamtlichen Stadträtinnen und Stadträten sowie dem Ersten Bürgermeister.",
       "rows": 2,
       "chair": "dollinger",
-"seats": [
+      "seats": [
   { "occupants": [{ "member": "heinz" }] },
   { "occupants": [{ "member": "hadersdorfer" }] },
   { "occupants": [
