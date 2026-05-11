@@ -131,6 +131,65 @@
   </div>
 </div>
 
+<!-- Vote-Legenden modal -->
+<div id="vote-legend-modal" class="modal-overlay hidden" onclick="if(event.target===this)this.classList.add('hidden')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Wie ist die Abstimmung dargestellt?</h2>
+      <button class="modal-close" onclick="this.closest('.modal-overlay').classList.add('hidden')"><span class="material-icons">close</span></button>
+    </div>
+    <div class="modal-body">
+      <div class="legend-row">
+        <svg viewBox="-25 -25 50 50" width="56" height="56" aria-hidden="true">
+          <circle cx="0" cy="0" r="16" fill="#64A12D" stroke="#78BE1E" stroke-width="3"/>
+          <circle cx="11.3" cy="11.3" r="7.4" fill="#78BE1E" stroke="#fff" stroke-width="1.3"/>
+          <text x="11.3" y="11.3" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="bold" fill="#fff">✓</text>
+        </svg>
+        <div>
+          <strong>Stadträtin/Stadtrat</strong><br>
+          <span class="legend-explain">Füllung = Parteifarbe · Rahmen + kleiner Indikator-Kreis am äußeren Rand = Abstimmungsverhalten (✓ Ja / ✗ Nein / – Abwesend / ? Unbekannt).</span>
+        </div>
+      </div>
+      <div class="legend-row">
+        <svg viewBox="-25 -25 50 50" width="56" height="56" aria-hidden="true">
+          <circle cx="0" cy="0" r="16" fill="#64A12D" stroke="#78BE1E" stroke-width="3"/>
+          <text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="15" fill="rgba(255,255,255,0.92)">★</text>
+          <circle cx="11.3" cy="11.3" r="7.4" fill="#78BE1E" stroke="#fff" stroke-width="1.3"/>
+          <text x="11.3" y="11.3" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="bold" fill="#fff">✓</text>
+        </svg>
+        <div>
+          <strong>Bürgermeister/in</strong><br>
+          <span class="legend-explain">Erste/Zweite/Dritte Bürgermeister/in: zusätzlich Stern im Kreis. Die Erste Bürgermeister/in sitzt zentriert unten gegenüber dem Hufeisen.</span>
+        </div>
+      </div>
+      <div class="legend-row">
+        <svg viewBox="-25 -25 50 50" width="56" height="56" aria-hidden="true">
+          <circle cx="0" cy="0" r="16" fill="#64A12D" stroke="#B0B0B0" stroke-width="3" opacity="0.45"/>
+          <circle cx="11.3" cy="11.3" r="7.4" fill="#B0B0B0" stroke="#fff" stroke-width="1.3" opacity="0.45"/>
+          <text x="11.3" y="11.3" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="bold" fill="#fff" opacity="0.45">–</text>
+        </svg>
+        <div>
+          <strong>Abwesend</strong><br>
+          <span class="legend-explain">Wer bei der Abstimmung nicht im Saal war (entweder ganze Sitzung oder kurzzeitig), wird ausgegraut dargestellt.</span>
+        </div>
+      </div>
+      <div class="legend-row">
+        <svg viewBox="-90 -90 180 180" width="68" height="68" aria-hidden="true">
+          <g style="color:#bbb">
+            <path d="M -56 56 A 80 80 0 1 0 56 56" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+            <path d="M -35 35 A 50 50 0 1 0 35 35" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+          </g>
+        </svg>
+        <div>
+          <strong>Hufeisen-Sitzordnung</strong><br>
+          <span class="legend-explain">Innen- und Außenreihe als konzentrische Bögen. Fraktionssprecher/innen sitzen in der Innenreihe; die Sitzplätze sind über mehrere Wahlperioden hinweg fix – wer nachrückt, übernimmt den Sitz des Vorgängers.</span>
+        </div>
+      </div>
+      <p class="legend-foot">Auf <strong>Desktop</strong>: Hover zeigt Tooltip, Klick öffnet das Profil. Auf <strong>Mobile</strong>: Tippen zeigt Info, nochmal Tippen öffnet das Profil.</p>
+    </div>
+  </div>
+</div>
+
 <!-- Kontakt modal -->
 <div id="kontakt-modal" class="modal-overlay hidden" onclick="if(event.target===this)this.classList.add('hidden')">
   <div class="modal">

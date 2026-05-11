@@ -402,7 +402,54 @@
       "shortName": "Plenum",
       "type": "plenum",
       "icon": "account_balance",
-      "description": "Das Plenum des Stadtrats ist das höchste Beschlussgremium der Stadt Moosburg. Es besteht aus 24 ehrenamtlichen Stadträtinnen und Stadträten sowie dem Ersten Bürgermeister."
+      "description": "Das Plenum des Stadtrats ist das höchste Beschlussgremium der Stadt Moosburg. Es besteht aus 24 ehrenamtlichen Stadträtinnen und Stadträten sowie dem Ersten Bürgermeister.",
+      "rows": 2,
+      "chair": "dollinger",
+      "seats": [
+        { "occupants": [{ "member": "heinz" }] },
+        { "occupants": [{ "member": "hadersdorfer" }] },
+        { "occupants": [
+          { "member": "beubl",  "to":   "2025-03" },
+          { "member": "marcus", "from": "2025-03" }
+        ]},
+        { "occupants": [{ "member": "welter" }] },
+        { "occupants": [{ "member": "fincke" }] },
+        { "occupants": [
+          { "member": "neumayr", "to":   "2022-01" },
+          { "member": "gruber",  "from": "2022-01" }
+        ]},
+        { "occupants": [{ "member": "lauterbach" }] },
+        { "occupants": [{ "member": "kaestl" }] },
+        { "occupants": [
+          { "member": "john",   "to":   "2023-07" },
+          { "member": "strobl", "from": "2023-07" }
+        ]},
+        { "occupants": [{ "member": "stanglmaier" }] },
+        { "occupants": [{ "member": "tristl" }] },
+        { "occupants": [{ "member": "weber" }] },
+        { "occupants": [{ "member": "haberl" }] },
+        { "occupants": [{ "member": "linz_karin" }] },
+        { "occupants": [{ "member": "pschorr" }] },
+        { "occupants": [
+          { "member": "wittmann", "to":   "2021-10" },
+          { "member": "gruebl",   "from": "2021-10", "to": "2024-10" },
+          { "member": "hobmaier", "from": "2024-10" }
+        ]},
+        { "occupants": [{ "member": "grundner" }] },
+        { "occupants": [{ "member": "reif" }] },
+        { "occupants": [{ "member": "kieninger" }] },
+        { "occupants": [{ "member": "beibl" }] },
+        { "occupants": [{ "member": "von_pressentin" }] },
+        { "occupants": [{ "member": "becher_j" }] },
+        { "occupants": [
+          { "member": "wagner",   "to":   "2022-05" },
+          { "member": "becher_a", "from": "2022-05" }
+        ]},
+        { "occupants": [
+          { "member": "altenbeck",   "to":   "2022-05" },
+          { "member": "linz_kilian", "from": "2022-05" }
+        ]}
+      ]
     },
     {
       "id": "bpu",

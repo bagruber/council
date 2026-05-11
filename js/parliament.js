@@ -237,13 +237,45 @@ const VoteVis = (() => {
     if (grayed) g.classList.add("seat-absent");
     if (seat.id) g.dataset.seatId = seat.id;
 
+    // Backplate (bg-coloured, always fully opaque) — hides row-guide behind seat,
+    // even when the seat is dimmed for absent voters.
+    const back = svgEl("circle");
+    back.setAttribute("cx", pos.x); back.setAttribute("cy", pos.y);
+    back.setAttribute("r", r + 1);
+    back.setAttribute("fill", "var(--bg)");
+    back.classList.add("seat-back");
+    g.appendChild(back);
+
+    // All visible seat content goes inside this inner group so we can dim it
+    // for absent voters without making the backplate translucent.
+    const content = svgEl("g");
+    content.classList.add("seat-content");
+    g.appendChild(content);
+
     const main = svgEl("circle");
     main.setAttribute("cx", pos.x); main.setAttribute("cy", pos.y);
     main.setAttribute("r", r);
     main.setAttribute("fill", fill);
     main.setAttribute("stroke", stroke);
     main.setAttribute("stroke-width", Math.max(2.5, r * 0.18));
-    g.appendChild(main);
+    main.classList.add("seat-main");
+    content.appendChild(main);
+
+    // Mayor / vice-mayor star (inside main circle)
+    if (seat.hasStar) {
+      const star = svgEl("text");
+      star.setAttribute("x", pos.x);
+      star.setAttribute("y", pos.y);
+      star.setAttribute("text-anchor", "middle");
+      star.setAttribute("dominant-baseline", "central");
+      star.setAttribute("font-size", r * 0.95);
+      star.setAttribute("fill", "rgba(255,255,255,0.92)");
+      star.classList.add("seat-star");
+      star.style.pointerEvents = "none";
+      star.style.userSelect    = "none";
+      star.textContent = "★";
+      content.appendChild(star);
+    }
 
     // ─── mini indicator ───
     const iconR = r * opts.iconRatio;
@@ -266,7 +298,8 @@ const VoteVis = (() => {
     mini.setAttribute("fill", stroke);
     mini.setAttribute("stroke", "#fff");
     mini.setAttribute("stroke-width", "1.3");
-    g.appendChild(mini);
+    mini.classList.add("seat-indicator");
+    content.appendChild(mini);
 
     const txt = svgEl("text");
     txt.setAttribute("x", ix); txt.setAttribute("y", iy);
@@ -275,10 +308,11 @@ const VoteVis = (() => {
     txt.setAttribute("font-size", iconR * 1.35);
     txt.setAttribute("font-weight", "bold");
     txt.setAttribute("fill", "#fff");
+    txt.classList.add("seat-indicator-icon");
     txt.style.pointerEvents = "none";
     txt.style.userSelect    = "none";
     txt.textContent = VOTE_ICON[seat.vote] || "";
-    g.appendChild(txt);
+    content.appendChild(txt);
 
     // ─── interaction ───
     if (isCoarse) {
@@ -350,8 +384,10 @@ const VoteVis = (() => {
     // subtle row guides (behind seats)
     if (o.showRowGuides) drawRowGuides(svg, layout, o);
 
-    // seats (order in array = seating order)
-    o.seats.forEach((seat, i) => drawSeat(svg, layout.positions[i], seat, o));
+    // seats (order in array = seating order; nulls leave the slot empty)
+    o.seats.forEach((seat, i) => {
+      if (seat) drawSeat(svg, layout.positions[i], seat, o);
+    });
 
     if (hasMayor) {
       drawSeat(svg, { x: mx, y: my, angle: mayorAngle, row: -1, radius: 0 }, o.mayor, o);
@@ -447,35 +483,97 @@ const VoteVis = (() => {
 
   // ─── Public: drawParliament (compat with existing app.js) ───────────────
 
-  function drawParliament(container, vote, members, parties, seatOrder, options = {}) {
-    const partyMap  = Object.fromEntries(parties.map(p => [p.id, p]));
-    const memberMap = Object.fromEntries(members.map(m => [m.id, m]));
+  // Helpers ──────────────────────────────────────────────────────────
+
+  function activeAt(occupants, date) {
+    return (occupants || []).find(o => {
+      if (o.from && date < o.from) return false;
+      if (o.to) {
+        // YYYY-MM is treated as end-of-month (sentinel day "99")
+        const toMax = o.to.length === 7 ? o.to + "-99" : o.to;
+        if (date > toMax) return false;
+      }
+      return true;
+    });
+  }
+
+  function isViceMayor(m) {
+    return !!(m && m.title && m.title.includes("Bürgermeister"));
+  }
+
+  function memberLabel(m) {
+    return m.name || `${m.firstName || ""} ${m.lastName || ""}`.trim();
+  }
+
+  function makeEntry(m, voteVal, partyMap) {
+    return {
+      id:    m.id,
+      name:  memberLabel(m),
+      title: m.title || "",
+      party: partyMap[m.party],
+      vote:  voteVal || "unknown",
+      hasStar: m.role === "mayor" || isViceMayor(m),
+    };
+  }
+
+  // Build seats from a body definition with `seats: [{occupants:[...]}]`.
+  function buildSeatsFromBody(body, vote, memberMap, partyMap) {
+    const seats = [];
+    let mayor = null;
 
     const voteRes = {};
-    vote.results.yes.forEach(id => voteRes[id] = "yes");
-    vote.results.no .forEach(id => voteRes[id] = "no");
+    vote.results.yes   .forEach(id => voteRes[id] = "yes");
+    vote.results.no    .forEach(id => voteRes[id] = "no");
+    vote.results.absent.forEach(id => voteRes[id] = "absent");
+
+    // Chair (if defined, e.g. mayor)
+    if (body.chair) {
+      const m = memberMap[body.chair];
+      if (m) mayor = makeEntry(m, voteRes[m.id], partyMap);
+    }
+
+    (body.seats || []).forEach(seatDef => {
+      let m = null, voteVal = "unknown";
+      if (seatDef.occupants) {
+        // Prefer the occupant who actually voted (handles overlapping date ranges)
+        const inVote = seatDef.occupants.find(o => voteRes[o.member] != null);
+        if (inVote) m = memberMap[inVote.member];
+        else {
+          const occ = activeAt(seatDef.occupants, vote.date);
+          if (occ) m = memberMap[occ.member];
+        }
+      } else if (seatDef.member) {
+        // committee-style {member, sub}: pick whoever cast a vote, fall back to regular
+        const reg = memberMap[seatDef.member];
+        const sub = seatDef.sub ? memberMap[seatDef.sub] : null;
+        if (reg && voteRes[reg.id] != null) m = reg;
+        else if (sub && voteRes[sub.id] != null) m = sub;
+        else m = reg;
+      }
+      if (!m) { seats.push(null); return; }
+      voteVal = voteRes[m.id] || "unknown";
+      seats.push(makeEntry(m, voteVal, partyMap));
+    });
+
+    return { seats, mayor, rows: body.rows };
+  }
+
+  // Build seats from raw vote results (fallback when no body is provided)
+  function buildSeatsFromVote(vote, members, parties, seatOrder, memberMap, partyMap) {
+    const voteRes = {};
+    vote.results.yes   .forEach(id => voteRes[id] = "yes");
+    vote.results.no    .forEach(id => voteRes[id] = "no");
     vote.results.absent.forEach(id => voteRes[id] = "absent");
 
     const seats = [];
     let mayor = null;
-
     Object.keys(voteRes).forEach(id => {
-      const m = memberMap[id];
-      if (!m) return;
-      const entry = {
-        id: m.id,
-        name: m.name || `${m.firstName || ""} ${m.lastName || ""}`.trim(),
-        title: m.title || "",
-        party: partyMap[m.party],
-        vote: voteRes[id],
-      };
+      const m = memberMap[id]; if (!m) return;
+      const entry = makeEntry(m, voteRes[id], partyMap);
       if (m.role === "mayor") mayor = entry;
       else seats.push(entry);
     });
 
-    if (!seats.length && !mayor) return;
-
-    // sort by seatOrder (party), then by name
     const order = seatOrder || parties.map(p => p.id);
     seats.sort((a, b) => {
       const ia = order.indexOf(a.party?.id ?? "");
@@ -483,6 +581,23 @@ const VoteVis = (() => {
       if (ia !== ib) return ia - ib;
       return (a.name || "").localeCompare(b.name || "");
     });
+    return { seats, mayor };
+  }
+
+  function drawParliament(container, vote, members, parties, seatOrder, options = {}) {
+    const partyMap  = Object.fromEntries(parties.map(p => [p.id, p]));
+    const memberMap = Object.fromEntries(members.map(m => [m.id, m]));
+
+    // pick body-based seating if provided
+    let seatData;
+    if (options.body) {
+      seatData = buildSeatsFromBody(options.body, vote, memberMap, partyMap);
+      if (seatData.rows && !options.rows) options.rows = seatData.rows;
+    } else {
+      seatData = buildSeatsFromVote(vote, members, parties, seatOrder, memberMap, partyMap);
+    }
+
+    if (!seatData.seats.some(s => s) && !seatData.mayor) return;
 
     // summary bar above the parliament chart
     drawBar(container, {
@@ -491,8 +606,9 @@ const VoteVis = (() => {
       absent: vote.results.absent.length,
     });
 
-    renderChart(container, { seats, mayor, ...options });
+    // Pass seats including potential nulls so geometry stays stable.
+    renderChart(container, { seats: seatData.seats, mayor: seatData.mayor, ...options });
   }
 
-  return { drawBar, drawParliament, renderChart, LAYOUTS };
+  return { drawBar, drawParliament, renderChart, LAYOUTS, buildSeatsFromBody };
 })();
