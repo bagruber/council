@@ -413,42 +413,45 @@
           { "member": "marcus", "from": "2025-03" }
         ]},
         { "occupants": [{ "member": "welter" }] },
-        { "occupants": [{ "member": "fincke" }] },
+        { "occupants": [{ "member": "kaestl" }] },
         { "occupants": [
           { "member": "neumayr", "to":   "2022-01" },
           { "member": "gruber",  "from": "2022-01" }
         ]},
+        { "occupants": [{ "member": "reif" }] },
         { "occupants": [{ "member": "lauterbach" }] },
-        { "occupants": [{ "member": "kaestl" }] },
-        { "occupants": [
-          { "member": "john",   "to":   "2023-07" },
-          { "member": "strobl", "from": "2023-07" }
-        ]},
+        { "occupants": [{ "member": "beibl" }] },
         { "occupants": [{ "member": "stanglmaier" }] },
-        { "occupants": [{ "member": "tristl" }] },
-        { "occupants": [{ "member": "weber" }] },
-        { "occupants": [{ "member": "haberl" }] },
-        { "occupants": [{ "member": "linz_karin" }] },
-        { "occupants": [{ "member": "pschorr" }] },
+        { "occupants": [
+          { "member": "von_pressentin", "from": "2020-05", "to": "2022-05" },
+          { "member": "becher_a",       "from": "2022-05" }
+        ]},
+        { "occupants": [{ "member": "becher_j" }] },
+        { "occupants": [
+          { "member": "altenbeck",   "to":   "2022-05" },
+          { "member": "linz_kilian", "from": "2022-05" }
+        ]},
+        { "occupants": [
+          { "member": "wagner",         "to":   "2022-05" },
+          { "member": "von_pressentin", "from": "2022-05" }
+        ]},
+        { "occupants": [{ "member": "kieninger" }] },
+        { "occupants": [{ "member": "grundner" }] },
         { "occupants": [
           { "member": "wittmann", "to":   "2021-10" },
           { "member": "gruebl",   "from": "2021-10", "to": "2024-10" },
           { "member": "hobmaier", "from": "2024-10" }
         ]},
-        { "occupants": [{ "member": "grundner" }] },
-        { "occupants": [{ "member": "reif" }] },
-        { "occupants": [{ "member": "kieninger" }] },
-        { "occupants": [{ "member": "beibl" }] },
-        { "occupants": [{ "member": "von_pressentin" }] },
-        { "occupants": [{ "member": "becher_j" }] },
         { "occupants": [
-          { "member": "wagner",   "to":   "2022-05" },
-          { "member": "becher_a", "from": "2022-05" }
+          { "member": "john",   "to":   "2023-07" },
+          { "member": "strobl", "from": "2023-07" }
         ]},
-        { "occupants": [
-          { "member": "altenbeck",   "to":   "2022-05" },
-          { "member": "linz_kilian", "from": "2022-05" }
-        ]}
+        { "occupants": [{ "member": "fincke" }] },
+        { "occupants": [{ "member": "pschorr" }] },
+        { "occupants": [{ "member": "haberl" }] },
+        { "occupants": [{ "member": "tristl" }] },
+        { "occupants": [{ "member": "linz_karin" }] },
+        { "occupants": [{ "member": "weber" }] }
       ]
     },
     {

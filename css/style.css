@@ -570,6 +570,29 @@ main {
   border-top: 1px solid var(--border);
 }
 
+/* 4 Vote-Icons als Reihe innerhalb des Legenden-Modals */
+.legend-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.legend-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+.legend-icon svg { flex-shrink: 0; }
+.legend-icon-label {
+  font-size: 0.8rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
 .vote-result-tag {
   display: inline-block;
   font-size: 0.7rem;
