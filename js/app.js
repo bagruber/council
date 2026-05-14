@@ -109,10 +109,22 @@ const SHOW_PRONOUNS = true;
     return n.getFullYear() + "-" + String(n.getMonth() + 1).padStart(2, "0");
   })();
 
+  // A member can have one or multiple non-contiguous mandate periods.
+  // If `periods` is defined it takes precedence over the top-level from/to.
+  function memberPeriods(m) {
+    if (m.periods && m.periods.length) return m.periods;
+    return [{ from: m.from, to: m.to }];
+  }
+
+  function memberActiveAt(m, dateStr) {
+    return memberPeriods(m).some(p =>
+      (!p.from || p.from <= dateStr) &&
+      (!p.to   || dateStr <  p.to)
+    );
+  }
+
   function isActive(m) {
-    if (m.to && m.to <= nowStr) return false;
-    if (m.from > nowStr) return false;
-    return true;
+    return memberActiveAt(m, nowStr);
   }
 
   // -- Search (Themen tab) --
@@ -1122,7 +1134,9 @@ const SHOW_PRONOUNS = true;
     rolesSection.innerHTML = "<h3>Mandate & Funktionen</h3>";
 
     const roleLabel = m.role === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
-    rolesSection.appendChild(makeRoleRow("account_balance", roleLabel, m.from, m.to));
+    memberPeriods(m).forEach(p => {
+      rolesSection.appendChild(makeRoleRow("account_balance", roleLabel, p.from, p.to));
+    });
 
     if (m.partyHistory && m.partyHistory.length) {
       const phWrap = document.createElement("div");
@@ -1257,13 +1271,7 @@ const SHOW_PRONOUNS = true;
   // -- Member timeline --
 
   function renderMemberTimeline(container, member) {
-    const from = member.from;
-    const to = member.to || "9999-12";
-
-    const relevant = sessionsSorted.filter(s => {
-      const ym = s.date.substring(0, 7);
-      return ym >= from && ym <= to;
-    });
+    const relevant = sessionsSorted.filter(s => memberActiveAt(member, s.date));
 
     if (!relevant.length) {
       container.innerHTML = '<p style="color:var(--text-muted);font-size:0.88rem">Keine Sitzungsdaten vorhanden.</p>';
@@ -1339,9 +1347,7 @@ const SHOW_PRONOUNS = true;
   function isMemberActive(memberId, dateStr) {
     const m = memberMap[memberId];
     if (!m) return false;
-    if (m.from && dateStr < m.from) return false;
-    if (m.to && dateStr >= m.to) return false;
-    return true;
+    return memberActiveAt(m, dateStr);
   }
 
   function getMemberVoteStatus(memberId, vote, session) {
