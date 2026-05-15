@@ -162,6 +162,14 @@
     "summary": "Auf Antrag von SPD und Grünen werden Tempo-20- und Tempo-30-Zonen in der Innenstadt ausgeweitet. Auch die Bahnhofstraße soll verkehrlich überprüft werden.",
     "history": [
       {
+        "date": "2024-06-10",
+        "type": "vote",
+        "title": "Tempo-30-Zone Wohngebiet",
+        "text": "Wohngebiet zwischen Banater-, Neustadt-, Sudetenland- und Neuer Industriestraße als Tempo-30-Zone ausgewiesen (13:5).",
+        "sessionId": "sr_20240610",
+        "voteId": "sr_20240610_09"
+      },
+      {
         "date": "2025-11-01",
         "type": "proposal",
         "title": "Antrag SPD / Grüne",
@@ -195,6 +203,30 @@
     "summary": "Gegen die vom Landratsamt Freising erteilte Baugenehmigung für ein Studentenwohnheim auf dem Rockermaier Areal erhebt die Stadt Klage beim Verwaltungsgericht München.",
     "history": [
       {
+        "date": "2024-03-18",
+        "type": "vote",
+        "title": "B-Plan Nr. 77 Rockermaier – Erneute Auslegung",
+        "text": "Einstimmig: Nach Abwägung der Stellungnahmen geht der überarbeitete B-Plan-Entwurf erneut in die öffentliche Auslegung; Anpassungen zu Energie, Solar und Dachformen werden beschlossen.",
+        "sessionId": "sr_20240318",
+        "voteId": "sr_20240318_03"
+      },
+      {
+        "date": "2024-06-17",
+        "type": "vote",
+        "title": "Rockermaier-Areal – Straßennamen festgelegt",
+        "text": "Hauptstraße = Saliterstraße (einstimmig), Anbindung Industriestraße = Weihmühlstraße (einstimmig), interne Einbahnstraße = Graf-Burkhard-Straße (12:8).",
+        "sessionId": "sr_20240617",
+        "voteId": "sr_20240617_05"
+      },
+      {
+        "date": "2024-07-15",
+        "type": "vote",
+        "title": "Einvernehmen für Wohnbauten Rockermaier",
+        "text": "Bauausschuss erteilt mit jeweils 7:4 das Einvernehmen für die 5 Mehrfamilienhäuser (Tiefgarage, 96 WE) und MFH 3-9 (insg. 96 WE); Bewilligung erst nach Abschluss des städtebaulichen Vertrags.",
+        "sessionId": "bpu_20240715",
+        "voteId": "bpu_20240715_05"
+      },
+      {
         "date": "2024-09-02",
         "type": "vote",
         "title": "B-Plan 77 als Satzung beschlossen",
@@ -223,13 +255,13 @@
   },
   {
     "id": "t6",
-    "title": "Erweiterung Theresia-Gerhardinger-Grundschule",
+    "title": "Theresia-Gerhardinger-Grundschule",
     "tags": [
       "building",
       "budget"
     ],
     "image": null,
-    "summary": "Die Theresia-Gerhardinger-Grundschule soll erweitert und generalsaniert werden. Die geschätzten Gesamtkosten liegen bei ca. 33 Mio. Euro. Eine Kostenkommission begleitet das Projekt.",
+    "summary": "Die Theresia-Gerhardinger-Grundschule im Norden Moosburgs wird umfassend erweitert und generalsaniert (geschätzt 33 Mio. €). Parallel werden Begleitthemen wie die Jugendsozialarbeit gestärkt und eine Kostenkommission begleitet das Projekt.",
     "history": [
       {
         "date": "2024-10-21",
@@ -289,6 +321,22 @@
     "image": null,
     "summary": "Jahreshaushaltssatzungen, Jahresrechnungen, Hebesätze und über-/außerplanmäßige Ausgaben der Stadt Moosburg. Die Stadt steht angesichts der Großprojekte vor einer angespannten Finanzlage.",
     "history": [
+      {
+        "date": "2024-05-06",
+        "type": "vote",
+        "title": "Jahresrechnung 2022 + Entlastung",
+        "text": "Einstimmig festgestellt und Entlastung erteilt; Bürgermeister Dollinger enthält sich wegen persönlicher Beteiligung.",
+        "sessionId": "sr_20240506",
+        "voteId": "sr_20240506_03"
+      },
+      {
+        "date": "2024-07-01",
+        "type": "vote",
+        "title": "Überplanmäßige Ausgaben 635 T€",
+        "text": "Einstimmig: Über- und außerplanmäßige Ausgaben von 635.266,42 € (v.a. Betriebsstromkosten) genehmigt.",
+        "sessionId": "sr_20240701",
+        "voteId": "sr_20240701_04"
+      },
       {
         "date": "2024-10-07",
         "type": "vote",
@@ -363,6 +411,22 @@
     "image": null,
     "summary": "Auf Antrag von Grünen und Eltern werden Gehwege, Radschutzstreifen und Ampelschaltungen an der Industriestraße verbessert. Am Schulzentrum Süd werden weitere Maßnahmen beschlossen.",
     "history": [
+      {
+        "date": "2024-06-10",
+        "type": "vote",
+        "title": "Schulwegpläne TG-Grundschule/Anton-Vizthum abgelehnt",
+        "text": "Der Stadtrat lehnt mit 11:7 den Antrag ab, für die zwei Grundschulen Schulwegpläne erstellen zu lassen.",
+        "sessionId": "sr_20240610",
+        "voteId": "sr_20240610_08"
+      },
+      {
+        "date": "2024-07-15",
+        "type": "vote",
+        "title": "Münchener Straße – zusätzliche Schulweg-Ampel",
+        "text": "Einstimmig: Zusätzliche Fußgängerampel auf der Münchener Straße zur Schulwegsicherung; Verwaltung prüft parallel die Verlegung der bestehenden LSA.",
+        "sessionId": "bpu_20240715",
+        "voteId": "bpu_20240715_01"
+      },
       {
         "date": "2025-09-08",
         "type": "committee",
@@ -615,6 +679,13 @@
     "summary": "Die historischen Wachbaracken des Stalag VII A – eines der größten alliierten Kriegsgefangenenlager des Zweiten Weltkriegs bei Moosburg – sollen dauerhaft erhalten werden. Stadt und Landkreis Freising schließen eine Zweckvereinbarung zum gemeinsamen Erhalt der Bausubstanz.",
     "history": [
       {
+        "date": "2024-04-22",
+        "type": "milestone",
+        "title": "Dokumentation Wachbaracken vorgestellt",
+        "text": "Die historische Dokumentation der Wachbaracken des Stalag VII A wird dem Stadtrat als Grundlage für die weitere denkmalgerechte Sicherung präsentiert.",
+        "sessionId": "sr_20240422"
+      },
+      {
         "date": "2024-12-09",
         "type": "vote",
         "title": "Förderantrag Stalag Moosburg e.V.",
@@ -642,30 +713,61 @@
   },
   {
     "id": "t15",
-    "title": "Photovoltaik-Freiflächenanlage Kuttenweide",
+    "title": "Energie & Klimawende",
     "tags": [
       "energy",
-      "infrastructure",
-      "building"
+      "infrastructure"
     ],
     "image": null,
-    "summary": "Die Stadt stellt einen Bebauungsplan für eine Freiflächen-Photovoltaikanlage am Standort Kuttenweide auf. Im Parallelverfahren wird der Flächennutzungsplan angepasst. Der Vorhabenträger trägt die Planungskosten via städtebaulichem Vertrag.",
+    "summary": "Moosburgs Schritte hin zu einer klimaneutralen Versorgung: Stromausschreibung mit 100 % Ökostrom, kommunale Wärmeplanung als strategische Grundlage, einzelne PV-Freiflächenanlagen und Stellungnahmen zum Windenergie-Steuerungskonzept des Regionalplans München.",
     "history": [
+      {
+        "date": "2024-05-06",
+        "type": "vote",
+        "title": "Stellungnahme Regionalplan Windenergie",
+        "text": "Der Stadtrat nimmt das Steuerungskonzept Windenergie des Regionalplans München zur Kenntnis (18:4); empfiehlt eine Windvorrangfläche in der Region Kirchamper.",
+        "sessionId": "sr_20240506",
+        "voteId": "sr_20240506_02"
+      },
+      {
+        "date": "2024-07-01",
+        "type": "vote",
+        "title": "Kommunale Wärmeplanung – Zwischenergebnis",
+        "text": "Stadtrat nimmt den Zwischenstand der kommunalen Wärmeplanung einstimmig zur Kenntnis.",
+        "sessionId": "sr_20240701",
+        "voteId": "sr_20240701_01"
+      },
       {
         "date": "2025-02-10",
         "type": "vote",
-        "title": "Aufstellungsbeschluss B-Plan",
-        "text": "Der Stadtrat beschließt einstimmig die Aufstellung des Bebauungsplans „SO Freiflächen-PV-Anlage Kuttenweide“ im Parallelverfahren mit der Änderung des Flächennutzungsplans.",
+        "title": "PV Kuttenweide – Aufstellungsbeschluss B-Plan",
+        "text": "Einstimmig: Aufstellung des B-Plans \"SO Freiflächen-PV-Anlage Kuttenweide\" im Parallelverfahren mit dem Flächennutzungsplan.",
         "sessionId": "sr_20250210",
         "voteId": "sr_20250210_04"
       },
       {
         "date": "2025-02-10",
         "type": "vote",
-        "title": "Städtebaulicher Vertrag",
-        "text": "Der Bürgermeister wird ermächtigt, mit dem Vorhabenträger einen städtebaulichen Vertrag abzuschließen. Der Investor trägt sämtliche Planungskosten.",
+        "title": "PV Kuttenweide – Städtebaulicher Vertrag",
+        "text": "Einstimmig: Bürgermeister ermächtigt, mit dem Vorhabenträger einen städtebaulichen Vertrag abzuschließen.",
         "sessionId": "sr_20250210",
         "voteId": "sr_20250210_05"
+      },
+      {
+        "date": "2025-02-24",
+        "type": "vote",
+        "title": "Strom-Ausschreibung – 100 % Ökostrom",
+        "text": "Variante 2 (100 % Ökostrom ohne Neuanlagenquote) wird beschlossen; Variante 1 mit Neuanlagenquote wird abgelehnt (8:12).",
+        "sessionId": "sr_20250224",
+        "voteId": "sr_20250224_05"
+      },
+      {
+        "date": "2025-06-23",
+        "type": "vote",
+        "title": "Kommunale Wärmeplanung – Abschlussbericht",
+        "text": "Stadtrat anerkennt den Abschlussbericht der kommunalen Wärmeplanung als strategische Grundlage für Energie- und Infrastrukturentscheidungen.",
+        "sessionId": "sr_20250623",
+        "voteId": "sr_20250623_01"
       }
     ]
   },
@@ -746,6 +848,70 @@
         "text": "Kostenberechnung und Planung mit Gesamtkosten 3.988.000 € einstimmig zustimmend zur Kenntnis genommen.",
         "sessionId": "sr_20250324",
         "voteId": "sr_20250324_07"
+      }
+    ]
+  },
+  {
+    "id": "t18",
+    "title": "Gewerbegebiet Degernpoint",
+    "tags": [
+      "building",
+      "infrastructure"
+    ],
+    "image": null,
+    "summary": "Erweiterung und Anpassung des Gewerbegebiets Degernpoint im Norden Moosburgs: Aufstellung und Satzungsbeschluss für \"Degernpoint Nordost II\" (B-Plan 80) sowie 4. Änderung des bestehenden B-Plans Nr. 50 mit flexiblerer Parzellierung.",
+    "history": [
+      {
+        "date": "2024-02-19",
+        "type": "vote",
+        "title": "B-Plan Nr. 80 \"Degernpoint Nordost II\" – Stellungnahmen abgewogen",
+        "text": "15 Einzelabstimmungen einstimmig (21:0); der Entwurf geht in die erneute Auslegung.",
+        "sessionId": "sr_20240219",
+        "voteId": "sr_20240219_02"
+      },
+      {
+        "date": "2024-06-17",
+        "type": "vote",
+        "title": "B-Plan Nr. 80 – Satzungs- und Feststellungsbeschluss",
+        "text": "Einstimmig: 16. Änderung des Flächennutzungsplans und Bebauungsplan Nr. 80 als Satzung beschlossen.",
+        "sessionId": "sr_20240617",
+        "voteId": "sr_20240617_04"
+      },
+      {
+        "date": "2025-01-20",
+        "type": "vote",
+        "title": "4. Änderung B-Plan Nr. 50 – Aufstellungsbeschluss",
+        "text": "Einstimmig: Aufstellungsbeschluss mit flexibler Parzellierung für Handwerk/Gewerbe; SWM-Umspannwerk eingeplant.",
+        "sessionId": "sr_20250120",
+        "voteId": "sr_20250120_05"
+      }
+    ]
+  },
+  {
+    "id": "t19",
+    "title": "DAV Kletter- und Boulderhalle",
+    "tags": [
+      "sports",
+      "building"
+    ],
+    "image": null,
+    "summary": "Neubau einer Kletter- und Boulderhalle des Deutschen Alpenvereins (Sektion Moosburg) an der Stadtwaldstraße 115. Die Stadt unterstützt das Projekt mit einem Zuschuss von 20 % der förderfähigen Baukosten und erteilte das gemeindliche Einvernehmen.",
+    "history": [
+      {
+        "date": "2024-07-15",
+        "type": "vote",
+        "title": "Einvernehmen für Kletter-/Boulderhalle",
+        "text": "Einstimmig: Bauausschuss erteilt das gemeindliche Einvernehmen für den Neubau an der Stadtwaldstraße 115.",
+        "sessionId": "bpu_20240715",
+        "voteId": "bpu_20240715_10"
+      },
+      {
+        "date": "2024-11-18",
+        "type": "vote",
+        "title": "Zuschuss DAV Kletter-/Boulderhalle",
+        "text": "Einstimmig: Stadt unterstützt DAV-Sektion mit 20 % der förderfähigen Baukosten (max. ca. 292.000 €).",
+        "sessionId": "sr_20241118",
+        "voteId": "sr_20241118_04"
       }
     ]
   }

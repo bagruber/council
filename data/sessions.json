@@ -2449,5 +2449,747 @@
         "type": "formal"
       }
     ]
+  },
+  {
+    "id": "sr_20240219",
+    "date": "2024-02-19",
+    "type": "stadtrat",
+    "title": "3. Stadtratssitzung – Februar 2024",
+    "absent": [
+      "stanglmaier",
+      "becher_a",
+      "becher_j",
+      "tristl"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung Niederschrift StR 15.01.2024",
+        "voteId": "sr_20240219_01"
+      },
+      {
+        "number": 4,
+        "title": "Bauleitplanung Nr. 80 \"Degernpoint Nordost II\" – Aufstellung (15 Stellungnahmen)",
+        "topicId": "t18",
+        "voteId": "sr_20240219_02"
+      },
+      {
+        "number": 5,
+        "title": "Erstaufforstungserlaubnis Pfrombach",
+        "voteId": "sr_20240219_03"
+      },
+      {
+        "number": 6,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20240304",
+    "date": "2024-03-04",
+    "type": "stadtrat",
+    "title": "4. Stadtratssitzung – März 2024",
+    "absent": [
+      "beubl",
+      "weber"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung Niederschriften (StR 18.12.2023, 01.02.2024)",
+        "voteId": "sr_20240304_01"
+      },
+      {
+        "number": 4,
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" – Abwägung Stellungnahmen (16 Sub-Voten)",
+        "voteId": "sr_20240304_02"
+      },
+      {
+        "number": "4.17",
+        "title": "B-Plan Nr. 65 \"Aich Kirchfeldstraße\" – Satzungsbeschluss (15:7)",
+        "voteId": "sr_20240304_03"
+      },
+      {
+        "number": "5.1",
+        "title": "Europawahl 2024 – Wahlhelferbonus (abgelehnt)",
+        "voteId": "sr_20240304_04"
+      },
+      {
+        "number": "5.2",
+        "title": "Europawahl 2024 – Erfrischungsgeld 40 €",
+        "voteId": "sr_20240304_05"
+      },
+      {
+        "number": 6,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "bpu_20240314",
+    "date": "2024-03-14",
+    "type": "bpu",
+    "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – März 2024",
+    "absent": [
+      "stanglmaier",
+      "linz_karin"
+    ],
+    "substitutes": [
+      {
+        "member": "beubl",
+        "substitute": "pschorr"
+      }
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Bauleitplanung Nr. 56 \"Unteres Gereut\" – Überprüfung abgelehnt",
+        "voteId": "bpu_20240314_01"
+      },
+      {
+        "number": "4.1",
+        "title": "Dachgeschoss-Ausbau Bergstr. 27 Pfrombach",
+        "voteId": "bpu_20240314_02"
+      },
+      {
+        "number": "4.2",
+        "title": "Doppelhäuser Thalbach Str. 108",
+        "voteId": "bpu_20240314_03"
+      },
+      {
+        "number": "4.3",
+        "title": "Dachgeschoss-Ausbau Fasanenstr. 7",
+        "voteId": "bpu_20240314_04"
+      },
+      {
+        "number": "4.4a",
+        "title": "Arbeitnehmerwohnheim Sudetenlandstr. 9 – Einvernehmen erteilt (abgelehnt 1:9)",
+        "voteId": "bpu_20240314_05"
+      },
+      {
+        "number": "4.4b",
+        "title": "Arbeitnehmerwohnheim Sudetenlandstr. 9 – Einvernehmen verweigert (9:1)",
+        "voteId": "bpu_20240314_06"
+      },
+      {
+        "number": "4.5",
+        "title": "Wohngebäude St.-Georg-Str. 26 Aich",
+        "voteId": "bpu_20240314_07"
+      },
+      {
+        "number": "4.6",
+        "title": "Mehrfamilienhaus Mainburger Str. 5 – Einvernehmen verweigert (10:0)",
+        "voteId": "bpu_20240314_08"
+      },
+      {
+        "number": 5,
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20240318",
+    "date": "2024-03-18",
+    "type": "stadtrat",
+    "title": "5. Stadtratssitzung – März 2024",
+    "absent": [
+      "beubl",
+      "von_pressentin",
+      "weber"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung Niederschrift StR 19.02.2024",
+        "voteId": "sr_20240318_01"
+      },
+      {
+        "number": 4,
+        "title": "B-Plan Nr. 77 \"Rockermaier Areal\" – Abwägung Stellungnahmen (21 Sub-Voten)",
+        "topicId": "t5",
+        "voteId": "sr_20240318_02"
+      },
+      {
+        "number": "4.22a",
+        "title": "Rockermaier – Erneute Auslegung",
+        "topicId": "t5",
+        "voteId": "sr_20240318_03"
+      },
+      {
+        "number": "4.22b",
+        "title": "Rockermaier – Planänderungen (Energie, Solar, Dachform)",
+        "topicId": "t5",
+        "voteId": "sr_20240318_04"
+      },
+      {
+        "number": 5,
+        "title": "Verkaufsoffener Sonntag 14.04.2024 (21:1)",
+        "voteId": "sr_20240318_05"
+      },
+      {
+        "number": 6,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20240408",
+    "date": "2024-04-08",
+    "type": "stadtrat",
+    "title": "6. Stadtratssitzung – April 2024",
+    "absent": [
+      "stanglmaier",
+      "kaestl"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung Niederschriften (StR 04.03., 18.03.2024)",
+        "voteId": "sr_20240408_01"
+      },
+      {
+        "number": 4,
+        "title": "Bericht Stadtgärtnerei – Zustand Stadtwald",
+        "type": "discussion"
+      },
+      {
+        "number": "5.1",
+        "title": "Altersteilzeit-Verzicht (abgelehnt 3:20)",
+        "voteId": "sr_20240408_02"
+      },
+      {
+        "number": "5.2",
+        "title": "Altersteilzeit gesetzlich mit Bedingungen (20:3)",
+        "voteId": "sr_20240408_03"
+      },
+      {
+        "number": 6,
+        "title": "Einfamilienhaus Grünseiboldsdorf 11",
+        "voteId": "sr_20240408_04"
+      },
+      {
+        "number": 7,
+        "title": "Vorlage Jahresrechnung 2023",
+        "topicId": "t7",
+        "type": "discussion"
+      },
+      {
+        "number": 8,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20240422",
+    "date": "2024-04-22",
+    "type": "stadtrat",
+    "title": "7. Stadtratssitzung – April 2024",
+    "absent": [
+      "fincke",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung Niederschriften",
+        "voteId": "sr_20240422_01"
+      },
+      {
+        "number": 4,
+        "title": "Dokumentation Wachbaracken Stalag VII A – Präsentation",
+        "topicId": "t14",
+        "type": "discussion"
+      },
+      {
+        "number": 5,
+        "title": "Berichtigung B-Plan Nr. 65 \"Aich-Kirchfeldstraße\" – Datum (15:7)",
+        "voteId": "sr_20240422_02"
+      },
+      {
+        "number": 6,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20240506",
+    "date": "2024-05-06",
+    "type": "stadtrat",
+    "title": "8. Stadtratssitzung – Mai 2024",
+    "absent": [
+      "stanglmaier",
+      "grundner"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung Niederschrift BPU 14.03.2024",
+        "voteId": "sr_20240506_01"
+      },
+      {
+        "number": 4,
+        "title": "Regionalplan München – Windenergie-Steuerungskonzept",
+        "topicId": "t15",
+        "voteId": "sr_20240506_02"
+      },
+      {
+        "number": "5.1",
+        "title": "Feststellung Jahresrechnung 2022",
+        "topicId": "t7",
+        "voteId": "sr_20240506_03"
+      },
+      {
+        "number": "5.2",
+        "title": "Entlastung zur Jahresrechnung 2022",
+        "topicId": "t7",
+        "voteId": "sr_20240506_04"
+      },
+      {
+        "number": 6,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20240610",
+    "date": "2024-06-10",
+    "type": "stadtrat",
+    "title": "9. Stadtratssitzung – Juni 2024",
+    "absent": [
+      "hadersdorfer",
+      "stanglmaier",
+      "becher_a",
+      "becher_j",
+      "beubl",
+      "heinz",
+      "welter"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung Niederschriften (StR 08.04. + 22.04.2024)",
+        "voteId": "sr_20240610_01"
+      },
+      {
+        "number": "4.1",
+        "title": "Arbeitsmarktzulage Erzieher/Kinderpfleger 120€/Monat (15:3)",
+        "voteId": "sr_20240610_02"
+      },
+      {
+        "number": "4.2",
+        "title": "Arbeitsmarktzulage – Zuschuss freie Träger",
+        "voteId": "sr_20240610_03"
+      },
+      {
+        "number": "5.1",
+        "title": "Kindergartengebühren – Erhöhung um 30€ (10:8)",
+        "voteId": "sr_20240610_04"
+      },
+      {
+        "number": "5.2",
+        "title": "Geschwisterermäßigung abschaffen (abgelehnt 7:11)",
+        "voteId": "sr_20240610_05"
+      },
+      {
+        "number": "5.3",
+        "title": "Verwaltungsgebühr Neuanmeldung 10€ (17:1)",
+        "voteId": "sr_20240610_06"
+      },
+      {
+        "number": "5.5",
+        "title": "Kindergartensatzung Schlussabstimmung (15:3)",
+        "voteId": "sr_20240610_07"
+      },
+      {
+        "number": "6.1",
+        "title": "Schulwegpläne TG/Anton-Vizthum (abgelehnt 11:7)",
+        "topicId": "t8",
+        "voteId": "sr_20240610_08"
+      },
+      {
+        "number": "6.2",
+        "title": "Tempo-30-Zone Banater/Neustadt-/Sudetenlandstr./Neue Industriestr. (13:5)",
+        "topicId": "t4",
+        "voteId": "sr_20240610_09"
+      },
+      {
+        "number": "8.1",
+        "title": "AWO Küche + Einzelwohnen – Machbarkeitsstudie",
+        "voteId": "sr_20240610_10"
+      },
+      {
+        "number": "8.2",
+        "title": "AWO – Abweichung Abstandsflächensatzung",
+        "voteId": "sr_20240610_11"
+      },
+      {
+        "number": 9,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20240617",
+    "date": "2024-06-17",
+    "type": "stadtrat",
+    "title": "10. Stadtratssitzung – Juni 2024",
+    "absent": [
+      "hadersdorfer",
+      "stanglmaier",
+      "beubl",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung Niederschrift StR 06.05.2024",
+        "voteId": "sr_20240617_01"
+      },
+      {
+        "number": 4,
+        "title": "Jugendsozialarbeit TG-Grundschule – Aufstockung auf 100%",
+        "topicId": "t6",
+        "voteId": "sr_20240617_02"
+      },
+      {
+        "number": 5,
+        "title": "B-Plan Nr. 80 \"Degernpoint Nordost II\" – Abwägung (11 Stellungnahmen)",
+        "topicId": "t18",
+        "voteId": "sr_20240617_03"
+      },
+      {
+        "number": "5.12",
+        "title": "B-Plan Nr. 80 – Satzungs- und Feststellungsbeschluss",
+        "topicId": "t18",
+        "voteId": "sr_20240617_04"
+      },
+      {
+        "number": "6.1",
+        "title": "Rockermaier-Straßenname – Saliterstraße",
+        "topicId": "t5",
+        "voteId": "sr_20240617_05"
+      },
+      {
+        "number": "6.2",
+        "title": "Rockermaier-Straßenname – Weihmühlstraße (Anbindung)",
+        "topicId": "t5",
+        "voteId": "sr_20240617_06"
+      },
+      {
+        "number": "6.3",
+        "title": "Rockermaier-Straßenname – Graf-Burkhard-Straße (12:8)",
+        "topicId": "t5",
+        "voteId": "sr_20240617_07"
+      },
+      {
+        "number": "7.1",
+        "title": "B-Plan \"MI Moos\" – Aufstellung",
+        "voteId": "sr_20240617_08"
+      },
+      {
+        "number": "7.2",
+        "title": "B-Plan \"MI Moos\" – Städtebaulicher Vertrag",
+        "voteId": "sr_20240617_09"
+      },
+      {
+        "number": 8,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20240701",
+    "date": "2024-07-01",
+    "type": "stadtrat",
+    "title": "11. Stadtratssitzung – Juli 2024",
+    "absent": [
+      "fincke",
+      "heinz",
+      "kaestl",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung Niederschrift StR 10.06.2024 (vertagt)",
+        "type": "discussion"
+      },
+      {
+        "number": 4,
+        "title": "Kommunale Wärmeplanung – Zwischenergebnis",
+        "topicId": "t15",
+        "voteId": "sr_20240701_01"
+      },
+      {
+        "number": "5.1",
+        "title": "Kläranlage GmbH – Jahresabschluss 2023",
+        "voteId": "sr_20240701_02"
+      },
+      {
+        "number": "5.2",
+        "title": "Kläranlage GmbH – Entlastung Aufsichtsrat 2023",
+        "voteId": "sr_20240701_03"
+      },
+      {
+        "number": 6,
+        "title": "Finanzbericht 30.06.2024",
+        "type": "discussion"
+      },
+      {
+        "number": 7,
+        "title": "Überplanmäßige Ausgaben (635.266,42 €)",
+        "topicId": "t7",
+        "voteId": "sr_20240701_04"
+      },
+      {
+        "number": 8,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "bpu_20240715",
+    "date": "2024-07-15",
+    "type": "bpu",
+    "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – Juli 2024",
+    "substitutes": [
+      {
+        "member": "stanglmaier",
+        "substitute": "becher_j"
+      }
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3.1a",
+        "title": "Münchener Straße – zusätzliche Ampel für Schulweg",
+        "topicId": "t8",
+        "voteId": "bpu_20240715_01"
+      },
+      {
+        "number": "3.1b",
+        "title": "Münchener Straße – Verlegung bestehende LSA prüfen",
+        "topicId": "t8",
+        "voteId": "bpu_20240715_02"
+      },
+      {
+        "number": "4.1",
+        "title": "Kindergarten Erzgebirgstraße – Einvernehmen",
+        "voteId": "bpu_20240715_03"
+      },
+      {
+        "number": 5,
+        "title": "Sonderlandeplatz \"Auf der Kippe\" – Änderung Genehmigung",
+        "voteId": "bpu_20240715_04"
+      },
+      {
+        "number": "6.2",
+        "title": "Rockermaier – Tiefgarage 96 WE (7:4)",
+        "topicId": "t5",
+        "voteId": "bpu_20240715_05"
+      },
+      {
+        "number": "6.3",
+        "title": "Rockermaier – MFH 3/4/5 (36 WE) (7:4)",
+        "topicId": "t5",
+        "voteId": "bpu_20240715_06"
+      },
+      {
+        "number": "6.4",
+        "title": "Rockermaier – MFH 6 (18 WE) (7:4)",
+        "topicId": "t5",
+        "voteId": "bpu_20240715_07"
+      },
+      {
+        "number": "6.5",
+        "title": "Rockermaier – MFH 7 (15 WE) (7:4)",
+        "topicId": "t5",
+        "voteId": "bpu_20240715_08"
+      },
+      {
+        "number": "6.6",
+        "title": "Rockermaier – MFH 8+9 (27 WE) (7:4)",
+        "topicId": "t5",
+        "voteId": "bpu_20240715_09"
+      },
+      {
+        "number": "6.7",
+        "title": "DAV Kletter- und Boulderhalle Stadtwaldstr. 115",
+        "topicId": "t19",
+        "voteId": "bpu_20240715_10"
+      },
+      {
+        "number": "6.8",
+        "title": "Ferienhaus Langer Weg 3",
+        "voteId": "bpu_20240715_11"
+      },
+      {
+        "number": 7,
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20240722",
+    "date": "2024-07-22",
+    "type": "stadtrat",
+    "title": "12. Stadtratssitzung – Juli 2024",
+    "absent": [
+      "stanglmaier",
+      "heinz",
+      "tristl"
+    ],
+    "agenda": [
+      {
+        "number": 1,
+        "title": "Mitteilungen",
+        "type": "formal"
+      },
+      {
+        "number": 2,
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": 3,
+        "title": "Genehmigung Niederschriften (StR 10.06. + 01.07.2024)",
+        "voteId": "sr_20240722_01"
+      },
+      {
+        "number": "4.1",
+        "title": "Eisstadion – Gebühren Vereinsnutzung 2024/2025 (17:4)",
+        "voteId": "sr_20240722_02"
+      },
+      {
+        "number": "4.2",
+        "title": "Eisstadion – Benutzungs- und Gebührensatzung",
+        "voteId": "sr_20240722_03"
+      },
+      {
+        "number": 5,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   }
 ]
