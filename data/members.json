@@ -72,10 +72,8 @@
     "fw",
     "fresh",
     "linke",
-    "oedp",
-    "fdp",
-    "afd",
     "spd",
+    "afd",
     "csu"
   ],
   "members": [
@@ -159,8 +157,16 @@
       "from": "2026-05-01",
       "to": null,
       "profile": {
-        "pronouns": "er/ihn"
-      }
+        "pronouns": "er/ihn",
+        "titles": [
+          {
+            "title": "Erster Bürgermeister",
+            "from": "2026-05-01",
+            "to": null
+          }
+        ]
+      },
+      "title": "Erster Bürgermeister"
     },
     {
       "id": "linz_karin",
@@ -218,7 +224,7 @@
       "role": "councillor",
       "from": "2014-05-01",
       "to": null,
-      "title": "Zweiter Bürgermeister",
+      "title": "Ehrenamtsreferent",
       "partyHistory": [
         {
           "party": "fw",
@@ -237,7 +243,7 @@
           {
             "title": "Zweiter Bürgermeister",
             "from": "2020-05",
-            "to": null
+            "to": "2026-04-30"
           },
           {
             "title": "Ehrenamtsreferent",
@@ -559,8 +565,16 @@
         "pronouns": "er/ihn",
         "contact": {
           "email": "reinhard.lauterbach@fw-moosburg.de"
-        }
-      }
+        },
+        "titles": [
+          {
+            "title": "Zweiter Bürgermeister",
+            "from": "2026-05-01",
+            "to": null
+          }
+        ]
+      },
+      "title": "Zweiter Bürgermeister"
     },
     {
       "id": "reif",

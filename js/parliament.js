@@ -497,22 +497,38 @@ const VoteVis = (() => {
     });
   }
 
-  function isViceMayor(m) {
-    return !!(m && m.title && m.title.includes("Bürgermeister"));
+  // Check whether the member holds a "...Bürgermeister..." title on the given date.
+  // Falls back to top-level title when no history is available.
+  function isViceMayorAt(m, date) {
+    if (!m) return false;
+    const titles = m.profile && m.profile.titles;
+    if (titles && titles.length) {
+      for (const t of titles) {
+        if (!t.title || !t.title.includes("Bürgermeister")) continue;
+        if (t.from && date < t.from) continue;
+        if (t.to) {
+          const toMax = t.to.length === 7 ? t.to + "-99" : t.to;
+          if (date > toMax) continue;
+        }
+        return true;
+      }
+      return false;
+    }
+    return !!(m.title && m.title.includes("Bürgermeister"));
   }
 
   function memberLabel(m) {
     return m.name || `${m.firstName || ""} ${m.lastName || ""}`.trim();
   }
 
-  function makeEntry(m, voteVal, partyMap) {
+  function makeEntry(m, voteVal, partyMap, date) {
     return {
       id:    m.id,
       name:  memberLabel(m),
       title: m.title || "",
       party: partyMap[m.party],
       vote:  voteVal || "unknown",
-      hasStar: m.role === "mayor" || isViceMayor(m),
+      hasStar: m.role === "mayor" || isViceMayorAt(m, date),
     };
   }
 
@@ -541,7 +557,7 @@ const VoteVis = (() => {
     // Chair (if defined, e.g. mayor)
     if (cfg.chair) {
       const m = memberMap[cfg.chair];
-      if (m) mayor = makeEntry(m, voteRes[m.id], partyMap);
+      if (m) mayor = makeEntry(m, voteRes[m.id], partyMap, vote.date);
     }
 
     // Committees may have vice-chairs flanking the chair. Place them at the
@@ -573,7 +589,7 @@ const VoteVis = (() => {
       }
       if (!m) { seats.push(null); return; }
       voteVal = voteRes[m.id] || "unknown";
-      seats.push(makeEntry(m, voteVal, partyMap));
+      seats.push(makeEntry(m, voteVal, partyMap, vote.date));
     });
 
     return { seats, mayor, rows: cfg.rows || body.rows };
@@ -590,7 +606,7 @@ const VoteVis = (() => {
     let mayor = null;
     Object.keys(voteRes).forEach(id => {
       const m = memberMap[id]; if (!m) return;
-      const entry = makeEntry(m, voteRes[id], partyMap);
+      const entry = makeEntry(m, voteRes[id], partyMap, vote.date);
       if (m.role === "mayor") mayor = entry;
       else seats.push(entry);
     });
