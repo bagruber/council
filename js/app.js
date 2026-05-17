@@ -136,14 +136,17 @@ const SHOW_PRONOUNS = true;
   tags.forEach(tag => {
     const pill = document.createElement("button");
     pill.className = "tag-pill";
-    pill.textContent = tag.name;
+    pill.dataset.tagId = tag.id;
+    if (tag.color) pill.style.setProperty("--cat-color", tag.color);
+    pill.innerHTML = (tag.icon ? `<span class="material-icons">${tag.icon}</span>` : "")
+                   + `<span>${tag.name}</span>`;
     pill.addEventListener("click", () => {
       pill.classList.toggle("active");
       const active = tagBar.querySelectorAll(".tag-pill.active");
       if (active.length === 0) {
         navigate("/");
       } else {
-        const activeIds = Array.from(active).map(el => tags.find(t => t.name === el.textContent).id);
+        const activeIds = Array.from(active).map(el => el.dataset.tagId);
         showFilteredTopics(activeIds);
       }
     });
@@ -278,6 +281,14 @@ const SHOW_PRONOUNS = true;
 
   window.addEventListener("hashchange", route);
 
+  // Track the most recent non-member hash so the back-link on a member profile
+  // can return to where the user actually came from (Gremien, Topic, Session, …).
+  let lastListHash = "/";
+  window.addEventListener("hashchange", () => {
+    const h = window.location.hash.slice(1) || "/";
+    if (!h.startsWith("/member/")) lastListHash = h;
+  });
+
   // -- Views --
 
   function renderHome() {
@@ -301,6 +312,14 @@ const SHOW_PRONOUNS = true;
     renderTopicList(filtered);
   }
 
+  function categoryChip(tid) {
+    const t = tagMap[tid];
+    if (!t) return `<span class="cat-chip">${tid}</span>`;
+    const color = t.color || "#888";
+    const icon = t.icon ? `<span class="material-icons cat-chip-icon">${t.icon}</span>` : "";
+    return `<span class="cat-chip" style="--cat-color:${color}">${icon}<span>${t.name}</span></span>`;
+  }
+
   function renderTopicList(list) {
     const wrap = document.createElement("div");
     wrap.className = "topic-list";
@@ -309,11 +328,9 @@ const SHOW_PRONOUNS = true;
       card.className = "topic-card";
       card.addEventListener("click", () => navigate("/topic/" + topic.id));
       card.innerHTML = `
+        <div class="topic-categories">${(topic.tags || []).map(categoryChip).join("")}</div>
         <h3>${topic.title}</h3>
-        <div class="topic-summary">${topic.summary}</div>
-        <div class="topic-tags">
-          ${topic.tags.map(tid => `<span class="tag-sm">${tagMap[tid] ? tagMap[tid].name : tid}</span>`).join("")}
-        </div>`;
+        <div class="topic-summary">${topic.summary}</div>`;
       wrap.appendChild(card);
     });
     main.appendChild(wrap);
@@ -368,7 +385,7 @@ const SHOW_PRONOUNS = true;
     header.innerHTML = `
       <h1>${topic.title}</h1>
       <div class="topic-summary">${topic.summary}</div>
-      <div class="topic-tags">${topic.tags.map(tid => `<span class="tag-sm">${tagMap[tid] ? tagMap[tid].name : tid}</span>`).join("")}</div>`;
+      <div class="topic-tags">${(topic.tags || []).map(categoryChip).join("")}</div>`;
     main.appendChild(header);
 
     if (topic.image) {
@@ -1017,18 +1034,18 @@ const SHOW_PRONOUNS = true;
 
     const back = document.createElement("a");
     back.className = "back-link";
-    back.href = "#/";
-    back.innerHTML = '<span class="material-icons">arrow_back</span> Gremien';
+    // Return to wherever the user came from (Gremien list, Topic, Session, …)
+    const backHash = lastListHash || "/gremien";
+    back.href = "#" + backHash;
+    const backLabel = backHash === "/gremien" ? "Gremien"
+                    : backHash.startsWith("/topic/") ? "Thema"
+                    : backHash.startsWith("/session/") ? "Sitzung"
+                    : "Übersicht";
+    back.innerHTML = `<span class="material-icons">arrow_back</span> ${backLabel}`;
     back.addEventListener("click", e => {
       e.preventDefault();
-      if (window.history.length > 1) {
-        gremienRendered = false;
-        window.history.back();
-      } else {
-        gremienRendered = false;
-        window.location.hash = "/";
-        renderGremien();
-      }
+      gremienRendered = false;
+      window.location.hash = backHash;
     });
     wrap.appendChild(back);
 
