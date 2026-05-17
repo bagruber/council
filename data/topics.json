@@ -49,8 +49,8 @@
     "id": "t2",
     "title": "Sanierung Bahnhof Moosburg",
     "tags": [
-      "infrastructure",
-      "innercity"
+      "building",
+      "infrastructure"
     ],
     "image": null,
     "summary": "Seit dem Erwerb des Bahnhofsgebäudes 2019 wird über die Zukunft des Moosburger Bahnhofs diskutiert. Varianten reichen von Pinselsanierung über Investorenmodelle bis zu Abriss und Container.",
@@ -87,8 +87,7 @@
     "id": "t3",
     "title": "Parksituation Auf dem Plan",
     "tags": [
-      "traffic",
-      "innercity"
+      "mobility"
     ],
     "image": null,
     "summary": "Nach der Umgestaltung des Platzes Auf dem Plan mit Mitteln der Städtebauförderung (ca. 2,4 Mio Euro) kam es zu kontroversen Diskussionen über Falschparker und die Anzahl der Parkplätze.",
@@ -155,8 +154,7 @@
     "id": "t4",
     "title": "Verkehrsberuhigung Innenstadt",
     "tags": [
-      "traffic",
-      "innercity"
+      "mobility"
     ],
     "image": null,
     "summary": "Auf Antrag von SPD und Grünen werden Tempo-20- und Tempo-30-Zonen in der Innenstadt ausgeweitet. Auch die Bahnhofstraße soll verkehrlich überprüft werden.",
@@ -257,8 +255,8 @@
     "id": "t6",
     "title": "Theresia-Gerhardinger-Grundschule",
     "tags": [
-      "building",
-      "budget"
+      "education",
+      "building"
     ],
     "image": null,
     "summary": "Die Theresia-Gerhardinger-Grundschule im Norden Moosburgs wird umfassend erweitert und generalsaniert (geschätzt 33 Mio. €). Parallel werden Begleitthemen wie die Jugendsozialarbeit gestärkt und eine Kostenkommission begleitet das Projekt.",
@@ -406,7 +404,8 @@
     "id": "t8",
     "title": "Schulwegsicherheit",
     "tags": [
-      "traffic"
+      "mobility",
+      "education"
     ],
     "image": null,
     "summary": "Auf Antrag von Grünen und Eltern werden Gehwege, Radschutzstreifen und Ampelschaltungen an der Industriestraße verbessert. Am Schulzentrum Süd werden weitere Maßnahmen beschlossen.",
@@ -479,8 +478,7 @@
     "id": "t9",
     "title": "Kreisverkehr Landshuter Straße",
     "tags": [
-      "traffic",
-      "infrastructure"
+      "mobility"
     ],
     "image": null,
     "summary": "Am Knoten Landshuter Straße/Stadtwaldstraße wird ein Mini-Kreisverkehr geplant. Geschätzte Kosten ca. 230.000 €, Bauzeit 2–3 Monate, Realisierung frühestens Frühjahr 2028.",
@@ -509,7 +507,7 @@
     "id": "t10",
     "title": "Wirtschaftsförderung Moosburg",
     "tags": [
-      "budget"
+      "economy"
     ],
     "image": null,
     "summary": "Der Stadtrat beschließt die Schaffung einer Vollzeitstelle für Wirtschaftsförderung sowie ein Budget von 30.000 € für Start-up-Förderung.",
@@ -586,8 +584,7 @@
     "id": "t12",
     "title": "Freibad",
     "tags": [
-      "infrastructure",
-      "budget"
+      "sports"
     ],
     "image": null,
     "summary": "Das städtische Freibad an der Stadtbadstraße. Sanierungsplanung, Bundesförderung sowie Anpassungen der Badegebühren.",
@@ -630,8 +627,6 @@
     "id": "t13",
     "title": "Sanierungsgebiet Innenstadt–Bahnhof",
     "tags": [
-      "innercity",
-      "infrastructure",
       "building"
     ],
     "image": null,
@@ -715,8 +710,8 @@
     "id": "t15",
     "title": "Energie & Klimawende",
     "tags": [
-      "energy",
-      "infrastructure"
+      "infrastructure",
+      "environment"
     ],
     "image": null,
     "summary": "Moosburgs Schritte hin zu einer klimaneutralen Versorgung: Stromausschreibung mit 100 % Ökostrom, kommunale Wärmeplanung als strategische Grundlage, einzelne PV-Freiflächenanlagen und Stellungnahmen zum Windenergie-Steuerungskonzept des Regionalplans München.",
@@ -775,8 +770,7 @@
     "id": "t16",
     "title": "Hallenbad",
     "tags": [
-      "sports",
-      "infrastructure"
+      "sports"
     ],
     "image": null,
     "summary": "Eröffnungsbetrieb des neuen Hallenbads. Öffnungszeiten, Tarife und Benutzungsordnung wurden festgelegt; immer wieder beantragte kostenlose Eintritte für Kinder in Ferienzeiten werden kontrovers diskutiert.",
@@ -827,8 +821,7 @@
     "id": "t17",
     "title": "Rathaus-Sanierung",
     "tags": [
-      "building",
-      "infrastructure"
+      "building"
     ],
     "image": null,
     "summary": "Mehrjähriges Sanierungsprojekt am historischen Rathaus: Fassade sowie 1. und 2. Obergeschoss in mehreren Bauabschnitten. Die Verwaltung wurde mit Planung und Kostenberechnung beauftragt.",
@@ -856,7 +849,7 @@
     "title": "Gewerbegebiet Degernpoint",
     "tags": [
       "building",
-      "infrastructure"
+      "economy"
     ],
     "image": null,
     "summary": "Erweiterung und Anpassung des Gewerbegebiets Degernpoint im Norden Moosburgs: Aufstellung und Satzungsbeschluss für \"Degernpoint Nordost II\" (B-Plan 80) sowie 4. Änderung des bestehenden B-Plans Nr. 50 mit flexiblerer Parzellierung.",

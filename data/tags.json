@@ -1,10 +1,62 @@
 [
-  { "id": "infrastructure", "name": "Infrastruktur" },
-  { "id": "traffic",        "name": "Verkehr" },
-  { "id": "building",       "name": "Bauen & Planen" },
-  { "id": "sports",         "name": "Sport & Vereine" },
-  { "id": "innercity",      "name": "Innenstadt" },
-  { "id": "budget",         "name": "Haushalt" },
-  { "id": "environment",    "name": "Umwelt & Energie" },
-  { "id": "culture",        "name": "Kultur & Soziales" }
+  {
+    "id": "mobility",
+    "name": "Mobilität & Verkehr",
+    "icon": "commute",
+    "color": "#5B9BD5"
+  },
+  {
+    "id": "building",
+    "name": "Bau & Planung",
+    "icon": "architecture",
+    "color": "#8B7355"
+  },
+  {
+    "id": "sports",
+    "name": "Sport & Vereine",
+    "icon": "sports",
+    "color": "#9B59B6"
+  },
+  {
+    "id": "culture",
+    "name": "Geschichte & Kultur",
+    "icon": "museum",
+    "color": "#C2185B"
+  },
+  {
+    "id": "environment",
+    "name": "Umwelt, Natur & Erholung",
+    "icon": "park",
+    "color": "#4CAF50"
+  },
+  {
+    "id": "education",
+    "name": "Bildung & Erziehung",
+    "icon": "school",
+    "color": "#F57C00"
+  },
+  {
+    "id": "social",
+    "name": "Gesundheit & Soziales",
+    "icon": "volunteer_activism",
+    "color": "#E91E63"
+  },
+  {
+    "id": "budget",
+    "name": "Haushalt & Finanzen",
+    "icon": "account_balance",
+    "color": "#00B4D8"
+  },
+  {
+    "id": "economy",
+    "name": "Wirtschaft & Marketing",
+    "icon": "storefront",
+    "color": "#F9A825"
+  },
+  {
+    "id": "infrastructure",
+    "name": "Sicherheit & Infrastruktur",
+    "icon": "shield",
+    "color": "#455A64"
+  }
 ]

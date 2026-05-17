@@ -1301,11 +1301,25 @@
     "date": "2025-12-08",
     "title": "Absperrbauwerk Amperüberleitungskanal",
     "text": "Der Bauausschuss stimmt dem Neubau des Absperrbauwerks des Amperüberleitungskanals an der Brücke UP05 sowie dem Rückbau der alten Wehranlage zu. Fertigstellung bis Frühjahr 2027.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 8,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "linz_kilian",
+        "marcus",
+        "reif",
+        "tristl"
+      ],
+      "no": [],
+      "absent": [
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "welter"
+      ]
     }
   },
   {
@@ -1315,11 +1329,25 @@
     "date": "2025-12-08",
     "title": "Ablehnung MFH Sternstraße 12",
     "text": "Der Bauausschuss verweigert das gemeindliche Einvernehmen. Der überdimensionierte Baukörper fügt sich nicht in die Umgebungsbebauung ein.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 8,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "linz_kilian",
+        "marcus",
+        "reif",
+        "tristl"
+      ],
+      "no": [],
+      "absent": [
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "welter"
+      ]
     }
   },
   {
@@ -1329,11 +1357,25 @@
     "date": "2025-12-08",
     "title": "Hackschnitzelheizung Berg 1",
     "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen für den Neubau einer Hackschnitzelheizung mit Spänebunker im Außenbereich.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 8,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "linz_kilian",
+        "marcus",
+        "reif",
+        "tristl"
+      ],
+      "no": [],
+      "absent": [
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "welter"
+      ]
     }
   },
   {
@@ -1343,11 +1385,25 @@
     "date": "2025-12-08",
     "title": "Doppelhäuser und EFH Tonsilweg 7",
     "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen für den Vorbescheid zum Neubau von 2 Doppelhäusern und einem Einfamilienhaus.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 8,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "linz_kilian",
+        "marcus",
+        "reif",
+        "tristl"
+      ],
+      "no": [],
+      "absent": [
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "welter"
+      ]
     }
   },
   {
@@ -1357,11 +1413,25 @@
     "date": "2025-12-08",
     "title": "Ablehnung MFH Landshuter Str. 6/8",
     "text": "Der Bauausschuss verweigert erneut das gemeindliche Einvernehmen. Das Maß der baulichen Nutzung fügt sich nicht in die Umgebung ein. Eine Klage wird geprüft.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 8,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "linz_kilian",
+        "marcus",
+        "reif",
+        "tristl"
+      ],
+      "no": [],
+      "absent": [
+        "hobmaier",
+        "kieninger",
+        "linz_karin",
+        "welter"
+      ]
     }
   },
   {
@@ -2124,11 +2194,25 @@
     "date": "2025-10-06",
     "title": "Genehmigung Niederschrift BPU 21.07.2025",
     "text": "Der Bauausschuss genehmigt den öffentlichen Teil der Niederschrift der Sitzung vom 21.07.2025.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "marcus",
+        "hobmaier",
+        "kieninger",
+        "reif",
+        "beibl",
+        "linz_kilian"
+      ],
+      "no": [],
+      "absent": [
+        "welter"
+      ]
     }
   },
   {
@@ -2138,11 +2222,25 @@
     "date": "2025-10-06",
     "title": "Lagerhalle Kochbauerstr. 1",
     "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen zum Neubau einer landwirtschaftlichen Lagerhalle.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "marcus",
+        "hobmaier",
+        "kieninger",
+        "reif",
+        "beibl",
+        "linz_kilian"
+      ],
+      "no": [],
+      "absent": [
+        "welter"
+      ]
     }
   },
   {
@@ -2152,11 +2250,25 @@
     "date": "2025-10-06",
     "title": "Ablehnung MFH Landshuter Str. 6/8",
     "text": "Der Bauausschuss verweigert das gemeindliche Einvernehmen. Das Maß der baulichen Nutzung fügt sich nicht in die Umgebung ein.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "marcus",
+        "hobmaier",
+        "kieninger",
+        "reif",
+        "beibl",
+        "linz_kilian"
+      ],
+      "no": [],
+      "absent": [
+        "welter"
+      ]
     }
   },
   {
@@ -2180,11 +2292,25 @@
     "date": "2025-10-06",
     "title": "Lagerhalle Kirchamper 8",
     "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen zum Neubau einer landwirtschaftlichen Lagerhalle.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "marcus",
+        "hobmaier",
+        "kieninger",
+        "reif",
+        "beibl",
+        "linz_kilian"
+      ],
+      "no": [],
+      "absent": [
+        "welter"
+      ]
     }
   },
   {
@@ -2194,11 +2320,25 @@
     "date": "2025-10-06",
     "title": "Stadthotel Weingraben 14",
     "text": "Der Bauausschuss erteilt das gemeindliche Einvernehmen zur Errichtung eines Stadthotels.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "marcus",
+        "hobmaier",
+        "kieninger",
+        "reif",
+        "beibl",
+        "linz_kilian"
+      ],
+      "no": [],
+      "absent": [
+        "welter"
+      ]
     }
   },
   {
@@ -2208,11 +2348,25 @@
     "date": "2025-10-06",
     "title": "Ablehnung MFH Mainburger Str. 5",
     "text": "Der Bauausschuss verweigert das gemeindliche Einvernehmen. Das LRA hatte die Ersetzung des Einvernehmens angekündigt.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "marcus",
+        "hobmaier",
+        "kieninger",
+        "reif",
+        "beibl",
+        "linz_kilian"
+      ],
+      "no": [],
+      "absent": [
+        "welter"
+      ]
     }
   },
   {

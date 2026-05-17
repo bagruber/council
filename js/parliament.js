@@ -516,8 +516,20 @@ const VoteVis = (() => {
     };
   }
 
+  // If body has multiple time-bound seatConfigs, pick the one active on `date`.
+  // Falls back to the top-level fields when no seatConfigs are present.
+  function activeBodyConfig(body, date) {
+    const configs = body.seatConfigs;
+    if (!configs || !configs.length) return body;
+    for (const c of configs) {
+      if ((!c.from || c.from <= date) && (!c.to || date <= c.to)) return c;
+    }
+    return body;
+  }
+
   // Build seats from a body definition with `seats: [{occupants:[...]}]`.
   function buildSeatsFromBody(body, vote, memberMap, partyMap) {
+    const cfg = activeBodyConfig(body, vote.date);
     const seats = [];
     let mayor = null;
 
@@ -527,12 +539,21 @@ const VoteVis = (() => {
     vote.results.absent.forEach(id => voteRes[id] = "absent");
 
     // Chair (if defined, e.g. mayor)
-    if (body.chair) {
-      const m = memberMap[body.chair];
+    if (cfg.chair) {
+      const m = memberMap[cfg.chair];
       if (m) mayor = makeEntry(m, voteRes[m.id], partyMap);
     }
 
-    (body.seats || []).forEach(seatDef => {
+    // Committees may have vice-chairs flanking the chair. Place them at the
+    // two ends of the horseshoe (BM-links and BM-rechts) so they sit closest
+    // to the chair, matching the standard Moosburg seating.
+    const vc = cfg.vicechairs || [];
+    const seatList = [];
+    if (vc[0]) seatList.push({ member: vc[0].member, sub: vc[0].sub });
+    (cfg.seats || []).forEach(s => seatList.push(s));
+    if (vc[1]) seatList.push({ member: vc[1].member, sub: vc[1].sub });
+
+    seatList.forEach(seatDef => {
       let m = null, voteVal = "unknown";
       if (seatDef.occupants) {
         // Prefer the occupant who actually voted (handles overlapping date ranges)
@@ -555,7 +576,7 @@ const VoteVis = (() => {
       seats.push(makeEntry(m, voteVal, partyMap));
     });
 
-    return { seats, mayor, rows: body.rows };
+    return { seats, mayor, rows: cfg.rows || body.rows };
   }
 
   // Build seats from raw vote results (fallback when no body is provided)
