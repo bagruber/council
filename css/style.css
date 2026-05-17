@@ -593,6 +593,126 @@ main {
   border-top: 1px solid var(--border);
 }
 
+/* ─── Voting statistics card on member profile ─── */
+.voting-stats {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin: 8px 0 16px;
+  font-size: 0.88rem;
+}
+.voting-stats summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+}
+.voting-stats summary::-webkit-details-marker { display: none; }
+.voting-stats summary .material-icons { font-size: 18px; color: var(--accent-text); }
+.voting-stats summary::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.voting-stats[open] summary::after { content: "–"; }
+.voting-stats .vs-total-count {
+  background: var(--accent-light);
+  color: var(--accent-text);
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  margin-left: auto;
+}
+.voting-stats[open] .vs-total-count { margin-left: 0; }
+.voting-stats .vs-content {
+  padding: 4px 14px 14px;
+  border-top: 1px solid var(--border);
+}
+.voting-stats .vs-summary {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+.voting-stats .vs-bar {
+  display: flex;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--border);
+}
+.voting-stats .vs-seg {
+  display: block;
+  height: 100%;
+}
+.voting-stats .vs-seg.yes     { background: var(--yes); }
+.voting-stats .vs-seg.no      { background: var(--no); }
+.voting-stats .vs-seg.absent  { background: var(--absent); }
+.voting-stats .vs-seg.unknown { background: var(--accent); }
+.voting-stats .vs-numbers {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: center;
+}
+.voting-stats .vs-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin: 0 4px 0 6px;
+}
+.voting-stats .vs-dot:first-child { margin-left: 0; }
+.voting-stats .vs-dot.yes     { background: var(--yes); }
+.voting-stats .vs-dot.no      { background: var(--no); }
+.voting-stats .vs-dot.absent  { background: var(--absent); }
+.voting-stats .vs-dot.unknown { background: var(--accent); }
+.voting-stats .vs-section {
+  margin-top: 14px;
+}
+.voting-stats .vs-section h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 6px;
+}
+.voting-stats .vs-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 36px;
+  align-items: center;
+  gap: 10px;
+  padding: 3px 0;
+}
+.voting-stats .vs-row-label {
+  font-size: 0.82rem;
+  color: var(--text);
+}
+.voting-stats .vs-row-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--border);
+}
+.voting-stats .vs-row-bar .vs-seg.yes     { background: var(--yes); }
+.voting-stats .vs-row-bar .vs-seg.no      { background: var(--no); }
+.voting-stats .vs-row-bar .vs-seg.absent  { background: var(--absent); }
+.voting-stats .vs-row-bar .vs-seg.unknown { background: var(--accent); }
+.voting-stats .vs-row-count {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
 /* 4 Vote-Icons als Reihe innerhalb des Legenden-Modals */
 .legend-icons {
   display: flex;

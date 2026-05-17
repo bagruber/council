@@ -106,7 +106,9 @@ const SHOW_PRONOUNS = true;
 
   const nowStr = (() => {
     const n = new Date();
-    return n.getFullYear() + "-" + String(n.getMonth() + 1).padStart(2, "0");
+    return n.getFullYear() + "-"
+         + String(n.getMonth() + 1).padStart(2, "0") + "-"
+         + String(n.getDate()).padStart(2, "0");
   })();
 
   // A member can have one or multiple non-contiguous mandate periods.
@@ -1245,11 +1247,154 @@ const SHOW_PRONOUNS = true;
     tlSection.innerHTML = "<h3>Abstimmungsverhalten</h3>";
     wrap.appendChild(tlSection);
 
+    // Stats card (collapsed by default)
+    const stats = computeVotingStats(m);
+    if (stats.total.total > 0) {
+      const statsEl = renderVotingStatsCard(stats);
+      wrap.appendChild(statsEl);
+    }
+
     const tlWrap = document.createElement("div");
     renderMemberTimeline(tlWrap, m);
     wrap.appendChild(tlWrap);
 
     gremienMain.appendChild(wrap);
+  }
+
+  // ─── Voting statistics ───────────────────────────────────────────────────
+
+  function activeBodyCfg(body, date) {
+    const configs = body.seatConfigs;
+    if (!configs || !configs.length) return body;
+    for (const c of configs) {
+      if ((!c.from || c.from <= date) && (!c.to || date <= c.to)) return c;
+    }
+    return body;
+  }
+
+  function bodyIdForSession(s) {
+    if (!s) return null;
+    if (s.type === "stadtrat") return "plenum";
+    if (s.type === "bpu")      return "bpu";
+    if (s.type === "hvfa")     return "hvfa";
+    return null;
+  }
+
+  function periodOfDate(d) {
+    if (d < "2020-05-01") return "2014–2020";
+    if (d < "2026-05-01") return "2020–2026";
+    return "2026–2032";
+  }
+
+  function memberIsRegularOfBody(member, body, date) {
+    const cfg = activeBodyCfg(body, date);
+    if (cfg.chair === member.id) return true;
+    if ((cfg.vicechairs || []).some(v => v.member === member.id)) return true;
+    return (cfg.seats || []).some(s => {
+      if (s.member === member.id) return true;
+      if (s.occupants) {
+        return s.occupants.some(o => {
+          if (o.member !== member.id) return false;
+          if (o.from && date < o.from) return false;
+          if (o.to) {
+            const tm = o.to.length === 7 ? o.to + "-99" : o.to;
+            if (date > tm) return false;
+          }
+          return true;
+        });
+      }
+      return false;
+    });
+  }
+
+  function computeVotingStats(member) {
+    const out = {
+      byYear:   {},
+      byPeriod: {},
+      byBody:   {},
+      total:    { yes:0, no:0, absent:0, unknown:0, total:0 }
+    };
+    const inc = (bucket, key, status) => {
+      if (!bucket[key]) bucket[key] = { yes:0, no:0, absent:0, unknown:0, total:0 };
+      bucket[key][status]++;
+      bucket[key].total++;
+      out.total[status]++;
+      out.total.total++;
+    };
+
+    votes.forEach(v => {
+      const session = sessionMap[v.sessionId];
+      const bid = bodyIdForSession(session);
+      if (!bid) return;
+      const body = bodyMap[bid];
+      if (!body) return;
+
+      // Relevance: plenum = active member; committee = regular (not sub)
+      if (bid === "plenum") {
+        if (!memberActiveAt(member, v.date)) return;
+      } else {
+        if (!memberIsRegularOfBody(member, body, v.date)) return;
+      }
+
+      let status = "unknown";
+      if (v.type === "named") {
+        if (v.results.yes.includes(member.id))      status = "yes";
+        else if (v.results.no.includes(member.id))  status = "no";
+        else if (v.results.absent.includes(member.id)) status = "absent";
+      }
+
+      inc(out.byYear,   v.date.substring(0, 4), status);
+      inc(out.byPeriod, periodOfDate(v.date),   status);
+      inc(out.byBody,   bid,                    status);
+    });
+
+    return out;
+  }
+
+  function renderVotingStatsCard(stats) {
+    const t = stats.total;
+    const pct = (n) => t.total === 0 ? 0 : Math.round(n / t.total * 100);
+    const seg = (n, cls) => n === 0 ? "" : `<span class="vs-seg ${cls}" style="width:${(n/t.total*100).toFixed(1)}%" title="${n}"></span>`;
+
+    const details = document.createElement("details");
+    details.className = "voting-stats";
+    details.innerHTML = `
+      <summary>
+        <span class="material-icons">insights</span>
+        <span>Statistik anzeigen</span>
+        <span class="vs-total-count">${t.total} Abst.</span>
+      </summary>
+      <div class="vs-content">
+        <div class="vs-summary">
+          <div class="vs-bar">${seg(t.yes,"yes")}${seg(t.no,"no")}${seg(t.absent,"absent")}${seg(t.unknown,"unknown")}</div>
+          <div class="vs-numbers">
+            <span class="vs-dot yes"></span>${t.yes} Ja (${pct(t.yes)}%)
+            <span class="vs-dot no"></span>${t.no} Nein (${pct(t.no)}%)
+            <span class="vs-dot absent"></span>${t.absent} Abw. (${pct(t.absent)}%)
+            <span class="vs-dot unknown"></span>${t.unknown} unbekannt (${pct(t.unknown)}%)
+          </div>
+        </div>
+        ${renderStatsBreakdown("Pro Jahr",    stats.byYear,   k => k)}
+        ${renderStatsBreakdown("Pro Periode", stats.byPeriod, k => k)}
+        ${renderStatsBreakdown("Pro Gremium", stats.byBody,   k => bodyMap[k] ? bodyMap[k].shortName : k)}
+      </div>`;
+    return details;
+  }
+
+  function renderStatsBreakdown(title, bucket, keyLabel) {
+    const keys = Object.keys(bucket).sort();
+    if (!keys.length) return "";
+    const rows = keys.map(k => {
+      const b = bucket[k];
+      const seg = (n, cls) => n === 0 ? "" : `<span class="vs-seg ${cls}" style="width:${(n/b.total*100).toFixed(1)}%" title="${n}"></span>`;
+      return `
+        <div class="vs-row">
+          <div class="vs-row-label">${keyLabel(k)}</div>
+          <div class="vs-row-bar">${seg(b.yes,"yes")}${seg(b.no,"no")}${seg(b.absent,"absent")}${seg(b.unknown,"unknown")}</div>
+          <div class="vs-row-count">${b.total}</div>
+        </div>`;
+    }).join("");
+    return `<div class="vs-section"><h4>${title}</h4>${rows}</div>`;
   }
 
   function makeContactLink(type, href) {
