@@ -319,7 +319,11 @@
       "from": "2026-05-01",
       "to": null,
       "profile": {
-        "pronouns": "sie/ihr"
+        "pronouns": "sie/ihr",
+        "contact": {
+          "email": "lorena.kehlringer@gmx.de",
+          "instagram": "@lorenakehlringer"
+        }
       }
     },
     {
@@ -331,7 +335,10 @@
       "from": "2026-05-01",
       "to": null,
       "profile": {
-        "pronouns": "er/ihn"
+        "pronouns": "er/ihn",
+        "contact": {
+          "email": "reither-stadtrat@web.de"
+        }
       }
     },
     {
@@ -504,7 +511,11 @@
       "from": "2026-05-01",
       "to": null,
       "profile": {
-        "pronouns": "er/ihn"
+        "pronouns": "er/ihn",
+        "contact": {
+          "email": "matthias.roeck@gruene-moosburg.de",
+          "instagram": "@roecknroller"
+        }
       }
     },
     {
@@ -516,7 +527,11 @@
       "from": "2026-05-01",
       "to": null,
       "profile": {
-        "pronouns": "sie/ihr"
+        "pronouns": "sie/ihr",
+        "contact": {
+          "email": "ramona.ruemelin@gruene-moosburg.de",
+          "instagram": "@ramona_ruemelin"
+        }
       }
     },
     {
@@ -603,7 +618,11 @@
       "from": "2026-05-01",
       "to": null,
       "profile": {
-        "pronouns": "er/ihn"
+        "pronouns": "er/ihn",
+        "contact": {
+          "email": "sepp.sixt@googlemail.com",
+          "instagram": "@josef_sixt96"
+        }
       }
     },
     {
@@ -615,7 +634,10 @@
       "from": "2026-05-01",
       "to": null,
       "profile": {
-        "pronouns": "er/ihn"
+        "pronouns": "er/ihn",
+        "contact": {
+          "email": "meier@bausanierung-meier.de"
+        }
       }
     },
     {
@@ -670,7 +692,10 @@
       "from": "2014-05-01",
       "to": null,
       "profile": {
-        "pronouns": "er/ihn"
+        "pronouns": "er/ihn",
+        "contact": {
+          "email": "christoph.marschoun@montessori-freising.de"
+        }
       },
       "periods": [
         {
@@ -878,7 +903,10 @@
       "from": "2026-05-01",
       "to": null,
       "profile": {
-        "pronouns": "er/ihn"
+        "pronouns": "er/ihn",
+        "contact": {
+          "email": "praxis@umc-international.de"
+        }
       }
     },
     {
@@ -1010,7 +1038,11 @@
       "role": "councillor",
       "from": "2026-05-01",
       "to": null,
-      "profile": {}
+      "profile": {
+        "contact": {
+          "email": "christian.schweiger@schweiger-feldkirchen.de"
+        }
+      }
     },
     {
       "id": "bauer",

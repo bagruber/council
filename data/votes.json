@@ -481,6 +481,9 @@
       "yes": 21,
       "no": 1,
       "absent": 3
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -921,6 +924,9 @@
       "yes": 17,
       "no": 4,
       "absent": 4
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -2283,6 +2289,9 @@
       "yes": 6,
       "no": 5,
       "absent": 1
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -2739,6 +2748,9 @@
       "yes": 17,
       "no": 1,
       "absent": 7
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -2973,6 +2985,9 @@
       "yes": 12,
       "no": 5,
       "absent": 8
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -3478,24 +3493,24 @@
     "results": {
       "yes": [
         "dollinger",
-        "stanglmaier",
-        "becher_a",
-        "becher_j",
-        "beibl",
-        "fincke",
-        "gruber",
-        "grundner",
-        "haberl",
-        "hobmaier",
-        "kieninger",
-        "lauterbach",
-        "linz_karin",
-        "linz_kilian",
-        "marcus",
-        "pschorr",
-        "reif",
         "tristl",
-        "kaestl"
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "hobmaier",
+        "kaestl",
+        "fincke"
       ],
       "no": [
         "strobl"
@@ -3811,6 +3826,9 @@
       "yes": 19,
       "no": 3,
       "absent": 3
+    },
+    "voters": {
+      "gruber": "no"
     }
   },
   {
@@ -3853,6 +3871,9 @@
       "yes": 19,
       "no": 1,
       "absent": 5
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -3895,6 +3916,9 @@
       "yes": 22,
       "no": 1,
       "absent": 2
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -4279,6 +4303,9 @@
       "yes": 9,
       "no": 10,
       "absent": 6
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -4870,6 +4897,9 @@
       "yes": 12,
       "no": 7,
       "absent": 6
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -4956,7 +4986,10 @@
       "no": 8,
       "absent": 0
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "gruber": "no"
+    }
   },
   {
     "id": "bpu_20240930_04",
@@ -4970,6 +5003,9 @@
       "yes": 8,
       "no": 4,
       "absent": 0
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -5667,6 +5703,9 @@
       "yes": 18,
       "no": 1,
       "absent": 6
+    },
+    "voters": {
+      "strobl": "no"
     }
   },
   {
@@ -5860,6 +5899,9 @@
       "yes": 15,
       "no": 2,
       "absent": 8
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -5930,6 +5972,9 @@
       "yes": 12,
       "no": 6,
       "absent": 7
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -5972,6 +6017,9 @@
       "yes": 19,
       "no": 1,
       "absent": 5
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -6028,6 +6076,9 @@
       "yes": 19,
       "no": 2,
       "absent": 4
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -6399,6 +6450,9 @@
       "yes": 10,
       "no": 1,
       "absent": 1
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -6414,7 +6468,10 @@
       "no": 8,
       "absent": 1
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "gruber": "no"
+    }
   },
   {
     "id": "bpu_20250116_04",
@@ -6428,6 +6485,9 @@
       "yes": 8,
       "no": 3,
       "absent": 1
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -7134,7 +7194,10 @@
       "no": 1,
       "absent": 2
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "gruber": "yes"
+    }
   },
   {
     "id": "bpu_20250522_03",
@@ -7260,6 +7323,9 @@
       "yes": 9,
       "no": 1,
       "absent": 2
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -7303,7 +7369,10 @@
       "no": 10,
       "absent": 2
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "gruber": "no"
+    }
   },
   {
     "id": "bpu_20250522_10",
@@ -7533,11 +7602,39 @@
     "date": "2024-03-04",
     "title": "Wahlhelferbonus Europawahl 2024 (abgelehnt)",
     "text": "Antrag auf zusätzliche Bonuszahlung für Wahlhelfer wird mit 1:22 abgelehnt.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 1,
-      "no": 22,
-      "absent": 2
+      "yes": [
+        "strobl"
+      ],
+      "no": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "absent": [
+        "beubl",
+        "weber"
+      ]
     },
     "result": "rejected"
   },
@@ -7548,11 +7645,38 @@
     "date": "2024-03-04",
     "title": "Erfrischungsgeld 40 € Europawahl 2024",
     "text": "Wahlhelfer erhalten einstimmig 40 € Erfrischungsgeld pro Wahltag.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 23,
-      "no": 0,
-      "absent": 2
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "beubl",
+        "weber"
+      ]
     }
   },
   {
@@ -7680,7 +7804,10 @@
       "no": 9,
       "absent": 2
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "gruber": "no"
+    }
   },
   {
     "id": "bpu_20240314_06",
@@ -7694,6 +7821,9 @@
       "yes": 9,
       "no": 1,
       "absent": 2
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -7802,11 +7932,39 @@
     "date": "2024-03-18",
     "title": "Verkaufsoffener Sonntag 14.04.2024",
     "text": "Verordnung mit 21:1 beschlossen.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 21,
-      "no": 1,
-      "absent": 3
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "beubl",
+        "von_pressentin",
+        "weber"
+      ]
     }
   },
   {
@@ -7863,7 +8021,10 @@
       "no": 20,
       "absent": 2
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "gruber": "no"
+    }
   },
   {
     "id": "sr_20240408_03",
@@ -7877,6 +8038,9 @@
       "yes": 20,
       "no": 3,
       "absent": 2
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {
@@ -8001,6 +8165,12 @@
       "yes": 18,
       "no": 4,
       "absent": 3
+    },
+    "voters": {
+      "tristl": "no",
+      "lauterbach": "no",
+      "haberl": "no",
+      "welter": "no"
     }
   },
   {
@@ -8163,11 +8333,39 @@
     "date": "2024-06-10",
     "title": "Verwaltungsgebühr Neuanmeldung 10 €",
     "text": "Verwaltungsgebühr für Neu-/Wiederanmeldungen von 5 € auf 10 € erhöht (17:1).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 17,
-      "no": 1,
-      "absent": 7
+      "yes": [
+        "dollinger",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beubl",
+        "heinz",
+        "welter"
+      ]
     }
   },
   {
@@ -8211,6 +8409,9 @@
       "yes": 13,
       "no": 5,
       "absent": 7
+    },
+    "voters": {
+      "gruber": "yes"
     }
   },
   {

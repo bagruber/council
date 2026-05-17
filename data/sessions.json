@@ -2544,7 +2544,10 @@
       {
         "number": "5.2",
         "title": "Europawahl 2024 – Erfrischungsgeld 40 €",
-        "voteId": "sr_20240304_05"
+        "voteId": "sr_20240304_05",
+        "press": [
+          "sz_2024-03_erfrischungsgeld"
+        ]
       },
       {
         "number": 6,
@@ -2812,7 +2815,10 @@
         "number": 4,
         "title": "Regionalplan München – Windenergie-Steuerungskonzept",
         "topicId": "t15",
-        "voteId": "sr_20240506_02"
+        "voteId": "sr_20240506_02",
+        "press": [
+          "sz_2024-05_windenergie"
+        ]
       },
       {
         "number": "5.1",
@@ -2866,7 +2872,10 @@
       {
         "number": "4.1",
         "title": "Arbeitsmarktzulage Erzieher/Kinderpfleger 120€/Monat (15:3)",
-        "voteId": "sr_20240610_02"
+        "voteId": "sr_20240610_02",
+        "press": [
+          "sz_2024-06_kitas-arbeitsmarktzulage"
+        ]
       },
       {
         "number": "4.2",
@@ -2891,7 +2900,11 @@
       {
         "number": "5.5",
         "title": "Kindergartensatzung Schlussabstimmung (15:3)",
-        "voteId": "sr_20240610_07"
+        "voteId": "sr_20240610_07",
+        "press": [
+          "merkur_2024-06_kitagebuehren",
+          "sz_2024-06_kitas-arbeitsmarktzulage"
+        ]
       },
       {
         "number": "6.1",
