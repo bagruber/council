@@ -543,16 +543,31 @@ const VoteVis = (() => {
     return body;
   }
 
+  // Build per-member vote status, considering both array-typed (named) results
+  // and the optional `voters` field carrying partial individual data on
+  // anonymous votes (e.g. only the lone dissenter is known).
+  function voteResMap(vote) {
+    const m = {};
+    if (vote.type === "named") {
+      vote.results.yes   .forEach(id => m[id] = "yes");
+      vote.results.no    .forEach(id => m[id] = "no");
+      vote.results.absent.forEach(id => m[id] = "absent");
+    }
+    if (vote.voters) {
+      Object.entries(vote.voters).forEach(([id, status]) => {
+        if (!(id in m)) m[id] = status;
+      });
+    }
+    return m;
+  }
+
   // Build seats from a body definition with `seats: [{occupants:[...]}]`.
   function buildSeatsFromBody(body, vote, memberMap, partyMap) {
     const cfg = activeBodyConfig(body, vote.date);
     const seats = [];
     let mayor = null;
 
-    const voteRes = {};
-    vote.results.yes   .forEach(id => voteRes[id] = "yes");
-    vote.results.no    .forEach(id => voteRes[id] = "no");
-    vote.results.absent.forEach(id => voteRes[id] = "absent");
+    const voteRes = voteResMap(vote);
 
     // Chair (if defined, e.g. mayor)
     if (cfg.chair) {
@@ -597,10 +612,7 @@ const VoteVis = (() => {
 
   // Build seats from raw vote results (fallback when no body is provided)
   function buildSeatsFromVote(vote, members, parties, seatOrder, memberMap, partyMap) {
-    const voteRes = {};
-    vote.results.yes   .forEach(id => voteRes[id] = "yes");
-    vote.results.no    .forEach(id => voteRes[id] = "no");
-    vote.results.absent.forEach(id => voteRes[id] = "absent");
+    const voteRes = voteResMap(vote);
 
     const seats = [];
     let mayor = null;
@@ -636,12 +648,11 @@ const VoteVis = (() => {
 
     if (!seatData.seats.some(s => s) && !seatData.mayor) return;
 
-    // summary bar above the parliament chart
-    drawBar(container, {
-      yes:    vote.results.yes.length,
-      no:     vote.results.no.length,
-      absent: vote.results.absent.length,
-    });
+    // Bar summary: named votes use array length; anonymous uses scalar counts.
+    const barCounts = vote.type === "named"
+      ? { yes: vote.results.yes.length, no: vote.results.no.length, absent: vote.results.absent.length }
+      : vote.results;
+    drawBar(container, barCounts);
 
     // Pass seats including potential nulls so geometry stays stable.
     renderChart(container, { seats: seatData.seats, mayor: seatData.mayor, ...options });

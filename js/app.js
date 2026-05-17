@@ -584,7 +584,9 @@ const SHOW_PRONOUNS = true;
     container.appendChild(block);
 
     requestAnimationFrame(() => {
-      if (vote.type === "anonymous") {
+      const hasIndividualData = vote.type === "named"
+                              || (vote.voters && Object.keys(vote.voters).length > 0);
+      if (!hasIndividualData) {
         VoteVis.drawBar(chartEl, vote.results);
       } else {
         const body = bodyForVote(vote);
@@ -1342,6 +1344,8 @@ const SHOW_PRONOUNS = true;
         else if (v.results.no.includes(member.id))  status = "no";
         else if (v.results.absent.includes(member.id)) status = "absent";
       }
+      // Partial voter data on anonymous votes (e.g. lone dissenter known)
+      if (v.voters && v.voters[member.id]) status = v.voters[member.id];
 
       inc(out.byYear,   v.date.substring(0, 4), status);
       inc(out.byPeriod, periodOfDate(v.date),   status);

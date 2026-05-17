@@ -3,14 +3,14 @@
     "id": "merkur_2026-01-12_sgt-vereinsheim",
     "media": "merkur",
     "date": "2026-01-12",
-    "title": "Drei Vorschl\u00e4ge f\u00fcr neues Vereinsheim",
+    "title": "Drei Vorschläge für neues Vereinsheim",
     "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/sgt-istanbul-moosburg-drei-vorschlaege-fuer-neues-vereinsheim-clubvertreter-reagieren-ueberrascht-94124799.html"
   },
   {
     "id": "merkur_2026-02-02_sgt-vereinsheim",
     "media": "merkur",
     "date": "2026-02-02",
-    "title": "H\u00e4ngepartie beendet",
+    "title": "Hängepartie beendet",
     "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/haengepartie-beendet-fussballer-duerfen-neues-vereinsheim-auf-moosburger-stadtgrund-bauen-94163882.html"
   },
   {
@@ -38,7 +38,7 @@
     "id": "merkur_2026-02-23_parken-plan",
     "media": "merkur",
     "date": "2026-02-23",
-    "title": "Falschparker m\u00fcssen ab Montag blechen",
+    "title": "Falschparker müssen ab Montag blechen",
     "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/nach-posse-um-moosburger-plan-falschparker-muessen-ab-montag-blechen-94190182.html"
   },
   {
@@ -52,7 +52,7 @@
     "id": "merkur_2026-02-02_baugenehmigungen",
     "media": "merkur",
     "date": "2026-02-02",
-    "title": "\u00c4rger \u00fcber Baugenehmigungen des Landratsamts",
+    "title": "Ärger über Baugenehmigungen des Landratsamts",
     "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/immer-katastrophaler-und-verrueckter-moosburger-aerger-ueber-baugenehmigungen-des-landratsamts-94165710.html"
   },
   {
@@ -66,7 +66,7 @@
     "id": "merkur_2026-02-23_schulweg",
     "media": "merkur",
     "date": "2026-02-23",
-    "title": "Ma\u00dfnahmen sollen Schulweg sicherer machen",
+    "title": "Maßnahmen sollen Schulweg sicherer machen",
     "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/gefahrenzone-an-moosburger-schulzentrum-kleine-massnahmen-sollen-schulweg-sicherer-machen-94194456.html"
   },
   {
@@ -87,21 +87,49 @@
     "id": "merkur_2025-12-01_wirtschaftsfoerderer",
     "media": "merkur",
     "date": "2025-12-01",
-    "title": "Wirtschaftsf\u00f6rderer soll es richten",
+    "title": "Wirtschaftsförderer soll es richten",
     "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/gewerbesteuer-flaute-und-leerstand-jetzt-soll-es-in-moosburg-ein-wirtschaftsfoerderer-richten-94067543.html"
   },
   {
     "id": "merkur_2024-12-09_legal-wall",
     "media": "merkur",
     "date": "2024-12-09",
-    "title": "Legal Wall f\u00fcr Moosburgs Graffitik\u00fcnstler gefordert",
+    "title": "Legal Wall für Moosburgs Graffitikünstler gefordert",
     "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/legal-wall-fuer-moosburgs-graffitikuenstler-gefordert-93457156.html"
   },
   {
     "id": "sz_2024-12-17_legal-wall",
     "media": "sz",
     "date": "2024-12-17",
-    "title": "Legal Wall f\u00fcr Moosburg beschlossen",
+    "title": "Legal Wall für Moosburg beschlossen",
     "url": "https://www.sueddeutsche.de/muenchen/freising/moosburg-sprayer-graffiti-legal-wall-wand-lux.5qeDpTapZoqAyBpRe1aLGu"
+  },
+  {
+    "id": "sz_2024-03_erfrischungsgeld",
+    "media": "sz",
+    "date": "2024-03-04",
+    "title": "Erfrischungsgeld für Wahlhelfer",
+    "url": "https://www.sueddeutsche.de/muenchen/freising/moosburg-europawahl-wahlhelfer-erfrischungsgeld-zusatzleistungen-1.6453020"
+  },
+  {
+    "id": "merkur_2024-06_kitagebuehren",
+    "media": "merkur",
+    "date": "2024-06-10",
+    "title": "Kinderbetreuung in Moosburg wird teurer",
+    "url": "https://www.merkur.de/lokales/freising/moosburg-ort29088/kitagebuehren-kinderbetreuung-in-moosburg-wird-teurer-buergermeister-ich-denke-das-ist-zumutbar-93123706.html"
+  },
+  {
+    "id": "sz_2024-06_kitas-arbeitsmarktzulage",
+    "media": "sz",
+    "date": "2024-06-10",
+    "title": "Kitas, Personalgewinnung, Gebührenerhöhung",
+    "url": "https://www.sueddeutsche.de/muenchen/freising/moosburg-stadtrat-kitas-personalgewinnung-arbeitsmarktzulage-kindergartengebuehren-erhoehung-lux.9MD2NeWAwJXXzbYHDJmd8D"
+  },
+  {
+    "id": "sz_2024-05_windenergie",
+    "media": "sz",
+    "date": "2024-05-06",
+    "title": "Windenergie-Vorrangflächen: Bürgergenossenschaft für Kirchamper",
+    "url": "https://www.sueddeutsche.de/muenchen/freising/moosburg-windenergie-vorrangflaechen-kirchamper-windrad-buerger-energiegenossenschaft-regionalplan-muenchen-1.7012405"
   }
 ]
