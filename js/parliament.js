@@ -110,7 +110,7 @@ const VoteVis = (() => {
     yes:     "var(--yes)",
     no:      "var(--no)",
     absent:  "var(--absent)",
-    unknown: "var(--border)",
+    unknown: "var(--accent)",   // gold — distinct from grey absent state
   };
   const VOTE_ICON  = { yes: "✓", no: "✗", absent: "–", unknown: "?" };
   const VOTE_LABEL = { yes: "Ja", no: "Nein", absent: "Abwesend", unknown: "Unbekannt" };

@@ -1121,208 +1121,609 @@
       "icon": "account_balance",
       "description": "Das Plenum des Stadtrats ist das höchste Beschlussgremium der Stadt Moosburg. Es besteht aus 24 ehrenamtlichen Stadträtinnen und Stadträten sowie dem Ersten Bürgermeister.",
       "rows": 2,
-      "chair": "dollinger",
+      "chair": "mader",
       "seats": [
         {
           "occupants": [
             {
-              "member": "heinz"
+              "member": "heinz",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "hadersdorfer"
+              "member": "hadersdorfer",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "beubl",
-              "to": "2025-03"
-            },
+              "member": "linz_karin",
+              "from": "2026-05-01"
+            }
+          ]
+        },
+        {
+          "occupants": [
+            {
+              "member": "welter",
+              "from": "2026-05-01"
+            }
+          ]
+        },
+        {
+          "occupants": [
             {
               "member": "marcus",
-              "from": "2025-03"
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "welter"
+              "member": "sabanovic",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "kaestl"
+              "member": "grundner",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "neumayr",
-              "to": "2022-01"
-            },
-            {
-              "member": "gruber",
-              "from": "2022-01"
+              "member": "lauterbach",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "reif"
+              "member": "beibl",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "lauterbach"
+              "member": "stanglmaier",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "beibl"
+              "member": "reither",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "stanglmaier"
+              "member": "tristl",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "weber"
+              "member": "schweiger",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "linz_karin"
+              "member": "kehlringer",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "tristl"
+              "member": "haberl",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "haberl"
+              "member": "ghadieh",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "pschorr"
+              "member": "marschoun",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
-            {
-              "member": "fincke"
-            }
-          ]
-        },
-        {
-          "occupants": [
-            {
-              "member": "john",
-              "to": "2023-07"
-            },
             {
               "member": "strobl",
-              "from": "2023-07"
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "wittmann",
-              "to": "2021-10"
-            },
-            {
-              "member": "gruebl",
-              "from": "2021-10",
-              "to": "2024-10"
-            },
-            {
-              "member": "hobmaier",
-              "from": "2024-10"
+              "member": "dick",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "grundner"
+              "member": "meier",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "kieninger"
+              "member": "sixt",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "von_pressentin"
+              "member": "roeck",
+              "from": "2026-05-01"
             }
           ]
         },
         {
           "occupants": [
             {
-              "member": "wagner",
-              "to": "2022-05"
-            },
+              "member": "ruemelin",
+              "from": "2026-05-01"
+            }
+          ]
+        },
+        {
+          "occupants": [
             {
               "member": "linz_kilian",
-              "from": "2022-05"
+              "from": "2026-05-01"
             }
           ]
-        },
+        }
+      ],
+      "seatConfigs": [
         {
-          "occupants": [
+          "from": "2020-05-01",
+          "to": "2026-04-30",
+          "rows": 2,
+          "chair": "dollinger",
+          "seats": [
             {
-              "member": "becher_j"
-            }
-          ]
-        },
-        {
-          "occupants": [
-            {
-              "member": "altenbeck",
-              "to": "2022-05"
+              "occupants": [
+                {
+                  "member": "heinz"
+                }
+              ]
             },
             {
-              "member": "becher_a",
-              "from": "2022-05"
+              "occupants": [
+                {
+                  "member": "hadersdorfer"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "beubl",
+                  "to": "2025-03"
+                },
+                {
+                  "member": "marcus",
+                  "from": "2025-03"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "welter"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "kaestl"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "neumayr",
+                  "to": "2022-01"
+                },
+                {
+                  "member": "gruber",
+                  "from": "2022-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "reif"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "lauterbach"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "beibl"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "stanglmaier"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "weber"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "linz_karin"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "tristl"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "haberl"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "pschorr"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "fincke"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "john",
+                  "to": "2023-07"
+                },
+                {
+                  "member": "strobl",
+                  "from": "2023-07"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "wittmann",
+                  "to": "2021-10"
+                },
+                {
+                  "member": "gruebl",
+                  "from": "2021-10",
+                  "to": "2024-10"
+                },
+                {
+                  "member": "hobmaier",
+                  "from": "2024-10"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "grundner"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "kieninger"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "von_pressentin"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "wagner",
+                  "to": "2022-05"
+                },
+                {
+                  "member": "linz_kilian",
+                  "from": "2022-05"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "becher_j"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "altenbeck",
+                  "to": "2022-05"
+                },
+                {
+                  "member": "becher_a",
+                  "from": "2022-05"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "from": "2026-05-01",
+          "rows": 2,
+          "chair": "mader",
+          "seats": [
+            {
+              "occupants": [
+                {
+                  "member": "heinz",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "hadersdorfer",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "linz_karin",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "welter",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "marcus",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "sabanovic",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "grundner",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "lauterbach",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "beibl",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "stanglmaier",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "reither",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "tristl",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "schweiger",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "kehlringer",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "haberl",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "ghadieh",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "marschoun",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "strobl",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "dick",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "meier",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "sixt",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "roeck",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "ruemelin",
+                  "from": "2026-05-01"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "linz_kilian",
+                  "from": "2026-05-01"
+                }
+              ]
             }
           ]
         }
