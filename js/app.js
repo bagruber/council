@@ -1155,7 +1155,10 @@ const SHOW_PRONOUNS = true;
     rolesSection.innerHTML = "<h3>Mandate & Funktionen</h3>";
 
     const roleLabel = m.role === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
-    memberPeriods(m).forEach(p => {
+    const periods = (m.periods && m.periods.length)
+      ? m.periods
+      : [{ from: m.from, to: m.to }];
+    periods.forEach(p => {
       rolesSection.appendChild(makeRoleRow("account_balance", roleLabel, p.from, p.to));
     });
 
