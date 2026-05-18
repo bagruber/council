@@ -885,9 +885,9 @@ const SHOW_PRONOUNS = true;
         </div>
         <span class="material-icons expand-icon">expand_more</span>
       </div>
-      <div class="body-card-detail"></div>`;
+      <div class="body-card-detail"><div class="body-card-detail-inner"></div></div>`;
 
-    const detail = card.querySelector(".body-card-detail");
+    const detail = card.querySelector(".body-card-detail-inner");
 
     if (body.description) {
       const desc = document.createElement("div");
@@ -1539,7 +1539,12 @@ const SHOW_PRONOUNS = true;
       return null;
     }
 
-    // anonymous: per-vote absent list (from detailed protocols, temporary absence)
+    // anonymous: explicit per-member vote (e.g. lone dissenter, self-reported)
+    if (vote.voters && vote.voters[memberId]) {
+      const map = { yes: "ja", no: "nein", absent: "abwesend" };
+      return map[vote.voters[memberId]] || vote.voters[memberId];
+    }
+    // per-vote absent list (from detailed protocols, temporary absence)
     if (vote.results.absent_ids && vote.results.absent_ids.includes(memberId)) return "abwesend";
 
     // infer where unambiguous: all present voted the same way
