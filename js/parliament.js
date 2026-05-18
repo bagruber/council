@@ -406,14 +406,21 @@ const VoteVis = (() => {
 
   // ─── Stacked bar chart (anonymous votes) ────────────────────────────────
 
-  function drawBar(container, results) {
-    const capacity = 25;
+  function drawBar(container, results, opts = {}) {
+    const capacity = opts.capacity || 25;
     const voting   = results.yes + results.no;
     const w        = container.clientWidth || 400;
     const barH     = 28;
     const absentH  = 10;
     const gap      = 4;
     const h        = absentH + gap + barH;
+
+    // For unanimous votes (no opposition), extend the dominant side with a paler
+    // overlay covering the would-be-absent portion — same inferred-unanimity
+    // styling as the "ja*"/"nein*" chips in member profiles.
+    const unanimousSide = voting > 0 && results.no === 0 ? "yes"
+                         : voting > 0 && results.yes === 0 ? "no"
+                         : null;
 
     const wrap = document.createElement("div");
     wrap.className = "vote-bar-wrap";
@@ -440,6 +447,17 @@ const VoteVis = (() => {
 
     const mainY = absentH + gap;
     if (voting > 0) {
+      // Paler full-width inferred fill behind solid bar
+      if (unanimousSide && results.absent > 0) {
+        const inferred = svgEl("rect");
+        inferred.setAttribute("x", 0); inferred.setAttribute("y", mainY);
+        inferred.setAttribute("width", w); inferred.setAttribute("height", barH);
+        inferred.setAttribute("rx", 4);
+        inferred.setAttribute("fill", `var(--${unanimousSide})`);
+        inferred.setAttribute("opacity", "0.32");
+        svg.appendChild(inferred);
+      }
+
       const yesW = (results.yes / capacity) * w;
       const yesR = svgEl("rect");
       yesR.setAttribute("x", voteX); yesR.setAttribute("y", mainY);

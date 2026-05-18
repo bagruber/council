@@ -1334,6 +1334,9 @@ const SHOW_PRONOUNS = true;
       out.total.total++;
     };
 
+    const STATUS_MAP = { ja: "yes", "ja*": "yes", nein: "no", "nein*": "no",
+                         abwesend: "absent", "?": "unknown" };
+
     votes.forEach(v => {
       const session = sessionMap[v.sessionId];
       const bid = bodyIdForSession(session);
@@ -1348,14 +1351,9 @@ const SHOW_PRONOUNS = true;
         if (!memberIsRegularOfBody(member, body, v.date)) return;
       }
 
-      let status = "unknown";
-      if (v.type === "named") {
-        if (v.results.yes.includes(member.id))      status = "yes";
-        else if (v.results.no.includes(member.id))  status = "no";
-        else if (v.results.absent.includes(member.id)) status = "absent";
-      }
-      // Partial voter data on anonymous votes (e.g. lone dissenter known)
-      if (v.voters && v.voters[member.id]) status = v.voters[member.id];
+      const raw = getMemberVoteStatus(member.id, v, session);
+      if (raw === null) return;
+      const status = STATUS_MAP[raw] || "unknown";
 
       inc(out.byYear,   v.date.substring(0, 4), status);
       inc(out.byPeriod, periodOfDate(v.date),   status);
