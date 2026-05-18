@@ -112,22 +112,9 @@ const SHOW_PRONOUNS = true;
   })();
 
   // A member can have one or multiple non-contiguous mandate periods.
-  // If `periods` is defined it takes precedence over the top-level from/to.
-  function memberPeriods(m) {
-    if (m.periods && m.periods.length) return m.periods;
-    return [{ from: m.from, to: m.to }];
-  }
-
-  function memberActiveAt(m, dateStr) {
-    return memberPeriods(m).some(p =>
-      (!p.from || p.from <= dateStr) &&
-      (!p.to   || dateStr <  p.to)
-    );
-  }
-
-  function isActive(m) {
-    return memberActiveAt(m, nowStr);
-  }
+  // Period & active-membership: see js/core.js / docs/CORE.md
+  const memberActiveAt = Council.memberActiveAt;
+  const isActive = (m) => Council.memberActiveAt(m, nowStr);
 
   // -- Search (Themen tab) --
 
@@ -1278,15 +1265,6 @@ const SHOW_PRONOUNS = true;
 
   // ─── Voting statistics ───────────────────────────────────────────────────
 
-  function activeBodyCfg(body, date) {
-    const configs = body.seatConfigs;
-    if (!configs || !configs.length) return body;
-    for (const c of configs) {
-      if ((!c.from || c.from <= date) && (!c.to || date <= c.to)) return c;
-    }
-    return body;
-  }
-
   function bodyIdForSession(s) {
     if (!s) return null;
     if (s.type === "stadtrat") return "plenum";
@@ -1299,27 +1277,6 @@ const SHOW_PRONOUNS = true;
     if (d < "2020-05-01") return "2014–2020";
     if (d < "2026-05-01") return "2020–2026";
     return "2026–2032";
-  }
-
-  function memberIsRegularOfBody(member, body, date) {
-    const cfg = activeBodyCfg(body, date);
-    if (cfg.chair === member.id) return true;
-    if ((cfg.vicechairs || []).some(v => v.member === member.id)) return true;
-    return (cfg.seats || []).some(s => {
-      if (s.member === member.id) return true;
-      if (s.occupants) {
-        return s.occupants.some(o => {
-          if (o.member !== member.id) return false;
-          if (o.from && date < o.from) return false;
-          if (o.to) {
-            const tm = o.to.length === 7 ? o.to + "-99" : o.to;
-            if (date > tm) return false;
-          }
-          return true;
-        });
-      }
-      return false;
-    });
   }
 
   function computeVotingStats(member) {
@@ -1337,9 +1294,6 @@ const SHOW_PRONOUNS = true;
       out.total.total++;
     };
 
-    const STATUS_MAP = { ja: "yes", "ja*": "yes", nein: "no", "nein*": "no",
-                         abwesend: "absent", "?": "unknown" };
-
     votes.forEach(v => {
       const session = sessionMap[v.sessionId];
       const bid = bodyIdForSession(session);
@@ -1349,14 +1303,14 @@ const SHOW_PRONOUNS = true;
 
       // Relevance: plenum = active member; committee = regular (not sub)
       if (bid === "plenum") {
-        if (!memberActiveAt(member, v.date)) return;
+        if (!Council.memberActiveAt(member, v.date)) return;
       } else {
-        if (!memberIsRegularOfBody(member, body, v.date)) return;
+        if (!Council.isRegularOf(member, body, v.date)) return;
       }
 
-      const raw = getMemberVoteStatus(member.id, v, session);
+      const raw = Council.voteStatus(member.id, v, session, member);
       if (raw === null) return;
-      const status = STATUS_MAP[raw] || "unknown";
+      const status = Council.voteStatusBucket(raw);
 
       inc(out.byYear,   v.date.substring(0, 4), status);
       inc(out.byPeriod, periodOfDate(v.date),   status);
@@ -1521,38 +1475,17 @@ const SHOW_PRONOUNS = true;
     });
   }
 
-  function isMemberActive(memberId, dateStr) {
-    const m = memberMap[memberId];
-    if (!m) return false;
-    return memberActiveAt(m, dateStr);
-  }
-
+  // Profile-view shim: returns localized labels ("ja", "nein", "ja*", …) so the
+  // chip-rendering code (mtl-vote-chip) doesn't have to change. New code should
+  // call Council.voteStatus directly and use voteStatusLabel for the label.
   function getMemberVoteStatus(memberId, vote, session) {
-    if (!isMemberActive(memberId, vote.date)) return null;
-
-    // session-level absence (full session)
-    if (session && session.absent && session.absent.includes(memberId)) return "abwesend";
-
-    if (vote.type === "named") {
-      if (vote.results.yes.includes(memberId)) return "ja";
-      if (vote.results.no.includes(memberId)) return "nein";
-      if (vote.results.absent.includes(memberId)) return "abwesend";
-      return null;
-    }
-
-    // anonymous: explicit per-member vote (e.g. lone dissenter, self-reported)
-    if (vote.voters && vote.voters[memberId]) {
-      const map = { yes: "ja", no: "nein", absent: "abwesend" };
-      return map[vote.voters[memberId]] || vote.voters[memberId];
-    }
-    // per-vote absent list (from detailed protocols, temporary absence)
-    if (vote.results.absent_ids && vote.results.absent_ids.includes(memberId)) return "abwesend";
-
-    // infer where unambiguous: all present voted the same way
-    const { yes, no } = vote.results;
-    if (yes > 0 && no === 0) return "ja*";
-    if (no > 0 && yes === 0) return "nein*";
-    return "?";
+    const m = memberMap[memberId];
+    const raw = Council.voteStatus(memberId, vote, session, m);
+    if (raw === null) return null;
+    const LABEL = { yes: "ja", no: "nein", absent: "abwesend",
+                    "yes-inferred": "ja*", "no-inferred": "nein*",
+                    unknown: "?" };
+    return LABEL[raw];
   }
 
   // -- Helpers --
