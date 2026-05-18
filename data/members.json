@@ -667,7 +667,7 @@
       "party": "spd",
       "role": "councillor",
       "from": "1989-05-01",
-      "to": "2025-03-24",
+      "to": "2025-03-23",
       "profile": {
         "pronouns": "er/ihn"
       }
@@ -1859,8 +1859,18 @@
               "sub": "haberl"
             },
             {
-              "member": "marcus",
-              "sub": "pschorr"
+              "sub": "pschorr",
+              "occupants": [
+                {
+                  "member": "beubl",
+                  "from": "2020-05-01",
+                  "to": "2025-03-23"
+                },
+                {
+                  "member": "marcus",
+                  "from": "2025-03-24"
+                }
+              ]
             },
             {
               "member": "welter"
