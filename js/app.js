@@ -1073,7 +1073,8 @@ const SHOW_PRONOUNS = true;
     const header = document.createElement("div");
     header.className = "profile-header";
     const initial = (m.firstName || m.name).charAt(0);
-    const photoPath = "img/members/" + m.id + ".png";
+    const photoPath = "img/members/" + m.id + ".webp";
+    const photoPath2x = "img/members/" + m.id + "@2x.webp";
     const avatarColor = party ? party.color : '#999';
     const nameColor = nameColorFromParty(avatarColor, false);
     const surnameColor = nameColorFromParty(avatarColor, true);
@@ -1148,7 +1149,9 @@ const SHOW_PRONOUNS = true;
     const avatarEl = header.querySelector("#profile-avatar");
     const testImg = new Image();
     testImg.onload = () => {
-      avatarEl.style.backgroundImage = "url('" + photoPath + "')";
+      // Use image-set so retina screens fetch the 2x variant, others the lighter 1x.
+      avatarEl.style.backgroundImage =
+        `image-set(url('${photoPath}') 1x, url('${photoPath2x}') 2x)`;
       avatarEl.style.backgroundSize = "cover";
       avatarEl.style.backgroundPosition = "center";
       avatarEl.style.backgroundColor = "transparent";

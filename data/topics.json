@@ -265,6 +265,14 @@
     "summary": "Gegen die vom Landratsamt Freising erteilte Baugenehmigung für ein Studentenwohnheim auf dem Rockermaier Areal erhebt die Stadt Klage beim Verwaltungsgericht München.",
     "history": [
       {
+        "date": "2022-10-24",
+        "type": "milestone",
+        "title": "Rockermaier-Areal – Abwägung B-Plan 77 + erneute Auslegung",
+        "text": "17. Stadtratssitzung: ~60 Stellungnahmen (Behörden + 31 Bürger + Bürgerinitiative) abgewogen, Verkehrsgutachten fortgeschrieben, Gesamtkonzept Schulbedarf in Auftrag, Planentwurf 24.10.2022 zur erneuten Auslegung gebilligt.",
+        "sessionId": "sr_20221024",
+        "voteId": "sr_20221024_10"
+      },
+      {
         "date": "2024-03-18",
         "type": "vote",
         "title": "B-Plan Nr. 77 Rockermaier – Erneute Auslegung",
@@ -391,6 +399,14 @@
     "image": null,
     "summary": "Jahreshaushaltssatzungen, Jahresrechnungen, Hebesätze und über-/außerplanmäßige Ausgaben der Stadt Moosburg. Die Stadt steht angesichts der Großprojekte vor einer angespannten Finanzlage.",
     "history": [
+      {
+        "date": "2022-09-05",
+        "type": "vote",
+        "title": "Sturmschäden Juni 2022 – 100.000 € Haushaltsmittel",
+        "text": "Mittelbereitstellung für Schäden des Sturmereignisses 20.06.2022.",
+        "sessionId": "sr_20220905",
+        "voteId": "sr_20220905_04"
+      },
       {
         "date": "2023-07-24",
         "type": "vote",
@@ -694,6 +710,22 @@
     "summary": "Das städtische Freibad an der Stadtbadstraße. Sanierungsplanung, Bundesförderung sowie Anpassungen der Badegebühren.",
     "history": [
       {
+        "date": "2022-09-05",
+        "type": "milestone",
+        "title": "Bundesprogramm Schwimmbäder/SJK 2022 – Teilnahme",
+        "text": "Teilnahme am Bundesprogramm „Sanierung kommunaler Einrichtungen in den Bereichen Sport, Jugend und Kultur\" einstimmig beschlossen.",
+        "sessionId": "sr_20220905",
+        "voteId": "sr_20220905_06"
+      },
+      {
+        "date": "2022-09-19",
+        "type": "vote",
+        "title": "Kleinschwimmhalle – Gebührenanpassung 2022/23",
+        "text": "Gebührenerhöhung in der vorliegenden Fassung beschlossen.",
+        "sessionId": "sr_20220919",
+        "voteId": "sr_20220919_11"
+      },
+      {
         "date": "2023-03-27",
         "type": "vote",
         "title": "Freibad – Bundesprogramm SJK 2022 Antragstellung",
@@ -876,6 +908,14 @@
     "image": null,
     "summary": "Moosburgs Schritte hin zu einer klimaneutralen Versorgung: Stromausschreibung mit 100 % Ökostrom, kommunale Wärmeplanung als strategische Grundlage, einzelne PV-Freiflächenanlagen und Stellungnahmen zum Windenergie-Steuerungskonzept des Regionalplans München.",
     "history": [
+      {
+        "date": "2022-11-17",
+        "type": "vote",
+        "title": "Hackschnitzelheizzentrale Böhmerwaldstr. – Erweiterung",
+        "text": "BPU erteilt Einvernehmen zum Umbau mit drittem Hackschnitzelkessel.",
+        "sessionId": "bpu_20221117",
+        "voteId": "bpu_20221117_03"
+      },
       {
         "date": "2023-02-13",
         "type": "vote",
@@ -1131,8 +1171,24 @@
       "environment"
     ],
     "image": null,
-    "summary": "Großes Wohnbaugebiet im Norden Moosburgs mit Mehrfamilienhäusern, Grünpark, Mühlbachterrassen und Verkehrsregelung. Aufstellung des Bebauungsplans 63 „SO Amperauen\", später ergänzt um Parkgestaltung und Widmungen.",
+    "summary": "Großes Wohnbaugebiet im Norden Moosburgs mit Mehrfamilienhäusern, Grünpark und Verkehrsregelung. Aufstellung des Bebauungsplans 63 „SO Amperauen\", später ergänzt um Parkgestaltung und Widmungen.",
     "history": [
+      {
+        "date": "2022-09-05",
+        "type": "vote",
+        "title": "Amperauen – B-Plan 63 Planungskonzept beschlossen",
+        "text": "Fortführung des Bebauungsplans Nr. 63 „SO Amperauen\" auf Grundlage des Konzeptvergabe-Gewinners; einheitliches Sondergebiet Einzelhandel.",
+        "sessionId": "sr_20220905",
+        "voteId": "sr_20220905_02"
+      },
+      {
+        "date": "2022-09-05",
+        "type": "vote",
+        "title": "Amperauen – Straßenname „Amperpark\" (12:8)",
+        "text": "Knapp mehrheitlich für „Amperpark\" als Name der neuen Erschließungsstraße.",
+        "sessionId": "sr_20220905",
+        "voteId": "sr_20220905_03"
+      },
       {
         "date": "2023-04-24",
         "type": "vote",
@@ -1164,14 +1220,6 @@
         "text": "Einstimmig: Wohngebietspark als Grünanlage beschlossen.",
         "sessionId": "bpu_20231123",
         "voteId": "bpu_20231123_02"
-      },
-      {
-        "date": "2023-11-23",
-        "type": "vote",
-        "title": "Mühlbachterrassen – Machbarkeitsstudie",
-        "text": "Einstimmig: Studie befürwortet; Schwemme zu prüfen.",
-        "sessionId": "bpu_20231123",
-        "voteId": "bpu_20231123_03"
       },
       {
         "date": "2023-11-23",
