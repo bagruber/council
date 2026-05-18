@@ -9,7 +9,8 @@ Used by the profile view via image-set() in CSS for screen-density-aware loading
 import os
 from PIL import Image
 
-SRC_DIR = "img/members"
+SRC_DIR = "img/members/originals"
+OUT_DIR = "img/members"
 SIZES = [
     ("",     360, 78),   # 1x — base
     ("@2x",  720, 78),   # 2x retina
@@ -24,7 +25,10 @@ for fname in png_files:
     src = os.path.join(SRC_DIR, fname)
     name = os.path.splitext(fname)[0]
     before_total += os.path.getsize(src)
-    img = Image.open(src).convert("RGB")
+    img = Image.open(src)
+    # Preserve transparency: convert to RGBA only if needed.
+    if img.mode not in ("RGBA", "RGB"):
+        img = img.convert("RGBA" if "A" in img.mode or img.info.get("transparency") else "RGB")
     w, h = img.size
     for suffix, target_w, quality in SIZES:
         if w <= target_w:
@@ -32,11 +36,13 @@ for fname in png_files:
         else:
             ratio = target_w / w
             scaled = img.resize((target_w, int(h * ratio)), Image.LANCZOS)
-        out_path = os.path.join(SRC_DIR, f"{name}{suffix}.webp")
-        scaled.save(out_path, "WEBP", quality=quality, method=6)
+        out_path = os.path.join(OUT_DIR, f"{name}{suffix}.webp")
+        # lossless=False but alpha preserved through WebP's alpha channel.
+        scaled.save(out_path, "WEBP", quality=quality, method=6,
+                    lossless=False, exact=False)
         after_total += os.path.getsize(out_path)
     print(f"  {name}: {os.path.getsize(src)/1024:.0f}K png → "
-          f"{os.path.getsize(os.path.join(SRC_DIR, name+'.webp'))/1024:.0f}K + "
-          f"{os.path.getsize(os.path.join(SRC_DIR, name+'@2x.webp'))/1024:.0f}K webp")
+          f"{os.path.getsize(os.path.join(OUT_DIR, name+'.webp'))/1024:.0f}K + "
+          f"{os.path.getsize(os.path.join(OUT_DIR, name+'@2x.webp'))/1024:.0f}K webp")
 
 print(f"\ntotal: {before_total/1024/1024:.1f} MB (PNG) → {after_total/1024/1024:.1f} MB (WebP both sizes)")
