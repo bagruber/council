@@ -1876,8 +1876,23 @@
               "member": "welter"
             },
             {
-              "member": "hobmaier",
-              "sub": "gruber"
+              "sub": "gruber",
+              "occupants": [
+                {
+                  "member": "wittmann",
+                  "from": "2020-05-01",
+                  "to": "2021-10-24"
+                },
+                {
+                  "member": "gruebl",
+                  "from": "2021-10-25",
+                  "to": "2024-10-21"
+                },
+                {
+                  "member": "hobmaier",
+                  "from": "2024-10-22"
+                }
+              ]
             },
             {
               "member": "kieninger",
