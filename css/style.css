@@ -285,17 +285,17 @@ main {
   --cat-color: #888;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: 0.72rem;
-  padding: 3px 10px 3px 8px;
+  gap: 3px;
+  font-size: 0.66rem;
+  padding: 2px 8px 2px 6px;
   background: color-mix(in srgb, var(--cat-color) 12%, transparent);
   color: var(--cat-color);
-  border-radius: 12px;
+  border-radius: 10px;
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 .cat-chip-icon {
-  font-size: 14px !important;
+  font-size: 12px !important;
   opacity: 0.85;
 }
 
@@ -1343,12 +1343,14 @@ main {
 
 .body-card-detail {
   overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
 }
+.body-card-detail > * { min-height: 0; }
 
 .body-card.expanded .body-card-detail {
-  max-height: 2000px;
+  grid-template-rows: 1fr;
 }
 
 .body-card-desc {

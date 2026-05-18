@@ -62,6 +62,14 @@
         "text": "Die Stadt Moosburg erwirbt das Bahnhofsgebäude von der Deutschen Bahn."
       },
       {
+        "date": "2023-04-24",
+        "type": "vote",
+        "title": "Fahrgastbefragung Bahnhof",
+        "text": "Einstimmig: Online-Befragung zum Nutzungsverhalten am Bahnhof.",
+        "sessionId": "sr_20230424",
+        "voteId": "sr_20230424_05"
+      },
+      {
         "date": "2025-06-23",
         "type": "proposal",
         "title": "Anträge zur Sanierung",
@@ -92,6 +100,30 @@
     "image": null,
     "summary": "Nach der Umgestaltung des Platzes Auf dem Plan mit Mitteln der Städtebauförderung (ca. 2,4 Mio Euro) kam es zu kontroversen Diskussionen über Falschparker und die Anzahl der Parkplätze.",
     "history": [
+      {
+        "date": "2023-01-12",
+        "type": "vote",
+        "title": "Auf dem Plan – Granitpflaster (abgelehnt)",
+        "text": "Antrag auf gebundene Granitpflaster-Verlegung knapp abgelehnt (10:11).",
+        "sessionId": "sr_20230112",
+        "voteId": "sr_20230112_02"
+      },
+      {
+        "date": "2023-03-27",
+        "type": "vote",
+        "title": "Auf dem Plan – Entwurfsplanung + Ausschreibung",
+        "text": "Einstimmig: Entwurfsplanung 13.03.2023 + Ausschreibung mit Teilnahmewettbewerb.",
+        "sessionId": "sr_20230327",
+        "voteId": "sr_20230327_02"
+      },
+      {
+        "date": "2023-07-24",
+        "type": "vote",
+        "title": "Denkmalförderung „Auf dem Plan 14\"",
+        "text": "100.000 € Bundeszuschuss + 40.000 € städtischer Eigenanteil über „Lebendige Zentren\".",
+        "sessionId": "sr_20230724",
+        "voteId": "sr_20230724_05"
+      },
       {
         "date": "2024-06-01",
         "type": "milestone",
@@ -159,6 +191,38 @@
     "image": null,
     "summary": "Auf Antrag von SPD und Grünen werden Tempo-20- und Tempo-30-Zonen in der Innenstadt ausgeweitet. Auch die Bahnhofstraße soll verkehrlich überprüft werden.",
     "history": [
+      {
+        "date": "2023-03-20",
+        "type": "vote",
+        "title": "Verkehrsführung Thalbacher/Bahnhofstr.",
+        "text": "Einstimmig: Planung wird vergeben.",
+        "sessionId": "bpu_20230320",
+        "voteId": "bpu_20230320_09"
+      },
+      {
+        "date": "2023-03-20",
+        "type": "vote",
+        "title": "Münchener/Westerbergstr. – Umbau beschlossen",
+        "text": "Einstimmig: endgültiger Umbau.",
+        "sessionId": "bpu_20230320",
+        "voteId": "bpu_20230320_10"
+      },
+      {
+        "date": "2023-03-20",
+        "type": "vote",
+        "title": "Fahrradzone südlich Industriestr.",
+        "text": "Festlegung mit 10:2.",
+        "sessionId": "bpu_20230320",
+        "voteId": "bpu_20230320_13"
+      },
+      {
+        "date": "2023-11-23",
+        "type": "vote",
+        "title": "Fahrradstraßen – mehrere Beschlüsse",
+        "text": "Gärtnerstr. (9:3 angenommen), Burgermühlstr. Fahrradzone (7:5), Wasserwerkstr. (abgelehnt 5:7), Reiteraustr. (abgelehnt 3:9).",
+        "sessionId": "bpu_20231123",
+        "voteId": "bpu_20231123_16"
+      },
       {
         "date": "2024-06-10",
         "type": "vote",
@@ -262,6 +326,14 @@
     "summary": "Die Theresia-Gerhardinger-Grundschule im Norden Moosburgs wird umfassend erweitert und generalsaniert (geschätzt 33 Mio. €). Parallel werden Begleitthemen wie die Jugendsozialarbeit gestärkt und eine Kostenkommission begleitet das Projekt.",
     "history": [
       {
+        "date": "2023-07-24",
+        "type": "vote",
+        "title": "TG-Grundschule – 4 neue Klassenzimmer",
+        "text": "2.720.121 € für 4 zusätzliche Klassenzimmer (21:0).",
+        "sessionId": "sr_20230724",
+        "voteId": "sr_20230724_06"
+      },
+      {
         "date": "2024-10-21",
         "type": "committee",
         "title": "Containeranlage als Interimslösung – vertagt",
@@ -319,6 +391,38 @@
     "image": null,
     "summary": "Jahreshaushaltssatzungen, Jahresrechnungen, Hebesätze und über-/außerplanmäßige Ausgaben der Stadt Moosburg. Die Stadt steht angesichts der Großprojekte vor einer angespannten Finanzlage.",
     "history": [
+      {
+        "date": "2023-07-24",
+        "type": "vote",
+        "title": "Kläranlage – Jahresabschluss 2022 + Entlastung",
+        "text": "Einstimmig festgestellt; 6 AR-Mitglieder enthielten sich.",
+        "sessionId": "sr_20230724",
+        "voteId": "sr_20230724_03"
+      },
+      {
+        "date": "2023-09-04",
+        "type": "vote",
+        "title": "Weingraben-Kanalsanierung – 300 T€ überplanmäßig",
+        "text": "Einstimmig: Überplanmäßige Mittel für Sanierung des Weingraben-Kanals.",
+        "sessionId": "sr_20230904",
+        "voteId": "sr_20230904_02"
+      },
+      {
+        "date": "2023-10-23",
+        "type": "vote",
+        "title": "Jahresrechnung 2021 – Feststellung + Entlastung",
+        "text": "Einstimmig festgestellt und entlastet.",
+        "sessionId": "sr_20231023",
+        "voteId": "sr_20231023_02"
+      },
+      {
+        "date": "2023-12-18",
+        "type": "vote",
+        "title": "Haushaltssatzung 2024",
+        "text": "Haushaltssatzung 2024 mit allen Anlagen beschlossen (22:0).",
+        "sessionId": "sr_20231218",
+        "voteId": "sr_20231218_03"
+      },
       {
         "date": "2024-05-06",
         "type": "vote",
@@ -590,6 +694,22 @@
     "summary": "Das städtische Freibad an der Stadtbadstraße. Sanierungsplanung, Bundesförderung sowie Anpassungen der Badegebühren.",
     "history": [
       {
+        "date": "2023-03-27",
+        "type": "vote",
+        "title": "Freibad – Bundesprogramm SJK 2022 Antragstellung",
+        "text": "Einstimmig: Bewerbung um Bundesförderung zur Freibadsanierung.",
+        "sessionId": "sr_20230327",
+        "voteId": "sr_20230327_03"
+      },
+      {
+        "date": "2023-04-24",
+        "type": "vote",
+        "title": "Freibad – Badegebühren angepasst",
+        "text": "Neue Badegebührenordnung beschlossen (13:7).",
+        "sessionId": "sr_20230424",
+        "voteId": "sr_20230424_03"
+      },
+      {
         "date": "2024-12-09",
         "type": "vote",
         "title": "Planung vorgestellt und gebilligt",
@@ -633,6 +753,30 @@
     "summary": "Das Sanierungsgebiet „Zwischen Innenstadt und Bahnhof“ wird nach vorbereitenden Untersuchungen und öffentlicher Beteiligung förmlich festgelegt. Ziel ist die städtebauliche Aufwertung des Bereichs zwischen Stadtplatz und Bahnhofsgelände. Die Schloss Aschwiese wird nach Einwendungen aus dem Umgriff herausgenommen.",
     "history": [
       {
+        "date": "2023-04-17",
+        "type": "vote",
+        "title": "Vorbereitende Untersuchungen Innenstadt–Bahnhof",
+        "text": "Beauftragung der Vorbereitenden Untersuchungen nach § 141 BauGB (13:9).",
+        "sessionId": "sr_20230417",
+        "voteId": "sr_20230417_02"
+      },
+      {
+        "date": "2023-07-17",
+        "type": "vote",
+        "title": "Sanierungsrechtliches Einvernehmen – Herrnstr. 29 verweigert",
+        "text": "Sanierungsrechtl. Einvernehmen mit 9:1 verweigert: Erhalt EG-Gewerbe ist Sanierungsziel.",
+        "sessionId": "bpu_20230717",
+        "voteId": "bpu_20230717_05"
+      },
+      {
+        "date": "2023-12-14",
+        "type": "vote",
+        "title": "Städtebauförderung 2024 – Bedarfsanmeldung",
+        "text": "Bedarfsanmeldung beschlossen (15:0).",
+        "sessionId": "sr_20231214",
+        "voteId": "sr_20231214_04"
+      },
+      {
         "date": "2024-10-07",
         "type": "vote",
         "title": "Vorbereitende Untersuchungen beschlossen",
@@ -673,6 +817,22 @@
     "image": null,
     "summary": "Die historischen Wachbaracken des Stalag VII A – eines der größten alliierten Kriegsgefangenenlager des Zweiten Weltkriegs bei Moosburg – sollen dauerhaft erhalten werden. Stadt und Landkreis Freising schließen eine Zweckvereinbarung zum gemeinsamen Erhalt der Bausubstanz.",
     "history": [
+      {
+        "date": "2023-09-21",
+        "type": "vote",
+        "title": "Isarwehr – Denkmalschutz",
+        "text": "Einstimmig: Denkmaleintragung befürwortet.",
+        "sessionId": "bpu_20230921",
+        "voteId": "bpu_20230921_02"
+      },
+      {
+        "date": "2023-09-21",
+        "type": "vote",
+        "title": "Wasserkraftwerk Pfrombach – Denkmalschutz",
+        "text": "Einstimmig: Denkmaleintragung befürwortet.",
+        "sessionId": "bpu_20230921",
+        "voteId": "bpu_20230921_03"
+      },
       {
         "date": "2024-04-22",
         "type": "milestone",
@@ -716,6 +876,38 @@
     "image": null,
     "summary": "Moosburgs Schritte hin zu einer klimaneutralen Versorgung: Stromausschreibung mit 100 % Ökostrom, kommunale Wärmeplanung als strategische Grundlage, einzelne PV-Freiflächenanlagen und Stellungnahmen zum Windenergie-Steuerungskonzept des Regionalplans München.",
     "history": [
+      {
+        "date": "2023-02-13",
+        "type": "vote",
+        "title": "Strom-Bündelausschreibung 2024/2025",
+        "text": "Einstimmig: Änderung des Bündelausschreibungs-Beschlusses.",
+        "sessionId": "sr_20230213",
+        "voteId": "sr_20230213_03"
+      },
+      {
+        "date": "2023-06-26",
+        "type": "vote",
+        "title": "Straßenbeleuchtung – LED-Umrüstung",
+        "text": "Einstimmig: Umstellung auf LED.",
+        "sessionId": "sr_20230626",
+        "voteId": "sr_20230626_04"
+      },
+      {
+        "date": "2023-07-10",
+        "type": "vote",
+        "title": "FC Moosburg – Flutlicht-LED-Zuschuss",
+        "text": "Einstimmig: ~38.700 € (20 %) Zuschuss zum LED-Umbau.",
+        "sessionId": "sr_20230710",
+        "voteId": "sr_20230710_02"
+      },
+      {
+        "date": "2023-12-14",
+        "type": "vote",
+        "title": "Solarförderung – Änderung",
+        "text": "Anpassung der städtischen Solarförderrichtlinie.",
+        "sessionId": "sr_20231214",
+        "voteId": "sr_20231214_07"
+      },
       {
         "date": "2024-05-06",
         "type": "vote",
@@ -776,6 +968,13 @@
     "summary": "Eröffnungsbetrieb des neuen Hallenbads. Öffnungszeiten, Tarife und Benutzungsordnung wurden festgelegt; immer wieder beantragte kostenlose Eintritte für Kinder in Ferienzeiten werden kontrovers diskutiert.",
     "history": [
       {
+        "date": "2023-03-27",
+        "type": "discussion",
+        "title": "Hallenbad-Neubau – Sachstand",
+        "text": "Architekt informiert den Stadtrat über den aktuellen Planungsstand des Hallenbad-Neubaus.",
+        "sessionId": "sr_20230327"
+      },
+      {
         "date": "2024-10-21",
         "type": "vote",
         "title": "Öffnungszeiten festgelegt",
@@ -827,6 +1026,14 @@
     "summary": "Mehrjähriges Sanierungsprojekt am historischen Rathaus: Fassade sowie 1. und 2. Obergeschoss in mehreren Bauabschnitten. Die Verwaltung wurde mit Planung und Kostenberechnung beauftragt.",
     "history": [
       {
+        "date": "2023-02-13",
+        "type": "vote",
+        "title": "Rathaus – Erweiterungsbau Herrnstr. 2",
+        "text": "Einstimmig: Gemeindliches Einvernehmen für den Rathaus-Erweiterungsbau.",
+        "sessionId": "sr_20230213",
+        "voteId": "sr_20230213_02"
+      },
+      {
         "date": "2024-09-23",
         "type": "vote",
         "title": "Sanierung Rathaus – Fachplaner beauftragt",
@@ -854,6 +1061,14 @@
     "image": null,
     "summary": "Erweiterung und Anpassung des Gewerbegebiets Degernpoint im Norden Moosburgs: Aufstellung und Satzungsbeschluss für \"Degernpoint Nordost II\" (B-Plan 80) sowie 4. Änderung des bestehenden B-Plans Nr. 50 mit flexiblerer Parzellierung.",
     "history": [
+      {
+        "date": "2023-09-21",
+        "type": "vote",
+        "title": "Degernpoint – Parkplatz mit E-Ladestationen",
+        "text": "Einvernehmen erteilt (6:5).",
+        "sessionId": "bpu_20230921",
+        "voteId": "bpu_20230921_05"
+      },
       {
         "date": "2024-02-19",
         "type": "vote",
@@ -905,6 +1120,66 @@
         "text": "Einstimmig: Stadt unterstützt DAV-Sektion mit 20 % der förderfähigen Baukosten (max. ca. 292.000 €).",
         "sessionId": "sr_20241118",
         "voteId": "sr_20241118_04"
+      }
+    ]
+  },
+  {
+    "id": "t20",
+    "title": "Amperauen / Wohngebiet & Park",
+    "tags": [
+      "building",
+      "environment"
+    ],
+    "image": null,
+    "summary": "Großes Wohnbaugebiet im Norden Moosburgs mit Mehrfamilienhäusern, Grünpark, Mühlbachterrassen und Verkehrsregelung. Aufstellung des Bebauungsplans 63 „SO Amperauen\", später ergänzt um Parkgestaltung und Widmungen.",
+    "history": [
+      {
+        "date": "2023-04-24",
+        "type": "vote",
+        "title": "B-Plan 52 Amperauen – Einfriedungen",
+        "text": "Antrag, Beschluss zu Einfriedungen aufzuheben, mit 6:14 abgelehnt.",
+        "sessionId": "sr_20230424",
+        "voteId": "sr_20230424_02"
+      },
+      {
+        "date": "2023-05-15",
+        "type": "vote",
+        "title": "B-Plan 63 SO Amperauen – Planung beschlossen",
+        "text": "Nach Abwägung von 27 Stellungnahmen wird die Planung einstimmig beschlossen.",
+        "sessionId": "sr_20230515",
+        "voteId": "sr_20230515_02"
+      },
+      {
+        "date": "2023-10-23",
+        "type": "vote",
+        "title": "B-Plan 63 SO Amperauen – Stellungnahmen Auslegung",
+        "text": "In 13 Einzelabstimmungen werden die Stellungnahmen aus der erneuten Auslegung abgewogen.",
+        "sessionId": "sr_20231023",
+        "voteId": "sr_20231023_01"
+      },
+      {
+        "date": "2023-11-23",
+        "type": "vote",
+        "title": "Parkgestaltung Amperauen",
+        "text": "Einstimmig: Wohngebietspark als Grünanlage beschlossen.",
+        "sessionId": "bpu_20231123",
+        "voteId": "bpu_20231123_02"
+      },
+      {
+        "date": "2023-11-23",
+        "type": "vote",
+        "title": "Mühlbachterrassen – Machbarkeitsstudie",
+        "text": "Einstimmig: Studie befürwortet; Schwemme zu prüfen.",
+        "sessionId": "bpu_20231123",
+        "voteId": "bpu_20231123_03"
+      },
+      {
+        "date": "2023-11-23",
+        "type": "vote",
+        "title": "Amperpark – Widmung",
+        "text": "Einstimmig beschlossen.",
+        "sessionId": "bpu_20231123",
+        "voteId": "bpu_20231123_15"
       }
     ]
   }
