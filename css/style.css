@@ -1342,13 +1342,14 @@ main {
 }
 
 .body-card-detail {
-  overflow: hidden;
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.3s ease;
 }
-.body-card-detail > * { min-height: 0; }
-
+.body-card-detail-inner {
+  overflow: hidden;
+  min-height: 0;
+}
 .body-card.expanded .body-card-detail {
   grid-template-rows: 1fr;
 }
