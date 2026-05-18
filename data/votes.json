@@ -8951,5 +8951,3405 @@
       "no": 0,
       "absent": 3
     }
+  },
+  {
+    "id": "sr_20230112_01",
+    "sessionId": "sr_20230112",
+    "topicId": null,
+    "date": "2023-01-12",
+    "title": "Genehmigung Niederschriften (StR Q4 2022)",
+    "text": "Einstimmig: Genehmigung der öffentlichen Teile der Niederschriften vom 24.10., 07.11. und 21.11.2022.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "becher_a",
+        "john",
+        "linz_karin",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230112_02",
+    "sessionId": "sr_20230112",
+    "topicId": "t3",
+    "date": "2023-01-12",
+    "title": "Auf dem Plan – Gebundene Granitpflaster-Verlegung",
+    "text": "Antrag, das Granitpflaster für den Stadtplatz „Auf dem Plan\" in gebundener Bauweise zu verlegen, wird mit 10:11 knapp abgelehnt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 10,
+      "no": 11,
+      "absent": 4
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "bpu_20230123_01",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "Asphaltmischanlage – Weiterbetrieb",
+    "text": "Einstimmig: Gemeindliches Einvernehmen zum Weiterbetrieb der Asphaltmischanlage erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230123_02",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "Dachgeschoss-Erweiterung Neustadtstr. 40 – verweigert",
+    "text": "Einstimmig verweigert: Stellplatznachweis und Fahrradabstellplätze fehlerhaft.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230123_03",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "Doppelhaushälfte Holunderweg 13",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230123_04",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "Vorbescheid Einfamilienhaus Kanalstr. 3",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230123_05",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "Vorbescheid Einfamilienhaus Zanderstr. 7",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230123_06",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "MFH Haus 2 Landshuter Str.",
+    "text": "Einvernehmen erteilt (8:4).",
+    "type": "anonymous",
+    "results": {
+      "yes": 8,
+      "no": 4,
+      "absent": 0
+    }
+  },
+  {
+    "id": "bpu_20230123_07",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "MFH Haus 6 Landshuter Str.",
+    "text": "Einvernehmen erteilt (8:4).",
+    "type": "anonymous",
+    "results": {
+      "yes": 8,
+      "no": 4,
+      "absent": 0
+    }
+  },
+  {
+    "id": "bpu_20230123_08",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "Lagerhalle Molkereistr. – verweigert",
+    "text": "Einvernehmen mit 11:1 verweigert.",
+    "type": "anonymous",
+    "results": {
+      "yes": 11,
+      "no": 1,
+      "absent": 0
+    }
+  },
+  {
+    "id": "bpu_20230123_09",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "3 Betriebswohnungen Amperstr. 24",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230123_10",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "5 Pferde-Ausläufe Amperstr. 24",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230123_11",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "Vorbescheid Hotel-Aufstockung Neue Industriestr. 11",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230123_12",
+    "sessionId": "bpu_20230123",
+    "topicId": null,
+    "date": "2023-01-23",
+    "title": "Teileinziehung Weg Pillhofen",
+    "text": "Einstimmig beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "sr_20230130_01",
+    "sessionId": "sr_20230130",
+    "topicId": null,
+    "date": "2023-01-30",
+    "title": "Genehmigung Niederschriften",
+    "text": "Einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "beubl",
+        "kaestl",
+        "beibl",
+        "linz_kilian",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230130_02",
+    "sessionId": "sr_20230130",
+    "topicId": null,
+    "date": "2023-01-30",
+    "title": "Stellplatzsatzung – Stellplätze MFH",
+    "text": "Anzahl der erforderlichen Stellplätze für Mehrfamilienhäuser festgesetzt (16:4).",
+    "type": "anonymous",
+    "results": {
+      "yes": 16,
+      "no": 4,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230130_03",
+    "sessionId": "sr_20230130",
+    "topicId": null,
+    "date": "2023-01-30",
+    "title": "Stellplätze Einfamilienhäuser",
+    "text": "Einstimmig festgesetzt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "beubl",
+        "kaestl",
+        "beibl",
+        "linz_kilian",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230130_04",
+    "sessionId": "sr_20230130",
+    "topicId": null,
+    "date": "2023-01-30",
+    "title": "Stellplatzanzahl auch in Ortsteilen",
+    "text": "Stellplatzanzahl gilt auch für Ortsteile (15:5).",
+    "type": "anonymous",
+    "results": {
+      "yes": 15,
+      "no": 5,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230130_05",
+    "sessionId": "sr_20230130",
+    "topicId": null,
+    "date": "2023-01-30",
+    "title": "Besucherstellplätze 20 % ab 4 WE",
+    "text": "Besucherstellplätze in Höhe von 20 % ab 4 Wohneinheiten (12:8).",
+    "type": "anonymous",
+    "results": {
+      "yes": 12,
+      "no": 8,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230130_06",
+    "sessionId": "sr_20230130",
+    "topicId": null,
+    "date": "2023-01-30",
+    "title": "Allgemeine Stellplatzablöse 15.000 €",
+    "text": "Einstimmig: Stellplatzablöse auf 15.000 € pro Stellplatz festgesetzt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "beubl",
+        "kaestl",
+        "beibl",
+        "linz_kilian",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230130_07",
+    "sessionId": "sr_20230130",
+    "topicId": null,
+    "date": "2023-01-30",
+    "title": "Stellplatzablöse Innenstadt 10.000 € (abgelehnt)",
+    "text": "Antrag auf reduzierte Ablöse 10.000 € in der Innenstadt abgelehnt (4:16).",
+    "type": "anonymous",
+    "results": {
+      "yes": 4,
+      "no": 16,
+      "absent": 5
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20230213_01",
+    "sessionId": "sr_20230213",
+    "topicId": null,
+    "date": "2023-02-13",
+    "title": "Genehmigung Niederschrift StR 12.01.2023",
+    "text": "Einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "becher_j",
+        "beubl",
+        "fincke",
+        "heinz",
+        "linz_karin",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230213_02",
+    "sessionId": "sr_20230213",
+    "topicId": "t17",
+    "date": "2023-02-13",
+    "title": "Rathaus-Erweiterungsbau Herrnstr. 2",
+    "text": "Einstimmig: Gemeindliches Einvernehmen für den Erweiterungsbau des Rathauses erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "becher_j",
+        "beubl",
+        "fincke",
+        "heinz",
+        "linz_karin",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230213_03",
+    "sessionId": "sr_20230213",
+    "topicId": "t15",
+    "date": "2023-02-13",
+    "title": "Strom-Bündelausschreibung 2024/2025",
+    "text": "Einstimmig: Änderung des Beschlusses vom 19.12.2022 zur Bündelausschreibung der kommunalen Strombeschaffung.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "becher_j",
+        "beubl",
+        "fincke",
+        "heinz",
+        "linz_karin",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230306_01",
+    "sessionId": "sr_20230306",
+    "topicId": null,
+    "date": "2023-03-06",
+    "title": "Neubesetzung HVFA",
+    "text": "Einstimmig: Neubesetzung des HVFA gemäß Antrag.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "beubl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230306_02",
+    "sessionId": "sr_20230306",
+    "topicId": null,
+    "date": "2023-03-06",
+    "title": "Neubesetzung BPU",
+    "text": "Einstimmig: Neubesetzung des BPU gemäß Antrag.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "beubl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230306_03",
+    "sessionId": "sr_20230306",
+    "topicId": null,
+    "date": "2023-03-06",
+    "title": "Neubesetzung Personalausschuss",
+    "text": "Einstimmig: Neubesetzung des Personalausschusses.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "beubl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230306_04",
+    "sessionId": "sr_20230306",
+    "topicId": null,
+    "date": "2023-03-06",
+    "title": "Neubesetzung Rechnungsprüfungsausschuss",
+    "text": "Einstimmig: Neubesetzung des Rechnungsprüfungsausschusses.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "beubl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230306_05",
+    "sessionId": "sr_20230306",
+    "topicId": null,
+    "date": "2023-03-06",
+    "title": "Genehmigung Niederschriften",
+    "text": "Einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "beubl"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230320_01",
+    "sessionId": "bpu_20230320",
+    "topicId": null,
+    "date": "2023-03-20",
+    "title": "Nassabbau Semptwiesen II – Tekturantrag",
+    "text": "Einstimmig: Keine Bedenken gegen Tekturantrag zum Nassabbau Semptwiesen II.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230320_02",
+    "sessionId": "bpu_20230320",
+    "topicId": null,
+    "date": "2023-03-20",
+    "title": "Bodenaushub-Lagerung BImSchG",
+    "text": "Einstimmig: Lagerung Bodenaushub/Straßenaufbruch keine Einwendungen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230320_03",
+    "sessionId": "bpu_20230320",
+    "topicId": null,
+    "date": "2023-03-20",
+    "title": "Stellplatzablöse Rosenhofweg 4/4a – abgelehnt",
+    "text": "Einstimmig: Ablöse von 9 Stellplätzen abgelehnt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230320_04",
+    "sessionId": "bpu_20230320",
+    "topicId": null,
+    "date": "2023-03-20",
+    "title": "Doppelhäuser Burgermühlstr. 13 – Vorbescheid erteilt (abgelehnt)",
+    "text": "Antrag, Einvernehmen zu erteilen, mit 5:7 abgelehnt; Kubatur zu groß.",
+    "type": "anonymous",
+    "results": {
+      "yes": 5,
+      "no": 7,
+      "absent": 1
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "bpu_20230320_05",
+    "sessionId": "bpu_20230320",
+    "topicId": null,
+    "date": "2023-03-20",
+    "title": "Doppelhäuser Burgermühlstr. 13 – verweigert",
+    "text": "Mit 7:5 verweigert.",
+    "type": "anonymous",
+    "results": {
+      "yes": 7,
+      "no": 5,
+      "absent": 1
+    }
+  },
+  {
+    "id": "bpu_20230320_06",
+    "sessionId": "bpu_20230320",
+    "topicId": null,
+    "date": "2023-03-20",
+    "title": "Einfamilienhaus Falkenstr. 21",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230320_07",
+    "sessionId": "bpu_20230320",
+    "topicId": null,
+    "date": "2023-03-20",
+    "title": "Umgestaltung Pillhofen 5",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230320_08",
+    "sessionId": "bpu_20230320",
+    "topicId": null,
+    "date": "2023-03-20",
+    "title": "MFH 9 WE Sudetenlandstr. 2 – verweigert",
+    "text": "Einstimmig verweigert.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230320_09",
+    "sessionId": "bpu_20230320",
+    "topicId": "t4",
+    "date": "2023-03-20",
+    "title": "Verkehrsführung Thalbacher/Bahnhofstr.",
+    "text": "Einstimmig: Planung zur Änderung der Verkehrsführung wird vergeben.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230320_10",
+    "sessionId": "bpu_20230320",
+    "topicId": "t4",
+    "date": "2023-03-20",
+    "title": "Verkehrsführung Münchener/Westerbergstr.",
+    "text": "Einstimmig: endgültiger Umbau beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230320_11",
+    "sessionId": "bpu_20230320",
+    "topicId": "t4",
+    "date": "2023-03-20",
+    "title": "Mühlbachbogen – Halteverbote prüfen",
+    "text": "Einstimmig: Verwaltung prüft Halteverbotsbuchten.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230320_12",
+    "sessionId": "bpu_20230320",
+    "topicId": "t20",
+    "date": "2023-03-20",
+    "title": "Amperauen – Halteverbote mit Feuerwehrzeichen",
+    "text": "Einstimmig: Keine Änderung der Verkehrsführung; Halteverbote mit Feuerwehrzeichen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20230320_13",
+    "sessionId": "bpu_20230320",
+    "topicId": "t4",
+    "date": "2023-03-20",
+    "title": "Fahrradzone südlich Industriestr.",
+    "text": "Endgültige Festlegung der Fahrradzone (10:2).",
+    "type": "anonymous",
+    "results": {
+      "yes": 10,
+      "no": 2,
+      "absent": 0
+    }
+  },
+  {
+    "id": "sr_20230327_01",
+    "sessionId": "sr_20230327",
+    "topicId": null,
+    "date": "2023-03-27",
+    "title": "Genehmigung Niederschrift StR 13.02.2023",
+    "text": "Einstimmig genehmigt (17:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20230327_02",
+    "sessionId": "sr_20230327",
+    "topicId": "t3",
+    "date": "2023-03-27",
+    "title": "Auf dem Plan – Entwurfsplanung + Ausschreibung",
+    "text": "Einstimmig: Entwurfsplanung 13.03.2023 zustimmend, Ausschreibung mit Teilnahmewettbewerb beschlossen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20230327_03",
+    "sessionId": "sr_20230327",
+    "topicId": "t12",
+    "date": "2023-03-27",
+    "title": "Bundesprogramm SJK 2022 – Freibad",
+    "text": "Antragstellung für das Bundesprogramm „Sanierung Schwimmbäder kommunal\" (18:0; Heinz Enthaltung).",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "sr_20230327_04",
+    "sessionId": "sr_20230327",
+    "topicId": null,
+    "date": "2023-03-27",
+    "title": "Verkaufsoffener Sonntag 16.04.2023",
+    "text": "Verordnung beschlossen (18:0; Beubl Enthaltung).",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "sr_20230327_05",
+    "sessionId": "sr_20230327",
+    "topicId": null,
+    "date": "2023-03-27",
+    "title": "Neubesetzung Personalausschuss",
+    "text": "Pschorr als Mitglied, Beubl als Vertreter (18:0; Stanglmaier Enthaltung).",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "sr_20230327_06",
+    "sessionId": "sr_20230327",
+    "topicId": null,
+    "date": "2023-03-27",
+    "title": "Plakatierung Breitbandausbau Ortsteile",
+    "text": "Einstimmig: Plakatierung in Pfrombach/Aich (60 Plakate) und Thonstetten (20).",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230417_01",
+    "sessionId": "sr_20230417",
+    "topicId": "t13",
+    "date": "2023-04-17",
+    "title": "Schloss-Aschwiese aus Untersuchungsgebiet herausnehmen (abgelehnt)",
+    "text": "Änderungsantrag, die Schloss-Aschwiese aus dem Untersuchungsgebiet auszunehmen, abgelehnt (9:13).",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 13,
+      "absent": 3
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20230417_02",
+    "sessionId": "sr_20230417",
+    "topicId": "t13",
+    "date": "2023-04-17",
+    "title": "Vorbereitende Untersuchungen Innenstadt–Bahnhof",
+    "text": "Beauftragung der Vorbereitenden Untersuchungen nach § 141 BauGB (13:9).",
+    "type": "anonymous",
+    "results": {
+      "yes": 13,
+      "no": 9,
+      "absent": 3
+    }
+  },
+  {
+    "id": "sr_20230417_03",
+    "sessionId": "sr_20230417",
+    "topicId": null,
+    "date": "2023-04-17",
+    "title": "Stellplatzsatzung – Streichung Garagenstellplatz (abgelehnt)",
+    "text": "Änderungsantrag mit 5:17 abgelehnt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 5,
+      "no": 17,
+      "absent": 3
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20230417_04",
+    "sessionId": "sr_20230417",
+    "topicId": null,
+    "date": "2023-04-17",
+    "title": "Stellplatzsatzung – Neufassung",
+    "text": "Einstimmig: Neufassung Fassung 17.04.2023 beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "fincke",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230417_05",
+    "sessionId": "sr_20230417",
+    "topicId": "t15",
+    "date": "2023-04-17",
+    "title": "Landschaftsschutzgebiete – keine Einwendungen",
+    "text": "Keine Einwendungen gegen Änderung der LSG im Landkreis Freising (13:9).",
+    "type": "anonymous",
+    "results": {
+      "yes": 13,
+      "no": 9,
+      "absent": 3
+    }
+  },
+  {
+    "id": "sr_20230417_06",
+    "sessionId": "sr_20230417",
+    "topicId": null,
+    "date": "2023-04-17",
+    "title": "B-Plan Dobelfeld Wang – keine Bedenken",
+    "text": "Einstimmig: Keine Bedenken zur Aufstellung (21:0; Gruebl Enthaltung).",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20230424_01",
+    "sessionId": "sr_20230424",
+    "topicId": null,
+    "date": "2023-04-24",
+    "title": "Genehmigung Niederschriften (StR 06.03., 27.03.2023)",
+    "text": "Einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "becher_j",
+        "gruber",
+        "heinz",
+        "john",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230424_02",
+    "sessionId": "sr_20230424",
+    "topicId": "t20",
+    "date": "2023-04-24",
+    "title": "B-Plan 52 Amperauen – Einfriedungen (abgelehnt)",
+    "text": "Antrag, Beschluss zu Einfriedungen aufzuheben, mit 6:14 abgelehnt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 6,
+      "no": 14,
+      "absent": 5
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20230424_03",
+    "sessionId": "sr_20230424",
+    "topicId": "t12",
+    "date": "2023-04-24",
+    "title": "Badegebühren Freibad – Anpassung",
+    "text": "Neue Badegebührenordnung beschlossen (13:7).",
+    "type": "anonymous",
+    "results": {
+      "yes": 13,
+      "no": 7,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230424_04",
+    "sessionId": "sr_20230424",
+    "topicId": null,
+    "date": "2023-04-24",
+    "title": "Erhöhung Ausschusssitze BPU/HVFA (abgelehnt)",
+    "text": "Antrag StR Kästl, BPU/HVFA auf 12 + Vorsitz aufzustocken, mit 8:12 abgelehnt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 8,
+      "no": 12,
+      "absent": 5
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20230424_05",
+    "sessionId": "sr_20230424",
+    "topicId": "t2",
+    "date": "2023-04-24",
+    "title": "Fahrgastbefragung Bahnhof",
+    "text": "Einstimmig: Online-Befragung zum Nutzungsverhalten am Bahnhof (Antrag fresh).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "becher_j",
+        "gruber",
+        "heinz",
+        "john",
+        "tristl"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230515_01",
+    "sessionId": "sr_20230515",
+    "topicId": "t20",
+    "date": "2023-05-15",
+    "title": "B-Plan 63 SO Amperauen – Stellungnahmen abgewogen",
+    "text": "In 27 Einzelabstimmungen werden die Stellungnahmen aus der öffentlichen Auslegung abgewogen (meist 18:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "sr_20230515_02",
+    "sessionId": "sr_20230515",
+    "topicId": "t20",
+    "date": "2023-05-15",
+    "title": "B-Plan 63 SO Amperauen + 14. FNP-Änderung – Beschluss",
+    "text": "Einstimmig: Planung beschlossen, Mitteilung an Behörden veranlasst.",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20230522_01",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "Genehmigung Niederschriften",
+    "text": "Einstimmig genehmigt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230522_02",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "B-Plan 79 GE Unterreit – Aufstellungsbeschluss",
+    "text": "Aufstellungsbeschluss mit 12:7. Spaltung CSU/FW/SPD/FDP (Ja) vs Grüne/fresh (Nein).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "haberl",
+        "tristl",
+        "beubl",
+        "pschorr",
+        "fincke",
+        "grundner",
+        "reif",
+        "lauterbach",
+        "kieninger"
+      ],
+      "no": [
+        "stanglmaier",
+        "becher_j",
+        "beibl",
+        "linz_kilian",
+        "von_pressentin",
+        "gruebl",
+        "kaestl"
+      ],
+      "absent": [
+        "hadersdorfer",
+        "gruber",
+        "john",
+        "welter",
+        "heinz",
+        "becher_a"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230522_03",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "B-Plan 79 GE Unterreit – Städtebaulicher Vertrag",
+    "text": "Ebenfalls 12:7 (gleiche Konstellation).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "weber",
+        "linz_karin",
+        "haberl",
+        "tristl",
+        "beubl",
+        "pschorr",
+        "fincke",
+        "grundner",
+        "reif",
+        "lauterbach",
+        "kieninger"
+      ],
+      "no": [
+        "stanglmaier",
+        "becher_j",
+        "beibl",
+        "linz_kilian",
+        "von_pressentin",
+        "gruebl",
+        "kaestl"
+      ],
+      "absent": [
+        "hadersdorfer",
+        "gruber",
+        "john",
+        "welter",
+        "heinz",
+        "becher_a"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230522_04",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "Sanierung Aufbereitungsanlage Wasserwerk",
+    "text": "Einstimmig: Sanierung beschlossen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20230522_05",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "MFH – Vorbescheid (13:7)",
+    "text": "Vorbescheid für Mehrfamilienhaus erteilt (13:7).",
+    "type": "anonymous",
+    "results": {
+      "yes": 13,
+      "no": 7,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230522_06",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "Stellplatzablöse-Befreiung",
+    "text": "Einstimmig: Befreiung von der Stellplatzablöse.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230522_07",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "Doppelhäuser Vorbescheid – 1. Beschluss (abgelehnt)",
+    "text": "Erste Abstimmung mit 9:10 abgelehnt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 10,
+      "absent": 6
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20230522_08",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "Doppelhäuser Vorbescheid – 2. Beschluss (10:9)",
+    "text": "Zweite Abstimmung mit 10:9 beschlossen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 10,
+      "no": 9,
+      "absent": 6
+    }
+  },
+  {
+    "id": "sr_20230522_09",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "Betreiber-Wohnung",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230522_10",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "B-Plan 74 Feldkirchen + 10. FNP-Änderung",
+    "text": "In 18 Einzelabstimmungen werden die Stellungnahmen abgewogen (alle einstimmig 19-21:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230522_11",
+    "sessionId": "sr_20230522",
+    "topicId": null,
+    "date": "2023-05-22",
+    "title": "15. FNP-Änderung „Moosstraße-Aich\"",
+    "text": "In 15 Einzelabstimmungen werden die Stellungnahmen abgewogen (alle einstimmig 20-21:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230612_01",
+    "sessionId": "sr_20230612",
+    "topicId": null,
+    "date": "2023-06-12",
+    "title": "Genehmigung Niederschriften",
+    "text": "Einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "beubl",
+        "john"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230612_02",
+    "sessionId": "sr_20230612",
+    "topicId": null,
+    "date": "2023-06-12",
+    "title": "3-Gruppen-Kita + 5 Wohnungen Sonnensiedlung 1",
+    "text": "Einstimmig: Bau einer 3-gruppigen Kita mit 5 Wohnungen; Gesamtkosten 6.057.488 €.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "beubl",
+        "john"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230626_01",
+    "sessionId": "sr_20230626",
+    "topicId": null,
+    "date": "2023-06-26",
+    "title": "Genehmigung Niederschrift StR 15.05.2023",
+    "text": "Einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "becher_j",
+        "heinz"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230626_02",
+    "sessionId": "sr_20230626",
+    "topicId": null,
+    "date": "2023-06-26",
+    "title": "Mietanpassung Sudetenlandstr. (15 %)",
+    "text": "Mieterhöhung um 15 % beschlossen (12:10); deutliche Spaltung CSU/FW/SPD (Ja) vs Grüne/fresh/Linke (Nein).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "hadersdorfer",
+        "beubl",
+        "grundner",
+        "reif",
+        "kieninger",
+        "lauterbach",
+        "fincke"
+      ],
+      "no": [
+        "stanglmaier",
+        "beibl",
+        "becher_a",
+        "linz_kilian",
+        "gruebl",
+        "gruber",
+        "kaestl",
+        "pschorr",
+        "john",
+        "welter"
+      ],
+      "absent": [
+        "becher_j",
+        "heinz",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230626_03",
+    "sessionId": "sr_20230626",
+    "topicId": null,
+    "date": "2023-06-26",
+    "title": "Garagengebühr Erhöhung 42,50 → 45 €",
+    "text": "Erhöhung beschlossen (21:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 1,
+      "absent": 3
+    }
+  },
+  {
+    "id": "sr_20230626_04",
+    "sessionId": "sr_20230626",
+    "topicId": "t15",
+    "date": "2023-06-26",
+    "title": "Straßenbeleuchtung – LED-Umrüstung",
+    "text": "Einstimmig: Umstellung der städtischen Straßenbeleuchtung auf LED beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "becher_j",
+        "heinz"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230626_05",
+    "sessionId": "sr_20230626",
+    "topicId": null,
+    "date": "2023-06-26",
+    "title": "Neubesetzung Ausschüsse (fresh-Antrag)",
+    "text": "Personal-/Rechnungsprüfungsausschuss neu besetzt (20:0; einige Enthaltungen).",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230710_01",
+    "sessionId": "sr_20230710",
+    "topicId": null,
+    "date": "2023-07-10",
+    "title": "Genehmigung Niederschrift StR 22.05.2023",
+    "text": "Einstimmig genehmigt (23:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 23,
+      "no": 0,
+      "absent": 2
+    }
+  },
+  {
+    "id": "sr_20230710_02",
+    "sessionId": "sr_20230710",
+    "topicId": "t15",
+    "date": "2023-07-10",
+    "title": "FC Moosburg – Flutlicht-LED-Zuschuss",
+    "text": "Einstimmig: 20 %-Zuschuss (~38.700 €) zum LED-Umbau der Flutlichtanlage.",
+    "type": "anonymous",
+    "results": {
+      "yes": 24,
+      "no": 0,
+      "absent": 1
+    }
+  },
+  {
+    "id": "bpu_20230717_01",
+    "sessionId": "bpu_20230717",
+    "topicId": "t15",
+    "date": "2023-07-17",
+    "title": "PV-Modullager Neue Industriestr. 1 – BImSchG",
+    "text": "Einstimmig: Einvernehmen für PV-Modullager (Vorhaben nach § 4 BImSchG) erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "beibl",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "welter",
+        "gruber",
+        "haberl",
+        "pschorr",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230717_02",
+    "sessionId": "bpu_20230717",
+    "topicId": null,
+    "date": "2023-07-17",
+    "title": "Einfamilienhaus Weinberg 2 Pfrombach",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "beibl",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "welter",
+        "gruber",
+        "haberl",
+        "pschorr",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230717_03",
+    "sessionId": "bpu_20230717",
+    "topicId": null,
+    "date": "2023-07-17",
+    "title": "Einfamilienhaus Grünseiboldsdorf 8 – verweigert",
+    "text": "Einstimmig verweigert; außerhalb Bebauungsraum, öffentliche Belange entgegenstehend.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "beibl",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "welter",
+        "gruber",
+        "haberl",
+        "pschorr",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230717_04",
+    "sessionId": "bpu_20230717",
+    "topicId": null,
+    "date": "2023-07-17",
+    "title": "Gastronomie → Wohnen Herrnstr. 29 – Baurecht",
+    "text": "Einstimmig: Bauliches Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "beibl",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "welter",
+        "gruber",
+        "haberl",
+        "pschorr",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230717_05",
+    "sessionId": "bpu_20230717",
+    "topicId": "t13",
+    "date": "2023-07-17",
+    "title": "Gastronomie → Wohnen Herrnstr. 29 – Sanierungsrecht verweigert",
+    "text": "Sanierungsrechtliches Einvernehmen mit 9:1 verweigert: Erhalt des Erdgeschoss-Gewerbes ist Sanierungsziel.",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 1,
+      "absent": 2
+    }
+  },
+  {
+    "id": "bpu_20230717_06",
+    "sessionId": "bpu_20230717",
+    "topicId": null,
+    "date": "2023-07-17",
+    "title": "Feuerlöschwasser-Reservoir Steinbockstr. 38",
+    "text": "Einstimmig: Einvernehmen mit Befreiungen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "beibl",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "welter",
+        "gruber",
+        "haberl",
+        "pschorr",
+        "weber"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230724_01",
+    "sessionId": "sr_20230724",
+    "topicId": null,
+    "date": "2023-07-24",
+    "title": "Niederlegung Mandat John – Strobl rückt nach",
+    "text": "Stefan John legt sein Mandat nieder; Alexander Strobl als Listennachfolger bestätigt (23:0).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "becher_a"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230724_02",
+    "sessionId": "sr_20230724",
+    "topicId": null,
+    "date": "2023-07-24",
+    "title": "Neubesetzung Ausschüsse (John → Strobl)",
+    "text": "Einstimmig: Strobl übernimmt John's Ausschuss-Sitze (22:0; einige Enthaltungen).",
+    "type": "anonymous",
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
+  },
+  {
+    "id": "sr_20230724_03",
+    "sessionId": "sr_20230724",
+    "topicId": "t7",
+    "date": "2023-07-24",
+    "title": "Kläranlage GmbH – Jahresabschluss 2022",
+    "text": "Einstimmig: Jahresabschluss 2022 zur Genehmigung empfohlen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "becher_a"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230724_04",
+    "sessionId": "sr_20230724",
+    "topicId": "t7",
+    "date": "2023-07-24",
+    "title": "Kläranlage GmbH – Entlastung Aufsichtsrat",
+    "text": "Entlastung erteilt; 6 AR-Mitglieder enthalten sich wegen persönlicher Beteiligung.",
+    "type": "anonymous",
+    "results": {
+      "yes": 16,
+      "no": 0,
+      "absent": 9
+    }
+  },
+  {
+    "id": "sr_20230724_05",
+    "sessionId": "sr_20230724",
+    "topicId": "t3",
+    "date": "2023-07-24",
+    "title": "Lebendige Zentren – Denkmal Auf dem Plan 14",
+    "text": "100.000 € Bundeszuschuss + 40.000 € städtischer Eigenanteil (22:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
+  },
+  {
+    "id": "sr_20230724_06",
+    "sessionId": "sr_20230724",
+    "topicId": "t6",
+    "date": "2023-07-24",
+    "title": "TG-Grundschule – 4 zusätzliche Klassenzimmer",
+    "text": "2.720.121 € für 4 neue Klassenzimmer (21:0; Heinz Enthaltung).",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20230724_07",
+    "sessionId": "sr_20230724",
+    "topicId": null,
+    "date": "2023-07-24",
+    "title": "Schülerbeförderung – Bündelausschreibung",
+    "text": "Einstimmig: Kommunale Zusammenarbeit zur Bündelausschreibung.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20230904_01",
+    "sessionId": "sr_20230904",
+    "topicId": null,
+    "date": "2023-09-04",
+    "title": "Genehmigung Niederschriften",
+    "text": "Einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "fincke",
+        "kaestl",
+        "lauterbach",
+        "reif",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230904_02",
+    "sessionId": "sr_20230904",
+    "topicId": "t7",
+    "date": "2023-09-04",
+    "title": "Weingraben-Kanalsanierung – 300 T€ überplanmäßig",
+    "text": "Einstimmig: Überplanmäßige Mittel von 300.000 € für Sanierung des Weingraben-Kanals.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "fincke",
+        "kaestl",
+        "lauterbach",
+        "reif",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230904_03",
+    "sessionId": "sr_20230904",
+    "topicId": null,
+    "date": "2023-09-04",
+    "title": "Eisstadion – Gebührenänderung",
+    "text": "Anpassung der Gebühren beschlossen (11:9).",
+    "type": "anonymous",
+    "results": {
+      "yes": 11,
+      "no": 9,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230904_04",
+    "sessionId": "sr_20230904",
+    "topicId": null,
+    "date": "2023-09-04",
+    "title": "Eisstadion – externe Vereinsmiete 150 €",
+    "text": "Externe Vereinsmiete 120 → 150 €/h (19:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 1,
+      "absent": 5
+    }
+  },
+  {
+    "id": "sr_20230904_05",
+    "sessionId": "sr_20230904",
+    "topicId": null,
+    "date": "2023-09-04",
+    "title": "Regenbogenflagge am Rathaus (abgelehnt)",
+    "text": "Antrag, die Regenbogenflagge am Rathaus zu hissen, mit 9:11 abgelehnt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "stanglmaier",
+        "becher_a",
+        "beibl",
+        "becher_j",
+        "linz_kilian",
+        "strobl",
+        "gruebl",
+        "gruber",
+        "beubl"
+      ],
+      "no": [
+        "dollinger",
+        "hadersdorfer",
+        "grundner",
+        "haberl",
+        "heinz",
+        "kieninger",
+        "linz_karin",
+        "pschorr",
+        "tristl",
+        "weber",
+        "welter"
+      ],
+      "absent": [
+        "fincke",
+        "kaestl",
+        "lauterbach",
+        "reif",
+        "von_pressentin"
+      ]
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20230904_06",
+    "sessionId": "sr_20230904",
+    "topicId": null,
+    "date": "2023-09-04",
+    "title": "Regenbogenflagge am VHS-Mast",
+    "text": "Einstimmig: Alternativstandort am VHS-Flaggenmast beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "fincke",
+        "kaestl",
+        "lauterbach",
+        "reif",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "sr_20230904_07",
+    "sessionId": "sr_20230904",
+    "topicId": null,
+    "date": "2023-09-04",
+    "title": "Pride Month (Juni)",
+    "text": "Einstimmig: Juni wird als Pride Month in Moosburg ausgerufen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "linz_karin",
+        "heinz",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "fincke",
+        "kaestl",
+        "lauterbach",
+        "reif",
+        "von_pressentin"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230921_01",
+    "sessionId": "bpu_20230921",
+    "topicId": null,
+    "date": "2023-09-21",
+    "title": "Genehmigung Niederschrift BPU 17.07.",
+    "text": "Einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber",
+        "pschorr"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230921_02",
+    "sessionId": "bpu_20230921",
+    "topicId": "t14",
+    "date": "2023-09-21",
+    "title": "Isarwehr – Denkmalschutz",
+    "text": "Einstimmig: Denkmaleintragung des Isarwehrs befürwortet.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber",
+        "pschorr"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230921_03",
+    "sessionId": "bpu_20230921",
+    "topicId": "t14",
+    "date": "2023-09-21",
+    "title": "Wasserkraftwerk Pfrombach – Denkmalschutz",
+    "text": "Einstimmig: Denkmaleintragung befürwortet.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber",
+        "pschorr"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230921_04",
+    "sessionId": "bpu_20230921",
+    "topicId": null,
+    "date": "2023-09-21",
+    "title": "Postgebäude – Abriss + Wohnungsbau",
+    "text": "Einvernehmen für Abriss und Neubau Wohngebäude erteilt (9:2).",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 2,
+      "absent": 1
+    }
+  },
+  {
+    "id": "bpu_20230921_05",
+    "sessionId": "bpu_20230921",
+    "topicId": "t18",
+    "date": "2023-09-21",
+    "title": "Degernpoint – Parkplatz mit E-Ladestationen",
+    "text": "Einvernehmen erteilt (6:5).",
+    "type": "anonymous",
+    "results": {
+      "yes": 6,
+      "no": 5,
+      "absent": 1
+    }
+  },
+  {
+    "id": "bpu_20230921_06",
+    "sessionId": "bpu_20230921",
+    "topicId": null,
+    "date": "2023-09-21",
+    "title": "MFH Bahnhofstr. 60 – verweigert",
+    "text": "Einstimmig verweigert.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber",
+        "pschorr"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230921_07",
+    "sessionId": "bpu_20230921",
+    "topicId": null,
+    "date": "2023-09-21",
+    "title": "Asyl-Wohnen Sudetenlandstr. 9",
+    "text": "Einvernehmen erteilt (10:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 10,
+      "no": 1,
+      "absent": 1
+    }
+  },
+  {
+    "id": "bpu_20230921_08",
+    "sessionId": "bpu_20230921",
+    "topicId": "t15",
+    "date": "2023-09-21",
+    "title": "Photovoltaik-Anlage",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber",
+        "pschorr"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
+    }
+  },
+  {
+    "id": "bpu_20230921_09",
+    "sessionId": "bpu_20230921",
+    "topicId": null,
+    "date": "2023-09-21",
+    "title": "Gewerbeumnutzung Eisenwaren → Lebensmittel",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "stanglmaier",
+        "beibl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "reif",
+        "tristl",
+        "welter",
+        "gruber",
+        "pschorr"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
+    }
+  },
+  {
+    "id": "sr_20231023_01",
+    "sessionId": "sr_20231023",
+    "topicId": "t20",
+    "date": "2023-10-23",
+    "title": "B-Plan 63 SO Amperauen – Stellungnahmen abgewogen",
+    "text": "In 13 Einzelabstimmungen werden die Stellungnahmen aus der erneuten Auslegung abgewogen (alle 21-22:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
+  },
+  {
+    "id": "sr_20231023_02",
+    "sessionId": "sr_20231023",
+    "topicId": "t7",
+    "date": "2023-10-23",
+    "title": "Jahresrechnung 2021 – Feststellung",
+    "text": "Einstimmig: Feststellung der Jahresrechnung 2021.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 0,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20231023_03",
+    "sessionId": "sr_20231023",
+    "topicId": "t7",
+    "date": "2023-10-23",
+    "title": "Jahresrechnung 2021 – Entlastung",
+    "text": "Einstimmig: Entlastung erteilt (Dollinger Enthaltung).",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    }
+  },
+  {
+    "id": "bpu_20231123_01",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "Genehmigung Niederschrift BPU 21.09.",
+    "text": "Einstimmig genehmigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_02",
+    "sessionId": "bpu_20231123",
+    "topicId": "t20",
+    "date": "2023-11-23",
+    "title": "Amperauen – Parkgestaltung",
+    "text": "Einstimmig: Grünanlage als Wohngebietspark.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_03",
+    "sessionId": "bpu_20231123",
+    "topicId": "t20",
+    "date": "2023-11-23",
+    "title": "Mühlbachterrassen – Machbarkeitsstudie",
+    "text": "Einstimmig: Machbarkeitsstudie befürwortet, Schwemme prüfen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_04",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "Doppelgarage mit Fahrradabstellplätzen",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_05",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "Anbau Einfamilienhaus",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_06",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "Arbeitnehmerwohnen Sudetenlandstr. 9 – 1. Beschluss (abgelehnt)",
+    "text": "Antrag mit 5:7 abgelehnt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "welter",
+        "beubl"
+      ],
+      "no": [
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_kilian",
+        "reif"
+      ],
+      "absent": []
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "bpu_20231123_07",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "Arbeitnehmerwohnen Sudetenlandstr. 9 – 2. Beschluss",
+    "text": "2. Beschluss mit 7:5 angenommen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_kilian",
+        "reif",
+        "beubl",
+        "welter"
+      ],
+      "no": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl"
+      ],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_08",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "MFH Sudetenlandstr. 2 – verweigert",
+    "text": "Einstimmig verweigert.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_09",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "Doppelhaus mit Carports",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_10",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "Wasserwerk-Erweiterung",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_11",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "Milchviehstall Pfrombach",
+    "text": "Einstimmig: Einvernehmen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_12",
+    "sessionId": "bpu_20231123",
+    "topicId": "t15",
+    "date": "2023-11-23",
+    "title": "Straßenbeleuchtung – Konzept",
+    "text": "Einstimmig: Solar-Straßenbeleuchtung als Folgekonzept geprüft.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_13",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "Försterweg – Widmung",
+    "text": "Einstimmig: Widmung beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_14",
+    "sessionId": "bpu_20231123",
+    "topicId": null,
+    "date": "2023-11-23",
+    "title": "Sonnensiedlung – Widmung",
+    "text": "Einstimmig: Widmung beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_15",
+    "sessionId": "bpu_20231123",
+    "topicId": "t20",
+    "date": "2023-11-23",
+    "title": "Amperpark – Widmung",
+    "text": "Einstimmig: Widmung beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "stanglmaier",
+        "beibl",
+        "gruebl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "beubl",
+        "reif",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": []
+    }
+  },
+  {
+    "id": "bpu_20231123_16",
+    "sessionId": "bpu_20231123",
+    "topicId": "t4",
+    "date": "2023-11-23",
+    "title": "Gärtnerstraße – Fahrradstraße",
+    "text": "Fahrradstraßen-Widmung mit 9:3.",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 3,
+      "absent": 0
+    }
+  },
+  {
+    "id": "bpu_20231123_17",
+    "sessionId": "bpu_20231123",
+    "topicId": "t4",
+    "date": "2023-11-23",
+    "title": "Burgermühlstraße – Fahrradzone",
+    "text": "Fahrradzone mit 7:5 (2. Beschluss).",
+    "type": "anonymous",
+    "results": {
+      "yes": 7,
+      "no": 5,
+      "absent": 0
+    }
+  },
+  {
+    "id": "bpu_20231123_18",
+    "sessionId": "bpu_20231123",
+    "topicId": "t4",
+    "date": "2023-11-23",
+    "title": "Wasserwerkstraße – Fahrradstraße (abgelehnt)",
+    "text": "Mit 5:7 abgelehnt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 5,
+      "no": 7,
+      "absent": 0
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "bpu_20231123_19",
+    "sessionId": "bpu_20231123",
+    "topicId": "t4",
+    "date": "2023-11-23",
+    "title": "Reiteraustraße – Fahrradstraße (abgelehnt)",
+    "text": "Mit 3:9 abgelehnt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 3,
+      "no": 9,
+      "absent": 0
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20231214_01",
+    "sessionId": "sr_20231214",
+    "topicId": null,
+    "date": "2023-12-14",
+    "title": "Genehmigung Niederschriften",
+    "text": "Einstimmig genehmigt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 13,
+      "no": 0,
+      "absent": 12
+    }
+  },
+  {
+    "id": "sr_20231214_02",
+    "sessionId": "sr_20231214",
+    "topicId": null,
+    "date": "2023-12-14",
+    "title": "Leinbergerstraße – Ausbauplanung",
+    "text": "Planung freigegeben (16:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 16,
+      "no": 0,
+      "absent": 9
+    }
+  },
+  {
+    "id": "sr_20231214_03",
+    "sessionId": "sr_20231214",
+    "topicId": null,
+    "date": "2023-12-14",
+    "title": "Leinbergerstraße – Bauauftrag",
+    "text": "Bauauftrag erteilt (13:3).",
+    "type": "anonymous",
+    "results": {
+      "yes": 13,
+      "no": 3,
+      "absent": 9
+    }
+  },
+  {
+    "id": "sr_20231214_04",
+    "sessionId": "sr_20231214",
+    "topicId": "t13",
+    "date": "2023-12-14",
+    "title": "Städtebauförderung 2024 – Bedarfsanmeldung",
+    "text": "Bedarfsanmeldung beschlossen (15:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 15,
+      "no": 0,
+      "absent": 10
+    }
+  },
+  {
+    "id": "sr_20231214_05",
+    "sessionId": "sr_20231214",
+    "topicId": null,
+    "date": "2023-12-14",
+    "title": "Tartanbahn-Sanierung – 2/3-Variante",
+    "text": "2/3-Sanierung statt 100 % beschlossen (15:1).",
+    "type": "anonymous",
+    "results": {
+      "yes": 15,
+      "no": 1,
+      "absent": 9
+    }
+  },
+  {
+    "id": "sr_20231214_06",
+    "sessionId": "sr_20231214",
+    "topicId": null,
+    "date": "2023-12-14",
+    "title": "Sport-/Festplatz – zusätzliche Mittel (abgelehnt)",
+    "text": "Antrag, zusätzliche Mittel bereitzustellen, abgelehnt (2:14).",
+    "type": "anonymous",
+    "results": {
+      "yes": 2,
+      "no": 14,
+      "absent": 9
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20231214_07",
+    "sessionId": "sr_20231214",
+    "topicId": "t15",
+    "date": "2023-12-14",
+    "title": "Solarförderung – Änderung",
+    "text": "Anpassung der Förderrichtlinie für Solaranlagen beschlossen (16:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 16,
+      "no": 0,
+      "absent": 9
+    }
+  },
+  {
+    "id": "sr_20231214_08",
+    "sessionId": "sr_20231214",
+    "topicId": null,
+    "date": "2023-12-14",
+    "title": "Hinweisgeberschutz – interne Meldestelle",
+    "text": "Einstimmig: Interne Meldestelle nach HinSchG eingerichtet (15:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 15,
+      "no": 0,
+      "absent": 10
+    }
+  },
+  {
+    "id": "sr_20231218_01",
+    "sessionId": "sr_20231218",
+    "topicId": null,
+    "date": "2023-12-18",
+    "title": "Genehmigung Niederschrift HVFA 30.11.",
+    "text": "Einstimmig genehmigt (17:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    }
+  },
+  {
+    "id": "sr_20231218_02",
+    "sessionId": "sr_20231218",
+    "topicId": "t7",
+    "date": "2023-12-18",
+    "title": "Kita Sonnensiedlung – Kreditermächtigung 1,25 Mio €",
+    "text": "Kreditermächtigung für die Erweiterung der Kindertageseinrichtung beschlossen (18:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 0,
+      "absent": 7
+    }
+  },
+  {
+    "id": "sr_20231218_03",
+    "sessionId": "sr_20231218",
+    "topicId": "t7",
+    "date": "2023-12-18",
+    "title": "Haushaltssatzung 2024",
+    "text": "Haushaltssatzung mit allen Anlagen beschlossen (22:0).",
+    "type": "anonymous",
+    "results": {
+      "yes": 22,
+      "no": 0,
+      "absent": 3
+    }
   }
 ]

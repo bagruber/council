@@ -159,22 +159,32 @@ const SHOW_PRONOUNS = true;
     tagBar.querySelectorAll(".tag-pill.active").forEach(p => p.classList.remove("active"));
   }
 
+  // Normalise Umlaute & accents so "Ru" matches "Rümelin", "Stoss" matches "Stoß".
+  function searchNorm(s) {
+    return (s || "")
+      .toLowerCase()
+      .replace(/ä/g, "a").replace(/ö/g, "o").replace(/ü/g, "u")
+      .replace(/ß/g, "ss")
+      // also strip diacritics from any latin chars
+      .normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+
   searchInput.addEventListener("input", () => {
-    const q = searchInput.value.trim().toLowerCase();
+    const q = searchNorm(searchInput.value.trim());
     if (q.length < 1) { dropdown.classList.add("hidden"); return; }
 
     const results = [];
     tags.forEach(t => {
-      if (t.name.toLowerCase().includes(q)) results.push({ type: "tag", item: t });
+      if (searchNorm(t.name).includes(q)) results.push({ type: "tag", item: t });
     });
     topics.forEach(t => {
-      if (t.title.toLowerCase().includes(q)) results.push({ type: "topic", item: t });
+      if (searchNorm(t.title).includes(q)) results.push({ type: "topic", item: t });
     });
     sessions.forEach(s => {
-      if (s.title.toLowerCase().includes(q)) results.push({ type: "session", item: s });
+      if (searchNorm(s.title).includes(q)) results.push({ type: "session", item: s });
     });
     members.forEach(m => {
-      if (m.name.toLowerCase().includes(q)) results.push({ type: "member", item: m });
+      if (searchNorm(m.name).includes(q)) results.push({ type: "member", item: m });
     });
 
     if (results.length === 0) { dropdown.classList.add("hidden"); return; }
@@ -222,10 +232,10 @@ const SHOW_PRONOUNS = true;
   const gremienDropdown = document.getElementById("gremien-search-dropdown");
 
   gremienSearchInput.addEventListener("input", () => {
-    const q = gremienSearchInput.value.trim().toLowerCase();
+    const q = searchNorm(gremienSearchInput.value.trim());
     if (q.length < 1) { gremienDropdown.classList.add("hidden"); return; }
 
-    const results = members.filter(m => m.name.toLowerCase().includes(q));
+    const results = members.filter(m => searchNorm(m.name).includes(q));
     if (!results.length) { gremienDropdown.classList.add("hidden"); return; }
 
     gremienDropdown.innerHTML = "";
