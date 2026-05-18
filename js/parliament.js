@@ -33,6 +33,24 @@ const VoteVis = (() => {
     // future: classic, rectangle, etc.
   };
 
+  // Layout cache: keyed by all geometric inputs. Same chamber size + radius +
+  // arc always produces the same positions, so the (cheap-ish) trig + rounding
+  // patch loop is wasted work on every re-render. Keep entries small (max ~32).
+  const _layoutCache = new Map();
+  function cachedLayout(fnName, args) {
+    const key = fnName + "|" + args.count + "|" + args.rows + "|"
+              + args.seatRadius + "|" + args.seatGap + "|" + args.arcDeg;
+    let cached = _layoutCache.get(key);
+    if (cached) return cached;
+    cached = LAYOUTS[fnName](args);
+    if (_layoutCache.size > 32) {                   // basic LRU-ish: clear oldest
+      const firstKey = _layoutCache.keys().next().value;
+      _layoutCache.delete(firstKey);
+    }
+    _layoutCache.set(key, cached);
+    return cached;
+  }
+
   // Auto pick rows from seat count
   function autoPickRows(n) {
     if (n <= 12) return 1;
@@ -344,10 +362,9 @@ const VoteVis = (() => {
     const o = { ...DEFAULTS, ...opts };
     if (!o.rows) o.rows = autoPickRows(o.seats.length);
 
-    const layoutFn = LAYOUTS[o.layout];
-    if (!layoutFn) throw new Error("Unknown layout: " + o.layout);
+    if (!LAYOUTS[o.layout]) throw new Error("Unknown layout: " + o.layout);
 
-    const layout = layoutFn({
+    const layout = cachedLayout(o.layout, {
       count:      o.seats.length,
       rows:       o.rows,
       seatRadius: o.seatRadius,
@@ -550,20 +567,10 @@ const VoteVis = (() => {
     };
   }
 
-  // If body has multiple time-bound seatConfigs, pick the one active on `date`.
-  // Falls back to the top-level fields when no seatConfigs are present.
-  function activeBodyConfig(body, date) {
-    const configs = body.seatConfigs;
-    if (!configs || !configs.length) return body;
-    for (const c of configs) {
-      if ((!c.from || c.from <= date) && (!c.to || date <= c.to)) return c;
-    }
-    return body;
-  }
+  // Seat-config & per-member vote map delegate to Council (see js/core.js).
+  const activeBodyConfig = (body, date) =>
+    (typeof Council !== "undefined" ? Council.bodyConfigAt(body, date) : body);
 
-  // Build per-member vote status, considering both array-typed (named) results
-  // and the optional `voters` field carrying partial individual data on
-  // anonymous votes (e.g. only the lone dissenter is known).
   function voteResMap(vote) {
     const m = {};
     if (vote.type === "named") {
