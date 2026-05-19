@@ -1282,15 +1282,21 @@ const SHOW_PRONOUNS = true;
     return "2026–2032";
   }
 
+  // Six categories: separate "actively voted yes/no" from "went with the
+  // unanimous flow" (yesInf/noInf), absent, and unknown — lets the UI grey
+  // out the non-decisive share.
+  const STAT_KEY = {
+    "yes": "yes", "no": "no",
+    "yes-inferred": "yesInf", "no-inferred": "noInf",
+    "absent": "absent", "unknown": "unknown",
+  };
+  const STAT_ZERO = () =>
+    ({ yes:0, no:0, yesInf:0, noInf:0, absent:0, unknown:0, total:0 });
+
   function computeVotingStats(member) {
-    const out = {
-      byYear:   {},
-      byPeriod: {},
-      byBody:   {},
-      total:    { yes:0, no:0, absent:0, unknown:0, total:0 }
-    };
+    const out = { byYear: {}, byPeriod: {}, byBody: {}, total: STAT_ZERO() };
     const inc = (bucket, key, status) => {
-      if (!bucket[key]) bucket[key] = { yes:0, no:0, absent:0, unknown:0, total:0 };
+      if (!bucket[key]) bucket[key] = STAT_ZERO();
       bucket[key][status]++;
       bucket[key].total++;
       out.total[status]++;
@@ -1313,7 +1319,8 @@ const SHOW_PRONOUNS = true;
 
       const raw = Council.voteStatus(member.id, v, session, member);
       if (raw === null) return;
-      const status = Council.voteStatusBucket(raw);
+      const status = STAT_KEY[raw];
+      if (!status) return;
 
       inc(out.byYear,   v.date.substring(0, 4), status);
       inc(out.byPeriod, periodOfDate(v.date),   status);
@@ -1323,10 +1330,30 @@ const SHOW_PRONOUNS = true;
     return out;
   }
 
+  // Bar segment order: active yes / no first (saturated), then the muted
+  // categories (inferred-unanimous / absent / unknown). Same order
+  // everywhere so the user's eye learns the layout.
+  const VS_SEGMENTS = [
+    { key: "yes",     cls: "yes"     },
+    { key: "no",      cls: "no"      },
+    { key: "yesInf",  cls: "yes-inf" },
+    { key: "noInf",   cls: "no-inf"  },
+    { key: "absent",  cls: "absent"  },
+    { key: "unknown", cls: "unknown" },
+  ];
+
+  function barSegments(b, total) {
+    return VS_SEGMENTS
+      .filter(s => b[s.key] > 0)
+      .map(s => `<span class="vs-seg ${s.cls}" style="width:${(b[s.key]/total*100).toFixed(1)}%" title="${b[s.key]}"></span>`)
+      .join("");
+  }
+
   function renderVotingStatsCard(stats) {
     const t = stats.total;
     const pct = (n) => t.total === 0 ? 0 : Math.round(n / t.total * 100);
-    const seg = (n, cls) => n === 0 ? "" : `<span class="vs-seg ${cls}" style="width:${(n/t.total*100).toFixed(1)}%" title="${n}"></span>`;
+    const active = t.yes + t.no;
+    const muted  = t.yesInf + t.noInf + t.absent + t.unknown;
 
     const details = document.createElement("details");
     details.className = "voting-stats";
@@ -1338,12 +1365,35 @@ const SHOW_PRONOUNS = true;
       </summary>
       <div class="vs-content">
         <div class="vs-summary">
-          <div class="vs-bar">${seg(t.yes,"yes")}${seg(t.no,"no")}${seg(t.absent,"absent")}${seg(t.unknown,"unknown")}</div>
-          <div class="vs-numbers">
-            <span class="vs-dot yes"></span>${t.yes} Ja (${pct(t.yes)}%)
-            <span class="vs-dot no"></span>${t.no} Nein (${pct(t.no)}%)
-            <span class="vs-dot absent"></span>${t.absent} Abw. (${pct(t.absent)}%)
-            <span class="vs-dot unknown"></span>${t.unknown} unbekannt (${pct(t.unknown)}%)
+          <div class="vs-bar">${barSegments(t, t.total)}</div>
+
+          <div class="vs-legend">
+            <div class="vs-legend-row">
+              <span class="vs-legend-head">Aktiv abgestimmt</span>
+              <span class="vs-legend-share">${active} (${pct(active)}%)</span>
+            </div>
+            <div class="vs-legend-row vs-sub">
+              <span class="vs-dot yes"></span>${t.yes} Ja
+              <span class="vs-dot no"></span>${t.no} Nein
+            </div>
+
+            <div class="vs-legend-row" style="margin-top:8px">
+              <span class="vs-legend-head">Einstimmig mitgegangen</span>
+              <span class="vs-legend-share">${t.yesInf + t.noInf} (${pct(t.yesInf + t.noInf)}%)</span>
+            </div>
+            <div class="vs-legend-row vs-sub">
+              <span class="vs-dot yes-inf"></span>${t.yesInf} Ja*
+              <span class="vs-dot no-inf"></span>${t.noInf} Nein*
+            </div>
+
+            <div class="vs-legend-row" style="margin-top:8px">
+              <span class="vs-legend-head">Nicht entscheidend</span>
+              <span class="vs-legend-share">${t.absent + t.unknown} (${pct(t.absent + t.unknown)}%)</span>
+            </div>
+            <div class="vs-legend-row vs-sub">
+              <span class="vs-dot absent"></span>${t.absent} Abwesend
+              <span class="vs-dot unknown"></span>${t.unknown} unklar
+            </div>
           </div>
         </div>
         ${renderStatsBreakdown("Pro Jahr",    stats.byYear,   k => k)}
@@ -1358,11 +1408,10 @@ const SHOW_PRONOUNS = true;
     if (!keys.length) return "";
     const rows = keys.map(k => {
       const b = bucket[k];
-      const seg = (n, cls) => n === 0 ? "" : `<span class="vs-seg ${cls}" style="width:${(n/b.total*100).toFixed(1)}%" title="${n}"></span>`;
       return `
         <div class="vs-row">
           <div class="vs-row-label">${keyLabel(k)}</div>
-          <div class="vs-row-bar">${seg(b.yes,"yes")}${seg(b.no,"no")}${seg(b.absent,"absent")}${seg(b.unknown,"unknown")}</div>
+          <div class="vs-row-bar">${barSegments(b, b.total)}</div>
           <div class="vs-row-count">${b.total}</div>
         </div>`;
     }).join("");

@@ -660,18 +660,38 @@ main {
   display: block;
   height: 100%;
 }
-.voting-stats .vs-seg.yes     { background: var(--yes); }
-.voting-stats .vs-seg.no      { background: var(--no); }
-.voting-stats .vs-seg.absent  { background: var(--absent); }
-.voting-stats .vs-seg.unknown { background: var(--accent); }
-.voting-stats .vs-numbers {
-  margin-top: 6px;
+.voting-stats .vs-seg.yes      { background: var(--yes); }
+.voting-stats .vs-seg.no       { background: var(--no); }
+/* Inferred = einstimmig mitgegangen → blasser, weil weniger entscheidend */
+.voting-stats .vs-seg.yes-inf  { background: var(--yes); opacity: 0.32; }
+.voting-stats .vs-seg.no-inf   { background: var(--no);  opacity: 0.32; }
+.voting-stats .vs-seg.absent   { background: var(--absent); opacity: 0.7; }
+.voting-stats .vs-seg.unknown  { background: var(--accent); opacity: 0.5; }
+
+.voting-stats .vs-legend {
+  margin-top: 8px;
   font-size: 0.78rem;
   color: var(--text-muted);
+}
+.voting-stats .vs-legend-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 10px;
+  gap: 4px 10px;
   align-items: center;
+}
+.voting-stats .vs-legend-head {
+  font-weight: 600;
+  color: var(--text);
+}
+.voting-stats .vs-legend-share {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  font-weight: 600;
+}
+.voting-stats .vs-sub {
+  padding-left: 4px;
+  font-size: 0.74rem;
 }
 .voting-stats .vs-dot {
   display: inline-block;
@@ -680,10 +700,12 @@ main {
   margin: 0 4px 0 6px;
 }
 .voting-stats .vs-dot:first-child { margin-left: 0; }
-.voting-stats .vs-dot.yes     { background: var(--yes); }
-.voting-stats .vs-dot.no      { background: var(--no); }
-.voting-stats .vs-dot.absent  { background: var(--absent); }
-.voting-stats .vs-dot.unknown { background: var(--accent); }
+.voting-stats .vs-dot.yes      { background: var(--yes); }
+.voting-stats .vs-dot.no       { background: var(--no); }
+.voting-stats .vs-dot.yes-inf  { background: var(--yes); opacity: 0.4; }
+.voting-stats .vs-dot.no-inf   { background: var(--no);  opacity: 0.4; }
+.voting-stats .vs-dot.absent   { background: var(--absent); }
+.voting-stats .vs-dot.unknown  { background: var(--accent); opacity: 0.6; }
 .voting-stats .vs-section {
   margin-top: 14px;
 }
