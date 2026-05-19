@@ -716,7 +716,7 @@
     "sessionId": "bpu_20221117",
     "topicId": null,
     "date": "2022-11-17",
-    "title": "Landshuter Str. – Haus 2 (6 WE) – Einvernehmen erteilt (abgelehnt)",
+    "title": "Landshuter Str. – Haus 2 (6 WE) – Einvernehmen erteilen",
     "text": "Einvernehmen NICHT erteilt – Patt 6:6.",
     "type": "anonymous",
     "results": {
@@ -731,7 +731,7 @@
     "sessionId": "bpu_20221117",
     "topicId": null,
     "date": "2022-11-17",
-    "title": "Landshuter Str. – Haus 6 (6 WE) – Einvernehmen erteilt (abgelehnt)",
+    "title": "Landshuter Str. – Haus 6 (6 WE) – Einvernehmen erteilen",
     "text": "Einvernehmen NICHT erteilt – Patt 6:6.",
     "type": "anonymous",
     "results": {
@@ -872,7 +872,7 @@
     "sessionId": "bpu_20230123",
     "topicId": null,
     "date": "2023-01-23",
-    "title": "Dachgeschoss-Erweiterung Neustadtstr. 40 – verweigert",
+    "title": "Dachgeschoss-Erweiterung Neustadtstr. 40 – verweigern",
     "text": "Einstimmig verweigert: Stellplatznachweis und Fahrradabstellplätze fehlerhaft.",
     "type": "named",
     "results": {
@@ -1008,7 +1008,7 @@
     "sessionId": "bpu_20230123",
     "topicId": null,
     "date": "2023-01-23",
-    "title": "Lagerhalle Molkereistr. – verweigert",
+    "title": "Lagerhalle Molkereistr. – verweigern",
     "text": "Einvernehmen mit 11:1 verweigert.",
     "type": "anonymous",
     "results": {
@@ -1295,7 +1295,7 @@
     "sessionId": "sr_20230130",
     "topicId": null,
     "date": "2023-01-30",
-    "title": "Stellplatzablöse Innenstadt 10.000 € (abgelehnt)",
+    "title": "Stellplatzablöse Innenstadt 10.000 €",
     "text": "Antrag auf reduzierte Ablöse 10.000 € in der Innenstadt abgelehnt (4:16).",
     "type": "anonymous",
     "results": {
@@ -1692,7 +1692,7 @@
     "sessionId": "bpu_20230320",
     "topicId": null,
     "date": "2023-03-20",
-    "title": "Stellplatzablöse Rosenhofweg 4/4a – abgelehnt",
+    "title": "Stellplatzablöse Rosenhofweg 4/4a",
     "text": "Einstimmig: Ablöse von 9 Stellplätzen abgelehnt.",
     "type": "named",
     "results": {
@@ -1719,7 +1719,7 @@
     "sessionId": "bpu_20230320",
     "topicId": null,
     "date": "2023-03-20",
-    "title": "Doppelhäuser Burgermühlstr. 13 – Vorbescheid erteilt (abgelehnt)",
+    "title": "Doppelhäuser Burgermühlstr. 13 – Vorbescheid erteilen",
     "text": "Antrag, Einvernehmen zu erteilen, mit 5:7 abgelehnt; Kubatur zu groß.",
     "type": "anonymous",
     "results": {
@@ -1734,7 +1734,7 @@
     "sessionId": "bpu_20230320",
     "topicId": null,
     "date": "2023-03-20",
-    "title": "Doppelhäuser Burgermühlstr. 13 – verweigert",
+    "title": "Doppelhäuser Burgermühlstr. 13 – verweigern",
     "text": "Mit 7:5 verweigert.",
     "type": "anonymous",
     "results": {
@@ -1802,7 +1802,7 @@
     "sessionId": "bpu_20230320",
     "topicId": null,
     "date": "2023-03-20",
-    "title": "MFH 9 WE Sudetenlandstr. 2 – verweigert",
+    "title": "MFH 9 WE Sudetenlandstr. 2 – verweigern",
     "text": "Einstimmig verweigert.",
     "type": "named",
     "results": {
@@ -2035,7 +2035,7 @@
     "sessionId": "sr_20230417",
     "topicId": "t13",
     "date": "2023-04-17",
-    "title": "Schloss-Aschwiese aus Untersuchungsgebiet herausnehmen (abgelehnt)",
+    "title": "Schloss-Aschwiese aus Untersuchungsgebiet herausnehmen",
     "text": "Änderungsantrag, die Schloss-Aschwiese aus dem Untersuchungsgebiet auszunehmen, abgelehnt (9:13).",
     "type": "anonymous",
     "results": {
@@ -2064,7 +2064,7 @@
     "sessionId": "sr_20230417",
     "topicId": null,
     "date": "2023-04-17",
-    "title": "Stellplatzsatzung – Streichung Garagenstellplatz (abgelehnt)",
+    "title": "Stellplatzsatzung – Streichung Garagenstellplatz",
     "text": "Änderungsantrag mit 5:17 abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -2189,7 +2189,7 @@
     "sessionId": "sr_20230424",
     "topicId": "t20",
     "date": "2023-04-24",
-    "title": "B-Plan 52 Amperauen – Einfriedungen (abgelehnt)",
+    "title": "B-Plan 52 Amperauen – Einfriedungen",
     "text": "Antrag, Beschluss zu Einfriedungen aufzuheben, mit 6:14 abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -2218,7 +2218,7 @@
     "sessionId": "sr_20230424",
     "topicId": null,
     "date": "2023-04-24",
-    "title": "Erhöhung Ausschusssitze BPU/HVFA (abgelehnt)",
+    "title": "Erhöhung Ausschusssitze BPU/HVFA",
     "text": "Antrag StR Kästl, BPU/HVFA auf 12 + Vorsitz aufzustocken, mit 8:12 abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -2274,7 +2274,7 @@
     "sessionId": "sr_20230515",
     "topicId": "t20",
     "date": "2023-05-15",
-    "title": "B-Plan 63 SO Amperauen – Stellungnahmen abgewogen",
+    "title": "B-Plan 63 SO Amperauen – Stellungnahmen abwägen",
     "text": "In 27 Einzelabstimmungen werden die Stellungnahmen aus der öffentlichen Auslegung abgewogen (meist 18:0).",
     "type": "anonymous",
     "results": {
@@ -2442,7 +2442,7 @@
     "sessionId": "sr_20230522",
     "topicId": null,
     "date": "2023-05-22",
-    "title": "Doppelhäuser Vorbescheid – 1. Beschluss (abgelehnt)",
+    "title": "Doppelhäuser Vorbescheid – 1. Beschluss",
     "text": "Erste Abstimmung mit 9:10 abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -2831,7 +2831,7 @@
     "sessionId": "bpu_20230717",
     "topicId": null,
     "date": "2023-07-17",
-    "title": "Einfamilienhaus Grünseiboldsdorf 8 – verweigert",
+    "title": "Einfamilienhaus Grünseiboldsdorf 8 – verweigern",
     "text": "Einstimmig verweigert; außerhalb Bebauungsraum, öffentliche Belange entgegenstehend.",
     "type": "named",
     "results": {
@@ -2887,7 +2887,7 @@
     "sessionId": "bpu_20230717",
     "topicId": "t13",
     "date": "2023-07-17",
-    "title": "Gastronomie → Wohnen Herrnstr. 29 – Sanierungsrecht verweigert",
+    "title": "Gastronomie → Wohnen Herrnstr. 29 – Sanierungsrecht verweigern",
     "text": "Sanierungsrechtliches Einvernehmen mit 9:1 verweigert: Erhalt des Erdgeschoss-Gewerbes ist Sanierungsziel.",
     "type": "anonymous",
     "results": {
@@ -3191,7 +3191,7 @@
     "sessionId": "sr_20230904",
     "topicId": null,
     "date": "2023-09-04",
-    "title": "Regenbogenflagge am Rathaus (abgelehnt)",
+    "title": "Regenbogenflagge am Rathaus",
     "text": "Antrag, die Regenbogenflagge am Rathaus zu hissen, mit 9:11 abgelehnt.",
     "type": "named",
     "results": {
@@ -3428,7 +3428,7 @@
     "sessionId": "bpu_20230921",
     "topicId": null,
     "date": "2023-09-21",
-    "title": "MFH Bahnhofstr. 60 – verweigert",
+    "title": "MFH Bahnhofstr. 60 – verweigern",
     "text": "Einstimmig verweigert.",
     "type": "named",
     "results": {
@@ -3526,7 +3526,7 @@
     "sessionId": "sr_20231023",
     "topicId": "t20",
     "date": "2023-10-23",
-    "title": "B-Plan 63 SO Amperauen – Stellungnahmen abgewogen",
+    "title": "B-Plan 63 SO Amperauen – Stellungnahmen abwägen",
     "text": "In 13 Einzelabstimmungen werden die Stellungnahmen aus der erneuten Auslegung abgewogen (alle 21-22:0).",
     "type": "anonymous",
     "results": {
@@ -3703,7 +3703,7 @@
     "sessionId": "bpu_20231123",
     "topicId": null,
     "date": "2023-11-23",
-    "title": "Arbeitnehmerwohnen Sudetenlandstr. 9 – 1. Beschluss (abgelehnt)",
+    "title": "Arbeitnehmerwohnen Sudetenlandstr. 9 – 1. Beschluss",
     "text": "Antrag mit 5:7 abgelehnt.",
     "type": "named",
     "results": {
@@ -3760,7 +3760,7 @@
     "sessionId": "bpu_20231123",
     "topicId": null,
     "date": "2023-11-23",
-    "title": "MFH Sudetenlandstr. 2 – verweigert",
+    "title": "MFH Sudetenlandstr. 2 – verweigern",
     "text": "Einstimmig verweigert.",
     "type": "named",
     "results": {
@@ -4004,7 +4004,7 @@
     "sessionId": "bpu_20231123",
     "topicId": "t4",
     "date": "2023-11-23",
-    "title": "Wasserwerkstraße – Fahrradstraße (abgelehnt)",
+    "title": "Wasserwerkstraße – Fahrradstraße",
     "text": "Mit 5:7 abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -4019,7 +4019,7 @@
     "sessionId": "bpu_20231123",
     "topicId": "t4",
     "date": "2023-11-23",
-    "title": "Reiteraustraße – Fahrradstraße (abgelehnt)",
+    "title": "Reiteraustraße – Fahrradstraße",
     "text": "Mit 3:9 abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -4104,7 +4104,7 @@
     "sessionId": "sr_20231214",
     "topicId": null,
     "date": "2023-12-14",
-    "title": "Sport-/Festplatz – zusätzliche Mittel (abgelehnt)",
+    "title": "Sport-/Festplatz – zusätzliche Mittel",
     "text": "Antrag, zusätzliche Mittel bereitzustellen, abgelehnt (2:14).",
     "type": "anonymous",
     "results": {
@@ -4354,7 +4354,7 @@
     "sessionId": "sr_20240304",
     "topicId": null,
     "date": "2024-03-04",
-    "title": "Wahlhelferbonus Europawahl 2024 (abgelehnt)",
+    "title": "Wahlhelferbonus Europawahl 2024",
     "text": "Antrag auf zusätzliche Bonuszahlung für Wahlhelfer wird mit 1:22 abgelehnt.",
     "type": "named",
     "results": {
@@ -4438,7 +4438,7 @@
     "sessionId": "bpu_20240314",
     "topicId": null,
     "date": "2024-03-14",
-    "title": "B-Plan Nr. 56 \"Unteres Gereut\" – Überprüfung abgelehnt",
+    "title": "B-Plan Nr. 56 \"Unteres Gereut\" – Überprüfung",
     "text": "Einstimmig: Der Bauausschuss lehnt eine Überprüfung des B-Plans Nr. 56 ab und hält an den Planungszielen fest.",
     "type": "named",
     "results": {
@@ -4550,7 +4550,7 @@
     "sessionId": "bpu_20240314",
     "topicId": null,
     "date": "2024-03-14",
-    "title": "Arbeitnehmerwohnheim Sudetenlandstr. 9 – Einvernehmen erteilt (abgelehnt)",
+    "title": "Arbeitnehmerwohnheim Sudetenlandstr. 9 – Einvernehmen erteilen",
     "text": "Antrag, das Einvernehmen für Nutzungsänderung zu Arbeitnehmerwohnheim zu erteilen, wird mit 1:9 abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -4568,7 +4568,7 @@
     "sessionId": "bpu_20240314",
     "topicId": null,
     "date": "2024-03-14",
-    "title": "Arbeitnehmerwohnheim Sudetenlandstr. 9 – Einvernehmen verweigert",
+    "title": "Arbeitnehmerwohnheim Sudetenlandstr. 9 – Einvernehmen verweigern",
     "text": "Einvernehmen mit 9:1 verweigert (Stellplatz-/Spielplatzproblematik).",
     "type": "anonymous",
     "results": {
@@ -4613,7 +4613,7 @@
     "sessionId": "bpu_20240314",
     "topicId": null,
     "date": "2024-03-14",
-    "title": "MFH Mainburger Str. 5 – Einvernehmen verweigert",
+    "title": "MFH Mainburger Str. 5 – Einvernehmen verweigern",
     "text": "Einstimmig (0:10) verweigert: Baukörper fügt sich nicht ein, Stellplatzthematik.",
     "type": "anonymous",
     "results": {
@@ -4767,7 +4767,7 @@
     "sessionId": "sr_20240408",
     "topicId": null,
     "date": "2024-04-08",
-    "title": "Altersteilzeit – Verzicht auf Freiwilligkeitsregelung (abgelehnt)",
+    "title": "Altersteilzeit – Verzicht auf Freiwilligkeitsregelung",
     "text": "Antrag, freiwillige Altersteilzeit-Verträge auszuschließen, wird mit 3:20 abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -5070,7 +5070,7 @@
     "sessionId": "sr_20240610",
     "topicId": null,
     "date": "2024-06-10",
-    "title": "Geschwisterermäßigung abschaffen (abgelehnt)",
+    "title": "Geschwisterermäßigung abschaffen",
     "text": "Antrag, die Geschwisterermäßigung aufzuheben, wird mit 7:11 abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -5141,7 +5141,7 @@
     "sessionId": "sr_20240610",
     "topicId": "t8",
     "date": "2024-06-10",
-    "title": "Schulwegpläne TG-Grundschule + Anton-Vizthum (abgelehnt)",
+    "title": "Schulwegpläne TG-Grundschule + Anton-Vizthum",
     "text": "Antrag, für die zwei Grundschulen Schulwegpläne zu erstellen, wird mit 11:7 abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -5491,7 +5491,7 @@
     "sessionId": "bpu_20240715",
     "topicId": null,
     "date": "2024-07-15",
-    "title": "Kindergarten Erzgebirgstraße – Einvernehmen erteilt",
+    "title": "Kindergarten Erzgebirgstraße – Einvernehmen erteilen",
     "text": "Einstimmig: Gemeindliches Einvernehmen für den Neubau des Kindergartens an der Erzgebirgstraße erteilt.",
     "type": "named",
     "results": {
@@ -6346,7 +6346,7 @@
     "sessionId": "bpu_20240930",
     "topicId": null,
     "date": "2024-09-30",
-    "title": "MFH 12 WE Bahnhofstr. 60 – Einvernehmen erteilt (abgelehnt)",
+    "title": "MFH 12 WE Bahnhofstr. 60 – Einvernehmen erteilen",
     "text": "Antrag, Einvernehmen für 12-Wohneinheiten-MFH zu erteilen, wird abgelehnt (4:8).",
     "type": "anonymous",
     "results": {
@@ -6364,7 +6364,7 @@
     "sessionId": "bpu_20240930",
     "topicId": null,
     "date": "2024-09-30",
-    "title": "MFH 12 WE Bahnhofstr. 60 – Einvernehmen verweigert",
+    "title": "MFH 12 WE Bahnhofstr. 60 – Einvernehmen verweigern",
     "text": "Einvernehmen wird verweigert; Baukörper und 3-geschossigkeit fügen sich nicht in Eigenart ein (8:4).",
     "type": "anonymous",
     "results": {
@@ -6381,7 +6381,7 @@
     "sessionId": "bpu_20240930",
     "topicId": null,
     "date": "2024-09-30",
-    "title": "MFH 6 WE Mainburger Str. 5 – Einvernehmen verweigert",
+    "title": "MFH 6 WE Mainburger Str. 5 – Einvernehmen verweigern",
     "text": "Einvernehmen einstimmig verweigert; Maß baulicher Nutzung nicht ortstypisch.",
     "type": "named",
     "results": {
@@ -6889,7 +6889,7 @@
     "sessionId": "sr_20241104",
     "topicId": "t16",
     "date": "2024-11-04",
-    "title": "Hallenbad – Freier Eintritt Kinder Weihnachtsferien (vertagt)",
+    "title": "Hallenbad – Freier Eintritt Kinder Weihnachtsferien (vertagen)",
     "text": "Antrag StRin Beibl auf kostenlosen Hallenbadeintritt für Kinder/Jugendliche in den Weihnachtsferien wird auf Januar vertagt (12:9).",
     "type": "anonymous",
     "results": {
@@ -7108,7 +7108,7 @@
     "sessionId": "hvfa_20241128",
     "topicId": "t10",
     "date": "2024-11-28",
-    "title": "Antrag Seniorenbeirat – Amtsblatt-Verteilung (abgelehnt)",
+    "title": "Antrag Seniorenbeirat – Amtsblatt-Verteilung",
     "text": "HVFA lehnt Verteilung eines kommunalen Amtsblatts an alle Haushalte ab; Aufwand und Kosten nicht verhältnismäßig.",
     "type": "anonymous",
     "results": {
@@ -7656,7 +7656,7 @@
     "sessionId": "bpu_20250116",
     "topicId": null,
     "date": "2025-01-16",
-    "title": "3. Wohneinheit Thalbacher Str. 85 – Einvernehmen verweigert",
+    "title": "3. Wohneinheit Thalbacher Str. 85 – Einvernehmen verweigern",
     "text": "Einvernehmen verweigert; Befreiung würde Grundzüge des Bebauungsplans berühren (10:1).",
     "type": "anonymous",
     "results": {
@@ -7673,7 +7673,7 @@
     "sessionId": "bpu_20250116",
     "topicId": null,
     "date": "2025-01-16",
-    "title": "Wohnanlage Stadtwaldstr. 9 – Einvernehmen erteilt (abgelehnt)",
+    "title": "Wohnanlage Stadtwaldstr. 9 – Einvernehmen erteilen",
     "text": "Antrag, Einvernehmen für 21-WE-Wohnanlage zu erteilen, wird abgelehnt (3:8).",
     "type": "anonymous",
     "results": {
@@ -7691,7 +7691,7 @@
     "sessionId": "bpu_20250116",
     "topicId": null,
     "date": "2025-01-16",
-    "title": "Wohnanlage Stadtwaldstr. 9 – Einvernehmen verweigert",
+    "title": "Wohnanlage Stadtwaldstr. 9 – Einvernehmen verweigern",
     "text": "Einvernehmen verweigert; Gesamtlänge Baukörper 1 fügt sich nicht in Umgebung ein (8:3).",
     "type": "anonymous",
     "results": {
@@ -7793,7 +7793,7 @@
     "sessionId": "bpu_20250116",
     "topicId": null,
     "date": "2025-01-16",
-    "title": "Vorbescheid MFH Moosstr. 15b – Einvernehmen verweigert",
+    "title": "Vorbescheid MFH Moosstr. 15b – Einvernehmen verweigern",
     "text": "Einvernehmen einstimmig verweigert; Baukörper überschreitet Ausdehnung und Höhe.",
     "type": "named",
     "results": {
@@ -8327,7 +8327,7 @@
     "sessionId": "sr_20250224",
     "topicId": null,
     "date": "2025-02-24",
-    "title": "Kostenloser Hallenbadeintritt für Kinder (abgelehnt)",
+    "title": "Kostenloser Hallenbadeintritt für Kinder",
     "text": "Der Antrag der Sportreferentin Beibl auf kostenlosen Hallenbadeintritt für Kinder in den Faschingsferien 2025 (im Verlauf geändert auf Osterferien) wird abgelehnt.",
     "type": "anonymous",
     "result": "rejected",
@@ -8427,7 +8427,7 @@
     "sessionId": "sr_20250224",
     "topicId": null,
     "date": "2025-02-24",
-    "title": "Stromqualität Variante 1 – Mit Neuanlagenquote (abgelehnt)",
+    "title": "Stromqualität Variante 1 – Mit Neuanlagenquote",
     "text": "Variante 1 mit 100% Ökostrom inklusive Neuanlagenquote wird abgelehnt.",
     "type": "anonymous",
     "result": "rejected",
@@ -8647,7 +8647,7 @@
     "sessionId": "bpu_20250317",
     "topicId": null,
     "date": "2025-03-17",
-    "title": "Vorbescheid MFH Moosstr. 15b – Einvernehmen verweigert",
+    "title": "Vorbescheid MFH Moosstr. 15b – Einvernehmen verweigern",
     "text": "Der Bauausschuss verweigert einstimmig das gemeindliche Einvernehmen für den Vorbescheid zum Neubau eines Mehrfamilienhauses an der Moosstr. 15b in Aich. Das Maß der baulichen Nutzung fügt sich nicht in den Umgebungscharakter ein.",
     "type": "named",
     "results": {
@@ -8674,7 +8674,7 @@
     "sessionId": "bpu_20250317",
     "topicId": null,
     "date": "2025-03-17",
-    "title": "MFH Neustadtstr. 17 – Einvernehmen erteilt (abgelehnt)",
+    "title": "MFH Neustadtstr. 17 – Einvernehmen erteilen",
     "text": "Der Antrag, das gemeindliche Einvernehmen zum Neubau eines Mehrfamilienhauses an der Neustadtstr. 17 zu erteilen, wird abgelehnt.",
     "type": "anonymous",
     "result": "rejected",
@@ -8689,7 +8689,7 @@
     "sessionId": "bpu_20250317",
     "topicId": null,
     "date": "2025-03-17",
-    "title": "MFH Neustadtstr. 17 – Einvernehmen verweigert",
+    "title": "MFH Neustadtstr. 17 – Einvernehmen verweigern",
     "text": "Der Bauausschuss verweigert das gemeindliche Einvernehmen zum Neubau eines Mehrfamilienhauses an der Neustadtstr. 17. Probleme bei Dichte, Versiegelung, Stellplatzpflicht und Spielplatznachweis.",
     "type": "anonymous",
     "results": {
@@ -9183,7 +9183,7 @@
     "sessionId": "sr_20250428",
     "topicId": null,
     "date": "2025-04-28",
-    "title": "Plakatanschlagtafeln Jägerstr. 2 – Einvernehmen verweigert",
+    "title": "Plakatanschlagtafeln Jägerstr. 2 – Einvernehmen verweigern",
     "text": "Einvernehmen einstimmig verweigert; Nähe zur Ampelkreuzung beeinträchtigt Verkehrssicherheit.",
     "type": "named",
     "results": {
@@ -9224,7 +9224,7 @@
     "sessionId": "sr_20250428",
     "topicId": null,
     "date": "2025-04-28",
-    "title": "B-Plan Isarstraße – Antrag Deutinger abgelehnt",
+    "title": "B-Plan Isarstraße – Antrag Deutinger",
     "text": "Antrag auf Aufstellung eines B-Plans für Wohnbebauung an der Isarstraße abgelehnt (18:2).",
     "type": "anonymous",
     "results": {
@@ -9239,7 +9239,7 @@
     "sessionId": "sr_20250428",
     "topicId": "t12",
     "date": "2025-04-28",
-    "title": "Badegebühren Freibad – Änderungsantrag Marcus (abgelehnt)",
+    "title": "Badegebühren Freibad – Änderungsantrag Marcus",
     "text": "Antrag StR Marcus auf Einzelpreise (Erw. 5 €, Kinder 2,50 €) wird abgelehnt (2:18).",
     "type": "anonymous",
     "results": {
@@ -9310,7 +9310,7 @@
     "sessionId": "bpu_20250522",
     "topicId": "t4",
     "date": "2025-05-22",
-    "title": "Fußgängerüberweg Sudetenlandstraße – abgelehnt",
+    "title": "Fußgängerüberweg Sudetenlandstraße",
     "text": "Antrag der Initiative auf Errichtung eines Fußgängerüberwegs wird abgelehnt (9:1).",
     "type": "anonymous",
     "results": {
@@ -9328,7 +9328,7 @@
     "sessionId": "bpu_20250522",
     "topicId": "t4",
     "date": "2025-05-22",
-    "title": "Fahrradstraße Stadtbadstraße – abgelehnt",
+    "title": "Fahrradstraße Stadtbadstraße",
     "text": "Antrag auf Fahrradstraße und Zufahrtssperrung des Parkplatzes wird einstimmig abgelehnt.",
     "type": "named",
     "results": {
@@ -9412,7 +9412,7 @@
     "sessionId": "bpu_20250522",
     "topicId": null,
     "date": "2025-05-22",
-    "title": "MFH Merkurstr. 8 (6 WE) – Einvernehmen verweigert",
+    "title": "MFH Merkurstr. 8 (6 WE) – Einvernehmen verweigern",
     "text": "Einvernehmen einstimmig verweigert; Wandhöhe und Dachneigung sowie nicht-konforme Fahrradabstellplätze.",
     "type": "named",
     "results": {
@@ -9440,7 +9440,7 @@
     "sessionId": "bpu_20250522",
     "topicId": null,
     "date": "2025-05-22",
-    "title": "MFH Bahnhofstr. 60 (12 WE) – Einvernehmen verweigert",
+    "title": "MFH Bahnhofstr. 60 (12 WE) – Einvernehmen verweigern",
     "text": "GRZ/GFZ und 3-geschossigkeit fügen sich nicht in Eigenart ein (9:1).",
     "type": "anonymous",
     "results": {
@@ -9457,7 +9457,7 @@
     "sessionId": "bpu_20250522",
     "topicId": null,
     "date": "2025-05-22",
-    "title": "MFH Mainburger Str. 5 (8 WE) – Einvernehmen verweigert",
+    "title": "MFH Mainburger Str. 5 (8 WE) – Einvernehmen verweigern",
     "text": "Einvernehmen einstimmig verweigert; tatsächliche Grundfläche fügt sich nicht in Eigenart.",
     "type": "named",
     "results": {
@@ -9485,7 +9485,7 @@
     "sessionId": "bpu_20250522",
     "topicId": null,
     "date": "2025-05-22",
-    "title": "MFH Neustadtstr. 17 – Einvernehmen erteilt (abgelehnt)",
+    "title": "MFH Neustadtstr. 17 – Einvernehmen erteilen",
     "text": "Antrag, das Einvernehmen zu erteilen, wird einstimmig abgelehnt (0:10).",
     "type": "anonymous",
     "results": {
@@ -9503,7 +9503,7 @@
     "sessionId": "bpu_20250522",
     "topicId": null,
     "date": "2025-05-22",
-    "title": "MFH Neustadtstr. 17 – Einvernehmen verweigert",
+    "title": "MFH Neustadtstr. 17 – Einvernehmen verweigern",
     "text": "Einvernehmen einstimmig verweigert; Maß baulicher Nutzung, Versiegelung, Stellplatz-/Spielplatzpflicht.",
     "type": "named",
     "results": {
@@ -9795,7 +9795,7 @@
     "sessionId": "sr_20250623",
     "topicId": null,
     "date": "2025-06-23",
-    "title": "Kostenloses Parken während Stadtplatzsanierung (abgelehnt)",
+    "title": "Kostenloses Parken während Stadtplatzsanierung",
     "text": "Der Antrag der Freien Wähler, während der Stadtplatzsanierung kostenloses Parken auf den Parkplätzen Zehentstadel und Alte Polizei (mit Parkscheibe, max. 2 Std., bis 31.07.2025) zu ermöglichen, wird abgelehnt.",
     "type": "anonymous",
     "result": "rejected",
@@ -10145,7 +10145,7 @@
     "sessionId": "sr_20250728",
     "topicId": "t14",
     "date": "2025-07-28",
-    "title": "Abbruchbeschluss Wachbaracken aufgehoben",
+    "title": "Abbruchbeschluss Wachbaracken aufheben",
     "text": "Der Stadtrat hebt den Beschluss vom 10.12.2012 zum Abbruch der Wachbaracken an der Schlesierstraße 3 und 5 auf. Stattdessen soll eine denkmalgerechte Sanierung und Erhaltung angestrebt werden. Ein Nutzungskonzept wird erarbeitet.",
     "type": "anonymous",
     "results": {
@@ -10454,7 +10454,7 @@
     "sessionId": "sr_20250908",
     "topicId": null,
     "date": "2025-09-08",
-    "title": "MFH Weihmühlstraße 18 – Einvernehmen erteilt",
+    "title": "MFH Weihmühlstraße 18 – Einvernehmen erteilen",
     "text": "Der Stadtrat erteilt zum Neubau eines Mehrfamilienhauses mit 5 Wohneinheiten an der Weihmühlstraße 18 das gemeindliche Einvernehmen.",
     "type": "named",
     "results": {
@@ -10536,7 +10536,7 @@
     "sessionId": "sr_20250908",
     "topicId": null,
     "date": "2025-09-08",
-    "title": "Wohnanlage Stadtwaldstraße 9 – Einvernehmen erteilt (abgelehnt)",
+    "title": "Wohnanlage Stadtwaldstraße 9 – Einvernehmen erteilen",
     "text": "Antrag auf Erteilung des gemeindlichen Einvernehmens für den Neubau einer Wohnanlage mit 21 Wohneinheiten und Tiefgarage (Haus A, B, C) an der Stadtwaldstraße 9, 9a, 9b.",
     "type": "anonymous",
     "result": "rejected",
@@ -10551,7 +10551,7 @@
     "sessionId": "sr_20250908",
     "topicId": null,
     "date": "2025-09-08",
-    "title": "Wohnanlage Stadtwaldstraße 9 – Einvernehmen verweigert",
+    "title": "Wohnanlage Stadtwaldstraße 9 – Einvernehmen verweigern",
     "text": "Der Stadtrat verweigert das gemeindliche Einvernehmen. Die massive Gesamtlänge des Baukörpers 1 (Haus A+B) fügt sich nicht in die nähere Umgebungsbebauung ein. Die Stadtwaldstraße gilt als Zäsur beim Einfügegebot.",
     "type": "anonymous",
     "results": {
@@ -12545,7 +12545,7 @@
     "sessionId": "sr_20260112",
     "topicId": null,
     "date": "2026-01-12",
-    "title": "Anbau Mühlbachbogen – Einvernehmen erteilt",
+    "title": "Anbau Mühlbachbogen – Einvernehmen erteilen",
     "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen und stimmt der Befreiung von den Festsetzungen des Bebauungsplans zu.",
     "type": "named",
     "results": {
@@ -12836,7 +12836,7 @@
     "sessionId": "sr_20260202",
     "topicId": null,
     "date": "2026-02-02",
-    "title": "Anbau Mühlbachbogen – Einvernehmen erteilt (erneut)",
+    "title": "Anbau Mühlbachbogen – Einvernehmen erteilen (erneut)",
     "text": "Der Stadtrat stimmt dem beantragten Vorhaben nach § 36a Abs. 1 BauGB zu.",
     "type": "named",
     "results": {
