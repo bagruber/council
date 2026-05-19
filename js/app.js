@@ -555,10 +555,17 @@ const SHOW_PRONOUNS = true;
     const block = document.createElement("div");
     block.className = "vote-block";
 
-    const isRejected = vote.result === "rejected";
-    const tagClass = isRejected ? "rejected" : "approved";
-    const tagText = isRejected ? "Abgelehnt" : "Angenommen";
-    const resultTag = `<span class="vote-result-tag ${tagClass}">${tagText}</span>`;
+    // Status-Pille: angenommen / abgelehnt / vertagt / zurückgezogen.
+    // Bei Anträgen subtiler, weil der Titel das Antrags-Kontext schon transportiert
+    // (und der Antrag perspektivisch verlinkt wird).
+    const STATUS = {
+      rejected:  { cls: "rejected",  text: "Abgelehnt"     },
+      deferred:  { cls: "deferred",  text: "Vertagt"       },
+      withdrawn: { cls: "withdrawn", text: "Zurückgezogen" },
+    };
+    const st = STATUS[vote.result] || { cls: "approved", text: "Angenommen" };
+    const isAntrag = /\bAntrag\b|\bAnträge\b/i.test(vote.title);
+    const resultTag = `<span class="vote-result-tag ${st.cls}${isAntrag ? " subtle" : ""}">${st.text}</span>`;
 
     block.innerHTML = `
       <button class="vote-help-btn" aria-label="Legende" title="Was bedeutet was?">
@@ -1330,16 +1337,16 @@ const SHOW_PRONOUNS = true;
     return out;
   }
 
-  // Bar segment order: active yes / no first (saturated), then the muted
-  // categories (inferred-unanimous / absent / unknown). Same order
-  // everywhere so the user's eye learns the layout.
+  // Bar-Reihenfolge — symmetrisch um die Mitte: links Ablehnung (einstimmig
+  // außen, aktiv innen), Mitte Sonstige (unbekannt + abwesend), rechts
+  // Zustimmung (aktiv innen, einstimmig außen).
   const VS_SEGMENTS = [
-    { key: "yes",     cls: "yes"     },
-    { key: "no",      cls: "no"      },
-    { key: "yesInf",  cls: "yes-inf" },
     { key: "noInf",   cls: "no-inf"  },
-    { key: "absent",  cls: "absent"  },
+    { key: "no",      cls: "no"      },
     { key: "unknown", cls: "unknown" },
+    { key: "yes",     cls: "yes"     },
+    { key: "yesInf",  cls: "yes-inf" },
+    { key: "absent",  cls: "absent"  },
   ];
 
   function barSegments(b, total) {
@@ -1352,9 +1359,6 @@ const SHOW_PRONOUNS = true;
   function renderVotingStatsCard(stats) {
     const t = stats.total;
     const pct = (n) => t.total === 0 ? 0 : Math.round(n / t.total * 100);
-    const active = t.yes + t.no;
-    const muted  = t.yesInf + t.noInf + t.absent + t.unknown;
-
     const details = document.createElement("details");
     details.className = "voting-stats";
     details.innerHTML = `
@@ -1369,25 +1373,25 @@ const SHOW_PRONOUNS = true;
 
           <div class="vs-legend">
             <div class="vs-legend-row">
-              <span class="vs-legend-head">Aktiv abgestimmt</span>
-              <span class="vs-legend-share">${active} (${pct(active)}%)</span>
+              <span class="vs-legend-head">Zustimmung</span>
+              <span class="vs-legend-share">${t.yes + t.yesInf} (${pct(t.yes + t.yesInf)}%)</span>
             </div>
             <div class="vs-legend-row vs-sub">
-              <span class="vs-dot yes"></span>${t.yes} Ja
-              <span class="vs-dot no"></span>${t.no} Nein
+              <span class="vs-dot yes"></span>${t.yes} nicht einstimmig
+              <span class="vs-dot yes-inf"></span>${t.yesInf} einstimmig
             </div>
 
             <div class="vs-legend-row" style="margin-top:8px">
-              <span class="vs-legend-head">Einstimmig mitgegangen</span>
-              <span class="vs-legend-share">${t.yesInf + t.noInf} (${pct(t.yesInf + t.noInf)}%)</span>
+              <span class="vs-legend-head">Ablehnung</span>
+              <span class="vs-legend-share">${t.no + t.noInf} (${pct(t.no + t.noInf)}%)</span>
             </div>
             <div class="vs-legend-row vs-sub">
-              <span class="vs-dot yes-inf"></span>${t.yesInf} Ja*
-              <span class="vs-dot no-inf"></span>${t.noInf} Nein*
+              <span class="vs-dot no"></span>${t.no} nicht einstimmig
+              <span class="vs-dot no-inf"></span>${t.noInf} einstimmig
             </div>
 
             <div class="vs-legend-row" style="margin-top:8px">
-              <span class="vs-legend-head">Nicht entscheidend</span>
+              <span class="vs-legend-head">Sonstige</span>
               <span class="vs-legend-share">${t.absent + t.unknown} (${pct(t.absent + t.unknown)}%)</span>
             </div>
             <div class="vs-legend-row vs-sub">
