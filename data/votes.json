@@ -4914,17 +4914,39 @@
     "date": "2024-05-06",
     "title": "Regionalplan München – Windenergie",
     "text": "Der Stadtrat nimmt das Steuerungskonzept für Windenergie zur Kenntnis (18:4); Empfehlung: Windvorrangfläche in der Region Kirchamper.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 18,
-      "no": 4,
-      "absent": 3
-    },
-    "voters": {
-      "tristl": "no",
-      "lauterbach": "no",
-      "haberl": "no",
-      "welter": "no"
+      "yes": [
+        "becher_a",
+        "becher_j",
+        "beibl",
+        "beubl",
+        "dollinger",
+        "fincke",
+        "gruber",
+        "gruebl",
+        "hadersdorfer",
+        "heinz",
+        "kaestl",
+        "kieninger",
+        "linz_karin",
+        "linz_kilian",
+        "pschorr",
+        "reif",
+        "strobl",
+        "von_pressentin",
+        "weber"
+      ],
+      "no": [
+        "haberl",
+        "lauterbach",
+        "tristl",
+        "welter"
+      ],
+      "absent": [
+        "grundner",
+        "stanglmaier"
+      ]
     }
   },
   {
