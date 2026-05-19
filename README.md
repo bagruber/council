@@ -151,6 +151,21 @@ Folgetag des Ausscheidens — eindeutig per `occupants[]`-Historie.
 Mehr Detail dazu im [`docs/CORE.md`](docs/CORE.md), das auch die zentrale
 Vote-Status-Logik (yes / no / absent / inferiert / unknown) beschreibt.
 
+## Geschwister-Apps
+
+Teil einer kleinen Familie von Anwendungen rund um Transparenz und
+Datenarbeit in der Kommune Moosburg:
+
+- **bagruber/council** *(dieses Repo)* — die öffentliche Transparenz-App.
+- **[bagruber/council-voting-tool](https://github.com/bagruber/council-voting-tool)** —
+  Live-Erfassung von Anwesenheit und Abstimmungen während der Sitzung.
+  Nutzt das gleiche `members.json`-Datenmodell.
+- **[bagruber/datahub](https://github.com/bagruber/datahub)** — interaktives
+  Umfrage- und Daten-Dashboard.
+
+Designsprache (Moosburg-Rot, Gold-Akzent, warmes Off-White) ist über alle
+drei Apps konsistent.
+
 ## Lizenz & Verantwortung
 
 Code: MIT. Daten: Auszug aus öffentlich zugänglichen Niederschriften der Stadt
