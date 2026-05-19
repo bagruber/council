@@ -6690,7 +6690,8 @@
       "absent": 8
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "hobmaier": "yes"
     }
   },
   {
@@ -6808,7 +6809,8 @@
       "absent": 5
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "hobmaier": "yes"
     }
   },
   {
@@ -7683,7 +7685,8 @@
     },
     "result": "rejected",
     "voters": {
-      "gruber": "no"
+      "gruber": "no",
+      "hobmaier": "no"
     }
   },
   {
@@ -10544,6 +10547,9 @@
       "yes": 8,
       "no": 9,
       "absent": 8
+    },
+    "voters": {
+      "hobmaier": "no"
     }
   },
   {
