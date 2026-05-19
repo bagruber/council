@@ -447,7 +447,7 @@
     "sessionId": "sr_20221024",
     "topicId": "t5",
     "date": "2022-10-24",
-    "title": "Vertagung weiterer Einwendungen (Antrag Stanglmaier)",
+    "title": "Vertagung weiterer Einwendungen – (Antrag Stanglmaier)",
     "text": "Vertagung der TOPe 8.30 ff. mit 11:11 Stimmen abgelehnt.",
     "type": "anonymous",
     "results": {
@@ -716,7 +716,7 @@
     "sessionId": "bpu_20221117",
     "topicId": null,
     "date": "2022-11-17",
-    "title": "Landshuter Str. – Haus 2 (6 WE) Einvernehmen",
+    "title": "Landshuter Str. – Haus 2 (6 WE) – Einvernehmen erteilt (abgelehnt)",
     "text": "Einvernehmen NICHT erteilt – Patt 6:6.",
     "type": "anonymous",
     "results": {
@@ -731,7 +731,7 @@
     "sessionId": "bpu_20221117",
     "topicId": null,
     "date": "2022-11-17",
-    "title": "Landshuter Str. – Haus 6 (6 WE) Einvernehmen",
+    "title": "Landshuter Str. – Haus 6 (6 WE) – Einvernehmen erteilt (abgelehnt)",
     "text": "Einvernehmen NICHT erteilt – Patt 6:6.",
     "type": "anonymous",
     "results": {
@@ -5491,7 +5491,7 @@
     "sessionId": "bpu_20240715",
     "topicId": null,
     "date": "2024-07-15",
-    "title": "Kindergarten Erzgebirgstraße – Einvernehmen",
+    "title": "Kindergarten Erzgebirgstraße – Einvernehmen erteilt",
     "text": "Einstimmig: Gemeindliches Einvernehmen für den Neubau des Kindergartens an der Erzgebirgstraße erteilt.",
     "type": "named",
     "results": {
@@ -7700,7 +7700,8 @@
       "absent": 1
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "hobmaier": "yes"
     }
   },
   {
@@ -10153,7 +10154,8 @@
       "absent": 5
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "hobmaier": "yes"
     }
   },
   {
@@ -10229,11 +10231,11 @@
         "pschorr",
         "marcus",
         "gruber",
-        "hobmaier",
         "welter",
         "kaestl",
         "fincke",
-        "strobl"
+        "strobl",
+        "hobmaier"
       ],
       "no": [],
       "absent": [
@@ -10452,7 +10454,7 @@
     "sessionId": "sr_20250908",
     "topicId": null,
     "date": "2025-09-08",
-    "title": "Einvernehmen MFH Weihmühlstraße 18",
+    "title": "MFH Weihmühlstraße 18 – Einvernehmen erteilt",
     "text": "Der Stadtrat erteilt zum Neubau eines Mehrfamilienhauses mit 5 Wohneinheiten an der Weihmühlstraße 18 das gemeindliche Einvernehmen.",
     "type": "named",
     "results": {
@@ -10534,7 +10536,7 @@
     "sessionId": "sr_20250908",
     "topicId": null,
     "date": "2025-09-08",
-    "title": "Einvernehmen Wohnanlage Stadtwaldstraße 9",
+    "title": "Wohnanlage Stadtwaldstraße 9 – Einvernehmen erteilt (abgelehnt)",
     "text": "Antrag auf Erteilung des gemeindlichen Einvernehmens für den Neubau einer Wohnanlage mit 21 Wohneinheiten und Tiefgarage (Haus A, B, C) an der Stadtwaldstraße 9, 9a, 9b.",
     "type": "anonymous",
     "result": "rejected",
@@ -10549,7 +10551,7 @@
     "sessionId": "sr_20250908",
     "topicId": null,
     "date": "2025-09-08",
-    "title": "Verweigerung Einvernehmen Stadtwaldstraße 9",
+    "title": "Wohnanlage Stadtwaldstraße 9 – Einvernehmen verweigert",
     "text": "Der Stadtrat verweigert das gemeindliche Einvernehmen. Die massive Gesamtlänge des Baukörpers 1 (Haus A+B) fügt sich nicht in die nähere Umgebungsbebauung ein. Die Stadtwaldstraße gilt als Zäsur beim Einfügegebot.",
     "type": "anonymous",
     "results": {
@@ -10558,7 +10560,8 @@
       "absent": 8
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "hobmaier": "yes"
     }
   },
   {
@@ -11031,7 +11034,6 @@
         "gruber",
         "grundner",
         "haberl",
-        "hobmaier",
         "kieninger",
         "lauterbach",
         "linz_karin",
@@ -11041,7 +11043,8 @@
         "reif",
         "strobl",
         "tristl",
-        "kaestl"
+        "kaestl",
+        "hobmaier"
       ],
       "no": [],
       "absent": [
@@ -11652,7 +11655,8 @@
       "absent": 7
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "hobmaier": "yes"
     }
   },
   {
@@ -11766,7 +11770,8 @@
       "absent": 4
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "hobmaier": "yes"
     }
   },
   {
@@ -11946,6 +11951,9 @@
       "yes": 14,
       "no": 8,
       "absent": 3
+    },
+    "voters": {
+      "hobmaier": "yes"
     }
   },
   {
@@ -12083,6 +12091,9 @@
       "yes": 16,
       "no": 6,
       "absent": 3
+    },
+    "voters": {
+      "hobmaier": "no"
     }
   },
   {
@@ -12097,6 +12108,9 @@
       "yes": 17,
       "no": 5,
       "absent": 3
+    },
+    "voters": {
+      "hobmaier": "yes"
     }
   },
   {
@@ -12531,7 +12545,7 @@
     "sessionId": "sr_20260112",
     "topicId": null,
     "date": "2026-01-12",
-    "title": "Einvernehmen Anbau Mühlbachbogen",
+    "title": "Anbau Mühlbachbogen – Einvernehmen erteilt",
     "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen und stimmt der Befreiung von den Festsetzungen des Bebauungsplans zu.",
     "type": "named",
     "results": {
@@ -12822,7 +12836,7 @@
     "sessionId": "sr_20260202",
     "topicId": null,
     "date": "2026-02-02",
-    "title": "Einvernehmen Mühlbachbogen – erneut",
+    "title": "Anbau Mühlbachbogen – Einvernehmen erteilt (erneut)",
     "text": "Der Stadtrat stimmt dem beantragten Vorhaben nach § 36a Abs. 1 BauGB zu.",
     "type": "named",
     "results": {
