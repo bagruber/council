@@ -2,11 +2,12 @@
 
 ## Stack & Architektur
 
-- Vanilla JS, kein Framework, keine npm-Dependencies
-- D3.js v7 (nur für Parliament-Visualisierung)
-- Hash-basiertes Routing (`#/member/id`, `#/topic/id`, etc.)
+- Vanilla JS, kein Framework, keine externen Dependencies (Parliament-Chart ist pure SVG, kein D3)
+- Hash-basiertes Routing (`#/member/id`, `#/topic/id`, `#/?tags=...`, etc.)
 - Lokaler Webserver zum Testen: `npx serve`
-- Single-page App: `index.html` + `js/app.js` + `js/parliament.js` + `css/style.css`
+- Single-page App: `index.html` + `js/core.js` + `js/app.js` + `js/parliament.js` + `css/style.css`
+- `js/core.js` (`Council`): geteilte Perioden- & Vote-Status-Logik für app.js und parliament.js, siehe `docs/CORE.md`
+- Fonts self-hosted in `fonts/` (DSGVO: keine CDN-Requests), eingebunden über `css/fonts.css`
 
 ## Datenquellen
 
