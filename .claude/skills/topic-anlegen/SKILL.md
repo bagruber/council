@@ -11,6 +11,8 @@ Themen sind die zentrale Navigationseinheit. Falsch zugeschnittene oder zu granu
 
 Die Niederschriften-Skill schlägt manchmal neue Topics vor — diese Vorschläge sollen aufgelistet, aber nicht direkt umgesetzt werden. Erst nach User-OK diesen Skill aufrufen.
 
+**Ausnahme — Watchlist:** Steht das Thema in `data/knowledge/topic-watchlist.md`, ist die Anlage vorab genehmigt; kein erneutes Nachfragen nötig. Nach Anlage die Status-Spalte des Watchlist-Eintrags auf die neue `tN` setzen und die Anlage in der Zusammenfassung erwähnen.
+
 ## Wann ist ein Topic gerechtfertigt?
 
 - **≥ 2 separate Sitzungen** mit eigenen Voten/Diskussionen zum selben Sachgebiet.
