@@ -132,27 +132,23 @@ const SHOW_PRONOUNS = true;
     pill.addEventListener("click", () => {
       pill.classList.toggle("active");
       const active = tagBar.querySelectorAll(".tag-pill.active");
-      if (active.length === 0) {
-        navigate("/");
-      } else {
-        const activeIds = Array.from(active).map(el => el.dataset.tagId);
-        showFilteredTopics(activeIds);
-      }
+      const activeIds = Array.from(active).map(el => el.dataset.tagId);
+      navigate(activeIds.length ? "/?tags=" + activeIds.join(",") : "/");
     });
     tagBar.appendChild(pill);
   });
 
-  function clearActiveTags() {
-    tagBar.querySelectorAll(".tag-pill.active").forEach(p => p.classList.remove("active"));
+  function syncTagPills(ids) {
+    tagBar.querySelectorAll(".tag-pill").forEach(p =>
+      p.classList.toggle("active", ids.includes(p.dataset.tagId)));
   }
 
   // Normalise Umlaute & accents so "Ru" matches "Rümelin", "Stoss" matches "Stoß".
+  // NFD + Diakritika-Strip erledigt ä→a etc., nur ß braucht den Sonderfall.
   function searchNorm(s) {
     return (s || "")
       .toLowerCase()
-      .replace(/ä/g, "a").replace(/ö/g, "o").replace(/ü/g, "u")
       .replace(/ß/g, "ss")
-      // also strip diacritics from any latin chars
       .normalize("NFD").replace(/[̀-ͯ]/g, "");
   }
 
@@ -178,30 +174,20 @@ const SHOW_PRONOUNS = true;
 
     dropdown.innerHTML = "";
     results.slice(0, 12).forEach(r => {
-      const div = document.createElement("div");
-      div.className = "dd-item";
+      const item = document.createElement("a");
+      item.className = "dd-item";
+      item.href = r.type === "tag" ? "#/?tags=" + r.item.id
+                : r.type === "topic" ? "#/topic/" + r.item.id
+                : r.type === "session" ? "#/session/" + r.item.id
+                : "#/member/" + r.item.id;
       const labels = { tag: "Tag", topic: "Thema", session: "Sitzung", member: "Person" };
-      div.innerHTML = `<span class="dd-type">${labels[r.type]}</span><span>${r.item.title || r.item.name}</span>`;
-      div.addEventListener("click", () => {
+      const former = r.type === "member" && !isActive(r.item) ? " (ehem.)" : "";
+      item.innerHTML = `<span class="dd-type">${labels[r.type]}</span><span>${r.item.title || r.item.name}${former}</span>`;
+      item.addEventListener("click", () => {
         dropdown.classList.add("hidden");
         searchInput.value = "";
-        if (r.type === "tag") {
-          clearActiveTags();
-          const pill = Array.from(tagBar.children).find(p => p.textContent === r.item.name);
-          if (pill) pill.classList.add("active");
-          showFilteredTopics([r.item.id]);
-        } else if (r.type === "topic") {
-          switchTab("themen");
-          navigate("/topic/" + r.item.id);
-        } else if (r.type === "session") {
-          switchTab("themen");
-          navigate("/session/" + r.item.id);
-        } else {
-          switchTab("gremien");
-          navigate("/member/" + r.item.id);
-        }
       });
-      dropdown.appendChild(div);
+      dropdown.appendChild(item);
     });
     dropdown.classList.remove("hidden");
   });
@@ -211,6 +197,14 @@ const SHOW_PRONOUNS = true;
       dropdown.classList.add("hidden");
       gremienDropdown.classList.add("hidden");
     }
+  });
+
+  document.addEventListener("keydown", evt => {
+    if (evt.key !== "Escape") return;
+    document.querySelectorAll(".modal-overlay:not(.hidden), .bottom-sheet:not(.hidden)")
+      .forEach(el => el.classList.add("hidden"));
+    dropdown.classList.add("hidden");
+    gremienDropdown.classList.add("hidden");
   });
 
   // -- Gremien search --
@@ -227,17 +221,17 @@ const SHOW_PRONOUNS = true;
 
     gremienDropdown.innerHTML = "";
     results.slice(0, 10).forEach(m => {
-      const div = document.createElement("div");
-      div.className = "dd-item";
+      const item = document.createElement("a");
+      item.className = "dd-item";
+      item.href = "#/member/" + m.id;
       const party = partyMap[m.party];
       const status = isActive(m) ? "" : " (ehem.)";
-      div.innerHTML = `<span class="member-dot" style="background:${party ? party.color : '#ccc'}"></span><span>${m.name}${status}</span>`;
-      div.addEventListener("click", () => {
+      item.innerHTML = `<span class="member-dot" style="background:${party ? party.color : '#ccc'}"></span><span>${m.name}${status}</span>`;
+      item.addEventListener("click", () => {
         gremienDropdown.classList.add("hidden");
         gremienSearchInput.value = "";
-        navigate("/member/" + m.id);
       });
-      gremienDropdown.appendChild(div);
+      gremienDropdown.appendChild(item);
     });
     gremienDropdown.classList.remove("hidden");
   });
@@ -250,31 +244,35 @@ const SHOW_PRONOUNS = true;
 
   function route() {
     const hash = window.location.hash.slice(1) || "/";
-    if (hash === "/kalender") {
+    const [path, query] = hash.split("?");
+    if (path === "/kalender") {
       switchTab("kalender");
       return;
     }
-    if (hash === "/einstellungen") {
+    if (path === "/einstellungen") {
       switchTab("einstellungen");
       return;
     }
-    if (hash === "/gremien") {
+    if (path === "/gremien") {
       switchTab("gremien");
       return;
     }
-    if (hash.startsWith("/member/")) {
+    if (path.startsWith("/member/")) {
       switchTab("gremien");
-      renderMemberProfile(hash.split("/member/")[1]);
+      renderMemberProfile(path.split("/member/")[1]);
       return;
     }
     switchTab("themen");
     main.innerHTML = "";
-    if (hash.startsWith("/topic/")) {
-      renderTopic(hash.split("/topic/")[1]);
-    } else if (hash.startsWith("/session/")) {
-      renderSession(hash.split("/session/")[1]);
+    if (path.startsWith("/topic/")) {
+      renderTopic(path.split("/topic/")[1]);
+    } else if (path.startsWith("/session/")) {
+      renderSession(path.split("/session/")[1]);
     } else {
-      renderHome();
+      const tagIds = (new URLSearchParams(query).get("tags") || "")
+        .split(",").filter(id => tagMap[id]);
+      if (tagIds.length) renderFilteredTopics(tagIds);
+      else renderHome();
     }
   }
 
@@ -291,7 +289,7 @@ const SHOW_PRONOUNS = true;
   // -- Views --
 
   function renderHome() {
-    clearActiveTags();
+    syncTagPills([]);
     const heading = document.createElement("p");
     heading.className = "section-heading";
     heading.textContent = "Alle Themen";
@@ -299,9 +297,8 @@ const SHOW_PRONOUNS = true;
     renderTopicList(topics);
   }
 
-  function showFilteredTopics(tagIds) {
-    window.location.hash = "/";
-    main.innerHTML = "";
+  function renderFilteredTopics(tagIds) {
+    syncTagPills(tagIds);
     const filtered = topics.filter(t => tagIds.some(id => t.tags.includes(id)));
     const label = tagIds.map(id => tagMap[id].name).join(", ");
     const heading = document.createElement("p");
@@ -323,9 +320,9 @@ const SHOW_PRONOUNS = true;
     const wrap = document.createElement("div");
     wrap.className = "topic-list";
     list.forEach(topic => {
-      const card = document.createElement("div");
+      const card = document.createElement("a");
       card.className = "topic-card";
-      card.addEventListener("click", () => navigate("/topic/" + topic.id));
+      card.href = "#/topic/" + topic.id;
       card.innerHTML = `
         <div class="topic-categories">${(topic.tags || []).map(categoryChip).join("")}</div>
         <h3>${topic.title}</h3>
@@ -451,7 +448,7 @@ const SHOW_PRONOUNS = true;
         const link = document.createElement("a");
         link.className = "tl-session-link";
         link.href = "#/session/" + entry.sessionId;
-        link.innerHTML = '<span class="material-icons" style="font-size:14px;vertical-align:-2px">open_in_new</span> ' + sessionMap[entry.sessionId].title;
+        link.innerHTML = '<span class="material-icons">open_in_new</span> ' + sessionMap[entry.sessionId].title;
         el.appendChild(link);
       }
 
@@ -511,14 +508,19 @@ const SHOW_PRONOUNS = true;
       const el = document.createElement("div");
       el.className = "agenda-item";
 
-      if (item.topicId && topicMap[item.topicId]) {
+      const hasTopic = item.topicId && topicMap[item.topicId];
+      if (hasTopic) {
         el.classList.add("has-link");
-        el.addEventListener("click", () => navigate("/topic/" + item.topicId));
+        // Großer Klickbereich, aber Vote-Block/Buttons/Links nicht abfangen
+        el.addEventListener("click", e => {
+          if (e.target.closest("a, button, .vote-block")) return;
+          navigate("/topic/" + item.topicId);
+        });
       }
 
       el.innerHTML = `
         <div class="ai-number">TOP ${item.number}</div>
-        <h3>${item.title}</h3>`;
+        <h3>${hasTopic ? `<a href="#/topic/${item.topicId}">${item.title}</a>` : item.title}</h3>`;
 
       if (item.type === "formal") {
         el.innerHTML += '<span class="ai-type">Formell</span>';
@@ -544,11 +546,8 @@ const SHOW_PRONOUNS = true;
   // -- Vote block --
 
   function bodyForVote(vote) {
-    const sid = vote.sessionId || "";
-    if (sid.startsWith("bpu_"))  return bodyMap["bpu"];
-    if (sid.startsWith("hvfa_")) return bodyMap["hvfa"];
-    if (sid.startsWith("sr_"))   return bodyMap["plenum"];
-    return null;
+    const bid = bodyIdForSession(sessionMap[vote.sessionId]);
+    return bid ? bodyMap[bid] : null;
   }
 
   function renderVoteBlock(container, vote) {
@@ -710,19 +709,18 @@ const SHOW_PRONOUNS = true;
     calSheetBody.appendChild(heading);
 
     events.forEach(s => {
-      const row = document.createElement("div");
+      const row = document.createElement("a");
       row.className = "sheet-event";
+      row.href = "#/session/" + s.id;
       if (s.type && s.type !== "stadtrat") row.classList.add(s.type);
-      const icon = s.type === "bpu" ? "engineering" : "account_balance";
+      const icon = s.type === "bpu" ? "engineering"
+                 : (s.type && s.type !== "stadtrat") ? "groups"
+                 : "account_balance";
       row.innerHTML = `
         <span class="material-icons">${icon}</span>
         <div class="sheet-event-text">${s.title}</div>
         <span class="material-icons">chevron_right</span>`;
-      row.addEventListener("click", () => {
-        calSheet.classList.add("hidden");
-        switchTab("themen");
-        navigate("/session/" + s.id);
-      });
+      row.addEventListener("click", () => calSheet.classList.add("hidden"));
       calSheetBody.appendChild(row);
     });
 
@@ -731,20 +729,16 @@ const SHOW_PRONOUNS = true;
 
   // -- Gremien tab --
 
-  let gremienRendered = false;
-
   function renderGremien() {
     const hash = window.location.hash.slice(1) || "/";
     if (hash.startsWith("/member/")) {
       renderMemberProfile(hash.split("/member/")[1]);
       return;
     }
-    if (gremienRendered) return;
-    gremienRendered = true;
     gremienMain.innerHTML = "";
 
     const wrap = document.createElement("div");
-    wrap.style.cssText = "max-width:800px;margin:0 auto;padding:24px 24px 64px;";
+    wrap.className = "page-wrap";
 
     const plenum = bodies.filter(b => b.type === "plenum");
     const ausschuesse = bodies.filter(b => b.type === "ausschuss");
@@ -797,8 +791,8 @@ const SHOW_PRONOUNS = true;
       if (!group || !group.length) return;
       const party = partyMap[pid];
       const fh = document.createElement("div");
-      fh.style.cssText = "display:flex;align-items:center;gap:8px;margin:16px 0 6px;";
-      fh.innerHTML = `<span class="member-dot" style="background:${party.color};width:10px;height:10px"></span><span style="font-weight:600;font-size:0.9rem">${party.name}</span><span style="font-size:0.78rem;color:var(--text-muted)">${group.length}</span>`;
+      fh.className = "faction-head";
+      fh.innerHTML = `<span class="member-dot" style="background:${party.color}"></span><span class="faction-name">${party.name}</span><span class="faction-count">${group.length}</span>`;
       factionSec.appendChild(fh);
       group.sort((a, b) => a.name.localeCompare(b.name));
       group.forEach(m => factionSec.appendChild(makeMemberRow(m)));
@@ -806,9 +800,9 @@ const SHOW_PRONOUNS = true;
 
     if (activeMayor) {
       const mh = document.createElement("div");
-      mh.style.cssText = "display:flex;align-items:center;gap:8px;margin:16px 0 6px;";
+      mh.className = "faction-head";
       const mp = partyMap[activeMayor.party];
-      mh.innerHTML = `<span class="member-dot" style="background:${mp ? mp.color : '#999'};width:10px;height:10px"></span><span style="font-weight:600;font-size:0.9rem">B\u00fcrgermeister</span>`;
+      mh.innerHTML = `<span class="member-dot" style="background:${mp ? mp.color : '#999'}"></span><span class="faction-name">B\u00fcrgermeister</span>`;
       factionSec.appendChild(mh);
       factionSec.appendChild(makeMemberRow(activeMayor));
     }
@@ -896,71 +890,37 @@ const SHOW_PRONOUNS = true;
       const table = document.createElement("table");
       table.className = "seat-table";
 
+      const nameCell = (m, role) => {
+        const p = partyMap[m.party];
+        const roleTag = role ? ` <span class="seat-role">(${role})</span>` : "";
+        return `<td class="seat-name"><a href="#/member/${m.id}"><span class="member-dot" style="background:${p ? p.color : '#ccc'}"></span> ${m.name}${roleTag}</a></td>`;
+      };
+      const subCells = (subId) => {
+        if (!hasSubs) return "";
+        const s = subId && memberMap[subId];
+        return s
+          ? `<td><span class="material-icons swap-icon">swap_horiz</span></td><td class="seat-sub"><a href="#/member/${s.id}">${s.name}</a></td>`
+          : "<td></td><td></td>";
+      };
+
       let html = "<thead><tr><th>Mitglied</th>";
       if (hasSubs) html += "<th></th><th>Stellvertretung</th>";
       html += "</tr></thead><tbody>";
 
-      // chair
       if (body.chair && memberMap[body.chair]) {
-        const ch = memberMap[body.chair];
-        const chp = partyMap[ch.party];
-        html += `<tr><td class="seat-name" data-mid="${ch.id}"><span class="member-dot" style="background:${chp ? chp.color : '#ccc'}"></span> ${ch.name} <span style="font-size:0.72rem;color:var(--text-muted)">(Vorsitz)</span></td>`;
-        if (hasSubs) {
-          if (body.chairSub && memberMap[body.chairSub]) {
-            const cs = memberMap[body.chairSub];
-            html += `<td><span class="material-icons swap-icon">swap_horiz</span></td><td class="seat-sub" data-mid="${cs.id}">${cs.name}</td>`;
-          } else {
-            html += "<td></td><td></td>";
-          }
-        }
-        html += "</tr>";
+        html += "<tr>" + nameCell(memberMap[body.chair], "Vorsitz") + subCells(body.chairSub) + "</tr>";
       }
-
-      // vice-chairs
-      if (body.vicechairs) {
-        body.vicechairs.forEach(vc => {
-          const m = memberMap[vc.member];
-          if (!m) return;
-          const p = partyMap[m.party];
-          html += `<tr><td class="seat-name" data-mid="${m.id}"><span class="member-dot" style="background:${p ? p.color : '#ccc'}"></span> ${m.name} <span style="font-size:0.72rem;color:var(--text-muted)">(Stellv. Vorsitz)</span></td>`;
-          if (vc.sub && memberMap[vc.sub]) {
-            const s = memberMap[vc.sub];
-            html += `<td><span class="material-icons swap-icon">swap_horiz</span></td><td class="seat-sub" data-mid="${s.id}">${s.name}</td>`;
-          } else {
-            html += "<td></td><td></td>";
-          }
-          html += "</tr>";
-        });
-      }
-
-      // regular seats
+      (body.vicechairs || []).forEach(vc => {
+        const m = memberMap[vc.member];
+        if (m) html += "<tr>" + nameCell(m, "Stellv. Vorsitz") + subCells(vc.sub) + "</tr>";
+      });
       body.seats.forEach(seat => {
         const m = memberMap[seat.member];
-        if (!m) return;
-        const p = partyMap[m.party];
-        const roleTag = seat.role ? ` <span style="font-size:0.72rem;color:var(--text-muted)">(${seat.role})</span>` : "";
-        html += `<tr><td class="seat-name" data-mid="${m.id}"><span class="member-dot" style="background:${p ? p.color : '#ccc'}"></span> ${m.name}${roleTag}</td>`;
-        if (hasSubs) {
-          if (seat.sub && memberMap[seat.sub]) {
-            const s = memberMap[seat.sub];
-            html += `<td><span class="material-icons swap-icon">swap_horiz</span></td><td class="seat-sub" data-mid="${s.id}">${s.name}</td>`;
-          } else {
-            html += "<td></td><td></td>";
-          }
-        }
-        html += "</tr>";
+        if (m) html += "<tr>" + nameCell(m, seat.role) + subCells(seat.sub) + "</tr>";
       });
 
       html += "</tbody>";
       table.innerHTML = html;
-
-      table.querySelectorAll("[data-mid]").forEach(el => {
-        el.addEventListener("click", e => {
-          e.stopPropagation();
-          navigate("/member/" + el.dataset.mid);
-        });
-      });
-
       detail.appendChild(table);
     } else {
       // plenum: simple member list
@@ -994,8 +954,9 @@ const SHOW_PRONOUNS = true;
   }
 
   function makeMemberRow(m, showDates) {
-    const row = document.createElement("div");
+    const row = document.createElement("a");
     row.className = "member-row";
+    row.href = "#/member/" + m.id;
     const party = partyMap[m.party];
     const color = party ? party.color : "#ccc";
     let meta = "";
@@ -1007,10 +968,6 @@ const SHOW_PRONOUNS = true;
       <span class="member-dot" style="background:${color}"></span>
       <span class="member-row-name">${m.name}</span>
       <span class="member-row-meta">${meta}</span>`;
-    row.addEventListener("click", e => {
-      e.stopPropagation();
-      navigate("/member/" + m.id);
-    });
     return row;
   }
 
@@ -1038,7 +995,7 @@ const SHOW_PRONOUNS = true;
 
     gremienMain.innerHTML = "";
     const wrap = document.createElement("div");
-    wrap.style.cssText = "max-width:800px;margin:0 auto;padding:32px 24px 64px;";
+    wrap.className = "page-wrap";
 
     const back = document.createElement("a");
     back.className = "back-link";
@@ -1050,11 +1007,6 @@ const SHOW_PRONOUNS = true;
                     : backHash.startsWith("/session/") ? "Sitzung"
                     : "Übersicht";
     back.innerHTML = `<span class="material-icons">arrow_back</span> ${backLabel}`;
-    back.addEventListener("click", e => {
-      e.preventDefault();
-      gremienRendered = false;
-      window.location.hash = backHash;
-    });
     wrap.appendChild(back);
 
     const currentPartyId = m.partyHistory && m.partyHistory.length
@@ -1154,8 +1106,6 @@ const SHOW_PRONOUNS = true;
     testImg.onerror = () => {};
     testImg.src = photoPath;
 
-    header.addEventListener("contextmenu", e => e.preventDefault());
-
     // roles & committees
     const rolesSection = document.createElement("div");
     rolesSection.className = "profile-section";
@@ -1236,7 +1186,7 @@ const SHOW_PRONOUNS = true;
           .map(sid => memberMap[sid] ? memberMap[sid].name : sid)
           .join(", ");
         const sessionLink = mot.sessionId && sessionMap[mot.sessionId]
-          ? `<a href="#/session/${mot.sessionId}" style="display:inline-flex;align-items:center;gap:3px;color:var(--primary);text-decoration:none;font-size:0.78rem;margin-top:2px"><span class="material-icons" style="font-size:13px">open_in_new</span>${sessionMap[mot.sessionId].title}</a>`
+          ? `<a href="#/session/${mot.sessionId}" class="mtl-motion-link"><span class="material-icons">open_in_new</span>${sessionMap[mot.sessionId].title}</a>`
           : "";
         el.innerHTML = `
           <span class="material-icons">edit_note</span>
@@ -1289,16 +1239,19 @@ const SHOW_PRONOUNS = true;
     return "2026–2032";
   }
 
-  // Six categories: separate "actively voted yes/no" from "went with the
-  // unanimous flow" (yesInf/noInf), absent, and unknown — lets the UI grey
-  // out the non-decisive share.
-  const STAT_KEY = {
-    "yes": "yes", "no": "no",
-    "yes-inferred": "yesInf", "no-inferred": "noInf",
-    "absent": "absent", "unknown": "unknown",
-  };
+  // Sieben Kategorien: Verhalten (Ja/Nein/Unbekannt/Abwesend) × Einstimmigkeit
+  // der Abstimmung. u = einstimmige Abstimmung, s = nicht einstimmige (split).
+  // Bei einstimmigen Votes ist die Einzelstimme weniger aussagekräftig,
+  // deshalb werden sie blasser dargestellt — egal ob named oder abgeleitet.
   const STAT_ZERO = () =>
-    ({ yes:0, no:0, yesInf:0, noInf:0, absent:0, unknown:0, total:0 });
+    ({ uYes:0, uNo:0, sYes:0, sNo:0, sUnknown:0, absU:0, absS:0, total:0 });
+
+  function statKey(raw, unanimous) {
+    const base = raw.replace("-inferred", "");
+    if (base === "absent")  return unanimous ? "absU" : "absS";
+    if (base === "unknown") return "sUnknown";
+    return (unanimous ? "u" : "s") + (base === "yes" ? "Yes" : "No");
+  }
 
   function computeVotingStats(member) {
     const out = { byYear: {}, byPeriod: {}, byBody: {}, total: STAT_ZERO() };
@@ -1326,8 +1279,7 @@ const SHOW_PRONOUNS = true;
 
       const raw = Council.voteStatus(member.id, v, session, member);
       if (raw === null) return;
-      const status = STAT_KEY[raw];
-      if (!status) return;
+      const status = statKey(raw, Council.isUnanimous(v));
 
       inc(out.byYear,   v.date.substring(0, 4), status);
       inc(out.byPeriod, periodOfDate(v.date),   status);
@@ -1338,15 +1290,16 @@ const SHOW_PRONOUNS = true;
   }
 
   // Bar-Reihenfolge — symmetrisch um die Mitte: links Ablehnung (einstimmig
-  // außen, aktiv innen), Mitte Sonstige (unbekannt + abwesend), rechts
-  // Zustimmung (aktiv innen, einstimmig außen).
+  // außen, knapp innen), Mitte Unbekannt, rechts Zustimmung; Abwesende ganz
+  // außen rechts (einstimmige Abstimmungen blasser).
   const VS_SEGMENTS = [
-    { key: "noInf",   cls: "no-inf"  },
-    { key: "no",      cls: "no"      },
-    { key: "unknown", cls: "unknown" },
-    { key: "yes",     cls: "yes"     },
-    { key: "yesInf",  cls: "yes-inf" },
-    { key: "absent",  cls: "absent"  },
+    { key: "uNo",      cls: "no-inf"   },
+    { key: "sNo",      cls: "no"       },
+    { key: "sUnknown", cls: "unknown"  },
+    { key: "sYes",     cls: "yes"      },
+    { key: "uYes",     cls: "yes-inf"  },
+    { key: "absU",     cls: "absent-u" },
+    { key: "absS",     cls: "absent"   },
   ];
 
   function barSegments(b, total) {
@@ -1358,7 +1311,8 @@ const SHOW_PRONOUNS = true;
 
   function renderVotingStatsCard(stats) {
     const t = stats.total;
-    const pct = (n) => t.total === 0 ? 0 : Math.round(n / t.total * 100);
+    // absolut + relativ, überall gleiches Format
+    const fmt = (n) => `${n} (${t.total ? Math.round(n / t.total * 100) : 0}%)`;
     const details = document.createElement("details");
     details.className = "voting-stats";
     details.innerHTML = `
@@ -1372,31 +1326,32 @@ const SHOW_PRONOUNS = true;
           <div class="vs-bar">${barSegments(t, t.total)}</div>
 
           <div class="vs-legend">
-            <div class="vs-legend-row">
-              <span class="vs-legend-head">Zustimmung</span>
-              <span class="vs-legend-share">${t.yes + t.yesInf} (${pct(t.yes + t.yesInf)}%)</span>
+            <div class="vs-legend-row vs-group">
+              <span class="vs-legend-head">Einstimmig</span>
+              <span class="vs-legend-share">${fmt(t.uYes + t.uNo)}</span>
             </div>
             <div class="vs-legend-row vs-sub">
-              <span class="vs-dot yes"></span>${t.yes} nicht einstimmig
-              <span class="vs-dot yes-inf"></span>${t.yesInf} einstimmig
+              <span class="vs-dot yes-inf"></span>Ja ${fmt(t.uYes)}
+              <span class="vs-dot no-inf"></span>Nein ${fmt(t.uNo)}
             </div>
 
-            <div class="vs-legend-row" style="margin-top:8px">
-              <span class="vs-legend-head">Ablehnung</span>
-              <span class="vs-legend-share">${t.no + t.noInf} (${pct(t.no + t.noInf)}%)</span>
+            <div class="vs-legend-row vs-group">
+              <span class="vs-legend-head">Nicht einstimmig</span>
+              <span class="vs-legend-share">${fmt(t.sYes + t.sNo + t.sUnknown)}</span>
             </div>
             <div class="vs-legend-row vs-sub">
-              <span class="vs-dot no"></span>${t.no} nicht einstimmig
-              <span class="vs-dot no-inf"></span>${t.noInf} einstimmig
+              <span class="vs-dot yes"></span>Ja ${fmt(t.sYes)}
+              <span class="vs-dot unknown"></span>Unbekannt ${fmt(t.sUnknown)}
+              <span class="vs-dot no"></span>Nein ${fmt(t.sNo)}
             </div>
 
-            <div class="vs-legend-row" style="margin-top:8px">
-              <span class="vs-legend-head">Sonstige</span>
-              <span class="vs-legend-share">${t.absent + t.unknown} (${pct(t.absent + t.unknown)}%)</span>
+            <div class="vs-legend-row vs-group">
+              <span class="vs-legend-head">Abwesend</span>
+              <span class="vs-legend-share">${fmt(t.absU + t.absS)}</span>
             </div>
             <div class="vs-legend-row vs-sub">
-              <span class="vs-dot absent"></span>${t.absent} Abwesend
-              <span class="vs-dot unknown"></span>${t.unknown} unklar
+              <span class="vs-dot absent-u"></span>bei einstimmigen ${fmt(t.absU)}
+              <span class="vs-dot absent"></span>bei nicht einstimmigen ${fmt(t.absS)}
             </div>
           </div>
         </div>
@@ -1433,15 +1388,16 @@ const SHOW_PRONOUNS = true;
       threads: "Threads", linkedin: "LinkedIn", facebook: "Facebook",
     };
     a.setAttribute("aria-label", labels[type] || type);
+    // Brand-Pfade aus Font Awesome Free 6.5.1 (CC BY 4.0), inline statt CDN
     const icons = {
-      email: '<i class="fas fa-envelope"></i>',
-      website: '<i class="fas fa-globe"></i>',
-      instagram: '<i class="fab fa-instagram"></i>',
-      threads: '<i class="fab fa-threads"></i>',
-      linkedin: '<i class="fab fa-linkedin-in"></i>',
-      facebook: '<i class="fa-brands fa-facebook-f"></i>',
+      email: '<span class="material-icons">email</span>',
+      website: '<span class="material-icons">language</span>',
+      instagram: '<svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>',
+      threads: '<svg viewBox="0 0 448 512"><path d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"/></svg>',
+      linkedin: '<svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>',
+      facebook: '<svg viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>',
     };
-    a.innerHTML = icons[type] || '<i class="fas fa-link"></i>';
+    a.innerHTML = icons[type] || '<span class="material-icons">link</span>';
     return a;
   }
 
@@ -1493,14 +1449,14 @@ const SHOW_PRONOUNS = true;
 
       votedItems.forEach(item => {
         const vote = voteMap[item.voteId];
-        const voteStatus = getMemberVoteStatus(member.id, vote, session);
-        if (voteStatus === null) return;
-        const baseStatus = voteStatus.replace("*", "");
-        const isUnanimous = vote.type === "named"
-          ? (vote.results.no.length === 0 || vote.results.yes.length === 0)
-          : (vote.results.no === 0 || vote.results.yes === 0);
-        const chipClass = { ja: "ja", nein: "nein", abwesend: "abwesend", "?": "unknown" }[baseStatus] + (isUnanimous ? " inferred" : "");
-        const chipLabel = { ja: "Ja", nein: "Nein", abwesend: "\u2013", "?": "?" }[baseStatus];
+        const status = Council.voteStatus(member.id, vote, session, member);
+        if (status === null) return;
+        // Einstimmig mitgegangen \u2192 blasser Chip (gleiche Logik wie Statistik)
+        const isUnanimous = Council.isUnanimous(vote);
+        const base = status.replace("-inferred", "");
+        const chipClass = ({ yes: "ja", no: "nein", absent: "abwesend" }[base] || "unknown")
+                        + (isUnanimous ? " inferred" : "");
+        const chipLabel = Council.voteStatusLabel(status);
 
         const voteRow = document.createElement("div");
         voteRow.className = "mtl-vote";
@@ -1515,7 +1471,7 @@ const SHOW_PRONOUNS = true;
           detailHTML += `<p style="margin-top:4px">${vote.results.yes} Ja, ${vote.results.no} Nein, ${vote.results.absent} Abwesend</p>`;
         }
         if (item.topicId && topicMap[item.topicId]) {
-          detailHTML += `<a href="#/topic/${item.topicId}"><span class="material-icons" style="font-size:14px">open_in_new</span> ${topicMap[item.topicId].title}</a>`;
+          detailHTML += `<a href="#/topic/${item.topicId}"><span class="material-icons">open_in_new</span> ${topicMap[item.topicId].title}</a>`;
         }
         detail.innerHTML = detailHTML;
 
@@ -1529,19 +1485,6 @@ const SHOW_PRONOUNS = true;
 
       container.appendChild(sessionEl);
     });
-  }
-
-  // Profile-view shim: returns localized labels ("ja", "nein", "ja*", …) so the
-  // chip-rendering code (mtl-vote-chip) doesn't have to change. New code should
-  // call Council.voteStatus directly and use voteStatusLabel for the label.
-  function getMemberVoteStatus(memberId, vote, session) {
-    const m = memberMap[memberId];
-    const raw = Council.voteStatus(memberId, vote, session, m);
-    if (raw === null) return null;
-    const LABEL = { yes: "ja", no: "nein", absent: "abwesend",
-                    "yes-inferred": "ja*", "no-inferred": "nein*",
-                    unknown: "?" };
-    return LABEL[raw];
   }
 
   // -- Helpers --

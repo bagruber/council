@@ -101,6 +101,15 @@ const Council = (() => {
     return "unknown";
   }
 
+  // True if the vote was unanimous — named: leeres Ja- oder Nein-Array,
+  // anonymous: null auf einer Seite.
+  function isUnanimous(vote) {
+    const r = vote.results;
+    return vote.type === "named"
+      ? (r.no.length === 0 || r.yes.length === 0)
+      : (r.no === 0 || r.yes === 0);
+  }
+
   // Compact German label for UI chips ("Ja", "Nein", "–", "?", or empty for unknown).
   // Pass `withMarker: true` to append "*" to inferred values.
   function voteStatusLabel(status, withMarker = false) {
@@ -111,19 +120,10 @@ const Council = (() => {
     return withMarker && status.endsWith("-inferred") ? base + "*" : base;
   }
 
-  // Collapse to coarse buckets for statistics aggregation.
-  // 'yes-inferred' counts as yes, 'no-inferred' as no, anything else → unknown.
-  function voteStatusBucket(status) {
-    if (status === "yes" || status === "yes-inferred") return "yes";
-    if (status === "no"  || status === "no-inferred")  return "no";
-    if (status === "absent") return "absent";
-    return "unknown";
-  }
-
   return {
     withinPeriod, endOfPeriod,
     memberActiveAt,
     bodyConfigAt, isRegularOf,
-    voteStatus, voteStatusLabel, voteStatusBucket,
+    voteStatus, voteStatusLabel, isUnanimous,
   };
 })();

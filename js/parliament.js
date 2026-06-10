@@ -1,6 +1,6 @@
 // Vote visualisations:
 //  – stacked bar (anonymous votes)
-//  – parliament chart (named votes, pluggable layout; default = horseshoe)
+//  – parliament chart (named votes, horseshoe layout)
 //
 // Pure DOM + SVG (no D3 dependency).
 //
@@ -15,41 +15,14 @@ const VoteVis = (() => {
   // ─── Defaults (override via options arg on drawParliament) ───────────────
 
   const DEFAULTS = {
-    layout: "horseshoe",
     rows: null,                   // null = auto-pick
     seatRadius: 14,
     seatGap: 7,
     arcDeg: 270,
-    iconPosition: "concentric-outer",   // or "corner-tr"
     iconRatio: 0.46,              // mini-circle / seat radius
     mayorOffsetFactor: 0.55,      // mayor distance from chamber center, in units of R0
     showRowGuides: true,          // subtle arcs behind each row
   };
-
-  // ─── Layout registry ─────────────────────────────────────────────────────
-
-  const LAYOUTS = {
-    horseshoe: horseshoeLayout,
-    // future: classic, rectangle, etc.
-  };
-
-  // Layout cache: keyed by all geometric inputs. Same chamber size + radius +
-  // arc always produces the same positions, so the (cheap-ish) trig + rounding
-  // patch loop is wasted work on every re-render. Keep entries small (max ~32).
-  const _layoutCache = new Map();
-  function cachedLayout(fnName, args) {
-    const key = fnName + "|" + args.count + "|" + args.rows + "|"
-              + args.seatRadius + "|" + args.seatGap + "|" + args.arcDeg;
-    let cached = _layoutCache.get(key);
-    if (cached) return cached;
-    cached = LAYOUTS[fnName](args);
-    if (_layoutCache.size > 32) {                   // basic LRU-ish: clear oldest
-      const firstKey = _layoutCache.keys().next().value;
-      _layoutCache.delete(firstKey);
-    }
-    _layoutCache.set(key, cached);
-    return cached;
-  }
 
   // Auto pick rows from seat count
   function autoPickRows(n) {
@@ -295,20 +268,14 @@ const VoteVis = (() => {
       content.appendChild(star);
     }
 
-    // ─── mini indicator ───
+    // ─── mini indicator (konzentrisch außen, vom Mittelpunkt weg) ───
     const iconR = r * opts.iconRatio;
-    let ix, iy;
-    if (opts.iconPosition === "concentric-outer") {
-      const d  = Math.hypot(pos.x, pos.y);
-      const ux = d > 0 ? pos.x / d : 0;
-      const uy = d > 0 ? pos.y / d : 1;
-      const iconDist = r * 0.95;
-      ix = pos.x + ux * iconDist;
-      iy = pos.y + uy * iconDist;
-    } else {  // corner-tr
-      ix = pos.x + r * 0.7;
-      iy = pos.y - r * 0.7;
-    }
+    const d  = Math.hypot(pos.x, pos.y);
+    const ux = d > 0 ? pos.x / d : 0;
+    const uy = d > 0 ? pos.y / d : 1;
+    const iconDist = r * 0.95;
+    const ix = pos.x + ux * iconDist;
+    const iy = pos.y + uy * iconDist;
 
     const mini = svgEl("circle");
     mini.setAttribute("cx", ix); mini.setAttribute("cy", iy);
@@ -362,9 +329,7 @@ const VoteVis = (() => {
     const o = { ...DEFAULTS, ...opts };
     if (!o.rows) o.rows = autoPickRows(o.seats.length);
 
-    if (!LAYOUTS[o.layout]) throw new Error("Unknown layout: " + o.layout);
-
-    const layout = cachedLayout(o.layout, {
+    const layout = horseshoeLayout({
       count:      o.seats.length,
       rows:       o.rows,
       seatRadius: o.seatRadius,
@@ -424,7 +389,9 @@ const VoteVis = (() => {
   // ─── Stacked bar chart (anonymous votes) ────────────────────────────────
 
   function drawBar(container, results, opts = {}) {
-    const capacity = opts.capacity || 25;
+    // Default capacity = Gremiengröße laut Ergebnis (Ja + Nein + Abwesend) —
+    // bei Ausschüssen sind das weniger als die 25 des Plenums.
+    const capacity = opts.capacity || (results.yes + results.no + (results.absent || 0));
     const voting   = results.yes + results.no;
     const w        = container.clientWidth || 400;
     const barH     = 28;
@@ -521,15 +488,7 @@ const VoteVis = (() => {
   // Helpers ──────────────────────────────────────────────────────────
 
   function activeAt(occupants, date) {
-    return (occupants || []).find(o => {
-      if (o.from && date < o.from) return false;
-      if (o.to) {
-        // YYYY-MM is treated as end-of-month (sentinel day "99")
-        const toMax = o.to.length === 7 ? o.to + "-99" : o.to;
-        if (date > toMax) return false;
-      }
-      return true;
-    });
+    return (occupants || []).find(o => Council.withinPeriod(o, date));
   }
 
   // Check whether the member holds a "...Bürgermeister..." title on the given date.
@@ -538,16 +497,8 @@ const VoteVis = (() => {
     if (!m) return false;
     const titles = m.profile && m.profile.titles;
     if (titles && titles.length) {
-      for (const t of titles) {
-        if (!t.title || !t.title.includes("Bürgermeister")) continue;
-        if (t.from && date < t.from) continue;
-        if (t.to) {
-          const toMax = t.to.length === 7 ? t.to + "-99" : t.to;
-          if (date > toMax) continue;
-        }
-        return true;
-      }
-      return false;
+      return titles.some(t => t.title && t.title.includes("Bürgermeister")
+                           && Council.withinPeriod(t, date));
     }
     return !!(m.title && m.title.includes("Bürgermeister"));
   }
@@ -567,10 +518,6 @@ const VoteVis = (() => {
     };
   }
 
-  // Seat-config & per-member vote map delegate to Council (see js/core.js).
-  const activeBodyConfig = (body, date) =>
-    (typeof Council !== "undefined" ? Council.bodyConfigAt(body, date) : body);
-
   function voteResMap(vote) {
     const m = {};
     if (vote.type === "named") {
@@ -588,7 +535,7 @@ const VoteVis = (() => {
 
   // Build seats from a body definition with `seats: [{occupants:[...]}]`.
   function buildSeatsFromBody(body, vote, memberMap, partyMap) {
-    const cfg = activeBodyConfig(body, vote.date);
+    const cfg = Council.bodyConfigAt(body, vote.date);
     const seats = [];
     let mayor = null;
 
@@ -677,11 +624,12 @@ const VoteVis = (() => {
     const barCounts = vote.type === "named"
       ? { yes: vote.results.yes.length, no: vote.results.no.length, absent: vote.results.absent.length }
       : vote.results;
-    drawBar(container, barCounts);
+    const capacity = seatData.seats.filter(s => s).length + (seatData.mayor ? 1 : 0);
+    drawBar(container, barCounts, { capacity });
 
     // Pass seats including potential nulls so geometry stays stable.
     renderChart(container, { seats: seatData.seats, mayor: seatData.mayor, ...options });
   }
 
-  return { drawBar, drawParliament, renderChart, LAYOUTS, buildSeatsFromBody };
+  return { drawBar, drawParliament };
 })();
