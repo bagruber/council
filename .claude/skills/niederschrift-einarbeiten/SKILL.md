@@ -111,6 +111,15 @@ If 10+ procedural sub-votes (e.g. „15 Stellungnahmen alle 21:0") share the sam
 Existing topics (check `data/topics.json` for current list and titles):
 - t1–t19 currently exist; titles may evolve.
 
+**Watchlist zuerst:** `data/knowledge/topic-watchlist.md` enthält vom User
+benannte Themen, die auf jeden Fall eigene Topic-Seiten bekommen sollen.
+Passt ein TOP zu einem Watchlist-Eintrag:
+- Topic existiert schon (Status = `tN`) → normal zuordnen.
+- Topic existiert nicht → anlegen (Schema siehe `topic-anlegen`-Skill). Die
+  Anlage ist durch den Watchlist-Eintrag vorab genehmigt — nicht erneut
+  nachfragen, aber in der Zusammenfassung erwähnen. Danach Status-Spalte der
+  Watchlist auf die neue `tN` setzen.
+
 Rules:
 - If a vote clearly belongs to an existing topic → set `topicId` in agenda item and on the vote.
 - Add a `history` entry to the topic in `topics.json`:
