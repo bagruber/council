@@ -1,0 +1,986 @@
+[
+  {
+    "date": "2020-05-04",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:55"
+  },
+  {
+    "date": "2020-05-25",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:35"
+  },
+  {
+    "date": "2020-06-15",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:45"
+  },
+  {
+    "date": "2020-07-06",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
+    "date": "2020-07-20",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:10"
+  },
+  {
+    "date": "2020-07-22",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:40"
+  },
+  {
+    "date": "2020-09-14",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
+    "date": "2020-09-21",
+    "body": "bpu",
+    "start": "19:05",
+    "end": "19:45"
+  },
+  {
+    "date": "2020-09-28",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:20"
+  },
+  {
+    "date": "2020-10-05",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "22:20"
+  },
+  {
+    "date": "2020-10-26",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:10"
+  },
+  {
+    "date": "2020-11-09",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:45"
+  },
+  {
+    "date": "2020-12-07",
+    "body": "hvfa",
+    "start": "17:00",
+    "end": "22:15"
+  },
+  {
+    "date": "2020-12-14",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:15"
+  },
+  {
+    "date": "2020-12-17",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:05"
+  },
+  {
+    "date": "2021-01-18",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:25"
+  },
+  {
+    "date": "2021-02-01",
+    "body": "bpu",
+    "start": "18:00",
+    "end": "20:40"
+  },
+  {
+    "date": "2021-02-08",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:45"
+  },
+  {
+    "date": "2021-02-22",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:50"
+  },
+  {
+    "date": "2021-03-08",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:10"
+  },
+  {
+    "date": "2021-03-18",
+    "body": "bpu",
+    "start": "19:05",
+    "end": "19:40"
+  },
+  {
+    "date": "2021-03-22",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:50"
+  },
+  {
+    "date": "2021-04-12",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:05"
+  },
+  {
+    "date": "2021-04-26",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:40"
+  },
+  {
+    "date": "2021-04-29",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:50"
+  },
+  {
+    "date": "2021-05-10",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
+    "date": "2021-06-07",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2021-06-14",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:10"
+  },
+  {
+    "date": "2021-06-21",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:20"
+  },
+  {
+    "date": "2021-07-12",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:25"
+  },
+  {
+    "date": "2021-07-19",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:45"
+  },
+  {
+    "date": "2021-07-26",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:05"
+  },
+  {
+    "date": "2021-09-06",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2021-09-27",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:55"
+  },
+  {
+    "date": "2021-10-11",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:30"
+  },
+  {
+    "date": "2021-10-25",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:30"
+  },
+  {
+    "date": "2021-11-08",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:30"
+  },
+  {
+    "date": "2021-11-22",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": null
+  },
+  {
+    "date": "2021-11-25",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2021-11-29",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "22:35"
+  },
+  {
+    "date": "2021-12-02",
+    "body": "hvfa",
+    "start": "17:00",
+    "end": "19:00"
+  },
+  {
+    "date": "2021-12-06",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:40"
+  },
+  {
+    "date": "2021-12-13",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "22:05"
+  },
+  {
+    "date": "2022-01-17",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:55"
+  },
+  {
+    "date": "2022-01-24",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:20"
+  },
+  {
+    "date": "2022-02-07",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:45"
+  },
+  {
+    "date": "2022-02-21",
+    "body": "stadtrat",
+    "start": "18:30",
+    "end": "22:30"
+  },
+  {
+    "date": "2022-03-14",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:20"
+  },
+  {
+    "date": "2022-03-24",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:50"
+  },
+  {
+    "date": "2022-03-28",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2022-04-04",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
+    "date": "2022-05-02",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:35"
+  },
+  {
+    "date": "2022-05-09",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:10"
+  },
+  {
+    "date": "2022-05-23",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:05"
+  },
+  {
+    "date": "2022-05-30",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:30"
+  },
+  {
+    "date": "2022-07-04",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:30"
+  },
+  {
+    "date": "2022-07-11",
+    "body": "stadtrat",
+    "start": "18:30",
+    "end": "20:25"
+  },
+  {
+    "date": "2022-07-18",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:30"
+  },
+  {
+    "date": "2022-07-25",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:30"
+  },
+  {
+    "date": "2022-09-05",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:55"
+  },
+  {
+    "date": "2022-09-19",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:00"
+  },
+  {
+    "date": "2022-09-26",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:35"
+  },
+  {
+    "date": "2022-10-10",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:05"
+  },
+  {
+    "date": "2022-10-24",
+    "body": "stadtrat",
+    "start": "17:45",
+    "end": "21:20"
+  },
+  {
+    "date": "2022-11-07",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:10"
+  },
+  {
+    "date": "2022-11-17",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:15"
+  },
+  {
+    "date": "2022-11-21",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:30"
+  },
+  {
+    "date": "2022-11-24",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "22:10"
+  },
+  {
+    "date": "2022-11-28",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "21:55"
+  },
+  {
+    "date": "2022-12-05",
+    "body": "hvfa",
+    "start": "18:00",
+    "end": "21:00"
+  },
+  {
+    "date": "2022-12-12",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:25"
+  },
+  {
+    "date": "2022-12-19",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:35"
+  },
+  {
+    "date": "2023-01-12",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
+    "date": "2023-01-23",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:50"
+  },
+  {
+    "date": "2023-01-30",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:45"
+  },
+  {
+    "date": "2023-02-13",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:00"
+  },
+  {
+    "date": "2023-03-06",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "22:20"
+  },
+  {
+    "date": "2023-03-20",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:40"
+  },
+  {
+    "date": "2023-03-27",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "22:05"
+  },
+  {
+    "date": "2023-04-17",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:50"
+  },
+  {
+    "date": "2023-04-24",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:30"
+  },
+  {
+    "date": "2023-05-11",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "21:30"
+  },
+  {
+    "date": "2023-05-15",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:35"
+  },
+  {
+    "date": "2023-05-22",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:50"
+  },
+  {
+    "date": "2023-06-12",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:35"
+  },
+  {
+    "date": "2023-06-26",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:45"
+  },
+  {
+    "date": "2023-07-03",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2023-07-10",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:10"
+  },
+  {
+    "date": "2023-07-17",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:45"
+  },
+  {
+    "date": "2023-07-24",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:05"
+  },
+  {
+    "date": "2023-09-04",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:50"
+  },
+  {
+    "date": "2023-09-21",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:50"
+  },
+  {
+    "date": "2023-09-25",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:30"
+  },
+  {
+    "date": "2023-10-16",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:10"
+  },
+  {
+    "date": "2023-10-23",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2023-11-13",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:25"
+  },
+  {
+    "date": "2023-11-20",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
+    "date": "2023-11-23",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "21:35"
+  },
+  {
+    "date": "2023-11-27",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "22:20"
+  },
+  {
+    "date": "2023-11-30",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "22:10"
+  },
+  {
+    "date": "2023-12-04",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:25"
+  },
+  {
+    "date": "2023-12-07",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "22:35"
+  },
+  {
+    "date": "2023-12-14",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:40"
+  },
+  {
+    "date": "2023-12-18",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:55"
+  },
+  {
+    "date": "2024-01-15",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:45"
+  },
+  {
+    "date": "2024-02-01",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:15"
+  },
+  {
+    "date": "2024-02-19",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:25"
+  },
+  {
+    "date": "2024-03-04",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:40"
+  },
+  {
+    "date": "2024-03-14",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:45"
+  },
+  {
+    "date": "2024-03-18",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:05"
+  },
+  {
+    "date": "2024-04-08",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:50"
+  },
+  {
+    "date": "2024-04-22",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:05"
+  },
+  {
+    "date": "2024-05-06",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2024-06-10",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:40"
+  },
+  {
+    "date": "2024-06-17",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:30"
+  },
+  {
+    "date": "2024-07-01",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2024-07-15",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:45"
+  },
+  {
+    "date": "2024-07-22",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
+    "date": "2024-09-02",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2024-09-23",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:05"
+  },
+  {
+    "date": "2024-09-30",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:45"
+  },
+  {
+    "date": "2024-10-07",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:25"
+  },
+  {
+    "date": "2024-10-21",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:35"
+  },
+  {
+    "date": "2024-11-04",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:10"
+  },
+  {
+    "date": "2024-11-18",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:20"
+  },
+  {
+    "date": "2024-11-21",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "22:05"
+  },
+  {
+    "date": "2024-11-25",
+    "body": "hvfa",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2024-11-28",
+    "body": "hvfa",
+    "start": "17:00",
+    "end": "19:15"
+  },
+  {
+    "date": "2024-12-02",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:45"
+  },
+  {
+    "date": "2024-12-09",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:35"
+  },
+  {
+    "date": "2024-12-16",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:10"
+  },
+  {
+    "date": "2025-01-16",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:15"
+  },
+  {
+    "date": "2025-01-20",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "22:10"
+  },
+  {
+    "date": "2025-02-10",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:40"
+  },
+  {
+    "date": "2025-02-24",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:35"
+  },
+  {
+    "date": "2025-03-17",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:50"
+  },
+  {
+    "date": "2025-03-24",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:25"
+  },
+  {
+    "date": "2025-04-10",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:05"
+  },
+  {
+    "date": "2025-04-28",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:40"
+  },
+  {
+    "date": "2025-05-22",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:00"
+  },
+  {
+    "date": "2025-06-02",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:12"
+  },
+  {
+    "date": "2025-06-23",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:45"
+  },
+  {
+    "date": "2025-07-14",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "22:00"
+  },
+  {
+    "date": "2025-07-21",
+    "body": "hvfa",
+    "start": "19:28",
+    "end": "22:10"
+  },
+  {
+    "date": "2025-07-21",
+    "body": "bpu",
+    "start": "18:00",
+    "end": "19:20"
+  },
+  {
+    "date": "2025-07-28",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:30"
+  },
+  {
+    "date": "2025-09-08",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:15"
+  },
+  {
+    "date": "2025-09-22",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:15"
+  },
+  {
+    "date": "2025-10-06",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:50"
+  },
+  {
+    "date": "2025-10-13",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:20"
+  },
+  {
+    "date": "2025-10-29",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:50"
+  },
+  {
+    "date": "2025-11-10",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:55"
+  },
+  {
+    "date": "2025-11-20",
+    "body": "hvfa",
+    "start": "19:06",
+    "end": "22:09"
+  },
+  {
+    "date": "2025-11-24",
+    "body": "hvfa",
+    "start": "19:03",
+    "end": "22:20"
+  },
+  {
+    "date": "2025-11-27",
+    "body": "hvfa",
+    "start": "18:00",
+    "end": "22:20"
+  },
+  {
+    "date": "2025-12-01",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
+    "date": "2025-12-08",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:30"
+  },
+  {
+    "date": "2025-12-15",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:35"
+  },
+  {
+    "date": "2026-01-12",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "22:10"
+  },
+  {
+    "date": "2026-02-02",
+    "body": "stadtrat",
+    "start": "19:15",
+    "end": "21:40"
+  },
+  {
+    "date": "2026-02-23",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:50"
+  },
+  {
+    "date": "2026-03-25",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:40"
+  },
+  {
+    "date": "2026-04-13",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "19:20"
+  },
+  {
+    "date": "2026-04-20",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "21:52"
+  }
+]
