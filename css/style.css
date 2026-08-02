@@ -46,6 +46,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Chrome-Farben je Bereich. Rot ist der Hauptweg (Themen und Dossiers),
+   das dunkle Wappenrot die Ebene darüber (Themenfelder), Gold der
+   Terminstrang, Aubergine die Menschen. Einstellungen bleiben hell —
+   Verwaltung braucht kein Wappen. */
+:root { --chrome: var(--primary); --chrome-on: #fff; }
+body[data-chrome="feld"]          { --chrome: var(--primary-dark); }
+body[data-chrome="sitzung"]       { --chrome: #6E5A30; }
+body[data-chrome="kalender"]      { --chrome: #6E5A30; }
+body[data-chrome="gremien"]       { --chrome: #4A2B55; }
+body[data-chrome="einstellungen"] { --chrome: var(--bg); --chrome-on: var(--text); }
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--bg);
@@ -113,7 +124,7 @@ body {
 .rainbow-stripe span:nth-child(8) { background: var(--rb-8); }
 .rainbow-stripe span:nth-child(9) { background: var(--rb-9); }
 
-/* Direkt unter der Navbar bleibt der Streifen mit ihr stehen */
+/* Ohne Hero (Kalender, Einstellungen) schliesst der Streifen die Navbar ab */
 .navbar + .rainbow-stripe {
   position: sticky;
   top: var(--nav-height);
@@ -135,6 +146,9 @@ body {
 
 /* -- Navbar -- */
 
+/* Navbar und Hero sind eine Flaeche. Die Farbe kommt aus --chrome und
+   wechselt mit dem Seitentyp — so weiss man am oberen Rand, in welchem
+   Teil der App man sich befindet, bevor man liest. */
 .navbar {
   position: sticky;
   top: 0;
@@ -144,8 +158,10 @@ body {
   justify-content: space-between;
   padding: 0 24px;
   height: var(--nav-height);
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  background: var(--chrome, var(--bg));
+  color: var(--chrome-on, var(--text));
+  border-bottom: none;
+  transition: background 0.25s ease;
 }
 
 .nav-logo {
@@ -153,7 +169,7 @@ body {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--primary);
+  color: currentColor;
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 700;
   font-size: 1rem;
@@ -211,8 +227,9 @@ body {
 /* -- Search -- */
 
 .search-wrap {
-  background: var(--primary);
-  padding: 32px 24px 20px;
+  background: var(--chrome, var(--primary));
+  padding: 20px 24px 22px;
+  transition: background 0.25s ease;
 }
 
 .search-container {
@@ -252,13 +269,14 @@ body {
 
 .search-dropdown {
   position: absolute;
+  text-align: left;
   top: calc(100% + 4px);
   left: 0;
   right: 0;
   background: var(--surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-  max-height: 320px;
+  max-height: min(60vh, 460px);
   overflow-y: auto;
   z-index: 50;
 }
@@ -279,6 +297,51 @@ body {
 
 .search-dropdown .dd-item:last-child { border-bottom: none; }
 .search-dropdown .dd-item:hover { background: var(--accent-light); }
+
+/* Ergebnisse nach Art gruppiert: bei gemischten Treffern ist die Art die
+   erste Frage. Die Gruppenzeile beantwortet sie einmal, statt sie in jeder
+   Zeile als Etikett zu wiederholen. */
+.dd-group {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px 5px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--accent-text);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.dd-group .icon { font-size: 13px; }
+.dd-group span { margin-left: auto; letter-spacing: 0; opacity: 0.7; }
+
+.dd-title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dd-meta {
+  flex-shrink: 0;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.dd-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Abgelehnte Beschluesse bekommen die Ablehnungsfarbe auf die Metazeile —
+   das Ergebnis ist bei einer Abstimmung die halbe Information. */
+.dd-rejected .dd-meta { color: var(--no); }
 
 .dd-item .dd-type {
   font-size: 0.7rem;
@@ -449,27 +512,10 @@ main {
 
 .topic-header .topic-tags { margin-top: 18px; }
 
-/* Feldkopf: dunkles Wappenrot als Band. Der Rainbow-Streifen schliesst es
-   nach unten ab, wie im Moosburg-System unter jedem Seitenkopf. */
-.topic-header--field {
-  position: relative;
-  background: var(--primary-dark);
-  color: var(--bg);
-  border-bottom: none;
-  border-radius: var(--radius) var(--radius) 0 0;
-  padding: 30px 26px 0;
-  overflow: hidden;
-}
-.topic-header--field h1 { color: var(--bg); margin-bottom: 26px; }
-.topic-header--field .dossier-meta { color: rgba(250,247,242,0.66); }
-.topic-header--field .dossier-type { color: var(--accent-light); }
-.topic-header--field .dossier-meta > * + *::before { color: rgba(250,247,242,0.3); }
-.topic-header--field .rainbow-stripe {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
+/* Der Feldkopf braucht kein eigenes Band mehr: Navbar und Hero tragen auf
+   Feldseiten bereits das dunkle Wappenrot. Zwei dunkle Flaechen
+   uebereinander waren genau die Luecke, die dazwischen sichtbar wurde. */
+.topic-header--field .rainbow-stripe { display: none; }
 
 .topic-header .topic-summary { color: var(--text-muted); font-size: 1rem; }
 .topic-header .topic-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
