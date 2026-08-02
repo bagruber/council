@@ -1387,11 +1387,39 @@
     "date": "2020-05-25",
     "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans;…",
     "text": "nfläche mit Bewuchs. Die Festset- zung einer privaten Grünfläche führt zu einer naturschutzfachlichen Aufwertung im Vergleich zum jetzt landwirtschaftlich genutzten Ist-Zustand. Somit wird nicht die Zerstörung des Semptu- fers vorbereitet, sondern vielmehr dessen Renaturierung gefördert. Der Stadtrat stellt weiterhin fest, dass die fachlichen Empfehlungen des SG 42 Naturschutzbe- hörde in der…",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 12,
-      "absent": 2
+      "yes": [
+        "dollinger",
+        "hadersdorfer",
+        "weber",
+        "linz_karin",
+        "haberl",
+        "pschorr",
+        "welter",
+        "grundner",
+        "reif",
+        "lauterbach",
+        "kieninger"
+      ],
+      "no": [
+        "tristl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "beubl",
+        "wittmann",
+        "neumayr",
+        "fincke",
+        "john"
+      ],
+      "absent": [
+        "heinz",
+        "kaestl"
+      ]
     },
     "excluded": [
       {
@@ -1399,7 +1427,10 @@
         "reason": "beteiligung"
       }
     ],
-    "result": "rejected"
+    "result": "rejected",
+    "source": {
+      "tier": "protocol-explicit"
+    }
   },
   {
     "id": "sr_20200525_16",
@@ -5580,11 +5611,42 @@
     "date": "2021-06-07",
     "title": "Kostenloser Eintritt für Kinder unter 12 Jahre ins Freibad Moosburg für die Badesaison 2021…",
     "text": "Die Stadt Moosburg beschließt für die Freibadsaison 2021 den freien Eintritt für alle Kinder un- ter 12 Jahren.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 7,
-      "absent": 7
+      "yes": [
+        "stanglmaier",
+        "becher_j",
+        "beibl",
+        "wagner",
+        "wittmann",
+        "john",
+        "beubl",
+        "haberl",
+        "linz_karin",
+        "weber",
+        "heinz"
+      ],
+      "no": [
+        "dollinger",
+        "kieninger",
+        "lauterbach",
+        "grundner",
+        "pschorr",
+        "tristl",
+        "welter"
+      ],
+      "absent": [
+        "hadersdorfer",
+        "altenbeck",
+        "von_pressentin",
+        "reif",
+        "neumayr",
+        "kaestl",
+        "fincke"
+      ]
+    },
+    "source": {
+      "tier": "protocol-explicit"
     }
   },
   {
@@ -6233,13 +6295,44 @@
     "date": "2021-09-06",
     "title": "Bürgerbegehren \"ACKERLAND IN BAUERNHAND - keine Flächenversiegelung durch neue…",
     "text": "Beschluss 2 a: Der Stadtrat beschließt, den Zielen des Bürgerbegehrens zuzustimmen und die Planungen für die Ausweisung des Gewerbegebietes „Containerbau ELA“ in Pfrombach eizustellen. Die Ver- waltung wird beauftragt, die erforderlichen Schritte in die Wege zu leiten.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 10,
-      "no": 12,
-      "absent": 3
+      "yes": [
+        "stanglmaier",
+        "becher_j",
+        "beibl",
+        "altenbeck",
+        "wagner",
+        "von_pressentin",
+        "neumayr",
+        "wittmann",
+        "john",
+        "beubl"
+      ],
+      "no": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "grundner",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "welter",
+        "fincke"
+      ],
+      "absent": [
+        "heinz",
+        "lauterbach",
+        "kaestl"
+      ]
     },
-    "result": "rejected"
+    "result": "rejected",
+    "source": {
+      "tier": "protocol-explicit"
+    }
   },
   {
     "id": "sr_20210906_04",
@@ -7455,7 +7548,7 @@
   {
     "id": "sr_20211213_07",
     "sessionId": "sr_20211213",
-    "topicId": null,
+    "topicId": "t25",
     "date": "2021-12-13",
     "title": "Förderprogramm Natürlich Dämmen (vertagt in der Sitzung am 6.12.2021)",
     "text": "Der Stadtrat der Stadt Moosburg beschließt das Förderprogramm „Natürlich Dämmen“ und stellt Haushaltsmittel in Höhe von 11.000 € für das Jahr 2022 zur Verfügung. Es wird eine Förderung von 5 € je m² Dämmfläche ausbezahlt, der Höchstbetrag je Antragstel- ler beträgt 1.500 €.",
@@ -8357,7 +8450,7 @@
   {
     "id": "bpu_20221117_03",
     "sessionId": "bpu_20221117",
-    "topicId": "t15",
+    "topicId": null,
     "date": "2022-11-17",
     "title": "Hackschnitzelheizzentrale Böhmerwaldstr. 41 – Erweiterung",
     "text": "Einvernehmen zum Umbau der Heizzentrale mit 3. Hackschnitzelkessel + neuer Abgaskaminanlage erteilt.",
@@ -9939,7 +10032,7 @@
   {
     "id": "sr_20230213_03",
     "sessionId": "sr_20230213",
-    "topicId": "t15",
+    "topicId": "t26",
     "date": "2023-02-13",
     "title": "Strom-Bündelausschreibung 2024/2025",
     "text": "Einstimmig: Änderung des Beschlusses vom 19.12.2022 zur Bündelausschreibung der kommunalen Strombeschaffung.",
@@ -10742,7 +10835,7 @@
   {
     "id": "sr_20230417_05",
     "sessionId": "sr_20230417",
-    "topicId": "t15",
+    "topicId": null,
     "date": "2023-04-17",
     "title": "Landschaftsschutzgebiete – keine Einwendungen",
     "text": "Keine Einwendungen gegen Änderung der LSG im Landkreis Freising (13:9).",
@@ -10982,27 +11075,31 @@
       ],
       "no": [
         "stanglmaier",
+        "becher_a",
         "becher_j",
         "beibl",
         "linz_kilian",
         "von_pressentin",
-        "gruebl",
-        "kaestl"
+        "gruebl"
       ],
       "absent": [
+        "heinz",
         "hadersdorfer",
         "gruber",
-        "john",
         "welter",
-        "heinz",
-        "becher_a"
+        "kaestl",
+        "john"
       ]
     },
     "source": {
-      "tier": "tracked",
-      "by": "gruber",
-      "pressVerified": false
-    }
+      "tier": "protocol-explicit"
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20230522_03",
@@ -11029,27 +11126,31 @@
       ],
       "no": [
         "stanglmaier",
+        "becher_a",
         "becher_j",
         "beibl",
         "linz_kilian",
         "von_pressentin",
-        "gruebl",
-        "kaestl"
+        "gruebl"
       ],
       "absent": [
+        "heinz",
         "hadersdorfer",
         "gruber",
-        "john",
         "welter",
-        "heinz",
-        "becher_a"
+        "kaestl",
+        "john"
       ]
     },
     "source": {
-      "tier": "tracked",
-      "by": "gruber",
-      "pressVerified": false
-    }
+      "tier": "protocol-explicit"
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20230522_04",
@@ -11379,7 +11480,7 @@
   {
     "id": "sr_20230626_04",
     "sessionId": "sr_20230626",
-    "topicId": "t15",
+    "topicId": "t24",
     "date": "2023-06-26",
     "title": "Straßenbeleuchtung – LED-Umrüstung",
     "text": "Einstimmig: Umstellung der städtischen Straßenbeleuchtung auf LED beschlossen.",
@@ -11459,7 +11560,7 @@
   {
     "id": "sr_20230710_02",
     "sessionId": "sr_20230710",
-    "topicId": "t15",
+    "topicId": null,
     "date": "2023-07-10",
     "title": "FC Moosburg – Flutlicht-LED-Zuschuss",
     "text": "Einstimmig: 20 %-Zuschuss (~38.700 €) zum LED-Umbau der Flutlichtanlage.",
@@ -11476,7 +11577,7 @@
   {
     "id": "bpu_20230717_01",
     "sessionId": "bpu_20230717",
-    "topicId": "t15",
+    "topicId": null,
     "date": "2023-07-17",
     "title": "PV-Modullager Neue Industriestr. 1 – BImSchG",
     "text": "Einstimmig: Einvernehmen für PV-Modullager (Vorhaben nach § 4 BImSchG) erteilt.",
@@ -12239,7 +12340,7 @@
   {
     "id": "bpu_20230921_08",
     "sessionId": "bpu_20230921",
-    "topicId": "t15",
+    "topicId": null,
     "date": "2023-09-21",
     "title": "Photovoltaik-Anlage",
     "text": "Einstimmig: Einvernehmen erteilt.",
@@ -12691,7 +12792,7 @@
   {
     "id": "bpu_20231123_12",
     "sessionId": "bpu_20231123",
-    "topicId": "t15",
+    "topicId": "t24",
     "date": "2023-11-23",
     "title": "Straßenbeleuchtung – Konzept",
     "text": "Einstimmig: Solar-Straßenbeleuchtung als Folgekonzept geprüft.",
@@ -12966,7 +13067,7 @@
   {
     "id": "sr_20231214_07",
     "sessionId": "sr_20231214",
-    "topicId": "t15",
+    "topicId": "t25",
     "date": "2023-12-14",
     "title": "Solarförderung – Änderung",
     "text": "Anpassung der Förderrichtlinie für Solaranlagen beschlossen (16:0).",
@@ -13995,7 +14096,7 @@
   {
     "id": "sr_20240506_02",
     "sessionId": "sr_20240506",
-    "topicId": "t15",
+    "topicId": "t22",
     "date": "2024-05-06",
     "title": "Regionalplan München – Windenergie",
     "text": "Der Stadtrat nimmt das Steuerungskonzept für Windenergie zur Kenntnis (18:4); Empfehlung: Windvorrangfläche in der Region Kirchamper.",
@@ -14554,7 +14655,7 @@
   {
     "id": "sr_20240701_01",
     "sessionId": "sr_20240701",
-    "topicId": "t15",
+    "topicId": "t21",
     "date": "2024-07-01",
     "title": "Kommunale Wärmeplanung – Zwischenergebnis",
     "text": "Einstimmig: Der Stadtrat nimmt den aktuellen Stand der kommunalen Wärmeplanung zur Kenntnis.",
@@ -17735,7 +17836,7 @@
   {
     "id": "sr_20250210_04",
     "sessionId": "sr_20250210",
-    "topicId": "t15",
+    "topicId": "t23",
     "date": "2025-02-10",
     "title": "Aufstellungsbeschluss B-Plan PV Kuttenweide",
     "text": "Der Stadtrat beschließt die Aufstellung eines Bebauungsplans „SO Freiflächen-PV-Anlage Kuttenweide“ gem. § 2 BauGB im Parallelverfahren mit der Änderung des Flächennutzungsplans.",
@@ -17779,7 +17880,7 @@
   {
     "id": "sr_20250210_05",
     "sessionId": "sr_20250210",
-    "topicId": "t15",
+    "topicId": "t23",
     "date": "2025-02-10",
     "title": "Städtebaulicher Vertrag PV Kuttenweide",
     "text": "Der Bürgermeister wird ermächtigt, mit dem Vorhabenträger einen städtebaulichen Vertrag zur Freiflächen-PV-Anlage Kuttenweide abzuschließen. Der Vorhabenträger trägt sämtliche Planungskosten.",
@@ -17846,7 +17947,7 @@
   {
     "id": "sr_20250224_02",
     "sessionId": "sr_20250224",
-    "topicId": null,
+    "topicId": "t26",
     "date": "2025-02-24",
     "title": "Dienstleistungsvertrag enPORTAL – Strom-/Gasausschreibung",
     "text": "Der Stadtrat beschließt den Abschluss eines Dienstleistungsvertrags mit der enPORTAL GmbH zur Durchführung von Bündelausschreibungen für Strom- und Gasbeschaffung.",
@@ -19357,7 +19458,7 @@
   {
     "id": "sr_20250623_01",
     "sessionId": "sr_20250623",
-    "topicId": null,
+    "topicId": "t21",
     "date": "2025-06-23",
     "title": "Kommunale Wärmeplanung – Kenntnisnahme",
     "text": "Der Stadtrat nimmt den Abschlussbericht der kommunalen Wärmeplanung zur Kenntnis und anerkennt ihn als strategische Grundlage für künftige Energie- und Infrastrukturentscheidungen. Die Verwaltung wird beauftragt, Maßnahmen zu priorisieren, Fördermöglichkeiten zu prüfen und die Stakeholder-Beteiligung fortzuführen.",
@@ -19795,7 +19896,7 @@
   {
     "id": "sr_20250728_02",
     "sessionId": "sr_20250728",
-    "topicId": null,
+    "topicId": "t24",
     "date": "2025-07-28",
     "title": "Umrüstung Straßenbeleuchtung auf LED",
     "text": "Der Stadtrat nimmt den aktuellen Stand der LED-Umrüstung zur Kenntnis. Die Verwaltung wird beauftragt, die Ausschreibungsunterlagen bis Ende 2025 vorzubereiten; die Umsetzung ist für 2026 vorgesehen.",
@@ -22880,7 +22981,7 @@
   {
     "id": "sr_20260202_05",
     "sessionId": "sr_20260202",
-    "topicId": null,
+    "topicId": "t22",
     "date": "2026-02-02",
     "title": "Regionalplan Windenergie",
     "text": "Der Stadtrat nimmt den Fortschreibungsentwurf zur 26. Änderung des Regionalplans München zur Kenntnis und stellt fest, dass Moosburg nicht unmittelbar betroffen ist.",

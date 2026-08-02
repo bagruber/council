@@ -462,6 +462,20 @@ main {
 
 .tl-entry:last-child { margin-bottom: 0; }
 
+/* Weggabelungen: Meilensteine, Ablehnungen, nicht-einstimmige Beschlüsse.
+   Getönte Fläche statt farbigem Balken — ein Streifen am Rand würde neben der
+   Timeline-Linie zu einer zweiten Achse und ordnet nichts. */
+.tl-key {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-left: -14px;
+  margin-right: -14px;
+}
+.tl-key .tl-dot { left: -22px; }
+.tl-key h3 { font-weight: 700; }
+.tl-key .tl-date { color: var(--accent-text); font-weight: 600; }
+
 .tl-dot {
   position: absolute;
   left: -36px;
@@ -942,6 +956,122 @@ main {
   margin-bottom: 10px;
   font-size: 0.8rem;
 }
+
+/* ─── Dossier-Kopf ─── */
+
+.dossier-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin-bottom: 10px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.dossier-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-text);
+}
+.dossier-type .icon { font-size: 13px; }
+
+.dossier-status {
+  padding: 1px 7px;
+  border-radius: var(--radius-sm);
+  background: var(--border);
+  color: var(--text-muted);
+}
+.dossier-status.open { background: var(--accent-light); color: var(--accent-text); }
+.dossier-status.done { background: transparent; border: 1px solid var(--border); }
+
+.dossier-parent { color: var(--primary); text-decoration: none; }
+.dossier-parent:hover { text-decoration: underline; }
+
+.dossier-children {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.dossier-children a {
+  padding: 8px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.dossier-children a:hover { border-color: var(--accent); }
+
+/* ─── Kennwert-Übersicht (Gebühren, Tarife, Förderhöhen) ─── */
+
+.figures { margin-bottom: 24px; }
+
+.figures-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.figures-table td {
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.figures-table tr:last-child td { border-bottom: none; }
+
+/* Die geltende Fassung steht oben und trägt das Gewicht — bei einer
+   Gebührenordnung interessiert zuerst, was gerade gilt. */
+.figures-table tr.current td { font-weight: 600; background: var(--accent-light); }
+
+.fig-date { color: var(--text-muted); white-space: nowrap; width: 1%; font-variant-numeric: tabular-nums; }
+.fig-value { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.figures-table a { color: inherit; text-decoration: none; }
+
+.figures-note {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ─── Feldseite ─── */
+
+.field-more {
+  display: block;
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+.field-more:hover { border-color: var(--accent); }
+
+.field-loose { margin-top: 28px; }
+
+.field-vote {
+  display: flex;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.86rem;
+}
+.field-vote:hover { color: var(--primary); }
+.fv-date { color: var(--text-muted); white-space: nowrap; flex-shrink: 0; font-variant-numeric: tabular-nums; }
 
 /* Herkunft der Einzelstimmen — Fußnote, nicht Auszeichnung. */
 .vote-source {

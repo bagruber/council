@@ -290,6 +290,8 @@ const SHOW_PRONOUNS = true;
     main.innerHTML = "";
     if (path.startsWith("/topic/")) {
       renderTopic(path.split("/topic/")[1]);
+    } else if (path.startsWith("/feld/")) {
+      renderField(path.split("/feld/")[1]);
     } else if (path.startsWith("/session/")) {
       renderSession(path.split("/session/")[1]);
     } else if (path === "/statistik") {
@@ -345,14 +347,28 @@ const SHOW_PRONOUNS = true;
     heading.textContent = "Themen: " + label;
     main.appendChild(heading);
     renderTopicList(filtered);
+
+    // Bei genau einem Filter führt der Weg weiter aufs Feld — dort stehen auch
+    // die Beschlüsse, die es zu keinem Dossier gebracht haben.
+    if (tagIds.length === 1) {
+      const more = document.createElement("a");
+      more.className = "field-more";
+      more.href = "#/feld/" + tagIds[0];
+      more.textContent = `Alles zu ${tagMap[tagIds[0]].name} — auch einzelne Beschlüsse`;
+      main.appendChild(more);
+    }
   }
 
-  function categoryChip(tid) {
+  function categoryChip(tid, asLink) {
     const t = tagMap[tid];
     if (!t) return `<span class="cat-chip">${tid}</span>`;
     const color = t.color || "#888";
     const icon = t.icon ? `<svg class="icon cat-chip-icon"><use href="#i-${t.icon}"/></svg>` : "";
-    return `<span class="cat-chip" style="--cat-color:${color}">${icon}<span>${t.name}</span></span>`;
+    const inner = `${icon}<span>${t.name}</span>`;
+    // In Karten muss der Chip ein span bleiben — verschachtelte Links sind ungültig.
+    return asLink
+      ? `<a class="cat-chip" href="#/feld/${tid}" style="--cat-color:${color}">${inner}</a>`
+      : `<span class="cat-chip" style="--cat-color:${color}">${inner}</span>`;
   }
 
   function renderTopicList(list) {
@@ -402,6 +418,140 @@ const SHOW_PRONOUNS = true;
     return wrap;
   }
 
+  // Feldseite — die zehn Kategorien aus tags.json als Einstieg. Sie sammelt,
+  // sie erzählt nicht: die Dossiers des Felds und darunter die Einzelbeschlüsse,
+  // die es nie zu einem Dossier gebracht haben. Ohne diese Ebene wären das
+  // hunderte Abstimmungen, die nirgends auftauchen.
+  function renderField(fieldId) {
+    const field = tagMap[fieldId];
+    if (!field) { main.innerHTML = "<p>Feld nicht gefunden.</p>"; return; }
+
+    const back = document.createElement("a");
+    back.className = "back-link";
+    back.href = "#/";
+    back.innerHTML = '<svg class="icon"><use href="#i-arrow_back"/></svg> Übersicht';
+    main.appendChild(back);
+
+    const dossiers = topics.filter(t => t.field === fieldId || (t.tags || []).includes(fieldId));
+    const ids = new Set(dossiers.map(t => t.id));
+    const loose = votes
+      .filter(v => !v.topicId)
+      .filter(v => voteInField(v, fieldId))
+      .sort((a, b) => b.date.localeCompare(a.date));
+
+    const header = document.createElement("div");
+    header.className = "topic-header";
+    header.innerHTML = `
+      <div class="dossier-meta"><span class="dossier-type" style="color:${field.color}">
+        <svg class="icon"><use href="#i-${field.icon}"/></svg>Feld</span>
+        <span class="dossier-count">${dossiers.length} Dossiers · ${loose.length} weitere Beschlüsse</span></div>
+      <h1>${field.name}</h1>`;
+    main.appendChild(header);
+
+    if (dossiers.length) {
+      const sec = document.createElement("div");
+      sec.innerHTML = `<h2 class="section-label">Dossiers</h2>`;
+      main.appendChild(sec);
+      renderTopicList(dossiers);
+    }
+
+    if (loose.length) {
+      const box = document.createElement("div");
+      box.className = "field-loose";
+      box.innerHTML = `<h2 class="section-label">Einzelne Beschlüsse</h2>`
+        + `<p class="figures-note">Entscheidungen in diesem Feld, die für sich stehen
+           und (noch) zu keinem Dossier gehören.</p>`
+        + loose.slice(0, 60).map(v => `
+            <a class="field-vote" href="#/session/${v.sessionId}">
+              <span class="fv-date">${formatDate(v.date)}</span>
+              <span class="fv-title">${v.title}</span>
+            </a>`).join("")
+        + (loose.length > 60 ? `<p class="figures-note">… und ${loose.length - 60} weitere.</p>` : "");
+      main.appendChild(box);
+    }
+  }
+
+  // Ein loses Votum gehört zu einem Feld, wenn eine Sitzung es einem Dossier
+  // dieses Felds zugeordnet hat oder der Titel die Feld-Stichwörter trifft.
+  const FIELD_WORDS = {
+    mobility:       /verkehr|park|straße|radweg|fahrrad|tempo|bus|bahn|kreisverkehr|fußgänger|stellplatz/i,
+    building:       /bebauungsplan|b-plan|einvernehmen|bauvorhaben|neubau|anbau|wohnein|vorbescheid|flächennutzung|sanierung/i,
+    sports:         /sport|verein|bad\b|schwimm|eisstadion|halle|turn/i,
+    culture:        /kultur|museum|denkmal|stalag|baracke|bücherei|musikschule|jazz/i,
+    environment:    /umwelt|natur|klima|energie|photovoltaik|pv |wind|wärme|grün|baum|wasser|abwasser|kläranlage/i,
+    education:      /schule|kita|kindergarten|kinderkrippe|kinderhaus|bildung|jugend/i,
+    social:         /sozial|senior|asyl|integration|gesundheit|pflege/i,
+    budget:         /haushalt|gebühr|steuer|kredit|zuschuss|hebesatz|jahresabschluss|entlastung/i,
+    economy:        /gewerbe|wirtschaft|markt|verkaufsoffen|firma|gmbh/i,
+    infrastructure: /kanal|leitung|beleuchtung|strom|breitband|gigabit|feuerwehr|bauhof|friedhof/i,
+  };
+
+  function voteInField(vote, fieldId) {
+    const rx = FIELD_WORDS[fieldId];
+    return rx ? rx.test(vote.title) : false;
+  }
+
+  // Dossier-Typen. Sie steuern nur den Kopf — die Timeline darunter ist für
+  // alle gleich, weil sie in allen Fällen dasselbe zeigt: was wann entschieden
+  // wurde. Was sich unterscheidet, ist die Frage, die man oben beantwortet haben
+  // will: bei einem Vorhaben „wie weit ist das", bei einer Einrichtung „was gilt
+  // gerade", bei einem Gebiet „was gehört dazu".
+  const DOSSIER_TYPE = {
+    vorhaben:    { label: "Vorhaben",    icon: "flag" },
+    konflikt:    { label: "Streitfall",  icon: "swap_horiz" },
+    einrichtung: { label: "Einrichtung", icon: "account_balance" },
+    regelwerk:   { label: "Regelwerk",   icon: "description" },
+    gebiet:      { label: "Gebiet",      icon: "architecture" },
+    zyklus:      { label: "Wiederkehrend", icon: "schedule" },
+  };
+
+  function renderDossierHead(topic) {
+    const t = DOSSIER_TYPE[topic.type];
+    if (!t) return "";
+    const bits = [`<span class="dossier-type"><svg class="icon"><use href="#i-${t.icon}"/></svg>${t.label}</span>`];
+
+    const dates = topic.history.map(h => h.date).sort();
+    if (dates.length) {
+      const from = dates[0].slice(0, 4);
+      const to = dates[dates.length - 1].slice(0, 4);
+      const span = from === to ? from : `${from}–${to}`;
+      bits.push(topic.status === "abgeschlossen"
+        ? `<span class="dossier-status done">abgeschlossen ${to}</span>`
+        : topic.status === "laufend"
+          ? `<span class="dossier-status open">läuft seit ${from}</span>`
+          : `<span class="dossier-status">${span}</span>`);
+    }
+
+    const n = votes.filter(v => v.topicId === topic.id).length;
+    if (n) bits.push(`<span class="dossier-count">${n} Abstimmung${n === 1 ? "" : "en"}</span>`);
+
+    const parent = topic.partOf && topicMap[topic.partOf];
+    if (parent) bits.push(`<a class="dossier-parent" href="#/topic/${parent.id}">Teil von ${parent.title}</a>`);
+
+    return `<div class="dossier-meta">${bits.join("")}</div>`;
+  }
+
+  // Kompakte Übersicht für Größen, die sich regelmäßig ändern — Gebühren,
+  // Tarife, Förderhöhen. Steht im Kopf, damit nicht die jüngste Anpassung
+  // die ganze Geschichte anführt.
+  function renderFigures(topic) {
+    const f = topic.figures;
+    if (!f || !f.rows || !f.rows.length) return null;
+    const box = document.createElement("div");
+    box.className = "figures";
+    const rows = f.rows.slice().sort((a, b) => b.date.localeCompare(a.date));
+    box.innerHTML = `
+      <h2 class="section-label">${f.title}</h2>
+      <table class="figures-table"><tbody>${rows.map((r, i) => `
+        <tr${i === 0 ? ' class="current"' : ""}>
+          <td class="fig-date">${formatDate(r.date)}</td>
+          <td class="fig-label">${r.voteId ? `<a href="#/topic/${topic.id}">${r.label}</a>` : r.label}</td>
+          ${r.value ? `<td class="fig-value">${r.value}</td>` : ""}
+        </tr>`).join("")}</tbody></table>
+      ${f.note ? `<p class="figures-note">${f.note}</p>` : ""}`;
+    return box;
+  }
+
   function renderTopic(id) {
     const topic = topicMap[id];
     if (!topic) { main.innerHTML = "<p>Thema nicht gefunden.</p>"; return; }
@@ -418,10 +568,24 @@ const SHOW_PRONOUNS = true;
     const header = document.createElement("div");
     header.className = "topic-header";
     header.innerHTML = `
+      ${renderDossierHead(topic)}
       <h1>${topic.title}</h1>
       <div class="topic-summary">${topic.summary}</div>
-      <div class="topic-tags">${(topic.tags || []).map(categoryChip).join("")}</div>`;
+      <div class="topic-tags">${(topic.tags || []).map(t => categoryChip(t, true)).join("")}</div>`;
     main.appendChild(header);
+
+    const figures = renderFigures(topic);
+    if (figures) main.appendChild(figures);
+
+    // Gebiete führen die Vorhaben auf, die in ihnen liegen
+    const children = topics.filter(t => t.partOf === topic.id);
+    if (children.length) {
+      const box = document.createElement("div");
+      box.className = "dossier-children";
+      box.innerHTML = `<h2 class="section-label">Vorhaben in diesem Gebiet</h2>`
+        + children.map(c => `<a href="#/topic/${c.id}">${c.title}</a>`).join("");
+      main.appendChild(box);
+    }
 
     if (topic.image) {
       const img = document.createElement("img");
@@ -437,6 +601,15 @@ const SHOW_PRONOUNS = true;
     topic.history.forEach(entry => {
       const el = document.createElement("div");
       el.className = "tl-entry";
+
+      // Hervorgehoben wird, was tatsächlich eine Weggabelung war: Meilensteine,
+      // abgelehnte Anträge und Abstimmungen, die nicht einstimmig durchgingen.
+      // `key: true` im Datensatz übersteuert das.
+      const v = entry.voteId && voteMap[entry.voteId];
+      const pivotal = entry.key === true
+        || entry.type === "milestone"
+        || (v && (v.result === "rejected" || !Council.isUnanimous(v)));
+      if (pivotal) el.classList.add("tl-key");
 
       let dotClass = entry.type;
       let iconName = tlIcons[entry.type];

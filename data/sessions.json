@@ -3052,8 +3052,7 @@
       {
         "number": "4.2",
         "title": "Hackschnitzelheizzentrale Böhmerwaldstr. 41",
-        "voteId": "bpu_20221117_03",
-        "topicId": "t15"
+        "voteId": "bpu_20221117_03"
       },
       {
         "number": "4.3",
@@ -3593,7 +3592,7 @@
       {
         "number": 5,
         "title": "Bündelausschreibung Strombeschaffung 2024/2025",
-        "topicId": "t15",
+        "topicId": "t26",
         "voteId": "sr_20230213_03"
       },
       {
@@ -4175,7 +4174,7 @@
       {
         "number": 5,
         "title": "Straßenbeleuchtung LED-Umrüstung",
-        "topicId": "t15",
+        "topicId": "t24",
         "voteId": "sr_20230626_04"
       },
       {
@@ -4217,13 +4216,11 @@
       {
         "number": 4,
         "title": "Energiebeirat – Aktivitätenbericht",
-        "topicId": "t15",
         "type": "discussion"
       },
       {
         "number": 5,
         "title": "FC Moosburg – Flutlicht-LED-Zuschuss",
-        "topicId": "t15",
         "voteId": "sr_20230710_02"
       },
       {
@@ -4274,7 +4271,6 @@
       {
         "number": 3,
         "title": "PV-Modullager Neue Industriestr. 1",
-        "topicId": "t15",
         "voteId": "bpu_20230717_01"
       },
       {
@@ -4513,7 +4509,6 @@
       {
         "number": "5.5",
         "title": "Photovoltaik-Anlage",
-        "topicId": "t15",
         "voteId": "bpu_20230921_08"
       },
       {
@@ -4660,7 +4655,7 @@
       {
         "number": 7,
         "title": "Straßenbeleuchtung – Konzept",
-        "topicId": "t15",
+        "topicId": "t24",
         "voteId": "bpu_20231123_12"
       },
       {
@@ -4769,7 +4764,7 @@
       {
         "number": "6.3",
         "title": "Solarförderung – Änderung",
-        "topicId": "t15",
+        "topicId": "t25",
         "voteId": "sr_20231214_07"
       },
       {
@@ -5241,7 +5236,7 @@
       {
         "number": 4,
         "title": "Regionalplan München – Windenergie-Steuerungskonzept",
-        "topicId": "t15",
+        "topicId": "t22",
         "voteId": "sr_20240506_02",
         "press": [
           "sz_2024-05_windenergie"
@@ -5472,7 +5467,7 @@
       {
         "number": 4,
         "title": "Kommunale Wärmeplanung – Zwischenergebnis",
-        "topicId": "t15",
+        "topicId": "t21",
         "voteId": "sr_20240701_01"
       },
       {
@@ -6571,13 +6566,13 @@
       {
         "number": "5.1",
         "title": "Aufstellungsbeschluss B-Plan „SO Freiflächen-PV-Anlage Kuttenweide“",
-        "topicId": "t15",
+        "topicId": "t23",
         "voteId": "sr_20250210_04"
       },
       {
         "number": "5.2",
         "title": "Städtebaulicher Vertrag PV-Anlage Kuttenweide",
-        "topicId": "t15",
+        "topicId": "t23",
         "voteId": "sr_20250210_05"
       },
       {
