@@ -1,21 +1,30 @@
 /* Self-hosted Fonts — keine externen CDN-Requests (DSGVO).
-   Noto Sans/Serif: Variable Fonts, latin-Subset (Google Fonts, OFL).
+   Inter Variable + Playfair Display: latin-Subset, OFL.
+   Beide aus dem Moosburg Design System.
    Material Icons: Apache 2.0. */
 
 @font-face {
-  font-family: 'Noto Sans';
+  font-family: 'Inter';
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 100 900;
   font-display: swap;
-  src: url('../fonts/NotoSans-latin.woff2') format('woff2');
+  src: url('../fonts/Inter-latin-var.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Noto Serif';
+  font-family: 'Playfair Display';
   font-style: normal;
-  font-weight: 500 700;
+  font-weight: 400;
   font-display: swap;
-  src: url('../fonts/NotoSerif-latin.woff2') format('woff2');
+  src: url('../fonts/PlayfairDisplay-latin-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/PlayfairDisplay-latin-700.woff2') format('woff2');
 }
 
 @font-face {

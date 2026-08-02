@@ -5,26 +5,37 @@
 }
 
 :root {
-  --primary-dark: #5A070A;
-  --primary: #9B0000;
-  --primary-bright: #E6001E;
-  --accent: #B39F7A;
-  --accent-text: #968b69;
-  --accent-light: #E8DFCF;
-  --bg: #FAF8F5;
+  /* Moosburg Design System — Wappenrot, Gold, Creme */
+  --primary-dark: #6D0818;
+  --primary: #C8102E;
+  --primary-bright: #A50D24;   /* Hover: dunkler, nicht heller */
+  --accent: #B8964E;
+  --accent-text: #6E5A30;
+  --accent-light: #E8D5A3;
+  --bg: #FAF7F2;
   --surface: #fff;
-  --text: #2D2D2D;
-  --text-muted: #757575;
-  --border: #E8E2D8;
-  --yes: #78BE1E;
+  --text: #1C1C1C;
+  --text-muted: #6F6F6F;
+  --border: #E4E0D7;
+  /* Abstimmungs-Semantik. --no bleibt bewusst ein anderes Rot als --primary,
+     damit ein Link nicht wie eine Ablehnung aussieht. */
+  --yes: #4F8A16;
   --no: #9B0000;
   --absent: #B0B0B0;
   --info: #5B9BD5;
   --teal: #00B4D8;
   --purple: #9B59B6;
-  --radius: 8px;
-  --shadow: 0 1px 3px rgba(0,0,0,0.07);
-  --shadow-lg: 0 4px 16px rgba(0,0,0,0.1);
+  /* Seltene Stimmzustände — bewusst unbunt, damit Ja/Nein/Unbekannt dominieren */
+  --abstained: #8C8C8C;
+  --excluded: #8C8C8C;
+  /* Rainbow-Akzent, feste Reihenfolge, nur als 4px-Streifen — nie als Verlauf */
+  --rb-1: #E91E8C; --rb-2: #E5202E; --rb-3: #F4830A;
+  --rb-4: #F5D400; --rb-5: #0A9E4C; --rb-6: #009AC7;
+  --rb-7: #3B3F9A; --rb-8: #8B4A2A; --rb-9: #1A1A1A;
+  --radius: 4px;
+  --radius-sm: 2px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.07);
+  --shadow-lg: 0 4px 24px rgba(0,0,0,0.10);
   --tab-height: 56px;
   --nav-height: 48px;
 }
@@ -34,12 +45,77 @@ html {
 }
 
 body {
-  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
   padding-bottom: var(--tab-height);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ziffern in Abstimmungstabellen und Ergebnissen laufen einspaltig —
+   sonst springt jede Spalte je nach Ziffernbreite. */
+.vote-results, .voting-stats, .vote-count, .mtl-vote-chip, .stat-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Playfair nur für Seiten- und Abschnittstitel. Nie in Datenzellen:
+   die Serifen kosten dort Lesbarkeit, ohne Charakter zu gewinnen. */
+.headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+}
+
+/* Abschnittsmarke — steht für sich als Überschrift, nie als Kicker über einer
+   zweiten Überschrift. Ein Gliederungselement, kein Schmuck. */
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-text);
+}
+
+/* Statusmarke — dichter und schwerer als die Abschnittsmarke. Ein Label
+   gliedert, ein Badge meldet; gleiche Behandlung macht beide unsichtbar. */
+.badge-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+/* Rainbow-Streifen: 9 feste Segmente, 4 px. Offizielles Moosburg-Element und
+   die einzige Signaturfläche der App — ersetzt den Verlaufs-Hero. */
+.rainbow-stripe {
+  display: flex;
+  height: 4px;
+  width: 100%;
+}
+.rainbow-stripe span { flex: 1; }
+.rainbow-stripe span:nth-child(1) { background: var(--rb-1); }
+.rainbow-stripe span:nth-child(2) { background: var(--rb-2); }
+.rainbow-stripe span:nth-child(3) { background: var(--rb-3); }
+.rainbow-stripe span:nth-child(4) { background: var(--rb-4); }
+.rainbow-stripe span:nth-child(5) { background: var(--rb-5); }
+.rainbow-stripe span:nth-child(6) { background: var(--rb-6); }
+.rainbow-stripe span:nth-child(7) { background: var(--rb-7); }
+.rainbow-stripe span:nth-child(8) { background: var(--rb-8); }
+.rainbow-stripe span:nth-child(9) { background: var(--rb-9); }
+
+/* Direkt unter der Navbar bleibt der Streifen mit ihr stehen */
+.navbar + .rainbow-stripe {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 100;
 }
 
 /* -- Navbar -- */
@@ -63,9 +139,11 @@ body {
   gap: 10px;
   text-decoration: none;
   color: var(--primary);
-  font-family: 'Noto Serif', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 700;
   font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 /* -- Tab bar -- */
@@ -118,7 +196,7 @@ body {
 /* -- Search -- */
 
 .search-wrap {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-bright));
+  background: var(--primary);
   padding: 32px 24px 20px;
 }
 
@@ -209,12 +287,12 @@ body {
   align-items: center;
   gap: 5px;
   padding: 5px 14px 5px 11px;
-  border-radius: 20px;
+  border-radius: var(--radius-sm);
   font-size: 0.82rem;
   cursor: pointer;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.12);
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.35);
   transition: background 0.15s, transform 0.1s;
   font-family: inherit;
 }
@@ -309,13 +387,13 @@ main {
     gap: 4px;
     padding: 3px 10px 3px 8px;
     font-size: 0.72rem;
-    border-radius: 16px;
+    border-radius: var(--radius-sm);
   }
   .tag-pill .material-icons { font-size: 13px; }
 }
 
 .section-heading {
-  font-family: 'Noto Serif', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -329,7 +407,7 @@ main {
 .topic-header { margin-bottom: 32px; }
 
 .topic-header h1 {
-  font-family: 'Noto Serif', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.6rem;
   margin-bottom: 8px;
   color: var(--primary-dark);
@@ -471,7 +549,7 @@ main {
 .session-header { margin-bottom: 28px; }
 
 .session-header h1 {
-  font-family: 'Noto Serif', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.4rem;
   margin-bottom: 4px;
   color: var(--primary-dark);
@@ -602,7 +680,7 @@ main {
 }
 .legend-row:last-of-type { border-bottom: none; }
 .legend-row svg { flex-shrink: 0; }
-.legend-row strong { font-family: 'Noto Serif', Georgia, serif; }
+.legend-row strong { font-family: 'Playfair Display', Georgia, serif; }
 .legend-explain {
   display: block;
   margin-top: 2px;
@@ -818,7 +896,7 @@ main {
   color: var(--text-muted);
   margin-bottom: 14px;
   font-style: italic;
-  border-left: 3px solid var(--accent);
+  border-left: 2px solid var(--border);
   padding-left: 12px;
 }
 
@@ -1015,7 +1093,7 @@ main {
 }
 
 .cal-header h2 {
-  font-family: 'Noto Serif', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.15rem;
   color: var(--primary-dark);
 }
@@ -1119,7 +1197,7 @@ main {
 
 .sheet-content {
   background: var(--surface);
-  border-radius: 16px 16px 0 0;
+  border-radius: var(--radius) var(--radius) 0 0;
   width: 100%;
   max-width: 600px;
   max-height: 60vh;
@@ -1142,7 +1220,7 @@ main {
 }
 
 .sheet-date {
-  font-family: 'Noto Serif', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1rem;
   color: var(--primary-dark);
   margin-bottom: 12px;
@@ -1156,7 +1234,6 @@ main {
   margin-bottom: 8px;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--primary-bright);
   border-radius: var(--radius);
   cursor: pointer;
   transition: box-shadow 0.15s;
@@ -1293,7 +1370,7 @@ main {
 
 .modal {
   background: var(--surface);
-  border-radius: 12px;
+  border-radius: var(--radius);
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   max-width: 440px;
   width: 100%;
@@ -1310,7 +1387,7 @@ main {
 }
 
 .modal-header h2 {
-  font-family: 'Noto Serif', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.15rem;
   color: var(--primary);
 }
@@ -1629,7 +1706,7 @@ main {
 }
 
 .profile-surname {
-  font-family: 'Noto Serif', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 3.2rem;
   font-weight: 900;
   line-height: 1;
@@ -1889,7 +1966,7 @@ main {
   z-index: 10;
   background: var(--bg);
   padding: 10px 0 6px;
-  font-family: 'Noto Serif', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 0.88rem;
   font-weight: 700;
   color: var(--primary-dark);
@@ -1946,6 +2023,15 @@ main {
 .mtl-vote-chip.nein { background: var(--no); }
 .mtl-vote-chip.abwesend { background: var(--absent); }
 .mtl-vote-chip.unknown { background: var(--border); color: var(--text-muted); }
+/* Befangenheit und Enthaltung: unter 8 % der Stimmen und inhaltlich Randfälle.
+   Unbunt und schmaler gesetzt, damit Ja/Nein/Unbekannt die Spalte führen. */
+.mtl-vote-chip.sonder {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+}
 .mtl-vote-chip.inferred { opacity: 0.55; }
 
 .mtl-vote-title {

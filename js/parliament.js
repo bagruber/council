@@ -102,9 +102,16 @@ const VoteVis = (() => {
     no:      "var(--no)",
     absent:  "var(--absent)",
     unknown: "var(--accent)",   // gold — distinct from grey absent state
+    // Randfälle bewusst im Grau der Abwesenheit: sie sollen im Halbrund nicht
+    // mit Ja und Nein um Aufmerksamkeit konkurrieren. Das Icon trägt die
+    // Unterscheidung, der Tooltip den Grund.
+    excluded:  "var(--excluded)",
+    abstained: "var(--abstained)",
   };
-  const VOTE_ICON  = { yes: "✓", no: "✗", absent: "–", unknown: "?" };
-  const VOTE_LABEL = { yes: "Ja", no: "Nein", absent: "Abwesend", unknown: "Unbekannt" };
+  const VOTE_ICON  = { yes: "✓", no: "✗", absent: "–", unknown: "?",
+                       excluded: "§", abstained: "◦" };
+  const VOTE_LABEL = { yes: "Ja", no: "Nein", absent: "Abwesend", unknown: "Unbekannt",
+                       excluded: "Befangen (Art. 49 GO)", abstained: "Enthalten" };
 
   // ─── Tooltip (desktop hover) ─────────────────────────────────────────────
 
@@ -525,6 +532,12 @@ const VoteVis = (() => {
       vote.results.no    .forEach(id => m[id] = "no");
       vote.results.absent.forEach(id => m[id] = "absent");
     }
+    // Befangenheit/Enthaltung überschreibt das Abwesend aus den Ergebnisarrays:
+    // die Person war anwesend, hat aber nicht mitgestimmt.
+    (vote.excluded || []).forEach(e => {
+      if (e.reason === "beteiligung") m[e.member] = "excluded";
+      else if (e.reason === "enthaltung") m[e.member] = "abstained";
+    });
     if (vote.voters) {
       Object.entries(vote.voters).forEach(([id, status]) => {
         if (!(id in m)) m[id] = status;

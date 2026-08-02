@@ -64,21 +64,38 @@ const Council = (() => {
   //   'yes' | 'no' | 'absent'
   //   'yes-inferred' | 'no-inferred'   — anonymous vote, status derivable from
   //                                       unanimity-of-present
+  //   'excluded'                       — anwesend, aber wegen persönlicher
+  //                                       Beteiligung (Art. 49 GO) ausgeschlossen
+  //   'abstained'                      — anwesend, enthalten
   //   'unknown'                        — anonymous vote, status not derivable
   //   null                             — member was not on council that day
   //
+  // 'excluded' und 'abstained' sind Randfälle (zusammen unter 8 % der Stimmen).
+  // Sie werden erfasst, weil "befangen" das Gegenteil von "abwesend" ist —
+  // aber sie bleiben in der Darstellung hinter Ja/Nein/Unbekannt zurück.
+  //
   // Sources, in priority order:
   //   1. Member not active at vote.date          → null
-  //   2. Session-level absence                   → 'absent'
-  //   3. Named vote → arrays of ids              → 'yes' | 'no' | 'absent'
-  //   4. Explicit `vote.voters[id]`              → that status
-  //   5. Per-vote temporary absence (rare)       → 'absent'
-  //   6. Unanimous anonymous (yes>0, no===0)     → 'yes-inferred'
+  //   2. Per-vote exclusion (`vote.excluded`)    → 'excluded' | 'abstained'
+  //   3. Session-level absence                   → 'absent'
+  //   4. Named vote → arrays of ids              → 'yes' | 'no' | 'absent'
+  //   5. Explicit `vote.voters[id]`              → that status
+  //   6. Per-vote temporary absence (rare)       → 'absent'
+  //   7. Unanimous anonymous (yes>0, no===0)     → 'yes-inferred'
   //                          (no>0,  yes===0)    → 'no-inferred'
-  //   7. Anonymous split, no per-voter info      → 'unknown'
+  //   8. Anonymous split, no per-voter info      → 'unknown'
 
   function voteStatus(memberId, vote, session, member) {
     if (member && !memberActiveAt(member, vote.date)) return null;
+
+    // Vor der Sitzungsabwesenheit prüfen: wer befangen ist, war ja da.
+    const ex = (vote.excluded || []).find(e => e.member === memberId);
+    if (ex) {
+      if (ex.reason === "beteiligung") return "excluded";
+      if (ex.reason === "enthaltung")   return "abstained";
+      return "absent";                  // kurzfristig abwesend
+    }
+
     if (session && session.absent && session.absent.includes(memberId)) return "absent";
 
     if (vote.type === "named") {
@@ -95,9 +112,15 @@ const Council = (() => {
       return "absent";
     }
 
+    // Einstimmig heißt nur dann "alle Anwesenden dafür", wenn auch alle
+    // mitgestimmt haben. Wo die Niederschrift weniger Stimmen ausweist als
+    // Stimmberechtigte da waren, setzt der Import `inferable: false` —
+    // dann bleibt es beim ehrlichen Fragezeichen.
     const { yes, no } = vote.results;
-    if (yes > 0 && no === 0) return "yes-inferred";
-    if (no  > 0 && yes === 0) return "no-inferred";
+    if (vote.inferable !== false) {
+      if (yes > 0 && no === 0) return "yes-inferred";
+      if (no  > 0 && yes === 0) return "no-inferred";
+    }
     return "unknown";
   }
 
@@ -116,14 +139,37 @@ const Council = (() => {
     if (!status) return "";
     const base = { yes: "Ja", no: "Nein", absent: "–",
                    "yes-inferred": "Ja", "no-inferred": "Nein",
+                   excluded: "bef.", abstained: "enth.",
                    unknown: "?" }[status] || "?";
     return withMarker && status.endsWith("-inferred") ? base + "*" : base;
+  }
+
+  // Ausgeschriebene Fassung für Tooltips und Legende.
+  function voteStatusTitle(status) {
+    return { yes: "Ja", no: "Nein", absent: "Abwesend",
+             "yes-inferred": "Ja (aus Anwesenheit abgeleitet)",
+             "no-inferred": "Nein (aus Anwesenheit abgeleitet)",
+             excluded: "Wegen persönlicher Beteiligung ausgeschlossen (Art. 49 GO)",
+             abstained: "Enthalten",
+             unknown: "Nicht überliefert" }[status] || "Nicht überliefert";
+  }
+
+  // Herkunft der Einzelstimmen — vier Stufen, siehe data/knowledge.
+  function sourceLabel(vote) {
+    const s = vote.source;
+    if (!s) return null;
+    return {
+      "protocol-explicit": "Namentlich in der Niederschrift",
+      "protocol-implicit": "Aus der Anwesenheit abgeleitet",
+      press: "Aus Presseberichten",
+      tracked: "In der Sitzung mitgeschrieben",
+    }[s.tier] || null;
   }
 
   return {
     withinPeriod, endOfPeriod,
     memberActiveAt,
     bodyConfigAt, isRegularOf,
-    voteStatus, voteStatusLabel, isUnanimous,
+    voteStatus, voteStatusLabel, voteStatusTitle, sourceLabel, isUnanimous,
   };
 })();
