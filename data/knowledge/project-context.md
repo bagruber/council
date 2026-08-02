@@ -319,6 +319,18 @@ StR 01.07.2024, 02.09.2024, 23.09.2024, 07.10.2024, 21.10.2024, 04.11.2024, 18.1
   die Rechnung zur Niederschriftsgenehmigung am 18.05.2026 zwölf fortgeführte plus zwei
   neue Mandate; die Zählung des Betreibers war 13 + 1.
 
+### 0b. Falle: `seatConfigs` müssen lückenlos sein
+`Council.bodyConfigAt()` fällt auf die **oberste `seats`-Ebene** des Gremiums zurück, wenn
+keine `seatConfig` das Datum abdeckt. Beim Plenum ist diese Ebene eine Kopie der
+2026er Besetzung — für ältere Sitzungen war dadurch das komplette Halbrund leer
+(behoben im August 2026 durch `scripts/add_plenum_2014.py`). Die Kopie steht noch da
+und wäre besser weg; solange alle Perioden abgedeckt sind, greift sie nicht.
+
+Zweite Falle im selben Bereich: `buildSeatsFromBody` bevorzugt die Person, die im Vote
+auftaucht. Dadurch bleiben falsche Sitzdaten unsichtbar, solange Einzelstimmen
+vorliegen — die monatsgenauen Wechseldaten der Periode 2020–2026 waren jahrelang
+falsch, ohne aufzufallen (`scripts/fix_seat_dates.py`).
+
 ### 1. Fehlende Sitzung: BPU/HVFA 21.07.2025
 Die Gemeinschaftssitzung BPU + HVFA vom **21. Juli 2025** fehlt komplett in `sessions.json` und `votes.json`. Belegt durch Agenda-TOP in bpu_20251006: „Genehmigung Niederschrift BPU 21.07.2025". Niederschrift-PDF sollte in `data/niederschriften/` liegen.
 

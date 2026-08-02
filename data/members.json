@@ -290,6 +290,11 @@
         "titles": [
           {
             "title": "Partnerschaftsreferent",
+            "from": "2014-05-01",
+            "to": "2020-04-30"
+          },
+          {
+            "title": "Partnerschaftsreferent",
             "from": "2020-05",
             "to": "2026-05"
           }
@@ -390,6 +395,11 @@
       "profile": {
         "pronouns": "er/ihn",
         "titles": [
+          {
+            "title": "Dritter Bürgermeister",
+            "from": "2014-05-01",
+            "to": "2020-04-30"
+          },
           {
             "title": "Dritter Bürgermeister",
             "from": "2020-05",
@@ -607,7 +617,14 @@
         ],
         "contact": {
           "email": "johann.reif@moosburg.org"
-        }
+        },
+        "titles": [
+          {
+            "title": "Migrations- und Integrationsreferent",
+            "from": "2014-05-01",
+            "to": "2020-04-30"
+          }
+        ]
       }
     },
     {
@@ -684,7 +701,14 @@
         "pronouns": "er/ihn",
         "contact": {
           "email": "martin.pschorr@gmx.de"
-        }
+        },
+        "titles": [
+          {
+            "title": "Schulreferent",
+            "from": "2014-05-01",
+            "to": "2020-04-30"
+          }
+        ]
       }
     },
     {
@@ -952,6 +976,11 @@
       "profile": {
         "pronouns": "er/ihn",
         "titles": [
+          {
+            "title": "Finanzreferent",
+            "from": "2014-05-01",
+            "to": "2020-04-30"
+          },
           {
             "title": "Finanzreferent",
             "from": "2020-05",
@@ -1349,6 +1378,202 @@
       ],
       "seatConfigs": [
         {
+          "from": "2014-05-01",
+          "to": "2020-04-30",
+          "rows": 2,
+          "chair": "meinelt",
+          "seats": [
+            {
+              "occupants": [
+                {
+                  "member": "zitzlsberger",
+                  "to": "2017-12-11"
+                },
+                {
+                  "member": "john",
+                  "from": "2017-12-11"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "stanglmaier"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "altenbeck"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "bauer"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "becher_j"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "wagner"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "kaestl"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "beubl"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "marschoun"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "pschorr"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "hilberg",
+                  "to": "2018-11-05"
+                },
+                {
+                  "member": "haberl",
+                  "from": "2018-11-23"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "koehler"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "dollinger"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "groeneveld",
+                  "to": "2015-12-21"
+                },
+                {
+                  "member": "grundner",
+                  "from": "2016-01-11"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "kieninger"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "reif"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "hadersdorfer"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "heinz"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "kerscher"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "linz_karin"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "mueller_a"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "tristl"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "weber"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "schaffer",
+                  "to": "2018-05-14"
+                },
+                {
+                  "member": "banner",
+                  "from": "2018-05-14"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "from": "2020-05-01",
           "to": "2026-04-30",
           "rows": 2,
@@ -1372,11 +1597,11 @@
               "occupants": [
                 {
                   "member": "beubl",
-                  "to": "2025-03"
+                  "to": "2025-03-23"
                 },
                 {
                   "member": "marcus",
-                  "from": "2025-03"
+                  "from": "2025-03-24"
                 }
               ]
             },
@@ -1398,11 +1623,11 @@
               "occupants": [
                 {
                   "member": "neumayr",
-                  "to": "2022-01"
+                  "to": "2022-10-10"
                 },
                 {
                   "member": "gruber",
-                  "from": "2022-01"
+                  "from": "2022-10-10"
                 }
               ]
             },
@@ -1480,11 +1705,11 @@
               "occupants": [
                 {
                   "member": "john",
-                  "to": "2023-07"
+                  "to": "2023-07-24"
                 },
                 {
                   "member": "strobl",
-                  "from": "2023-07"
+                  "from": "2023-07-24"
                 }
               ]
             },
@@ -1492,16 +1717,16 @@
               "occupants": [
                 {
                   "member": "wittmann",
-                  "to": "2021-10"
+                  "to": "2021-10-25"
                 },
                 {
                   "member": "gruebl",
-                  "from": "2021-10",
-                  "to": "2024-10"
+                  "from": "2021-10-25",
+                  "to": "2024-10-21"
                 },
                 {
                   "member": "hobmaier",
-                  "from": "2024-10"
+                  "from": "2024-10-21"
                 }
               ]
             },
@@ -1530,11 +1755,11 @@
               "occupants": [
                 {
                   "member": "wagner",
-                  "to": "2022-05"
+                  "to": "2022-05-31"
                 },
                 {
                   "member": "linz_kilian",
-                  "from": "2022-05"
+                  "from": "2022-06-20"
                 }
               ]
             },
@@ -1549,11 +1774,11 @@
               "occupants": [
                 {
                   "member": "altenbeck",
-                  "to": "2022-05"
+                  "to": "2022-05-31"
                 },
                 {
                   "member": "becher_a",
-                  "from": "2022-05"
+                  "from": "2022-06-20"
                 }
               ]
             }
