@@ -1596,7 +1596,12 @@ const SHOW_PRONOUNS = true;
 
   function statKey(raw, unanimous) {
     const base = raw.replace("-inferred", "");
-    if (base === "absent")  return unanimous ? "absU" : "absS";
+    // Befangen oder enthalten heißt: anwesend, aber keine Stimme abgegeben.
+    // Sie landen in der Nicht-abgestimmt-Spalte — sonst würden sie als Nein
+    // gezählt und das Stimmbild verfälschen.
+    if (base === "absent" || base === "excluded" || base === "abstained") {
+      return unanimous ? "absU" : "absS";
+    }
     if (base === "unknown") return "sUnknown";
     return (unanimous ? "u" : "s") + (base === "yes" ? "Yes" : "No");
   }
@@ -1802,14 +1807,15 @@ const SHOW_PRONOUNS = true;
         // Einstimmig mitgegangen \u2192 blasser Chip (gleiche Logik wie Statistik)
         const isUnanimous = Council.isUnanimous(vote);
         const base = status.replace("-inferred", "");
-        const chipClass = ({ yes: "ja", no: "nein", absent: "abwesend" }[base] || "unknown")
+        const chipClass = ({ yes: "ja", no: "nein", absent: "abwesend",
+                            excluded: "sonder", abstained: "sonder" }[base] || "unknown")
                         + (isUnanimous ? " inferred" : "");
         const chipLabel = Council.voteStatusLabel(status);
 
         const voteRow = document.createElement("div");
         voteRow.className = "mtl-vote";
         voteRow.innerHTML = `
-          <span class="mtl-vote-chip ${chipClass}">${chipLabel}</span>
+          <span class="mtl-vote-chip ${chipClass}" title="${Council.voteStatusTitle(status)}">${chipLabel}</span>
           <span class="mtl-vote-title">${vote.title}</span>`;
 
         const detail = document.createElement("div");

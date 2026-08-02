@@ -104,7 +104,7 @@
       "nickname": "Sepp",
       "party": "fw",
       "role": "mayor",
-      "from": "2020-05-01",
+      "from": "2014-05-01",
       "to": "2026-04-30",
       "title": "Erster Bürgermeister",
       "roleHistory": [
@@ -757,7 +757,7 @@
       "party": "fresh",
       "role": "councillor",
       "from": "2020-05-01",
-      "to": "2022-10-23",
+      "to": "2022-10-10",
       "profile": {
         "pronouns": "sie/ihr",
         "identity": [
@@ -791,7 +791,7 @@
       "nickname": "Bene",
       "party": "fresh",
       "role": "councillor",
-      "from": "2022-10-24",
+      "from": "2022-10-10",
       "to": "2026-04-30",
       "profile": {
         "pronouns": "alle Pronomen",
@@ -929,8 +929,8 @@
     },
     {
       "id": "ghadieh",
-      "firstName": "Dr. Daoud Ghadieh",
-      "lastName": "Moutasem",
+      "firstName": "Moutasem",
+      "lastName": "Daoud Ghadieh",
       "party": "afd",
       "role": "councillor",
       "from": "2026-05-01",

@@ -1,5 +1,2691 @@
 [
   {
+    "id": "sr_20200120",
+    "date": "2020-01-20",
+    "type": "stadtrat",
+    "title": "1. Stadtratssitzung – Januar 2020",
+    "absent": [],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen der Ersten Bürgermeisterin",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 26 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "3.1",
+        "title": "Errichtung einer temporären Überdachung der ehemaligen Kriegsgefangenenbaracke -Sabathiel Baracke- a.d. Egerlandstr. 22, Moosburg",
+        "voteId": "sr_20200120_01"
+      },
+      {
+        "number": "4",
+        "title": "Beschluss über die Feststellung der Jahresrechnung 2017 und Entlastung Bericht der überörtlichen Rechnungsprüfung",
+        "voteId": "sr_20200120_02"
+      },
+      {
+        "number": "5",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20200210",
+    "date": "2020-02-10",
+    "type": "stadtrat",
+    "title": "2. Stadtratssitzung – Februar 2020",
+    "absent": [
+      "marschoun"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen der Ersten Bürgermeisterin",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 26 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Aufstellung e. vorhabenbezogenen Bebauungsplan Nr. 70 \"Containerbau ELA\" gem. § 12 BauGB f. die Grundstücke mit den Flur-Nrn. 261, 262, 276, 277, 278 und 279,…",
+        "voteId": "sr_20200210_01",
+        "voteIds": [
+          "sr_20200210_01",
+          "sr_20200210_02",
+          "sr_20200210_03",
+          "sr_20200210_04"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Vorbescheid - Aufstockung eines besteh. Gebäudes um ein Stockwerk sowie Neubau von Wohngebäuden am Stadtplatz 12 / Georg-Hummel-Straße / Rentamtstraße, Moosburg",
+        "voteId": "sr_20200210_05",
+        "voteIds": [
+          "sr_20200210_05",
+          "sr_20200210_06",
+          "sr_20200210_07",
+          "sr_20200210_08",
+          "sr_20200210_09",
+          "sr_20200210_10",
+          "sr_20200210_11",
+          "sr_20200210_12",
+          "sr_20200210_13",
+          "sr_20200210_14",
+          "sr_20200210_15",
+          "sr_20200210_16"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans;"
+      },
+      {
+        "number": "5.1",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200210_17"
+      },
+      {
+        "number": "5.2",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200210_18"
+      },
+      {
+        "number": "5.3",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200210_19"
+      },
+      {
+        "number": "5.4",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200210_20"
+      },
+      {
+        "number": "5.5",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200210_21"
+      },
+      {
+        "number": "5.6",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.7",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.8",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.9",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.10",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.11",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.12",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.13",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.14",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.15",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.16",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200210_22"
+      },
+      {
+        "number": "5.17",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200210_23"
+      },
+      {
+        "number": "5.18",
+        "title": "Bauleitplanung Nr. 72 \"Degernpoint Nordost\" nebst 7. Änderung des Flächennutzungsplans; Satzungsbeschluss Bebauungsplan; Feststellungsbeschluss…",
+        "voteId": "sr_20200210_24"
+      },
+      {
+        "number": "6",
+        "title": "Bauantrag zur Errichtung einer Parkplatzanlage mit 378 Stellplätzen in Degernpoint E 10",
+        "voteId": "sr_20200210_25"
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20200504",
+    "date": "2020-05-04",
+    "type": "stadtrat",
+    "title": "5. Stadtratssitzung – Mai 2020 (konstituierend)",
+    "absent": [],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Vereidigungen",
+        "type": "formal"
+      },
+      {
+        "number": "1.1",
+        "title": "Vereidigung des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "1.2",
+        "title": "Vereidigung der ehrenamtlichen Stadtratsmitglieder",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Weitere Bürgermeister"
+      },
+      {
+        "number": "2.1",
+        "title": "Beschlussfassung über die Anzahl der weiteren Bürgermeister",
+        "voteId": "sr_20200504_01"
+      },
+      {
+        "number": "2.2",
+        "title": "Wahl der weiteren Bürgermeister",
+        "type": "formal"
+      },
+      {
+        "number": "2.2.1",
+        "title": "Wahl des zweiten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2.2.2",
+        "title": "Wahl des dritten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2.3",
+        "title": "Vereidigung der gewählten weiteren Bürgermeister",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Bildung von Ausschüssen"
+      },
+      {
+        "number": "3.1",
+        "title": "Entscheidung über das Verfahren zur Berechnung der Verteilung der Ausschuss-Sitze (Hare-Niemeyer)",
+        "voteId": "sr_20200504_02"
+      },
+      {
+        "number": "3.2",
+        "title": "Entscheidung über die nummerische Besetzung der Ausschüsse"
+      },
+      {
+        "number": "3.3",
+        "title": "Bestätigung der personellen Besetzung der Ausschüsse"
+      },
+      {
+        "number": "3.3.1",
+        "title": "Hauptverwaltungs- und Finanzausschuss"
+      },
+      {
+        "number": "3.3.2",
+        "title": "Bau-, Planungs- und Umweltausschuss",
+        "voteId": "sr_20200504_03"
+      },
+      {
+        "number": "3.3.3",
+        "title": "Werkausschuss",
+        "voteId": "sr_20200504_04"
+      },
+      {
+        "number": "3.3.4",
+        "title": "Rechnungsprüfungsausschuss",
+        "voteId": "sr_20200504_05"
+      },
+      {
+        "number": "3.3.5",
+        "title": "Personalausschuss",
+        "voteId": "sr_20200504_06"
+      },
+      {
+        "number": "4",
+        "title": "Besetzung des Aufsichtsrates der Kläranlage Moosburg GmbH"
+      },
+      {
+        "number": "4.1",
+        "title": "Entscheidung über die nummerische Besetzung des Aufsichtsrates",
+        "voteId": "sr_20200504_07"
+      },
+      {
+        "number": "4.2",
+        "title": "Abberufung der bisherigen Mitglieder",
+        "voteId": "sr_20200504_08"
+      },
+      {
+        "number": "4.3",
+        "title": "Personelle Besetzung des Aufsichtsrates",
+        "voteId": "sr_20200504_09"
+      },
+      {
+        "number": "4.4",
+        "title": "Beschluss über die Änderung der Satzung der Kläranlage Moosburg GmbH hinsichtlich der nummerischen Besetzung des Aufsichtsrates",
+        "voteId": "sr_20200504_10"
+      },
+      {
+        "number": "5",
+        "title": "Beschluss über den Fortbestand der Geschäftsordnung für den Stadtrat vom 29. Juli 2015 bis zum Erlass einer neuen Geschäftsordnung",
+        "voteId": "sr_20200504_11"
+      },
+      {
+        "number": "6",
+        "title": "Bestellung der in Organen von weiteren Körperschaften, Unternehmen etc. zu entsendenden Mitglieder"
+      },
+      {
+        "number": "6.1",
+        "title": "Verbandsversammlung des Wasserzweckverbandes Baumgartner Gruppe (konstituierende Sitzung) vom 04.05.2020",
+        "voteId": "sr_20200504_12"
+      },
+      {
+        "number": "6.2",
+        "title": "Verbandsversammlung des Wasserzweckverbandes Berglerner Gruppe"
+      },
+      {
+        "number": "6.3",
+        "title": "Verbandsversammlung des Wasserzweckverbandes Isar-Vils-Gruppe",
+        "voteId": "sr_20200504_13"
+      },
+      {
+        "number": "6.4",
+        "title": "Bestellung der Mitglieder und Stellvertreter zur Verbandsversammlung der Stadt- und Kreissparkasse Moosburg",
+        "voteId": "sr_20200504_14"
+      },
+      {
+        "number": "6.5",
+        "title": "Bestellung eines Vertreters/Stellvertreters für den Erholungsflächenverein",
+        "voteId": "sr_20200504_15"
+      },
+      {
+        "number": "7",
+        "title": "Anfragen (konstituierende Sitzung) vom 04.05.2020",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20200525",
+    "date": "2020-05-25",
+    "type": "stadtrat",
+    "title": "6. Stadtratssitzung – Mai 2020",
+    "absent": [
+      "kaestl"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 26 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Vollzug der Straßenverkehrsordnung; Beitritt zum Zweckverband kommunale Verkehrsüberwachung Südostbayern zur Überwachung des fließenden Verkehrs",
+        "voteId": "sr_20200525_01"
+      },
+      {
+        "number": "4",
+        "title": "Errichtung eines Naturkindergartens mit Festlegung des Standortes und Bereitstellung von Haushaltsmitteln",
+        "voteId": "sr_20200525_02"
+      },
+      {
+        "number": "5",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "5.1",
+        "title": "Neubau eines Waldkindergartens für 40 Kinder mittels vorgefertigter Einrichtungen in Bauwägen a.d. Stadtbadstr. 17, Moosburg",
+        "voteId": "sr_20200525_03"
+      },
+      {
+        "number": "5.2",
+        "title": "Errichtung eines Garagengebäudes mit Carport, Sempt 5, Moosburg",
+        "voteId": "sr_20200525_04"
+      },
+      {
+        "number": "5.3",
+        "title": "Vorbescheid - Errichtung eines Apartmenthotels, Büros und Läden sowie einer Tiefgarage a.d. Neuen Industriestr. 8, Moosburg",
+        "voteId": "sr_20200525_05",
+        "voteIds": [
+          "sr_20200525_05",
+          "sr_20200525_06",
+          "sr_20200525_07",
+          "sr_20200525_08",
+          "sr_20200525_09"
+        ]
+      },
+      {
+        "number": "5.4",
+        "title": "Errichtung einer Werbeanlage (temporär wechselnde Werbebanner) a.d. Neuen Industriestr. 20, Moosburg",
+        "voteId": "sr_20200525_10"
+      },
+      {
+        "number": "5.5",
+        "title": "Aufstellen einer Imbisshütte mit Biergarten in Degernpoint N, Moosburg",
+        "voteId": "sr_20200525_11"
+      },
+      {
+        "number": "6",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungssplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.1",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungssplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200525_12"
+      },
+      {
+        "number": "6.2",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200525_13"
+      },
+      {
+        "number": "6.3",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200525_14"
+      },
+      {
+        "number": "6.4",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.5",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.6",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.7",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.8",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.9",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.10",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.11",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.12",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.13",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.14",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.15",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.16",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.17",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.18",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.19",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200525_15"
+      },
+      {
+        "number": "6.20",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200525_16"
+      },
+      {
+        "number": "6.21",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200525_17"
+      },
+      {
+        "number": "6.22",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200525_18"
+      },
+      {
+        "number": "6.23",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200525_19"
+      },
+      {
+        "number": "6.24",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20200525_20"
+      },
+      {
+        "number": "6.25",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.26",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.27",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.28",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.29",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.30",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.31",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "6.32",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Billigungsbeschluss und Beschluss über die öffentliche Auslegung der…"
+      },
+      {
+        "number": "7",
+        "title": "Aussetzung der Erhebung von Gebühren für Sondernutzungen an öffentlichem Verkehrsraum für das Jahr 2020 (Antrag Moosburg Marketing eG)",
+        "voteId": "sr_20200525_21"
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20200615",
+    "date": "2020-06-15",
+    "type": "stadtrat",
+    "title": "7. Stadtratssitzung – Juni 2020",
+    "absent": [
+      "kaestl",
+      "reif"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 26 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Vorstellung des Seniorenbeirates und Beschluss über die Bestätigung von Herrn Dr. Matthias Lung als Nachrücker in den Seniorenbeirat",
+        "voteId": "sr_20200615_01"
+      },
+      {
+        "number": "4",
+        "title": "Vollzug der Baugesetze; Auslegungsbeschluss zum Bebauungsplan Nr. 77 \"Rockermaier Areal\""
+      },
+      {
+        "number": "5",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "5.1",
+        "title": "Vorbescheid - Errichtung von 2 Mehrfamilienhäusern (je 5 Wohneinh.) mit Tiefgarage am Unterreiterweg 4, Moosburg",
+        "voteId": "sr_20200615_02"
+      },
+      {
+        "number": "5.2",
+        "title": "Errichtung einer Doppelgarage a.d. Kulturgrabenstr. 3, Moosburg",
+        "voteId": "sr_20200615_03"
+      },
+      {
+        "number": "5.3",
+        "title": "Ausbau eines Mehrfamilienhauses mit 4 WE zu einem Mehrfamilienhaus mit 6 WE a.d. Neustadtstr. 40, Moosburg",
+        "voteId": "sr_20200615_04",
+        "voteIds": [
+          "sr_20200615_04",
+          "sr_20200615_05"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Information zur Öffnung des Freibades (Schutz- und Hygienekonzept, Gebührenordnung)"
+      },
+      {
+        "number": "7",
+        "title": "Anträge zum Ausbau des Radverkehrs"
+      },
+      {
+        "number": "7.1",
+        "title": "Bewerbung um die Teilnahme an dem Modellprojekt \"Lastenrad mieten, Kommunen entlasten\"",
+        "voteId": "sr_20200615_06"
+      },
+      {
+        "number": "7.2",
+        "title": "Erhöhung Radverkehrsanteil am Gesamtverkehr",
+        "voteId": "sr_20200615_07"
+      },
+      {
+        "number": "8",
+        "title": "Beschluss über den Anschluss des Schulzentrums Nord an ein Wärmenetz Grundsatzbeschluss",
+        "voteId": "sr_20200615_08"
+      },
+      {
+        "number": "9",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20200706",
+    "date": "2020-07-06",
+    "type": "stadtrat",
+    "title": "8. Stadtratssitzung – Juli 2020",
+    "absent": [
+      "linz_karin"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 26 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Vollzug der Baugesetze; Auslegungsbeschluss zum Bebauungsplan Nr. 74 \"Feldkirchen\" und zur 10. Änderung des Flächennutzungsplan der Stadt Moosburg a.d. Isar",
+        "voteId": "sr_20200706_01"
+      },
+      {
+        "number": "4",
+        "title": "Vollzug des Denkmalschutzgesetzes; Antrag auf Erteilung einer denkmalschutzrechtlichen Erlaubnis zur Errichtung einer PV-Anlage auf dem Dach des wohngebäudes…",
+        "voteId": "sr_20200706_02"
+      },
+      {
+        "number": "5",
+        "title": "Stadtratsangelegenheiten",
+        "voteId": "sr_20200706_03",
+        "voteIds": [
+          "sr_20200706_03",
+          "sr_20200706_04",
+          "sr_20200706_05",
+          "sr_20200706_06"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Stadtratsangelegenheit",
+        "voteId": "sr_20200706_07",
+        "voteIds": [
+          "sr_20200706_07",
+          "sr_20200706_08",
+          "sr_20200706_09"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Satzungsrecht",
+        "voteId": "sr_20200706_10"
+      },
+      {
+        "number": "8",
+        "title": "Beschluss über die Festsetzung der Aufwandsentschädigung für den Zweiten und Dritten Bürgermeister",
+        "voteId": "sr_20200706_11"
+      },
+      {
+        "number": "9",
+        "title": "Festsetzung der Dienstaufwandsentschädigung für Ersten Bürgermeister Josef Dollinger",
+        "voteId": "sr_20200706_12"
+      },
+      {
+        "number": "10",
+        "title": "Bestellung des Ersten Bürgermeisters als Eheschließungsstandesbeamter",
+        "voteId": "sr_20200706_13"
+      },
+      {
+        "number": "11",
+        "title": "Bestellung des/der Vorsitzenden des Rechnungsprüfungsausschusses und des Stellvertreters/der Stellvertreterin",
+        "voteId": "sr_20200706_14"
+      },
+      {
+        "number": "12",
+        "title": "Antrag von Kultur Moosburg e. V. auf Gewährung eines Zuschusses für das Sommerfestival 2021",
+        "voteId": "sr_20200706_15"
+      },
+      {
+        "number": "13",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20200720",
+    "date": "2020-07-20",
+    "type": "stadtrat",
+    "title": "9. Stadtratssitzung – Juli 2020",
+    "absent": [
+      "linz_karin",
+      "tristl"
+    ],
+    "agenda": [
+      {
+        "number": "4",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "5",
+        "title": "Bürgerfragen gem. § 26 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "6",
+        "title": "Kläranlage Moosburg GmbH"
+      },
+      {
+        "number": "6.1",
+        "title": "Kläranlage Moosburg GmbH - Feststellung des Jahresabschlusses 2019 und Beschluss über die Ergebnisverwendung"
+      },
+      {
+        "number": "6.2",
+        "title": "Kläranlage Moosburg GmbH - Beschluss zur Entlastung des Aufsichtsrates für das Geschäftsjahr 2019"
+      },
+      {
+        "number": "7",
+        "title": "Finanzangelegenheiten"
+      },
+      {
+        "number": "7.1",
+        "title": "Ergebnis zum Haushalt 2019",
+        "voteId": "sr_20200720_01"
+      },
+      {
+        "number": "7.2",
+        "title": "Finanzbericht des Stadtkämmerers zum Haushalt 2020 (Stand 30.06.2020)"
+      },
+      {
+        "number": "8",
+        "title": "Neubau eines Wohnhauses mit Tiefgarage a.d. Leinbergerstraße 26-28",
+        "voteId": "sr_20200720_02",
+        "voteIds": [
+          "sr_20200720_02",
+          "sr_20200720_03"
+        ]
+      },
+      {
+        "number": "9",
+        "title": "Moosburg Marketing eG - Beschluss über die Benennung von 2 Vertretern der Stadt Moosburg für den Aufsichtsrat",
+        "voteId": "sr_20200720_04",
+        "voteIds": [
+          "sr_20200720_04",
+          "sr_20200720_05",
+          "sr_20200720_06"
+        ]
+      },
+      {
+        "number": "10",
+        "title": "Beschluss über die Besetzung des Lenkungsausschusses ISEK mit Mitgliedern des Stadtrates",
+        "voteId": "sr_20200720_07"
+      },
+      {
+        "number": "11",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20200722",
+    "date": "2020-07-22",
+    "type": "stadtrat",
+    "title": "10. Stadtratssitzung – Juli 2020",
+    "absent": [
+      "kaestl",
+      "linz_karin"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 26 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Kläranlage Moosburg GmbH"
+      },
+      {
+        "number": "3.1",
+        "title": "Kläranlage Moosburg GmbH - Feststellung des Jahresabschlusses 2019 und Beschluss über die Ergebnisverwendung",
+        "voteId": "sr_20200722_01"
+      },
+      {
+        "number": "3.2",
+        "title": "Kläranlage Moosburg GmbH - Beschluss zur Entlastung des Aufsichtsrates für das Geschäftsjahr 2019",
+        "voteId": "sr_20200722_02"
+      },
+      {
+        "number": "4",
+        "title": "Vollzug der Baugesetze; Auslegungsbeschluss zum Bebauungsplan Nr. 77 \"Rockermaier Areal\"",
+        "voteId": "sr_20200722_03",
+        "voteIds": [
+          "sr_20200722_03",
+          "sr_20200722_04",
+          "sr_20200722_05"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Besetzung des Energiebeirates",
+        "voteId": "sr_20200722_06",
+        "voteIds": [
+          "sr_20200722_06",
+          "sr_20200722_07"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "notes": [
+      "Dollinger, Josef (anwesend ab 18.20 Uhr)",
+      "Zweiter Bürgermeister (anwesend ab 18.50 Uhr)",
+      "(anwesend ab 18.30 Uhr)"
+    ]
+  },
+  {
+    "id": "sr_20200914",
+    "date": "2020-09-14",
+    "type": "stadtrat",
+    "title": "11. Stadtratssitzung – September 2020",
+    "absent": [
+      "beubl",
+      "tristl"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Sitzungsniederschriften vom 06.07.2020, 20.07.2020 und 22.07.2020 - öffentlicher Teil",
+        "voteId": "sr_20200914_01"
+      },
+      {
+        "number": "4",
+        "title": "Vorstellung Quartierskonzept",
+        "voteId": "sr_20200914_02"
+      },
+      {
+        "number": "5",
+        "title": "Vorstellung der Planung Kindergarten Amperauen",
+        "voteId": "sr_20200914_03"
+      }
+    ]
+  },
+  {
+    "id": "sr_20200928",
+    "date": "2020-09-28",
+    "type": "stadtrat",
+    "title": "12. Stadtratssitzung – September 2020",
+    "absent": [
+      "hadersdorfer",
+      "heinz",
+      "lauterbach",
+      "pschorr"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Sitzungsniederschrift vom 22.07.2020 - öffentlicher Teil",
+        "voteId": "sr_20200928_01"
+      },
+      {
+        "number": "4",
+        "title": "Antrag OneSolar International GmbH; Antrag auf Aufstellung eines Bebauungsplans für Photovoltaik \"Solarpark Moosburg\""
+      },
+      {
+        "number": "5",
+        "title": "Pilotprojekt \"PV-Anlagen Altstadt Moosburg\"; Beschluss zum weiteren Vorgehen",
+        "voteId": "sr_20200928_02",
+        "voteIds": [
+          "sr_20200928_02",
+          "sr_20200928_03"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Beschluss über den Ersatz von Bier- und Hendlzeichen für Seniorinnen und Senioren - Antrag StRin Linz",
+        "voteId": "sr_20200928_04"
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20201005",
+    "date": "2020-10-05",
+    "type": "stadtrat",
+    "title": "13. Stadtratssitzung – Oktober 2020",
+    "absent": [
+      "reif",
+      "wittmann"
+    ],
+    "agenda": [
+      {
+        "number": "3",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "5",
+        "title": "Verbundvorhaben \"Landschaft + Menschen verbinden - Kommunen für den bundesweiten Biotopverbund\" - Teilprojekt \"Modellregion Freisinger Ampertal MehrWERT\";…",
+        "voteId": "sr_20201005_01",
+        "voteIds": [
+          "sr_20201005_01",
+          "sr_20201005_02"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Fortschreibung des Verkehrskonzeptes der Stadt Moosburg; Vorstellung des Konzeptes durch das beauftragte Planungsbüro PLSV"
+      },
+      {
+        "number": "7",
+        "title": "Anträge zur Verkehrssituation in der Innenstadt"
+      },
+      {
+        "number": "7.1",
+        "title": "Antrag Freie Wähler Moosburg; Änderung der Verkehrsführung",
+        "voteId": "sr_20201005_03"
+      },
+      {
+        "number": "7.2",
+        "title": "Ausweisung \"Stadtplatz\" als verkehrsberuhigten Geschäftsbereich; Antrag von Bündnis 90/ DIE GRÜNEN"
+      },
+      {
+        "number": "7.3",
+        "title": "Antrag auf Geschwindigkeitsreduzierung auf der Bahnhofstraße im Bereich vor dem Bahnhofsgelände",
+        "voteId": "sr_20201005_04"
+      },
+      {
+        "number": "7.4",
+        "title": "Vorfahrtsregelung Westerbergstraße/Am Stadion",
+        "voteId": "sr_20201005_05"
+      },
+      {
+        "number": "8",
+        "title": "Genehmigung der Sitzungsniederschrift vom 14.09.2020 - öffentlicher Teil",
+        "voteId": "sr_20201005_06"
+      },
+      {
+        "number": "9",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "notes": [
+      "Dollinger, Josef anwesend ab 18.35 Uhr",
+      "Zweiter Bürgermeister anwesend ab 18.10 Uur",
+      "anwesend ab 18.30 Uhr",
+      "Hadersdorfer, Georg anwesend von 18.15 Uhr bis 20.35 Uhr"
+    ]
+  },
+  {
+    "id": "sr_20201026",
+    "date": "2020-10-26",
+    "type": "stadtrat",
+    "title": "15. Stadtratssitzung – Oktober 2020",
+    "absent": [
+      "hadersdorfer",
+      "becher_j",
+      "linz_karin",
+      "tristl",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Bauausschusssitzung vom 21.09.2020",
+        "voteId": "sr_20201026_01"
+      },
+      {
+        "number": "4",
+        "title": "Bestätigung des wieder gewählten 1. Kommandanten der FFW Moosburg",
+        "voteId": "sr_20201026_02"
+      },
+      {
+        "number": "5",
+        "title": "Umbau \"Auf dem Plan\"; Vorstellung des Entwurfs durch Herrn Prof. Schegk",
+        "voteId": "sr_20201026_03",
+        "voteIds": [
+          "sr_20201026_03",
+          "sr_20201026_04"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Bürgerbegehren \"Lebenswertes Moosburg\" - Beschlussfassung über die Zulässigkeit des Bürgerbegehrens und über die weitere Vorgehensweise",
+        "voteId": "sr_20201026_05",
+        "voteIds": [
+          "sr_20201026_05",
+          "sr_20201026_06"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Anschaffung von CO2-Ampeln für die Schulen (Antrag Bündnis90/Die Grünen)",
+        "voteId": "sr_20201026_07",
+        "voteIds": [
+          "sr_20201026_07",
+          "sr_20201026_08"
+        ]
+      },
+      {
+        "number": "8",
+        "title": "Beschluss über die Änderung der Gartenordnung der Stadt Moosburg für die Heimgartenanlage \"An der Lände\"; Antrag von Bündnis 90 / Die Grünen vom 30.09.2020…",
+        "voteId": "sr_20201026_09"
+      },
+      {
+        "number": "9",
+        "title": "Schulturnhalle Anton-Vitzthum-Grundschule - Grundsatzbeschluss über die Mängelbeseitigung mit baulicher Sanierung",
+        "voteId": "sr_20201026_10"
+      },
+      {
+        "number": "10",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "notes": [
+      "Dollinger, Josef (anwesend ab 19.05 Uhr)"
+    ]
+  },
+  {
+    "id": "sr_20201214",
+    "date": "2020-12-14",
+    "type": "stadtrat",
+    "title": "17. Stadtratssitzung – Dezember 2020",
+    "absent": [
+      "becher_j"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters 2020/0391",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Sitzungsniederschrift der Stadtratssitzung vom 26.10.2020 - öffentlicher Teil",
+        "voteId": "sr_20201214_01"
+      },
+      {
+        "number": "4",
+        "title": "Haushaltsangelegenheiten"
+      },
+      {
+        "number": "4.1",
+        "title": "Städtebauförderung - Beschluss über die Bedarfsmitteilung 2021",
+        "voteId": "sr_20201214_02"
+      },
+      {
+        "number": "4.2",
+        "title": "Ggf. Beschlüsse über Anträge zum Haushalt"
+      },
+      {
+        "number": "4.3",
+        "title": "Erlass der Haushaltssatzung 2021"
+      },
+      {
+        "number": "4.3.1",
+        "title": "Beschluss über den Verwaltungshaushalt, Vermögenshaushalt, Investitionsplan, Finanzplan, Stellenplan, Wirtschaftsplan Kläranlage Moosburg GmbH; Beschluss über…",
+        "voteId": "sr_20201214_03",
+        "voteIds": [
+          "sr_20201214_03",
+          "sr_20201214_04"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Antrag Stadtrat Beubl vom 02.12.2019 - Eröffnung eines eigenen Girokontos für den Eigenbetrieb Wasserwerk"
+      },
+      {
+        "number": "6",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "notes": [
+      "Dollinger, Josef anwesend ab 18.10 Uhr",
+      "anwesend ab 18.15 Uhr"
+    ]
+  },
+  {
+    "id": "sr_20210118",
+    "date": "2021-01-18",
+    "type": "stadtrat",
+    "title": "1. Stadtratssitzung – Januar 2021",
+    "absent": [
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung von Sitzungsniederschriften (3. HVFA - öffentlicher Teil)",
+        "voteId": "sr_20210118_01"
+      },
+      {
+        "number": "4",
+        "title": "Vorbescheid - Errichtung eines Schulgebäudes mit Nebengebäude in Thonstetten"
+      },
+      {
+        "number": "5",
+        "title": "Erlass einer Satzung über abweichende Maße der Abstandsflächentiefe gemäß BayBO",
+        "voteId": "sr_20210118_02",
+        "voteIds": [
+          "sr_20210118_02",
+          "sr_20210118_03"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Vorstellung des Farbkonzeptes Hallenbad"
+      },
+      {
+        "number": "7",
+        "title": "Beschluss über die Verlängerung der Aussetzung der Erhebung von Sondernutzungsgebühren (sh. StR 25.05.2020)",
+        "voteId": "sr_20210118_04"
+      },
+      {
+        "number": "8",
+        "title": "Verlegung von Stolpersteinen in Moosburg - Antrag StRe John, Wittmann, Neumayr, Pschorr, Kästl, Reif, Heinz, Fincke",
+        "voteId": "sr_20210118_05"
+      },
+      {
+        "number": "9",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "notes": [
+      "Dollinger, Josef (anwesend bis 20.55 Uhr)"
+    ]
+  },
+  {
+    "id": "sr_20210208",
+    "date": "2021-02-08",
+    "type": "stadtrat",
+    "title": "2. Stadtratssitzung – Februar 2021",
+    "absent": [
+      "fincke",
+      "heinz",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Sitzungsniederschrift der Stadtratssitzung vom 14.12.2020 - öffentlicher Teil",
+        "voteId": "sr_20210208_01"
+      },
+      {
+        "number": "4",
+        "title": "Auflösung des Wasserverbandes zur Regulierung des Fischbaches und des Rotkreuzgrabens in Aich zur Entwässerung der anliegenden Wiesen; Beschluss zur…"
+      },
+      {
+        "number": "5",
+        "title": "Beschluss über die Umsetzung der Ganztagsbetreuung an der AntonVitzthum-Grundschule",
+        "voteId": "sr_20210208_02",
+        "voteIds": [
+          "sr_20210208_02",
+          "sr_20210208_03",
+          "sr_20210208_04",
+          "sr_20210208_05"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Landschaftsschutzgebiet \"Ampertal im Landkreis Freising\"; Antrag der Stadt Moosburg zur Änderung der Schutzgebietsgrenzen zum Bau einer Montessori-Schule mit…",
+        "voteId": "sr_20210208_06"
+      },
+      {
+        "number": "7",
+        "title": "Aufnahme von Flüchtlingen aus Moria - Antrag Fraktion Bündnis 90/Die Grünen, Fresh, StRe Beubl, Fincke und John",
+        "voteId": "sr_20210208_07"
+      },
+      {
+        "number": "8",
+        "title": "Antrag auf öffentliche Behandlung der Tagesordnungspunkte zum Haushalt der HVFA-Sitzungen am 26.11.2020 und 30.11.2020"
+      },
+      {
+        "number": "9",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20210222",
+    "date": "2021-02-22",
+    "type": "stadtrat",
+    "title": "3. Stadtratssitzung – Februar 2021",
+    "absent": [
+      "kaestl",
+      "von_pressentin",
+      "wittmann"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.1",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_01"
+      },
+      {
+        "number": "3.2",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_02"
+      },
+      {
+        "number": "3.3",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_03"
+      },
+      {
+        "number": "3.4",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_04"
+      },
+      {
+        "number": "3.5",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_05"
+      },
+      {
+        "number": "3.6",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_06"
+      },
+      {
+        "number": "3.7",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.8",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.9",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.10",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.11",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.12",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.13",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.14",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.15",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.16",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.17",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.18",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.19",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.20",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.21",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.22",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.23",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.24",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.25",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.26",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.27",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_07"
+      },
+      {
+        "number": "3.28",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_08"
+      },
+      {
+        "number": "3.29",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_09"
+      },
+      {
+        "number": "3.30",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_10"
+      },
+      {
+        "number": "3.31",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_11"
+      },
+      {
+        "number": "3.32",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_12"
+      },
+      {
+        "number": "3.33",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_13"
+      },
+      {
+        "number": "3.34",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_14"
+      },
+      {
+        "number": "3.35",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_15"
+      },
+      {
+        "number": "3.36",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_16"
+      },
+      {
+        "number": "3.37",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_17"
+      },
+      {
+        "number": "3.38",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_18"
+      },
+      {
+        "number": "3.39",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_19"
+      },
+      {
+        "number": "3.40",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_20"
+      },
+      {
+        "number": "3.41",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_21"
+      },
+      {
+        "number": "3.42",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u. Öffent- 2020/0337…",
+        "voteId": "sr_20210222_22"
+      },
+      {
+        "number": "3.43",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u. Öffent- 2020/0342…",
+        "voteId": "sr_20210222_23"
+      },
+      {
+        "number": "3.44",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u. Öffent- 2020/0347…",
+        "voteId": "sr_20210222_24"
+      },
+      {
+        "number": "3.45",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_25"
+      },
+      {
+        "number": "3.46",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_26"
+      },
+      {
+        "number": "3.47",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_27"
+      },
+      {
+        "number": "3.48",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_28"
+      },
+      {
+        "number": "3.49",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_29"
+      },
+      {
+        "number": "3.50",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_30"
+      },
+      {
+        "number": "3.51",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.52",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.53",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.54",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.55",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u. Öffent- 2020/0350…"
+      },
+      {
+        "number": "3.56",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u. Öffent- 2020/0358…"
+      },
+      {
+        "number": "3.57",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u. Öffent- 2020/0364…"
+      },
+      {
+        "number": "3.58",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_31"
+      },
+      {
+        "number": "3.59",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_32"
+      },
+      {
+        "number": "3.60",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_33"
+      },
+      {
+        "number": "3.61",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_34"
+      },
+      {
+        "number": "3.62",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_35"
+      },
+      {
+        "number": "3.63",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_36"
+      },
+      {
+        "number": "3.64",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210222_37"
+      },
+      {
+        "number": "3.65",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.66",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.67",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.68",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.69",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "3.70",
+        "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Billigungsbeschluss unb Beschluss"
+      },
+      {
+        "number": "4",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "notes": [
+      "Dollinger, Josef (anwesend ab 18.35 Uhr)"
+    ]
+  },
+  {
+    "id": "sr_20210308",
+    "date": "2021-03-08",
+    "type": "stadtrat",
+    "title": "4. Stadtratssitzung – März 2021",
+    "absent": [
+      "reif",
+      "wittmann"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschriften der Sitzungen des Stadtrates vom 18.01.2021 (öffentlicher Teil)",
+        "voteId": "sr_20210308_01"
+      },
+      {
+        "number": "4",
+        "title": "Neubau eines Hallenbades - Vorstellung der Gestaltung der Aussenfassade durch Herrn Architekten Eckert",
+        "voteId": "sr_20210308_02"
+      },
+      {
+        "number": "5",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…"
+      },
+      {
+        "number": "5.1",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_03"
+      },
+      {
+        "number": "5.2",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_04"
+      },
+      {
+        "number": "5.3",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_05"
+      },
+      {
+        "number": "5.4",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_06"
+      },
+      {
+        "number": "5.5",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_07"
+      },
+      {
+        "number": "5.6",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_08"
+      },
+      {
+        "number": "5.7",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_09"
+      },
+      {
+        "number": "5.8",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_10"
+      },
+      {
+        "number": "5.9",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_11"
+      },
+      {
+        "number": "5.10",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_12"
+      },
+      {
+        "number": "5.11",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_13"
+      },
+      {
+        "number": "5.12",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
+        "voteId": "sr_20210308_14"
+      },
+      {
+        "number": "5.13",
+        "title": "Bauleitplanung Nr. 65 \"Aich Kirchfeldstraße\" nebst 9. Änderung des Flächennutzungsplans; Billigungsbeschluss und Beschluss über die öffentliche Auslegung der…",
+        "voteId": "sr_20210308_15"
+      },
+      {
+        "number": "6",
+        "title": "Antrag Bündnis 90 / DIE GRÜNEN; Aufstellung eines Bebauungsplans für den Bereich \"Planeten Viertel\"",
+        "voteId": "sr_20210308_16",
+        "voteIds": [
+          "sr_20210308_16",
+          "sr_20210308_17"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Antrag auf Abbruch des Wohn- und Geschäftshauses a.d. Herrnstr. 2, Moosburg",
+        "voteId": "sr_20210308_18"
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20210322",
+    "date": "2021-03-22",
+    "type": "stadtrat",
+    "title": "5. Stadtratssitzung – März 2021",
+    "absent": [
+      "fincke",
+      "reif",
+      "tristl"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Sitzungsniederschrift der Stadtratssitzung vom 08.02.2021 - öffentlicher Teil",
+        "voteId": "sr_20210322_01"
+      },
+      {
+        "number": "4",
+        "title": "Vorstellung der Machbarkeitsstudie für ein Stalag-Dokumentationszentrum durch das Büro für Museumsberatung"
+      },
+      {
+        "number": "5",
+        "title": "Bestätigung von Martin Hörhammer und Reinhard Meilinger als Notkommandanten der Freiwilligen Feuerwehr Thonstetten",
+        "voteId": "sr_20210322_02"
+      },
+      {
+        "number": "6",
+        "title": "Durchführung von Bündelausschreibungen für die kommunale Strombeschaffung - Entscheidung über Art des Strombezugs",
+        "voteId": "sr_20210322_03",
+        "voteIds": [
+          "sr_20210322_03",
+          "sr_20210322_04"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "notes": [
+      "Dollinger, Josef (anwesend bis 21.00 Uhr)",
+      "Zweiter Bürgermeister (anwesend ab 19.25 Uhr)",
+      "(anwesend bis 21.05 Uhr)"
+    ]
+  },
+  {
+    "id": "sr_20210412",
+    "date": "2021-04-12",
+    "type": "stadtrat",
+    "title": "6. Stadtratssitzung – April 2021",
+    "absent": [
+      "reif",
+      "wittmann"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Ehrung von langjährigen Mitgliedern des Stadtrates"
+      },
+      {
+        "number": "3",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Genehmigung von Sitzungsniederschriften (Stadtrat 22.02. und 08.03. - öffentlicher Teil)",
+        "voteId": "sr_20210412_01"
+      },
+      {
+        "number": "5",
+        "title": "Beschluss über Teilnahme am Modellprojekt \"Sichere Öffnung durch Testen\"",
+        "voteId": "sr_20210412_02"
+      },
+      {
+        "number": "6",
+        "title": "Vollzug der Baugesetze; Auslegungsbeschluss zum Bebauungsplan Nr. 63 \"SO Amperauen\" und zur 14. Änderung des Flächennutzungsplan der Stadt Moosburg a.d. Isar",
+        "voteId": "sr_20210412_03"
+      },
+      {
+        "number": "7",
+        "title": "Vorstellung Breitbandförderung \"Gigabitrichtlinie Bayern\"",
+        "voteId": "sr_20210412_04"
+      },
+      {
+        "number": "8",
+        "title": "Schützengesellschaft Aich - Erweiterung des Schützenheims; Gewährung eines Zuschusses",
+        "voteId": "sr_20210412_05"
+      },
+      {
+        "number": "9",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "notes": [
+      "Dollinger, Josef (anwesend ab 20.00 Uhr)",
+      "(anwesend bis 21.00 Uhr)"
+    ]
+  },
+  {
+    "id": "sr_20210426",
+    "date": "2021-04-26",
+    "type": "stadtrat",
+    "title": "7. Stadtratssitzung – April 2021",
+    "absent": [
+      "hadersdorfer",
+      "beubl",
+      "reif"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Stadtratssitzung vom 22. März 2021 (öffentlicher Teil)",
+        "voteId": "sr_20210426_01"
+      },
+      {
+        "number": "4",
+        "title": "Antrag von StR Fincke auf Umsetzung der Änderung der Gemeindeordnung (Art. 47 a GO) - virtuelle Teilnahme an der Stadtratssitzung",
+        "voteId": "sr_20210426_02"
+      },
+      {
+        "number": "5",
+        "title": "Antrag StR Fincke und StR John\"; Schluss mit dem Parksuchverkehr",
+        "voteId": "sr_20210426_03"
+      },
+      {
+        "number": "6",
+        "title": "Antrag StR Welter - Interessen der Bürgermeister, der Stadträte und Referenten transparent machen"
+      },
+      {
+        "number": "7",
+        "title": "Kammerorchester Moosburg - Zuschuss und Übernahme einer Ausfallbürgschaft für eine Konzert am 30. Juli 2021",
+        "voteId": "sr_20210426_04",
+        "voteIds": [
+          "sr_20210426_04",
+          "sr_20210426_05"
+        ]
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20210607",
+    "date": "2021-06-07",
+    "type": "stadtrat",
+    "title": "9. Stadtratssitzung – Juni 2021",
+    "absent": [
+      "hadersdorfer",
+      "altenbeck",
+      "fincke",
+      "kaestl",
+      "neumayr",
+      "reif",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Stadtratssitzung vom 26. April 2021 (öffentlicher Teil)",
+        "voteId": "sr_20210607_01"
+      },
+      {
+        "number": "4",
+        "title": "Neubau eines Hallenbades - Vorstellung der Freiflächenplanung mit Fahrradabstellanlagen",
+        "voteId": "sr_20210607_02"
+      },
+      {
+        "number": "5",
+        "title": "Erweiterung der Anton-Vitzthum-Grundschule, Münchener Straße 29 zur Ganztagsschule - Vorstellung der Objektplanung",
+        "voteId": "sr_20210607_03",
+        "voteIds": [
+          "sr_20210607_03",
+          "sr_20210607_04",
+          "sr_20210607_05",
+          "sr_20210607_06"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Beschluss über die Feststellung der Jahresrechnung 2018 und Entlastung Vorstellung des Prüfungsberichts der örtlichen Rechnungsprüfung zur Jahresrechnung 2018",
+        "voteId": "sr_20210607_07"
+      },
+      {
+        "number": "7",
+        "title": "Kostenloser Eintritt für Kinder unter 12 Jahre ins Freibad Moosburg für die Badesaison 2021 (Antrag StRin Kuch)",
+        "voteId": "sr_20210607_08"
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20210621",
+    "date": "2021-06-21",
+    "type": "stadtrat",
+    "title": "10. Stadtratssitzung – Juni 2021",
+    "absent": [
+      "beubl",
+      "heinz",
+      "reif",
+      "tristl",
+      "wagner",
+      "wittmann"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Stadtratssitzung vom 10. Mai 2021 (öffentlicher Teil)",
+        "voteId": "sr_20210621_01"
+      },
+      {
+        "number": "4",
+        "title": "Vollzug der Baugesetze; Antrag auf Änderung des Bebauungsplans \"An der Neuen Industriestraße\" für Fl.-Nr. 1999/6",
+        "voteId": "sr_20210621_02",
+        "voteIds": [
+          "sr_20210621_02",
+          "sr_20210621_03"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Städtebauförderungsprogramm Lebendige Zentren; Einzelmaßnahme Gebäudesanierung \"Leinbergerstraße 2\"",
+        "voteId": "sr_20210621_04",
+        "voteIds": [
+          "sr_20210621_04",
+          "sr_20210621_05"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Beschluss über den Erlass einer Fahrradstellplatzsatzung",
+        "voteId": "sr_20210621_06"
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20210712",
+    "date": "2021-07-12",
+    "type": "stadtrat",
+    "title": "11. Stadtratssitzung – Juli 2021",
+    "absent": [
+      "stanglmaier"
+    ],
+    "agenda": [
+      {
+        "number": "2",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Genehmigung der Niederschrift der Stadtratssitzung vom 7. Juni 2021 (öffentlicher Teil)",
+        "voteId": "sr_20210712_01"
+      },
+      {
+        "number": "5",
+        "title": "Information über das Kanalnetz der Stadt Moosburg mit dazugehörigen Entlastungsbauwerken im Zusammenhang mit Regenereignissen"
+      },
+      {
+        "number": "6",
+        "title": "Neufassung von Verordnungen"
+      },
+      {
+        "number": "6.1",
+        "title": "Neufassung der Verordnung über die zeitliche Beschränkung ruhestörender Haus- und Gartenarbeiten, über die Benutzung von Musikinstrumenten, Tonübertragungs-…",
+        "voteId": "sr_20210712_02",
+        "voteIds": [
+          "sr_20210712_02",
+          "sr_20210712_03"
+        ]
+      },
+      {
+        "number": "6.2",
+        "title": "Neufassung der Verordnung über die Reinhaltung und Reinigung der öffentlichen Straßen und Sicherung der Gehbahnen im Winter",
+        "voteId": "sr_20210712_04"
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "notes": [
+      "Dollinger, Josef (anwesend bis 21.50 Uhr)"
+    ]
+  },
+  {
+    "id": "sr_20210726",
+    "date": "2021-07-26",
+    "type": "stadtrat",
+    "title": "12. Stadtratssitzung – Juli 2021",
+    "absent": [
+      "welter",
+      "wittmann"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Stadtratssitzung vom 21. Juni 2021 (öffentlicher Teil)",
+        "voteId": "sr_20210726_01"
+      },
+      {
+        "number": "4",
+        "title": "Kläranlage Moosburg GmbH"
+      },
+      {
+        "number": "4.1",
+        "title": "Kläranlage Moosburg GmbH - Feststellung des Jahresabschlusses 2020 und Beschluss über die Ergebnisverwendung",
+        "voteId": "sr_20210726_02"
+      },
+      {
+        "number": "4.2",
+        "title": "Kläranlage Moosburg GmbH - Beschluss zur Entlastung des Aufsichtsrates für das Geschäftsjahr 2020",
+        "voteId": "sr_20210726_03"
+      },
+      {
+        "number": "5",
+        "title": "Bauangelegenheiten"
+      },
+      {
+        "number": "5.1",
+        "title": "Vorbescheid - Neubau einer Wohnanlage mit Tiefgarage a.d. Landshuter Str. 28, Moosburg",
+        "voteId": "sr_20210726_04"
+      },
+      {
+        "number": "5.2",
+        "title": "Vorbescheid - Neubau einer Schule mit landwirtschaftl. Ausrichtung a.d. Georginestr., Moosburg",
+        "voteId": "sr_20210726_05",
+        "voteIds": [
+          "sr_20210726_05",
+          "sr_20210726_06"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Überprüfung der Ausführung einer Dachbegrünung auf dem Hauptgebäude der Ganztagesbetreuung (Antrag StR Pschorr)"
+      },
+      {
+        "number": "7",
+        "title": "Halbjahresbericht der Finanzabteilung zum Haushalt 2021"
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20210906",
+    "date": "2021-09-06",
+    "type": "stadtrat",
+    "title": "13. Stadtratssitzung – September 2021",
+    "absent": [
+      "heinz",
+      "kaestl",
+      "lauterbach"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Stadtratssitzung vom 12. Juli und 26. Juli 2021 (öffentlicher Teil)",
+        "voteId": "sr_20210906_01"
+      },
+      {
+        "number": "4",
+        "title": "Bürgerbegehren \"ACKERLAND IN BAUERNHAND - keine Flächenversiegelung durch neue Gewerbeflächen\" - Beschluss über die Zulässigkeit des Bürgerbegehrens",
+        "voteId": "sr_20210906_02",
+        "voteIds": [
+          "sr_20210906_02",
+          "sr_20210906_03",
+          "sr_20210906_04"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Beitragssatz Kindertageseinrichtungen wegen coronabedingten Schließungen bzw. eingeschränktem Betrieb / Januar - Mai 2021",
+        "voteId": "sr_20210906_05"
+      },
+      {
+        "number": "6",
+        "title": "Beschluss über den Antrag \"Mehr Baumschutz und Stadtgrün für Moosburg\" (Antragsteller StRin Neumayr und StR Becher) - Grundsatzbeschluss über verschiedene…",
+        "voteId": "sr_20210906_06",
+        "voteIds": [
+          "sr_20210906_06",
+          "sr_20210906_07",
+          "sr_20210906_08",
+          "sr_20210906_09",
+          "sr_20210906_10"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20211011",
+    "date": "2021-10-11",
+    "type": "stadtrat",
+    "title": "14. Stadtratssitzung – Oktober 2021",
+    "absent": [
+      "wittmann"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Durchführung eines Bürgerentscheides \"Gewerbeflächen Pfrombach\" (sh. StR 06.09.2021) - Festlegung des Termins und Beschlussfassung über den Stimmzettel",
+        "voteId": "sr_20211011_01"
+      },
+      {
+        "number": "4",
+        "title": "Sanierungssatzung Stadt Moosburg; Billigung der fortgeschriebenen Sanierungsziele und Beschluss zur Durchführung des Verfahrens",
+        "voteId": "sr_20211011_02"
+      },
+      {
+        "number": "5",
+        "title": "Antrag auf Aufstellung eines Bebauungsplans für die Flur-Nrn. 1834,1836, 1836/1,1837, 1838, 1794 und 1794/1 Gem. Moosburg"
+      },
+      {
+        "number": "6",
+        "title": "Vorbescheid - Errichtung von 5 Reihenhäusern mit Garagen und Stellplätzen a.d. Burgermühlstr. 13, Moosburg",
+        "voteId": "sr_20211011_03"
+      },
+      {
+        "number": "7",
+        "title": "Änderung der Richtlinie zum Moosburger Förderprogramm für Solarstrom/Photovoltaik",
+        "voteId": "sr_20211011_04"
+      },
+      {
+        "number": "8",
+        "title": "Entscheidung über die Einrichtung der dynamischen Fahrgastinformation an Haltestellen"
+      },
+      {
+        "number": "9",
+        "title": "Erlass der Verordnung über einen verkaufsoffenen Sonntag am 17. Oktober 2021",
+        "voteId": "sr_20211011_05"
+      },
+      {
+        "number": "10",
+        "title": "Beschluss über die Anpassung des Preises für die Bauschuttannahme im Moosburger Wertstoffhof"
+      },
+      {
+        "number": "11",
+        "title": "Einstellung von HH-Mitteln im HHJahr 2022 für die Veranstaltung \"Kunst im Stalag Moosburg\"",
+        "voteId": "sr_20211011_06"
+      },
+      {
+        "number": "12",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20211025",
+    "date": "2021-10-25",
+    "type": "stadtrat",
+    "title": "15. Stadtratssitzung – Oktober 2021",
+    "absent": [
+      "dollinger",
+      "fincke",
+      "linz_karin",
+      "weber"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Niederlegung des Stadtratsmandates durch Herrn Thomas Wittmann und Bestätigung des Nachrückers, Herrn Julian Grübl",
+        "voteId": "sr_20211025_01"
+      },
+      {
+        "number": "3.1",
+        "title": "Ableisten des Amtseides von Herrn Julian Grübl"
+      },
+      {
+        "number": "3.2",
+        "title": "Neubesetzung der Ausschüsse, des Aufsichtsrates Kläranlage und des Jugendreferenten",
+        "voteId": "sr_20211025_02"
+      },
+      {
+        "number": "4",
+        "title": "Beschluss über einen Ersatzneubau der Brücke Pillhofen BW24 - Vorstellung der Planung und Bereitstellung von Haushaltsmitteln für 2022"
+      },
+      {
+        "number": "5",
+        "title": "Erweiterung der Beleuchtung entlang des Radweges Westumfahrung zwischen Georg-Schweiger-Straße und Westerbergstraße",
+        "voteId": "sr_20211025_03"
+      },
+      {
+        "number": "6",
+        "title": "Neuerlass der Hundesteuersatzung",
+        "voteId": "sr_20211025_04",
+        "voteIds": [
+          "sr_20211025_04",
+          "sr_20211025_05"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Beschluss über die Feststellung der Jahresrechnung 2019 und Entlastung Vorstellung des Prüfungsberichts der örtlichen Rechnungsprüfung zur Jahresrechnung 2019",
+        "voteId": "sr_20211025_06"
+      },
+      {
+        "number": "8",
+        "title": "Beschluss über die Verlängerung von Sondernutzungen für Außenbestuhlungen der Moosburger Wirte",
+        "voteId": "sr_20211025_07"
+      },
+      {
+        "number": "9",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20211108",
+    "date": "2021-11-08",
+    "type": "stadtrat",
+    "title": "17. Stadtratssitzung – November 2021",
+    "absent": [
+      "hadersdorfer",
+      "stanglmaier",
+      "john",
+      "welter"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Stadtratssitzung vom 6. September 2021 sowie der Bauausschuss-Sitzung vom 27.09.2021 (öffentlicher Teil)",
+        "voteId": "sr_20211108_01"
+      },
+      {
+        "number": "4",
+        "title": "Erweiterung der Anton-Vitzthum-Grundschule zur offenen Ganztagsbetreuungseinrichtung - Entscheidung über die Dachbegrünung des Satteldaches mit PV-Anlage (sh.…",
+        "voteId": "sr_20211108_02",
+        "voteIds": [
+          "sr_20211108_02",
+          "sr_20211108_03"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Vollzug der Wassergesetze; Verfahren zum Erlass einer Festsetzungsverordnung des Landratsamts Freising über das Überschwemmungsgebiet an der Amper (Gewäss.…"
+      },
+      {
+        "number": "6",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20211122",
+    "date": "2021-11-22",
+    "type": "stadtrat",
+    "title": "18. Stadtratssitzung – November 2021",
+    "absent": [
+      "dollinger",
+      "john",
+      "kieninger",
+      "welter"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Satzung zur Änderung der Satzung über die Erhebung von Verwaltungskosten für Amtshandlungen im eigenen Wirkungskreis der Stadt Moosburg a.d.Isar",
+        "voteId": "sr_20211122_01"
+      },
+      {
+        "number": "4",
+        "title": "Städtebauförderung; Beschluss über die Bedarfsmitteilung 2022",
+        "voteId": "sr_20211122_02"
+      },
+      {
+        "number": "5",
+        "title": "Antrag auf denkmalschutzrechtliche Erlaubnis zur Beseitigung der Baracke Schlesierstr. 5, Moosburg"
+      },
+      {
+        "number": "6",
+        "title": "Vollzug der Wassergesetze; Verfahren zum Erlass einer Festsetzungsverordnung des Landratsamts Freising über das Überschwemmungsgebiet an der Amper (Gewäss.…",
+        "voteId": "sr_20211122_03"
+      },
+      {
+        "number": "7",
+        "title": "Beschluss über das Streaming von Stadtratssitzungen (Antrag von Stadtrat Fincke)"
+      },
+      {
+        "number": "8",
+        "title": "Antrag Smart City - Flächendeckendes WLAN für die Innenstadt (Antrag StR Fincke und StR John)",
+        "voteId": "sr_20211122_04",
+        "voteIds": [
+          "sr_20211122_04",
+          "sr_20211122_05"
+        ]
+      },
+      {
+        "number": "9",
+        "title": "Auflösung des Wasserverbandes zur Regulierung des Fischbaches und des Rotkreuzgrabens in Aich zur Entwässerung der anliegenden Wiesen; Beschluss zur…",
+        "voteId": "sr_20211122_06"
+      },
+      {
+        "number": "10",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20211206",
+    "date": "2021-12-06",
+    "type": "stadtrat",
+    "title": "19. Stadtratssitzung – Dezember 2021",
+    "absent": [
+      "becher_j",
+      "lauterbach",
+      "tristl",
+      "welter"
+    ],
+    "agenda": [
+      {
+        "number": "4",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "5",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "6",
+        "title": "Errichtung einer Kindertageseinrichtung (Kinderkrippe) durch die Stadt Moosburg in der Sonnensiedlung 1",
+        "voteId": "sr_20211206_01"
+      },
+      {
+        "number": "7",
+        "title": "Sanierungssatzung \"Historischer Stadtkern\"; Beschlüsse zum Verfahren",
+        "voteId": "sr_20211206_02",
+        "voteIds": [
+          "sr_20211206_02",
+          "sr_20211206_03",
+          "sr_20211206_04",
+          "sr_20211206_05"
+        ]
+      },
+      {
+        "number": "8",
+        "title": "Haushaltsberatungen 2022"
+      },
+      {
+        "number": "8.1",
+        "title": "Anträge zum Haushalt 2022"
+      },
+      {
+        "number": "8.1.1",
+        "title": "Antrag zum Thema: „Fachbereichsleitung für den Fachbereich Kindergarten, Hort und Krippe + Integrative Gruppen der Stadt Moosburg – Einführung einer neuen…",
+        "voteId": "sr_20211206_06"
+      },
+      {
+        "number": "8.1.2",
+        "title": "Antrag auf Errichtung attraktiver innerstädtischer Erholungsräume (Antrag CSU-Fraktion) - Bereitstellung von Haushaltsmitteln",
+        "voteId": "sr_20211206_07"
+      },
+      {
+        "number": "8.1.3",
+        "title": "Antrag auf Errichtung eines Abenteuerspielplatzes mit Inklusionsspielgeräten (Antrag CSU-Fraktion) - Bereitstellung von Haushaltsmitteln",
+        "voteId": "sr_20211206_08"
+      },
+      {
+        "number": "8.1.4",
+        "title": "Planung und Bau eines Sport- und Begegnungsplatzes in Moosburg (Antrag Jugendparlament, Sportreferentin Kuch und Jugendreferent Grübl) - Bereitstellung von…",
+        "voteId": "sr_20211206_09",
+        "voteIds": [
+          "sr_20211206_09",
+          "sr_20211206_10",
+          "sr_20211206_11",
+          "sr_20211206_12"
+        ]
+      },
+      {
+        "number": "8.1.5",
+        "title": "Antrag auf Förderung des Fahrzeuges \"Helfer vor Ort\" (BRK) - Antrag CSU, Bereitstellung von Haushaltsmitteln"
+      },
+      {
+        "number": "8.1.6",
+        "title": "Bündnis 90/DIE GRÜNEN; Antrag auf Beleuchtung von Rad- und Fußwegen",
+        "voteId": "sr_20211206_13"
+      },
+      {
+        "number": "8.1.7",
+        "title": "Antrag auf Stärkung des Ehrenamtes, Ehrenamtskarte Moosburg mit freiem Eintritt in allen städtischen Einrichtungen"
+      },
+      {
+        "number": "8.1.8",
+        "title": "Beschluss über das Förderprogramm Natürlich Dämmen"
+      },
+      {
+        "number": "8.1.9",
+        "title": "Antrag auf Erstellen einer umfassenden Stadtentwicklungsplanung für die Stadt Moosburg und die Ortsteile (Antrag StR Wagner)"
+      },
+      {
+        "number": "9",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20211213",
+    "date": "2021-12-13",
+    "type": "stadtrat",
+    "title": "20. Stadtratssitzung – Dezember 2021",
+    "absent": [
+      "john",
+      "welter"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Stadtratssitzung vom 25.10.2021 (öffentlicher Teil)",
+        "voteId": "sr_20211213_01"
+      },
+      {
+        "number": "4",
+        "title": "Neufestsetzung der Abwassergebühren in der Stadt Moosburg"
+      },
+      {
+        "number": "4.1",
+        "title": "Beschlussfassung über die Gebührenkalkulation der Abwasserentsorgung für die Jahre 2022 bis 2025",
+        "voteId": "sr_20211213_02",
+        "voteIds": [
+          "sr_20211213_02",
+          "sr_20211213_03",
+          "sr_20211213_04"
+        ]
+      },
+      {
+        "number": "4.2",
+        "title": "Beschluss über den Neuerlass der Entwässerungssatzung (EWS) und der Beitrags- und Gebührensatzung zur Entwässerungssatzung (BGS/EWS) der Stadt Moosburg a.d.Isar",
+        "voteId": "sr_20211213_05",
+        "voteIds": [
+          "sr_20211213_05",
+          "sr_20211213_06"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Erlass der Haushaltssatzung 2022"
+      },
+      {
+        "number": "5.1",
+        "title": "Anträge zum Haushalt"
+      },
+      {
+        "number": "5.1.1",
+        "title": "Förderprogramm Natürlich Dämmen (vertagt in der Sitzung am 6.12.2021)",
+        "voteId": "sr_20211213_07"
+      },
+      {
+        "number": "5.1.2",
+        "title": "Antrag auf Erstellen einer umfassenden Stadtentwicklungsplanung für die Stadt Moosburg und die Ortsteile (Antrag StR Wagner, vertagt in der Sitzung am…",
+        "voteId": "sr_20211213_08"
+      },
+      {
+        "number": "5.2",
+        "title": "Beschluss über den Verwaltungshaushalt, Vermögenshaushalt, Investitionsplan, Finanzplan, Stellenplan, Wirtschaftsplan Kläranlage Moosburg GmbH; Beschluss über…",
+        "voteId": "sr_20211213_09",
+        "voteIds": [
+          "sr_20211213_09",
+          "sr_20211213_10"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
     "id": "sr_20220905",
     "date": "2022-09-05",
     "type": "stadtrat",
@@ -160,6 +2846,67 @@
       },
       {
         "number": 8,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20221010",
+    "date": "2022-10-10",
+    "type": "stadtrat",
+    "title": "16. Stadtratssitzung – Oktober 2022",
+    "absent": [
+      "gruebl",
+      "john",
+      "tristl"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Stadtratsangelegenheiten"
+      },
+      {
+        "number": "3.1",
+        "title": "Niederlegung des Stadtratsmandates durch Frau Julia Neumayr und Bestätigung des nachrückenden Stadtratsmitgliedes",
+        "voteId": "sr_20221010_01"
+      },
+      {
+        "number": "3.2",
+        "title": "Vereidigung des nachrückenden Stadtratsmitgliedes Herr Benedict Gruber",
+        "type": "formal"
+      },
+      {
+        "number": "3.3",
+        "title": "Neubesetzung von Ausschüssen",
+        "voteId": "sr_20221010_02"
+      },
+      {
+        "number": "4",
+        "title": "Neuerlass der Erschließungsbeitragssatzung der Stadt Moosburg a.d.Isar",
+        "voteId": "sr_20221010_03"
+      },
+      {
+        "number": "5",
+        "title": "Aufhebung der Betriebssatzung des städtischen Wasserwerks",
+        "voteId": "sr_20221010_04"
+      },
+      {
+        "number": "6",
+        "title": "Beschluss über den Antrag des FC Moosburg e. V. auf Zuschuss für den Kauf eines neuen Rasenmähers"
+      },
+      {
+        "number": "7",
         "title": "Anfragen",
         "type": "formal"
       }
@@ -350,6 +3097,260 @@
       },
       {
         "number": 5,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20221121",
+    "date": "2022-11-21",
+    "type": "stadtrat",
+    "title": "19. Stadtratssitzung – November 2022",
+    "absent": [
+      "hadersdorfer",
+      "kaestl",
+      "kieninger",
+      "beibl",
+      "reif",
+      "tristl"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der öffentlichen Niederschriften (StR 10.10.2022)",
+        "voteId": "sr_20221121_01"
+      },
+      {
+        "number": "4",
+        "title": "Neubesetzung des Digitalisierungsreferenten - Antrag der Stadtratsfraktionen",
+        "voteId": "sr_20221121_02"
+      },
+      {
+        "number": "5",
+        "title": "2. Änderungssatzung Beitrags- und Gebührensatzung zur Entwässerungssatzung (BGS/EWS)",
+        "voteId": "sr_20221121_03"
+      },
+      {
+        "number": "6",
+        "title": "Antrag auf Gewährung eines Zuschusses an den Kinderschutzbund Moosburg",
+        "voteId": "sr_20221121_04"
+      },
+      {
+        "number": "7",
+        "title": "Neufassung der Wahlordnung für den Seniorenbeirat",
+        "voteId": "sr_20221121_05"
+      },
+      {
+        "number": "8",
+        "title": "Erhöhung der Gebühren für die städtischen Veranstaltungshallen",
+        "voteId": "sr_20221121_06"
+      },
+      {
+        "number": "9",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20221212",
+    "date": "2022-12-12",
+    "type": "stadtrat",
+    "title": "20. Stadtratssitzung – Dezember 2022",
+    "absent": [
+      "reif",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Vorstellung der Planung Anbau an das Rathaus/Neubau Huber-Haus durch den Architekten"
+      },
+      {
+        "number": "4",
+        "title": "Bebauungsplan Nr. 52 \"WA Amperauen\" - Vorschlag zur 1. Änderung des Bebauungsplans über die Festsetzung Nr. 6 \"Einfriedungen\"",
+        "voteId": "sr_20221212_01",
+        "voteIds": [
+          "sr_20221212_01",
+          "sr_20221212_02"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Städtebauförderung; Beschluss über die Bedarfsmitteilung 2023",
+        "voteId": "sr_20221212_03"
+      },
+      {
+        "number": "6",
+        "title": "Anträge zum Haushalt 2023"
+      },
+      {
+        "number": "6.1",
+        "title": "Moosburg Marketing"
+      },
+      {
+        "number": "6.1.1",
+        "title": "Antrag auf Einstellen von Haushaltsmitteln als Zuschuss für Moosburg Marketing für Werbemaßnahmen Verlegung Wochenmarkt (Antrag Freie Wähler)",
+        "voteId": "sr_20221212_04"
+      },
+      {
+        "number": "6.1.2",
+        "title": "Moosburg Marketing - Antrag auf Erhöhung des Zuschusses",
+        "voteId": "sr_20221212_05"
+      },
+      {
+        "number": "6.2",
+        "title": "Zuschussanträge Kath. Kreisbildungswerk Freising e. V.",
+        "voteId": "sr_20221212_06"
+      },
+      {
+        "number": "6.3",
+        "title": "Antrag des Stalag Vereins auf Zuschuss für Informationsbanner SabathielBaracke",
+        "voteId": "sr_20221212_07"
+      },
+      {
+        "number": "6.4",
+        "title": "Antrag des TSV Moosburg-Neustadt e.V. auf Erneuerung der Zaunanlage um den Sportplatz des TSV Moosburg/Neustadt",
+        "voteId": "sr_20221212_08",
+        "voteIds": [
+          "sr_20221212_08",
+          "sr_20221212_09"
+        ]
+      },
+      {
+        "number": "6.5",
+        "title": "Antrag auf Einführung eines Moosburger Förderprogrammes zur Nutzung bzw. zur Verminderung des Abflusses von Niederschlagswasser (Antrag Freie Wähler)",
+        "voteId": "sr_20221212_10"
+      },
+      {
+        "number": "6.6",
+        "title": "Antrag auf Erhöhung der Betreuerhonorare Ferienspiele (Antrag Jugendreferent Grübl)",
+        "voteId": "sr_20221212_11"
+      },
+      {
+        "number": "6.7",
+        "title": "Anträge des Vereines Hodschager und Landsmannschaften (StR Pschorr)"
+      },
+      {
+        "number": "6.7.1",
+        "title": "Antrag auf Übernahme der Stromkosten für das \"Haus der Heimat\" ab 2023"
+      },
+      {
+        "number": "6.7.2",
+        "title": "Einstellung von 2.000 € für Maßnahmen im Rahmen der Patenschaft (Hodschag/Odzaci)",
+        "voteId": "sr_20221212_12"
+      },
+      {
+        "number": "6.8",
+        "title": "Anträge Altstadtförderer"
+      },
+      {
+        "number": "6.8.1",
+        "title": "Antrag der Altstadförderer auf Erhöhung des jährlichen Zuschusses auf 780 €",
+        "voteId": "sr_20221212_13",
+        "voteIds": [
+          "sr_20221212_13",
+          "sr_20221212_14"
+        ]
+      },
+      {
+        "number": "6.8.2",
+        "title": "Antrag der Altstadtförderer auf Optimierung der Beleuchtung im Zehentstadel"
+      },
+      {
+        "number": "6.9",
+        "title": "Antrag CSU-Fraktion auf Einstellen von zusätzlichen Haushaltsmitteln in Höhe von 50.000 € für Gutachten und Planungen für Schulbedarf",
+        "voteId": "sr_20221212_15"
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20221219",
+    "date": "2022-12-19",
+    "type": "stadtrat",
+    "title": "21. Stadtratssitzung – Dezember 2022",
+    "absent": [
+      "beibl",
+      "john",
+      "linz_karin",
+      "welter"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der öffentlichen Niederschriften (Sitzung BA 17.11.2022)"
+      },
+      {
+        "number": "4",
+        "title": "Gemeinsamer Datenschutzbeauftragter des Landkreises Freising - Beschluss über die Anpassung der Zweckvereinbarung",
+        "voteId": "sr_20221219_01"
+      },
+      {
+        "number": "5",
+        "title": "Beschluss über die weitere Vorgehensweise hinsichtlich der Einführung des § 2b Umsatzsteuergesetz ab dem 01.01.2023",
+        "voteId": "sr_20221219_02"
+      },
+      {
+        "number": "6",
+        "title": "Bereitstellung einer zusätzlichen Stelle im Stellenplan 2023 für den Bereich Presse- und Öffentlichkeitsarbeit"
+      },
+      {
+        "number": "7",
+        "title": "Erlass der Haushaltssatzung",
+        "voteId": "sr_20221219_03"
+      },
+      {
+        "number": "8",
+        "title": "Neubau einer 3-gruppigen Kinderkrippe mit Wohngeschoss im OG in der Sonnensiedlung 1, 85368 Moosburg a. d. Isar - Grundsatzentscheidung über den…",
+        "voteId": "sr_20221219_04"
+      },
+      {
+        "number": "9",
+        "title": "Durchführung von Bündelausschreibungen für die kommunale Strombeschaffung",
+        "voteId": "sr_20221219_05",
+        "voteIds": [
+          "sr_20221219_05",
+          "sr_20221219_06"
+        ]
+      },
+      {
+        "number": "10",
         "title": "Anfragen",
         "type": "formal"
       }
@@ -1823,6 +4824,60 @@
       },
       {
         "number": 6,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20240201",
+    "date": "2024-02-01",
+    "type": "stadtrat",
+    "title": "2. Stadtratssitzung – Februar 2024",
+    "absent": [
+      "stanglmaier",
+      "beubl",
+      "gruebl",
+      "kaestl",
+      "linz_kilian"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der öffentlichen Niederschriften (BA-Sitzung 23.11.2023, HVFA 07.12.2023, StR 14.12.2023)",
+        "voteId": "sr_20240201_01"
+      },
+      {
+        "number": "4",
+        "title": "Vorstellung der Planungen zur Sanierung der Ladeneinheiten im Erdgeschoss des Rathauses, Stadtplatz 13",
+        "voteId": "sr_20240201_02"
+      },
+      {
+        "number": "5",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "5.1",
+        "title": "Vollzug Bundes-Immissionsschutzgesetz (BImSchG), Erteilung des gemeindl. Einvernehmens nach § 36 BauGB; Errichtung u. Betrieb e. Anlage z. zeitweiligen…",
+        "voteId": "sr_20240201_03"
+      },
+      {
+        "number": "6",
+        "title": "Beschluss über die Änderung der Satzung zur Regelung von Fragen des örtlichen Gemeindeverfassungsrechts - Ersatzleistungen für ehrenamtliche Stadträtinnen und…",
+        "voteId": "sr_20240201_04"
+      },
+      {
+        "number": "7",
         "title": "Anfragen",
         "type": "formal"
       }
@@ -5035,6 +8090,240 @@
       },
       {
         "number": 9,
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "bpu_20260413",
+    "date": "2026-04-13",
+    "type": "bpu",
+    "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss",
+    "absent": [
+      "hobmaier"
+    ],
+    "agenda": [
+      {
+        "number": "3",
+        "title": "Einziehung eines Teilabschnitts des Degernpointweg I"
+      },
+      {
+        "number": "4.1",
+        "title": "Vorbescheid - Neubau e. Mehrfamilienhauses mit 7 Wohneinh. a.d. Sternstr. 12, Moosburg, erneute Behandlung des Bauvorhabens; Schreiben des LRA, FS v. 02.03.2026 weg. Ersetzung des gemeindlichen Einvernehmens"
+      },
+      {
+        "number": "4.2",
+        "title": "Neubau e. Austragshauses mit Doppelgarage in Eck 1, Moosburg /Pfrombach"
+      },
+      {
+        "number": "4.3",
+        "title": "Anbau an ein besteh. Reiheneckhaus mit insges. 5 Wohneinh. a.d. Sperberstr. 6 g, Moosburg"
+      },
+      {
+        "number": "4.4",
+        "title": "Antrag auf isolierte Befreiung zwecks Nutzungsänder. des Dachgeschosses eines Fitnessstudios zur Wohnnutzung mit 5 WE a.d. Bahnhofstr. 50, Moosburg"
+      }
+    ]
+  },
+  {
+    "id": "sr_20260511",
+    "date": "2026-05-11",
+    "type": "stadtrat",
+    "title": "6. Stadtratssitzung – Mai 2026 (konstituierend)",
+    "absent": [],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Vereidigungen",
+        "type": "formal"
+      },
+      {
+        "number": "1.1",
+        "title": "Vereidigung des Ersten Bürgermeisters nach Art. 27 KWBG",
+        "type": "formal"
+      },
+      {
+        "number": "1.2",
+        "title": "Vereidigung der ehrenamtlichen Stadtratsmitglieder nach Art. 31 Gemeindeordnung",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Weitere Bürgermeister"
+      },
+      {
+        "number": "2.1",
+        "title": "Beschlussfassung über die Anzahl der weiteren Bürgermeister",
+        "voteId": "sr_20260511_01"
+      },
+      {
+        "number": "2.2",
+        "title": "Wahl der weiteren Bürgermeister",
+        "type": "formal"
+      },
+      {
+        "number": "2.3",
+        "title": "Vereidigung des/der gewählten weiteren Bürgermeister",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Bildung von Ausschüssen"
+      },
+      {
+        "number": "3.1",
+        "title": "Entscheidung über das Verfahren zur Berechnung der Verteilung der Ausschuss-Sitze",
+        "voteId": "sr_20260511_02"
+      },
+      {
+        "number": "3.2",
+        "title": "Entscheidung über die nummerische Besetzung der Ausschüsse",
+        "voteId": "sr_20260511_03",
+        "voteIds": [
+          "sr_20260511_03",
+          "sr_20260511_04",
+          "sr_20260511_05",
+          "sr_20260511_06"
+        ]
+      },
+      {
+        "number": "3.3",
+        "title": "Bestätigung der personellen Besetzung der Ausschüsse",
+        "voteId": "sr_20260511_07",
+        "voteIds": [
+          "sr_20260511_07",
+          "sr_20260511_08",
+          "sr_20260511_09",
+          "sr_20260511_10"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Besetzung des Aufsichtsrats der Kläranlage Moosburg GmbH"
+      },
+      {
+        "number": "4.1",
+        "title": "Entscheidung über die nummerische Besetzung des Aufsichtsrates Kläranlage",
+        "voteId": "sr_20260511_11"
+      },
+      {
+        "number": "4.2",
+        "title": "Abberufung der bisherigen Mitglieder",
+        "voteId": "sr_20260511_12"
+      },
+      {
+        "number": "4.3",
+        "title": "Beschluss über die personelle Besetzung des Aufsichtsrates",
+        "voteId": "sr_20260511_13"
+      },
+      {
+        "number": "5",
+        "title": "Beschluss über den Fortbestand der Geschäftsordnung für den Stadtrat vom 7. Juli 2020 mit Änderung vom 26.03.2026 bis zum Erlass einer neuen Geschäftsordnung",
+        "voteId": "sr_20260511_14"
+      },
+      {
+        "number": "6",
+        "title": "Bestellung der in Organen von weiteren Körperschaften, Zweckverbänden, Unternehmen, Vereinen etc. zu entsendenden Mitglieder"
+      },
+      {
+        "number": "6.1",
+        "title": "Verbandsversammlung des Wasserzweckverbandes Baumgartner Gruppe",
+        "voteId": "sr_20260511_15"
+      },
+      {
+        "number": "6.2",
+        "title": "Verbandsversammlung des Wasserzweckverbandes Berglerner Gruppe",
+        "voteId": "sr_20260511_16"
+      },
+      {
+        "number": "6.3",
+        "title": "Verbandsversammlung des Wasserzweckverbandes Isar-Vils-Gruppe",
+        "voteId": "sr_20260511_17"
+      },
+      {
+        "number": "6.4",
+        "title": "Bestellung der Mitglieder und Stellvertreter zur Verbandsversammlung der Sparkasse Freising Moosburg",
+        "voteId": "sr_20260511_18",
+        "voteIds": [
+          "sr_20260511_18",
+          "sr_20260511_19"
+        ]
+      },
+      {
+        "number": "6.5",
+        "title": "Bestellung von 2 Vertretern für den Erholungsflächenverein"
+      },
+      {
+        "number": "6.6",
+        "title": "Verbandsversammlung Zweckverband Kommunale Verkehrsüberwachung Südostbayerns (Bürgermeister)"
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "sr_20260518",
+    "date": "2026-05-18",
+    "type": "stadtrat",
+    "title": "7. Stadtratssitzung – Mai 2026",
+    "absent": [
+      "marschoun",
+      "stanglmaier"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der öffentlichen Niederschriften (StR 25.03.; BA 13.04.; StR 20.04.)",
+        "voteId": "sr_20260518_01"
+      },
+      {
+        "number": "4",
+        "title": "Neubau Kinderhaus Aich - Vorstellung und Entscheidung zur Vorentwurfsplanung -"
+      },
+      {
+        "number": "5",
+        "title": "Beschluss über die Nutzung des Schulsportplatzes an der Neustadtstraße für Schulklassencontainer durch den Landkreis Freising",
+        "voteId": "sr_20260518_02"
+      },
+      {
+        "number": "6",
+        "title": "Beschluss über den Antrag des Jazzclub Hirsch auf einen einmaligen Förderzuschuss in Höhe von 3.000 €",
+        "voteId": "sr_20260518_03"
+      },
+      {
+        "number": "7",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "7.1",
+        "title": "Neubau e. Mehrfamilienhauses mit 12 Wohneinh u. Tiefgarage a.d. Bahnhofstr. 60, Moosburg, erneute Behandlung des Bauvorhabens; Schreiben des LRA, FS v.…",
+        "voteId": "sr_20260518_04"
+      },
+      {
+        "number": "7.2",
+        "title": "Neubau eines Mehrfamilienhauses mit 8 Wohneinheiten und Tiefgarage - Sudetenlandstr. 28",
+        "voteId": "sr_20260518_05",
+        "voteIds": [
+          "sr_20260518_05",
+          "sr_20260518_06"
+        ]
+      },
+      {
+        "number": "8",
         "title": "Anfragen",
         "type": "formal"
       }
