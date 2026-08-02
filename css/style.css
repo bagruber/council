@@ -48,13 +48,13 @@ html {
 
 /* Chrome-Farben je Bereich. Rot ist der Hauptweg (Themen und Dossiers),
    das dunkle Wappenrot die Ebene darüber (Themenfelder), Gold der
-   Terminstrang, Aubergine die Menschen. Einstellungen bleiben hell —
+   Terminstrang, das Tiefschwarz die Menschen. Einstellungen bleiben hell —
    Verwaltung braucht kein Wappen. */
 :root { --chrome: var(--primary); --chrome-on: #fff; }
 body[data-chrome="feld"]          { --chrome: var(--primary-dark); }
 body[data-chrome="sitzung"]       { --chrome: #6E5A30; }
 body[data-chrome="kalender"]      { --chrome: #6E5A30; }
-body[data-chrome="gremien"]       { --chrome: #4A2B55; }
+body[data-chrome="gremien"]       { --chrome: var(--text); }
 body[data-chrome="einstellungen"] { --chrome: var(--bg); --chrome-on: var(--text); }
 
 body {
@@ -555,6 +555,17 @@ main {
 }
 
 .tl-entry:last-child { margin-bottom: 0; }
+
+/* Sprungziel aus der Kopftabelle kurz markieren, damit klar ist, wo man
+   gelandet ist. Danach zurück ins Normale — keine bleibende Auszeichnung. */
+.tl-flash { animation: tl-flash 1.6s ease-out; }
+@keyframes tl-flash {
+  from { background: var(--accent-light); box-shadow: 0 0 0 8px var(--accent-light); }
+  to   { background: transparent; box-shadow: 0 0 0 8px transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tl-flash { animation: none; }
+}
 
 /* Weggabelungen: Meilensteine, Ablehnungen, nicht-einstimmige Beschlüsse.
    Getönte Fläche statt farbigem Balken — ein Streifen am Rand würde neben der
@@ -1163,7 +1174,14 @@ main {
 
 .fig-date { color: var(--text-muted); white-space: nowrap; width: 1%; font-variant-numeric: tabular-nums; }
 .fig-value { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.figures-table a { color: inherit; text-decoration: none; }
+
+/* Zeilen mit Beschluss springen in den Zeitstrahl */
+.figures-table tr[data-vote] { cursor: pointer; }
+.figures-table tr[data-vote]:hover .fig-label { text-decoration: underline; }
+.figures-table tr[data-vote]:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
 
 .figures-note {
   margin-top: 6px;
@@ -2257,6 +2275,9 @@ main {
   font-size: 0.78rem;
   color: var(--text-muted);
   margin-left: auto;
+  text-align: right;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 .party-history {

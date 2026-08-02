@@ -65,7 +65,8 @@
           "sr_20200210_02",
           "sr_20200210_03",
           "sr_20200210_04"
-        ]
+        ],
+        "topicId": "t28"
       },
       {
         "number": "4",
@@ -1078,7 +1079,8 @@
         "voteIds": [
           "sr_20201026_05",
           "sr_20201026_06"
-        ]
+        ],
+        "topicId": "t29"
       },
       {
         "number": "7",
@@ -1325,32 +1327,38 @@
       {
         "number": "3.1",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_01"
+        "voteId": "sr_20210222_01",
+        "topicId": "t28"
       },
       {
         "number": "3.2",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_02"
+        "voteId": "sr_20210222_02",
+        "topicId": "t28"
       },
       {
         "number": "3.3",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_03"
+        "voteId": "sr_20210222_03",
+        "topicId": "t28"
       },
       {
         "number": "3.4",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_04"
+        "voteId": "sr_20210222_04",
+        "topicId": "t28"
       },
       {
         "number": "3.5",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_05"
+        "voteId": "sr_20210222_05",
+        "topicId": "t28"
       },
       {
         "number": "3.6",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_06"
+        "voteId": "sr_20210222_06",
+        "topicId": "t28"
       },
       {
         "number": "3.7",
@@ -1435,122 +1443,146 @@
       {
         "number": "3.27",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_07"
+        "voteId": "sr_20210222_07",
+        "topicId": "t28"
       },
       {
         "number": "3.28",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_08"
+        "voteId": "sr_20210222_08",
+        "topicId": "t28"
       },
       {
         "number": "3.29",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_09"
+        "voteId": "sr_20210222_09",
+        "topicId": "t28"
       },
       {
         "number": "3.30",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_10"
+        "voteId": "sr_20210222_10",
+        "topicId": "t28"
       },
       {
         "number": "3.31",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_11"
+        "voteId": "sr_20210222_11",
+        "topicId": "t28"
       },
       {
         "number": "3.32",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_12"
+        "voteId": "sr_20210222_12",
+        "topicId": "t28"
       },
       {
         "number": "3.33",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_13"
+        "voteId": "sr_20210222_13",
+        "topicId": "t28"
       },
       {
         "number": "3.34",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_14"
+        "voteId": "sr_20210222_14",
+        "topicId": "t28"
       },
       {
         "number": "3.35",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_15"
+        "voteId": "sr_20210222_15",
+        "topicId": "t28"
       },
       {
         "number": "3.36",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_16"
+        "voteId": "sr_20210222_16",
+        "topicId": "t28"
       },
       {
         "number": "3.37",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_17"
+        "voteId": "sr_20210222_17",
+        "topicId": "t28"
       },
       {
         "number": "3.38",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_18"
+        "voteId": "sr_20210222_18",
+        "topicId": "t28"
       },
       {
         "number": "3.39",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_19"
+        "voteId": "sr_20210222_19",
+        "topicId": "t28"
       },
       {
         "number": "3.40",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_20"
+        "voteId": "sr_20210222_20",
+        "topicId": "t28"
       },
       {
         "number": "3.41",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_21"
+        "voteId": "sr_20210222_21",
+        "topicId": "t28"
       },
       {
         "number": "3.42",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u. Öffent- 2020/0337…",
-        "voteId": "sr_20210222_22"
+        "voteId": "sr_20210222_22",
+        "topicId": "t28"
       },
       {
         "number": "3.43",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u. Öffent- 2020/0342…",
-        "voteId": "sr_20210222_23"
+        "voteId": "sr_20210222_23",
+        "topicId": "t28"
       },
       {
         "number": "3.44",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u. Öffent- 2020/0347…",
-        "voteId": "sr_20210222_24"
+        "voteId": "sr_20210222_24",
+        "topicId": "t28"
       },
       {
         "number": "3.45",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_25"
+        "voteId": "sr_20210222_25",
+        "topicId": "t28"
       },
       {
         "number": "3.46",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_26"
+        "voteId": "sr_20210222_26",
+        "topicId": "t28"
       },
       {
         "number": "3.47",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_27"
+        "voteId": "sr_20210222_27",
+        "topicId": "t28"
       },
       {
         "number": "3.48",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_28"
+        "voteId": "sr_20210222_28",
+        "topicId": "t28"
       },
       {
         "number": "3.49",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_29"
+        "voteId": "sr_20210222_29",
+        "topicId": "t28"
       },
       {
         "number": "3.50",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_30"
+        "voteId": "sr_20210222_30",
+        "topicId": "t28"
       },
       {
         "number": "3.51",
@@ -1583,37 +1615,44 @@
       {
         "number": "3.58",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_31"
+        "voteId": "sr_20210222_31",
+        "topicId": "t28"
       },
       {
         "number": "3.59",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_32"
+        "voteId": "sr_20210222_32",
+        "topicId": "t28"
       },
       {
         "number": "3.60",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_33"
+        "voteId": "sr_20210222_33",
+        "topicId": "t28"
       },
       {
         "number": "3.61",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_34"
+        "voteId": "sr_20210222_34",
+        "topicId": "t28"
       },
       {
         "number": "3.62",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_35"
+        "voteId": "sr_20210222_35",
+        "topicId": "t28"
       },
       {
         "number": "3.63",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_36"
+        "voteId": "sr_20210222_36",
+        "topicId": "t28"
       },
       {
         "number": "3.64",
         "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans; Beschlussfass. über die im Rahmen der Behörden- u.…",
-        "voteId": "sr_20210222_37"
+        "voteId": "sr_20210222_37",
+        "topicId": "t28"
       },
       {
         "number": "3.65",
@@ -2225,7 +2264,8 @@
           "sr_20210906_02",
           "sr_20210906_03",
           "sr_20210906_04"
-        ]
+        ],
+        "topicId": "t28"
       },
       {
         "number": "5",
@@ -2273,7 +2313,8 @@
       {
         "number": "3",
         "title": "Durchführung eines Bürgerentscheides \"Gewerbeflächen Pfrombach\" (sh. StR 06.09.2021) - Festlegung des Termins und Beschlussfassung über den Stimmzettel",
-        "voteId": "sr_20211011_01"
+        "voteId": "sr_20211011_01",
+        "topicId": "t28"
       },
       {
         "number": "4",
@@ -6303,7 +6344,8 @@
       {
         "number": "7",
         "title": "Bauleitplanung Nr. 70 „Containerbau ELA“ – Satzungsbeschluss",
-        "voteId": "sr_20241209_05"
+        "voteId": "sr_20241209_05",
+        "topicId": "t28"
       },
       {
         "number": "8.1",
