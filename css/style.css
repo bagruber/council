@@ -5,10 +5,12 @@
 }
 
 :root {
-  /* Moosburg Design System — Wappenrot, Gold, Creme */
-  --primary-dark: #6D0818;
-  --primary: #C8102E;
-  --primary-bright: #A50D24;   /* Hover: dunkler, nicht heller */
+  /* Moosburg Design System — Wappenrot, Gold, Creme.
+     Als Flaechen- und Textfarbe laeuft die App auf dem gedeckten red-700;
+     das reine Wappenrot bleibt punktuellen Markierungen vorbehalten. */
+  --primary-dark: #6D0818;     /* red-900: Ueberschriften, Hover, dunkle Baender */
+  --primary: #A50D24;          /* red-700: Links, Flaechen — gedeckt statt grell */
+  --primary-bright: #C8102E;   /* red-500: das reine Wappenrot, nur punktuell */
   --accent: #B8964E;
   --accent-text: #6E5A30;
   --accent-light: #E8D5A3;
@@ -447,6 +449,28 @@ main {
 
 .topic-header .topic-tags { margin-top: 18px; }
 
+/* Feldkopf: dunkles Wappenrot als Band. Der Rainbow-Streifen schliesst es
+   nach unten ab, wie im Moosburg-System unter jedem Seitenkopf. */
+.topic-header--field {
+  position: relative;
+  background: var(--primary-dark);
+  color: var(--bg);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 30px 26px 0;
+  overflow: hidden;
+}
+.topic-header--field h1 { color: var(--bg); margin-bottom: 26px; }
+.topic-header--field .dossier-meta { color: rgba(250,247,242,0.66); }
+.topic-header--field .dossier-type { color: var(--accent-light); }
+.topic-header--field .dossier-meta > * + *::before { color: rgba(250,247,242,0.3); }
+.topic-header--field .rainbow-stripe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .topic-header .topic-summary { color: var(--text-muted); font-size: 1rem; }
 .topic-header .topic-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
 
@@ -462,16 +486,19 @@ main {
 /* -- Timeline -- */
 
 .timeline {
+  /* Eine einzige Groesse steuert Achse und Marker — vorher waren beide
+     unabhaengig gesetzt und lagen 1,5 px auseinander. */
+  --rail: 11px;
   position: relative;
-  padding-left: 36px;
+  padding-left: 34px;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  left: 13px;
-  top: 8px;
-  bottom: 8px;
+  left: calc(var(--rail) - 0.5px);
+  top: 10px;
+  bottom: 10px;
   width: 1px;
   background: var(--border);
 }
@@ -500,30 +527,32 @@ main {
 }
 /* Der Punkt behaelt seine Bedeutungsfarbe und bekommt nur einen Ring —
    sonst wuerde die Hervorhebung die Semantik ueberschreiben. */
-.tl-key .tl-dot { box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px currentColor; }
+.tl-key .tl-dot .icon { font-size: 19px; stroke-width: 2.6; }
 
+/* Der Marker sitzt auf der Achse und unterbricht sie durch seine Flaeche.
+   Kein Rahmen, kein Kreis: das Zeichen selbst ist die Markierung. Ein Haken
+   in einem Kreis in einem Kreis war eine Verpackung zu viel. */
 .tl-dot {
   position: absolute;
-  left: -36px;
-  top: 4px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--surface);
-  border: 2px solid var(--border);
+  left: calc(var(--rail) - 34px);
+  top: 2px;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--text-muted);
   z-index: 2;
 }
 
-.tl-dot .icon { font-size: 13px; }
+.tl-dot .icon { font-size: 15px; stroke-width: 2.25; }
 
-.tl-dot.proposal       { border-color: var(--info);   color: var(--info); }
-.tl-dot.committee      { border-color: var(--accent);  color: var(--accent-text); }
-.tl-dot.milestone      { border-color: var(--teal);    color: var(--teal); }
-.tl-dot.vote-approved  { border-color: var(--yes);     color: var(--yes); }
-.tl-dot.vote-rejected  { border-color: var(--no);      color: var(--no); }
+.tl-dot.proposal       { color: var(--info); }
+.tl-dot.committee      { color: var(--accent-text); }
+.tl-dot.milestone      { color: var(--teal); }
+.tl-dot.vote-approved  { color: var(--yes); }
+.tl-dot.vote-rejected  { color: var(--no); }
 
 .tl-date { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 2px; }
 .tl-entry h3 { font-size: 1rem; margin-bottom: 4px; }

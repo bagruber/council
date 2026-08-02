@@ -447,13 +447,18 @@ const SHOW_PRONOUNS = true;
       .filter(v => voteInField(v, fieldId))
       .sort((a, b) => b.date.localeCompare(a.date));
 
+    // Feldseiten tragen das dunkle Wappenrot, Dossiers den hellen Grund.
+    // So ist auf einen Blick klar, ob man in einer Übersicht steht oder in
+    // einer Sache — ohne dass es irgendwo geschrieben stehen muss.
     const header = document.createElement("div");
-    header.className = "topic-header";
+    header.className = "topic-header topic-header--field";
     header.innerHTML = `
-      <div class="dossier-meta"><span class="dossier-type" style="color:${field.color}">
-        <svg class="icon"><use href="#i-${field.icon}"/></svg>Feld</span>
-        <span class="dossier-count">${dossiers.length} Dossiers · ${loose.length} weitere Beschlüsse</span></div>
-      <h1>${field.name}</h1>`;
+      <div class="dossier-meta">
+        <span class="dossier-type"><svg class="icon"><use href="#i-${field.icon}"/></svg>Themenfeld</span>
+        <span class="dossier-count">${dossiers.length} Dossiers · ${loose.length} einzelne Beschlüsse</span>
+      </div>
+      <h1>${field.name}</h1>
+      <div class="rainbow-stripe" aria-hidden="true">${"<span></span>".repeat(9)}</div>`;
     main.appendChild(header);
 
     if (dossiers.length) {
@@ -1607,7 +1612,11 @@ const SHOW_PRONOUNS = true;
       const badges = document.createElement("div");
       badges.className = "identity-badges";
       const labels = { queer: "LGBTQ+", migrant: "Migrantisch", flinta: "FLINTA", disability: "Barrierefrei" };
-      const badgeIcons = { queer: "favorite", migrant: "public", flinta: "female", disability: "accessible" };
+      // Die Namen stammten noch aus der Material-Zeit und liefen ins Leere.
+      // FLINTA bewusst nicht mit dem Venus-Zeichen: es umfasst auch inter,
+      // nicht-binäre, trans und agender Personen.
+      const badgeIcons = { queer: "queer", migrant: "migrant",
+                           flinta: "flinta", disability: "disability" };
       profile.identity.forEach(id => {
         const b = document.createElement("span");
         b.className = "id-badge " + id;
@@ -1698,32 +1707,20 @@ const SHOW_PRONOUNS = true;
 
     if (profile.titles) {
       profile.titles.forEach(t => {
-        const icon = t.title.includes("rgermeister") ? "star" : "badge";
+        // Referent:innen vertreten ein Sachgebiet nach außen — das Megafon
+        // trifft das besser als ein Orden.
+        const icon = t.title.includes("rgermeister") ? "star"
+                   : /Referent|Beauftragt/i.test(t.title) ? "referent"
+                   : "badge";
         rolesSection.appendChild(makeRoleRow(icon, t.title, t.from, t.to));
       });
     }
 
-    // committees from seats data (member or substitute)
-    bodies.forEach(b => {
-      if (b.type === "plenum" || !b.seats) return;
-      const inSeats = b.seats.some(s => s.member === m.id);
-      const isSub = b.seats.some(s => s.sub === m.id);
-      const isChair = b.chair === m.id;
-      const isChairSub = b.chairSub === m.id;
-      const isVice = b.vicechairs && b.vicechairs.some(v => v.member === m.id);
-      const isViceSub = b.vicechairs && b.vicechairs.some(v => v.sub === m.id);
-      if (inSeats || isSub || isChair || isChairSub || isVice || isViceSub) {
-        const role = isChair ? " (Vorsitz)" : isVice ? " (Stellv. Vorsitz)" : "";
-        rolesSection.appendChild(makeRoleRow("groups", b.name + role, m.from, m.to));
-      }
-      // past memberships
-      if (b.pastSeats) {
-        b.pastSeats.forEach(ps => {
-          if (ps.member !== m.id) return;
-          const suffix = ps.role ? ` (${ps.role})` : ps.sub === true ? " (Stellv.)" : "";
-          rolesSection.appendChild(makeRoleRow("history", b.name + suffix, ps.from || m.from, ps.to));
-        });
-      }
+    // Gremien. Die Ausschüsse liegen in `seatConfigs` je Wahlperiode — die
+    // alte Fassung las nur ein `seats` auf oberster Ebene und fand deshalb
+    // ausschließlich die Gremien ohne Perioden (Aufsichtsrat, Verbandsrat).
+    committeeRoles(m).forEach(r => {
+      rolesSection.appendChild(makeRoleRow(r.icon, r.label, r.from, r.to));
     });
 
     wrap.appendChild(rolesSection);
@@ -1959,6 +1956,60 @@ const SHOW_PRONOUNS = true;
     };
     a.innerHTML = icons[type] || '<svg class="icon"><use href="#i-link"/></svg>';
     return a;
+  }
+
+  // Alle Gremiensitze einer Person, über alle Wahlperioden hinweg.
+  // Ein Sitz kann direkt gesetzt sein (`member`), als Vertretung (`sub`) oder
+  // über `occupants`, wenn er im Lauf der Periode weitergereicht wurde.
+  function committeeRoles(m) {
+    const out = [];
+    bodies.forEach(b => {
+      if (b.type === "plenum") return;
+      const configs = (b.seatConfigs && b.seatConfigs.length) ? b.seatConfigs : [b];
+      configs.forEach(cfg => {
+        let role = null, from = cfg.from || m.from, to = cfg.to || m.to;
+
+        if (cfg.chair === m.id)          role = "Vorsitz";
+        else if (cfg.chairSub === m.id)  role = "Vorsitz, Vertretung";
+        else if ((cfg.vicechairs || []).some(v => v.member === m.id))
+          role = "Stellv. Vorsitz";
+        else if ((cfg.vicechairs || []).some(v => v.sub === m.id))
+          role = "Stellv. Vorsitz, Vertretung";
+        else {
+          for (const s of cfg.seats || []) {
+            if (s.member === m.id) { role = ""; break; }
+            if (s.sub === m.id)    { role = "Vertretung"; break; }
+            const occ = (s.occupants || []).find(o => o.member === m.id);
+            if (occ) {
+              role = "";
+              if (occ.from) from = occ.from;
+              if (occ.to)   to = occ.to;
+              break;
+            }
+          }
+        }
+        if (role === null) return;
+        // Der Sitz kann nicht vor dem Mandat beginnen und nicht danach enden.
+        const span = (m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }])
+          .find(p => (!p.to || !from || p.to >= from) && (!to || !p.from || p.from <= to));
+        if (span) {
+          if (span.from && (!from || span.from > from)) from = span.from;
+          if (span.to   && (!to   || span.to   < to))   to   = span.to;
+        }
+        const icon = role.startsWith("Vorsitz") || role.startsWith("Stellv.")
+          ? "vorsitz"
+          : b.type === "sonstige" ? "aufsichtsrat" : "ausschuss";
+        out.push({ icon, label: b.name + (role ? ` (${role})` : ""), from, to });
+      });
+
+      (b.pastSeats || []).forEach(ps => {
+        if (ps.member !== m.id) return;
+        const suffix = ps.role ? ` (${ps.role})` : ps.sub === true ? " (Vertretung)" : "";
+        out.push({ icon: "history", label: b.name + suffix,
+                   from: ps.from || m.from, to: ps.to });
+      });
+    });
+    return out;
   }
 
   function makeRoleRow(icon, text, from, to) {
