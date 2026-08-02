@@ -67,6 +67,8 @@ const Council = (() => {
   //   'excluded'                       — anwesend, aber wegen persönlicher
   //                                       Beteiligung (Art. 49 GO) ausgeschlossen
   //   'abstained'                      — anwesend, enthalten
+  //   'restricted'                     — anwesend, aber nicht stimmberechtigt
+  //                                      (neu gewählt, Niederschrift nicht miterlebt)
   //   'unknown'                        — anonymous vote, status not derivable
   //   null                             — member was not on council that day
   //
@@ -91,8 +93,9 @@ const Council = (() => {
     // Vor der Sitzungsabwesenheit prüfen: wer befangen ist, war ja da.
     const ex = (vote.excluded || []).find(e => e.member === memberId);
     if (ex) {
-      if (ex.reason === "beteiligung") return "excluded";
-      if (ex.reason === "enthaltung")   return "abstained";
+      if (ex.reason === "beteiligung")           return "excluded";
+      if (ex.reason === "enthaltung")            return "abstained";
+      if (ex.reason === "nicht_stimmberechtigt") return "restricted";
       return "absent";                  // kurzfristig abwesend
     }
 
@@ -139,7 +142,7 @@ const Council = (() => {
     if (!status) return "";
     const base = { yes: "Ja", no: "Nein", absent: "–",
                    "yes-inferred": "Ja", "no-inferred": "Nein",
-                   excluded: "bef.", abstained: "enth.",
+                   excluded: "bef.", abstained: "enth.", restricted: "n.b.",
                    unknown: "?" }[status] || "?";
     return withMarker && status.endsWith("-inferred") ? base + "*" : base;
   }
@@ -151,6 +154,7 @@ const Council = (() => {
              "no-inferred": "Nein (aus Anwesenheit abgeleitet)",
              excluded: "Wegen persönlicher Beteiligung ausgeschlossen (Art. 49 GO)",
              abstained: "Enthalten",
+             restricted: "Nicht stimmberechtigt — neu gewählt, bei der Sitzung nicht dabei",
              unknown: "Nicht überliefert" }[status] || "Nicht überliefert";
   }
 
