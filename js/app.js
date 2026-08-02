@@ -389,6 +389,18 @@ const SHOW_PRONOUNS = true;
 
   // -- Topic detail --
 
+  // Pfad statt Zurück-Pfeil: er sagt nicht nur, wo es zurückgeht, sondern
+  // auch, wo man gerade ist. Der letzte Eintrag ist die aktuelle Seite.
+  function breadcrumb(items) {
+    const nav = document.createElement("nav");
+    nav.className = "crumbs";
+    nav.setAttribute("aria-label", "Pfad");
+    nav.innerHTML = items.filter(Boolean)
+      .map(c => `<a href="${c.href}">${c.label}</a>`)
+      .join('<span aria-hidden="true">›</span>');
+    return nav;
+  }
+
   const tlIcons = {
     proposal: "description",
     committee: "groups",
@@ -426,11 +438,7 @@ const SHOW_PRONOUNS = true;
     const field = tagMap[fieldId];
     if (!field) { main.innerHTML = "<p>Feld nicht gefunden.</p>"; return; }
 
-    const back = document.createElement("a");
-    back.className = "back-link";
-    back.href = "#/";
-    back.innerHTML = '<svg class="icon"><use href="#i-arrow_back"/></svg> Übersicht';
-    main.appendChild(back);
+    main.appendChild(breadcrumb([{ label: "Themen", href: "#/" }]));
 
     const dossiers = topics.filter(t => t.field === fieldId || (t.tags || []).includes(fieldId));
     const ids = new Set(dossiers.map(t => t.id));
@@ -556,14 +564,12 @@ const SHOW_PRONOUNS = true;
     const topic = topicMap[id];
     if (!topic) { main.innerHTML = "<p>Thema nicht gefunden.</p>"; return; }
 
-    const back = document.createElement("a");
-    back.className = "back-link";
-    back.href = "#/";
-    back.innerHTML = '<svg class="icon"><use href="#i-arrow_back"/></svg> \u00dcbersicht';
-    back.addEventListener("click", e => {
-      if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
-    });
-    main.appendChild(back);
+    main.appendChild(breadcrumb([
+      { label: "Themen", href: "#/" },
+      topic.field && tagMap[topic.field]
+        ? { label: tagMap[topic.field].name, href: "#/feld/" + topic.field }
+        : null,
+    ]));
 
     const header = document.createElement("div");
     header.className = "topic-header";
@@ -1118,6 +1124,7 @@ const SHOW_PRONOUNS = true;
       </button>
       <h4>${vote.title}${resultTag}</h4>
       <div class="vote-text">${vote.text}</div>
+      ${vote.note ? `<p class="vote-note">${vote.note}</p>` : ""}
       <div class="vote-legend">
         <span><span class="legend-dot yes"></span> Ja</span>
         <span><span class="legend-dot no"></span> Nein</span>
@@ -1798,7 +1805,8 @@ const SHOW_PRONOUNS = true;
     // Befangen oder enthalten heißt: anwesend, aber keine Stimme abgegeben.
     // Sie landen in der Nicht-abgestimmt-Spalte — sonst würden sie als Nein
     // gezählt und das Stimmbild verfälschen.
-    if (base === "absent" || base === "excluded" || base === "abstained") {
+    if (base === "absent" || base === "excluded" || base === "abstained"
+        || base === "restricted") {
       return unanimous ? "absU" : "absS";
     }
     if (base === "unknown") return "sUnknown";
@@ -2007,7 +2015,8 @@ const SHOW_PRONOUNS = true;
         const isUnanimous = Council.isUnanimous(vote);
         const base = status.replace("-inferred", "");
         const chipClass = ({ yes: "ja", no: "nein", absent: "abwesend",
-                            excluded: "sonder", abstained: "sonder" }[base] || "unknown")
+                            excluded: "sonder", abstained: "sonder",
+                            restricted: "sonder" }[base] || "unknown")
                         + (isUnanimous ? " inferred" : "");
         const chipLabel = Council.voteStatusLabel(status);
 
