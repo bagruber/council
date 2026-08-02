@@ -51,8 +51,23 @@ const MAP = {
   // Timeline
   description:  'file-text',
   flag:         'flag',
-  cancel:       'circle-x',
-  check_circle: 'circle-check',
+  // Timeline-Marker sitzen auf der Achse: blanke Zeichen, keine Kreise —
+  // sonst steht ein Kreis im Kreis.
+  cancel:       'x',
+  check_circle: 'check',
+  // Identitaets-Chips
+  queer:      'rainbow',
+  flinta:     'transgender',
+  migrant:    'earth',
+  disability: 'accessibility',
+  // Funktionen im Rat
+  referent:   'megaphone',
+  ausschuss:  'users-round',
+  vorsitz:    'gavel',
+  aufsichtsrat: 'briefcase',
+  history:    'clock',
+  star:       'star',
+  badge:      'award',
 };
 
 const attrs = o => Object.entries(o)
