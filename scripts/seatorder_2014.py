@@ -1,14 +1,15 @@
-"""Sitzordnung 2014-2020 nach dem Muster von 2020 und zwei Fraktionswechsel.
+"""Sitzordnung 2014-2020 nach dem Muster von 2020 und drei Fraktionswechsel.
 
 Das Halbrund fuellt sich von rechts nach links: Index 0 sitzt am rechten Rand,
 der letzte Sitz einer Reihe am linken. Bei 24 Sitzen sind es 10 innen und 14
-aussen. Die Fraktionsfolge von rechts nach links ist dieselbe wie 2020:
-CSU, SPD, Splitter, kleine Gruppe, FW, Gruene.
+aussen. Fraktionsfolge von rechts nach links: CSU, FW, SPD, OeDP, Linke, UMB,
+Gruene.
 
-Die Sitze folgen der Wahl von 2014. Hadersdorfer sass als FW-Mitglied, Wagner
-fuer die UMB — beide wechselten mitten in der Periode die Fraktion, behielten
-aber ihren Platz. Im Halbrund wechselt deshalb ab dem jeweiligen Datum die
-Farbe des Sitzes, nicht seine Position.
+Die Sitze folgen der Wahl von 2014; wer die Fraktion wechselt, behaelt seinen
+Platz. Damit das nicht als Fehler gelesen wird, sitzen die beiden Wechsler am
+Rand ihres Blocks zur neuen Fraktion hin: Hadersdorfer am FW-Rand zur CSU,
+Wagner am UMB-Rand zu den Gruenen. Ab dem Wechseldatum waechst der Nachbarblock
+optisch um einen Sitz, statt dass ein fremder Punkt mitten im Block steht.
 """
 import json, os
 
@@ -17,29 +18,31 @@ DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
 # rechts → links, innere Reihe (10) dann aeussere Reihe (14)
 INNER = [
     'heinz', 'kerscher', 'tristl',                            # CSU
+    'hadersdorfer', 'dollinger',                              # FW (Hadersdorfer ab Okt 2017 CSU)
     'beubl',                                                  # SPD
-    [('zitzlsberger', None, '2017-12-11'), ('john', '2017-12-11', None)],   # LINKE
-    'koehler',                                                # UMB
-    'hadersdorfer', 'dollinger',                              # FW (Hadersdorfer ab 2017 CSU)
+    [('zitzlsberger', None, '2017-12-11'), ('john', '2017-12-11', None)],   # Linke
+    'wagner',                                                 # UMB (ab Feb 2017 Grüne)
     'bauer', 'stanglmaier',                                   # Grüne
 ]
 OUTER = [
     'linz_karin', 'mueller_a', 'weber',                       # CSU
     [('schaffer', None, '2018-05-14'), ('banner', '2018-05-14', None)],     # CSU
+    'kieninger', 'reif',                                      # FW
+    [('groeneveld', None, '2015-12-21'), ('grundner', '2016-01-11', None)], # FW
     'marschoun', 'pschorr',                                   # SPD
     'kaestl',                                                 # ÖDP
-    [('hilberg', None, '2018-11-05'), ('haberl', '2018-11-23', None)],      # UMB → CSU
-    'wagner',                                                 # UMB (ab 2017 Grüne)
-    [('groeneveld', None, '2015-12-21'), ('grundner', '2016-01-11', None)], # FW
-    'kieninger', 'reif',                                      # FW
+    'koehler',                                                # UMB
+    [('hilberg', None, '2018-11-05'), ('haberl', '2018-11-23', None)],      # UMB
     'altenbeck', 'becher_j',                                  # Grüne
 ]
 
-# Die Bürgerinfo führt beide unter ihrer heutigen Fraktion; gewechselt haben sie
-# mitten in der Periode.
+# Die Bürgerinfo führt alle drei unter ihrer heutigen Fraktion. Hadersdorfer und
+# Wagner wechselten mitten in der Periode, Haberl erst mit der Wahl 2020 — er
+# rückte für Hilberg auf einen UMB-Sitz nach und blieb es bis zum Periodenende.
 PARTY_SWITCH = {
-    'hadersdorfer': ('fw', 'csu', '2017-10-06'),
+    'hadersdorfer': ('fw',  'csu',    '2017-10-06'),
     'wagner':       ('umb', 'gruene', '2017-02-15'),
+    'haberl':       ('umb', 'csu',    '2020-05-01'),
 }
 
 
@@ -66,7 +69,7 @@ def main():
     by = {m['id']: m for m in data['members']}
     for mid, (old, new, when) in PARTY_SWITCH.items():
         by[mid]['partyHistory'] = [
-            {'party': old, 'from': '2014-05-01', 'to': when},
+            {'party': old, 'from': by[mid]['from'], 'to': when},
             {'party': new, 'from': when, 'to': None},
         ]
 

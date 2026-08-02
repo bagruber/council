@@ -313,7 +313,19 @@
       "to": null,
       "profile": {
         "pronouns": "er/ihn"
-      }
+      },
+      "partyHistory": [
+        {
+          "party": "umb",
+          "from": "2018-11-23",
+          "to": "2020-05-01"
+        },
+        {
+          "party": "csu",
+          "from": "2020-05-01",
+          "to": null
+        }
+      ]
     },
     {
       "id": "kehlringer",
@@ -1368,6 +1380,20 @@
             {
               "occupants": [
                 {
+                  "member": "hadersdorfer"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "dollinger"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
                   "member": "beubl"
                 }
               ]
@@ -1387,21 +1413,7 @@
             {
               "occupants": [
                 {
-                  "member": "koehler"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "hadersdorfer"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "dollinger"
+                  "member": "wagner"
                 }
               ]
             },
@@ -1455,6 +1467,32 @@
             {
               "occupants": [
                 {
+                  "member": "kieninger"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "reif"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "groeneveld",
+                  "to": "2015-12-21"
+                },
+                {
+                  "member": "grundner",
+                  "from": "2016-01-11"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
                   "member": "marschoun"
                 }
               ]
@@ -1476,45 +1514,19 @@
             {
               "occupants": [
                 {
+                  "member": "koehler"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
                   "member": "hilberg",
                   "to": "2018-11-05"
                 },
                 {
                   "member": "haberl",
                   "from": "2018-11-23"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "wagner"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "groeneveld",
-                  "to": "2015-12-21"
-                },
-                {
-                  "member": "grundner",
-                  "from": "2016-01-11"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "kieninger"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "reif"
                 }
               ]
             },
