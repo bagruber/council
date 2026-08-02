@@ -516,12 +516,22 @@ const VoteVis = (() => {
     return m.name || `${m.firstName || ""} ${m.lastName || ""}`.trim();
   }
 
+  // Fraktionswechsel behalten den Sitz, nicht die Farbe. Hadersdorfer sass ab
+  // Oktober 2017 fuer die CSU auf einem FW-Platz, Wagner ab Februar 2017 fuer
+  // die Gruenen auf einem UMB-Platz.
+  function partyAt(m, date) {
+    const h = m.partyHistory;
+    if (!h || !h.length || !date) return m.party;
+    const at = h.find(p => (p.from || "0") <= date && (!p.to || p.to > date));
+    return at ? at.party : m.party;
+  }
+
   function makeEntry(m, voteVal, partyMap, date) {
     return {
       id:    m.id,
       name:  memberLabel(m),
       title: m.title || "",
-      party: partyMap[m.party],
+      party: partyMap[partyAt(m, date)],
       vote:  voteVal || "unknown",
       hasStar: m.role === "mayor" || isViceMayorAt(m, date),
     };

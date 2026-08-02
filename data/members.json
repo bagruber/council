@@ -225,12 +225,12 @@
       "partyHistory": [
         {
           "party": "fw",
-          "from": "2014-05",
-          "to": "2017-01"
+          "from": "2014-05-01",
+          "to": "2017-10-06"
         },
         {
           "party": "csu",
-          "from": "2017-01",
+          "from": "2017-10-06",
           "to": null
         }
       ],
@@ -417,11 +417,12 @@
       "partyHistory": [
         {
           "party": "umb",
-          "to": "2017-01"
+          "from": "2014-05-01",
+          "to": "2017-02-15"
         },
         {
           "party": "gruene",
-          "from": "2017-01",
+          "from": "2017-02-15",
           "to": null
         }
       ],
@@ -1346,6 +1347,34 @@
             {
               "occupants": [
                 {
+                  "member": "heinz"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "kerscher"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "tristl"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "beubl"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
                   "member": "zitzlsberger",
                   "to": "2017-12-11"
                 },
@@ -1358,14 +1387,21 @@
             {
               "occupants": [
                 {
-                  "member": "stanglmaier"
+                  "member": "koehler"
                 }
               ]
             },
             {
               "occupants": [
                 {
-                  "member": "altenbeck"
+                  "member": "hadersdorfer"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "dollinger"
                 }
               ]
             },
@@ -1379,28 +1415,40 @@
             {
               "occupants": [
                 {
-                  "member": "becher_j"
+                  "member": "stanglmaier"
                 }
               ]
             },
             {
               "occupants": [
                 {
-                  "member": "wagner"
+                  "member": "linz_karin"
                 }
               ]
             },
             {
               "occupants": [
                 {
-                  "member": "kaestl"
+                  "member": "mueller_a"
                 }
               ]
             },
             {
               "occupants": [
                 {
-                  "member": "beubl"
+                  "member": "weber"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
+                  "member": "schaffer",
+                  "to": "2018-05-14"
+                },
+                {
+                  "member": "banner",
+                  "from": "2018-05-14"
                 }
               ]
             },
@@ -1421,6 +1469,13 @@
             {
               "occupants": [
                 {
+                  "member": "kaestl"
+                }
+              ]
+            },
+            {
+              "occupants": [
+                {
                   "member": "hilberg",
                   "to": "2018-11-05"
                 },
@@ -1433,14 +1488,7 @@
             {
               "occupants": [
                 {
-                  "member": "koehler"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "dollinger"
+                  "member": "wagner"
                 }
               ]
             },
@@ -1473,61 +1521,14 @@
             {
               "occupants": [
                 {
-                  "member": "hadersdorfer"
+                  "member": "altenbeck"
                 }
               ]
             },
             {
               "occupants": [
                 {
-                  "member": "heinz"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "kerscher"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "linz_karin"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "mueller_a"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "tristl"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "weber"
-                }
-              ]
-            },
-            {
-              "occupants": [
-                {
-                  "member": "schaffer",
-                  "to": "2018-05-14"
-                },
-                {
-                  "member": "banner",
-                  "from": "2018-05-14"
+                  "member": "becher_j"
                 }
               ]
             }
