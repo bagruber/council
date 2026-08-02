@@ -708,6 +708,29 @@ main {
   border-top: 1px solid var(--border);
 }
 
+.legend-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 20px 0 6px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* Die vier Herkunftsstufen, absteigend belastbar — die Nummerierung trägt
+   hier Bedeutung und ist keine Dekoration. */
+.legend-sources {
+  margin: 0 0 12px 18px;
+  padding: 0;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.legend-sources li { margin-bottom: 7px; }
+.legend-sources strong { color: var(--text); font-weight: 600; }
+
 /* ─── Voting statistics card on member profile ─── */
 .voting-stats {
   background: var(--surface);
@@ -919,6 +942,22 @@ main {
   margin-bottom: 10px;
   font-size: 0.8rem;
 }
+
+/* Herkunft der Einzelstimmen — Fußnote, nicht Auszeichnung. */
+.vote-source {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.vote-source a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--border);
+}
+
+.vote-source a:hover { color: var(--primary); }
 
 .vote-legend span {
   display: flex;
