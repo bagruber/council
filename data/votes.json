@@ -340,8 +340,7 @@
         "member": "wagner",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20200210_18",
@@ -384,8 +383,7 @@
         "member": "wagner",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20200210_20",
@@ -402,8 +400,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200210_21",
@@ -426,8 +423,7 @@
         "member": "koehler",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20200210_22",
@@ -444,8 +440,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200210_23",
@@ -462,8 +457,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200210_24",
@@ -879,8 +873,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200504_13",
@@ -897,8 +890,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200504_14",
@@ -1160,8 +1152,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200525_06",
@@ -1178,8 +1169,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200525_07",
@@ -1196,8 +1186,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200525_08",
@@ -1229,8 +1218,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200525_10",
@@ -2199,8 +2187,7 @@
         "member": "wittmann",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20200706_12",
@@ -2217,8 +2204,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200706_13",
@@ -2555,8 +2541,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200722_02",
@@ -2580,7 +2565,8 @@
         "reason": "beteiligung"
       }
     ],
-    "inferable": false
+    "inferable": false,
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden."
   },
   {
     "id": "sr_20200722_03",
@@ -2746,8 +2732,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20200914_02",
@@ -2770,8 +2755,7 @@
         "member": "fincke",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20200914_03",
@@ -2919,8 +2903,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201005_02",
@@ -2981,8 +2964,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201005_04",
@@ -2999,8 +2981,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201005_05",
@@ -3017,8 +2998,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201005_06",
@@ -3035,8 +3015,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201026_01",
@@ -3053,8 +3032,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201026_02",
@@ -3071,8 +3049,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201026_03",
@@ -3265,8 +3242,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201026_10",
@@ -3283,8 +3259,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201214_01",
@@ -3301,8 +3276,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201214_02",
@@ -3319,8 +3293,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20201214_03",
@@ -5025,8 +4998,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20210322_02",
@@ -5049,8 +5021,7 @@
         "member": "beibl",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20210322_03",
@@ -5096,8 +5067,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20210412_02",
@@ -5230,8 +5200,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20210426_02",
@@ -5796,8 +5765,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20210621_05",
@@ -6156,7 +6124,8 @@
         "reason": "beteiligung"
       }
     ],
-    "inferable": false
+    "inferable": false,
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden."
   },
   {
     "id": "sr_20210726_04",
@@ -6537,8 +6506,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20211011_02",
@@ -6555,8 +6523,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20211011_03",
@@ -6579,8 +6546,7 @@
         "member": "heinz",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20211011_04",
@@ -6597,8 +6563,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20211011_05",
@@ -6649,8 +6614,7 @@
         "member": "wittmann",
         "reason": "beteiligung"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20211025_02",
@@ -6667,8 +6631,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20211025_03",
@@ -6685,8 +6648,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20211025_04",
@@ -6718,8 +6680,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20211025_06",
@@ -6742,8 +6703,7 @@
         "member": "kieninger",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20211025_07",
@@ -7382,8 +7342,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20211213_02",
@@ -7742,8 +7701,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20220905_02",
@@ -7964,8 +7922,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20220919_02",
@@ -7982,8 +7939,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20220919_03",
@@ -8132,8 +8088,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20221010_02",
@@ -8150,8 +8105,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20221010_03",
@@ -8168,8 +8122,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20221010_04",
@@ -8244,8 +8197,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20221024_03",
@@ -8276,8 +8228,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20221024_05",
@@ -8309,8 +8260,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20221024_07",
@@ -8355,8 +8305,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20221024_10",
@@ -9131,8 +9080,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20221212_14",
@@ -9237,8 +9185,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20221219_02",
@@ -9255,8 +9202,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20221219_03",
@@ -10669,8 +10615,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230327_03",
@@ -10741,8 +10686,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230417_01",
@@ -10861,8 +10805,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230424_01",
@@ -11029,8 +10972,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230522_01",
@@ -11047,8 +10989,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230522_02",
@@ -11198,8 +11139,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230522_07",
@@ -11245,8 +11185,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230522_10",
@@ -11263,8 +11202,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230522_11",
@@ -11281,8 +11219,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230612_01",
@@ -11554,8 +11491,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230710_02",
@@ -11802,8 +11738,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230724_03",
@@ -11865,7 +11800,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": false,
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden."
   },
   {
     "id": "sr_20230724_05",
@@ -11882,8 +11818,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20230724_06",
@@ -12431,8 +12366,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20231023_03",
@@ -12449,8 +12383,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "bpu_20231123_01",
@@ -13168,8 +13101,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240201_02",
@@ -13420,8 +13352,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240304_02",
@@ -13780,8 +13711,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240318_02",
@@ -13798,8 +13728,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240318_03",
@@ -13816,8 +13745,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240318_04",
@@ -13834,8 +13762,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240318_05",
@@ -14090,8 +14017,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240506_02",
@@ -14156,8 +14082,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240506_04",
@@ -14174,8 +14099,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240610_01",
@@ -14509,8 +14433,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240617_02",
@@ -14527,8 +14450,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240617_03",
@@ -14545,8 +14467,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240617_04",
@@ -14563,8 +14484,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240617_05",
@@ -14581,8 +14501,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240617_06",
@@ -14599,8 +14518,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240617_07",
@@ -14631,8 +14549,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240617_09",
@@ -14649,8 +14566,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240701_01",
@@ -14667,8 +14583,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240701_02",
@@ -14703,7 +14618,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": false,
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden."
   },
   {
     "id": "sr_20240701_04",
@@ -14987,8 +14903,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20240722_02",
@@ -15961,8 +15876,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20241007_03",
@@ -16279,8 +16193,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20241104_01",
@@ -16297,8 +16210,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20241104_02",
@@ -16315,8 +16227,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20241104_03",
@@ -16355,8 +16266,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20241104_05",
@@ -18798,8 +18708,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20250428_01",
@@ -19276,8 +19185,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20250602_02",
@@ -19908,8 +19816,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20250728_03",
@@ -19949,8 +19856,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20250728_05",
@@ -19968,7 +19874,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": false,
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden."
   },
   {
     "id": "sr_20250728_06",
@@ -22993,8 +22900,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20260202_06",

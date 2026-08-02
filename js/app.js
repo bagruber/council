@@ -76,6 +76,13 @@ const SHOW_PRONOUNS = true;
     Object.entries(tabPanes).forEach(([k, el]) => el.classList.toggle("hidden", k !== name));
     if (name === "kalender") renderCalendar();
     if (name === "gremien") renderGremien();
+    setChrome(name === "themen" ? "themen" : name);
+  }
+
+  // Farbe von Navbar und Hero. Wird von den Detailseiten überschrieben,
+  // damit ein Themenfeld anders aussieht als ein Dossier.
+  function setChrome(kind) {
+    document.body.dataset.chrome = kind;
   }
 
   tabBtns.forEach(btn => {
@@ -180,40 +187,7 @@ const SHOW_PRONOUNS = true;
     const q = searchNorm(searchInput.value.trim());
     if (q.length < 1) { dropdown.classList.add("hidden"); return; }
 
-    const results = [];
-    tags.forEach(t => {
-      if (searchNorm(t.name).includes(q)) results.push({ type: "tag", item: t });
-    });
-    topics.forEach(t => {
-      if (searchNorm(t.title).includes(q)) results.push({ type: "topic", item: t });
-    });
-    sessions.forEach(s => {
-      if (searchNorm(s.title).includes(q)) results.push({ type: "session", item: s });
-    });
-    members.forEach(m => {
-      if (searchNorm(m.name).includes(q)) results.push({ type: "member", item: m });
-    });
-
-    if (results.length === 0) { dropdown.classList.add("hidden"); return; }
-
-    dropdown.innerHTML = "";
-    results.slice(0, 12).forEach(r => {
-      const item = document.createElement("a");
-      item.className = "dd-item";
-      item.href = r.type === "tag" ? "#/?tags=" + r.item.id
-                : r.type === "topic" ? "#/topic/" + r.item.id
-                : r.type === "session" ? "#/session/" + r.item.id
-                : "#/member/" + r.item.id;
-      const labels = { tag: "Tag", topic: "Thema", session: "Sitzung", member: "Person" };
-      const former = r.type === "member" && !isActive(r.item) ? " (ehem.)" : "";
-      item.innerHTML = `<span class="dd-type">${labels[r.type]}</span><span>${r.item.title || r.item.name}${former}</span>`;
-      item.addEventListener("click", () => {
-        dropdown.classList.add("hidden");
-        searchInput.value = "";
-      });
-      dropdown.appendChild(item);
-    });
-    dropdown.classList.remove("hidden");
+    renderSearchResults(dropdown, globalSearch(q), () => { searchInput.value = ""; });
   });
 
   document.addEventListener("click", evt => {
@@ -231,6 +205,100 @@ const SHOW_PRONOUNS = true;
     gremienDropdown.classList.add("hidden");
   });
 
+  // ── Globale Suche ────────────────────────────────────────────────────────
+  //
+  // Ein Index über alle fünf Inhaltsarten. Die Abstimmungen waren bisher gar
+  // nicht durchsuchbar, obwohl sie den Grossteil des Bestands ausmachen.
+  // Ergebnisse werden nach Art gruppiert: bei gemischten Treffern ist die Art
+  // die erste Frage, nicht die Reihenfolge.
+
+  const SEARCH_KINDS = [
+    { id: "feld",       label: "Themenfelder",  icon: "table_rows" },
+    { id: "dossier",    label: "Dossiers",      icon: "description" },
+    { id: "abstimmung", label: "Abstimmungen",  icon: "how_to_vote" },
+    { id: "sitzung",    label: "Sitzungen",     icon: "calendar_month" },
+    { id: "person",     label: "Personen",      icon: "person" },
+  ];
+
+  function globalSearch(q) {
+    const hits = { feld: [], dossier: [], abstimmung: [], sitzung: [], person: [] };
+
+    tags.forEach(t => {
+      if (searchNorm(t.name).includes(q))
+        hits.feld.push({ href: "#/feld/" + t.id, title: t.name,
+                         meta: topics.filter(x => x.field === t.id).length + " Dossiers",
+                         color: t.color });
+    });
+    topics.forEach(t => {
+      if (!searchNorm(t.title).includes(q)) return;
+      const kind = DOSSIER_TYPE[t.type];
+      const years = t.history.map(h => h.date.slice(0, 4));
+      hits.dossier.push({
+        href: "#/topic/" + t.id, title: t.title,
+        meta: [kind && kind.label, years.length &&
+               (years[0] === years[years.length - 1] ? years[0]
+                : years[0] + "–" + years[years.length - 1])].filter(Boolean).join(" · "),
+      });
+    });
+    votes.forEach(v => {
+      if (!searchNorm(v.title).includes(q)) return;
+      const r = v.results;
+      const tally = v.type === "named" ? `${r.yes.length}:${r.no.length}` : `${r.yes}:${r.no}`;
+      hits.abstimmung.push({
+        href: "#/session/" + v.sessionId, title: v.title,
+        meta: `${formatDate(v.date)} · ${tally}`,
+        rejected: v.result === "rejected",
+      });
+    });
+    sessions.forEach(s => {
+      if (searchNorm(s.title).includes(q))
+        hits.sitzung.push({ href: "#/session/" + s.id, title: s.title,
+                            meta: formatDate(s.date) });
+    });
+    members.forEach(m => {
+      if (!searchNorm(m.name).includes(q)) return;
+      const p = partyMap[m.party];
+      hits.person.push({ href: "#/member/" + m.id, title: m.name,
+                         meta: [p && p.name, isActive(m) ? null : "ehemalig"]
+                               .filter(Boolean).join(" · "),
+                         color: p && p.color });
+    });
+    return hits;
+  }
+
+  function renderSearchResults(box, hits, onPick) {
+    const total = Object.values(hits).reduce((n, a) => n + a.length, 0);
+    if (!total) { box.classList.add("hidden"); return; }
+
+    box.innerHTML = "";
+    // Bei vielen Treffern bekommt jede Art ein Kontingent, damit eine
+    // Kategorie mit hundert Treffern die anderen nicht verdrängt.
+    const perKind = total > 14 ? 4 : 8;
+    SEARCH_KINDS.forEach(kind => {
+      const rows = hits[kind.id];
+      if (!rows.length) return;
+      const head = document.createElement("div");
+      head.className = "dd-group";
+      head.innerHTML = `<svg class="icon"><use href="#i-${kind.icon}"/></svg>${kind.label}`
+                     + (rows.length > perKind ? `<span>${rows.length}</span>` : "");
+      box.appendChild(head);
+
+      rows.slice(0, perKind).forEach(r => {
+        const a = document.createElement("a");
+        a.className = "dd-item dd-" + kind.id;
+        a.href = r.href;
+        a.innerHTML =
+          (r.color ? `<span class="dd-dot" style="background:${r.color}"></span>` : "")
+          + `<span class="dd-title">${r.title}</span>`
+          + (r.meta ? `<span class="dd-meta">${r.meta}</span>` : "");
+        if (r.rejected) a.classList.add("dd-rejected");
+        a.addEventListener("click", () => { box.classList.add("hidden"); onPick(); });
+        box.appendChild(a);
+      });
+    });
+    box.classList.remove("hidden");
+  }
+
   // -- Gremien search --
 
   const gremienSearchInput = document.getElementById("gremien-search");
@@ -239,25 +307,8 @@ const SHOW_PRONOUNS = true;
   gremienSearchInput.addEventListener("input", () => {
     const q = searchNorm(gremienSearchInput.value.trim());
     if (q.length < 1) { gremienDropdown.classList.add("hidden"); return; }
-
-    const results = members.filter(m => searchNorm(m.name).includes(q));
-    if (!results.length) { gremienDropdown.classList.add("hidden"); return; }
-
-    gremienDropdown.innerHTML = "";
-    results.slice(0, 10).forEach(m => {
-      const item = document.createElement("a");
-      item.className = "dd-item";
-      item.href = "#/member/" + m.id;
-      const party = partyMap[m.party];
-      const status = isActive(m) ? "" : " (ehem.)";
-      item.innerHTML = `<span class="member-dot" style="background:${party ? party.color : '#ccc'}"></span><span>${m.name}${status}</span>`;
-      item.addEventListener("click", () => {
-        gremienDropdown.classList.add("hidden");
-        gremienSearchInput.value = "";
-      });
-      gremienDropdown.appendChild(item);
-    });
-    gremienDropdown.classList.remove("hidden");
+    renderSearchResults(gremienDropdown, globalSearch(q),
+                        () => { gremienSearchInput.value = ""; });
   });
 
   // -- Routing --
@@ -438,6 +489,7 @@ const SHOW_PRONOUNS = true;
     const field = tagMap[fieldId];
     if (!field) { main.innerHTML = "<p>Feld nicht gefunden.</p>"; return; }
 
+    setChrome("feld");
     main.appendChild(breadcrumb([{ label: "Themen", href: "#/" }]));
 
     const dossiers = topics.filter(t => t.field === fieldId || (t.tags || []).includes(fieldId));
@@ -687,6 +739,7 @@ const SHOW_PRONOUNS = true;
   // -- Session detail --
 
   function renderSession(id) {
+    setChrome("sitzung");
     const session = sessionMap[id];
     if (!session) { main.innerHTML = "<p>Sitzung nicht gefunden.</p>"; return; }
 
