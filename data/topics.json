@@ -43,7 +43,10 @@
           "merkur_2026-02-02_sgt-vereinsheim"
         ]
       }
-    ]
+    ],
+    "field": "sports",
+    "type": "vorhaben",
+    "status": "laufend"
   },
   {
     "id": "t2",
@@ -89,7 +92,10 @@
         "sessionId": "sr_20260112",
         "voteId": "sr_20260112_05"
       }
-    ]
+    ],
+    "field": "building",
+    "type": "vorhaben",
+    "status": "laufend"
   },
   {
     "id": "t3",
@@ -180,7 +186,10 @@
           "merkur_2026-02-23_parken-plan"
         ]
       }
-    ]
+    ],
+    "field": "mobility",
+    "type": "konflikt",
+    "status": "laufend"
   },
   {
     "id": "t4",
@@ -253,7 +262,10 @@
         "sessionId": "sr_20260202",
         "voteId": "sr_20260202_07"
       }
-    ]
+    ],
+    "field": "mobility",
+    "type": "vorhaben",
+    "status": "laufend"
   },
   {
     "id": "t5",
@@ -321,7 +333,10 @@
           "merkur_2026-02-02_studentenwohnheim"
         ]
       }
-    ]
+    ],
+    "field": "building",
+    "type": "konflikt",
+    "status": "laufend"
   },
   {
     "id": "t6",
@@ -388,7 +403,10 @@
         "sessionId": "sr_20251215",
         "voteId": "sr_20251215_02"
       }
-    ]
+    ],
+    "field": "education",
+    "type": "vorhaben",
+    "status": "laufend"
   },
   {
     "id": "t7",
@@ -518,7 +536,9 @@
         "sessionId": "sr_20251215",
         "voteId": "sr_20251215_03"
       }
-    ]
+    ],
+    "field": "budget",
+    "type": "zyklus"
   },
   {
     "id": "t8",
@@ -592,7 +612,10 @@
           "merkur_2026-02-23_schulweg"
         ]
       }
-    ]
+    ],
+    "field": "mobility",
+    "type": "vorhaben",
+    "status": "laufend"
   },
   {
     "id": "t9",
@@ -621,7 +644,10 @@
           "mz_2025-11-10_kreisverkehr"
         ]
       }
-    ]
+    ],
+    "field": "mobility",
+    "type": "vorhaben",
+    "status": "laufend"
   },
   {
     "id": "t10",
@@ -659,7 +685,10 @@
         "sessionId": "sr_20251201",
         "voteId": "sr_20251201_09"
       }
-    ]
+    ],
+    "field": "economy",
+    "type": "vorhaben",
+    "status": "laufend"
   },
   {
     "id": "t11",
@@ -698,7 +727,10 @@
         "text": "Die Legal Wall wird am Standort an der alten Staatsstraße bei der BayWa-Unterführung errichtet und steht allen Interessierten zur Verfügung.",
         "image": "legal-wall.jpg"
       }
-    ]
+    ],
+    "field": "culture",
+    "type": "vorhaben",
+    "status": "abgeschlossen"
   },
   {
     "id": "t12",
@@ -773,7 +805,35 @@
         "sessionId": "sr_20251110",
         "voteId": "sr_20251110_08"
       }
-    ]
+    ],
+    "field": "sports",
+    "type": "einrichtung",
+    "figures": {
+      "title": "Badegebührenordnung",
+      "note": "Beschlossene Fassungen — die jeweils jüngste gilt.",
+      "rows": [
+        {
+          "date": "2022-09-19",
+          "label": "Kleinschwimmhalle – Gebührenanpassung 2022/23",
+          "voteId": "sr_20220919_11"
+        },
+        {
+          "date": "2023-04-24",
+          "label": "Freibad – Badegebühren angepasst",
+          "voteId": "sr_20230424_03"
+        },
+        {
+          "date": "2025-04-28",
+          "label": "Badegebührenordnung 2025 beschlossen",
+          "voteId": "sr_20250428_06"
+        },
+        {
+          "date": "2025-06-02",
+          "label": "Redaktionelle Anpassung Badegebühren",
+          "voteId": "sr_20250602_05"
+        }
+      ]
+    }
   },
   {
     "id": "t13",
@@ -838,7 +898,10 @@
         "sessionId": "sr_20250922",
         "voteId": "sr_20250922_08"
       }
-    ]
+    ],
+    "field": "building",
+    "type": "gebiet",
+    "status": "laufend"
   },
   {
     "id": "t14",
@@ -896,107 +959,10 @@
         "sessionId": "sr_20250922",
         "voteId": "sr_20250922_09"
       }
-    ]
-  },
-  {
-    "id": "t15",
-    "title": "Energie & Klimawende",
-    "tags": [
-      "infrastructure",
-      "environment"
     ],
-    "image": null,
-    "summary": "Moosburgs Schritte hin zu einer klimaneutralen Versorgung: Stromausschreibung mit 100 % Ökostrom, kommunale Wärmeplanung als strategische Grundlage, einzelne PV-Freiflächenanlagen und Stellungnahmen zum Windenergie-Steuerungskonzept des Regionalplans München.",
-    "history": [
-      {
-        "date": "2022-11-17",
-        "type": "vote",
-        "title": "Hackschnitzelheizzentrale Böhmerwaldstr. – Erweiterung",
-        "text": "BPU erteilt Einvernehmen zum Umbau mit drittem Hackschnitzelkessel.",
-        "sessionId": "bpu_20221117",
-        "voteId": "bpu_20221117_03"
-      },
-      {
-        "date": "2023-02-13",
-        "type": "vote",
-        "title": "Strom-Bündelausschreibung 2024/2025",
-        "text": "Einstimmig: Änderung des Bündelausschreibungs-Beschlusses.",
-        "sessionId": "sr_20230213",
-        "voteId": "sr_20230213_03"
-      },
-      {
-        "date": "2023-06-26",
-        "type": "vote",
-        "title": "Straßenbeleuchtung – LED-Umrüstung",
-        "text": "Einstimmig: Umstellung auf LED.",
-        "sessionId": "sr_20230626",
-        "voteId": "sr_20230626_04"
-      },
-      {
-        "date": "2023-07-10",
-        "type": "vote",
-        "title": "FC Moosburg – Flutlicht-LED-Zuschuss",
-        "text": "Einstimmig: ~38.700 € (20 %) Zuschuss zum LED-Umbau.",
-        "sessionId": "sr_20230710",
-        "voteId": "sr_20230710_02"
-      },
-      {
-        "date": "2023-12-14",
-        "type": "vote",
-        "title": "Solarförderung – Änderung",
-        "text": "Anpassung der städtischen Solarförderrichtlinie.",
-        "sessionId": "sr_20231214",
-        "voteId": "sr_20231214_07"
-      },
-      {
-        "date": "2024-05-06",
-        "type": "vote",
-        "title": "Stellungnahme Regionalplan Windenergie",
-        "text": "Der Stadtrat nimmt das Steuerungskonzept Windenergie des Regionalplans München zur Kenntnis (18:4); empfiehlt eine Windvorrangfläche in der Region Kirchamper.",
-        "sessionId": "sr_20240506",
-        "voteId": "sr_20240506_02"
-      },
-      {
-        "date": "2024-07-01",
-        "type": "vote",
-        "title": "Kommunale Wärmeplanung – Zwischenergebnis",
-        "text": "Stadtrat nimmt den Zwischenstand der kommunalen Wärmeplanung einstimmig zur Kenntnis.",
-        "sessionId": "sr_20240701",
-        "voteId": "sr_20240701_01"
-      },
-      {
-        "date": "2025-02-10",
-        "type": "vote",
-        "title": "PV Kuttenweide – Aufstellungsbeschluss B-Plan",
-        "text": "Einstimmig: Aufstellung des B-Plans \"SO Freiflächen-PV-Anlage Kuttenweide\" im Parallelverfahren mit dem Flächennutzungsplan.",
-        "sessionId": "sr_20250210",
-        "voteId": "sr_20250210_04"
-      },
-      {
-        "date": "2025-02-10",
-        "type": "vote",
-        "title": "PV Kuttenweide – Städtebaulicher Vertrag",
-        "text": "Einstimmig: Bürgermeister ermächtigt, mit dem Vorhabenträger einen städtebaulichen Vertrag abzuschließen.",
-        "sessionId": "sr_20250210",
-        "voteId": "sr_20250210_05"
-      },
-      {
-        "date": "2025-02-24",
-        "type": "vote",
-        "title": "Strom-Ausschreibung – 100 % Ökostrom",
-        "text": "Variante 2 (100 % Ökostrom ohne Neuanlagenquote) wird beschlossen; Variante 1 mit Neuanlagenquote wird abgelehnt (8:12).",
-        "sessionId": "sr_20250224",
-        "voteId": "sr_20250224_05"
-      },
-      {
-        "date": "2025-06-23",
-        "type": "vote",
-        "title": "Kommunale Wärmeplanung – Abschlussbericht",
-        "text": "Stadtrat anerkennt den Abschlussbericht der kommunalen Wärmeplanung als strategische Grundlage für Energie- und Infrastrukturentscheidungen.",
-        "sessionId": "sr_20250623",
-        "voteId": "sr_20250623_01"
-      }
-    ]
+    "field": "culture",
+    "type": "konflikt",
+    "status": "laufend"
   },
   {
     "id": "t16",
@@ -1054,7 +1020,30 @@
         "sessionId": "sr_20250224",
         "voteId": "sr_20250224_01"
       }
-    ]
+    ],
+    "field": "sports",
+    "type": "einrichtung",
+    "figures": {
+      "title": "Gebühren und Öffnungszeiten",
+      "note": "Seit Eröffnung beschlossene Regelungen.",
+      "rows": [
+        {
+          "date": "2024-10-21",
+          "label": "Öffnungszeiten festgelegt",
+          "voteId": "sr_20241021_11"
+        },
+        {
+          "date": "2024-10-21",
+          "label": "Gebühren und Tarife beschlossen",
+          "voteId": "sr_20241021_12"
+        },
+        {
+          "date": "2024-12-16",
+          "label": "Haus- und Badeordnung beschlossen",
+          "voteId": "sr_20241216_03"
+        }
+      ]
+    }
   },
   {
     "id": "t17",
@@ -1089,7 +1078,10 @@
         "sessionId": "sr_20250324",
         "voteId": "sr_20250324_07"
       }
-    ]
+    ],
+    "field": "building",
+    "type": "vorhaben",
+    "status": "laufend"
   },
   {
     "id": "t18",
@@ -1133,7 +1125,10 @@
         "sessionId": "sr_20250120",
         "voteId": "sr_20250120_05"
       }
-    ]
+    ],
+    "field": "economy",
+    "type": "gebiet",
+    "status": "laufend"
   },
   {
     "id": "t19",
@@ -1161,7 +1156,10 @@
         "sessionId": "sr_20241118",
         "voteId": "sr_20241118_04"
       }
-    ]
+    ],
+    "field": "sports",
+    "type": "vorhaben",
+    "status": "laufend"
   },
   {
     "id": "t20",
@@ -1228,6 +1226,217 @@
         "text": "Einstimmig beschlossen.",
         "sessionId": "bpu_20231123",
         "voteId": "bpu_20231123_15"
+      }
+    ],
+    "field": "building",
+    "type": "gebiet",
+    "status": "abgeschlossen"
+  },
+  {
+    "id": "t21",
+    "title": "Kommunale Wärmeplanung",
+    "field": "environment",
+    "type": "vorhaben",
+    "tags": [
+      "environment",
+      "infrastructure"
+    ],
+    "image": null,
+    "summary": "Gesetzlich vorgeschriebene Planung, wie Moosburg künftig heizt. Zwischenergebnis 2024, Abschlussbericht im Juni 2025 — die Grundlage für alle weiteren Entscheidungen zur Wärmeversorgung.",
+    "history": [
+      {
+        "date": "2024-07-01",
+        "type": "vote",
+        "title": "Kommunale Wärmeplanung – Zwischenergebnis",
+        "text": "Stadtrat nimmt den Zwischenstand der kommunalen Wärmeplanung einstimmig zur Kenntnis.",
+        "sessionId": "sr_20240701",
+        "voteId": "sr_20240701_01"
+      },
+      {
+        "date": "2025-06-23",
+        "type": "vote",
+        "title": "Kommunale Wärmeplanung – Abschlussbericht",
+        "text": "Stadtrat anerkennt den Abschlussbericht der kommunalen Wärmeplanung als strategische Grundlage für Energie- und Infrastrukturentscheidungen.",
+        "sessionId": "sr_20250623",
+        "voteId": "sr_20250623_01"
+      }
+    ],
+    "status": "abgeschlossen"
+  },
+  {
+    "id": "t22",
+    "title": "Windenergie im Regionalplan",
+    "field": "environment",
+    "type": "konflikt",
+    "tags": [
+      "environment"
+    ],
+    "image": null,
+    "summary": "Der Regionalplan München weist Vorranggebiete für Windkraft aus. Moosburg nahm 2024 dazu Stellung — eine der wenigen Abstimmungen, bei denen die Fraktionen sichtbar auseinandergingen.",
+    "history": [
+      {
+        "date": "2024-05-06",
+        "type": "vote",
+        "title": "Stellungnahme Regionalplan Windenergie",
+        "text": "Der Stadtrat nimmt das Steuerungskonzept Windenergie des Regionalplans München zur Kenntnis (18:4); empfiehlt eine Windvorrangfläche in der Region Kirchamper.",
+        "sessionId": "sr_20240506",
+        "voteId": "sr_20240506_02"
+      },
+      {
+        "date": "2026-02-02",
+        "type": "vote",
+        "title": "Regionalplan Windenergie",
+        "text": "Der Stadtrat nimmt den Fortschreibungsentwurf zur 26. Änderung des Regionalplans München zur Kenntnis und stellt fest, dass Moosburg nicht unmittelbar betroffen ist.",
+        "sessionId": "sr_20260202",
+        "voteId": "sr_20260202_05"
+      }
+    ],
+    "status": "laufend"
+  },
+  {
+    "id": "t23",
+    "title": "Photovoltaik-Freiflächenanlage Kuttenweide",
+    "field": "environment",
+    "type": "vorhaben",
+    "tags": [
+      "environment",
+      "building"
+    ],
+    "image": null,
+    "summary": "Bebauungsplan und städtebaulicher Vertrag für eine Freiflächen-Photovoltaikanlage an der Kuttenweide, beides im Februar 2025 beschlossen.",
+    "history": [
+      {
+        "date": "2025-02-10",
+        "type": "vote",
+        "title": "PV Kuttenweide – Aufstellungsbeschluss B-Plan",
+        "text": "Einstimmig: Aufstellung des B-Plans \"SO Freiflächen-PV-Anlage Kuttenweide\" im Parallelverfahren mit dem Flächennutzungsplan.",
+        "sessionId": "sr_20250210",
+        "voteId": "sr_20250210_04"
+      },
+      {
+        "date": "2025-02-10",
+        "type": "vote",
+        "title": "PV Kuttenweide – Städtebaulicher Vertrag",
+        "text": "Einstimmig: Bürgermeister ermächtigt, mit dem Vorhabenträger einen städtebaulichen Vertrag abzuschließen.",
+        "sessionId": "sr_20250210",
+        "voteId": "sr_20250210_05"
+      }
+    ],
+    "status": "laufend"
+  },
+  {
+    "id": "t24",
+    "title": "Straßenbeleuchtung auf LED",
+    "field": "infrastructure",
+    "type": "vorhaben",
+    "tags": [
+      "infrastructure",
+      "environment"
+    ],
+    "image": null,
+    "summary": "Umrüstung der städtischen Straßenbeleuchtung auf LED, mit einem Beleuchtungskonzept als Grundlage. Beides 2023 einstimmig beschlossen.",
+    "history": [
+      {
+        "date": "2023-06-26",
+        "type": "vote",
+        "title": "Straßenbeleuchtung – LED-Umrüstung",
+        "text": "Einstimmig: Umstellung auf LED.",
+        "sessionId": "sr_20230626",
+        "voteId": "sr_20230626_04"
+      },
+      {
+        "date": "2023-11-23",
+        "type": "vote",
+        "title": "Straßenbeleuchtung – Konzept",
+        "text": "Einstimmig: Solar-Straßenbeleuchtung als Folgekonzept geprüft.",
+        "sessionId": "bpu_20231123",
+        "voteId": "bpu_20231123_12"
+      },
+      {
+        "date": "2025-07-28",
+        "type": "vote",
+        "title": "Umrüstung Straßenbeleuchtung auf LED",
+        "text": "Der Stadtrat nimmt den aktuellen Stand der LED-Umrüstung zur Kenntnis. Die Verwaltung wird beauftragt, die Ausschreibungsunterlagen bis Ende 2025 vorzubereiten; die Umsetzung ist für 2026 vorgesehen.",
+        "sessionId": "sr_20250728",
+        "voteId": "sr_20250728_02"
+      }
+    ],
+    "status": "abgeschlossen"
+  },
+  {
+    "id": "t25",
+    "title": "Städtische Förderprogramme für Energie",
+    "field": "environment",
+    "type": "regelwerk",
+    "tags": [
+      "environment",
+      "budget"
+    ],
+    "image": null,
+    "summary": "Zuschüsse, die die Stadt selbst ausreicht: Solarförderung und das Förderprogramm „Natürlich Dämmen\". Beide wurden seit Auflage mehrfach angepasst.",
+    "history": [
+      {
+        "date": "2021-12-13",
+        "type": "vote",
+        "title": "Förderprogramm Natürlich Dämmen (vertagt in der Sitzung am 6.12.2021)",
+        "text": "Der Stadtrat der Stadt Moosburg beschließt das Förderprogramm „Natürlich Dämmen“ und stellt Haushaltsmittel in Höhe von 11.000 € für das Jahr 2022 zur Verfügung. Es wird eine Förderung von 5 € je m² Dämmfläche ausbezahlt, der Höchstbetrag je Antragstel- ler beträgt 1.500 €.",
+        "sessionId": "sr_20211213",
+        "voteId": "sr_20211213_07"
+      },
+      {
+        "date": "2023-12-14",
+        "type": "vote",
+        "title": "Solarförderung – Änderung",
+        "text": "Anpassung der städtischen Solarförderrichtlinie.",
+        "sessionId": "sr_20231214",
+        "voteId": "sr_20231214_07"
+      }
+    ],
+    "figures": {
+      "title": "Förderprogramme",
+      "note": "Auflage und Änderungen.",
+      "rows": [
+        {
+          "date": "2021-12-13",
+          "label": "Förderprogramm Natürlich Dämmen (vertagt in der Sitzung am 6.12.2021)",
+          "voteId": "sr_20211213_07"
+        },
+        {
+          "date": "2023-12-14",
+          "label": "Solarförderung – Änderung",
+          "voteId": "sr_20231214_07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "t26",
+    "title": "Stromeinkauf der Stadt",
+    "field": "infrastructure",
+    "type": "zyklus",
+    "tags": [
+      "infrastructure",
+      "environment",
+      "budget"
+    ],
+    "image": null,
+    "summary": "Die Stadt schreibt ihren Strombedarf in mehrjährigen Bündeln aus. Seit der Ausschreibung 2025 bezieht sie 100 % Ökostrom.",
+    "history": [
+      {
+        "date": "2023-02-13",
+        "type": "vote",
+        "title": "Strom-Bündelausschreibung 2024/2025",
+        "text": "Einstimmig: Änderung des Bündelausschreibungs-Beschlusses.",
+        "sessionId": "sr_20230213",
+        "voteId": "sr_20230213_03"
+      },
+      {
+        "date": "2025-02-24",
+        "type": "vote",
+        "title": "Dienstleistungsvertrag enPORTAL – Strom-/Gasausschreibung",
+        "text": "Der Stadtrat beschließt den Abschluss eines Dienstleistungsvertrags mit der enPORTAL GmbH zur Durchführung von Bündelausschreibungen für Strom- und Gasbeschaffung.",
+        "sessionId": "sr_20250224",
+        "voteId": "sr_20250224_02"
       }
     ]
   }
