@@ -118,6 +118,19 @@ body {
   z-index: 100;
 }
 
+/* Icons: Lucide-Sprite, inline in index.html. In em bemessen, damit die
+   font-size-Angaben der einzelnen Kontexte weiter greifen. */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  font-size: 24px;
+  flex-shrink: 0;
+  vertical-align: -0.15em;
+  stroke: currentColor;
+  fill: none;
+}
+
 /* -- Navbar -- */
 
 .navbar {
@@ -177,7 +190,7 @@ body {
   padding: 4px 0;
 }
 
-.tab-btn .material-icons {
+.tab-btn .icon {
   font-size: 22px;
 }
 
@@ -296,7 +309,7 @@ body {
   transition: background 0.15s, transform 0.1s;
   font-family: inherit;
 }
-.tag-pill .material-icons { font-size: 16px; }
+.tag-pill .icon { font-size: 16px; }
 
 .tag-pill:hover { background: rgba(255,255,255,0.28); }
 
@@ -389,7 +402,7 @@ main {
     font-size: 0.72rem;
     border-radius: var(--radius-sm);
   }
-  .tag-pill .material-icons { font-size: 13px; }
+  .tag-pill .icon { font-size: 13px; }
 }
 
 .section-heading {
@@ -464,7 +477,7 @@ main {
   z-index: 2;
 }
 
-.tl-dot .material-icons { font-size: 13px; }
+.tl-dot .icon { font-size: 13px; }
 
 .tl-dot.proposal       { border-color: var(--info);   color: var(--info); }
 .tl-dot.committee      { border-color: var(--accent);  color: var(--accent-text); }
@@ -501,7 +514,7 @@ main {
 
 .tl-session-link:hover { border-bottom-style: solid; }
 
-.tl-session-link .material-icons {
+.tl-session-link .icon {
   font-size: 14px;
   vertical-align: -2px;
 }
@@ -566,7 +579,7 @@ main {
   font-size: 0.9rem;
 }
 
-.session-time .material-icons { font-size: 16px; }
+.session-time .icon { font-size: 16px; }
 
 .session-badge {
   display: inline-flex;
@@ -582,7 +595,7 @@ main {
   margin-top: 6px;
 }
 
-.session-badge .material-icons { font-size: 14px; }
+.session-badge .icon { font-size: 14px; }
 
 .session-subs {
   display: flex;
@@ -601,7 +614,7 @@ main {
   gap: 6px;
 }
 
-.sub-row .material-icons {
+.sub-row .icon {
   font-size: 16px;
   color: var(--text-muted);
 }
@@ -668,7 +681,7 @@ main {
   transition: color 0.15s, background 0.15s;
 }
 .vote-help-btn:hover { color: var(--primary); background: var(--accent-light); }
-.vote-help-btn .material-icons { font-size: 20px; }
+.vote-help-btn .icon { font-size: 20px; }
 
 /* Legend modal rows */
 .legend-row {
@@ -713,7 +726,7 @@ main {
   color: var(--text-muted);
 }
 .voting-stats summary::-webkit-details-marker { display: none; }
-.voting-stats summary .material-icons { font-size: 18px; color: var(--accent-text); }
+.voting-stats summary .icon { font-size: 18px; color: var(--accent-text); }
 .voting-stats summary::after {
   content: "+";
   margin-left: auto;
@@ -1078,7 +1091,7 @@ main {
   margin-bottom: 20px;
 }
 
-.back-link .material-icons { font-size: 18px; }
+.back-link .icon { font-size: 18px; }
 .back-link:hover { text-decoration: underline; }
 
 /* -- Calendar -- */
@@ -1246,7 +1259,7 @@ main {
 .sheet-event.bpu { border-left-color: var(--accent); }
 .sheet-event.hvfa { border-left-color: var(--info); }
 
-.sheet-event .material-icons {
+.sheet-event .icon {
   font-size: 20px;
   color: var(--text-muted);
 }
@@ -1351,7 +1364,7 @@ main {
 
 .settings-link:last-child { border-bottom: none; }
 .settings-link:hover { color: var(--primary); }
-.settings-link .material-icons { font-size: 20px; color: var(--text-muted); }
+.settings-link .icon { font-size: 20px; color: var(--text-muted); }
 
 /* -- Modal -- */
 
@@ -1463,7 +1476,7 @@ main {
   gap: 10px;
 }
 
-.body-card-header .material-icons {
+.body-card-header .icon {
   font-size: 22px;
   color: var(--primary);
 }
@@ -1561,7 +1574,7 @@ main {
   color: var(--text-muted);
 }
 
-.member-row .material-icons {
+.member-row .icon {
   font-size: 16px;
   color: var(--text-muted);
 }
@@ -1809,7 +1822,7 @@ main {
   color: #fff;
 }
 
-.id-badge .material-icons { font-size: 10px; }
+.id-badge .icon { font-size: 10px; }
 
 .profile-contact {
   display: flex;
@@ -1839,7 +1852,7 @@ main {
   fill: currentColor;
 }
 
-.contact-link .material-icons { font-size: 15px; }
+.contact-link .icon { font-size: 15px; }
 
 .contact-link.cl-email { background: var(--primary); }
 .contact-link.cl-website { background: #555; }
@@ -1928,7 +1941,7 @@ main {
   font-size: 0.88rem;
 }
 
-.role-row .material-icons {
+.role-row .icon {
   font-size: 16px;
   color: var(--text-muted);
 }
@@ -1996,7 +2009,7 @@ main {
 
 .mtl-session-header a:hover { text-decoration: underline; }
 
-.mtl-session-header .material-icons {
+.mtl-session-header .icon {
   font-size: 16px;
   color: var(--text-muted);
 }
@@ -2062,7 +2075,7 @@ main {
 
 .mtl-vote-detail a:hover { text-decoration: underline; }
 
-.mtl-vote-detail a .material-icons { font-size: 14px; }
+.mtl-vote-detail a .icon { font-size: 14px; }
 
 .mtl-motion-link {
   display: inline-flex;
@@ -2074,7 +2087,7 @@ main {
   margin-top: 2px;
 }
 
-.mtl-motion-link .material-icons { font-size: 13px; }
+.mtl-motion-link .icon { font-size: 13px; }
 .mtl-motion-link:hover { text-decoration: underline; }
 
 .mtl-motion {
@@ -2087,7 +2100,7 @@ main {
 
 .mtl-motion:last-child { border-bottom: none; }
 
-.mtl-motion .material-icons {
+.mtl-motion .icon {
   font-size: 18px;
   color: var(--info);
   margin-top: 2px;
@@ -2123,8 +2136,8 @@ main {
 
 .stats-teaser:hover { box-shadow: var(--shadow-lg); }
 
-.stats-teaser > .material-icons:first-child { color: var(--primary); }
-.stats-teaser > .material-icons:last-child { color: var(--text-muted); margin-left: auto; }
+.stats-teaser > .icon:first-child { color: var(--primary); }
+.stats-teaser > .icon:last-child { color: var(--text-muted); margin-left: auto; }
 
 .stats-teaser-title { font-weight: 600; font-size: 0.92rem; }
 .stats-teaser-sub { font-size: 0.78rem; color: var(--text-muted); }
@@ -2246,7 +2259,7 @@ main {
 
 .stats-table summary::-webkit-details-marker { display: none; }
 
-.stats-table summary .material-icons { font-size: 18px; }
+.stats-table summary .icon { font-size: 18px; }
 
 .stats-table table {
   width: 100%;
