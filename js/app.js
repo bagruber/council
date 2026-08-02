@@ -151,7 +151,7 @@ const SHOW_PRONOUNS = true;
     pill.className = "tag-pill";
     pill.dataset.tagId = tag.id;
     if (tag.color) pill.style.setProperty("--cat-color", tag.color);
-    pill.innerHTML = (tag.icon ? `<span class="material-icons">${tag.icon}</span>` : "")
+    pill.innerHTML = (tag.icon ? `<svg class="icon"><use href="#i-${tag.icon}"/></svg>` : "")
                    + `<span>${tag.name}</span>`;
     pill.addEventListener("click", () => {
       pill.classList.toggle("active");
@@ -327,12 +327,12 @@ const SHOW_PRONOUNS = true;
     teaser.className = "stats-teaser";
     teaser.href = "#/statistik";
     teaser.innerHTML = `
-      <span class="material-icons">insights</span>
+      <svg class="icon"><use href="#i-insights"/></svg>
       <div>
         <div class="stats-teaser-title">Sitzungsstatistik</div>
         <div class="stats-teaser-sub">${sessionLengths.length} Sitzungen · ${totalH} Stunden seit Mai 2020</div>
       </div>
-      <span class="material-icons">chevron_right</span>`;
+      <svg class="icon"><use href="#i-chevron_right"/></svg>`;
     main.appendChild(teaser);
   }
 
@@ -351,7 +351,7 @@ const SHOW_PRONOUNS = true;
     const t = tagMap[tid];
     if (!t) return `<span class="cat-chip">${tid}</span>`;
     const color = t.color || "#888";
-    const icon = t.icon ? `<span class="material-icons cat-chip-icon">${t.icon}</span>` : "";
+    const icon = t.icon ? `<svg class="icon cat-chip-icon"><use href="#i-${t.icon}"/></svg>` : "";
     return `<span class="cat-chip" style="--cat-color:${color}">${icon}<span>${t.name}</span></span>`;
   }
 
@@ -409,7 +409,7 @@ const SHOW_PRONOUNS = true;
     const back = document.createElement("a");
     back.className = "back-link";
     back.href = "#/";
-    back.innerHTML = '<span class="material-icons">arrow_back</span> \u00dcbersicht';
+    back.innerHTML = '<svg class="icon"><use href="#i-arrow_back"/></svg> \u00dcbersicht';
     back.addEventListener("click", e => {
       if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
     });
@@ -451,7 +451,7 @@ const SHOW_PRONOUNS = true;
 
       const dot = document.createElement("div");
       dot.className = "tl-dot " + dotClass;
-      if (iconName) dot.innerHTML = `<span class="material-icons">${iconName}</span>`;
+      if (iconName) dot.innerHTML = `<svg class="icon"><use href="#i-${iconName}"/></svg>`;
       el.appendChild(dot);
 
       const dateEl = document.createElement("div");
@@ -487,7 +487,7 @@ const SHOW_PRONOUNS = true;
         const link = document.createElement("a");
         link.className = "tl-session-link";
         link.href = "#/session/" + entry.sessionId;
-        link.innerHTML = '<span class="material-icons">open_in_new</span> ' + sessionMap[entry.sessionId].title;
+        link.innerHTML = '<svg class="icon"><use href="#i-open_in_new"/></svg> ' + sessionMap[entry.sessionId].title;
         el.appendChild(link);
       }
 
@@ -509,7 +509,7 @@ const SHOW_PRONOUNS = true;
     const back = document.createElement("a");
     back.className = "back-link";
     back.href = "#/";
-    back.innerHTML = '<span class="material-icons">arrow_back</span> \u00dcbersicht';
+    back.innerHTML = '<svg class="icon"><use href="#i-arrow_back"/></svg> \u00dcbersicht';
     back.addEventListener("click", e => {
       if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
     });
@@ -521,13 +521,13 @@ const SHOW_PRONOUNS = true;
     if (session.type && session.type !== "stadtrat") {
       const body = bodyMap[session.type];
       const label = body ? body.shortName : session.type;
-      badge = `<div class="session-badge"><span class="material-icons">groups</span> ${label}</div>`;
+      badge = `<div class="session-badge"><svg class="icon"><use href="#i-groups"/></svg> ${label}</div>`;
     }
     const len = lengthMap[session.date + "|" + (session.type || "stadtrat")];
     let timeLine = "";
     if (len) {
       const dur = lengthMin(len);
-      timeLine = `<div class="session-time"><span class="material-icons">schedule</span>${len.start}${len.end ? "–" + len.end : ""} Uhr${dur ? " · " + formatDuration(dur) : ""}</div>`;
+      timeLine = `<div class="session-time"><svg class="icon"><use href="#i-schedule"/></svg>${len.start}${len.end ? "–" + len.end : ""} Uhr${dur ? " · " + formatDuration(dur) : ""}</div>`;
     }
     header.innerHTML = `<h1>${session.title}</h1><div class="session-date">${formatDate(session.date)}</div>${timeLine}${badge}`;
     main.appendChild(header);
@@ -540,7 +540,7 @@ const SHOW_PRONOUNS = true;
         const sub = memberMap[s.substitute];
         const row = document.createElement("div");
         row.className = "sub-row";
-        row.innerHTML = `<span class="material-icons">swap_horiz</span> ${sub ? sub.name : s.substitute} f\u00fcr ${member ? member.name : s.member}`;
+        row.innerHTML = `<svg class="icon"><use href="#i-swap_horiz"/></svg> ${sub ? sub.name : s.substitute} f\u00fcr ${member ? member.name : s.member}`;
         subs.appendChild(row);
       });
       main.appendChild(subs);
@@ -650,7 +650,7 @@ const SHOW_PRONOUNS = true;
     const back = document.createElement("a");
     back.className = "back-link";
     back.href = "#/";
-    back.innerHTML = '<span class="material-icons">arrow_back</span> Übersicht';
+    back.innerHTML = '<svg class="icon"><use href="#i-arrow_back"/></svg> Übersicht';
     back.addEventListener("click", e => {
       if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
     });
@@ -873,7 +873,7 @@ const SHOW_PRONOUNS = true;
     const details = document.createElement("details");
     details.className = "stats-table";
     details.innerHTML = `
-      <summary><span class="material-icons">table_rows</span> Daten als Tabelle</summary>
+      <summary><svg class="icon"><use href="#i-table_rows"/></svg> Daten als Tabelle</summary>
       <table>
         <thead><tr><th>Jahr</th><th>Sitzungen</th><th>Gesamtdauer</th><th>Stadtrat im Median</th></tr></thead>
         <tbody>${rows}</tbody>
@@ -916,7 +916,7 @@ const SHOW_PRONOUNS = true;
 
     block.innerHTML = `
       <button class="vote-help-btn" aria-label="Legende" title="Was bedeutet was?">
-        <span class="material-icons">help_outline</span>
+        <svg class="icon"><use href="#i-help_outline"/></svg>
       </button>
       <h4>${vote.title}${resultTag}</h4>
       <div class="vote-text">${vote.text}</div>
@@ -1065,9 +1065,9 @@ const SHOW_PRONOUNS = true;
                  : (s.type && s.type !== "stadtrat") ? "groups"
                  : "account_balance";
       row.innerHTML = `
-        <span class="material-icons">${icon}</span>
+        <svg class="icon"><use href="#i-${icon}"/></svg>
         <div class="sheet-event-text">${s.title}</div>
-        <span class="material-icons">chevron_right</span>`;
+        <svg class="icon"><use href="#i-chevron_right"/></svg>`;
       row.addEventListener("click", () => calSheet.classList.add("hidden"));
       calSheetBody.appendChild(row);
     });
@@ -1214,12 +1214,12 @@ const SHOW_PRONOUNS = true;
 
     card.innerHTML = `
       <div class="body-card-header">
-        <span class="material-icons">${body.icon || 'groups'}</span>
+        <svg class="icon"><use href="#i-${body.icon || 'groups'}"/></svg>
         <div>
           <div class="body-card-title">${body.name}</div>
           ${count ? `<div class="body-card-count">${count} Mitglieder</div>` : ''}
         </div>
-        <span class="material-icons expand-icon">expand_more</span>
+        <svg class="icon expand-icon"><use href="#i-expand_more"/></svg>
       </div>
       <div class="body-card-detail"><div class="body-card-detail-inner"></div></div>`;
 
@@ -1247,7 +1247,7 @@ const SHOW_PRONOUNS = true;
         if (!hasSubs) return "";
         const s = subId && memberMap[subId];
         return s
-          ? `<td><span class="material-icons swap-icon">swap_horiz</span></td><td class="seat-sub"><a href="#/member/${s.id}">${s.name}</a></td>`
+          ? `<td><svg class="icon swap-icon"><use href="#i-swap_horiz"/></svg></td><td class="seat-sub"><a href="#/member/${s.id}">${s.name}</a></td>`
           : "<td></td><td></td>";
       };
 
@@ -1354,7 +1354,7 @@ const SHOW_PRONOUNS = true;
                     : backHash.startsWith("/topic/") ? "Thema"
                     : backHash.startsWith("/session/") ? "Sitzung"
                     : "Übersicht";
-    back.innerHTML = `<span class="material-icons">arrow_back</span> ${backLabel}`;
+    back.innerHTML = `<svg class="icon"><use href="#i-arrow_back"/></svg> ${backLabel}`;
     wrap.appendChild(back);
 
     const currentPartyId = m.partyHistory && m.partyHistory.length
@@ -1405,7 +1405,7 @@ const SHOW_PRONOUNS = true;
       profile.identity.forEach(id => {
         const b = document.createElement("span");
         b.className = "id-badge " + id;
-        b.innerHTML = (badgeIcons[id] ? `<span class="material-icons">${badgeIcons[id]}</span> ` : "") + (labels[id] || id);
+        b.innerHTML = (badgeIcons[id] ? `<svg class="icon"><use href="#i-${badgeIcons[id]}"/></svg> ` : "") + (labels[id] || id);
         badges.appendChild(b);
       });
       metaEl.appendChild(badges);
@@ -1534,10 +1534,10 @@ const SHOW_PRONOUNS = true;
           .map(sid => memberMap[sid] ? memberMap[sid].name : sid)
           .join(", ");
         const sessionLink = mot.sessionId && sessionMap[mot.sessionId]
-          ? `<a href="#/session/${mot.sessionId}" class="mtl-motion-link"><span class="material-icons">open_in_new</span>${sessionMap[mot.sessionId].title}</a>`
+          ? `<a href="#/session/${mot.sessionId}" class="mtl-motion-link"><svg class="icon"><use href="#i-open_in_new"/></svg>${sessionMap[mot.sessionId].title}</a>`
           : "";
         el.innerHTML = `
-          <span class="material-icons">edit_note</span>
+          <svg class="icon"><use href="#i-edit_note"/></svg>
           <div>
             <div class="mtl-motion-title">${mot.title}</div>
             <div class="mtl-motion-meta">${mot.body} \u2013 ${formatDate(mot.date)}</div>
@@ -1670,7 +1670,7 @@ const SHOW_PRONOUNS = true;
     details.className = "voting-stats";
     details.innerHTML = `
       <summary>
-        <span class="material-icons">insights</span>
+        <svg class="icon"><use href="#i-insights"/></svg>
         <span>Statistik anzeigen</span>
         <span class="vs-total-count">${t.total} Abst.</span>
       </summary>
@@ -1743,14 +1743,14 @@ const SHOW_PRONOUNS = true;
     a.setAttribute("aria-label", labels[type] || type);
     // Brand-Pfade aus Font Awesome Free 6.5.1 (CC BY 4.0), inline statt CDN
     const icons = {
-      email: '<span class="material-icons">email</span>',
-      website: '<span class="material-icons">language</span>',
+      email: '<svg class="icon"><use href="#i-email"/></svg>',
+      website: '<svg class="icon"><use href="#i-language"/></svg>',
       instagram: '<svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>',
       threads: '<svg viewBox="0 0 448 512"><path d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"/></svg>',
       linkedin: '<svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>',
       facebook: '<svg viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>',
     };
-    a.innerHTML = icons[type] || '<span class="material-icons">link</span>';
+    a.innerHTML = icons[type] || '<svg class="icon"><use href="#i-link"/></svg>';
     return a;
   }
 
@@ -1758,7 +1758,7 @@ const SHOW_PRONOUNS = true;
     const row = document.createElement("div");
     row.className = "role-row";
     row.innerHTML = `
-      <span class="material-icons">${icon}</span>
+      <svg class="icon"><use href="#i-${icon}"/></svg>
       <span>${text}</span>
       <span class="role-dates">${formatPeriod(from, to)}</span>`;
     return row;
@@ -1797,7 +1797,7 @@ const SHOW_PRONOUNS = true;
       const icon = (session.type && session.type !== "stadtrat") ? "groups" : "account_balance";
       const sHeader = document.createElement("div");
       sHeader.className = "mtl-session-header";
-      sHeader.innerHTML = `<span class="material-icons">${icon}</span> <a href="#/session/${session.id}">${session.title}</a>`;
+      sHeader.innerHTML = `<svg class="icon"><use href="#i-${icon}"/></svg> <a href="#/session/${session.id}">${session.title}</a>`;
       sessionEl.appendChild(sHeader);
 
       votedItems.forEach(item => {
@@ -1825,7 +1825,7 @@ const SHOW_PRONOUNS = true;
           detailHTML += `<p style="margin-top:4px">${vote.results.yes} Ja, ${vote.results.no} Nein, ${vote.results.absent} Abwesend</p>`;
         }
         if (item.topicId && topicMap[item.topicId]) {
-          detailHTML += `<a href="#/topic/${item.topicId}"><span class="material-icons">open_in_new</span> ${topicMap[item.topicId].title}</a>`;
+          detailHTML += `<a href="#/topic/${item.topicId}"><svg class="icon"><use href="#i-open_in_new"/></svg> ${topicMap[item.topicId].title}</a>`;
         }
         detail.innerHTML = detailHTML;
 
