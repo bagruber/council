@@ -898,6 +898,31 @@ const SHOW_PRONOUNS = true;
     return bid ? bodyMap[bid] : null;
   }
 
+  // Woher die Einzelstimmen stammen. Vier Stufen, absteigend belastbar —
+  // bewusst eine ruhige Fußzeile, kein Siegel: die Herkunft qualifiziert das
+  // Ergebnis, sie ist nicht die Nachricht.
+  function renderVoteSource(vote) {
+    const label = Council.sourceLabel(vote);
+    if (!label) {
+      return vote.type === "anonymous" && vote.results.yes && vote.results.no
+        ? `<div class="vote-source">Nur das Ergebnis ist überliefert, nicht wer wie gestimmt hat.</div>`
+        : "";
+    }
+    const parts = [label];
+    if (vote.source.by) {
+      const m = members.find(x => x.id === vote.source.by);
+      if (m) parts.push(`${m.firstName.charAt(0)}. ${m.lastName}`);
+    }
+    let html = parts.join(" · ");
+    const art = vote.source.pressId && pressMap[vote.source.pressId];
+    if (art) {
+      html += ` · <a href="${art.url}" target="_blank" rel="noopener">durch Presse bestätigt</a>`;
+    } else if (vote.source.pressVerified) {
+      html += " · durch Presse bestätigt";
+    }
+    return `<div class="vote-source">${html}</div>`;
+  }
+
   function renderVoteBlock(container, vote) {
     const block = document.createElement("div");
     block.className = "vote-block";
@@ -924,7 +949,8 @@ const SHOW_PRONOUNS = true;
         <span><span class="legend-dot yes"></span> Ja</span>
         <span><span class="legend-dot no"></span> Nein</span>
         <span><span class="legend-dot absent"></span> Abwesend</span>
-      </div>`;
+      </div>
+      ${renderVoteSource(vote)}`;
 
     block.querySelector(".vote-help-btn").addEventListener("click", () => {
       document.getElementById("vote-legend-modal").classList.remove("hidden");
