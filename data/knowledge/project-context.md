@@ -1,6 +1,7 @@
 # Projektkontext – Council Transparency App Moosburg a.d. Isar
 
-> Stand: 2026-06-10. Dient als Restart-Dokument für LLMs.
+> Stand: 2026-08-02. Dient als Restart-Dokument für LLMs.
+> Datenstand: 54 Mitglieder · 113 Sitzungen (20.01.2020–18.05.2026) · 847 Abstimmungen · 27 Dossiers · 19 Presseartikel
 
 ---
 
@@ -17,9 +18,13 @@ Keine Dependencies im Frontend – Vanilla JS, Parliament-Chart ist pure SVG (ke
 
 - `index.html` + `js/core.js` + `js/app.js` + `js/parliament.js` + `css/style.css` + `css/fonts.css`
 - `js/core.js` (`Council`): geteilte Perioden- & Vote-Status-Logik (siehe `docs/CORE.md`)
-- Hash-basiertes Routing: `#/member/{id}`, `#/topic/{id}`, `#/session/{id}`, Tag-Filter `#/?tags={id},{id}`
-- Farbpalette: Rot-Gradient primary, Gold accent, Rainbow secondaries
+- Hash-basiertes Routing: `#/member/{id}`, `#/topic/{id}`, `#/feld/{id}`, `#/session/{id}`, Tag-Filter `#/?tags={id},{id}`
+- Icons: Lucide-Sprite, inline in `index.html`. Neu bauen mit `scripts/build_icon_sprite.mjs`
+  (braucht `lucide-react` aus einem Nachbarprojekt). IDs heißen `#i-{name}`.
 - `const SHOW_PRONOUNS = true/false` in `js/app.js`
+
+**Kein Hash-Anker möglich** — der Hash trägt die Route. Sprünge innerhalb einer Seite
+laufen über `scrollIntoView` plus kurzes Aufblitzen (`.tl-flash`), siehe `renderFigures`.
 
 ---
 
@@ -84,9 +89,60 @@ Keine Dependencies im Frontend – Vanilla JS, Parliament-Chart ist pure SVG (ke
     "absent": ["beubl", ...]
     // anonymous:
     // "yes": 15, "no": 7, "absent": 3
-  }
+  },
+  "source":    { "tier": "tracked", "by": "gruber", "pressVerified": true, "pressId": "..." },
+  "excluded":  [{ "member": "weber", "reason": "beteiligung" }],
+  "inferable": false,        // sperrt die Ableitung bei Einstimmigkeit
+  "note":      "Erklärung, warum weniger Stimmen als Anwesende"
 }
 ```
+
+### Herkunft des Abstimmungsverhaltens (`source.tier`)
+
+Vier Stufen, absteigend nach Belastbarkeit. Die Oberfläche nennt sie in einer
+stillen Fußnote unter dem Vote-Block (`renderVoteSource`).
+
+| Stufe | Bedeutung | Bestand |
+|---|---|---|
+| `protocol-explicit` | Die Niederschrift nennt jeden Namen (namentliche Abstimmung) | 6 |
+| `protocol-implicit` | Einstimmig, also aus der Anwesenheit ableitbar | 537 |
+| `press` | Aus einem Presseartikel rekonstruiert, `pressId` verweist darauf | 0 |
+| `tracked` | Von einer benannten Person mitgeschrieben (`by`), optional presseverifiziert | 57 |
+
+247 Abstimmungen haben keine Stufe — dort ist nur das Gesamtergebnis bekannt.
+
+### Sonderzustände (`excluded[]`)
+
+Nur wenige Beschlüsse pro Wahlperiode, aber ohne sie wird die Statistik falsch.
+`Council.voteStatus()` löst sie vor der Sitzungsabwesenheit auf.
+
+| `reason` | Anzeige | Fall |
+|---|---|---|
+| `beteiligung` | „bef." (befangen) | Persönliche Beteiligung, Art. 49 GO |
+| `enthaltung` | „enth." | Ausdrückliche Enthaltung im Protokoll |
+| `nicht_stimmberechtigt` | „n.b." | z.B. neu Gewählte bei der Genehmigung alter Niederschriften |
+| `kurzfristig abwesend` | „–" | Kurz raus, zählt als abwesend |
+
+Keiner dieser Zustände zählt in der Statistik als Nein — sie landen im Eimer
+„nicht abgestimmt" (`statKey()`).
+
+### Ableitung bei Einstimmigkeit (`scripts/mark_inferable.py`)
+
+Einstimmig heißt: wer da war, hat so gestimmt. Das gilt aber nur, wenn auch alle
+mitgestimmt haben. Regel: **abgeleitet wird ab 90 % Beteiligung der Stimmberechtigten**,
+und die Ableitung ist in der Oberfläche mit `*` markiert. Zwei Sonderfälle werden
+vorher herausgerechnet:
+
+- **Wechselsitzungen** — wer an diesem Tag ausscheidet, teilt sich den Sitz mit der
+  Person, die nachrückt. Ein Sitz, nicht zwei. Betraf 22 Abstimmungen.
+- **Entlastung des Aufsichtsrats der Kläranlage** — dessen Mitglieder stimmen über die
+  eigene Entlastung nicht mit. Wer dem AR wann angehörte, geben die Daten nicht her;
+  die Lücke ist erklärt, aber nicht auflösbar. Diese 5 Voten bleiben ohne Ableitung
+  und tragen die Begründung in `note`.
+
+Aktuell 39 gesperrte Voten. Die Sperre kostet Information: eine Lücke von einer
+Stimme unter 22 würde 21 richtige Ableitungen verwerfen, um eine falsche zu
+vermeiden — deshalb die Schwelle statt einer harten Regel.
 
 **Gesamtstimmen:** 25 Mitglieder (24 StR + 1 BM Dollinger). Bei BPU/HVFA sind es je nach Gremium weniger.
 
@@ -122,8 +178,10 @@ Jedes Mitglied hat u.a.:
 | `dollinger` | Josef Dollinger | CSU | 1. Bürgermeister |
 | `hadersdorfer` | Michael Hadersdorfer | CSU | 2. BM |
 | `stanglmaier` | ... | CSU | 3. BM |
-| `gruber` | Benedict Gruber | fresh | App-Betreiber, ab 24.10.2022 (nachrückt für Neumayr) |
-| `neumayr` | ... | fresh | bis 24.10.2022 |
+| `gruber` | Benedict Gruber | fresh | App-Betreiber, 10.10.2022–30.04.2026 (nachgerückt für Neumayr) |
+| `neumayr` | ... | fresh | bis 10.10.2022 |
+| `marschoun` | ... | SPD | 2014–2020 **und** wieder ab 2026 — einziges Mandat mit Pause |
+| `mader` | ... | CSU | 1. Bürgermeister ab 01.05.2026 |
 | `john` | ... | SPD | bis 24.07.2023 (dann Strobl) |
 | `strobl` | ... | Linke/SPD | ab 24.07.2023 |
 | `gruebl` | ... | CSU | bis ~21.10.2024 (dann Hobmaier) |
@@ -136,36 +194,103 @@ Weitere: `becher_a`, `becher_j`, `beibl`, `fincke`, `grundner`, `haberl`, `heinz
 
 ---
 
-## Themen (topics) – aktuelle IDs
+## Themen: zwei Ebenen
 
-| ID | Thema |
+Seit dem Umbau im Juli 2026 gibt es **Felder** und **Dossiers**.
+
+- **Feld** = die zehn Kategorien aus `tags.json` (mobility, building, sports, culture,
+  environment, education, social, budget, economy, infrastructure). Eigene Seite unter
+  `#/feld/{id}`, führt die Dossiers des Feldes und die feldbezogenen Abstimmungen ohne
+  Dossier auf (`voteInField()` mit Stichwort-Regex).
+- **Dossier** = ein Eintrag in `topics.json`, gehört über `field` zu genau einem Feld.
+
+Zusätzliche Felder im Dossier:
+
+| Feld | Werte |
 |---|---|
-| t1 | SGT Istanbul Vereinsheim |
-| t2 | Bahnhof Moosburg |
-| t3 | Auf dem Plan (Stadtplatzsanierung) |
-| t4 | Verkehr / Radwege |
-| t5 | Rockermaier Areal (B-Plan 77) |
-| t6 | Theresia-Gerhardinger-Grundschule |
-| t7 | Haushalt / Finanzen |
-| t8 | Schulwege / Schulzentrum Süd |
-| t9 | Kreisverkehr Landshuter/Stadtwaldstr. |
-| t10 | Wirtschaftsförderung / Stadtmarketing |
-| t11 | Legal Wall / Street Art |
-| t12 | Freibad / Schwimmbäder |
-| t13 | Sanierungsgebiet Innenstadt–Bahnhof |
-| t14 | Stalag VII A / Wachbaracken |
-| t15 | Energie / Windenergie / PV / LED |
-| t16 | Hallenbad |
-| t17 | Rathaus Sanierung/Erweiterung |
-| t18 | Degernpoint (Gewerbegebiet) |
-| t19 | DAV Kletter-/Boulderhalle |
-| t20 | Amperauen / B-Plan 63 |
+| `type` | `vorhaben` · `konflikt` · `einrichtung` · `regelwerk` · `gebiet` · `zyklus` |
+| `status` | `laufend` · `abgeschlossen` · fehlt (bei Dauerthemen wie Haushalt) |
+| `partOf` | Dossier-ID, wenn das Vorhaben in einem Gebiet liegt |
+| `figures` | Kopftabelle für Größen, die sich wiederholt ändern (Gebühren, Förderhöhen). Zeilen mit `voteId` springen in den Zeitstrahl. |
+
+Wichtiger Grundsatz aus der Diskussion: **die Zahl der vorhandenen Abstimmungen ist
+nicht das einzige Kriterium.** Ein einzelnes Bauprojekt ist eine ausreichende Einheit;
+umgekehrt kann ein breites Feld wie Radverkehr in Dossiers zerfallen, weil sich Bürger
+nicht für den ganzen Bereich interessieren, sondern für die eine Kreuzung.
+
+| ID | Dossier | Feld | Typ |
+|---|---|---|---|
+| t1 | Vereinsheim SGT Istanbul | sports | vorhaben |
+| t2 | Sanierung Bahnhof Moosburg | building | vorhaben |
+| t3 | Parksituation Auf dem Plan | mobility | konflikt |
+| t4 | Verkehrsberuhigung Innenstadt | mobility | vorhaben |
+| t5 | Studentenwohnheim Rockermaier Areal | building | konflikt |
+| t6 | Theresia-Gerhardinger-Grundschule | education | vorhaben |
+| t7 | Haushalt | budget | zyklus |
+| t8 | Schulwegsicherheit | mobility | vorhaben |
+| t9 | Kreisverkehr Landshuter Straße | mobility | vorhaben |
+| t10 | Wirtschaftsförderung Moosburg | economy | vorhaben |
+| t11 | Legal Wall | culture | vorhaben |
+| t12 | Freibad | sports | einrichtung |
+| t13 | Sanierungsgebiet Innenstadt–Bahnhof | building | gebiet |
+| t14 | Erhalt Wachbaracken Stalag VII A | culture | konflikt |
+| t16 | Hallenbad | sports | einrichtung |
+| t17 | Rathaus-Sanierung | building | vorhaben |
+| t18 | Gewerbegebiet Degernpoint | economy | gebiet |
+| t19 | DAV Kletter- und Boulderhalle | sports | vorhaben |
+| t20 | Amperauen / Wohngebiet & Park | building | gebiet |
+| t21 | Kommunale Wärmeplanung | environment | vorhaben |
+| t22 | Windenergie im Regionalplan | environment | konflikt |
+| t23 | Photovoltaik-Freiflächenanlage Kuttenweide | environment | vorhaben |
+| t24 | Straßenbeleuchtung auf LED | infrastructure | vorhaben |
+| t25 | Städtische Förderprogramme für Energie | environment | regelwerk |
+| t26 | Stromeinkauf der Stadt | infrastructure | zyklus |
+| t28 | Gewerbegebiet Pfrombach – Containerbau ELA | economy | konflikt |
+| t29 | Bürgerbegehren „Lebenswertes Moosburg“ | building | konflikt |
+
+t15 (Sammelthema Energie) wurde in t21–t26 zerlegt, t27 (Sammelthema Bürgerbegehren)
+in t28 und t29. Beide IDs sind vergeben und werden nicht neu benutzt; die nächste
+freie ID ist **t30**.
+
+---
+
+## Design
+
+Die App folgt dem offiziellen Moosburger Design-System, nicht dem alten Verlaufs-Look.
+
+- Schrift: **Playfair Display** (Überschriften) + **Inter** (Fließtext), self-hosted in `fonts/`
+- Rot gedeckt statt grell: `--primary-dark #6D0818`, `--primary #A50D24`,
+  `--primary-bright #C8102E` nur punktuell. `--no #9B0000` bleibt bewusst ein anderes Rot,
+  damit ein Link nicht wie eine Ablehnung aussieht.
+- Gold `#B8964E`, Creme `#FAF7F2`, Tiefschwarz `#1C1C1C`
+- Rainbow-Streifen: 9 feste Segmente, 4 px, **nie als Verlauf**. Einzige Signaturfläche.
+- Radien 2–4 px. Keine Verläufe, keine Glassmorphism-Karten.
+
+**Chrome je Bereich** — Navbar und Hero sind eine durchgehende Fläche, deren Farbe aus
+`--chrome` kommt und über `body[data-chrome=…]` wechselt (`setChrome()` in `js/app.js`):
+
+| Bereich | Farbe |
+|---|---|
+| Themen, Dossiers | `--primary` |
+| Themenfeld | `--primary-dark` |
+| Sitzungen, Kalender | `#6E5A30` Gold-dunkel |
+| Gremien, Personen | `--text` Tiefschwarz |
+| Einstellungen | Creme, dunkle Schrift |
+
+**Globale Suche** — ein Index über Felder, Dossiers, Abstimmungen, Sitzungen und
+Personen (`globalSearch()`), nach Art gruppiert mit Kontingent je Art, damit eine
+Kategorie die anderen nicht verdrängt.
 
 ---
 
 ## Sitzungsabdeckung – Stand 2026-06-10
 
-Die App deckt alle Sitzungen ab, die in der **Bürgerinfo-Niederschrift** veröffentlicht wurden. Vollständig eingetragen:
+Der Backlog **2020-01 bis 2021-12** sowie die Lücken 2022 und die Sitzungen der neuen
+Wahlperiode (11.05. und 18.05.2026) wurden im Juli 2026 nachgetragen — 38 Niederschriften
+in einem Durchlauf über `scripts/add_backlog_2020_2026.py`. Die Anwesenheitslisten aller
+38 Sitzungen wurden gegen die Mandatslage geprüft: **0 Abweichungen**.
+
+Die Liste unten ist der Stand davor und beschreibt nur noch, was aus der Bürgerinfo kam:
 
 **2022:** StR 05.09., 19.09., 24.10. | BPU 17.11.
 **2023:** StR 12.01., 30.01., 13.02., 06.03., 27.03., 17.04., 24.04., 15.05., 22.05., 12.06., 26.06., 10.07., 24.07., 04.09., 23.10., 14.12., 18.12. | BPU 23.01., 20.03., 17.07., 21.09., 23.11.
@@ -179,6 +304,20 @@ StR 01.07.2024, 02.09.2024, 23.09.2024, 07.10.2024, 21.10.2024, 04.11.2024, 18.1
 ---
 
 ## ⚠️ Bekannte offene Punkte
+
+### 0. Aus dem ELA-Umbau (August 2026)
+- **Ergebnis des Bürgerentscheids vom 21.11.2021 fehlt.** Keine der vorliegenden
+  Niederschriften hält es fest. Der Bebauungsplan wurde 2024 als Satzung beschlossen,
+  das Begehren hat sich also nicht durchgesetzt — belegt ist das hier aber nicht.
+  Der Zeitstrahl von t28 sagt das offen.
+- **Der Parser übersieht Zusatzanträge nach dem Hauptbeschluss.** Beispiel StR
+  06.09.2021: der Antrag Stanglmaier, den Bürgerentscheid nur per Briefwahl
+  durchzuführen, wurde 9:13 abgelehnt und fehlt in `votes.json`. Vermutlich
+  systematisch — Anträge zur Geschäftsordnung stehen im Fließtext nach dem
+  eigentlichen TOP-Beschluss.
+- **Mandatsbeginn Meier prüfen.** `members.json` führt `from: 2026-05-01`. Damit ergibt
+  die Rechnung zur Niederschriftsgenehmigung am 18.05.2026 zwölf fortgeführte plus zwei
+  neue Mandate; die Zählung des Betreibers war 13 + 1.
 
 ### 1. Fehlende Sitzung: BPU/HVFA 21.07.2025
 Die Gemeinschaftssitzung BPU + HVFA vom **21. Juli 2025** fehlt komplett in `sessions.json` und `votes.json`. Belegt durch Agenda-TOP in bpu_20251006: „Genehmigung Niederschrift BPU 21.07.2025". Niederschrift-PDF sollte in `data/niederschriften/` liegen.
@@ -200,6 +339,18 @@ Existierte nachweislich (in sr_20250714 Niederschrift-Genehmigung erwähnt), hat
 2. Skill `/niederschrift-einarbeiten` verwenden (liest PDF, trägt Sessions + Votes + ggf. Topics ein)
 3. Danach Skill `/validate-data` ausführen
 
+### Tracking aus dem Voting-Tool
+Aus dem Projekt `/council-voting-tool` kommen ZIP-Exporte mit JSON. `scripts/add_tracking_2026.py`
+gleicht sie über TOP-Nummer und Reihenfolge gegen die Sitzung ab.
+
+- **Das Protokoll wird nie überschrieben.** Wo ein Vote schon `named` ist, meldet das
+  Skript einen Konflikt, statt ihn anzuwenden.
+- Getrackte Voten bekommen `source: {tier: "tracked", by: "<member-id>"}`.
+- ZIPs kommen oft **vor** der zugehörigen Niederschrift. Ohne Protokoll wird nicht
+  importiert — sonst fehlt die Anwesenheitsbasis.
+- Die enthaltenen `nichtoeffentlich.json` tragen nur Sitzungsmetadaten und Anwesenheit,
+  keine Beschlüsse. Sie dürfen ins öffentliche Repo.
+
 ### Topic-Watchlist
 `data/knowledge/topic-watchlist.md` — vom User benannte Themen, die auf jeden
 Fall eigene Topic-Seiten bekommen sollen. Wird beim Einarbeiten von
@@ -210,7 +361,7 @@ Niederschriften geprüft; die Anlage von Watchlist-Themen ist vorab genehmigt
 - Session-IDs: `{typ}_{YYYYMMDD}` (z.B. `sr_20250602`, `bpu_20250522`)
 - Vote-IDs: `{sessionId}_{NN}` (zweistellig, z.B. `sr_20250602_01`)
 - Press-IDs: `{media}_{YYYY-MM-DD}_{slug}`
-- Topic-IDs: `t{N}` (fortlaufend, nächste wäre `t21`)
+- Topic-IDs: `t{N}` (fortlaufend, nächste freie: `t30`)
 
 ### Named vs. Anonymous Votes
 - **Named** wenn die Niederschrift Einzelstimmen nennt (meist bei knappen oder kontroversen Votes + erste Vote je Sitzung)

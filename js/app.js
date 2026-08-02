@@ -608,12 +608,27 @@ const SHOW_PRONOUNS = true;
     box.innerHTML = `
       <h2 class="section-label">${f.title}</h2>
       <table class="figures-table"><tbody>${rows.map((r, i) => `
-        <tr${i === 0 ? ' class="current"' : ""}>
+        <tr${i === 0 ? ' class="current"' : ""}${r.voteId ? ` data-vote="${r.voteId}" tabindex="0"` : ""}>
           <td class="fig-date">${formatDate(r.date)}</td>
-          <td class="fig-label">${r.voteId ? `<a href="#/topic/${topic.id}">${r.label}</a>` : r.label}</td>
+          <td class="fig-label">${r.label}</td>
           ${r.value ? `<td class="fig-value">${r.value}</td>` : ""}
         </tr>`).join("")}</tbody></table>
       ${f.note ? `<p class="figures-note">${f.note}</p>` : ""}`;
+
+    // Die Zeilen zeigen auf Beschlüsse, die weiter unten im Zeitstrahl stehen.
+    // Ein Hash-Anker geht nicht — der Hash trägt hier die Route.
+    const jump = e => {
+      const tr = e.target.closest("tr[data-vote]");
+      if (!tr || (e.key && e.key !== "Enter")) return;
+      const target = document.getElementById("e-" + tr.dataset.vote);
+      if (!target) return;
+      target.scrollIntoView({ block: "center" });
+      target.classList.remove("tl-flash");
+      void target.offsetWidth;
+      target.classList.add("tl-flash");
+    };
+    box.addEventListener("click", jump);
+    box.addEventListener("keydown", jump);
     return box;
   }
 
@@ -664,6 +679,7 @@ const SHOW_PRONOUNS = true;
     topic.history.forEach(entry => {
       const el = document.createElement("div");
       el.className = "tl-entry";
+      if (entry.voteId) el.id = "e-" + entry.voteId;
 
       // Hervorgehoben wird, was tatsächlich eine Weggabelung war: Meilensteine,
       // abgelehnte Anträge und Abstimmungen, die nicht einstimmig durchgingen.
@@ -1727,12 +1743,13 @@ const SHOW_PRONOUNS = true;
     rolesSection.className = "profile-section";
     rolesSection.innerHTML = "<h3>Mandate & Funktionen</h3>";
 
-    const roleLabel = m.role === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
-    const periods = (m.periods && m.periods.length)
-      ? m.periods
-      : [{ from: m.from, to: m.to }];
-    periods.forEach(p => {
-      rolesSection.appendChild(makeRoleRow("account_balance", roleLabel, p.from, p.to));
+    const roleLabel = r => r === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
+    const mandates = ((m.periods && m.periods.length) ? m.periods : [{ from: m.from, to: m.to }])
+      .map(p => ({ icon: "account_balance", label: roleLabel(m.role), from: p.from, to: p.to }))
+      .concat((m.roleHistory || []).map(rh =>
+        ({ icon: "account_balance", label: roleLabel(rh.role), from: rh.from, to: rh.to })));
+    mergeRoles(mandates).forEach(r => {
+      rolesSection.appendChild(makeRoleRow(r.icon, r.label, r.spans));
     });
 
     if (m.partyHistory && m.partyHistory.length) {
@@ -1751,13 +1768,6 @@ const SHOW_PRONOUNS = true;
       rolesSection.appendChild(phWrap);
     }
 
-    if (m.roleHistory) {
-      m.roleHistory.forEach(rh => {
-        const rl = rh.role === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
-        rolesSection.appendChild(makeRoleRow("account_balance", rl, rh.from, rh.to));
-      });
-    }
-
     if (profile.titles) {
       profile.titles.forEach(t => {
         // Referent:innen vertreten ein Sachgebiet nach außen — das Megafon
@@ -1765,7 +1775,7 @@ const SHOW_PRONOUNS = true;
         const icon = t.title.includes("rgermeister") ? "star"
                    : /Referent|Beauftragt/i.test(t.title) ? "referent"
                    : "badge";
-        rolesSection.appendChild(makeRoleRow(icon, t.title, t.from, t.to));
+        rolesSection.appendChild(makeRoleRow(icon, t.title, [{ from: t.from, to: t.to }]));
       });
     }
 
@@ -1773,7 +1783,7 @@ const SHOW_PRONOUNS = true;
     // alte Fassung las nur ein `seats` auf oberster Ebene und fand deshalb
     // ausschließlich die Gremien ohne Perioden (Aufsichtsrat, Verbandsrat).
     committeeRoles(m).forEach(r => {
-      rolesSection.appendChild(makeRoleRow(r.icon, r.label, r.from, r.to));
+      rolesSection.appendChild(makeRoleRow(r.icon, r.label, r.spans));
     });
 
     wrap.appendChild(rolesSection);
@@ -2062,16 +2072,45 @@ const SHOW_PRONOUNS = true;
                    from: ps.from || m.from, to: ps.to });
       });
     });
-    return out;
+    return mergeRoles(out);
   }
 
-  function makeRoleRow(icon, text, from, to) {
+  // Ein Ausschuss über zwei Wahlperioden hinweg ist eine Zugehörigkeit, keine
+  // zwei. Nur echte Unterbrechungen bleiben getrennte Zeiträume — bei Marschoun
+  // etwa liegen sechs Jahre zwischen den Mandaten.
+  function mergeRoles(rows) {
+    const groups = new Map();
+    rows.forEach(r => {
+      const key = r.icon + "|" + r.label;
+      if (!groups.has(key)) groups.set(key, { icon: r.icon, label: r.label, spans: [] });
+      groups.get(key).spans.push({ from: r.from, to: r.to });
+    });
+    return [...groups.values()].map(g => {
+      g.spans.sort((a, b) => (a.from || "").localeCompare(b.from || ""));
+      g.spans = g.spans.reduce((acc, s) => {
+        const prev = acc[acc.length - 1];
+        if (prev && (!prev.to || !s.from || dayAfter(prev.to) >= s.from)) {
+          if (!s.to || (prev.to && s.to > prev.to)) prev.to = s.to;
+        } else acc.push({ ...s });
+        return acc;
+      }, []);
+      return g;
+    });
+  }
+
+  function dayAfter(iso) {
+    const d = new Date(iso + "T12:00:00");
+    d.setDate(d.getDate() + 1);
+    return d.toISOString().slice(0, 10);
+  }
+
+  function makeRoleRow(icon, text, spans) {
     const row = document.createElement("div");
     row.className = "role-row";
     row.innerHTML = `
       <svg class="icon"><use href="#i-${icon}"/></svg>
       <span>${text}</span>
-      <span class="role-dates">${formatPeriod(from, to)}</span>`;
+      <span class="role-dates">${spans.map(s => formatPeriod(s.from, s.to)).join("<br>")}</span>`;
     return row;
   }
 

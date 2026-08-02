@@ -66,7 +66,7 @@
   {
     "id": "sr_20200210_01",
     "sessionId": "sr_20200210",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2020-02-10",
     "title": "Aufstellung e. vorhabenbezogenen Bebauungsplan Nr. 70 \"Containerbau ELA\" gem. § 12 BauGB f.…",
     "text": "Der Stadtrat beschließt die Aufstellung eines vorhabenbezogenen Bebauungsplans „Container- bau ELA“ nach § 12 Abs. 1 BauGB für die Flur-Nrn. 261, 262, 262/1,266/3, 276, 277, 278 und 279 Gem. Pfrombach. Mit der Aufstellung dieses Bebauungsplans erfolgt gleichzeitig die Änderung des Flächennut- zungsplans nach § 8 Abs. 3 BauGB im Parallelverfahren.",
@@ -80,7 +80,7 @@
   {
     "id": "sr_20200210_02",
     "sessionId": "sr_20200210",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2020-02-10",
     "title": "Aufstellung e. vorhabenbezogenen Bebauungsplan Nr. 70 \"Containerbau ELA\" gem. § 12 BauGB f.…",
     "text": "Die Verwaltung wird beauftragt, zur Durchführung des Verfahrens und zur Realisierung des Vorhabens einen Durchführungsvertrag mit dem Vorhabensträger abzustimmen.",
@@ -94,7 +94,7 @@
   {
     "id": "sr_20200210_03",
     "sessionId": "sr_20200210",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2020-02-10",
     "title": "Aufstellung e. vorhabenbezogenen Bebauungsplan Nr. 70 \"Containerbau ELA\" gem. § 12 BauGB f.…",
     "text": "Die Verwaltung wird beauftragt, die frühzeitige Öffentlichkeits- und Behördenbeteiligung mit der Planung in der Fassung vom 28.01.2020 durchzuführen und die Ergebnisse dem Stadt- rat zur beschlussmäßigen Behandlung vorzulegen.",
@@ -108,7 +108,7 @@
   {
     "id": "sr_20200210_04",
     "sessionId": "sr_20200210",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2020-02-10",
     "title": "Aufstellung e. vorhabenbezogenen Bebauungsplan Nr. 70 \"Containerbau ELA\" gem. § 12 BauGB f.…",
     "text": "Der Stadtrat beschließt, dass die Streuobstwiese als wesentlicher Bestandteil der Ausgleichs- fläche festzulegen ist und wird entsprechend bei der Unteren Naturschutzbehörde dafür eintre- ten.",
@@ -3083,7 +3083,7 @@
   {
     "id": "sr_20201026_05",
     "sessionId": "sr_20201026",
-    "topicId": "t27",
+    "topicId": "t29",
     "date": "2020-10-26",
     "title": "Bürgerbegehren \"Lebenswertes Moosburg\" - Beschlussfassung über die Zulässigkeit des…",
     "text": "Der Stadtrat erklärt, dass für das am 02.10.2020 eingereichte Bürgerbegehren „Lebenswertes Moosburg“ die formellen Voraussetzungen (insbesondere die erforderliche Anzahl an Unter- schriften) erfüllt sind, materiell-rechtlich muss das Bürgerbegehren jedoch für unzulässig erklärt werden.",
@@ -3127,7 +3127,7 @@
   {
     "id": "sr_20201026_06",
     "sessionId": "sr_20201026",
-    "topicId": "t27",
+    "topicId": "t29",
     "date": "2020-10-26",
     "title": "Bürgerbegehren \"Lebenswertes Moosburg\" - Beschlussfassung über die Zulässigkeit des…",
     "text": "Stadtrat vorbehalten, im Rahmen seiner Entscheidungsbefugnis und seiner Abwägung im Rahmen der Bauleitplanung einzelne Punkte des Bürgerbegehrens, wie beispielsweise Baurecht, Anzahl der Wohneinheiten, maximale Flächenversiegelung für bestimmte überplante Bereiche bei der Aufstellung von Bebauungsplänen zu berücksichtigen. Darüber hinaus muss die Stellplatzsatzung aktuell wegen diverser…",
@@ -3712,7 +3712,7 @@
   {
     "id": "sr_20210222_01",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Der Stadtrat nimmt die Stellungnahme des Regionalen Planungsverbands München vom 11.08.2020 zur Kenntnis und stellt fest, dass zur Bauleitplanung keine regionalplanerischen Bedenken angemeldet werden.",
@@ -3756,7 +3756,7 @@
   {
     "id": "sr_20210222_02",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Der Stadtrat nimmt die Stellungnahme der Regierung von Oberbayern vom 11.08.2020 zur Kenntnis und stellt fest, dass die Bauleitplanung den Erfordernissen der Raumordnung nicht entgegensteht.",
@@ -3776,7 +3776,7 @@
   {
     "id": "sr_20210222_03",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Der Stadtrat nimmt die Stellungnahme der Kläranlage Moosburg GmbH vom 11.08.2020 zur Kenntnis und stellt fest, dass keine Einwände gegen die Bauleitplanung bestehen.",
@@ -3826,7 +3826,7 @@
   {
     "id": "sr_20210222_04",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Der Stadtrat nimmt die Stellungnahme der CSG GmbH (Deutsche Post) vom 10.08.2020, ein- gegangen am 11.08.2020, zur Kenntnis und stellt hierzu fest, dass zur Bauleitplanung keine Äußerung erfolgte und eine weitere Einbindung nicht erforderlich sei.",
@@ -3876,7 +3876,7 @@
   {
     "id": "sr_20210222_05",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Der Stadtrat nimmt die Stellungnahme der Industrie- und Handelskammer für München und Oberbayern vom 10.08.2020 zur Kenntnis und stellt fest, dass der Bauleitplanung zugestimmt wird.",
@@ -3896,7 +3896,7 @@
   {
     "id": "sr_20210222_06",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Sammelvote: 21 Einzelbeschlüsse mit identischem Ergebnis (22:0). Der Stadtrat nimmt die Stellungnahme der Firma Heinz Entsorgung GmbH & Co. KG vom 07.08.2020 zur Kenntnis und stellt fest, dass zur geplanten Bauleitplanung keine Einwendungen vorgebracht werden.",
@@ -3940,7 +3940,7 @@
   {
     "id": "sr_20210222_07",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "gsplan ersichtlich ist, bereits in den Bereichen, in denen dies möglich ist, berück- sichtigt wurde. Neben den Gebäuden benötigt die Fa. ELA aber auch Freiflächen zur Lagerung der Container und entsprechende Verkehrsflächen. Flächen mit Nachverdichtungspotential oder zur Wie- dernutzbarmachung stehen nicht zur Verfügung. Die gesetzlichen Pflanzabstände sind ohnehin zu beachten, eine zusätzliche…",
@@ -3954,7 +3954,7 @@
   {
     "id": "sr_20210222_08",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Eigentümer der Fläche hat mitgeteilt, dass er nicht an die Firma ELA verkaufen wird. Selbst wenn ein Erwerb möglich wäre, wären die bestehenden Gebäude bzw. Hallen nicht für die Firma ELA nutzbar und müssten zu- nächst beseitigt werden, da ihre Maße für ELA nicht ausreichend sind und der bauliche Zustand keine sinnvolle Weiterverwendung für ELA möglich macht. Hier sind zusätzlich derzeit noch…",
@@ -3968,7 +3968,7 @@
   {
     "id": "sr_20210222_09",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "ht möglich. Der Stadtrat stellt weiterhin fest, dass die Untere Naturschutzbehörde mit der Kompensations- berechnung einverstanden ist. Die Darstellung einer Grünfläche ist auf der Ebene des Bebauungsplanes ausreichend, da sie das planerische Ziel der Stadt zeigt, hier keine Bebauung zu ermöglichen. Eine Darstellung als Ausgleichsfläche ist nicht erforderlich, zumal auf der Ebene des…",
@@ -3982,7 +3982,7 @@
   {
     "id": "sr_20210222_10",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "ng ist zu überprüfen und ggf. zu optimieren hinsichtlich Les- barkeit. Der Stadtrat nimmt zur Kenntnis, dass die Untere Naturschutzbehörde mit den gewählten Kom- pensationsmaßnahmen grundsätzlich einverstanden ist. Die Hinweise hinsichtlich der Meldung der Ausgleichsflächen an das Bayerische Landesamt für Umweltschutz betreffen den Verwaltungsvollzug und sind entsprechend nach Rechtskraft des…",
@@ -3996,7 +3996,7 @@
   {
     "id": "sr_20210222_11",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Der Stadtrat nimmt die Stellungnahme des Landratsamtes Freising, SG 43, Bauleitplanung, vom 25.08.2020, eingegangen am 14.09.2020 zur 12. Änderung des Flächennutzungsplans zur Kenntnis und stellt fest, dass anstelle einer Darstellung als Sondergebiet ein Gewerbegebiet dargestellt wird.",
@@ -4040,7 +4040,7 @@
   {
     "id": "sr_20210222_12",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Der Stadtrat nimmt die Stellungnahme des Landratsamts Freising, SG 43, Bauleitplanung, vom 25.08.2020, eingegangen am 14.09.2020 zur Kenntnis und stellt fest, dass der vorhabenbezo- gene Bebauungsplan hier nicht allgemein die Art der baulichen Nutzung festsetzt, sondern le- diglich das Vorhaben der Fa. ELA. Die vom Landratsamt vorgeschlagene Variante ist ebenfalls denkbar. Dennoch verbleibt es…",
@@ -4090,7 +4090,7 @@
   {
     "id": "sr_20210222_13",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "rweile vorliegt, die Ergebnisse sind in den Bebauungsplan einzuarbeiten. Die bisherige Zufahrt zum Betriebsgelände über das Wohngebiet Pfrombach entfällt komplett. Die neue Zufahrt von der Staatsstraße aus ist bereits über den Bebauungsplan „Gewerbegebiet Pfrombach“ festgesetzt und muss daher nicht nochmals in diesem Bebauungsplan festgesetzt werden. Eine Betriebsbeschreibung liegt bereits vor…",
@@ -4104,7 +4104,7 @@
   {
     "id": "sr_20210222_14",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Der Stadtrat nimmt die Stellungnahme des Wasserwirtschaftsamtes München vom 16.09.2020 zur Kenntnis und stellt fest, dass das Konzept zur Niederschlagswasserbeseitigung im Vorha- ben- und Erschließungsplan näher zu erläutern ist. Der Stadtrat stellt ferner fest, dass der vom Wasserwirtschaftsamt angesprochene Pfrombach, der wie das Wasserwirtschaftsamt richtig feststellt, außerhalb des…",
@@ -4124,7 +4124,7 @@
   {
     "id": "sr_20210222_15",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Fachgutachter Dr. Manhart ist mit der Unteren Naturschutzbehörde der Umfang der Ergänzungen der SaP abzustimmen und ggf. Un- tersuchungen zu einzelnen Tiergruppen durchzuführen. Zu den Ausgleichsflächen stellt der Stadtrat fest, dass zur Lage, Größe und Art der Maßnahmen auf der Ausgleichsfläche eine Zustimmung seitens der Unteren Naturschutzbehörde vorliegt. Die Planung ist sachgerecht und…",
@@ -4138,7 +4138,7 @@
   {
     "id": "sr_20210222_16",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Angebot an Arbeits- plätzen in der Stadt zu erhalten und zu verbessern. Im Rahmen der Gesamtabwägung hat sich die Stadt dafür entschieden, die hier richtigerweise angeführten negativen Auswirkungen soweit wie möglich zu minimieren und verbleibende negative Auswirkungen hinzunehmen. Der Stadtrat stellt außerdem fest, dass die Bedenken zur Außenbeleuchtung des Betriebsge- ländes zur Kenntnis…",
@@ -4152,7 +4152,7 @@
   {
     "id": "sr_20210222_17",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "ßungsplan die Voraussetzung für ein Vorhaben, das über diese beiden Pläne klar eingegrenzt ist. Im Zusammenspiel dieser beiden Pläne ergibt sich, dass die Höhe der angesprochenen Halle eine Firsthöhe von 13 m nicht überschreiten darf. Daher sind die in der Stellungnahme erwähnten Baukörper nicht zulässig. Dennoch wird der Bebauungsplan hinsichtlich der Firsthöhe der Gebäude ergänzt. Die im…",
@@ -4166,7 +4166,7 @@
   {
     "id": "sr_20210222_18",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "die Verkehrslenkung in Zukunft weiter ver- bessern lässt. Zum Thema Flächenverbrauch stellt der Stadtrat fest, dass sich die Stadt im Vorfeld der Aufstel- lung des Bebauungsplanes ausführlich auseinandergesetzt hat. Hierzu ist festzustellen, dass nicht zuletzt im Ergebnis der Diskussion mit dem Nachbarn, der ja ursprünglich angedachte Erweiterungsbereich von 3,7 ha auf 2,45 ha deutlich…",
@@ -4186,7 +4186,7 @@
   {
     "id": "sr_20210222_19",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Erschließungsstraße unmittelbar an die Staatsstraße ST 2082 angebunden. Die- se überregionale Straße ist zur Aufnahme des zusätzlichen Verkehrs geeignet. Mit der neuen Erschließungsstraße ist zudem für das angrenzende Wohngebiet eine deutliche Entlastung ent- standen. Über den Bebauungsplan kann keine Verkehrsregelung erfolgen. Dennoch ist bereits eine Ent- lastung des Wohngebietes durch die…",
@@ -4200,7 +4200,7 @@
   {
     "id": "sr_20210222_20",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "hließungsstraße unmittelbar an die Staatsstraße ST 2082 angebunden sei. Diese überregionale Straße ist zur Aufnahme des zusätzlichen Verkehrs geeignet. Mit der neuen Er- schließungsstraße ist zudem für das angrenzende Wohngebiet eine deutliche Entlastung ent- standen. Über den Bebauungsplan kann keine Verkehrsregelung erfolgen. Dennoch ist bereits eine Ent- lastung des Wohngebietes durch die…",
@@ -4220,7 +4220,7 @@
   {
     "id": "sr_20210222_21",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Schutzanspruch eines Wohngebietes ge- wahrt bleibt. Daher bestimmt also der Schutzanspruch der schutzwürdigen Nutzung die zulässi- gen Immissionen und nicht in erster Linie die zulässige Art der baulichen Nutzung im Gebiet, von dem die Emissionen ausgehen. Der Stadtrat stellt außerdem fest, dass es unbestritten sei, dass die Erweiterung der gewerbli- chen Fläche zur Beeinträchtigung des…",
@@ -4240,7 +4240,7 @@
   {
     "id": "sr_20210222_22",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "t mehr als 20 m erreichen. Der Stadtrat stellt außerdem fest, dass es nicht prognostizierbar sei, ob die zusätzlichen Mitar- beiter der Fa. ELA alle durch Zuzug gewonnen werden müssen. Das geplante Wachstum der Firma wird sich zudem über einige Jahre verteilen. Selbst wenn die neuen Mitarbeiter aus- schließlich durch Zuzug zu gewinnen wären, würde sich ein solcher Einwohnerzuwachs aber in einem…",
@@ -4260,7 +4260,7 @@
   {
     "id": "sr_20210222_23",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Einwands vom 14.09.2020, eingegangen am 15.09.2020, zur Kenntnis und stellt fest, dass sich die Stadt zum Thema Flächenverbrauch im Vorfeld der Aufstellung des Bebauungsplanes ausführlich auseinandergesetzt hat. Hierzu ist festzustellen, dass nicht zuletzt im Ergebnis der Diskussion mit den Nachbarn, der ja ursprüng- lich angedachte Erweiterungsbereich von 3,7 ha auf 2,45 ha deutlich verkleinert…",
@@ -4280,7 +4280,7 @@
   {
     "id": "sr_20210222_24",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "vorhabenbezogenen Bebauungsplan ist der vom Vorhabenträger aktuell beantragte Flächenbedarf für den Erweiterungsstandort, der ja im Vor- feld bereits Gegenstand umfangreicher Diskussionen war und der im Vergleich zur ersten Pla- nung auch reduziert wurde. Der Stadtrat stellt ferner fest, dass es unbestritten sei, dass die Erweiterung der gewerblichen Fläche zur Beeinträchtigung des…",
@@ -4300,7 +4300,7 @@
   {
     "id": "sr_20210222_25",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "sstraße ST 2082 angebunden sei. Diese überregionale Straße ist zur Aufnahme des zusätzlichen Verkehrs ge- eignet. Mit der neuen Erschließungsstraße ist zudem für das angrenzende Wohngebiet eine deutliche Entlastung entstanden. Des Weiteren stellt der Stadtrat fest, dass über den Bebauungsplan keine Verkehrsregelung erfolgen kann. Dennoch ist bereits eine Entlastung des Wohngebietes durch die…",
@@ -4320,7 +4320,7 @@
   {
     "id": "sr_20210222_26",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "splätze anbieten wird. Dies ist nach Auskunft von ELA dadurch begründet, dass die entsprechende Ausbildungsordnung des jeweiligen Berufsbil- des im Rahmen der Ausbildung Tätigkeitsbereiche vorgibt, die aber nicht alle von ELA angebo- ten werden können. Insofern ist in diesen handwerklichen Bereichen keine ordnungsgemäße Ausbildung möglich. Im kaufmännischen Bereich bildet ELA hingegen aus. Im…",
@@ -4370,7 +4370,7 @@
   {
     "id": "sr_20210222_27",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "hme des privaten Einwands vom 14.09.2020, eingegangen am 15.09.2020, zur Kenntnis und stellt fest, dass nicht prognostiziert werden kann, woher die künftigen Mitarbeiter der Firma Ela kommen werden. Insofern handelt es sich bei der Behaup- tung, dass aufgrund des Fachkräftemangels dem lokalen Handwerk Fachkräfte entzogen wer- den oder durch Zuzug gewonnen werden müssen, um eine Vermutung. Ebenso…",
@@ -4420,7 +4420,7 @@
   {
     "id": "sr_20210222_28",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "des privaten Einwands vom 14.09.2020, eingegangen am 15.09.2020, zur Kenntnis und stellt fest, dass die Stadt Moosburg den Bebauungsplan nicht in der Hoffnung auf Gewerbesteuereinnahmen aufstellt, sondern, um einem ortsansässigen Betrieb eine nachvollziehbar dargelegte Erweiterungsmöglichkeit zu schaffen und das Angebot an Arbeitsplätzen in der Stadt zu erhalten und zu verbessern. Im Rahmen der…",
@@ -4440,7 +4440,7 @@
   {
     "id": "sr_20210222_29",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "020, eingegangen am 15.09.2020, zur Kenntnis und stellt fest, dass es nicht prognostizierbar sei, ob die zusätzli- chen Mitarbeiter der Fa. ELA alle durch Zuzug gewonnen werden müssen. Das geplante Wachstum der Firma wird sich zudem über einige Jahre verteilen. Selbst wenn die neuen Mitar- beiter ausschließlich durch Zuzug zu gewinnen wären, würde sich ein solcher Einwohnerzu- wachs aber in…",
@@ -4460,7 +4460,7 @@
   {
     "id": "sr_20210222_30",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Sammelvote: 8 Einzelbeschlüsse mit identischem Ergebnis (14:8). Dadurch ist sicherge- stellt, dass bei Einhaltung der Auflagen im Wohngebiet nicht mit unzulässigen Immissionen zu rechnen ist. Der Stadtrat stellt ferner fest, dass es sich bei der Firma ELA um einen Betrieb handelt, der in einem Gewerbegebiet untergebracht werden kann. Hierbei ist die typisierende Systematik der Benutzungsverordnung zu berücksichtigen, die Gewerbebetriebe als nicht erheblich…",
@@ -4474,7 +4474,7 @@
   {
     "id": "sr_20210222_31",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\"nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Der Stadtrat nimmt die Stellungnahme des privaten Einwands vom 14.09.2020, eingegangen am 16.09.2020, zur Kenntnis und stellt fest, dass die Bedenken zur Außenbeleuchtung des Be- triebsgeländes zur Kenntnis genommen werden. Um hier nachteilige Auswirkungen auf das Wohngebiet auszuschließen, muss der Vorhabenträger ein entsprechendes Gutachten erstel- len, dessen Ergebnisse in den Bebauungsplan…",
@@ -4488,7 +4488,7 @@
   {
     "id": "sr_20210222_32",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "reits eine Ent- lastung des Wohngebietes durch die Anlage der neuen Zufahrt und Schließung der bestehen- den Zufahrt erfolgt. Die Stadtverwaltung wird beauftragt, gemeinsam mit ELA zu prüfen, wie sich die Verkehrslenkung in Zukunft weiter verbessern lässt. Außerdem stellt der Stadtrat fest, dass es unbestritten sei, dass die Erweiterung der gewerbli- chen Fläche zur Beeinträchtigung des…",
@@ -4502,7 +4502,7 @@
   {
     "id": "sr_20210222_33",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "ebau- ungsplans gemacht. Außerdem stellt der Stadtrat fest, dass zur Beurteilung der erforderlichen Festsetzungen zum Immissionsschutz mittlerweile ein Gutachten vorliegt, dessen Ergebnisse im Bebauungsplan einzuarbeiten sind. Der Stadtrat stellt fest, dass mit der möglichen Einbeziehung des Nau-Geländes sich der Stadt- rat bereits in seiner vorhergehenden Abwägung auseinandergesetzt hat, so…",
@@ -4516,7 +4516,7 @@
   {
     "id": "sr_20210222_34",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "tnis und stellt fest, dass im Rahmen des Bebauungsplanes keines- wegs lediglich die Interessen eines Einzelnen berücksichtigt werden. Der Stadtrat hat in seiner Entscheidung eine ordnungsgemäße Abwägung aller berührten Belange vorzunehmen. Der Stadtrat stellt ferner fest, dass dem Antrag auf Aufstellung eines vorhabenbezogenen Be- bauungsplanes eine ausführliche Erläuterung der Gründe und des…",
@@ -4530,7 +4530,7 @@
   {
     "id": "sr_20210222_35",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "vorhabenbezogenen Bebauungsplan ist der vom Vorhabenträger aktuell beantragte Flächenbedarf für den Erweiterungsstandort, der ja im Vorfeld bereits Ge- genstand umfangreicher Diskussionen war und der im Vergleich zur ersten Planung auch redu- ziert wurde. Der Stadtrat stellt ferner fest, dass es unbestritten sei, dass die Erweiterung der gewerblichen Fläche zur Beeinträchtigung des…",
@@ -4544,7 +4544,7 @@
   {
     "id": "sr_20210222_36",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "tet dessen ist die Fläche als Ausgleichsfläche im Bebauungsplan festgelegt und dinglich unbefristet zu Gunsten des Freistaates Bayern gesichert. Mit diesen Vorgaben ist ein weitreichender Schutzstatus erzielt. Eine Pflanzung von Obstbäumen in der Qualität Hochstamm mit einem Stammumfang von 50 cm ist fachlich nicht sinnvoll, da bei der Pflanzung von Großbäumen der Pflegeaufwand unver-…",
@@ -4558,7 +4558,7 @@
   {
     "id": "sr_20210222_37",
     "sessionId": "sr_20210222",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2021-02-22",
     "title": "Bauleitplanung Nr. 70 \"Containerbau ELA\" nebst 12. Änderung des Flächennutzungsplans;…",
     "text": "Sammelvote: 7 Einzelbeschlüsse mit identischem Ergebnis (14:8). schließungsstraße unmittelbar an die Staatsstraße ST 2082 angebunden sei. Diese überregionale Straße ist zur Aufnahme des zusätzlichen Verkehrs geeignet. Mit der neuen Erschließungsstraße ist zudem für das angrenzende Wohngebiet eine deutliche Entlas- tung entstanden. Über den Bebauungsplan kann keine Verkehrsregelung erfolgen. Dennoch ist bereits eine Ent- lastung des Wohngebietes durch die…",
@@ -6216,7 +6216,7 @@
   {
     "id": "sr_20210906_02",
     "sessionId": "sr_20210906",
-    "topicId": "t27",
+    "topicId": "t28",
     "date": "2021-09-06",
     "title": "Bürgerbegehren \"ACKERLAND IN BAUERNHAND - keine Flächenversiegelung durch neue…",
     "text": "Der Stadtrat erklärt, das am 09.08.2021 eingereichte Bürgerbegehren „ACHERLAND IN BAU- ERNHAND – keine Flächenversiegelung durch neue Gewerbeflächen“ formell für zulässig.",
@@ -6260,7 +6260,7 @@
   {
     "id": "sr_20210906_03",
     "sessionId": "sr_20210906",
-    "topicId": "t27",
+    "topicId": "t28",
     "date": "2021-09-06",
     "title": "Bürgerbegehren \"ACKERLAND IN BAUERNHAND - keine Flächenversiegelung durch neue…",
     "text": "Beschluss 2 a: Der Stadtrat beschließt, den Zielen des Bürgerbegehrens zuzustimmen und die Planungen für die Ausweisung des Gewerbegebietes „Containerbau ELA“ in Pfrombach eizustellen. Die Ver- waltung wird beauftragt, die erforderlichen Schritte in die Wege zu leiten.",
@@ -6306,7 +6306,7 @@
   {
     "id": "sr_20210906_04",
     "sessionId": "sr_20210906",
-    "topicId": "t27",
+    "topicId": "t28",
     "date": "2021-09-06",
     "title": "Bürgerbegehren \"ACKERLAND IN BAUERNHAND - keine Flächenversiegelung durch neue…",
     "text": "In namentlicher Abstimmung haben für diesen Beschlussvorschlag gestimmt: Dritter Bürgermeister Dr. Stanglmaier, StRe Becher, Kuch, Altenbeck, Wagner, von Pressentin, Neumayr, Wittmann, John und Beubl Beschluss 2 b: Der Stadtrat beschließt die Durchführung des beantragten Bürgerentscheides „ACKERLAND IN BAUERNHAND – keine Flächenversiegelung durch neue Gewerbeflächen. Die Verwaltung wird…",
@@ -6494,7 +6494,7 @@
   {
     "id": "sr_20211011_01",
     "sessionId": "sr_20211011",
-    "topicId": "t27",
+    "topicId": "t28",
     "date": "2021-10-11",
     "title": "Durchführung eines Bürgerentscheides \"Gewerbeflächen Pfrombach\" (sh. StR 06.09.2021) -…",
     "text": "Der Stadtrat beschließt den 21. November 2021 als Termin für den durchzuführenden Bürger- entscheid und stimmt dem Stimmzettel mit der Fragestellung gemäß Bürgerbegehren zu. Der Stimmzettel ist Anlage zur Niederschrift.",
@@ -16786,7 +16786,7 @@
   {
     "id": "sr_20241209_05",
     "sessionId": "sr_20241209",
-    "topicId": null,
+    "topicId": "t28",
     "date": "2024-12-09",
     "title": "Bauleitplanung Nr. 70 „Containerbau ELA“ – Satzungsbeschluss",
     "text": "Der Stadtrat beschließt den vorhabenbezogenen Bebauungsplan Nr. 70 „Containerbau ELA“ als Satzung sowie die 12. Änderung des Flächennutzungsplans. Vorangegangen waren 21 Einzelabstimmungen über Stellungnahmen (10:8 bis 18:0).",

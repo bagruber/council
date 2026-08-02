@@ -1441,65 +1441,135 @@
     ]
   },
   {
-    "id": "t27",
-    "title": "Bürgerbegehren und Bürgerentscheide",
-    "field": "social",
-    "type": "zyklus",
+    "id": "t28",
+    "title": "Gewerbegebiet Pfrombach – Containerbau ELA",
+    "field": "economy",
+    "type": "konflikt",
+    "status": "abgeschlossen",
     "tags": [
-      "social",
+      "economy",
       "building",
       "environment"
     ],
     "image": null,
-    "summary": "Zweimal haben Moosburger Bürgerinnen und Bürger den Stadtrat mit einem Bürgerbegehren befasst: 2020 „Lebenswertes Moosburg\", 2021 „ACKERLAND IN BAUERNHAND – keine Flächenversiegelung durch neue Gewerbeflächen\". Beide wurden für zulässig erklärt. Beim zweiten lehnte der Stadtrat es namentlich ab, den Zielen zu folgen, und setzte stattdessen den Bürgerentscheid an.",
+    "summary": "Die Erweiterung der Firma ELA in Pfrombach zog sich über fünf Jahre und 46 Beschlüsse. Zwischen Aufstellungsbeschluss und Satzungsbeschluss lag ein Bürgerbegehren, dessen Zielen der Stadtrat in namentlicher Abstimmung nicht folgte — und ein Bürgerentscheid, den er selbst ansetzte. Kaum ein anderes Verfahren zeigt die Lager im Rat so deutlich: bei den privaten Einwendungen steht es über zwanzig Abstimmungen hinweg immer wieder 14:8.",
     "history": [
       {
-        "date": "2020-10-26",
+        "date": "2020-02-10",
         "type": "vote",
-        "title": "Bürgerbegehren \"Lebenswertes Moosburg\"",
-        "text": "Der Stadtrat erklärt, dass für das am 02.10.2020 eingereichte Bürgerbegehren „Lebenswertes Moosburg“ die formellen Voraussetzungen (insbesondere die erforderliche Anzahl an Unter- schriften) erfüllt sind, materiell-rechtlich muss das Bürgerbegehren jedoch für unzulässig erklärt werden.",
-        "sessionId": "sr_20201026",
-        "voteId": "sr_20201026_05"
+        "key": true,
+        "title": "Aufstellungsbeschluss für den vorhabenbezogenen Bebauungsplan",
+        "text": "Der Stadtrat beschließt die Aufstellung eines vorhabenbezogenen Bebauungsplans nach § 12 BauGB für die Erweiterung der Firma ELA. Schon dieser erste Schritt fällt mit 16:8 gegen eine große Minderheit.",
+        "sessionId": "sr_20200210",
+        "voteId": "sr_20200210_01"
       },
       {
-        "date": "2020-10-26",
+        "date": "2020-02-10",
         "type": "vote",
-        "title": "Bürgerbegehren \"Lebenswertes Moosburg\"",
-        "text": "Stadtrat vorbehalten, im Rahmen seiner Entscheidungsbefugnis und seiner Abwägung im Rahmen der Bauleitplanung einzelne Punkte des Bürgerbegehrens, wie beispielsweise Baurecht, Anzahl der Wohneinheiten, maximale Flächenversiegelung für bestimmte überplante Bereiche bei der Aufstellung von Bebauungspl",
-        "sessionId": "sr_20201026",
-        "voteId": "sr_20201026_06"
+        "title": "Streuobstwiese als Ausgleichsfläche",
+        "text": "Einstimmig legt der Rat fest, dass die Streuobstwiese wesentlicher Bestandteil der Ausgleichsfläche sein muss — die Untere Naturschutzbehörde ist entsprechend zu beteiligen.",
+        "sessionId": "sr_20200210",
+        "voteId": "sr_20200210_04"
+      },
+      {
+        "date": "2021-02-22",
+        "type": "vote",
+        "title": "37 Stellungnahmen abgewogen — die Bruchlinie wird sichtbar",
+        "text": "Behörden und Träger öffentlicher Belange werden fast durchweg einstimmig abgehandelt. Bei den privaten Einwendungen zu Flächenverbrauch, Verkehr und Immissionsschutz kippt das Bild: dort steht es Abstimmung für Abstimmung 14:8, bei zwei Beschlüssen sogar 12:7.",
+        "sessionId": "sr_20210222",
+        "voteId": "sr_20210222_30"
+      },
+      {
+        "date": "2021-08-09",
+        "type": "milestone",
+        "title": "Bürgerbegehren „ACKERLAND IN BAUERNHAND“ eingereicht",
+        "text": "Unter dem Titel „keine Flächenversiegelung durch neue Gewerbeflächen“ wird ein Bürgerbegehren gegen das Vorhaben eingereicht."
       },
       {
         "date": "2021-09-06",
         "type": "vote",
-        "title": "Bürgerbegehren \"ACKERLAND IN BAUERNHAND",
-        "text": "Der Stadtrat erklärt, das am 09.08.2021 eingereichte Bürgerbegehren „ACHERLAND IN BAU- ERNHAND – keine Flächenversiegelung durch neue Gewerbeflächen“ formell für zulässig.",
+        "title": "Bürgerbegehren für zulässig erklärt",
+        "text": "Der Stadtrat erklärt das Bürgerbegehren einstimmig formell für zulässig.",
         "sessionId": "sr_20210906",
         "voteId": "sr_20210906_02"
       },
       {
         "date": "2021-09-06",
         "type": "vote",
-        "title": "Bürgerbegehren \"ACKERLAND IN BAUERNHAND",
-        "text": "Beschluss 2 a: Der Stadtrat beschließt, den Zielen des Bürgerbegehrens zuzustimmen und die Planungen für die Ausweisung des Gewerbegebietes „Containerbau ELA“ in Pfrombach eizustellen. Die Ver- waltung wird beauftragt, die erforderlichen Schritte in die Wege zu leiten.",
+        "key": true,
+        "title": "Namentliche Abstimmung: der Rat folgt den Zielen nicht",
+        "text": "Der Antrag, den Zielen des Bürgerbegehrens zuzustimmen und die Planungen einzustellen, wird namentlich abgestimmt und mit 10:12 abgelehnt. Es ist eine der wenigen Abstimmungen dieser Wahlperiode, bei der die Niederschrift jeden Namen nennt.",
         "sessionId": "sr_20210906",
         "voteId": "sr_20210906_03"
       },
       {
         "date": "2021-09-06",
         "type": "vote",
-        "title": "Bürgerbegehren \"ACKERLAND IN BAUERNHAND",
-        "text": "In namentlicher Abstimmung haben für diesen Beschlussvorschlag gestimmt: Dritter Bürgermeister Dr. Stanglmaier, StRe Becher, Kuch, Altenbeck, Wagner, von Pressentin, Neumayr, Wittmann, John und Beubl Beschluss 2 b: Der Stadtrat beschließt die Durchführung des beantragten Bürgerentscheides „ACKERLAND",
+        "title": "Bürgerentscheid beschlossen",
+        "text": "Einstimmig setzt der Rat den Bürgerentscheid an. Ein Antrag, ihn ausschließlich als Briefwahl durchzuführen, scheitert anschließend mit 9:13.",
         "sessionId": "sr_20210906",
         "voteId": "sr_20210906_04"
       },
       {
         "date": "2021-10-11",
         "type": "vote",
-        "title": "Durchführung eines Bürgerentscheides \"Gewerbeflächen Pfrombach\" (sh. StR 06.09.2021) -…",
-        "text": "Der Stadtrat beschließt den 21. November 2021 als Termin für den durchzuführenden Bürger- entscheid und stimmt dem Stimmzettel mit der Fragestellung gemäß Bürgerbegehren zu. Der Stimmzettel ist Anlage zur Niederschrift.",
+        "title": "Termin und Stimmzettel festgelegt",
+        "text": "Der Bürgerentscheid findet am 21. November 2021 statt. Die Fragestellung entspricht dem Bürgerbegehren.",
         "sessionId": "sr_20211011",
         "voteId": "sr_20211011_01"
+      },
+      {
+        "date": "2021-11-21",
+        "type": "milestone",
+        "title": "Bürgerentscheid „Gewerbeflächen Pfrombach“",
+        "text": "Das Ergebnis ist in den vorliegenden Niederschriften nicht festgehalten. Der Bebauungsplan wurde drei Jahre später als Satzung beschlossen."
+      },
+      {
+        "date": "2024-12-09",
+        "type": "vote",
+        "key": true,
+        "title": "Satzungsbeschluss",
+        "text": "Nach 21 weiteren Einzelabstimmungen über Stellungnahmen beschließt der Stadtrat den Bebauungsplan Nr. 70 als Satzung — mit 11:7 so knapp wie am Anfang.",
+        "sessionId": "sr_20241209",
+        "voteId": "sr_20241209_05"
+      }
+    ]
+  },
+  {
+    "id": "t29",
+    "title": "Bürgerbegehren „Lebenswertes Moosburg“",
+    "field": "building",
+    "type": "konflikt",
+    "status": "abgeschlossen",
+    "tags": [
+      "building",
+      "social"
+    ],
+    "image": null,
+    "summary": "Mehr als 1.500 Unterschriften gegen die Wachstumsgeschwindigkeit der Stadt: Baurecht, Zahl der Wohneinheiten, maximale Flächenversiegelung. Der Stadtrat bescheinigte dem Begehren die nötigen Unterschriften und erklärte es zugleich für materiell-rechtlich unzulässig.",
+    "history": [
+      {
+        "date": "2020-10-02",
+        "type": "milestone",
+        "title": "Bürgerbegehren eingereicht",
+        "text": "Mehr als 1.500 Moosburgerinnen und Moosburger unterschreiben für eine maßvollere städtebauliche Entwicklung."
+      },
+      {
+        "date": "2020-10-26",
+        "type": "vote",
+        "key": true,
+        "title": "Formell erfüllt, materiell unzulässig",
+        "text": "Der Stadtrat stellt fest, dass die erforderlichen Unterschriften vorliegen, erklärt das Bürgerbegehren aber für materiell-rechtlich unzulässig.",
+        "sessionId": "sr_20201026",
+        "voteId": "sr_20201026_05"
+      },
+      {
+        "date": "2020-10-26",
+        "type": "vote",
+        "title": "Anregungen zur Kenntnis genommen",
+        "text": "Der Rat nimmt die Bedenken zu Verkehrsaufkommen und Infrastruktur ausdrücklich ernst und behält sich vor, einzelne Punkte — Baurecht, Wohneinheiten, maximale Flächenversiegelung — bei künftigen Bebauungsplänen zu berücksichtigen. Auch die Stellplatzsatzung wird als überarbeitungsbedürftig benannt.",
+        "sessionId": "sr_20201026",
+        "voteId": "sr_20201026_06"
       }
     ]
   }
