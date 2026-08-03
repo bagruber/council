@@ -38,7 +38,28 @@ laufen über `scrollIntoView` plus kurzes Aufblitzen (`.tl-flash`), siehe `rende
 | `data/topics.json` | Themen mit Timeline-History |
 | `data/tags.json` | Tags für Topics |
 | `data/press.json` | Presseartikel (ID-Schema: `{media}_{YYYY-MM-DD}_{slug}`) |
+| `data/sessionlengths.json` | Beginn und Ende **aller** Sitzungen seit Mai 2020, auch der nicht erfassten |
 | `data/bundle.json` | Kombiniertes Paket (Build-Artefakt via `scripts/build_data.py`) |
+
+`data/sitzungenlaenge_2020-2026.json` ist dieselbe Liste mit deutschen Schlüsseln und
+wird von nichts gelesen — Altlast des Imports.
+
+## Datenlage und Presseschau
+
+Zwei Seiten machen den Bestand selbst zum Gegenstand:
+
+- **`#/datenlage`** — jede Sitzung, die stattgefunden hat, aus `sessionlengths.json` und
+  `sessions.json` zusammengeführt. Zeigt Dauer, ob eine Niederschrift vorliegt, wie viele
+  Abstimmungen erfasst sind und wie sich deren Herkunftsstufen verteilen. Sitzungen ohne
+  Niederschrift stehen bewusst mit drin — aktuell **113 von 168**, die Lücke sind fast
+  ausschließlich HVFA-Haushaltsberatungen und BPU-Sitzungen.
+- **`#/presse`** — alle verlinkten Zeitungsartikel, nach Jahr, mit Rückverweis auf Sitzung,
+  Dossier oder Antrag (`pressContext()` dreht die Verlinkung um).
+
+Die Niederschrift-PDFs lagen bis August 2026 ungenutzt im Repo; Sitzungsseite und
+Datenlage verlinken sie jetzt über `protocolUrl()` (`SR_`/`BPU_`/`HVF_` + `YYYYMMDD`).
+Die Zuordnung Sitzung ↔ PDF ist 1:1, deshalb gilt „in `sessions.json` erfasst" als
+gleichbedeutend mit „Niederschrift liegt vor".
 
 ---
 

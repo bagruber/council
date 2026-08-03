@@ -120,6 +120,53 @@ const SHOW_PRONOUNS = true;
   const sessionByDateBody = {};
   sessions.forEach(s => { sessionByDateBody[s.date + "|" + (s.type || "stadtrat")] = s; });
 
+  const votesBySession = {};
+  votes.forEach(v => { (votesBySession[v.sessionId] || (votesBySession[v.sessionId] = [])).push(v); });
+
+  const PDF_PREFIX = { stadtrat: "SR", bpu: "BPU", hvfa: "HVF" };
+  function protocolUrl(s) {
+    return "data/niederschriften/" + PDF_PREFIX[s.type || "stadtrat"]
+         + "_" + s.date.replace(/-/g, "") + ".pdf";
+  }
+
+  // Ein Eintrag je Sitzung, die stattgefunden hat — unabhängig davon, ob eine
+  // Niederschrift vorliegt. Die Dauern reichen weiter als die erfassten
+  // Sitzungen, die erfassten Sitzungen weiter zurück als die Dauern.
+  function sessionRegister() {
+    const rows = new Map();
+    const put = (date, body) => {
+      const key = date + "|" + body;
+      if (!rows.has(key)) rows.set(key, { date, body, votes: [] });
+      return rows.get(key);
+    };
+    sessionLengths.forEach(l => {
+      const r = put(l.date, l.body);
+      r.start = l.start; r.end = l.end; r.min = lengthMin(l);
+    });
+    sessions.forEach(s => {
+      const r = put(s.date, s.type || "stadtrat");
+      r.session = s;
+      r.votes = votesBySession[s.id] || [];
+    });
+    return [...rows.values()].sort((a, b) => b.date.localeCompare(a.date));
+  }
+
+  // Wie belastbar ist das Stimmverhalten dieser Sitzung? Zählt die vier
+  // Herkunftsstufen aus vote.source.tier durch; ohne Stufe ist nur das
+  // Gesamtergebnis bekannt.
+  function tierCounts(votes) {
+    const c = { explicit: 0, implicit: 0, tracked: 0, press: 0, sum: 0 };
+    votes.forEach(v => {
+      const t = (v.source || {}).tier;
+      if (t === "protocol-explicit")      c.explicit++;
+      else if (t === "protocol-implicit") c.implicit++;
+      else if (t === "tracked")           c.tracked++;
+      else if (t === "press")             c.press++;
+      else                                c.sum++;
+    });
+    return c;
+  }
+
   function timeToMin(t) {
     const p = t.split(":");
     return p[0] * 60 + +p[1];
@@ -347,6 +394,10 @@ const SHOW_PRONOUNS = true;
       renderSession(path.split("/session/")[1]);
     } else if (path === "/statistik") {
       renderStatistik();
+    } else if (path === "/datenlage") {
+      renderDatenlage();
+    } else if (path === "/presse") {
+      renderPresse();
     } else {
       const tagIds = (new URLSearchParams(query).get("tags") || "")
         .split(",").filter(id => tagMap[id]);
@@ -376,17 +427,27 @@ const SHOW_PRONOUNS = true;
     renderTopicList(topics);
 
     const totalH = Math.round(sessionLengths.reduce((s, l) => s + (lengthMin(l) || 0), 0) / 60);
-    const teaser = document.createElement("a");
-    teaser.className = "stats-teaser";
-    teaser.href = "#/statistik";
-    teaser.innerHTML = `
-      <svg class="icon"><use href="#i-insights"/></svg>
-      <div>
-        <div class="stats-teaser-title">Sitzungsstatistik</div>
-        <div class="stats-teaser-sub">${sessionLengths.length} Sitzungen · ${totalH} Stunden seit Mai 2020</div>
-      </div>
-      <svg class="icon"><use href="#i-chevron_right"/></svg>`;
-    main.appendChild(teaser);
+    const reg = sessionRegister();
+    [
+      { href: "#/statistik", icon: "insights", title: "Sitzungsstatistik",
+        sub: `${sessionLengths.length} Sitzungen · ${totalH} Stunden seit Mai 2020` },
+      { href: "#/datenlage", icon: "fact_check", title: "Datenlage",
+        sub: `${reg.filter(r => r.session).length} von ${reg.length} Sitzungen mit Niederschrift` },
+      { href: "#/presse", icon: "description", title: "Presseschau",
+        sub: `${pressData.length} verlinkte Zeitungsartikel` },
+    ].forEach(t => {
+      const teaser = document.createElement("a");
+      teaser.className = "stats-teaser";
+      teaser.href = t.href;
+      teaser.innerHTML = `
+        <svg class="icon"><use href="#i-${t.icon}"/></svg>
+        <div>
+          <div class="stats-teaser-title">${t.title}</div>
+          <div class="stats-teaser-sub">${t.sub}</div>
+        </div>
+        <svg class="icon"><use href="#i-chevron_right"/></svg>`;
+      main.appendChild(teaser);
+    });
   }
 
   function renderFilteredTopics(tagIds) {
@@ -782,7 +843,9 @@ const SHOW_PRONOUNS = true;
       const dur = lengthMin(len);
       timeLine = `<div class="session-time"><svg class="icon"><use href="#i-schedule"/></svg>${len.start}${len.end ? "–" + len.end : ""} Uhr${dur ? " · " + formatDuration(dur) : ""}</div>`;
     }
-    header.innerHTML = `<h1>${session.title}</h1><div class="session-date">${formatDate(session.date)}</div>${timeLine}${badge}`;
+    header.innerHTML = `<h1>${session.title}</h1><div class="session-date">${formatDate(session.date)}</div>${timeLine}${badge}
+      <a class="session-pdf" href="${protocolUrl(session)}" target="_blank" rel="noopener">
+        <svg class="icon"><use href="#i-description"/></svg> Niederschrift (PDF)</a>`;
     main.appendChild(header);
 
     if (session.substitutes && session.substitutes.length) {
@@ -942,6 +1005,148 @@ const SHOW_PRONOUNS = true;
       drawMedianByBody, timed, true));
 
     main.appendChild(buildStatsTable(entries));
+  }
+
+  // -- Datenlage: was liegt zu welcher Sitzung vor --
+
+  const TIERS = [
+    { key: "explicit", label: "namentlich",    hint: "Die Niederschrift nennt jeden Namen." },
+    { key: "implicit", label: "abgeleitet",    hint: "Einstimmig, aus der Anwesenheit erschlossen." },
+    { key: "tracked",  label: "mitgeschrieben", hint: "Von einer benannten Person im Saal erfasst." },
+    { key: "press",    label: "aus Presse",    hint: "Aus einem Zeitungsartikel rekonstruiert." },
+    { key: "sum",      label: "nur Ergebnis",  hint: "Nur die Gesamtzahlen sind bekannt." },
+  ];
+
+  function renderDatenlage() {
+    setChrome("sitzung");
+    main.appendChild(breadcrumb([{ label: "Übersicht", href: "#/" }]));
+
+    const reg = sessionRegister();
+    const withProtocol = reg.filter(r => r.session);
+    const totalVotes = withProtocol.reduce((n, r) => n + r.votes.length, 0);
+    const all = tierCounts(withProtocol.flatMap(r => r.votes));
+    const traceable = totalVotes - all.sum;
+
+    const header = document.createElement("div");
+    header.className = "topic-header";
+    header.innerHTML = `
+      <h1>Datenlage</h1>
+      <div class="topic-summary">Jede öffentliche Sitzung seit Mai 2020, und was von ihr vorliegt.
+        Sitzungen ohne Niederschrift sind hier bewusst mit aufgeführt — die Lücke gehört zur
+        Auskunft dazu.</div>`;
+    main.appendChild(header);
+
+    const tiles = document.createElement("div");
+    tiles.className = "stat-tiles";
+    tiles.innerHTML = `
+      <div class="stat-tile"><div class="stat-tile-value">${withProtocol.length} <small>/ ${reg.length}</small></div><div class="stat-tile-label">Sitzungen mit Niederschrift</div></div>
+      <div class="stat-tile"><div class="stat-tile-value">${totalVotes}</div><div class="stat-tile-label">erfasste Abstimmungen</div></div>
+      <div class="stat-tile"><div class="stat-tile-value">${Math.round(traceable / totalVotes * 100)} %</div><div class="stat-tile-label">Stimmverhalten nachvollziehbar</div></div>`;
+    main.appendChild(tiles);
+
+    const legend = document.createElement("div");
+    legend.className = "tier-legend";
+    legend.innerHTML = TIERS.map(t =>
+      `<span class="tier-chip tier-${t.key}" title="${t.hint}">${t.label} <b>${all[t.key]}</b></span>`).join("");
+    main.appendChild(legend);
+
+    let year = null;
+    const table = document.createElement("table");
+    table.className = "register";
+    const body = document.createElement("tbody");
+    reg.forEach(r => {
+      if (r.date.slice(0, 4) !== year) {
+        year = r.date.slice(0, 4);
+        const head = document.createElement("tr");
+        head.className = "register-year";
+        head.innerHTML = `<th colspan="4">${year}</th>`;
+        body.appendChild(head);
+      }
+      const label = CHART_BODIES.find(b => b.id === r.body).label;
+      const dur = r.min ? formatDuration(r.min) : r.start ? r.start + " Uhr" : "";
+      const c = tierCounts(r.votes);
+      const bar = r.votes.length
+        ? `<span class="tier-bar">${TIERS.filter(t => c[t.key])
+            .map(t => `<span class="tier-${t.key}" style="flex:${c[t.key]}" title="${c[t.key]}× ${t.label}"></span>`)
+            .join("")}</span>`
+        : "";
+
+      const tr = document.createElement("tr");
+      tr.className = r.session ? "" : "register-gap";
+      tr.innerHTML = `
+        <td class="reg-date">${formatDate(r.date)}</td>
+        <td class="reg-body"><span class="reg-dot" style="background:${chartColor[r.body]}"></span>${label}</td>
+        <td class="reg-dur">${dur}</td>
+        <td class="reg-data">${r.session
+          ? `<a href="#/session/${r.session.id}">${r.votes.length} Abstimmung${r.votes.length === 1 ? "" : "en"}</a>`
+            + bar
+            + `<a class="reg-pdf" href="${protocolUrl(r.session)}" target="_blank" rel="noopener"
+                  title="Niederschrift als PDF"><svg class="icon"><use href="#i-description"/></svg></a>`
+          : `<span class="reg-none">keine Niederschrift veröffentlicht</span>`}</td>`;
+      body.appendChild(tr);
+    });
+    table.appendChild(body);
+    main.appendChild(table);
+  }
+
+  // -- Presseschau --
+
+  // Presseartikel hängen an Sitzungen, Dossiers und Anträgen. Für die Übersicht
+  // wird der Weg umgedreht: je Artikel, woran er hängt.
+  function pressContext() {
+    const ctx = {};
+    const add = (ids, entry) => (ids || []).forEach(id => (ctx[id] || (ctx[id] = [])).push(entry));
+    sessions.forEach(s => s.agenda.forEach(a =>
+      add(a.press, { kind: "Sitzung", label: s.title, href: "#/session/" + s.id })));
+    topics.forEach(t => (t.history || []).forEach(h =>
+      add(h.press, { kind: "Dossier", label: t.title, href: "#/topic/" + t.id })));
+    members.forEach(m => ((m.profile || {}).motions || []).forEach(mo =>
+      add(mo.press, { kind: "Antrag", label: mo.title, href: "#/member/" + m.id })));
+    return ctx;
+  }
+
+  function renderPresse() {
+    main.appendChild(breadcrumb([{ label: "Übersicht", href: "#/" }]));
+
+    const ctx = pressContext();
+    const arts = [...pressData].sort((a, b) => b.date.localeCompare(a.date));
+
+    const header = document.createElement("div");
+    header.className = "topic-header";
+    header.innerHTML = `
+      <h1>Presseschau</h1>
+      <div class="topic-summary">Alle Zeitungsartikel, die in dieser App verlinkt sind — zu Sitzungen,
+        Dossiers und Anträgen. Die Artikel bleiben bei ihren Häusern, hier steht nur der Verweis.</div>`;
+    main.appendChild(header);
+
+    let year = null;
+    const list = document.createElement("div");
+    list.className = "press-list";
+    arts.forEach(p => {
+      if (p.date.slice(0, 4) !== year) {
+        year = p.date.slice(0, 4);
+        const h = document.createElement("h2");
+        h.className = "section-label";
+        h.textContent = year;
+        list.appendChild(h);
+      }
+      const src = mediaMap[p.media] || { name: p.media, color: "#999" };
+      const row = document.createElement("div");
+      row.className = "press-row";
+      row.innerHTML = `
+        <span class="press-medium" style="background:${src.color}">${src.logo
+          ? `<img src="${src.logo}" alt="${src.name}">` : src.name}</span>
+        <div>
+          <a class="press-title" href="${p.url}" target="_blank" rel="noopener">${p.title}
+            <svg class="icon"><use href="#i-open_in_new"/></svg></a>
+          <div class="press-meta">${formatDate(p.date)} · ${src.name}</div>
+          <div class="press-refs">${(ctx[p.id] || [])
+            .map(c => `<a href="${c.href}"><span class="press-ref-kind">${c.kind}</span>${c.label}</a>`)
+            .join("")}</div>
+        </div>`;
+      list.appendChild(row);
+    });
+    main.appendChild(list);
   }
 
   function drawDurationDots(el, entries) {
