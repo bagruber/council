@@ -1,0 +1,42 @@
+name: Deploy auf moosburg.eu/stadtrat/
+
+on:
+  push:
+    # Nicht main: parliament-v2 ist der weiter fortgeschrittene Stand und das,
+    # was online gehört. Sobald der Branch nach main gemerged ist, gehört hier
+    # wieder main hin — sonst deployt eine Karteileiche.
+    branches: [parliament-v2]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-stadtrat
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Nach public_html/stadtrat/ spiegeln
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./
+          server-dir: public_html/stadtrat/
+
+          # img/members/originals/ sind 167 MB unkomprimierte PNG-Vorlagen, aus
+          # denen die .webp-Dateien erzeugt wurden. Die Seite referenziert sie
+          # nirgends — ohne sie schrumpft der Upload von 199 MB auf 33 MB.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            img/members/originals/**
+            docs/**
+            scripts/**
+            **/*.md
+            debug.log
