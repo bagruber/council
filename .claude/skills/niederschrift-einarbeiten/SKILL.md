@@ -91,6 +91,21 @@ For BPU/HVFA: use the `seatConfigs` to determine the right composition for that 
     ```
 - For **rejected** votes (more no than yes, or expressly noted): set `"result": "rejected"` on the vote object.
 
+### Sitzungen ohne Niederschrift (Beschlussauszug)
+
+Manche BPU-Sitzungen erscheinen nur als Beschlussauszug auf der Website der Stadt.
+**Niemals eine PDF dafür erzeugen** — verlinkt wird die Seite der Stadt:
+
+```json
+"source": { "kind": "webauszug", "url": "https://www.moosburg.de/…" }
+```
+
+Dort gibt es keine Anwesenheitsliste. Daraus folgt:
+- Haben **alle** Sitze mitgestimmt (BPU: 12), waren alle regulären Sitze da → `named`
+  mit vollständiger Besetzung.
+- Sonst → `anonymous`, **kein `absent`-Array** (leer hieße „alle da"). `mark_inferable.py`
+  sperrt die Ableitung dann automatisch.
+
 ### 5. Convert to named where derivable
 
 Rule: if `yes_count + no_count == 25 − len(session.absent)` AND vote is unanimous (no=0 or yes=0), expand:
