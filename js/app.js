@@ -420,19 +420,29 @@ const SHOW_PRONOUNS = true;
 
   function renderHome() {
     syncTagPills([]);
-    const heading = document.createElement("p");
-    heading.className = "section-heading";
-    heading.textContent = "Alle Themen";
-    main.appendChild(heading);
-    renderTopicList(topics);
 
     const totalH = Math.round(sessionLengths.reduce((s, l) => s + (lengthMin(l) || 0), 0) / 60);
     const reg = sessionRegister();
+    const withProtocol = reg.filter(r => r.session).length;
+
+    // Die Zahlen zum Bestand stehen oben, aber zugeklappt. Sie ordnen ein,
+    // was folgt — dafür muessen sie vor den Themen stehen. Aufgeklappt
+    // wuerden sie die Themen unter die Falz druecken, und die sind der
+    // eigentliche Einstieg.
+    const meta = document.createElement("details");
+    meta.className = "home-meta";
+    meta.innerHTML = `
+      <summary>
+        <svg class="icon"><use href="#i-insights"/></svg>
+        <span class="home-meta-title">Zahlen zum Bestand</span>
+        <span class="home-meta-hint">${sessionLengths.length} Sitzungen · ${withProtocol} von ${reg.length} mit Niederschrift · ${pressData.length} Artikel</span>
+      </summary>`;
+
     [
       { href: "#/statistik", icon: "insights", title: "Sitzungsstatistik",
         sub: `${sessionLengths.length} Sitzungen · ${totalH} Stunden seit Mai 2020` },
       { href: "#/datenlage", icon: "fact_check", title: "Datenlage",
-        sub: `${reg.filter(r => r.session).length} von ${reg.length} Sitzungen mit Niederschrift` },
+        sub: `${withProtocol} von ${reg.length} Sitzungen mit Niederschrift` },
       { href: "#/presse", icon: "description", title: "Presseschau",
         sub: `${pressData.length} verlinkte Zeitungsartikel` },
     ].forEach(t => {
@@ -446,8 +456,15 @@ const SHOW_PRONOUNS = true;
           <div class="stats-teaser-sub">${t.sub}</div>
         </div>
         <svg class="icon"><use href="#i-chevron_right"/></svg>`;
-      main.appendChild(teaser);
+      meta.appendChild(teaser);
     });
+    main.appendChild(meta);
+
+    const heading = document.createElement("p");
+    heading.className = "section-heading";
+    heading.textContent = "Alle Themen";
+    main.appendChild(heading);
+    renderTopicList(topics);
   }
 
   function renderFilteredTopics(tagIds) {
@@ -1367,10 +1384,13 @@ const SHOW_PRONOUNS = true;
         : "";
     }
     const parts = [label];
-    if (vote.source.by) {
-      const m = members.find(x => x.id === vote.source.by);
-      if (m) parts.push(`${m.firstName.charAt(0)}. ${m.lastName}`);
-    }
+    // Wer mitschreibt, sitzt nicht zwangsläufig im Rat: Presseleute haben
+    // keine Mitglieds-ID. Für sie trägt source.byName den Namen — sonst
+    // stünde „mitgeschrieben“ da, ohne zu sagen von wem, und das ist der
+    // halbe Wert der Angabe.
+    const m = vote.source.by && members.find(x => x.id === vote.source.by);
+    if (m) parts.push(`${m.firstName.charAt(0)}. ${m.lastName}`);
+    else if (vote.source.byName) parts.push(vote.source.byName);
     let html = parts.join(" · ");
     const art = vote.source.pressId && pressMap[vote.source.pressId];
     if (art) {

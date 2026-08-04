@@ -2468,6 +2468,56 @@ main {
 .stats-teaser > .icon:first-child { color: var(--primary); }
 .stats-teaser > .icon:last-child { color: var(--text-muted); margin-left: auto; }
 
+/* Zahlen zum Bestand auf der Startseite: steht ueber den Themen, bleibt aber
+   zugeklappt. Uebernimmt die +/- -Sprache von .voting-stats, damit es im
+   Haus nur ein Aufklapp-Muster gibt. */
+.home-meta {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 28px;
+}
+.home-meta summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 11px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+.home-meta summary::-webkit-details-marker { display: none; }
+.home-meta summary .icon { font-size: 18px; color: var(--primary); }
+.home-meta summary::after {
+  content: "+";
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.home-meta[open] summary::after { content: "\2013"; }
+.home-meta-title { font-weight: 600; color: var(--text); }
+.home-meta-hint { margin-left: auto; font-variant-numeric: tabular-nums; }
+
+/* Im aufgeklappten Zustand sitzen die Teaser innerhalb der Box und brauchen
+   deren Rahmen und Abstaende nicht doppelt. */
+.home-meta .stats-teaser {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+}
+.home-meta .stats-teaser + .stats-teaser { margin-top: 0; }
+.home-meta .stats-teaser:hover { background: var(--accent-light); box-shadow: none; }
+
+/* Auf schmalen Displays wuerde die Kennzahlzeile umbrechen und den
+   Aufklapp-Marker verdraengen. Der Titel allein reicht dort. */
+@media (max-width: 560px) {
+  .home-meta-hint { display: none; }
+  .home-meta summary::after { margin-left: auto; }
+}
+
 .stats-teaser-title { font-weight: 600; font-size: 0.92rem; }
 .stats-teaser-sub { font-size: 0.78rem; color: var(--text-muted); }
 
