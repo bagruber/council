@@ -2759,6 +2759,49 @@ main {
 
 .register-gap td { color: var(--text-muted); }
 
+/* Erfassungsstufen: volle Niederschrift, Beschlussauszug ohne Anwesenheit,
+   nichts. Dieselbe Rampe wie bei den Herkunftsstufen. */
+.tier-chip.level-protokoll::before { background: var(--text); }
+.tier-chip.level-auszug::before    { background: var(--accent); }
+.tier-chip.level-keine::before     { background: var(--border); }
+
+.reg-flag {
+  font-size: 0.72rem;
+  color: var(--accent-text);
+  white-space: nowrap;
+}
+
+.source-note {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.source-note .icon { font-size: 18px; color: var(--accent-text); flex-shrink: 0; }
+.source-note strong { color: var(--text); }
+
+/* -- Kerndaten zur Person -- */
+
+.fact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 0.88rem;
+}
+.fact-row span:first-child { color: var(--text-muted); }
+
+.fact-elections { margin-top: 10px; font-size: 0.82rem; }
+.fact-elections th { padding: 6px 12px; text-align: left; color: var(--text-muted); font-weight: 500; }
+.fact-elections th.fig-value { text-align: right; }
+.fact-rank { color: var(--text-muted); white-space: nowrap; }
+
 .session-pdf {
   display: inline-flex;
   align-items: center;

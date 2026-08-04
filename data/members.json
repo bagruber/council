@@ -818,7 +818,8 @@
             "from": "2021-10",
             "to": "2026-5"
           }
-        ]
+        ],
+        "birthYear": 1994
       }
     },
     {
@@ -1044,7 +1045,8 @@
       "from": "2017-12-11",
       "to": "2023-07-24",
       "profile": {
-        "pronouns": "er/ihn"
+        "pronouns": "er/ihn",
+        "birthYear": 1995
       }
     },
     {

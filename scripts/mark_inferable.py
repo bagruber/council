@@ -18,6 +18,10 @@ Zwei Ursachen für Lücken sind bekannt und werden vorher herausgerechnet:
     über die eigene Entlastung nicht mit. Wer dem Aufsichtsrat wann angehörte,
     geben die Daten nicht her; die Lücke ist damit erklärt, aber nicht
     auflösbar. Solche Voten bleiben bewusst ohne Ableitung.
+
+Die 90 %-Schwelle setzt eine Anwesenheitsliste voraus. Sitzungen, die nur als
+Beschlussauszug der Stadt vorliegen (`session.source.kind == 'webauszug'`),
+haben keine — dort wird nur abgeleitet, wenn alle Sitze mitgestimmt haben.
 """
 import json, os, re
 
@@ -28,6 +32,9 @@ ENTLASTUNG = re.compile(r'entlastung.*aufsichtsrat|aufsichtsrat.*entlastung', re
 ENTLASTUNG_NOTE = ('Die Mitglieder des Aufsichtsrats stimmen über ihre eigene '
                    'Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen '
                    'unter der Zahl der Anwesenden.')
+WEBAUSZUG_NOTE = ('Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. '
+                  'Da nicht alle Sitze mitgestimmt haben, lässt sich das '
+                  'Stimmverhalten niemandem zuordnen.')
 
 
 def load(n):
@@ -70,7 +77,7 @@ def main():
     path = os.path.join(DATA, 'votes.json')
     votes = json.load(open(path, encoding='utf-8'))
 
-    stats = {'ableitbar': 0, 'entlastung': 0, 'zu grosse lücke': 0}
+    stats = {'ableitbar': 0, 'entlastung': 0, 'ohne anwesenheit': 0, 'zu grosse lücke': 0}
     for v in votes:
         v.pop('inferable', None)
         if v['type'] != 'anonymous':
@@ -92,6 +99,12 @@ def main():
             v['inferable'] = False
             v.setdefault('note', ENTLASTUNG_NOTE)
             stats['entlastung'] += 1
+        elif (sess.get('source') or {}).get('kind') == 'webauszug' and voted < size:
+            # Ohne Anwesenheitsliste gibt es keine Toleranz: fehlt auch nur eine
+            # Stimme, ist unbekannt, wer gefehlt hat.
+            v['inferable'] = False
+            v.setdefault('note', WEBAUSZUG_NOTE)
+            stats['ohne anwesenheit'] += 1
         elif entitled > 0 and voted / entitled < THRESHOLD:
             v['inferable'] = False
             stats['zu grosse lücke'] += 1

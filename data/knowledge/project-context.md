@@ -91,6 +91,27 @@ gleichbedeutend mit „Niederschrift liegt vor".
 
 **Wichtig bei BPU-Sitzungen:** `absent` = abwesend OHNE Vertretung; wer eine Vertretung hat, steht nur in `substitutes`.
 
+### Drei Erfassungsstufen je Sitzung
+
+| Stufe | Kennzeichen | Anwesenheit |
+|---|---|---|
+| **Niederschrift** | PDF in `data/niederschriften/`, kein `source`-Feld | vollständig |
+| **Beschlussauszug** | `"source": {"kind": "webauszug", "url": "https://www.moosburg.de/…"}` | **fehlt** |
+| **nichts** | nur in `sessionlengths.json` | – |
+
+Manche BPU-Sitzungen erscheinen nie als Niederschrift, sondern nur als Beschlussauszug
+auf der Website der Stadt. Verlinkt wird dann die Seite der Stadt, nicht eine Datei —
+niemals eine selbst erzeugte PDF. Die Beschlüsse stehen dort, die Anwesenheitsliste nicht.
+
+Daraus folgt für die Ableitung:
+- **Alle Sitze haben mitgestimmt** (BPU: 12) → alle regulären Sitze waren da, Vote wird
+  `named` mit vollständiger Besetzung.
+- **Sonst** → `anonymous` und `inferable: false`. Ein Sitz war leer, aber welcher, steht
+  nirgends. Kein `absent`-Array setzen — leer hieße „alle da".
+
+`scripts/mark_inferable.py` setzt das durch: die 90 %-Schwelle setzt eine
+Anwesenheitsliste voraus und gilt für Beschlussauszüge nicht.
+
 ### votes.json
 
 ```json
@@ -174,9 +195,28 @@ vermeiden — deshalb die Schwelle statt einer harten Regel.
 Jedes Mitglied hat u.a.:
 - `id` (z.B. `"gruber"`, `"stanglmaier"`)
 - `name`, `party` (z.B. `"fresh"`, `"CSU"`, `"SPD"`, `"FW"`, `"Grüne"`, `"Linke"`)
-- `from`, `to` (Amtszeiten, ISO-Datum)
+- `from`, `to` (Amtszeiten, ISO-Datum), `periods[]` bei Mandaten mit Pause
+- `partyHistory[]` bei Fraktionswechsel — das Halbrund färbt den Sitz danach
 - `profile.motions[]` – eingebrachte Anträge
 - `seatConfigs` – Ausschusssitze und Funktionen
+
+### Kerndaten zur Person (`profile`)
+
+```json
+"birthYear": 1994,
+"occupation": "Zimmerer",
+"district": "Pfrombach",
+"elections": [
+  { "year": 2026, "votes": 1834, "listRank": 12, "resultRank": 3 }
+]
+```
+
+Alle Felder optional; die Sektion „Zur Person" auf dem Profil erscheint nur, wenn
+mindestens eins gefüllt ist. Ratsjahre werden aus `periods` gerechnet, nicht gespeichert.
+
+`listRank` ist der Platz auf der Liste, `resultRank` der Platz nach Auszählung — die
+Differenz zeigt, wen die Wählerinnen und Wähler nach vorn gerückt haben. Beim Ortsteil
+nur der Ortsteil, nie die Adresse.
 
 ---
 

@@ -129,6 +129,14 @@ const SHOW_PRONOUNS = true;
          + "_" + s.date.replace(/-/g, "") + ".pdf";
   }
 
+  // Manche Sitzungen erscheinen nie als Niederschrift, sondern nur als
+  // Beschlussauszug auf der Website der Stadt. Die Beschlüsse stehen dort, die
+  // Anwesenheitsliste nicht — deshalb eine eigene Stufe, nicht bloß eine
+  // andere Quellenangabe.
+  function isWebauszug(s) {
+    return !!(s.source && s.source.kind === "webauszug");
+  }
+
   // Ein Eintrag je Sitzung, die stattgefunden hat — unabhängig davon, ob eine
   // Niederschrift vorliegt. Die Dauern reichen weiter als die erfassten
   // Sitzungen, die erfassten Sitzungen weiter zurück als die Dauern.
@@ -860,10 +868,28 @@ const SHOW_PRONOUNS = true;
       const dur = lengthMin(len);
       timeLine = `<div class="session-time"><svg class="icon"><use href="#i-schedule"/></svg>${len.start}${len.end ? "–" + len.end : ""} Uhr${dur ? " · " + formatDuration(dur) : ""}</div>`;
     }
-    header.innerHTML = `<h1>${session.title}</h1><div class="session-date">${formatDate(session.date)}</div>${timeLine}${badge}
-      <a class="session-pdf" href="${protocolUrl(session)}" target="_blank" rel="noopener">
-        <svg class="icon"><use href="#i-description"/></svg> Niederschrift (PDF)</a>`;
+    const src = isWebauszug(session)
+      ? (session.source.url
+          ? `<a class="session-pdf" href="${session.source.url}" target="_blank" rel="noopener">
+               <svg class="icon"><use href="#i-language"/></svg> Beschlussauszug der Stadt Moosburg</a>`
+          : "")
+      : `<a class="session-pdf" href="${protocolUrl(session)}" target="_blank" rel="noopener">
+           <svg class="icon"><use href="#i-description"/></svg> Niederschrift (PDF)</a>`;
+    header.innerHTML = `<h1>${session.title}</h1><div class="session-date">${formatDate(session.date)}</div>${timeLine}${badge}${src}`;
     main.appendChild(header);
+
+    if (isWebauszug(session)) {
+      const note = document.createElement("div");
+      note.className = "source-note";
+      note.innerHTML = `
+        <svg class="icon"><use href="#i-info"/></svg>
+        <div><strong>Keine Niederschrift veröffentlicht.</strong>
+        Beschlüsse und Ergebnisse dieser Sitzung stammen aus dem Beschlussauszug auf der
+        Website der Stadt. Eine Anwesenheitsliste wird dort nicht veröffentlicht — wer
+        gefehlt hat, ist deshalb unbekannt. Nur wenn alle regulären Sitze mitgestimmt haben,
+        lässt sich das Stimmverhalten den Personen zuordnen.</div>`;
+      main.appendChild(note);
+    }
 
     if (session.substitutes && session.substitutes.length) {
       const subs = document.createElement("div");
@@ -1039,9 +1065,11 @@ const SHOW_PRONOUNS = true;
     main.appendChild(breadcrumb([{ label: "Übersicht", href: "#/" }]));
 
     const reg = sessionRegister();
-    const withProtocol = reg.filter(r => r.session);
-    const totalVotes = withProtocol.reduce((n, r) => n + r.votes.length, 0);
-    const all = tierCounts(withProtocol.flatMap(r => r.votes));
+    const erfasst = reg.filter(r => r.session);
+    const protokoll = erfasst.filter(r => !isWebauszug(r.session));
+    const auszug = erfasst.filter(r => isWebauszug(r.session));
+    const totalVotes = erfasst.reduce((n, r) => n + r.votes.length, 0);
+    const all = tierCounts(erfasst.flatMap(r => r.votes));
     const traceable = totalVotes - all.sum;
 
     const header = document.createElement("div");
@@ -1056,10 +1084,18 @@ const SHOW_PRONOUNS = true;
     const tiles = document.createElement("div");
     tiles.className = "stat-tiles";
     tiles.innerHTML = `
-      <div class="stat-tile"><div class="stat-tile-value">${withProtocol.length} <small>/ ${reg.length}</small></div><div class="stat-tile-label">Sitzungen mit Niederschrift</div></div>
+      <div class="stat-tile"><div class="stat-tile-value">${protokoll.length} <small>/ ${reg.length}</small></div><div class="stat-tile-label">Sitzungen mit Niederschrift</div></div>
       <div class="stat-tile"><div class="stat-tile-value">${totalVotes}</div><div class="stat-tile-label">erfasste Abstimmungen</div></div>
       <div class="stat-tile"><div class="stat-tile-value">${Math.round(traceable / totalVotes * 100)} %</div><div class="stat-tile-label">Stimmverhalten nachvollziehbar</div></div>`;
     main.appendChild(tiles);
+
+    const levels = document.createElement("div");
+    levels.className = "tier-legend";
+    levels.innerHTML = `
+      <span class="tier-chip level-protokoll" title="Niederschrift mit Anwesenheitsliste">Niederschrift <b>${protokoll.length}</b></span>
+      <span class="tier-chip level-auszug" title="Beschlussauszug der Stadt, ohne Anwesenheitsliste">nur Beschlussauszug <b>${auszug.length}</b></span>
+      <span class="tier-chip level-keine" title="Weder Niederschrift noch Auszug veröffentlicht">nichts veröffentlicht <b>${reg.length - erfasst.length}</b></span>`;
+    main.appendChild(levels);
 
     const legend = document.createElement("div");
     legend.className = "tier-legend";
@@ -1088,18 +1124,27 @@ const SHOW_PRONOUNS = true;
             .join("")}</span>`
         : "";
 
+      const web = r.session && isWebauszug(r.session);
+      const doc = !r.session ? ""
+        : web
+          ? (r.session.source.url
+              ? `<a class="reg-pdf" href="${r.session.source.url}" target="_blank" rel="noopener"
+                    title="Beschlussauszug der Stadt, ohne Anwesenheitsliste"><svg class="icon"><use href="#i-language"/></svg></a>`
+              : "")
+          : `<a class="reg-pdf" href="${protocolUrl(r.session)}" target="_blank" rel="noopener"
+                title="Niederschrift als PDF"><svg class="icon"><use href="#i-description"/></svg></a>`;
+
       const tr = document.createElement("tr");
-      tr.className = r.session ? "" : "register-gap";
+      tr.className = r.session ? (web ? "register-partial" : "") : "register-gap";
       tr.innerHTML = `
         <td class="reg-date">${formatDate(r.date)}</td>
         <td class="reg-body"><span class="reg-dot" style="background:${chartColor[r.body]}"></span>${label}</td>
         <td class="reg-dur">${dur}</td>
         <td class="reg-data">${r.session
           ? `<a href="#/session/${r.session.id}">${r.votes.length} Abstimmung${r.votes.length === 1 ? "" : "en"}</a>`
-            + bar
-            + `<a class="reg-pdf" href="${protocolUrl(r.session)}" target="_blank" rel="noopener"
-                  title="Niederschrift als PDF"><svg class="icon"><use href="#i-description"/></svg></a>`
-          : `<span class="reg-none">keine Niederschrift veröffentlicht</span>`}</td>`;
+            + (web ? `<span class="reg-flag">ohne Anwesenheitsliste</span>` : "")
+            + bar + doc
+          : `<span class="reg-none">nichts veröffentlicht</span>`}</td>`;
       body.appendChild(tr);
     });
     table.appendChild(body);
@@ -2013,6 +2058,9 @@ const SHOW_PRONOUNS = true;
 
     wrap.appendChild(rolesSection);
 
+    const facts = renderMemberFacts(m, profile);
+    if (facts) wrap.appendChild(facts);
+
     // motions
     if (profile.motions && profile.motions.length) {
       const motionSec = document.createElement("div");
@@ -2327,6 +2375,49 @@ const SHOW_PRONOUNS = true;
     const d = new Date(iso + "T12:00:00");
     d.setDate(d.getDate() + 1);
     return d.toISOString().slice(0, 10);
+  }
+
+  // Kerndaten zur Person. Bleibt weg, solange nichts hinterlegt ist — die
+  // Angaben kommen nach und nach dazu.
+  function renderMemberFacts(m, profile) {
+    const rows = [];
+    if (profile.birthYear)  rows.push(["Jahrgang", profile.birthYear]);
+    if (profile.occupation) rows.push(["Beruf", profile.occupation]);
+    if (profile.district)   rows.push(["Ortsteil", profile.district]);
+
+    // Ratsjahre über alle Mandate, Wechseltage nicht doppelt gezählt
+    const spans = m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }];
+    const days = spans.reduce((n, s) => n + (s.from
+      ? (Date.parse(s.to || new Date().toISOString().slice(0, 10)) - Date.parse(s.from)) / 864e5
+      : 0), 0);
+    if (days > 0) rows.push(["Im Rat seit", `${spans[0].from.slice(0, 4)} · ${Math.round(days / 365)} Jahre`]);
+
+    const el = profile.elections || [];
+    if (!rows.length && !el.length) return null;
+
+    const sec = document.createElement("div");
+    sec.className = "profile-section";
+    sec.innerHTML = "<h3>Zur Person</h3>"
+      + rows.map(([k, v]) => `<div class="fact-row"><span>${k}</span><span>${v}</span></div>`).join("");
+
+    if (el.length) {
+      // Der Listenplatz sagt, wohin die Partei jemanden gesetzt hat; der Rang
+      // nach Auszählung, wohin die Wählerinnen und Wähler ihn gerückt haben.
+      const rowsHtml = [...el].sort((a, b) => b.year - a.year).map(e => `
+        <tr>
+          <td>${e.year}</td>
+          <td class="fig-value">${e.votes != null ? e.votes.toLocaleString("de-DE") : "–"}</td>
+          <td class="fact-rank">${e.listRank != null && e.resultRank != null
+            ? `Liste ${e.listRank} → Platz ${e.resultRank}`
+            : e.listRank != null ? `Liste ${e.listRank}` : ""}</td>
+        </tr>`).join("");
+      const t = document.createElement("table");
+      t.className = "figures-table fact-elections";
+      t.innerHTML = `<thead><tr><th>Wahl</th><th class="fig-value">Stimmen</th><th></th></tr></thead>
+                     <tbody>${rowsHtml}</tbody>`;
+      sec.appendChild(t);
+    }
+    return sec;
   }
 
   function makeRoleRow(icon, text, spans) {

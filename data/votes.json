@@ -2565,8 +2565,8 @@
         "reason": "beteiligung"
       }
     ],
-    "inferable": false,
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden."
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden.",
+    "inferable": false
   },
   {
     "id": "sr_20200722_03",
@@ -6124,8 +6124,8 @@
         "reason": "beteiligung"
       }
     ],
-    "inferable": false,
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden."
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden.",
+    "inferable": false
   },
   {
     "id": "sr_20210726_04",
@@ -11800,8 +11800,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false,
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden."
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden.",
+    "inferable": false
   },
   {
     "id": "sr_20230724_05",
@@ -14618,8 +14618,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false,
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden."
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden.",
+    "inferable": false
   },
   {
     "id": "sr_20240701_04",
@@ -19874,8 +19874,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false,
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden."
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden.",
+    "inferable": false
   },
   {
     "id": "sr_20250728_06",

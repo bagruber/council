@@ -8161,7 +8161,11 @@
         "number": "4.4",
         "title": "Antrag auf isolierte Befreiung zwecks Nutzungsänder. des Dachgeschosses eines Fitnessstudios zur Wohnnutzung mit 5 WE a.d. Bahnhofstr. 50, Moosburg"
       }
-    ]
+    ],
+    "source": {
+      "kind": "webauszug",
+      "url": null
+    }
   },
   {
     "id": "sr_20260511",
