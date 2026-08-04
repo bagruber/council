@@ -28,12 +28,24 @@ jobs:
           local-dir: ./
           server-dir: stadtrat/
 
+          # Alle Projekte teilen sich ein FTP-Konto. Kurz nach einer anderen
+          # Übertragung nimmt Hostinger die Verbindung verzögert an, und die
+          # 30 s Standard-Timeout der Action reichen dann nicht.
+          timeout: 120000
+
           # img/members/originals/ sind 167 MB unkomprimierte PNG-Vorlagen, aus
           # denen die .webp-Dateien erzeugt wurden. Die Seite referenziert sie
-          # nirgends — ohne sie schrumpft der Upload von 199 MB auf 33 MB.
+          # nirgends — ohne sie schrumpft der Upload von 199 MB auf 32 MB.
+          #
+          # `**/.git*` deckt .github und .gitignore ab, aber nicht .claude:
+          # dessen SKILL.md-Dateien fielen zwar unter **/*.md, die leeren
+          # Ordner landeten trotzdem auf dem Server. Werkzeug-Interna gehören
+          # nicht auf einen öffentlichen Webserver.
           exclude: |
             **/.git*
             **/.git*/**
+            .claude
+            .claude/**
             **/node_modules/**
             img/members/originals/**
             docs/**
