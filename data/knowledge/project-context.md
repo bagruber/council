@@ -1,7 +1,7 @@
 # Projektkontext – Council Transparency App Moosburg a.d. Isar
 
-> Stand: 2026-08-02. Dient als Restart-Dokument für LLMs.
-> Datenstand: 54 Mitglieder · 113 Sitzungen (20.01.2020–18.05.2026) · 847 Abstimmungen · 27 Dossiers · 19 Presseartikel
+> Stand: 2026-08-05. Dient als Restart-Dokument für LLMs.
+> Datenstand: 54 Mitglieder · 129 Sitzungen (20.01.2020–18.05.2026) · 961 Abstimmungen · 27 Dossiers · 19 Presseartikel
 
 ---
 
@@ -111,6 +111,19 @@ Daraus folgt für die Ableitung:
 
 `scripts/mark_inferable.py` setzt das durch: die 90 %-Schwelle setzt eine
 Anwesenheitsliste voraus und gilt für Beschlussauszüge nicht.
+
+Eine Zusatzregel aus dem Import vom August 2026: erreicht **irgendeine** Abstimmung der
+Sitzung die volle Sitzzahl, war niemand ganztägig abwesend → `absent: []` ist belegt.
+Einzelne Voten mit weniger Stimmen sind dann kurzfristige Abwesenheiten.
+
+Im Bestand: 17 Beschlussauszüge (16 BPU-Sitzungen 2020–2025 aus
+`scripts/import_bpu_webauszug.py`, dazu BPU 13.04.2026). „Mehrfachbeschluss" im Auszug
+heißt: mehrere Einzelbeschlüsse ohne ausgewiesene Zahlen — dafür entsteht **kein** Vote,
+nur ein Tagesordnungspunkt mit `note`.
+
+**Vorsicht bei „Beschluss: Abgelehnt".** Das bezieht sich auf das Vorhaben, nicht auf die
+Abstimmung. 12:0 heißt, der Beschluss *zur Ablehnung* ging einstimmig durch.
+`result: "rejected"` nur setzen, wenn Nein überwiegt.
 
 ### votes.json
 
@@ -380,17 +393,40 @@ StR 01.07.2024, 02.09.2024, 23.09.2024, 07.10.2024, 21.10.2024, 04.11.2024, 18.1
   die Rechnung zur Niederschriftsgenehmigung am 18.05.2026 zwölf fortgeführte plus zwei
   neue Mandate; die Zählung des Betreibers war 13 + 1.
 
-### 0b. Falle: `seatConfigs` müssen lückenlos sein
-`Council.bodyConfigAt()` fällt auf die **oberste `seats`-Ebene** des Gremiums zurück, wenn
-keine `seatConfig` das Datum abdeckt. Beim Plenum ist diese Ebene eine Kopie der
-2026er Besetzung — für ältere Sitzungen war dadurch das komplette Halbrund leer
-(behoben im August 2026 durch `scripts/add_plenum_2014.py`). Die Kopie steht noch da
-und wäre besser weg; solange alle Perioden abgedeckt sind, greift sie nicht.
+### 0b. Falle: Gremienbesetzung außerhalb aller Perioden
+`Council.bodyConfigAt()` fiel früher auf die **oberste `seats`-Ebene** des Gremiums
+zurück, wenn keine `seatConfig` das Datum abdeckte — und die ist beim Plenum wie beim
+BPU eine Kopie der 2026er Besetzung. Für alte Sitzungen war das Halbrund entweder leer
+oder mit den falschen Personen besetzt. Seit August 2026 gibt `bodyConfigAt()` eine
+leere Konfiguration zurück, wenn das Gremium Perioden hat, aber keine passt: **lieber
+nichts anzeigen als das Falsche.** Gremien ganz ohne Perioden (Aufsichtsrat,
+Verbandsrat) nutzen den Rückfall weiterhin.
+
+Folge: für den BPU vor Mai 2020 ist keine Besetzung bekannt. Die beiden Sitzungen vom
+27.01. und 02.03.2020 stehen mit ihren Beschlüssen im Bestand, werden aber niemandem
+zugeordnet — auch ihre 12:0-Voten nicht.
 
 Zweite Falle im selben Bereich: `buildSeatsFromBody` bevorzugt die Person, die im Vote
 auftaucht. Dadurch bleiben falsche Sitzdaten unsichtbar, solange Einzelstimmen
 vorliegen — die monatsgenauen Wechseldaten der Periode 2020–2026 waren jahrelang
 falsch, ohne aufzufallen (`scripts/fix_seat_dates.py`).
+
+### 0c. Ausschusssitze zeigen nur den letzten Inhaber
+In den `seatConfigs` von HVFA, PA und RPA steht je Sitz nur die **zuletzt** amtierende
+Person; Vorgänger liegen unverbunden in `pastSeats`. Dadurch bekommt niemand die
+Ausschussvoten seiner eigenen Zeit zugeschrieben. Betroffen sind acht Sitze:
+
+| Gremium | Sitz zeigt | Mandat beginnt erst |
+|---|---|---|
+| hvfa | marcus, hobmaier, becher_a | 2025-03 / 2024-10 / 2022-06 |
+| pa | gruber, becher_a | 2022-10 / 2022-06 |
+| rpa | marcus, hobmaier, becher_a | 2025-03 / 2024-10 / 2022-06 |
+
+Der BPU-Sitz (altenbeck → linz_kilian) ist im August 2026 aufgelöst worden, weil dort
+inzwischen 16 Sitzungen hängen. Die übrigen acht sind offen: welcher Vorgänger zu
+welchem Sitz gehört, ist aus `pastSeats` nicht eindeutig — mehrere Einträge tragen
+`sub: true`, obwohl sie einen Sitz gehalten haben müssten. Wegen der dünnen
+HVFA/PA/RPA-Datenlage (eine einzige erfasste Sitzung) hat das keine Dringlichkeit.
 
 ### 1. Fehlende Sitzung: BPU/HVFA 21.07.2025
 Die Gemeinschaftssitzung BPU + HVFA vom **21. Juli 2025** fehlt komplett in `sessions.json` und `votes.json`. Belegt durch Agenda-TOP in bpu_20251006: „Genehmigung Niederschrift BPU 21.07.2025". Niederschrift-PDF sollte in `data/niederschriften/` liegen.

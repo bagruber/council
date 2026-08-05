@@ -777,6 +777,12 @@ main {
 .agenda-item h3 a { color: inherit; text-decoration: none; }
 .agenda-item h3 a:hover { color: var(--primary); }
 
+.agenda-item .ai-note {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
 .agenda-item .ai-type {
   display: inline-block;
   margin-top: 6px;

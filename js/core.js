@@ -38,8 +38,13 @@ const Council = (() => {
   // (e.g. plenum), the body itself is returned as the "config".
   function bodyConfigAt(body, date) {
     const configs = body && body.seatConfigs;
+    // Gremien ohne Perioden (Aufsichtsrat, Verbandsrat) tragen ihre Besetzung
+    // direkt am Objekt.
     if (!configs || !configs.length) return body || {};
-    return configs.find(c => withinPeriod(c, date)) || body;
+    // Gremien mit Perioden: ausserhalb aller Perioden gibt es keine bekannte
+    // Besetzung. Der frühere Rückfall auf die oberste `seats`-Ebene hat für
+    // alte Sitzungen die heutige Besetzung ausgewiesen.
+    return configs.find(c => withinPeriod(c, date)) || {};
   }
 
   // Whether `member` holds a regular seat (chair, vice-chair, or seat) in

@@ -38,6 +38,83 @@
     ]
   },
   {
+    "id": "bpu_20200127",
+    "date": "2020-01-27",
+    "type": "bpu",
+    "title": "Sitzung Bau-, Planungs- und Umweltausschuss – Januar 2020",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2273&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen der Ersten Bürgermeisterin",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 26 Abs. 2 und § 35 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Barrierefreiheit; Antrag des Seniorenbeirats auf Umrüstung der Lichtsignalanlagen für Fußgänger mit akustischen Signalen für Sehbehinderte",
+        "voteId": "bpu_20200127_01"
+      },
+      {
+        "number": "4",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "4.1",
+        "title": "Vorbescheid - Neubau eines Einfamilienhauses mit Doppelgarage a.d. St.- Margarethen-Straße, Pfrombach",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.2",
+        "title": "Vorbescheid - Neubau eines Einfamilienhauses mit Doppelgarage a.d. St.-Margarethen-Straße, Pfrombach",
+        "voteId": "bpu_20200127_02"
+      },
+      {
+        "number": "4.3",
+        "title": "Vorbescheid - Neubau eines Einfamilienhauses mit Doppelgarage a.d. St.-Margarethen-Straße, Pfrombach",
+        "voteId": "bpu_20200127_03"
+      },
+      {
+        "number": "4.4",
+        "title": "Vorbescheid - Errichtung eines Einfamilienhauses mit Doppelgarage a.d. St.-Margarethen-Str. 25, Pfrombach",
+        "voteId": "bpu_20200127_04"
+      },
+      {
+        "number": "4.5",
+        "title": "Vorbescheid - Errichtung eines Einfamilienhauses mit Doppelgarage a.d. St.-Margarethen-Str., Moosburg-Aich",
+        "voteId": "bpu_20200127_05"
+      },
+      {
+        "number": "4.6",
+        "title": "Errichtung eines Sichtschutzzaunes (Antrag auf isolierte Befreiung) a.d. Regerstr. 12, Moosburg",
+        "voteId": "bpu_20200127_06"
+      },
+      {
+        "number": "4.7",
+        "title": "Neubau einer Garage und eines Carports a.d. Oleanderstr. 5, Moosburg",
+        "voteId": "bpu_20200127_07"
+      },
+      {
+        "number": "4.8",
+        "title": "Neubau einer Lagerhalle für Boden u. Bauschutt als Zwischenlager in Stünzbach, Pfrombach",
+        "voteId": "bpu_20200127_08"
+      },
+      {
+        "number": "5",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ],
+    "absent": []
+  },
+  {
     "id": "sr_20200210",
     "date": "2020-02-10",
     "type": "stadtrat",
@@ -182,6 +259,112 @@
         "type": "formal"
       }
     ]
+  },
+  {
+    "id": "bpu_20200302",
+    "date": "2020-03-02",
+    "type": "bpu",
+    "title": "Sitzung Bau-, Planungs- und Umweltausschuss – März 2020",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2281&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen der Ersten Bürgermeisterin",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 26 Abs. 2 und § 35 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Vollzug der Straßenverkehrsordnung; Anträge"
+      },
+      {
+        "number": "3.1",
+        "title": "Umsetzung des Fußgänger- und Radverkehrkonzeptes; Antrag vom 14.10.2019 Bündnis 90/DIE GRÜNEN auf Anordnung von Tempo 30 km/h an der Bonaustraße; Mitteilung des Landratsamtes Freising",
+        "voteId": "bpu_20200302_01"
+      },
+      {
+        "number": "3.2",
+        "title": "Umsetzung des Fußgänger- und Radverkehrkonzeptes; Antrag vom 14.10.2019 Bündnis 90/DIE GRÜNEN auf Anordnung von Tempo 30 km/h an der Georg-Schweiger-Straße in Höhe des Kindergartens an der Ginsterstraße; Mitteilung des Landratsamtes Freising",
+        "voteId": "bpu_20200302_02"
+      },
+      {
+        "number": "3.3",
+        "title": "Antrag Anwohner \"Gärtnerstraße\" auf Anordnung von Tempo 30 km/h a.d. Gärtnerstraße",
+        "voteId": "bpu_20200302_03"
+      },
+      {
+        "number": "4",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "4.1",
+        "title": "Errichtung einer Interims Container-Freibadanlage a.d. Stadtbadstr. 13+15, Moosburg",
+        "voteId": "bpu_20200302_04"
+      },
+      {
+        "number": "4.2",
+        "title": "Vorbescheid - Errichtung eines Mehrfamilienhauses mit 6 WE am Unterreiterweg, Moosburg",
+        "voteId": "bpu_20200302_05"
+      },
+      {
+        "number": "4.3",
+        "title": "Ausbau eines Mehrfamilienhauses mit 4 WE zu einem Mehrfamilienhaus mit 6 WE und Stellplätzen a.d. Neustadtstr. 40, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.4",
+        "title": "Vorbescheid - Errichtung eines Einfamilienhauses a.d. Weidenstr. 4, Moosburg",
+        "voteId": "bpu_20200302_06"
+      },
+      {
+        "number": "4.5",
+        "title": "Errichtung eines Carports und einer Grundstückseinfriedung a.d. Landshuter Str. 125, Moosburg",
+        "voteId": "bpu_20200302_07"
+      },
+      {
+        "number": "4.6",
+        "title": "Vorbescheid - Errichtung eines Einfamilienhauses mit Garage u. Stellplätzen a.d. Gabelsbergerstr. 16, Moosburg",
+        "voteId": "bpu_20200302_08"
+      },
+      {
+        "number": "4.7",
+        "title": "Vorbescheid - Errichtung eines Wohnhauses (Sonnenhaus) mit Garage a.d. Oleanderstr. 3, Moosburg",
+        "voteId": "bpu_20200302_09"
+      },
+      {
+        "number": "4.8",
+        "title": "Neubau eines Wohnhauses a.d. Feuerdornstr. 2, Moosburg",
+        "voteId": "bpu_20200302_10"
+      },
+      {
+        "number": "4.9",
+        "title": "Vorbescheid - Errichtung von 2 Mehrfamilienhäusern mit Tiefgarage am Unterreiterweg 4, Moosburg",
+        "voteId": "bpu_20200302_11"
+      },
+      {
+        "number": "4.10",
+        "title": "Vorbescheid - Errichtung eines Mehrfamilienhauses (8 WE) mit Stellplätzen a.d. Stellwerkstr. 26, Moosburg",
+        "voteId": "bpu_20200302_12"
+      },
+      {
+        "number": "4.11",
+        "title": "Vorbescheid - Aufstockung des besteh. Einfamilienhauses a.d. Stellwerkstr. 15 b, Moosburg",
+        "voteId": "bpu_20200302_13"
+      },
+      {
+        "number": "5",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ],
+    "absent": []
   },
   {
     "id": "sr_20200504",
@@ -905,6 +1088,82 @@
     ]
   },
   {
+    "id": "bpu_20200921",
+    "date": "2020-09-21",
+    "type": "bpu",
+    "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – September 2020",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2297&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "3.1",
+        "title": "Vorbescheid - Anbau eines Einfamilienhauses mit Garage und Errichtung von Stellplätzen a.d. Gabelsbergerstr. 16, Moosburg",
+        "voteId": "bpu_20200921_01"
+      },
+      {
+        "number": "3.2",
+        "title": "Neubau von 2 Mehrfamilienhäusern mit je 5 WE sowie 1 Mehrfamilienhaus mit 3 WE, Garagen u. Stellplätzen a.d. Schillerstr. 10 u. Neustadtstr. 17, Moosburg",
+        "voteId": "bpu_20200921_02"
+      },
+      {
+        "number": "3.3",
+        "title": "Vorbescheid - Errichtung von 2 Mehrfamilienwohnhäusern mit je 3 Wohneinh. u. 9 Stellplätzen a.d. Uppenbornstr. 12 u. 14, Moosburg",
+        "voteId": "bpu_20200921_03"
+      },
+      {
+        "number": "3.4",
+        "title": "Neubau eines Wohnhauses mit Tiefgarage: Tektur zum Stellplatznachweis /-anordnung; a.d. Leinbergerstr. 26-28, Moosburg",
+        "voteId": "bpu_20200921_04"
+      },
+      {
+        "number": "3.5",
+        "title": "Vorbescheid - Erweiterung einer Hofstelle um ein Stallgebäude und Errichtung eines Altenteil-Wohnhauses mit Garage in Pillhofen 5, Moosburg/Niederambach",
+        "voteId": "bpu_20200921_05"
+      },
+      {
+        "number": "3.6",
+        "title": "Neubau eines Einfamilienhauses mit Doppelgarage a.d. Isarstr. 33, Moosburg",
+        "voteId": "bpu_20200921_06"
+      },
+      {
+        "number": "3.7",
+        "title": "Vorbescheid - Umbaumaßnahmen am besteh. Wohnhaus in Oberreit 23 1/2, Moosburg",
+        "voteId": "bpu_20200921_07"
+      },
+      {
+        "number": "3.8",
+        "title": "Antrag auf Genehmigung zur Erstellung einer zusätzlichen Grundstückszufahrt in Oberreit 23 1/2, Moosburg",
+        "voteId": "bpu_20200921_08"
+      },
+      {
+        "number": "3.9",
+        "title": "Ausbau eines Mehrfamilienhauses mit 4 WE zu einem Mehrfamilienhaus mit 5 WE a.d. Neustadtstr. 40, Moosburg",
+        "voteId": "bpu_20200921_09"
+      },
+      {
+        "number": "4",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
     "id": "sr_20200928",
     "date": "2020-09-28",
     "type": "stadtrat",
@@ -1112,6 +1371,102 @@
     ]
   },
   {
+    "id": "bpu_20201109",
+    "date": "2020-11-09",
+    "type": "bpu",
+    "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – November 2020",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2300&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Verkehrsangelegenheiten"
+      },
+      {
+        "number": "3.1",
+        "title": "Antrag Bündnis 90/DIE GRÜNEN; Ausweisung der Viehmarktstraße als Fahrradstraße",
+        "voteId": "bpu_20201109_01"
+      },
+      {
+        "number": "3.2",
+        "title": "Antrag Bündnis 90/DIE GRÜNEN, Graf-Konrad-Straße und Teilstück Stadtgraben als Fahrradstraße und Vorfahrtsstraße",
+        "voteId": "bpu_20201109_02"
+      },
+      {
+        "number": "4",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "4.1",
+        "title": "Vorbescheid - Errichtung eines Betriebsleiterwohnhauses a.d. Stadtbadstr. 25, Moosburg",
+        "voteId": "bpu_20201109_03"
+      },
+      {
+        "number": "4.2",
+        "title": "Errichtung einer einseitigen LED-Werbeanlage auf Monofuß a.d. Fischerstr. 1, Moosburg",
+        "voteId": "bpu_20201109_04"
+      },
+      {
+        "number": "4.3",
+        "title": "Nutzungsänderung einer Wohnung in eine Großtagespflege a.d. Rhenobotstr. 9, Moosburg",
+        "voteId": "bpu_20201109_05"
+      },
+      {
+        "number": "4.4",
+        "title": "Vorbescheid - Errichtung eines Einfamilienhauses in Niederambach 8 a",
+        "voteId": "bpu_20201109_06"
+      },
+      {
+        "number": "4.5",
+        "title": "Nutzungsänder. e. Werkstatt- u. Lagergebäudes zur Wohnnutzung u. Erweiterung der Wohnfläche im Dachgeschoss u. Spitzboden e. Wohn- u. Geschäftshauses, Auf dem Gries 7, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.6",
+        "title": "Vorbescheid - Errichtung einer Lärmschutzwand a.d. Mainburger Str. 2 + 4, Moosburg",
+        "voteId": "bpu_20201109_07"
+      },
+      {
+        "number": "4.7",
+        "title": "Vorbescheid - Errichtung eines Ersatzhauses a.d. Tiefenbachstr. 120, Moosburg",
+        "voteId": "bpu_20201109_08"
+      },
+      {
+        "number": "4.8",
+        "title": "Vorbescheid - Errichtung eines Mehrfamilienhauses mit 2 Wohneinh. a.d. Venusstr. 10, Moosburg",
+        "voteId": "bpu_20201109_09"
+      },
+      {
+        "number": "4.9",
+        "title": "Neubau eines Mehrfamilienhauses mit 9 Wohneinh. und Tiefgarage a.d. Sudetenlandstr. 6, Moosburg",
+        "voteId": "bpu_20201109_10"
+      },
+      {
+        "number": "4.10",
+        "title": "Vorbescheid - Errichtung eines Apartmenthotels, Büros u. Läden mit e. Tiefgarage a.d. Neuen Industriestr. 8, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ],
+    "absent": []
+  },
+  {
     "id": "sr_20201214",
     "date": "2020-12-14",
     "type": "stadtrat",
@@ -1177,6 +1532,77 @@
     ]
   },
   {
+    "id": "bpu_20201217",
+    "date": "2020-12-17",
+    "type": "bpu",
+    "title": "3. Sitzung Bau-, Planungs- und Umweltausschuss – Dezember 2020",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2306&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Bauausschuss-Sitzung vom 09.11.2020 (öffentlicher Sitzungsteil)",
+        "voteId": "bpu_20201217_01"
+      },
+      {
+        "number": "4",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "4.1",
+        "title": "Vorbescheid - Neubau einer landwirtschaftl. Lagerhalle für Waldarbeitsgeräte mit Hackschnitzellager in Kirchamper 8, Moosburg",
+        "voteId": "bpu_20201217_02"
+      },
+      {
+        "number": "4.2",
+        "title": "Neubau eines Mehrfamilienhauses mit Garagen und Stellplätzen; Abbruch von Fertiggaragen a.d. Banatstr. 25, Moosburg",
+        "voteId": "bpu_20201217_03"
+      },
+      {
+        "number": "4.3",
+        "title": "Vorbescheid - Abbruch und Neubau eines Wohnhauses mit Nebengebäuden am Kanal 7, Moosburg-Aich",
+        "voteId": "bpu_20201217_04"
+      },
+      {
+        "number": "4.4",
+        "title": "Umbau u. Sanierung des besteh. Wohn- u. Geschäftshauses mit 1 Gewerbeeinheit und 4 Wohneinh. a.d. Herrnstr. 2, Moosburg",
+        "voteId": "bpu_20201217_05"
+      },
+      {
+        "number": "4.5",
+        "title": "Tektur zum Vorbescheid - Neubau eines Apartmenthotels, Büros und Läden und einer Tiefgarage a.d. Neuen Industriestr. 8, Moosburg",
+        "voteId": "bpu_20201217_06"
+      },
+      {
+        "number": "4.6",
+        "title": "Vorbescheid - Errichtung von 2 Doppelhäusern mit je 1 Wohneinh. a.d. Landshuter Str. 195, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.7",
+        "title": "Vorbescheid - Errichtung eines Mehrfamilienhauses mit 2 Wohneinh. a.d. Venusstr. 10, Moosburg; Anhörung wegen Ersetzung des gemeindlichen Einvernehmens durch das Landratsamt Freising",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
     "id": "sr_20210118",
     "date": "2021-01-18",
     "type": "stadtrat",
@@ -1236,6 +1662,73 @@
     "notes": [
       "Dollinger, Josef (anwesend bis 20.55 Uhr)"
     ]
+  },
+  {
+    "id": "bpu_20210201",
+    "date": "2021-02-01",
+    "type": "bpu",
+    "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – Februar 2021",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2321&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Bauausschuss-Sitzung vom 17.12.2020 (öffentlicher Sitzungsteil)",
+        "voteId": "bpu_20210201_01"
+      },
+      {
+        "number": "4",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "4.1",
+        "title": "Vorbescheid - Errichtung einer Wohnanlage mit Tiefgarage a.d. Landshuter Str. 28 u. 28 a, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.2",
+        "title": "Vorbescheid - Errichtung eines Dreispänners u. eines Doppelhauses mit 5 Garagen u. 5 Stellplätzen sowie Abbruch des besteh. Gebäudes am Unterreiterweg 4, Moosburg",
+        "voteId": "bpu_20210201_02"
+      },
+      {
+        "number": "4.3",
+        "title": "Vorbescheid - Errichtung eines Mehrfamilienhauses mit 18 Wohneinh., Tiefgarage u. Stellplätzen a.d. Sudetenlandstr. 40, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.4",
+        "title": "Vorbescheid - Errichtung eines Doppelhauses mit 2 Garagen a.d. Merkurstr. 7, Moosburg",
+        "voteId": "bpu_20210201_03"
+      },
+      {
+        "number": "4.5",
+        "title": "Neubau eines Mehrfamilienhauses mit 4 Wohneinh. und Carports,Thonstetten 5a, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.6",
+        "title": "Vorbescheid - Neubau eines Mehrfamilienhauses mit 4 Wohneinh. in Thonstetten; Antrag auf Verlängerung des Vorbescheids",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ],
+    "absent": []
   },
   {
     "id": "sr_20210208",
@@ -1809,6 +2302,106 @@
     ]
   },
   {
+    "id": "bpu_20210318",
+    "date": "2021-03-18",
+    "type": "bpu",
+    "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – März 2021",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2325&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Bauausschuss-Sitzung vom 01.02.2021",
+        "voteId": "bpu_20210318_01"
+      },
+      {
+        "number": "4",
+        "title": "Vollzug des Straßen- und Wegegesetzes; Widmungen von Straßen und Wegen"
+      },
+      {
+        "number": "4.1",
+        "title": "Widmung der Verlängerung der Egilbertstraße in Richtung Friedhof",
+        "voteId": "bpu_20210318_02"
+      },
+      {
+        "number": "4.2",
+        "title": "Widmung der Erschließungsstraße zum Mitarbeiterparkplatzes der Firma Jungheinrich in Degernpoint",
+        "voteId": "bpu_20210318_03"
+      },
+      {
+        "number": "4.3",
+        "title": "Widmung der Buchenlandstraße zwischen der Erzgebirgstraße und der Neuen Industriestraße",
+        "voteId": "bpu_20210318_04"
+      },
+      {
+        "number": "4.4",
+        "title": "Widmung der Grundstücke der Park + Ride Anlage am Bahnhof Moosburg",
+        "voteId": "bpu_20210318_05"
+      },
+      {
+        "number": "4.5",
+        "title": "Widmung der Stichstraße an der Abzweigung Waldstraße",
+        "voteId": "bpu_20210318_06"
+      },
+      {
+        "number": "4.6",
+        "title": "Umbenennung der Naustraße zur Verlängerung der Waldstraße",
+        "voteId": "bpu_20210318_07"
+      },
+      {
+        "number": "5",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "5.1",
+        "title": "Neubau eines landwirtschaftl. Ersatzteillagers u. einer Garage in Fürnsbach 2, Moosburg",
+        "voteId": "bpu_20210318_08"
+      },
+      {
+        "number": "5.2",
+        "title": "Neubau einer landwirtschaftl. Maschinen- und Bergehalle a.d. St.-Georg-Str. 60, Moosburg",
+        "voteId": "bpu_20210318_09"
+      },
+      {
+        "number": "5.3",
+        "title": "Vorbescheid zum Neubau eines Appartmenthotels mit Läden und einer Tiefgarage a.d. Neuen Industriestr. 8, Moosburg; Anhörung wegen (teilweiser) Ersetzung des gemeindlichen Einvernehmens",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5.4",
+        "title": "Vorbescheid - Neubau eines Büro- und Verwaltungsgebäudes mit Tiefgarage in Degernpoint G 7, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5.5",
+        "title": "Vorbescheid - Errichtung eines Wohnhauses a.d. Breslauer Str. 1, Moosburg",
+        "voteId": "bpu_20210318_10"
+      },
+      {
+        "number": "5.6",
+        "title": "Neubau eines Einfamilienhauses mit Doppelgarage am Habichtweg 18, Moosburg",
+        "voteId": "bpu_20210318_11"
+      },
+      {
+        "number": "6",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
     "id": "sr_20210322",
     "date": "2021-03-22",
     "type": "stadtrat",
@@ -1981,6 +2574,62 @@
     ]
   },
   {
+    "id": "bpu_20210429",
+    "date": "2021-04-29",
+    "type": "bpu",
+    "title": "3. Sitzung Bau-, Planungs- und Umweltausschuss – April 2021",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2330&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Bauausschuss-Sitzung vom 18.03.2021",
+        "voteId": "bpu_20210429_01"
+      },
+      {
+        "number": "4",
+        "title": "Vollzug der Straßenverkehrsordnung; Antrag auf Verkehrsberuhigung in der Lände",
+        "voteId": "bpu_20210429_02"
+      },
+      {
+        "number": "5",
+        "title": "Vollzug der Wassergesetze; Verfahren zum Erlass einer Festsetzungsverordnung des Landratsamts Freising über das Überschwemmungsgebiet a.d. Isar, Fkm 91,0-129,4 auf den Gebieten der Gemeinden im Landkr. Freising u. Landkr. Erding; Anhörungsverfahren",
+        "voteId": "bpu_20210429_03"
+      },
+      {
+        "number": "6",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "6.1",
+        "title": "Neubau eines Mehrfamilienhauses (7 Wohneinh.) mit Garagen u. Stellplätzen a.d. Mainburger Str. 23, Moosburg",
+        "voteId": "bpu_20210429_04"
+      },
+      {
+        "number": "6.2",
+        "title": "Errichtung eines Sicht- bzw. Schallschutzzaunes a.d. Feuerdornstr. 3, Moosburg",
+        "voteId": "bpu_20210429_05"
+      },
+      {
+        "number": "7",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
     "id": "sr_20210607",
     "date": "2021-06-07",
     "type": "stadtrat",
@@ -2039,6 +2688,77 @@
       {
         "number": "8",
         "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "bpu_20210614",
+    "date": "2021-06-14",
+    "type": "bpu",
+    "title": "4. Sitzung Bau-, Planungs- und Umweltausschuss – Juni 2021",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2333&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der Bauausschuss-Sitzung vom 29.04.2021",
+        "voteId": "bpu_20210614_01"
+      },
+      {
+        "number": "4",
+        "title": "Umbau der Münchener Straße im nördlichen Bereich (ab Höhe Krankenhausweg bis Einmündungsbereich Weingraben/Bahnhofstraße)",
+        "voteId": "bpu_20210614_02"
+      },
+      {
+        "number": "5",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "5.1",
+        "title": "Neubau eines Bürogebäudes a.d. Driescherstr. 3, Moosburg",
+        "voteId": "bpu_20210614_03"
+      },
+      {
+        "number": "5.2",
+        "title": "Vorbescheid - Abbruch u. Neubau eines Einzelhandelsmarktes mit Nutzungseinheiten für Ärzte a.d. Neuen Industriestr. 7, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5.3",
+        "title": "Vorbescheid - Errichtung eines Mehrfamilienhauses mit 6 Wohneinh. u. Stellplätzen a.d. Thalbacher Str. 50 c, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5.4",
+        "title": "Vorbescheid - Errichtung e. Mehrfamilienhauses mit 5 Wohneinh. an ein besteh. Mehrfamilienhauses a.d. Gärtnerstr. 51, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5.5",
+        "title": "Abbruch e. bestehenden Doppelhaushälfte und Neubau e. Dreifamilienwohnhauses mit 6 Stellplätzen a.d. Asternstr. 21, Moosburg",
+        "voteId": "bpu_20210614_04"
+      },
+      {
+        "number": "5.6",
+        "title": "Neubau von zwei Mehrfamilienhäusern mit Tiefgarage a.d. Anton-Nagel-Str. 8 und 10, Moosburg",
+        "voteId": "bpu_20210614_05"
+      },
+      {
+        "number": "6",
+        "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
     ]
@@ -2156,6 +2876,72 @@
     ],
     "notes": [
       "Dollinger, Josef (anwesend bis 21.50 Uhr)"
+    ]
+  },
+  {
+    "id": "bpu_20210719",
+    "date": "2021-07-19",
+    "type": "bpu",
+    "title": "5. Sitzung Bau-, Planungs- und Umweltausschuss – Juli 2021",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2354&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der 4. Sitzung des Bau-, Planungs- u. Umweltausschusses vom 14.06.2021",
+        "voteId": "bpu_20210719_01"
+      },
+      {
+        "number": "4",
+        "title": "Ausbau der Lände; Vorstellung der Planung und Beschluss zur Durchführung der Maßnahme",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "5.1",
+        "title": "Tektur - Errichtung eines Mehrfamilienhauses (4 Wohneinheiten) mit Carports in Thonstetten 5 a",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5.2",
+        "title": "Neubau e. 4-Familienhauses mit Garage und Stellplätzen u. Abbruch einer Verkaufsstätte u. eines Lagergebäudes in Thonstetten 39",
+        "voteId": "bpu_20210719_02"
+      },
+      {
+        "number": "5.3",
+        "title": "Vorbescheid - Errichtung eines Mehrfamilienhauses, Carport u. Stellplätzen a.d. Breitenbergstr. 4, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5.4",
+        "title": "Nutzungsänderung e. Werkstatt- u. Lagergebäudes (Rückgebäude) zur Wohnnutzung sowie Erweiterung der Wohnfläche im Dachgeschoß u. Spitzboden des Wohn- u. Geschäftshauses, Auf dem Gries 7, Moosburg",
+        "voteId": "bpu_20210719_03"
+      },
+      {
+        "number": "5.5",
+        "title": "Vorbescheid - Neubau zweier Doppelhäuser mit 8 Wohneinheiten a.d. Wiesenstraße, Moosburg",
+        "voteId": "bpu_20210719_04"
+      },
+      {
+        "number": "6",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
     ]
   },
   {
@@ -2287,6 +3073,72 @@
       {
         "number": "7",
         "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "bpu_20210927",
+    "date": "2021-09-27",
+    "type": "bpu",
+    "title": "6. Sitzung Bau-, Planungs- und Umweltausschuss – September 2021",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2355&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der 5. Sitzung des Bau-,Planungs- und Umweltausschusses vom 19.07.2021",
+        "voteId": "bpu_20210927_01"
+      },
+      {
+        "number": "4",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "4.1",
+        "title": "Antrag auf Verlängerung des Vorbescheids zum Neubau eines Mehrfamilienwohnhauses mit 4 Wohneinh. in Thonstetten; Anhörung wegen Ersetzung des gemeindlichen Einvernehmens",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.2",
+        "title": "Antrag auf Baugenehmig. zur Errichtung eines Mehrfamilienhauses (4WE) mit Carports in Thonstetten 5 a, Moosburg; Anhörung wegen Ersetzung des gemeindlichen Einvernehmens",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.3",
+        "title": "Neubau einer Halle für einen Gartenbaubetrieb und Errichtung eines Wildschutzzauns a.d. Amperstr. 6, Moosburg",
+        "voteId": "bpu_20210927_02"
+      },
+      {
+        "number": "4.4",
+        "title": "Vorbescheid - Erweiterung der besteh. Fachmärkte und der dazugehörigen Stellplatzanlage in Degernpoint M 2, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.5",
+        "title": "Tektur zum Vorbescheid zwecks Errichtung eines Mehrfamilienhauses mit 5 Wohneinh. an ein besteh. Mehrfamilienhaus a.d. Gärtnerstr. 51 b, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.6",
+        "title": "Vorbescheid - Ersatzbau u. Erweiterung eines Zweifamilienwohnhauses mit Garagen, Ersatzbau eines Geräte- u. Lagergebäudes a.d. Landshuter Str. 101, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "5",
+        "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
     ]
@@ -2727,6 +3579,278 @@
     ]
   },
   {
+    "id": "bpu_20220124",
+    "date": "2022-01-24",
+    "type": "bpu",
+    "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – Januar 2022",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2379&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Wasserrecht; Nassabbau \"Semptwiesen II - Erweiter.-Süd\", Tieferlegung der Abbausohle u. Tektur zur Rekultivierung;",
+        "voteId": "bpu_20220124_01"
+      },
+      {
+        "number": "4",
+        "title": "Vollzug der Straßenverkehrsordnung"
+      },
+      {
+        "number": "4.1",
+        "title": "Errichtung eines Fahrradweges / Fahrradstreifens beidseitig auf der Westerbergstraße; Antrag des Ortsverbands Moosburg der Frauenunion",
+        "voteId": "bpu_20220124_02"
+      },
+      {
+        "number": "4.2",
+        "title": "Errichtung einer Querungshilfe auf der Westerbergstraße in Höhe der Münchener Straße; Antrag des Ortsverbands Moosburg der Frauenunion",
+        "voteId": "bpu_20220124_03"
+      },
+      {
+        "number": "5",
+        "title": "Vollzug des Bayer. Straßen- u. Wegegesetzes; Widmung des Grundstücks Fl.-Nr. 977/128 als Ortsstraße zwecks Verlängerung des Unterreiterwegs, Gemark. Moosburg",
+        "voteId": "bpu_20220124_04"
+      },
+      {
+        "number": "6",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "6.1",
+        "title": "Neubau eines Mehrfamilienhauses (7 WE) mit Garage u. Stellplätzen a.d. Mainburger Str. 23, Moosburg; Anhörung wegen Ersetzung des gemeindl. Einvernehmens",
+        "voteId": "bpu_20220124_05"
+      },
+      {
+        "number": "6.2",
+        "title": "Vorbescheid - Errichtung eines Einfamilienhauses mit Einliegerwohnung a.d. Moosstr., Moosburg-Aich",
+        "voteId": "bpu_20220124_06"
+      },
+      {
+        "number": "6.3",
+        "title": "Vorbescheid - Errichtung eines Mehrfamilienhauses mit 6 Wohneinh. und Tiefgarage a.d. Statzenbachstr. 8, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "6.4",
+        "title": "Vorbescheid - Erweiterung der besteh. Fachmärkte mit Stellplatzanlage in Degernpoint M 2, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "6.5",
+        "title": "Aufstockung des besteh. Wohngebäudes und Neubau eines Carports a.d. Holzlandstr. 22, Moosburg",
+        "voteId": "bpu_20220124_07"
+      },
+      {
+        "number": "6.6",
+        "title": "Ersatzbau e. Lagerschuppens für Bienenhaltung u. Bewirtschaftung e. Streuobstwiese, Abbruch e. besteh. Lagerschuppens a.d. Neustadtstr., Moosburg",
+        "voteId": "bpu_20220124_08"
+      },
+      {
+        "number": "6.7",
+        "title": "Vorbescheid - Erweiterung der HNO-Praxis a.d.Münchener Str. 7, Moosburg",
+        "voteId": "bpu_20220124_09"
+      },
+      {
+        "number": "6.8",
+        "title": "Vorbescheid - Errichtung eines Doppelhauses a.d. Münchener Str. 9 u. 9a, Moosburg",
+        "voteId": "bpu_20220124_10"
+      },
+      {
+        "number": "6.9",
+        "title": "Vorbescheid - Überdachung des besteh. Reitplatzes a.d. Holzlandstr. 6 a, Moosburg",
+        "voteId": "bpu_20220124_11"
+      },
+      {
+        "number": "6.10",
+        "title": "Neubau eines Generationenwohnhauses für 3 Familien mit Garagen u. Carports a.d. Nandlstädter Str. 6, Moosburg",
+        "voteId": "bpu_20220124_12"
+      },
+      {
+        "number": "6.11",
+        "title": "Erweiterungsbau eines Pferdestalles u. Umbau von Lagerräumen in 3 Mitarbeiterwohnungen a.d. Amperstr. 24, Moosburg",
+        "voteId": "bpu_20220124_13"
+      },
+      {
+        "number": "6.12",
+        "title": "Vorbescheid - Erweiterung Hotel / Restaurant und Wohnhaus \"Zur Länd\" a.d. Lände 1, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "6.13",
+        "title": "Tektur zur Freiflächenplanung zum Vorbescheid Errichtung e. Mehrfamilienhauses (5 WE) a.d. Gärtnerstr. 51 b, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "7",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "bpu_20220324",
+    "date": "2022-03-24",
+    "type": "bpu",
+    "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – März 2022",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2400&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift der 1. Sitzung des Bau-, Planungs- und Umweltausschusses vom 24.01.2022",
+        "voteId": "bpu_20220324_01"
+      },
+      {
+        "number": "4",
+        "title": "Radwegbeleuchtung Münchener Straße; Vorstellung Projektplan",
+        "voteId": "bpu_20220324_02"
+      },
+      {
+        "number": "5",
+        "title": "Vollzug des Bayer. Straßen- u. Wegegesetzes; Widmung des Grundstücks Fl.-Nr. 977/128 als Ortsstraße zwecks Verlängerung des Unterreiterwegs, Gemark. Moosburg",
+        "voteId": "bpu_20220324_03"
+      },
+      {
+        "number": "6",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "6.1",
+        "title": "Ersatzbau eines Wohnhauses in Niederambach 1 a, Moosburg",
+        "voteId": "bpu_20220324_04"
+      },
+      {
+        "number": "6.2",
+        "title": "Vorbescheid - Instandsetzung des bestehenden Daches und Nutzungsänderung zu 7 Wohneinheiten a.d. Kirchfeldstr. 24, Aich",
+        "voteId": "bpu_20220324_05"
+      },
+      {
+        "number": "6.3",
+        "title": "Vorbescheid - Neubau von 2 Einzelhäusern u. 2 Doppelhaushälften m. je einer Wohneinheit a.d. Uppenbornstr. 12, Moosburg",
+        "voteId": "bpu_20220324_06"
+      },
+      {
+        "number": "6.4",
+        "title": "Errichtung einer landwirtschaftlichen Lagerhalle in Pillhofen 4, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "6.5",
+        "title": "Vorbescheid - Errichtung eines Doppelhauses mit 5 WE, Garagen, Carports u. Stellplätzen sowie Errichtung eines 3-Spänners mit Garagen u. Stellplätzen am Südmährerweg 2 + 4, Moosburg",
+        "voteId": "bpu_20220324_07"
+      },
+      {
+        "number": "6.6",
+        "title": "Vorbescheid - Errichtung von 5 Reihenhäusern mit Garagen u. Stellplätzen a.d. Burgermühlstr. 13, Moosburg",
+        "voteId": "bpu_20220324_08"
+      },
+      {
+        "number": "6.7",
+        "title": "Neubau eines Doppelhauses mit Garage, Carports u. Stellplatz a.d. Zanderstr. 3, Moosburg",
+        "voteId": "bpu_20220324_09"
+      },
+      {
+        "number": "7",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "bpu_20220523",
+    "date": "2022-05-23",
+    "type": "bpu",
+    "title": "3. Sitzung Bau-, Planungs- und Umweltausschuss – Mai 2022",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2401&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "3.1",
+        "title": "Neubau eines 20 kV-Schalthauses, Am Kraftwerk 1, Moosburg-Pfrombach",
+        "voteId": "bpu_20220523_01"
+      },
+      {
+        "number": "3.2",
+        "title": "Vorbescheid - Neubau eines Mehrfamilienhauses mit 6 WE u. Tiefgarage a.d. Statzenbachstr. 8, Moosburg; Anhörung wegen Ersetzung des gemeindlichen Einvernehmens",
+        "voteId": "bpu_20220523_02"
+      },
+      {
+        "number": "3.3",
+        "title": "Vorbescheid - Anbau mit Lager und einer Wohneinheit an ein genehm. Wohn- u. Geschäftshaus, Auf dem Plan 14, Moosburg",
+        "voteId": "bpu_20220523_03"
+      },
+      {
+        "number": "3.4",
+        "title": "Neubau eines Mehrfamilienhauses mit 5 WE, Carport u. Stellplätzen a.d. Thalbacher Str. 50 c, Moosburg",
+        "voteId": "bpu_20220523_04"
+      },
+      {
+        "number": "3.5",
+        "title": "Neubau eines Einfamiienhauses mit Doppelgarage (Abbruch des alten Wohnhauses) in Troll 1, Moosburg",
+        "voteId": "bpu_20220523_05"
+      },
+      {
+        "number": "3.6",
+        "title": "Umplanung des Vorbescheids zum Neubau e. Mehrfamilienhauses mit Stellplätzen a.d. Stellwerkstr. 26, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "3.7",
+        "title": "Neubau eines Wohn- u. Ärztehauses a.d. Landshuter Str. 22, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4",
+        "title": "Rohrleit.recht; Plangenehm.verfahren § 65 Abs. 2 Satz 1 des Gesetzes üb.die Umweltverträglichkeitsprüf. (UVPG) f.d.wesentl. Änder. der Mineralölfernleit.Triest - Ingolstadt (TAL-IG) Deutschen Transalpine Oelleitung GmbH dr. Erhöhung der Förderrate",
+        "voteId": "bpu_20220523_06"
+      },
+      {
+        "number": "5",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
     "id": "sr_20220905",
     "date": "2022-09-05",
     "type": "stadtrat",
@@ -2891,6 +4015,73 @@
         "type": "formal"
       }
     ]
+  },
+  {
+    "id": "bpu_20220926",
+    "date": "2022-09-26",
+    "type": "bpu",
+    "title": "4. Sitzung Bau-, Planungs- und Umweltausschuss – September 2022",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2402&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Verkehrsangelegenheit: Antrag auf Verkehrsberuhigung in der Lände",
+        "voteId": "bpu_20220926_01"
+      },
+      {
+        "number": "4",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "4.1",
+        "title": "Vorbescheid- Neubau e. Mehrfamilienhauses mit Stellplätzen a.d. Stellwerkstr. 26, Moosburg; Anhörung wegen Ersetzung des gemeindlichen Einvernehmens",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.2",
+        "title": "Vorbescheid - Errichtung von 2 Einfamilienhäusern u.e. Mehrfamilienhauses mit 2 WE a.d. Thalbacher Str. 108, Moosburg",
+        "voteId": "bpu_20220926_02"
+      },
+      {
+        "number": "4.3",
+        "title": "Nutzungsänderung im Erdgeschoß zu einer Zahnarztpraxis in Niederambach 1 b, Moosburg",
+        "voteId": "bpu_20220926_03"
+      },
+      {
+        "number": "4.4",
+        "title": "Neubau e. Wohn- u. Ärztehauses mit 10 Wohneinh., (Neuplanung), Abriss der Bestandsbebauung a.d. Landshuter Str. 22, Moosburg",
+        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+      },
+      {
+        "number": "4.5",
+        "title": "Neubau eines Pferdestalles in Eck 1, Moosburg-Pfrombach",
+        "voteId": "bpu_20220926_04"
+      },
+      {
+        "number": "5",
+        "title": "Spielplatz \"Sanddornstraße\" Neubaugebiet WA Amperauen; Vorstellung der Planung u. Beschluss zur Durchführung der Maßnahme",
+        "voteId": "bpu_20220926_05"
+      },
+      {
+        "number": "6",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ],
+    "absent": []
   },
   {
     "id": "sr_20221010",
@@ -7218,6 +8409,70 @@
       {
         "number": 7,
         "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
+    "id": "bpu_20250721",
+    "date": "2025-07-21",
+    "type": "bpu",
+    "title": "4. Sitzung Bau-, Planungs- und Umweltausschuss – Juli 2025",
+    "source": {
+      "kind": "webauszug",
+      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2575&smcmode=32832"
+    },
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der öffentlichen Niederschrift der 3. Sitzung des Bau-, Planungs- und Umweltausschusses vom 22.05.2025",
+        "voteId": "bpu_20250721_01"
+      },
+      {
+        "number": "4",
+        "title": "Verkehrsangelegenheit"
+      },
+      {
+        "number": "4.1",
+        "title": "Antrag der Konrektorin der Anton-Vitzthum-Grundschule und des Rektors der Kastulus-Realschule, der Elternschaft und der Schüler auf Beruhigung des Verkehrsaufkommens Schulzentrum Moosburg Süd",
+        "voteId": "bpu_20250721_02"
+      },
+      {
+        "number": "5",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "5.1",
+        "title": "Vorbescheid - Errichtung e. Mehrfamilienhauses mit 8 Wohneinh. a.d. Sternstr. 12, Moosburg",
+        "voteId": "bpu_20250721_03"
+      },
+      {
+        "number": "5.2",
+        "title": "Neubau einer Maschinenhalle in Niederambach, Nähe Hs.Nr. 1 c",
+        "voteId": "bpu_20250721_04"
+      },
+      {
+        "number": "5.3",
+        "title": "Neubau eines Mehrfamilienhauses mit 12 Wohneinh. a.d. Sudetenlandstr. 28, Moosburg"
+      },
+      {
+        "number": "5.4",
+        "title": "Errichtung e. Studentenwohnheims besteh. aus 4 Wohngebäuden und zugehörigen Tiefgaragen a.d. Saliterstr. 8 und 10, Moosburg",
+        "voteId": "bpu_20250721_05"
+      },
+      {
+        "number": "6",
+        "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
     ]
