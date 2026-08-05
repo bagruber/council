@@ -931,6 +931,7 @@ const SHOW_PRONOUNS = true;
       } else if (item.type === "discussion") {
         el.innerHTML += '<span class="ai-type">Beratung</span>';
       }
+      if (item.note) el.innerHTML += `<p class="ai-note">${item.note}</p>`;
 
       if (item.voteId && voteMap[item.voteId]) {
         const voteEl = document.createElement("div");

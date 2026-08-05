@@ -63,9 +63,12 @@ def body_size(sid, members, date):
                  if b.get('id') == sid.split('_')[0]), None)
     if not body:
         return None
-    cfg = next((c for c in body.get('seatConfigs', [])
+    configs = body.get('seatConfigs') or []
+    cfg = next((c for c in configs
                 if (c.get('from') or '0') <= date and (not c.get('to') or c['to'] >= date)),
-               None) or body
+               None) or (None if configs else body)
+    if cfg is None:
+        return None      # Gremium hat Perioden, aber keine fuer dieses Datum
     return 1 + len(cfg.get('vicechairs', [])) + len(cfg.get('seats', []))
 
 

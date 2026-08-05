@@ -164,6 +164,15 @@
             "from": "2026-05-01",
             "to": null
           }
+        ],
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 1,
+            "resultRank": 1,
+            "votes": 6657,
+            "elected": true
+          }
         ]
       },
       "title": "Erster Bürgermeister"
@@ -187,7 +196,16 @@
         "contact": {
           "email": "karin.linz@csu-moosburg.de",
           "facebook": "/karin.linz"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 3,
+            "resultRank": 7,
+            "votes": 3115,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -212,7 +230,16 @@
           "email": "kontakt@rudolf-heinz.de",
           "website": "www.rudolf-heinz.de",
           "facebook": "/rudolf.heinz.33"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 7,
+            "resultRank": 2,
+            "votes": 5265,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -255,7 +282,16 @@
           "email": "c.g.hadersdorfer@gmx.de",
           "website": "www.georg-hadersdorfer.de",
           "facebook": "/georg.hadersdorfer.7"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 6,
+            "resultRank": 3,
+            "votes": 4923,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -274,7 +310,16 @@
         ],
         "contact": {
           "email": "mga.tristl@t-online.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 4,
+            "resultRank": 5,
+            "votes": 3394,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -315,7 +360,16 @@
       "from": "2018-11-23",
       "to": null,
       "profile": {
-        "pronouns": "er/ihn"
+        "pronouns": "er/ihn",
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 24,
+            "resultRank": 9,
+            "votes": 2663,
+            "elected": false
+          }
+        ]
       },
       "partyHistory": [
         {
@@ -346,7 +400,16 @@
         "contact": {
           "email": "lorena.kehlringer@gmx.de",
           "instagram": "@lorenakehlringer"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 2,
+            "resultRank": 8,
+            "votes": 2906,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -361,7 +424,16 @@
         "pronouns": "er/ihn",
         "contact": {
           "email": "reither-stadtrat@web.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 13,
+            "resultRank": 4,
+            "votes": 3742,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -392,7 +464,16 @@
           "email": "verena.beibl@gruene-moosburg.de",
           "facebook": "/verena.kuch.1",
           "instagram": "@verena.kuch"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 1,
+            "resultRank": 2,
+            "votes": 3288,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -423,7 +504,16 @@
           "website": "http://www.michael-stanglmaier.eu/",
           "facebook": "/michael.stanglmaier.5",
           "instagram": "@michaelstanglmaier"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 2,
+            "resultRank": 1,
+            "votes": 4751,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -481,7 +571,16 @@
         "contact": {
           "email": "nathalie.vonpressentin@gruene-moosburg.de",
           "facebook": "/nathalie.vonpressentin"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 15,
+            "resultRank": 6,
+            "votes": 1825,
+            "elected": false
+          }
+        ]
       }
     },
     {
@@ -518,7 +617,16 @@
         ],
         "contact": {
           "email": "alexandra.becher@gruene-moosburg.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 17,
+            "resultRank": 9,
+            "votes": 1639,
+            "elected": false
+          }
+        ]
       }
     },
     {
@@ -538,7 +646,16 @@
         "contact": {
           "email": "kilian.linz@gruene-moosburg.de",
           "facebook": "/kili.linz"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 4,
+            "resultRank": 4,
+            "votes": 2199,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -554,7 +671,16 @@
         "contact": {
           "email": "matthias.roeck@gruene-moosburg.de",
           "instagram": "@roecknroller"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 6,
+            "resultRank": 5,
+            "votes": 2005,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -573,7 +699,16 @@
         "contact": {
           "email": "ramona.ruemelin@gruene-moosburg.de",
           "instagram": "@ramona_ruemelin"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 3,
+            "resultRank": 3,
+            "votes": 2268,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -588,7 +723,16 @@
         "pronouns": "er/ihn",
         "contact": {
           "email": "th.grundner@t-online.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 3,
+            "resultRank": 3,
+            "votes": 2735,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -609,6 +753,15 @@
             "title": "Zweiter Bürgermeister",
             "from": "2026-05-01",
             "to": null
+          }
+        ],
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 1,
+            "resultRank": 1,
+            "votes": 4414,
+            "elected": true
           }
         ]
       },
@@ -655,7 +808,16 @@
         ],
         "contact": {
           "email": "Ludwig.Kieninger@t-online.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 24,
+            "resultRank": 12,
+            "votes": 1210,
+            "elected": false
+          }
+        ]
       }
     },
     {
@@ -671,7 +833,16 @@
         "contact": {
           "email": "sepp.sixt@googlemail.com",
           "instagram": "@josef_sixt96"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 2,
+            "resultRank": 4,
+            "votes": 2675,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -686,7 +857,16 @@
         "pronouns": "er/ihn",
         "contact": {
           "email": "meier@bausanierung-meier.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 6,
+            "resultRank": 2,
+            "votes": 3091,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -736,6 +916,15 @@
         "pronouns": "er/ihn",
         "committees": [
           "bpu"
+        ],
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 1,
+            "resultRank": 1,
+            "votes": 2055,
+            "elected": true
+          }
         ]
       }
     },
@@ -751,7 +940,16 @@
         "pronouns": "er/ihn",
         "contact": {
           "email": "christoph.marschoun@montessori-freising.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 3,
+            "resultRank": 2,
+            "votes": 2006,
+            "elected": true
+          }
+        ]
       },
       "periods": [
         {
@@ -784,7 +982,16 @@
         "contact": {
           "instagram": "@fresher.tom",
           "linkedin": "/thomas-wittmann-6785283b4"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 11,
+            "resultRank": 14,
+            "votes": 630,
+            "elected": false
+          }
+        ]
       }
     },
     {
@@ -819,7 +1026,16 @@
             "to": "2026-5"
           }
         ],
-        "birthYear": 1994
+        "birthYear": 1994,
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 3,
+            "resultRank": 3,
+            "votes": 1510,
+            "elected": false
+          }
+        ]
       }
     },
     {
@@ -912,7 +1128,16 @@
         ],
         "contact": {
           "linkedin": "/michael-hobmaier-9895a9226"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 7,
+            "resultRank": 4,
+            "votes": 1240,
+            "elected": false
+          }
+        ]
       }
     },
     {
@@ -927,6 +1152,15 @@
         "pronouns": "sie/ihr",
         "identity": [
           "flinta"
+        ],
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 1,
+            "resultRank": 2,
+            "votes": 1520,
+            "elected": true
+          }
         ]
       }
     },
@@ -943,6 +1177,15 @@
         "pronouns": "er/ihn",
         "identity": [
           "migrant"
+        ],
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 4,
+            "resultRank": 1,
+            "votes": 1719,
+            "elected": true
+          }
         ]
       }
     },
@@ -961,7 +1204,16 @@
         ],
         "contact": {
           "email": "stadtrat@welter-moosburg.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 1,
+            "resultRank": 1,
+            "votes": 2579,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -976,7 +1228,16 @@
         "pronouns": "er/ihn",
         "contact": {
           "email": "praxis@umc-international.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 3,
+            "resultRank": 2,
+            "votes": 2222,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -1062,7 +1323,16 @@
         "pronouns": "er/ihn",
         "contact": {
           "email": "strobl-moosburgerlinke@mail.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 1,
+            "resultRank": 1,
+            "votes": 1728,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -1121,7 +1391,16 @@
       "profile": {
         "contact": {
           "email": "christian.schweiger@schweiger-feldkirchen.de"
-        }
+        },
+        "elections": [
+          {
+            "year": 2026,
+            "listRank": 9,
+            "resultRank": 6,
+            "votes": 3187,
+            "elected": true
+          }
+        ]
       }
     },
     {
@@ -2050,10 +2329,6 @@
       ],
       "pastSeats": [
         {
-          "member": "altenbeck",
-          "to": "2022-05"
-        },
-        {
           "member": "beubl",
           "to": "2025-03"
         },
@@ -2146,8 +2421,16 @@
               "sub": "von_pressentin"
             },
             {
-              "member": "linz_kilian",
-              "sub": "becher_a"
+              "occupants": [
+                {
+                  "member": "altenbeck",
+                  "to": "2022-05-31"
+                },
+                {
+                  "member": "linz_kilian",
+                  "from": "2022-06-20"
+                }
+              ]
             }
           ]
         },
