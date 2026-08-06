@@ -1,0 +1,18 @@
+{
+  "note": "Angekündigte, noch nicht gehaltene Sitzungen. Bewusst getrennt von sessions.json, das ausschließlich gehaltene Sitzungen mit Tagesordnung und Abstimmungen führt. Sobald eine Sitzung stattgefunden hat, wandert sie mit Tagesordnung nach sessions.json und wird hier entfernt. Die ids folgen derselben Konvention ({type}_{YYYYMMDD}), damit der Übergang eindeutig ist.",
+  "stand": "2026-08-05",
+  "quelle": "Sitzungskalender der Stadt Moosburg",
+  "termine": [
+    { "id": "sr_20260907",   "date": "2026-09-07", "time": "19:00", "type": "stadtrat", "title": "Stadtratssitzung",                          "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" },
+    { "id": "sr_20260928",   "date": "2026-09-28", "time": "19:00", "type": "stadtrat", "title": "Stadtratssitzung",                          "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" },
+    { "id": "bpu_20261005",  "date": "2026-10-05", "time": "19:00", "type": "bpu",      "title": "Bau-, Planungs- und Umweltausschuss",        "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" },
+    { "id": "sr_20261019",   "date": "2026-10-19", "time": "19:00", "type": "stadtrat", "title": "Stadtratssitzung",                          "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" },
+    { "id": "sr_20261109",   "date": "2026-11-09", "time": "19:00", "type": "stadtrat", "title": "Stadtratssitzung",                          "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" },
+    { "id": "hvfa_20261119", "date": "2026-11-19", "time": "19:00", "type": "hvfa",     "title": "Hauptverwaltungs- und Finanzausschuss",      "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" },
+    { "id": "hvfa_20261123", "date": "2026-11-23", "time": "19:00", "type": "hvfa",     "title": "Hauptverwaltungs- und Finanzausschuss",      "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" },
+    { "id": "hvfa_20261126", "date": "2026-11-26", "time": "17:00", "type": "hvfa",     "title": "Hauptverwaltungs- und Finanzausschuss",      "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" },
+    { "id": "sr_20261130",   "date": "2026-11-30", "time": "19:00", "type": "stadtrat", "title": "Stadtratssitzung",                          "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" },
+    { "id": "bpu_20261207",  "date": "2026-12-07", "time": "19:00", "type": "bpu",      "title": "Bau-, Planungs- und Umweltausschuss",        "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" },
+    { "id": "sr_20261216",   "date": "2026-12-16", "time": "19:00", "type": "stadtrat", "title": "Stadtratssitzung",                          "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14" }
+  ]
+}
