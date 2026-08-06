@@ -62,6 +62,7 @@ council/
 │   ├── topics.json         # Themen + Timeline-History
 │   ├── tags.json           # Themen-Kategorien
 │   ├── press.json          # Presseartikel
+│   ├── termine.json        # angekündigte, noch nicht gehaltene Sitzungen
 │   └── niederschriften/    # PDFs der Original-Niederschriften
 ├── img/
 │   ├── members/            # Profilbilder (WebP, 1x + 2x)
