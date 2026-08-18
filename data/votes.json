@@ -5632,7 +5632,17 @@
       "yes": 11,
       "no": 10,
       "absent": 4
-    }
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "tristl",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20210308_15",
@@ -10787,7 +10797,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "becher_j",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20221212_14",
@@ -11741,7 +11757,6 @@
         "tristl",
         "weber",
         "haberl",
-        "linz_karin",
         "heinz",
         "beibl",
         "stanglmaier",
@@ -11763,12 +11778,19 @@
       ],
       "no": [],
       "absent": [
-        "beubl"
+        "beubl",
+        "linz_karin"
       ]
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "linz_karin",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230306_02",
@@ -11785,7 +11807,6 @@
         "tristl",
         "weber",
         "haberl",
-        "linz_karin",
         "heinz",
         "beibl",
         "stanglmaier",
@@ -11807,12 +11828,19 @@
       ],
       "no": [],
       "absent": [
-        "beubl"
+        "beubl",
+        "linz_karin"
       ]
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "linz_karin",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230306_03",
@@ -11829,7 +11857,6 @@
         "tristl",
         "weber",
         "haberl",
-        "linz_karin",
         "heinz",
         "beibl",
         "stanglmaier",
@@ -11851,12 +11878,19 @@
       ],
       "no": [],
       "absent": [
-        "beubl"
+        "beubl",
+        "linz_karin"
       ]
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "linz_karin",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230306_04",
@@ -11873,7 +11907,6 @@
         "tristl",
         "weber",
         "haberl",
-        "linz_karin",
         "heinz",
         "beibl",
         "stanglmaier",
@@ -11895,12 +11928,19 @@
       ],
       "no": [],
       "absent": [
-        "beubl"
+        "beubl",
+        "linz_karin"
       ]
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "linz_karin",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230306_05",
@@ -11917,7 +11957,6 @@
         "tristl",
         "weber",
         "haberl",
-        "linz_karin",
         "heinz",
         "beibl",
         "stanglmaier",
@@ -11939,12 +11978,19 @@
       ],
       "no": [],
       "absent": [
-        "beubl"
+        "beubl",
+        "linz_karin"
       ]
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "linz_karin",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "bpu_20230320_01",
@@ -12340,7 +12386,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230327_04",
@@ -12358,7 +12409,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "excluded": [
+      {
+        "member": "beubl",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230327_05",
@@ -12376,7 +12432,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "excluded": [
+      {
+        "member": "stanglmaier",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230327_06",
@@ -12512,7 +12573,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230424_01",
@@ -13105,7 +13172,13 @@
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
-    }
+    },
+    "excluded": [
+      {
+        "member": "von_pressentin",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230626_03",
@@ -13119,7 +13192,13 @@
       "yes": 21,
       "no": 1,
       "absent": 3
-    }
+    },
+    "excluded": [
+      {
+        "member": "von_pressentin",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230626_04",
@@ -13181,7 +13260,20 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "excluded": [
+      {
+        "member": "fincke",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "kaestl",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "lauterbach",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230710_01",
@@ -13569,7 +13661,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20230724_07",
@@ -13587,7 +13684,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "excluded": [
+      {
+        "member": "grundner",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20230904_01",
@@ -15832,7 +15934,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "dollinger",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20240610_01",
@@ -18161,7 +18269,29 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "becher_j",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "von_pressentin",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "lauterbach",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "weber",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "kaestl",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20241118_03",
@@ -18205,7 +18335,17 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "becher_j",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "kaestl",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20241118_04",
@@ -19402,7 +19542,16 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "excluded": [
+      {
+        "member": "gruber",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "fincke",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20250210_01",
@@ -19645,7 +19794,13 @@
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
-    }
+    },
+    "excluded": [
+      {
+        "member": "hadersdorfer",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20250224_02",
@@ -21066,7 +21221,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "dollinger",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20250602_04",
@@ -22140,7 +22301,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20250908_05",
@@ -22274,7 +22441,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "beibl",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20250908_09",
@@ -22318,7 +22491,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "beibl",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20250922_01",
@@ -23533,6 +23712,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "becher_j",
+        "reason": "kurzfristig abwesend"
+      }
+    ],
     "inferable": false
   },
   {
@@ -23551,6 +23736,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "becher_j",
+        "reason": "kurzfristig abwesend"
+      }
+    ],
     "inferable": false
   },
   {
@@ -23569,6 +23760,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "becher_j",
+        "reason": "kurzfristig abwesend"
+      }
+    ],
     "inferable": false
   },
   {
@@ -24791,7 +24988,17 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "hadersdorfer",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "lauterbach",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20260202_06",
