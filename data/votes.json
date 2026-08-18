@@ -2834,15 +2834,27 @@
       "absent": 8
     },
     "source": {
-      "tier": "protocol-implicit"
+      "tier": "protocol-explicit"
     },
     "excluded": [
       {
+        "member": "dollinger",
+        "reason": "beteiligung"
+      },
+      {
         "member": "stanglmaier",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "weber",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "beubl",
         "reason": "beteiligung"
       }
     ],
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden.",
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich. Die Zahl der Ja-Stimmen liegt zusätzlich um 2 unter der Zahl der übrigen Anwesenden; wer nicht mitgestimmt hat, hält die Niederschrift nicht fest.",
     "inferable": false
   },
   {
@@ -3090,8 +3102,8 @@
       "no": 0,
       "absent": 2
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20200921_02",
@@ -3118,8 +3130,8 @@
       "no": 0,
       "absent": 2
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20200921_04",
@@ -3146,8 +3158,8 @@
       "no": 0,
       "absent": 2
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20200921_06",
@@ -3161,8 +3173,8 @@
       "no": 0,
       "absent": 2
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20200921_07",
@@ -3176,8 +3188,8 @@
       "no": 0,
       "absent": 2
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20200921_08",
@@ -3205,8 +3217,8 @@
       "no": 0,
       "absent": 2
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20200928_01",
@@ -3790,8 +3802,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20201109_08",
@@ -3967,8 +3979,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20201217_02",
@@ -3982,8 +3994,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20201217_03",
@@ -3997,8 +4009,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20201217_04",
@@ -4012,8 +4024,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20201217_05",
@@ -4027,8 +4039,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20201217_06",
@@ -5726,8 +5738,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210318_02",
@@ -5741,8 +5753,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210318_03",
@@ -5756,8 +5768,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210318_04",
@@ -5771,8 +5783,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210318_05",
@@ -5786,8 +5798,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210318_06",
@@ -5801,8 +5813,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210318_07",
@@ -5816,8 +5828,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210318_08",
@@ -5831,8 +5843,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210318_09",
@@ -5846,8 +5858,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210318_10",
@@ -5861,8 +5873,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210318_11",
@@ -5876,8 +5888,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20210322_01",
@@ -6203,8 +6215,8 @@
       "no": 0,
       "absent": 2
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210429_02",
@@ -6231,8 +6243,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210429_04",
@@ -6246,8 +6258,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210429_05",
@@ -6598,8 +6610,8 @@
       "no": 0,
       "absent": 2
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210614_02",
@@ -6613,8 +6625,8 @@
       "no": 0,
       "absent": 2
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210614_03",
@@ -6628,8 +6640,8 @@
       "no": 0,
       "absent": 2
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210614_04",
@@ -7065,8 +7077,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210719_02",
@@ -7080,8 +7092,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210719_03",
@@ -7095,8 +7107,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210719_04",
@@ -7110,8 +7122,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20210726_01",
@@ -7208,23 +7220,77 @@
     "date": "2021-07-26",
     "title": "Kläranlage Moosburg GmbH - Beschluss zur Entlastung des Aufsichtsrates für das Geschäftsjahr…",
     "text": "Der Stadtrat empfiehlt der Gesellschafterversammlung die Entlastung des Aufsichtsrates für das Geschäftsjahr 2020.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 15,
-      "no": 0,
-      "absent": 10
+      "yes": [
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "beibl",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "neumayr",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "welter",
+        "wittmann",
+        "dollinger",
+        "weber",
+        "haberl",
+        "wagner",
+        "stanglmaier",
+        "reif",
+        "beubl",
+        "linz_karin"
+      ]
     },
     "source": {
-      "tier": "protocol-implicit"
+      "tier": "protocol-explicit"
     },
     "excluded": [
+      {
+        "member": "dollinger",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "weber",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "haberl",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "wagner",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "stanglmaier",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "reif",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "beubl",
+        "reason": "beteiligung"
+      },
       {
         "member": "linz_karin",
         "reason": "beteiligung"
       }
     ],
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden.",
-    "inferable": false
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich."
   },
   {
     "id": "sr_20210726_04",
@@ -7602,8 +7668,8 @@
       "no": 0,
       "absent": 3
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20210927_02",
@@ -7617,8 +7683,8 @@
       "no": 0,
       "absent": 3
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20211011_01",
@@ -8827,8 +8893,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_02",
@@ -8855,8 +8921,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_04",
@@ -8870,8 +8936,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_05",
@@ -8885,8 +8951,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_06",
@@ -8900,8 +8966,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_07",
@@ -8915,8 +8981,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_08",
@@ -8930,8 +8996,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_09",
@@ -8945,8 +9011,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_10",
@@ -8960,8 +9026,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_11",
@@ -8975,8 +9041,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_12",
@@ -8990,8 +9056,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_13",
@@ -9005,8 +9071,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220324_01",
@@ -9020,8 +9086,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220324_02",
@@ -9035,8 +9101,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220324_03",
@@ -9050,8 +9116,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220324_04",
@@ -9065,8 +9131,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220324_05",
@@ -9080,8 +9146,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220324_06",
@@ -9095,8 +9161,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220324_07",
@@ -9110,8 +9176,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220324_08",
@@ -9125,8 +9191,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220324_09",
@@ -9153,8 +9219,8 @@
       "no": 0,
       "absent": 4
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220523_02",
@@ -9194,8 +9260,8 @@
       "no": 0,
       "absent": 3
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220523_05",
@@ -9209,8 +9275,8 @@
       "no": 0,
       "absent": 3
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220523_06",
@@ -9224,8 +9290,8 @@
       "no": 0,
       "absent": 3
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20220905_01",
@@ -9639,8 +9705,8 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220926_03",
@@ -13439,9 +13505,35 @@
       "absent": 9
     },
     "source": {
-      "tier": "protocol-implicit"
+      "tier": "protocol-explicit"
     },
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden.",
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich. Die Zahl der Ja-Stimmen liegt zusätzlich um 3 unter der Zahl der übrigen Anwesenden; wer nicht mitgestimmt hat, hält die Niederschrift nicht fest.",
+    "excluded": [
+      {
+        "member": "dollinger",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "weber",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "haberl",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "reif",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "beubl",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "gruebl",
+        "reason": "beteiligung"
+      }
+    ],
     "inferable": false
   },
   {
@@ -16250,17 +16342,77 @@
     "date": "2024-07-01",
     "title": "Kläranlage GmbH – Entlastung Aufsichtsrat 2023",
     "text": "Empfehlung zur Entlastung des Aufsichtsrats für 2023; 8 Mitglieder enthielten sich (Aufsichtsratsmitglieder).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 13,
-      "no": 0,
-      "absent": 12
+      "yes": [
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "beibl",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruber",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "fincke",
+        "heinz",
+        "kaestl",
+        "von_pressentin",
+        "dollinger",
+        "weber",
+        "haberl",
+        "becher_a",
+        "stanglmaier",
+        "reif",
+        "beubl",
+        "gruebl"
+      ]
     },
     "source": {
-      "tier": "protocol-implicit"
+      "tier": "protocol-explicit"
     },
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden.",
-    "inferable": false
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich.",
+    "excluded": [
+      {
+        "member": "dollinger",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "weber",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "haberl",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "becher_a",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "stanglmaier",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "reif",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "beubl",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "gruebl",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20240701_04",
@@ -21436,8 +21588,8 @@
       "no": 0,
       "absent": 4
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20250721_02",
@@ -21452,8 +21604,8 @@
       "no": 0,
       "absent": 4
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20250721_03",
@@ -21467,8 +21619,8 @@
       "no": 0,
       "absent": 4
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20250721_04",
@@ -21482,8 +21634,8 @@
       "no": 0,
       "absent": 4
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20250721_05",
@@ -21497,8 +21649,8 @@
       "no": 0,
       "absent": 4
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20250728_01",
@@ -21589,9 +21741,31 @@
       "absent": 8
     },
     "source": {
-      "tier": "protocol-implicit"
+      "tier": "protocol-explicit"
     },
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Deshalb liegt die Zahl der Stimmen unter der Zahl der Anwesenden.",
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich. Die Zahl der Ja-Stimmen liegt zusätzlich um 1 unter der Zahl der übrigen Anwesenden; wer nicht mitgestimmt hat, hält die Niederschrift nicht fest.",
+    "excluded": [
+      {
+        "member": "dollinger",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "weber",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "haberl",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "reif",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "hobmaier",
+        "reason": "beteiligung"
+      }
+    ],
     "inferable": false
   },
   {
