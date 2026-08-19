@@ -1067,11 +1067,13 @@ const SHOW_PRONOUNS = true;
       + "Einstimmigkeit stimmen alle gleich, das sagt nichts. Gezählt wird je Paar "
       + "+1 bei gleicher, −1 bei verschiedener Stimme; wer fehlt, zählt nicht mit. "
       + "Die Summe wird durch (Vergleiche + 5) geteilt, damit dünne Grundlagen zur "
-      + "Mitte gezogen werden. Paare unter fünf Vergleichen bleiben leer.";
+      + "Mitte gezogen werden — vier gleiche Stimmen ergeben 0,44, fünfundzwanzig 0,83.";
     main.appendChild(intro);
 
     periodCard(main, "Nähe-Matrix",
-      "Zeilen und Spalten nach Fraktion sortiert — die Blöcke auf der Diagonale sind die Fraktionen.",
+      "Zeilen und Spalten nach Fraktion sortiert — die Blöcke an der Diagonale sind die Fraktionen. "
+      + "Gold schraffiert: die beiden saßen nie gleichzeitig im Rat, meist Vorgänger und Nachfolger "
+      + "auf demselben Sitz. Leer: sie saßen zusammen, aber es ist zu wenig bekannt.",
       drawSimMatrix);
     periodCard(main, "Nähe-Netz",
       "Alle Kanten, ohne Schwellenwert: schwache Verbindungen verblassen, statt zu verschwinden. "
@@ -2780,7 +2782,11 @@ const SHOW_PRONOUNS = true;
   // Stimmen ergeben 0,67, fünf von fünf nur 0,50. Genau das ist gewollt —
   // Abwesenheit schwächt das Maß, statt es zu verzerren.
   const SIM_K = 5;
-  const SIM_MIN = 5;   // darunter wird nichts ausgewiesen
+  // Eine einzige gemeinsame Abstimmung ist ein Münzwurf, ab zweien zeigt sich
+  // ein Muster. Höher muss die Schwelle nicht sein: die Dämpfung durch (n + K)
+  // hält dünne Paare ohnehin in der Mitte — vier übereinstimmende Stimmen
+  // ergeben 0,44, während die dichten Paare 0,83 erreichen.
+  const SIM_MIN = 2;
 
   // Verglichen wird immer innerhalb einer Wahlperiode — über den Wechsel hinweg
   // säßen Personen im selben Bild, die nie zusammen abgestimmt haben.
@@ -2805,11 +2811,18 @@ const SHOW_PRONOUNS = true;
   }
 
   const simCaches = {};
+  const simVoteCount = {};
+
+  // Unter dieser Zahl streitiger Beschlüsse mit Einzelstimmen wird gar nichts
+  // gezeigt. Bei zweien bekäme jedes Paar denselben Betrag — eine Landkarte,
+  // die nur abbildet, welche Handvoll Beschlüsse zufällig dokumentiert ist.
+  const SIM_FLOOR = 10;
 
   function similarity(periodId) {
     const per = PERIODS.find(p => p.id === periodId) || PERIODS[0];
     if (simCaches[per.id]) return simCaches[per.id];
     const pairs = {};
+    let counted = 0;
     const key = (a, b) => a < b ? a + "|" + b : b + "|" + a;
     const bucket = k => pairs[k] || (pairs[k] = { n: 0, raw: 0, joint: 0 });
     votes.forEach(v => {
@@ -2830,6 +2843,7 @@ const SHOW_PRONOUNS = true;
 
       const st = stances(v);
       const ids = Object.keys(st);
+      if (ids.length > 1) counted++;
       for (let i = 0; i < ids.length; i++) {
         for (let j = i + 1; j < ids.length; j++) {
           const p = bucket(key(ids[i], ids[j]));
@@ -2839,6 +2853,7 @@ const SHOW_PRONOUNS = true;
       }
     });
     simCaches[per.id] = pairs;
+    simVoteCount[per.id] = counted;
     return pairs;
   }
 
@@ -2859,6 +2874,7 @@ const SHOW_PRONOUNS = true;
     // Die Periode, in der die Person zuletzt saß
     const last = (m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }]).slice(-1)[0];
     const per = periodOf(last.to || new Date().toISOString().slice(0, 10)) || PERIODS[0];
+    if (simThin(per.id)) return null;
     const list = similarFor(m.id, per.id);
     if (list.length < 4) return null;
     const top = list.slice(0, 3);
@@ -2894,9 +2910,16 @@ const SHOW_PRONOUNS = true;
 
   // Wer in dieser Periode überhaupt vergleichbar ist, nach Fraktion sortiert —
   // damit die Blöcke in der Matrix den Fraktionen entsprechen.
+  // Zu dünn, um irgendetwas zu zeigen?
+  function simThin(periodId) {
+    similarity(periodId);
+    return (simVoteCount[periodId] || 0) < SIM_FLOOR;
+  }
+
   function simNodes(periodId) {
     const per = PERIODS.find(p => p.id === periodId);
     const pairs = similarity(periodId);
+    if (simThin(periodId)) return [];
     const ids = new Set();
     Object.entries(pairs).forEach(([k, p]) => {
       if (p.n >= SIM_MIN) k.split("|").forEach(i => ids.add(i));
@@ -2950,32 +2973,47 @@ const SHOW_PRONOUNS = true;
     }
     const W = el.clientWidth || 640;
     const spread = simSpread(pairs);
-    const label = 96;
-    const cell = Math.max(9, Math.min(22, (W - label - 4) / nodes.length));
+    // Links die Zeilennamen, rechts oben laufen dieselben Namen als
+    // Spaltenbeschriftung in die freigewordene Hälfte hinein.
+    const label = 92, tail = 86;
+    const cell = Math.max(9, Math.min(22, (W - label - tail - 4) / nodes.length));
     const size = cell * nodes.length;
 
     let cells = "", ticks = "";
     nodes.forEach((a, i) => {
-      ticks += `<text class="hm-name" x="${label - 6}" y="${i * cell + cell / 2 + 3}" text-anchor="end"
-                  fill="${a.party ? a.party.color : "#999"}">${a.m.lastName}</text>`;
-      nodes.forEach((b, j) => {
-        if (i === j) {
-          cells += `<rect class="hm-self" x="${label + j * cell}" y="${i * cell}" width="${cell}" height="${cell}"/>`;
-          return;
-        }
+      const color = a.party ? a.party.color : "#999";
+      const y = i * cell + cell / 2 + 3;
+      ticks += `<text class="hm-name" x="${label - 6}" y="${y}" text-anchor="end" fill="${color}">${a.m.lastName}</text>`
+             + `<text class="hm-name" x="${label + (i + 1) * cell + 5}" y="${y}" fill="${color}">${a.m.lastName}</text>`;
+
+      // Nur die untere Hälfte: die obere sagte dasselbe noch einmal
+      for (let j = 0; j < i; j++) {
+        const b = nodes[j];
+        const p = pairs[a.m.id < b.m.id ? a.m.id + "|" + b.m.id : b.m.id + "|" + a.m.id];
         const r = simScore(pairs, a.m.id, b.m.id);
-        const fill = r ? simColor(r.s, spread) : "var(--bg)";
+        const never = !p || !p.joint;
+        const fill = r ? simColor(r.s, spread) : never ? "url(#hm-gap)" : "var(--bg)";
         const title = r
           ? `${a.m.name} / ${b.m.name}: ${r.s >= 0 ? "+" : "−"}${Math.round(Math.abs(r.s) * 100)} `
             + `aus ${r.n} bekannten von ${r.joint} gemeinsamen Beschlüssen`
-          : `${a.m.name} / ${b.m.name}: zu wenige Vergleiche`;
+          : never
+            ? `${a.m.name} / ${b.m.name}: saßen nie gleichzeitig im Rat`
+            : `${a.m.name} / ${b.m.name}: nur ${(p && p.n) || 0} von ${p.joint} gemeinsamen Beschlüssen bekannt`;
         cells += `<rect x="${label + j * cell}" y="${i * cell}" width="${cell}" height="${cell}"
                     fill="${fill}"><title>${title}</title></rect>`;
-      });
+      }
     });
-    el.innerHTML = `<svg class="chart heatmap" width="${label + size}" height="${size}"
-        viewBox="0 0 ${label + size} ${size}" role="img" aria-label="Ähnlichkeitsmatrix">
-        ${cells}${ticks}</svg>`;
+
+    // Schraffur für Paare, die es nie gab — sie sind nicht unbekannt, sondern
+    // unmöglich, und das soll anders aussehen als eine Lücke.
+    const defs = `<defs><pattern id="hm-gap" width="4" height="4"
+        patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="4" height="4" fill="var(--bg)"/>
+        <line x1="0" y1="0" x2="0" y2="4" stroke="var(--accent)" stroke-width="1.4" opacity="0.55"/>
+      </pattern></defs>`;
+    el.innerHTML = `<svg class="chart heatmap" width="${label + size + tail}" height="${size}"
+        viewBox="0 0 ${label + size + tail} ${size}" role="img" aria-label="Ähnlichkeitsmatrix">
+        ${defs}${cells}${ticks}</svg>`;
   }
 
   // Kräftebasierte Anordnung, Fruchterman-Reingold. Positive Nähe zieht
