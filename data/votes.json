@@ -9744,11 +9744,38 @@
     "date": "2022-09-19",
     "title": "Eisstadion – Gebührensatzung",
     "text": "Neue Gebühren (Einzel/Mehrfachkarten/Mietpreise) beschlossen, Auswärtige-Vereins-Miete 100→120 €.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 19,
-      "no": 0,
-      "absent": 6
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "neumayr",
+        "gruebl",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "beubl",
+        "pschorr",
+        "weber",
+        "welter"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -9761,11 +9788,38 @@
     "date": "2022-09-19",
     "title": "Kleinschwimmhalle – Gebühren 2022/23",
     "text": "Erhöhung der Gebühren und Anpassung der Badegebührenordnung.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 19,
-      "no": 0,
-      "absent": 6
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "neumayr",
+        "gruebl",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "beubl",
+        "pschorr",
+        "weber",
+        "welter"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -10870,11 +10924,38 @@
     "date": "2022-12-12",
     "title": "Antrag der Altstadförderer auf Erhöhung des jährlichen Zuschusses auf 780 €",
     "text": "Der Stadtrat beschließt, den laufenden Zuschuss für die Altstadtförderer von bisher 500,00 € jährlich auf 780 € jährlich zu erhöhen.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 22,
-      "no": 0,
-      "absent": 3
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "reif",
+        "von_pressentin",
+        "becher_j"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -12668,11 +12749,38 @@
     "date": "2023-04-17",
     "title": "B-Plan Dobelfeld Wang – keine Bedenken",
     "text": "Einstimmig: Keine Bedenken zur Aufstellung (21:0; Gruebl Enthaltung).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 21,
-      "no": 0,
-      "absent": 4
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruber",
+        "welter",
+        "kaestl",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "fincke",
+        "von_pressentin",
+        "gruebl"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -12989,11 +13097,38 @@
     "date": "2023-05-22",
     "title": "Sanierung Aufbereitungsanlage Wasserwerk",
     "text": "Einstimmig: Sanierung beschlossen.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 21,
-      "no": 0,
-      "absent": 4
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "gruber",
+        "john",
+        "welter"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -13367,11 +13502,38 @@
     "date": "2023-06-26",
     "title": "Neubesetzung Ausschüsse (fresh-Antrag)",
     "text": "Personal-/Rechnungsprüfungsausschuss neu besetzt (20:0; einige Enthaltungen).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 20,
-      "no": 0,
-      "absent": 5
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "becher_j",
+        "heinz",
+        "fincke",
+        "kaestl",
+        "lauterbach"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -13415,11 +13577,38 @@
     "date": "2023-07-10",
     "title": "FC Moosburg – Flutlicht-LED-Zuschuss",
     "text": "Einstimmig: 20 %-Zuschuss (~38.700 €) zum LED-Umbau der Flutlichtanlage.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 24,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -14302,11 +14491,38 @@
     "date": "2023-10-23",
     "title": "B-Plan 63 SO Amperauen – Stellungnahmen abwägen",
     "text": "In 13 Einzelabstimmungen werden die Stellungnahmen aus der erneuten Auslegung abgewogen (alle 21-22:0).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 22,
-      "no": 0,
-      "absent": 3
+      "yes": [
+        "dollinger",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "gruber",
+        "linz_karin",
+        "reif"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -15037,11 +15253,38 @@
     "date": "2023-12-18",
     "title": "Haushaltssatzung 2024",
     "text": "Haushaltssatzung mit allen Anlagen beschlossen (22:0).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 22,
-      "no": 0,
-      "absent": 3
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "gruber",
+        "pschorr"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -16683,11 +16926,38 @@
     "date": "2024-07-01",
     "title": "Kläranlage GmbH – Jahresabschluss 2023",
     "text": "Einstimmig: Empfehlung zur Genehmigung des Jahresabschlusses 2023; Jahresüberschuss 296.622,96 € + Gewinnvortrag 1.630.617,43 € wird neu vorgetragen.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 21,
-      "no": 0,
-      "absent": 4
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "fincke",
+        "heinz",
+        "kaestl",
+        "von_pressentin"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -16779,11 +17049,38 @@
     "date": "2024-07-01",
     "title": "Überplanmäßige Ausgaben",
     "text": "Einstimmig: Über- und außerplanmäßige Ausgaben von 635.266,42 € genehmigt (Betriebsstromkosten, Investitionen). Deckung durch Schlüsselzuweisungen, DigitalPakt-Mittel und Rücklage.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 21,
-      "no": 0,
-      "absent": 4
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "fincke",
+        "heinz",
+        "kaestl",
+        "von_pressentin"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -17077,11 +17374,38 @@
     "date": "2024-07-22",
     "title": "Eisstadion – Benutzungs- und Gebührensatzung",
     "text": "Einstimmig: Anpassungen der Benutzungs- und Gebührensatzung Eisstadion beschlossen.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 22,
-      "no": 0,
-      "absent": 3
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "heinz",
+        "tristl"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -20038,25 +20362,40 @@
     "date": "2025-02-24",
     "title": "Kostenloser Hallenbadeintritt für Kinder",
     "text": "Der Antrag der Sportreferentin Beibl auf kostenlosen Hallenbadeintritt für Kinder in den Faschingsferien 2025 (im Verlauf geändert auf Osterferien) wird abgelehnt.",
-    "type": "anonymous",
+    "type": "named",
     "result": "rejected",
     "results": {
-      "yes": 9,
-      "no": 10,
-      "absent": 6
-    },
-    "voters": {
-      "gruber": "yes",
-      "beibl": "yes",
-      "stanglmaier": "yes",
-      "becher_j": "yes",
-      "becher_a": "yes",
-      "linz_kilian": "yes",
-      "hobmaier": "yes",
-      "strobl": "yes",
-      "beubl": "yes",
-      "dollinger": "no",
-      "pschorr": "no"
+      "yes": [
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "beubl",
+        "gruber",
+        "hobmaier",
+        "strobl"
+      ],
+      "no": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "weber",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "welter",
+        "fincke"
+      ],
+      "absent": [
+        "grundner",
+        "haberl",
+        "heinz",
+        "kaestl",
+        "von_pressentin",
+        "hadersdorfer"
+      ]
     },
     "source": {
       "tier": "tracked",
@@ -24013,11 +24352,38 @@
     "date": "2025-11-10",
     "title": "Kläranlage Satzungsänderung",
     "text": "Der Stadtrat beschließt die Änderung der Unternehmenssatzung der Kläranlage Moosburg GmbH. Die Prüfpflicht durch einen Wirtschaftsprüfer entfällt.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 20,
-      "no": 0,
-      "absent": 5
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "becher_a",
+        "beibl",
+        "grundner",
+        "hobmaier",
+        "becher_j"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -24036,11 +24402,38 @@
     "date": "2025-11-10",
     "title": "Wahlhelferentschädigung 2026",
     "text": "Die Wahlhelferentschädigung wird auf 80 € für die Kommunalwahl und 40 € für eine mögliche Stichwahl festgesetzt.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 20,
-      "no": 0,
-      "absent": 5
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "becher_a",
+        "beibl",
+        "grundner",
+        "hobmaier",
+        "becher_j"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -24059,11 +24452,38 @@
     "date": "2025-11-10",
     "title": "Bundesprogramm Sanierung Sportstätten",
     "text": "Der Stadtrat beschließt die Teilnahme am Bundesprogramm Sanierung kommunaler Sportstätten (Projektaufruf 2025/2026) für die Freibadsanierung.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 20,
-      "no": 0,
-      "absent": 5
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "becher_a",
+        "beibl",
+        "grundner",
+        "hobmaier",
+        "becher_j"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
@@ -25287,11 +25707,38 @@
     "date": "2026-02-02",
     "title": "Regionalplan Windenergie",
     "text": "Der Stadtrat nimmt den Fortschreibungsentwurf zur 26. Änderung des Regionalplans München zur Kenntnis und stellt fest, dass Moosburg nicht unmittelbar betroffen ist.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 20,
-      "no": 0,
-      "absent": 5
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "heinz",
+        "hobmaier",
+        "hadersdorfer",
+        "lauterbach"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
