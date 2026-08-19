@@ -2713,6 +2713,14 @@ main {
 .tier-chip.tier-sum::before      { background: var(--border); }
 .tier-chip b { color: var(--text); font-variant-numeric: tabular-nums; }
 
+/* Die Chips sind Filter. Der aktive bleibt stehen und zeigt, worauf man schaut. */
+a.tier-chip { text-decoration: none; cursor: pointer; }
+a.tier-chip:hover { border-color: var(--text-muted); }
+a.tier-chip.on {
+  border-color: var(--chrome, var(--primary));
+  box-shadow: inset 0 0 0 1px var(--chrome, var(--primary));
+}
+
 .register {
   width: 100%;
   border-collapse: collapse;

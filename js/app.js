@@ -407,8 +407,8 @@ const SHOW_PRONOUNS = true;
       renderSession(path.split("/session/")[1]);
     } else if (path === "/statistik") {
       renderStatistik();
-    } else if (path === "/datenlage") {
-      renderDatenlage();
+    } else if (path.startsWith("/datenlage")) {
+      renderDatenlage(path.split("/datenlage/")[1] || null);
     } else if (path === "/presse") {
       renderPresse();
     } else {
@@ -1119,7 +1119,9 @@ const SHOW_PRONOUNS = true;
     { key: "sum",      label: "nur Ergebnis",  hint: "Nur die Gesamtzahlen sind bekannt." },
   ];
 
-  function renderDatenlage() {
+  // `filter` schränkt auf eine Herkunftsstufe (explicit/implicit/tracked/press/
+  // sum) oder eine Erfassungsstufe (protokoll/auszug/keine) ein.
+  function renderDatenlage(filter) {
     setChrome("sitzung");
     main.appendChild(breadcrumb([{ label: "Übersicht", href: "#/" }]));
 
@@ -1148,25 +1150,51 @@ const SHOW_PRONOUNS = true;
       <div class="stat-tile"><div class="stat-tile-value">${Math.round(traceable / totalVotes * 100)} %</div><div class="stat-tile-label">Stimmverhalten nachvollziehbar</div></div>`;
     main.appendChild(tiles);
 
+    // Jede Kennzahl ist ein Filter auf sich selbst. Nochmal draufklicken hebt auf.
+    const chip = (key, cls, label, n, hint) =>
+      `<a class="tier-chip ${cls}${filter === key ? " on" : ""}"
+          href="#/datenlage${filter === key ? "" : "/" + key}" title="${hint}">${label} <b>${n}</b></a>`;
+
     const levels = document.createElement("div");
     levels.className = "tier-legend";
-    levels.innerHTML = `
-      <span class="tier-chip level-protokoll" title="Niederschrift mit Anwesenheitsliste">Niederschrift <b>${protokoll.length}</b></span>
-      <span class="tier-chip level-auszug" title="Beschlussauszug der Stadt, ohne Anwesenheitsliste">nur Beschlussauszug <b>${auszug.length}</b></span>
-      <span class="tier-chip level-keine" title="Weder Niederschrift noch Auszug veröffentlicht">nichts veröffentlicht <b>${reg.length - erfasst.length}</b></span>`;
+    levels.innerHTML =
+      chip("protokoll", "level-protokoll", "Niederschrift", protokoll.length,
+           "Niederschrift mit Anwesenheitsliste")
+      + chip("auszug", "level-auszug", "nur Beschlussauszug", auszug.length,
+             "Beschlussauszug der Stadt, ohne Anwesenheitsliste")
+      + chip("keine", "level-keine", "nichts veröffentlicht", reg.length - erfasst.length,
+             "Weder Niederschrift noch Auszug veröffentlicht");
     main.appendChild(levels);
 
     const legend = document.createElement("div");
     legend.className = "tier-legend";
     legend.innerHTML = TIERS.map(t =>
-      `<span class="tier-chip tier-${t.key}" title="${t.hint}">${t.label} <b>${all[t.key]}</b></span>`).join("");
+      chip(t.key, "tier-" + t.key, t.label, all[t.key], t.hint)).join("");
     main.appendChild(legend);
+
+    // Herkunftsstufe: die Abstimmungen selbst auflisten, nicht die Sitzungen —
+    // "elf namentliche Abstimmungen" will man lesen, nicht suchen.
+    const tier = TIERS.find(t => t.key === filter);
+    if (tier) {
+      main.appendChild(tierVoteList(tier, erfasst));
+      return;
+    }
+    const rows = filter === "protokoll" ? protokoll
+               : filter === "auszug"    ? auszug
+               : filter === "keine"     ? reg.filter(r => !r.session)
+               : reg;
+    if (filter && rows !== reg) {
+      const note = document.createElement("p");
+      note.className = "chart-foot";
+      note.textContent = rows.length + " von " + reg.length + " Sitzungen.";
+      main.appendChild(note);
+    }
 
     let year = null;
     const table = document.createElement("table");
     table.className = "register";
     const body = document.createElement("tbody");
-    reg.forEach(r => {
+    rows.forEach(r => {
       if (r.date.slice(0, 4) !== year) {
         year = r.date.slice(0, 4);
         const head = document.createElement("tr");
@@ -1208,6 +1236,50 @@ const SHOW_PRONOUNS = true;
     });
     table.appendChild(body);
     main.appendChild(table);
+  }
+
+  // Alle Abstimmungen einer Herkunftsstufe, nach Sitzung gruppiert
+  function tierVoteList(tier, erfasst) {
+    const wrap = document.createElement("div");
+    const hit = r => r.votes.filter(v => {
+      const t = (v.source || {}).tier;
+      return tier.key === "sum" ? !t
+           : tier.key === "explicit" ? t === "protocol-explicit"
+           : tier.key === "implicit" ? t === "protocol-implicit"
+           : t === tier.key;
+    });
+    const groups = erfasst.map(r => [r, hit(r)]).filter(([, v]) => v.length);
+    const n = groups.reduce((a, [, v]) => a + v.length, 0);
+
+    const note = document.createElement("p");
+    note.className = "chart-foot";
+    note.textContent = n + " Abstimmung" + (n === 1 ? "" : "en") + " in "
+      + groups.length + " Sitzung" + (groups.length === 1 ? "" : "en") + ". " + tier.hint;
+    wrap.appendChild(note);
+
+    const table = document.createElement("table");
+    table.className = "register";
+    const body = document.createElement("tbody");
+    groups.forEach(([r, list]) => {
+      const label = CHART_BODIES.find(b => b.id === r.body).label;
+      const head = document.createElement("tr");
+      head.className = "register-year";
+      head.innerHTML = `<th colspan="2"><a href="#/session/${r.session.id}">${formatDate(r.date)}
+        · ${label}</a></th>`;
+      body.appendChild(head);
+      list.forEach(v => {
+        const res = v.type === "named"
+          ? `${v.results.yes.length}:${v.results.no.length}`
+          : `${v.results.yes}:${v.results.no}`;
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td class="reg-data"><a href="#/session/${r.session.id}">${v.title}</a></td>
+                        <td class="reg-dur">${res}</td>`;
+        body.appendChild(tr);
+      });
+    });
+    table.appendChild(body);
+    wrap.appendChild(table);
+    return wrap;
   }
 
   // -- Presseschau --
