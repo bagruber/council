@@ -2882,11 +2882,22 @@ main {
   border-bottom: 1px dotted var(--border);
 }
 .vote-expand:hover { color: var(--primary); border-bottom-color: var(--primary); }
+.vote-expand::after { content: " \25BE"; }
+.vote-expand.open::after { content: " \25B4"; }
 
 /* -- Fraktionsseite -- */
 
 .faction-head { text-decoration: none; color: inherit; }
 .faction-go { font-size: 16px; color: var(--text-muted); margin-left: auto; }
+
+.faction-gone .member-dot { opacity: 0.45; }
+.faction-gone .faction-name { color: var(--text-muted); }
+.faction-gone .faction-count {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
 
 .faction-header {
   display: flex;
@@ -2921,6 +2932,11 @@ main {
   border-radius: var(--radius-sm);
   white-space: nowrap;
 }
+/* Die Kante in der Farbe der anderen Partei liegt auf der Seite, aus der oder
+   in die gewechselt wurde — die Richtung steht damit zweimal da. */
+.faction-move.in  { border-left: 3px solid var(--from); padding-left: 6px; }
+.faction-move.out { border-right: 3px solid var(--from); padding-right: 6px; }
+.faction-move + .faction-move { margin-left: 4px; }
 
 /* -- Abstimmungsähnlichkeit -- */
 
