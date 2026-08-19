@@ -26,27 +26,20 @@ MS = {'tier': 'tracked', 'by': 'gruber', 'pressVerified': False}
 
 # Vollstaendige Mitschriften: Nein-Seite benannt, der Rest der Anwesenden
 # stimmte dafuer. `extra` sind Abwesende, die die Sitzungsliste nicht fuehrt.
+# In den beiden Kindergarten-Beschluessen stand Reif doppelt und Lauterbach
+# nirgends. Aufgeloest: Lauterbach war jeweils dafuer, Reif dagegen.
 FULL = [
     ('sr_20240610_02', ['tristl', 'fincke', 'lauterbach'], [], MS),
+    ('sr_20240610_04', ['linz_karin', 'tristl', 'strobl', 'gruber', 'reif',
+                        'von_pressentin', 'linz_kilian', 'beibl'], [], MS),
+    ('sr_20240610_05', ['linz_karin', 'tristl', 'fincke', 'kaestl', 'strobl',
+                        'gruber', 'gruebl', 'reif', 'von_pressentin',
+                        'linz_kilian', 'beibl'], [], MS),
     ('sr_20240610_09', ['linz_karin', 'haberl', 'tristl', 'fincke', 'grundner'], [], MS),
     ('sr_20250728_03', ['haberl'], ['linz_karin', 'fincke', 'kaestl'], MS),
 ]
 
-# Teilbekannt — bei zwei Beschluessen steht Reif doppelt und Lauterbach
-# nirgends, das laesst sich nicht aufloesen. Beide bleiben hier offen.
 PART = [
-    ('sr_20240610_04',
-     {'dollinger': 'yes', 'weber': 'yes', 'haberl': 'yes', 'pschorr': 'yes',
-      'fincke': 'yes', 'kaestl': 'yes', 'gruebl': 'yes', 'grundner': 'yes',
-      'kieninger': 'yes',
-      'linz_karin': 'no', 'tristl': 'no', 'strobl': 'no', 'gruber': 'no',
-      'von_pressentin': 'no', 'linz_kilian': 'no', 'beibl': 'no'}, MS),
-    ('sr_20240610_05',
-     {'dollinger': 'yes', 'weber': 'yes', 'haberl': 'yes', 'pschorr': 'yes',
-      'grundner': 'yes', 'kieninger': 'yes',
-      'linz_karin': 'no', 'tristl': 'no', 'fincke': 'no', 'kaestl': 'no',
-      'strobl': 'no', 'gruber': 'no', 'gruebl': 'no',
-      'von_pressentin': 'no', 'linz_kilian': 'no', 'beibl': 'no'}, MS),
     # CSU stimmte fuer die gebundene Verlegung, wie der Buergermeister
     ('sr_20230112_02',
      {'heinz': 'yes', 'hadersdorfer': 'yes', 'weber': 'yes', 'haberl': 'yes'},
@@ -89,7 +82,9 @@ def main():
         live = [m['id'] for m in members if active(m, v['date'])]
         absent = list(s.get('absent') or []) + extra
         yes = [i for i in live if i not in absent and i not in nays]
-        r = v['results']
+        # Nach einem Durchlauf stehen hier Listen statt Zahlen
+        cnt = lambda x: len(x) if isinstance(x, list) else x
+        r = {k: cnt(x) for k, x in v['results'].items()}
         if (r['yes'], r['no'], r['absent']) != (len(yes), len(nays), len(absent)):
             print('  ! ' + vid + ': Protokoll ' + str(r) + ' vs Mitschrift '
                   + str({'yes': len(yes), 'no': len(nays), 'absent': len(absent)}))
