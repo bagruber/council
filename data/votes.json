@@ -20046,12 +20046,23 @@
       "absent": 6
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "beibl": "yes",
+      "stanglmaier": "yes",
+      "becher_j": "yes",
+      "becher_a": "yes",
+      "linz_kilian": "yes",
+      "hobmaier": "yes",
+      "strobl": "yes",
+      "beubl": "yes",
+      "dollinger": "no"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
-      "pressVerified": false
+      "pressVerified": true,
+      "pressId": "merkur_2025-02-24_hallenbad-kinder",
+      "provisional": true
     },
     "excluded": [
       {
