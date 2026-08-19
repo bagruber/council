@@ -112,7 +112,10 @@
         "title": "Auf dem Plan – Granitpflaster (abgelehnt)",
         "text": "Antrag auf gebundene Granitpflaster-Verlegung knapp abgelehnt (10:11).",
         "sessionId": "sr_20230112",
-        "voteId": "sr_20230112_02"
+        "voteId": "sr_20230112_02",
+        "press": [
+          "sz_2023-01-12_granitpflaster"
+        ]
       },
       {
         "date": "2023-03-27",
@@ -850,7 +853,10 @@
         "title": "Vorbereitende Untersuchungen Innenstadt–Bahnhof",
         "text": "Beauftragung der Vorbereitenden Untersuchungen nach § 141 BauGB (13:9).",
         "sessionId": "sr_20230417",
-        "voteId": "sr_20230417_02"
+        "voteId": "sr_20230417_02",
+        "press": [
+          "merkur_2023-04-17_schloss-aschwiese"
+        ]
       },
       {
         "date": "2023-07-17",
@@ -1002,7 +1008,11 @@
         "title": "Antrag freier Kinder-Eintritt vertagt",
         "text": "Antrag StRin Beibl auf kostenlosen Eintritt für Kinder/Jugendliche in den Weihnachtsferien wird auf Januar vertagt (12:9).",
         "sessionId": "sr_20241104",
-        "voteId": "sr_20241104_05"
+        "voteId": "sr_20241104_05",
+        "press": [
+          "merkur_2024-11-04_hallenbad-kinder",
+          "mz_2024-11-04_hallenbad-kinder"
+        ]
       },
       {
         "date": "2024-12-16",

@@ -4368,11 +4368,43 @@
     "date": "2021-02-08",
     "title": "Beschluss über die Umsetzung der Ganztagsbetreuung an der AntonVitzthum-Grundschule",
     "text": "Der Stadtrat beschließt die Umsetzung der Ganztagsbetreuung an der Anton-Vitzthum- Grundschule Moosburg als Offene Ganztagsschule. Die Verwaltung wird beauftragt, alle not- wendigen Maßnahmen in die Wege zu leiten.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 21,
-      "no": 1,
-      "absent": 3
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "wittmann",
+        "neumayr",
+        "welter",
+        "john"
+      ],
+      "no": [
+        "kaestl"
+      ],
+      "absent": [
+        "fincke",
+        "heinz",
+        "von_pressentin"
+      ]
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "mz_2021-02-08_ganztagsbetreuung"
     }
   },
   {
@@ -7868,7 +7900,15 @@
       "no": 11,
       "absent": 5
     },
-    "result": "rejected"
+    "result": "rejected",
+    "source": {
+      "tier": "press",
+      "pressId": "sz_2021-10-25_hundesteuer"
+    },
+    "voters": {
+      "pschorr": "no",
+      "becher_j": "yes"
+    }
   },
   {
     "id": "sr_20211025_05",
@@ -11107,7 +11147,14 @@
       "no": 11,
       "absent": 4
     },
-    "result": "rejected"
+    "result": "rejected",
+    "source": {
+      "tier": "press",
+      "pressId": "sz_2023-01-12_granitpflaster"
+    },
+    "voters": {
+      "dollinger": "yes"
+    }
   },
   {
     "id": "bpu_20230123_01",
@@ -12469,7 +12516,15 @@
       "no": 13,
       "absent": 3
     },
-    "result": "rejected"
+    "result": "rejected",
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2023-04-17_schloss-aschwiese"
+    },
+    "voters": {
+      "becher_j": "yes",
+      "dollinger": "no"
+    }
   },
   {
     "id": "sr_20230417_02",
@@ -18181,6 +18236,14 @@
       "yes": 12,
       "no": 9,
       "absent": 4
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2024-11-04_hallenbad-kinder"
+    },
+    "voters": {
+      "beibl": "no",
+      "dollinger": "yes"
     }
   },
   {
@@ -25087,11 +25150,43 @@
     "date": "2026-02-23",
     "title": "Verkehrsberuhigung Schulzentrum Süd",
     "text": "Der Stadtrat beschließt verkehrsberuhigende Maßnahmen im Bereich des Schulzentrums Süd. Eine Einbahnregelung wird abgelehnt, stattdessen werden kleinere Maßnahmen zur Schulwegsicherheit umgesetzt.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 17,
-      "no": 1,
-      "absent": 7
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "becher_a",
+        "becher_j",
+        "gruber",
+        "hadersdorfer",
+        "heinz",
+        "von_pressentin",
+        "hobmaier"
+      ]
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2026-02-23_schulweg"
     }
   },
   {
@@ -25194,6 +25289,15 @@
       "yes": 12,
       "no": 6,
       "absent": 7
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2026-02-23_bplan-aich"
+    },
+    "voters": {
+      "tristl": "yes",
+      "pschorr": "yes",
+      "beibl": "no"
     }
   },
   {
