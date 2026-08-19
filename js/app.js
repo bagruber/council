@@ -2717,17 +2717,17 @@ const SHOW_PRONOUNS = true;
   ];
   const periodOf = date => PERIODS.find(p => date >= p.from && date <= p.to);
 
-  // Wer bei diesem Votum eine bekannte Ja/Nein-Stimme hat
+  // Wer bei diesem Votum eine bekannte Ja/Nein-Stimme hat. Die Auswertung geht
+  // über voteStatus, damit hier dieselben Regeln gelten wie in der Anzeige —
+  // eine Mitschrift, die jemandem eine Stimme gibt, den die Niederschrift als
+  // abwesend führt, zählt sonst nur in der Statistik mit.
   function stances(v) {
+    const session = sessionMap[v.sessionId];
     const st = {};
-    if (v.type === "named") {
-      v.results.yes.forEach(id => st[id] = "yes");
-      v.results.no.forEach(id => st[id] = "no");
-    }
-    Object.entries(v.voters || {}).forEach(([id, s]) => {
-      if (s === "yes" || s === "no") st[id] = s;
+    members.forEach(m => {
+      const s = Council.voteStatus(m.id, v, session, m);
+      if (s === "yes" || s === "no") st[m.id] = s;
     });
-    (v.excluded || []).forEach(e => delete st[e.member]);
     return st;
   }
 

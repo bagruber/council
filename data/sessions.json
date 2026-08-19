@@ -4727,7 +4727,8 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ]
+    ],
+    "absent": []
   },
   {
     "id": "sr_20230130",
@@ -5958,7 +5959,8 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ]
+    ],
+    "absent": []
   },
   {
     "id": "sr_20231214",
@@ -7964,6 +7966,9 @@
         "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
+    ],
+    "absent": [
+      "tristl"
     ]
   },
   {
@@ -8347,7 +8352,10 @@
       {
         "number": 6,
         "title": "Sanierung Parkplatz Alte Polizei (zurückgestellt)",
-        "voteId": "sr_20250623_02"
+        "voteId": "sr_20250623_02",
+        "press": [
+          "merkur_2025-06-23_alte-polizei"
+        ]
       },
       {
         "number": 7,
@@ -8989,6 +8997,12 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "absent": [
+      "becher_a",
+      "beibl",
+      "grundner",
+      "hobmaier"
     ]
   },
   {
