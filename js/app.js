@@ -273,10 +273,22 @@ const SHOW_PRONOUNS = true;
     { id: "abstimmung", label: "Abstimmungen",  icon: "how_to_vote" },
     { id: "sitzung",    label: "Sitzungen",     icon: "calendar_month" },
     { id: "person",     label: "Personen",      icon: "person" },
+    { id: "fraktion",   label: "Fraktionen",    icon: "groups" },
+    { id: "seite",      label: "Seiten",        icon: "fact_check" },
+  ];
+
+  // Übersichtsseiten ohne eigenen Datensatz. Sie über die Suche erreichbar zu
+  // machen ist billiger, als sie irgendwo in die Navigation zu quetschen.
+  const SEARCH_PAGES = [
+    { href: "#/statistik", title: "Statistik",  meta: "Abstimmungsverhalten, Nähe-Matrix, Nähe-Netz" },
+    { href: "#/datenlage", title: "Datenlage",  meta: "Was zu welcher Sitzung vorliegt" },
+    { href: "#/presse",    title: "Presseschau", meta: "Berichte über Sitzungen und Beschlüsse" },
+    { href: "#/gremien",   title: "Gremien",    meta: "Stadtrat, Ausschüsse, Fraktionen" },
   ];
 
   function globalSearch(q) {
-    const hits = { feld: [], dossier: [], abstimmung: [], sitzung: [], person: [] };
+    const hits = { feld: [], dossier: [], abstimmung: [], sitzung: [], person: [],
+                   fraktion: [], seite: [] };
 
     tags.forEach(t => {
       if (searchNorm(t.name).includes(q))
@@ -317,6 +329,20 @@ const SHOW_PRONOUNS = true;
                          meta: [p && p.name, isActive(m) ? null : "ehemalig"]
                                .filter(Boolean).join(" · "),
                          color: p && p.color });
+    });
+    const hist = factionHistory();
+    parties.forEach(p => {
+      if (p.id === "parteilos" || !hist[p.id]) return;
+      if (!searchNorm(p.name).includes(q)) return;
+      const n = members.filter(m => isActive(m) && m.party === p.id).length;
+      hits.fraktion.push({
+        href: "#/fraktion/" + p.id, title: p.name, color: p.color,
+        meta: n ? n + (n === 1 ? " Sitz" : " Sitze")
+                : "nicht mehr im Rat · " + hist[p.id].people.size + " Personen",
+      });
+    });
+    SEARCH_PAGES.forEach(pg => {
+      if (searchNorm(pg.title + " " + pg.meta).includes(q)) hits.seite.push(pg);
     });
     return hits;
   }
@@ -2809,6 +2835,18 @@ const SHOW_PRONOUNS = true;
     return st;
   }
 
+  // Endet ein Mandat an dem Tag, an dem ein anderes beginnt, teilen sich die
+  // beiden einen Sitz: bis zum Wechselbeschluss stimmt der Alte, danach der
+  // Neue. Gemeinsam abgestimmt haben sie nie — auch nicht an diesem einen Tag.
+  const seatSwap = new Set();
+  members.forEach(a => members.forEach(b => {
+    if (a === b) return;
+    const pa = a.periods && a.periods.length ? a.periods : [{ from: a.from, to: a.to }];
+    const pb = b.periods && b.periods.length ? b.periods : [{ from: b.from, to: b.to }];
+    if (pa.some(x => x.to && pb.some(y => y.from === x.to)))
+      seatSwap.add(a.id < b.id ? a.id + "|" + b.id : b.id + "|" + a.id);
+  }));
+
   const simCaches = {};
   const simVoteCount = {};
 
@@ -2838,7 +2876,10 @@ const SHOW_PRONOUNS = true;
                  && s !== "abstained" && s !== "restricted";
       }).map(m => m.id);
       for (let i = 0; i < part.length; i++)
-        for (let j = i + 1; j < part.length; j++) bucket(key(part[i], part[j])).joint++;
+        for (let j = i + 1; j < part.length; j++) {
+          const k = key(part[i], part[j]);
+          if (!seatSwap.has(k)) bucket(k).joint++;
+        }
 
       const st = stances(v);
       const ids = Object.keys(st);
@@ -2870,12 +2911,17 @@ const SHOW_PRONOUNS = true;
   }
 
   function renderSimilarity(m) {
-    // Die Periode, in der die Person zuletzt saß
-    const last = (m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }]).slice(-1)[0];
-    const per = periodOf(last.to || new Date().toISOString().slice(0, 10)) || PERIODS[0];
-    if (simThin(per.id)) return null;
-    const list = similarFor(m.id, per.id);
-    if (list.length < 4) return null;
+    // Die jüngste Periode, in der diese Person genug Vergleiche hat. Für
+    // amtierende Mitglieder ist die laufende Periode noch zu dünn — dann steht
+    // hier die vorige, mit Jahreszahl, statt gar nichts.
+    let per = null, list = [];
+    for (let i = PERIODS.length - 1; i >= 0; i--) {
+      const p = PERIODS[i];
+      if (simThin(p.id)) continue;
+      const l = similarFor(m.id, p.id);
+      if (l.length >= 4) { per = p; list = l; break; }
+    }
+    if (!per) return null;
     const top = list.slice(0, 3);
     const bottom = list.slice(-3).reverse();
 
@@ -2894,7 +2940,7 @@ const SHOW_PRONOUNS = true;
     const box = document.createElement("details");
     box.className = "profile-section sim-box";
     box.innerHTML = `
-      <summary>Wer ähnlich stimmt</summary>
+      <summary>Wer ähnlich stimmt <span class="sim-period">${per.label}</span></summary>
       <p class="sim-note">Nur geteilte Abstimmungen, bei denen von beiden eine Stimme
         bekannt ist. Die letzte Spalte nennt die Zahl dieser Vergleiche und dahinter,
         bei wie vielen geteilten Beschlüssen beide überhaupt im Saal saßen — je
@@ -2994,7 +3040,7 @@ const SHOW_PRONOUNS = true;
         const r = simScore(pairs, a.m.id, b.m.id);
         const never = !p || !p.joint;
         const x = label + j * cell, y = i * cell;
-        const fill = r ? simColor(r.s, spread) : never ? "var(--gap)" : "var(--bg)";
+        const fill = r ? simColor(r.s, spread) : never ? "url(#hm-gap-hatch)" : "var(--bg)";
         const title = r
           ? `${a.m.name} / ${b.m.name}: ${r.s >= 0 ? "+" : "−"}${Math.round(Math.abs(r.s) * 100)} `
             + `aus ${r.n} bekannten von ${r.joint} gemeinsamen Beschlüssen`
@@ -3002,22 +3048,45 @@ const SHOW_PRONOUNS = true;
             ? `${a.m.name} / ${b.m.name}: saßen nie gleichzeitig im Rat`
             : `${a.m.name} / ${b.m.name}: nur ${(p && p.n) || 0} von ${p.joint} gemeinsamen Beschlüssen bekannt`;
         cells += `<rect x="${x}" y="${y}" width="${cell}" height="${cell}"
-                    fill="${fill}"><title>${title}</title></rect>`;
-        // Das Zeichen trägt die Aussage, wenn die Fläche zu klein für Farbe ist
-        if (never && cell >= 12) {
-          cells += `<text class="hm-gap-mark" x="${x + cell / 2}" y="${y + cell / 2 + 3}"
-                      text-anchor="middle">∅</text>`;
-        }
+                    ${never ? 'class="hm-gap" ' : ""}fill="${fill}"><title>${title}</title></rect>`;
       }
     });
 
+    // In der leeren Hälfte spiegelt je Fraktion ein Winkel ihren eigenen Block
+    // an der Diagonale. Wo viel Grün in einem Winkel steckt, hält die Fraktion
+    // zusammen — das sieht man, ohne die Namen zu lesen.
+    let frames = "";
+    let s0 = 0;
+    nodes.forEach((n, i) => {
+      const last = i === nodes.length - 1;
+      const pid = n.party ? n.party.id : "";
+      const next = last ? null : (nodes[i + 1].party ? nodes[i + 1].party.id : "");
+      if (!last && next === pid) return;
+      if (i > s0) {                       // Einerfraktionen haben keinen Block
+        const x0 = label + s0 * cell, x1 = label + (i + 1) * cell;
+        const y0 = s0 * cell, y1 = (i + 1) * cell;
+        frames += `<path class="hm-frame" d="M${x0} ${y0} H${x1} V${y1}"
+                     stroke="${n.party ? n.party.color : "#999"}"/>`
+                + `<text class="hm-frame-label" x="${x1 - 3}" y="${y0 - 4}"
+                     text-anchor="end" fill="${n.party ? n.party.color : "#999"}"
+                   >${n.party ? n.party.name : ""}</text>`;
+      }
+      s0 = i + 1;
+    });
+
+    const defs = `<defs><pattern id="hm-gap-hatch" width="5" height="5"
+        patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="5" height="5" fill="#fff"/>
+        <rect width="2.2" height="5" fill="var(--accent)" opacity="0.7"/>
+      </pattern></defs>`;
     el.innerHTML = `<svg class="chart heatmap" width="${label + size}" height="${size + foot}"
         viewBox="0 0 ${label + size} ${size + foot}" role="img" aria-label="Ähnlichkeitsmatrix">
-        ${cells}${ticks}</svg>`
+        ${defs}${cells}${frames}${ticks}</svg>`
       + `<div class="hm-legend">
            <span><i class="hm-key-scale"></i>stimmt gegeneinander … zusammen</span>
-           <span><i class="hm-key-gap">∅</i>saßen nie gleichzeitig im Rat</span>
+           <span><i class="hm-key-gap"></i>saßen nie gleichzeitig im Rat</span>
            <span><i class="hm-key-none"></i>zu wenig bekannt</span>
+           <span><i class="hm-key-frame"></i>Fraktionsblock, an der Diagonale gespiegelt</span>
          </div>`;
   }
 
@@ -3041,6 +3110,17 @@ const SHOW_PRONOUNS = true;
       edges.push({ a: nodes[idx[a]], b: nodes[idx[b]], s: p.raw / (p.n + SIM_K), n: p.n });
     });
 
+    // Zwei Knoten auf demselben Punkt haben keine Richtung, in die man sie
+    // schieben könnte — dx/d wäre null. Dann gibt der Index eine her, immer
+    // dieselbe, damit das Bild reproduzierbar bleibt.
+    const apart = (a, b, i, j) => {
+      const dx = a.x - b.x, dy = a.y - b.y;
+      const d = Math.hypot(dx, dy);
+      if (d > 1e-6) return [dx, dy, d];
+      const t = ((i * 7 + j * 13) % 360) * Math.PI / 180;
+      return [Math.cos(t), Math.sin(t), 1];
+    };
+
     const W = el.clientWidth || 640, H = 420;
     nodes.forEach((n, i) => {
       const a = 2 * Math.PI * i / nodes.length;
@@ -3054,12 +3134,10 @@ const SHOW_PRONOUNS = true;
       nodes.forEach(n => { n.dx = 0; n.dy = 0; });
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
-          const a = nodes[i], b = nodes[j];
-          const dx = a.x - b.x, dy = a.y - b.y;
-          const d = Math.hypot(dx, dy) || 0.01;
+          const [dx, dy, d] = apart(nodes[i], nodes[j], i, j);
           const f = k * k / d;
-          a.dx += dx / d * f; a.dy += dy / d * f;
-          b.dx -= dx / d * f; b.dy -= dy / d * f;
+          nodes[i].dx += dx / d * f; nodes[i].dy += dy / d * f;
+          nodes[j].dx -= dx / d * f; nodes[j].dy -= dy / d * f;
         }
       }
       edges.forEach(e => {
@@ -3079,14 +3157,13 @@ const SHOW_PRONOUNS = true;
     // Die Kräfte allein schieben Knoten übereinander, sobald eine Fraktion eng
     // zusammenhält. Ein paar Entzerrungsschritte am Ende drücken sie auf
     // Lesbarkeitsabstand, ohne die Anordnung zu verwerfen.
-    const MIN = 34;
-    for (let it = 0; it < 60; it++) {
+    const MIN = 26;
+    for (let it = 0; it < 240; it++) {
       let moved = false;
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const a = nodes[i], b = nodes[j];
-          const dx = a.x - b.x, dy = a.y - b.y;
-          const d = Math.hypot(dx, dy) || 0.01;
+          const [dx, dy, d] = apart(a, b, i, j);
           if (d >= MIN) continue;
           const push = (MIN - d) / 2;
           a.x += dx / d * push; a.y += dy / d * push;
