@@ -2868,6 +2868,116 @@ main {
 .press-refs a:hover { border-color: var(--primary); color: var(--primary); }
 .press-ref-kind { color: var(--text-muted); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; }
 
+/* Einstimmige Beschlüsse zeigen zuerst nur den Balken */
+.vote-expand {
+  display: block;
+  margin: 6px auto 0;
+  padding: 3px 10px;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 1px dotted var(--border);
+}
+.vote-expand:hover { color: var(--primary); border-bottom-color: var(--primary); }
+
+/* -- Fraktionsseite -- */
+
+.faction-head { text-decoration: none; color: inherit; }
+.faction-go { font-size: 16px; color: var(--text-muted); margin-left: auto; }
+
+.faction-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.faction-header h1 { font-size: 1.5rem; line-height: 1.2; }
+.faction-sub { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+.faction-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.faction-move {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  padding: 1px 7px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+/* -- Abstimmungsähnlichkeit -- */
+
+.sim-box summary {
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  list-style: none;
+}
+.sim-box summary::-webkit-details-marker { display: none; }
+.sim-box summary::before { content: "▸ "; color: var(--text-muted); }
+.sim-box[open] summary::before { content: "▾ "; }
+
+.sim-note {
+  margin: 8px 0 4px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.sim-group {
+  margin-top: 12px;
+  margin-bottom: 2px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.sim-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.86rem;
+}
+.sim-row:hover .sim-name { text-decoration: underline; }
+.sim-name { flex: 0 0 auto; }
+
+.sim-bar {
+  flex: 1;
+  height: 4px;
+  min-width: 30px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.sim-bar > span { display: block; height: 100%; }
+
+.sim-val {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  width: 34px;
+  text-align: right;
+}
+.sim-n {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  width: 20px;
+  text-align: right;
+}
+
 /* -- Responsive -- */
 
 @media (max-width: 600px) {
