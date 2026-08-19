@@ -1547,10 +1547,6 @@ const SHOW_PRONOUNS = true;
 
     const hasIndividualData = vote.type === "named"
                             || (vote.voters && Object.keys(vote.voters).length > 0);
-    const drawSeats = () => {
-      const body = bodyForVote(vote);
-      VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder, body ? { body } : {});
-    };
 
     // Einstimmig heißt: das Halbrund sagt nichts, was der Balken nicht schon
     // sagt. Es bleibt eingeklappt — außer jemand war befangen oder enthalten,
@@ -1558,20 +1554,37 @@ const SHOW_PRONOUNS = true;
     const quiet = hasIndividualData && Council.isUnanimous(vote)
                   && !(vote.excluded || []).length;
 
+    // Der Balken und das Halbrund bekommen eigene Flächen. Vorher teilten sie
+    // sich eine, und das Ausklappen hat den Balken überschrieben.
+    const seatEl = quiet ? document.createElement("div") : chartEl;
+
     requestAnimationFrame(() => {
       if (!hasIndividualData || quiet) VoteVis.drawBar(chartEl, vote.results);
-      else drawSeats();
+      else {
+        const body = bodyForVote(vote);
+        VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder, body ? { body } : {});
+      }
     });
 
     if (quiet) {
       const toggle = document.createElement("button");
       toggle.className = "vote-expand";
       toggle.textContent = "Einzelstimmen";
+      let drawn = false;
       toggle.addEventListener("click", () => {
-        toggle.remove();
-        drawSeats();
+        seatEl.hidden = !seatEl.hidden;
+        toggle.classList.toggle("open", !seatEl.hidden);
+        if (!seatEl.hidden && !drawn) {
+          drawn = true;
+          const body = bodyForVote(vote);
+          VoteVis.drawParliament(seatEl, vote, members, parties, seatOrder, body ? { body } : {});
+        }
       });
+      // Der Knopf steht zwischen Balken und Halbrund, damit er beim Auf- und
+      // Zuklappen nicht unter dem Finger wegwandert.
+      seatEl.hidden = true;
       block.appendChild(toggle);
+      block.appendChild(seatEl);
     }
   }
 
@@ -1790,6 +1803,32 @@ const SHOW_PRONOUNS = true;
     }
 
     wrap.appendChild(factionSec);
+
+    // Fraktionen, die es im Rat nicht mehr gibt. "parteilos" bleibt draußen —
+    // das ist keine Fraktion, sondern deren Fehlen.
+    const hist = factionHistory();
+    const gone = Object.keys(hist)
+      .filter(pid => pid !== "parteilos" && partyMap[pid] && !(grouped[pid] || []).length)
+      .sort((a, b) => (hist[b].to || "9999").localeCompare(hist[a].to || "9999"));
+
+    if (gone.length) {
+      const sec = makeSection("Nicht mehr im Rat");
+      gone.forEach(pid => {
+        const party = partyMap[pid];
+        const h = hist[pid];
+        const n = h.people.size;
+        const row = document.createElement("a");
+        row.className = "faction-head faction-gone";
+        row.href = "#/fraktion/" + pid;
+        row.innerHTML = `
+          <span class="member-dot" style="background:${party.color}"></span>
+          <span class="faction-name">${party.name}</span>
+          <span class="faction-count">${formatMonthPeriod(h.from, h.to)} · ${n} ${n === 1 ? "Person" : "Personen"}</span>
+          <svg class="icon faction-go"><use href="#i-chevron_right"/></svg>`;
+        sec.appendChild(row);
+      });
+      wrap.appendChild(sec);
+    }
 
     gremienMain.appendChild(wrap);
   }
@@ -2485,9 +2524,28 @@ const SHOW_PRONOUNS = true;
     const today = new Date().toISOString().slice(0, 10);
     const out = [];
     members.forEach(m => {
-      partySpans(m).filter(s => s.party === pid).forEach(s => {
+      const spans = partySpans(m);
+      spans.forEach((s, i) => {
+        if (s.party !== pid) return;
         const current = (!s.to || s.to >= today) && Council.memberActiveAt(m, today);
-        out.push({ member: m, span: s, current });
+        // Nachbarn in der Parteibiografie — sie geben dem Wechsel die Richtung
+        out.push({ member: m, span: s, current,
+                   from: i > 0 ? spans[i - 1].party : null,
+                   to: i < spans.length - 1 ? spans[i + 1].party : null });
+      });
+    });
+    return out;
+  }
+
+  // Alle Parteien, die im Rat vertreten waren, mit Zeitraum und Kopfzahl
+  function factionHistory() {
+    const out = {};
+    members.forEach(m => {
+      partySpans(m).forEach(s => {
+        const e = out[s.party] || (out[s.party] = { people: new Set(), from: s.from, to: s.to });
+        e.people.add(m.id);
+        if (s.from && s.from < e.from) e.from = s.from;
+        if (e.to && (!s.to || s.to > e.to)) e.to = s.to;
       });
     });
     return out;
@@ -2534,11 +2592,15 @@ const SHOW_PRONOUNS = true;
         const row = document.createElement("a");
         row.className = "member-row";
         row.href = "#/member/" + r.member.id;
-        // Wer die Fraktion gewechselt hat, bringt das mit
-        const other = partySpans(r.member).filter(s => s.party !== pid);
-        const move = other.length
-          ? `<span class="faction-move">${other.map(s => partyMap[s.party] ? partyMap[s.party].name : s.party).join(", ")}</span>`
-          : "";
+        // Wechsel mit Richtung: woher jemand kam, wohin er ging
+        const chip = (other, dir) => {
+          const p = partyMap[other];
+          const label = p ? p.name : other;
+          return `<span class="faction-move ${dir}" style="--from:${p ? p.color : "#999"}"
+            title="${dir === "in" ? "vorher" : "danach"} ${label}"
+            >${dir === "in" ? label + " →" : "→ " + label}</span>`;
+        };
+        const move = (r.from ? chip(r.from, "in") : "") + (r.to ? chip(r.to, "out") : "");
         // Der Bürgermeister sitzt kraft Amtes im Rat, nicht über die Liste
         const office = r.member.role === "mayor"
           ? `<span class="faction-office">Bürgermeister</span>` : "";

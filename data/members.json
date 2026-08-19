@@ -2249,21 +2249,26 @@
       "chair": "mader",
       "vicechairs": [
         {
-          "member": "hadersdorfer"
+          "member": "hadersdorfer",
+          "sub": "kehlringer"
         },
         {
-          "member": "stanglmaier"
+          "member": "stanglmaier",
+          "sub": "linz_kilian"
         }
       ],
       "seats": [
         {
-          "member": "linz_karin"
+          "member": "linz_karin",
+          "sub": "reither"
         },
         {
-          "member": "tristl"
+          "member": "tristl",
+          "sub": "haberl"
         },
         {
-          "member": "schweiger"
+          "member": "schweiger",
+          "sub": "heinz"
         },
         {
           "member": "marschoun",
@@ -2278,13 +2283,16 @@
           "sub": "dick"
         },
         {
-          "member": "sixt"
+          "member": "sixt",
+          "sub": "grundner"
         },
         {
-          "member": "meier"
+          "member": "meier",
+          "sub": "lauterbach"
         },
         {
-          "member": "beibl"
+          "member": "beibl",
+          "sub": "roeck"
         }
       ],
       "pastSeats": [
@@ -2399,21 +2407,26 @@
           "chair": "mader",
           "vicechairs": [
             {
-              "member": "hadersdorfer"
+              "member": "hadersdorfer",
+              "sub": "kehlringer"
             },
             {
-              "member": "stanglmaier"
+              "member": "stanglmaier",
+              "sub": "linz_kilian"
             }
           ],
           "seats": [
             {
-              "member": "linz_karin"
+              "member": "linz_karin",
+              "sub": "reither"
             },
             {
-              "member": "tristl"
+              "member": "tristl",
+              "sub": "haberl"
             },
             {
-              "member": "schweiger"
+              "member": "schweiger",
+              "sub": "heinz"
             },
             {
               "member": "marschoun",
@@ -2428,13 +2441,16 @@
               "sub": "dick"
             },
             {
-              "member": "sixt"
+              "member": "sixt",
+              "sub": "grundner"
             },
             {
-              "member": "meier"
+              "member": "meier",
+              "sub": "lauterbach"
             },
             {
-              "member": "beibl"
+              "member": "beibl",
+              "sub": "roeck"
             }
           ]
         }
@@ -2450,16 +2466,20 @@
       "chair": "mader",
       "seats": [
         {
-          "member": "heinz"
+          "member": "heinz",
+          "sub": "schweiger"
         },
         {
-          "member": "reither"
+          "member": "reither",
+          "sub": "linz_karin"
         },
         {
-          "member": "kehlringer"
+          "member": "kehlringer",
+          "sub": "hadersdorfer"
         },
         {
-          "member": "tristl"
+          "member": "tristl",
+          "sub": "haberl"
         },
         {
           "member": "marcus",
@@ -2474,16 +2494,20 @@
           "sub": "sabanovic"
         },
         {
-          "member": "grundner"
+          "member": "grundner",
+          "sub": "sixt"
         },
         {
-          "member": "lauterbach"
+          "member": "lauterbach",
+          "sub": "meier"
         },
         {
-          "member": "linz_kilian"
+          "member": "linz_kilian",
+          "sub": "beibl"
         },
         {
-          "member": "ruemelin"
+          "member": "ruemelin",
+          "sub": "roeck"
         }
       ],
       "pastSeats": [
@@ -2556,16 +2580,20 @@
           "chair": "mader",
           "seats": [
             {
-              "member": "heinz"
+              "member": "heinz",
+              "sub": "schweiger"
             },
             {
-              "member": "reither"
+              "member": "reither",
+              "sub": "linz_karin"
             },
             {
-              "member": "kehlringer"
+              "member": "kehlringer",
+              "sub": "hadersdorfer"
             },
             {
-              "member": "tristl"
+              "member": "tristl",
+              "sub": "haberl"
             },
             {
               "member": "marcus",
@@ -2580,16 +2608,20 @@
               "sub": "sabanovic"
             },
             {
-              "member": "grundner"
+              "member": "grundner",
+              "sub": "sixt"
             },
             {
-              "member": "lauterbach"
+              "member": "lauterbach",
+              "sub": "meier"
             },
             {
-              "member": "linz_kilian"
+              "member": "linz_kilian",
+              "sub": "beibl"
             },
             {
-              "member": "ruemelin"
+              "member": "ruemelin",
+              "sub": "roeck"
             }
           ]
         }
@@ -2606,20 +2638,24 @@
       "chair": "mader",
       "seats": [
         {
-          "member": "reither"
+          "member": "reither",
+          "sub": "kehlringer"
         },
         {
-          "member": "schweiger"
+          "member": "schweiger",
+          "sub": "linz_karin"
         },
         {
           "member": "dick",
           "sub": "strobl"
         },
         {
-          "member": "meier"
+          "member": "meier",
+          "sub": "sixt"
         },
         {
-          "member": "roeck"
+          "member": "roeck",
+          "sub": "ruemelin"
         }
       ],
       "pastSeats": [
@@ -2678,20 +2714,24 @@
           "chair": "mader",
           "seats": [
             {
-              "member": "reither"
+              "member": "reither",
+              "sub": "kehlringer"
             },
             {
-              "member": "schweiger"
+              "member": "schweiger",
+              "sub": "linz_karin"
             },
             {
               "member": "dick",
               "sub": "strobl"
             },
             {
-              "member": "meier"
+              "member": "meier",
+              "sub": "sixt"
             },
             {
-              "member": "roeck"
+              "member": "roeck",
+              "sub": "ruemelin"
             }
           ]
         }
@@ -2708,20 +2748,24 @@
       "chair": null,
       "seats": [
         {
-          "member": "linz_karin"
+          "member": "linz_karin",
+          "sub": "heinz"
         },
         {
-          "member": "tristl"
+          "member": "tristl",
+          "sub": "haberl"
         },
         {
           "member": "sabanovic",
           "sub": "dick"
         },
         {
-          "member": "meier"
+          "member": "meier",
+          "sub": "sixt"
         },
         {
-          "member": "beibl"
+          "member": "beibl",
+          "sub": "linz_kilian"
         }
       ],
       "pastSeats": [
@@ -2786,20 +2830,24 @@
           "chair": null,
           "seats": [
             {
-              "member": "linz_karin"
+              "member": "linz_karin",
+              "sub": "heinz"
             },
             {
-              "member": "tristl"
+              "member": "tristl",
+              "sub": "haberl"
             },
             {
               "member": "sabanovic",
               "sub": "dick"
             },
             {
-              "member": "meier"
+              "member": "meier",
+              "sub": "sixt"
             },
             {
-              "member": "beibl"
+              "member": "beibl",
+              "sub": "linz_kilian"
             }
           ]
         }
@@ -2813,35 +2861,35 @@
       "type": "sonstige",
       "icon": "water_drop",
       "description": "Der Aufsichtsrat überwacht die Geschäftsführung der Kläranlage Moosburg GmbH.",
-      "chair": "dollinger",
+      "chair": "mader",
       "seats": [
+        {
+          "member": "stanglmaier",
+          "sub": "roeck"
+        },
+        {
+          "member": "dick",
+          "sub": "sabanovic"
+        },
         {
           "member": "haberl",
           "sub": "tristl"
         },
         {
-          "member": "weber",
-          "sub": "linz_karin"
+          "member": "hadersdorfer",
+          "sub": "heinz"
         },
         {
           "member": "marcus",
-          "sub": "pschorr"
+          "sub": "marschoun"
         },
         {
-          "member": "hobmaier",
-          "sub": "gruber"
+          "member": "sixt",
+          "sub": "meier"
         },
         {
-          "member": "reif",
-          "sub": "grundner"
-        },
-        {
-          "member": "becher_a",
-          "sub": "von_pressentin"
-        },
-        {
-          "member": "stanglmaier",
-          "sub": "beibl"
+          "member": "welter",
+          "sub": "ghadieh"
         }
       ],
       "pastSeats": [
@@ -2862,6 +2910,77 @@
           "member": "wittmann",
           "from": "2020-05",
           "to": "2021-10"
+        }
+      ],
+      "seatConfigs": [
+        {
+          "from": "2020-05-01",
+          "to": "2026-04-30",
+          "chair": "dollinger",
+          "seats": [
+            {
+              "member": "haberl",
+              "sub": "tristl"
+            },
+            {
+              "member": "weber",
+              "sub": "linz_karin"
+            },
+            {
+              "member": "marcus",
+              "sub": "pschorr"
+            },
+            {
+              "member": "hobmaier",
+              "sub": "gruber"
+            },
+            {
+              "member": "reif",
+              "sub": "grundner"
+            },
+            {
+              "member": "becher_a",
+              "sub": "von_pressentin"
+            },
+            {
+              "member": "stanglmaier",
+              "sub": "beibl"
+            }
+          ]
+        },
+        {
+          "from": "2026-05-01",
+          "chair": "mader",
+          "seats": [
+            {
+              "member": "stanglmaier",
+              "sub": "roeck"
+            },
+            {
+              "member": "dick",
+              "sub": "sabanovic"
+            },
+            {
+              "member": "haberl",
+              "sub": "tristl"
+            },
+            {
+              "member": "hadersdorfer",
+              "sub": "heinz"
+            },
+            {
+              "member": "marcus",
+              "sub": "marschoun"
+            },
+            {
+              "member": "sixt",
+              "sub": "meier"
+            },
+            {
+              "member": "welter",
+              "sub": "ghadieh"
+            }
+          ]
         }
       ]
     },
