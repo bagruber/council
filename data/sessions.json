@@ -5760,7 +5760,10 @@
       {
         "number": "5.4",
         "title": "Asyl-Wohnen Sudetenlandstr. 9 (10:1)",
-        "voteId": "bpu_20230921_07"
+        "voteId": "bpu_20230921_07",
+        "press": [
+          "merkur_2023-09-21_asylwohnen"
+        ]
       },
       {
         "number": "5.5",

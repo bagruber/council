@@ -1579,7 +1579,8 @@ const SHOW_PRONOUNS = true;
       if (!hasIndividualData || quiet) VoteVis.drawBar(chartEl, counts);
       else {
         const body = bodyForVote(vote);
-        VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder, body ? { body } : {});
+        VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder,
+                               { body, session: sessionMap[vote.sessionId] });
       }
     });
 
@@ -1595,7 +1596,7 @@ const SHOW_PRONOUNS = true;
           drawn = true;
           const body = bodyForVote(vote);
           VoteVis.drawParliament(seatEl, vote, members, parties, seatOrder,
-                                 body ? { body, bar: false } : { bar: false });
+                                 { body, bar: false, session: sessionMap[vote.sessionId] });
         }
       });
       // Der Knopf steht zwischen Balken und Halbrund, damit er beim Auf- und
