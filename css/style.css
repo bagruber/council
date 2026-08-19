@@ -2904,6 +2904,15 @@ main {
   flex-shrink: 0;
 }
 
+.faction-office {
+  font-size: 0.72rem;
+  color: var(--accent-text);
+  background: var(--accent-light);
+  padding: 1px 7px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
 .faction-move {
   font-size: 0.72rem;
   color: var(--text-muted);
