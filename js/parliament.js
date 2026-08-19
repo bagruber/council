@@ -647,11 +647,14 @@ const VoteVis = (() => {
     if (!seatData.seats.some(s => s) && !seatData.mayor) return;
 
     // Bar summary: named votes use array length; anonymous uses scalar counts.
-    const barCounts = vote.type === "named"
-      ? { yes: vote.results.yes.length, no: vote.results.no.length, absent: vote.results.absent.length }
-      : vote.results;
-    const capacity = seatData.seats.filter(s => s).length + (seatData.mayor ? 1 : 0);
-    drawBar(container, barCounts, { capacity });
+    // options.bar === false, wenn der Balken schon woanders steht.
+    if (options.bar !== false) {
+      const barCounts = vote.type === "named"
+        ? { yes: vote.results.yes.length, no: vote.results.no.length, absent: vote.results.absent.length }
+        : vote.results;
+      const capacity = seatData.seats.filter(s => s).length + (seatData.mayor ? 1 : 0);
+      drawBar(container, barCounts, { capacity });
+    }
 
     // Pass seats including potential nulls so geometry stays stable.
     renderChart(container, { seats: seatData.seats, mayor: seatData.mayor, ...options });

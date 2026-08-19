@@ -1496,13 +1496,17 @@ const SHOW_PRONOUNS = true;
     if (m) parts.push(`${m.firstName.charAt(0)}. ${m.lastName}`);
     else if (vote.source.byName) parts.push(vote.source.byName);
     let html = parts.join(" · ");
+    // Bei Stufe "press" ist der Artikel die Quelle, nicht die Bestätigung. Wo er
+    // zu einer eigenen Erfassung dazukommt, deckt er in aller Regel nur einen
+    // Teil der Stimmen ab — "bestätigt" allein verspräche zu viel.
+    const confirm = vote.source.tier === "press" ? "zum Artikel"
+      : vote.source.pressScope === "full" ? "durch Presse bestätigt"
+      : "teilweise durch Presse bestätigt";
     const art = vote.source.pressId && pressMap[vote.source.pressId];
     if (art) {
-      // Bei Stufe "press" ist der Artikel die Quelle, nicht die Bestätigung
-      const what = vote.source.tier === "press" ? "zum Artikel" : "durch Presse bestätigt";
-      html += ` · <a href="${art.url}" target="_blank" rel="noopener">${what}</a>`;
+      html += ` · <a href="${art.url}" target="_blank" rel="noopener">${confirm}</a>`;
     } else if (vote.source.pressVerified) {
-      html += " · durch Presse bestätigt";
+      html += " · " + confirm;
     }
     return `<div class="vote-source">${html}</div>`;
   }
@@ -1558,8 +1562,14 @@ const SHOW_PRONOUNS = true;
     // sich eine, und das Ausklappen hat den Balken überschrieben.
     const seatEl = quiet ? document.createElement("div") : chartEl;
 
+    // drawBar rechnet mit Zahlen, benannte Voten führen Listen
+    const counts = vote.type === "named"
+      ? { yes: vote.results.yes.length, no: vote.results.no.length,
+          absent: vote.results.absent.length }
+      : vote.results;
+
     requestAnimationFrame(() => {
-      if (!hasIndividualData || quiet) VoteVis.drawBar(chartEl, vote.results);
+      if (!hasIndividualData || quiet) VoteVis.drawBar(chartEl, counts);
       else {
         const body = bodyForVote(vote);
         VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder, body ? { body } : {});
@@ -1577,7 +1587,8 @@ const SHOW_PRONOUNS = true;
         if (!seatEl.hidden && !drawn) {
           drawn = true;
           const body = bodyForVote(vote);
-          VoteVis.drawParliament(seatEl, vote, members, parties, seatOrder, body ? { body } : {});
+          VoteVis.drawParliament(seatEl, vote, members, parties, seatOrder,
+                                 body ? { body, bar: false } : { bar: false });
         }
       });
       // Der Knopf steht zwischen Balken und Halbrund, damit er beim Auf- und

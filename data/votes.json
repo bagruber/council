@@ -13226,7 +13226,8 @@
     "source": {
       "tier": "tracked",
       "by": "gruber",
-      "pressVerified": false
+      "pressVerified": true,
+      "pressId": "merkur_2023-06-26_mieterhoehung"
     },
     "excluded": [
       {
