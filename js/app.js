@@ -1054,6 +1054,55 @@ const SHOW_PRONOUNS = true;
       drawMedianByBody, timed, true));
 
     main.appendChild(buildStatsTable(entries));
+
+    const nh = document.createElement("h2");
+    nh.className = "section-label";
+    nh.style.marginTop = "34px";
+    nh.textContent = "Wer stimmt mit wem";
+    main.appendChild(nh);
+
+    const intro = document.createElement("p");
+    intro.className = "chart-foot";
+    intro.innerHTML = "Verglichen werden nur <strong>geteilte</strong> Beschlüsse — bei "
+      + "Einstimmigkeit stimmen alle gleich, das sagt nichts. Gezählt wird je Paar "
+      + "+1 bei gleicher, −1 bei verschiedener Stimme; wer fehlt, zählt nicht mit. "
+      + "Die Summe wird durch (Vergleiche + 5) geteilt, damit dünne Grundlagen zur "
+      + "Mitte gezogen werden. Paare unter fünf Vergleichen bleiben leer.";
+    main.appendChild(intro);
+
+    main.appendChild(periodCard("Nähe-Matrix",
+      "Zeilen und Spalten nach Fraktion sortiert — die Blöcke auf der Diagonale sind die Fraktionen.",
+      drawSimMatrix));
+    main.appendChild(periodCard("Nähe-Netz",
+      "Alle Kanten, ohne Schwellenwert: schwache Verbindungen verblassen, statt zu verschwinden. "
+      + "Grün zieht zusammen, rot drückt auseinander. Klick öffnet das Profil.",
+      drawSimGraph));
+  }
+
+  // Kartenrahmen mit Umschalter für die Wahlperiode
+  function periodCard(title, foot, drawFn) {
+    const card = document.createElement("div");
+    card.className = "chart-card";
+    card.innerHTML = `<h3>${title}</h3>
+      <div class="period-switch">${PERIODS.map((p, i) =>
+        `<button data-p="${p.id}"${i === 0 ? ' class="on"' : ""}>${p.label}</button>`).join("")}</div>`;
+    const chartEl = document.createElement("div");
+    card.appendChild(chartEl);
+    if (foot) {
+      const f = document.createElement("div");
+      f.className = "chart-foot";
+      f.textContent = foot;
+      card.appendChild(f);
+    }
+    card.querySelectorAll(".period-switch button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        card.querySelectorAll(".period-switch button").forEach(b => b.classList.remove("on"));
+        btn.classList.add("on");
+        drawFn(chartEl, btn.dataset.p);
+      });
+    });
+    requestAnimationFrame(() => drawFn(chartEl, PERIODS[0].id));
+    return card;
   }
 
   // -- Datenlage: was liegt zu welcher Sitzung vor --
@@ -2492,10 +2541,62 @@ const SHOW_PRONOUNS = true;
         wrap.appendChild(row);
       });
     };
+    const coh = factionCohesion(pid);
+    if (coh) wrap.appendChild(coh);
+
     rows(now, "Aktuell");
     rows(past, "Ehemals");
 
     gremienMain.appendChild(wrap);
+  }
+
+  // Wie oft zieht die Fraktion an einem Strang, wenn der Rat sich teilt — und
+  // wer schert am häufigsten aus. Gezählt werden nur geteilte Beschlüsse, bei
+  // denen von mindestens zwei Fraktionsmitgliedern die Stimme bekannt ist.
+  function factionCohesion(pid) {
+    if (pid === "parteilos") return null;      // keine Fraktion, keine Geschlossenheit
+    let total = 0, united = 0;
+    const dev = {};
+    votes.forEach(v => {
+      if (Council.isUnanimous(v)) return;
+      const st = stances(v);
+      const group = Object.entries(st).filter(([id]) =>
+        memberMap[id] && partyAtDate(memberMap[id], v.date) === pid);
+      if (group.length < 2) return;
+      total++;
+      const counts = {};
+      group.forEach(([, s]) => counts[s] = (counts[s] || 0) + 1);
+      const majority = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
+      if (Object.keys(counts).length === 1) united++;
+      group.forEach(([id, s]) => {
+        const d = dev[id] || (dev[id] = { n: 0, off: 0 });
+        d.n++;
+        if (s !== majority) d.off++;
+      });
+    });
+    if (total < 5) return null;
+
+    const ranked = Object.entries(dev)
+      .filter(([, d]) => d.n >= 5)
+      .map(([id, d]) => ({ id, n: d.n, off: d.off, share: d.off / d.n }))
+      .sort((a, b) => b.share - a.share)
+      .filter(r => r.off > 0)
+      .slice(0, 3);
+
+    const box = document.createElement("div");
+    box.className = "cohesion";
+    box.innerHTML = `
+      <div class="cohesion-value">${Math.round(united / total * 100)} %</div>
+      <div class="cohesion-label">geschlossen bei geteilten Beschlüssen
+        <span>${united} von ${total} Abstimmungen, bei denen der Rat sich nicht einig war
+        und mindestens zwei Stimmen aus der Fraktion bekannt sind</span></div>
+      ${ranked.length ? `<div class="cohesion-dev">${ranked.map(r => {
+        const m = memberMap[r.id];
+        return `<a href="#/member/${r.id}"><span>${m ? m.name : r.id}</span>
+                  <b>${Math.round(r.share * 100)} %</b>
+                  <small>${r.off} von ${r.n}</small></a>`;
+      }).join("")}<p>weicht am häufigsten von der eigenen Fraktion ab</p></div>` : ""}`;
+    return box;
   }
 
   // -- Abstimmungsähnlichkeit --
@@ -2512,23 +2613,39 @@ const SHOW_PRONOUNS = true;
   // Abwesenheit schwächt das Maß, statt es zu verzerren.
   const SIM_K = 5;
   const SIM_MIN = 5;   // darunter wird nichts ausgewiesen
-  let simCache = null;
 
-  function similarity() {
-    if (simCache) return simCache;
+  // Verglichen wird immer innerhalb einer Wahlperiode — über den Wechsel hinweg
+  // säßen Personen im selben Bild, die nie zusammen abgestimmt haben.
+  const PERIODS = [
+    { id: "p2020", label: "2020–2026", from: "2020-05-01", to: "2026-04-30" },
+    { id: "p2026", label: "seit 2026", from: "2026-05-01", to: "9999-12-31" },
+  ];
+  const periodOf = date => PERIODS.find(p => date >= p.from && date <= p.to);
+
+  // Wer bei diesem Votum eine bekannte Ja/Nein-Stimme hat
+  function stances(v) {
+    const st = {};
+    if (v.type === "named") {
+      v.results.yes.forEach(id => st[id] = "yes");
+      v.results.no.forEach(id => st[id] = "no");
+    }
+    Object.entries(v.voters || {}).forEach(([id, s]) => {
+      if (s === "yes" || s === "no") st[id] = s;
+    });
+    (v.excluded || []).forEach(e => delete st[e.member]);
+    return st;
+  }
+
+  const simCaches = {};
+
+  function similarity(periodId) {
+    const per = PERIODS.find(p => p.id === periodId) || PERIODS[0];
+    if (simCaches[per.id]) return simCaches[per.id];
     const pairs = {};
     votes.forEach(v => {
       if (Council.isUnanimous(v)) return;
-      const st = {};
-      if (v.type === "named") {
-        v.results.yes.forEach(id => st[id] = "yes");
-        v.results.no.forEach(id => st[id] = "no");
-      }
-      Object.entries(v.voters || {}).forEach(([id, s]) => {
-        if (s === "yes" || s === "no") st[id] = s;
-      });
-      (v.excluded || []).forEach(e => delete st[e.member]);
-
+      if (v.date < per.from || v.date > per.to) return;
+      const st = stances(v);
       const ids = Object.keys(st);
       for (let i = 0; i < ids.length; i++) {
         for (let j = i + 1; j < ids.length; j++) {
@@ -2539,12 +2656,12 @@ const SHOW_PRONOUNS = true;
         }
       }
     });
-    simCache = pairs;
+    simCaches[per.id] = pairs;
     return pairs;
   }
 
-  function similarFor(id) {
-    const pairs = similarity();
+  function similarFor(id, periodId) {
+    const pairs = similarity(periodId);
     const out = [];
     Object.entries(pairs).forEach(([key, p]) => {
       const [a, b] = key.split("|");
@@ -2557,7 +2674,10 @@ const SHOW_PRONOUNS = true;
   }
 
   function renderSimilarity(m) {
-    const list = similarFor(m.id);
+    // Die Periode, in der die Person zuletzt saß
+    const last = (m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }]).slice(-1)[0];
+    const per = periodOf(last.to || new Date().toISOString().slice(0, 10)) || PERIODS[0];
+    const list = similarFor(m.id, per.id);
     if (list.length < 4) return null;
     const top = list.slice(0, 3);
     const bottom = list.slice(-3).reverse();
@@ -2584,6 +2704,159 @@ const SHOW_PRONOUNS = true;
       <div class="sim-group">Stimmt am ehesten mit</div>${top.map(line).join("")}
       <div class="sim-group">Stimmt am seltensten mit</div>${bottom.map(line).join("")}`;
     return box;
+  }
+
+  // -- Nähe-Diagramme --
+
+  // Wer in dieser Periode überhaupt vergleichbar ist, nach Fraktion sortiert —
+  // damit die Blöcke in der Matrix den Fraktionen entsprechen.
+  function simNodes(periodId) {
+    const per = PERIODS.find(p => p.id === periodId);
+    const pairs = similarity(periodId);
+    const ids = new Set();
+    Object.entries(pairs).forEach(([k, p]) => {
+      if (p.n >= SIM_MIN) k.split("|").forEach(i => ids.add(i));
+    });
+    return [...ids]
+      .map(id => memberMap[id])
+      .filter(Boolean)
+      .map(m => ({ m, party: partyMap[partyAtDate(m, per.to === "9999-12-31" ? per.from : per.to)] }))
+      .sort((a, b) => {
+        const d = seatOrder.indexOf(a.party ? a.party.id : "") - seatOrder.indexOf(b.party ? b.party.id : "");
+        return d || a.m.name.localeCompare(b.m.name);
+      });
+  }
+
+  function partyAtDate(m, date) {
+    const h = m.partyHistory;
+    if (!h || !h.length) return m.party;
+    const at = h.find(p => (p.from || "0") <= date && (!p.to || p.to > date));
+    return at ? at.party : m.party;
+  }
+
+  function simScore(pairs, a, b) {
+    const p = pairs[a < b ? a + "|" + b : b + "|" + a];
+    return p && p.n >= SIM_MIN ? { s: p.raw / (p.n + SIM_K), n: p.n } : null;
+  }
+
+  // Grün = stimmt zusammen, Rot = stimmt gegeneinander, Grau = zu wenig Daten
+  function simColor(s) {
+    const a = Math.min(1, Math.abs(s) / 0.8);
+    return s >= 0 ? `rgba(79,138,22,${0.12 + a * 0.8})` : `rgba(155,0,0,${0.12 + a * 0.8})`;
+  }
+
+  function drawSimMatrix(el, periodId) {
+    const nodes = simNodes(periodId);
+    const pairs = similarity(periodId);
+    if (nodes.length < 3) {
+      el.innerHTML = '<p class="chart-foot">Für diese Wahlperiode liegen noch zu wenige Einzelstimmen vor.</p>';
+      return;
+    }
+    const W = el.clientWidth || 640;
+    const label = 96;
+    const cell = Math.max(9, Math.min(22, (W - label - 4) / nodes.length));
+    const size = cell * nodes.length;
+
+    let cells = "", ticks = "";
+    nodes.forEach((a, i) => {
+      ticks += `<text class="hm-name" x="${label - 6}" y="${i * cell + cell / 2 + 3}" text-anchor="end"
+                  fill="${a.party ? a.party.color : "#999"}">${a.m.lastName}</text>`;
+      nodes.forEach((b, j) => {
+        if (i === j) {
+          cells += `<rect class="hm-self" x="${label + j * cell}" y="${i * cell}" width="${cell}" height="${cell}"/>`;
+          return;
+        }
+        const r = simScore(pairs, a.m.id, b.m.id);
+        const fill = r ? simColor(r.s) : "var(--bg)";
+        const title = r
+          ? `${a.m.name} / ${b.m.name}: ${r.s >= 0 ? "+" : "−"}${Math.round(Math.abs(r.s) * 100)} bei ${r.n} Vergleichen`
+          : `${a.m.name} / ${b.m.name}: zu wenige Vergleiche`;
+        cells += `<rect x="${label + j * cell}" y="${i * cell}" width="${cell}" height="${cell}"
+                    fill="${fill}"><title>${title}</title></rect>`;
+      });
+    });
+    el.innerHTML = `<svg class="chart heatmap" width="${label + size}" height="${size}"
+        viewBox="0 0 ${label + size} ${size}" role="img" aria-label="Ähnlichkeitsmatrix">
+        ${cells}${ticks}</svg>`;
+  }
+
+  // Kräftebasierte Anordnung, Fruchterman-Reingold. Positive Nähe zieht
+  // zusammen, negative drückt auseinander. Kein Schwellenwert: schwache Kanten
+  // verschwinden über die Deckkraft, nicht über einen Filter.
+  function drawSimGraph(el, periodId) {
+    const nodes = simNodes(periodId).map(n => ({ ...n, x: 0, y: 0, dx: 0, dy: 0 }));
+    const pairs = similarity(periodId);
+    if (nodes.length < 3) {
+      el.innerHTML = '<p class="chart-foot">Für diese Wahlperiode liegen noch zu wenige Einzelstimmen vor.</p>';
+      return;
+    }
+    const idx = {};
+    nodes.forEach((n, i) => { idx[n.m.id] = i; });
+    const edges = [];
+    Object.entries(pairs).forEach(([k, p]) => {
+      if (p.n < SIM_MIN) return;
+      const [a, b] = k.split("|");
+      if (!(a in idx) || !(b in idx)) return;
+      edges.push({ a: nodes[idx[a]], b: nodes[idx[b]], s: p.raw / (p.n + SIM_K), n: p.n });
+    });
+
+    const W = el.clientWidth || 640, H = 420;
+    nodes.forEach((n, i) => {
+      const a = 2 * Math.PI * i / nodes.length;
+      n.x = W / 2 + Math.cos(a) * W / 5;
+      n.y = H / 2 + Math.sin(a) * H / 5;
+    });
+    const k = Math.sqrt(W * H / nodes.length) * 0.55;
+    const STEPS = 400;
+    for (let it = 0; it < STEPS; it++) {
+      const temp = (1 - it / STEPS) * k * 0.4;
+      nodes.forEach(n => { n.dx = 0; n.dy = 0; });
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const d = Math.hypot(dx, dy) || 0.01;
+          const f = k * k / d;
+          a.dx += dx / d * f; a.dy += dy / d * f;
+          b.dx -= dx / d * f; b.dy -= dy / d * f;
+        }
+      }
+      edges.forEach(e => {
+        const dx = e.a.x - e.b.x, dy = e.a.y - e.b.y;
+        const d = Math.hypot(dx, dy) || 0.01;
+        const f = e.s * d * d / k;
+        e.a.dx -= dx / d * f; e.a.dy -= dy / d * f;
+        e.b.dx += dx / d * f; e.b.dy += dy / d * f;
+      });
+      nodes.forEach(n => {
+        const d = Math.hypot(n.dx, n.dy) || 0.01;
+        n.x = Math.max(28, Math.min(W - 28, n.x + n.dx / d * Math.min(d, temp)));
+        n.y = Math.max(22, Math.min(H - 22, n.y + n.dy / d * Math.min(d, temp)));
+      });
+    }
+
+    const lines = edges
+      .slice().sort((p, q) => Math.abs(p.s) - Math.abs(q.s))
+      .map(e => {
+        const a = Math.min(1, Math.abs(e.s) / 0.8);
+        return `<line x1="${e.a.x.toFixed(1)}" y1="${e.a.y.toFixed(1)}"
+                 x2="${e.b.x.toFixed(1)}" y2="${e.b.y.toFixed(1)}"
+                 stroke="${e.s >= 0 ? "#4F8A16" : "#9B0000"}"
+                 stroke-opacity="${(a * a * 0.5).toFixed(3)}"
+                 stroke-width="${(0.4 + a * 2).toFixed(2)}"/>`;
+      }).join("");
+    const dots = nodes.map(n => `
+      <g class="sg-node" transform="translate(${n.x.toFixed(1)},${n.y.toFixed(1)})">
+        <circle r="7" fill="${n.party ? n.party.color : "#999"}"/>
+        <text y="-11" text-anchor="middle">${n.m.lastName}</text>
+        <title>${n.m.name}${n.party ? " · " + n.party.name : ""}</title>
+      </g>`).join("");
+
+    el.innerHTML = `<svg class="chart simgraph" width="${W}" height="${H}"
+        viewBox="0 0 ${W} ${H}" role="img" aria-label="Nähe-Netz">${lines}${dots}</svg>`;
+    el.querySelectorAll(".sg-node").forEach((g, i) => {
+      g.addEventListener("click", () => navigate("/member/" + nodes[i].m.id));
+    });
   }
 
   // Kerndaten zur Person. Bleibt weg, solange nichts hinterlegt ist — die
