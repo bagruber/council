@@ -23976,8 +23976,7 @@
       "absent": 4
     },
     "voters": {
-      "gruber": "yes",
-      "hobmaier": "yes"
+      "gruber": "yes"
     },
     "source": {
       "tier": "tracked",
