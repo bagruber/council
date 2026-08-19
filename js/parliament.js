@@ -537,8 +537,12 @@ const VoteVis = (() => {
     };
   }
 
-  function voteResMap(vote) {
+  function voteResMap(vote, session) {
     const m = {};
+    // Wer laut Anwesenheitsliste gefehlt hat, fehlt auch im Halbrund. Ohne das
+    // stand dort ein Fragezeichen, während Profil und Statistik "abwesend"
+    // sagten — dieselbe Person, zwei Antworten.
+    ((session && session.absent) || []).forEach(id => m[id] = "absent");
     if (vote.type === "named") {
       vote.results.yes   .forEach(id => m[id] = "yes");
       vote.results.no    .forEach(id => m[id] = "no");
@@ -560,12 +564,12 @@ const VoteVis = (() => {
   }
 
   // Build seats from a body definition with `seats: [{occupants:[...]}]`.
-  function buildSeatsFromBody(body, vote, memberMap, partyMap) {
+  function buildSeatsFromBody(body, vote, memberMap, partyMap, session) {
     const cfg = Council.bodyConfigAt(body, vote.date);
     const seats = [];
     let mayor = null;
 
-    const voteRes = voteResMap(vote);
+    const voteRes = voteResMap(vote, session);
 
     // Chair (if defined, e.g. mayor)
     if (cfg.chair) {
@@ -596,8 +600,11 @@ const VoteVis = (() => {
         // committee-style {member, sub}: pick whoever cast a vote, fall back to regular
         const reg = memberMap[seatDef.member];
         const sub = seatDef.sub ? memberMap[seatDef.sub] : null;
-        if (reg && voteRes[reg.id] != null) m = reg;
-        else if (sub && voteRes[sub.id] != null) m = sub;
+        const cast = x => x && voteRes[x.id] != null && voteRes[x.id] !== "absent";
+        if (cast(reg)) m = reg;
+        else if (cast(sub)) m = sub;
+        // Fehlt der Sitzinhaber laut Anwesenheitsliste, sitzt die Vertretung da
+        else if (sub && reg && voteRes[reg.id] === "absent" && voteRes[sub.id] == null) m = sub;
         else m = reg;
       }
       if (!m) { seats.push(null); return; }
@@ -638,7 +645,7 @@ const VoteVis = (() => {
     // pick body-based seating if provided
     let seatData;
     if (options.body) {
-      seatData = buildSeatsFromBody(options.body, vote, memberMap, partyMap);
+      seatData = buildSeatsFromBody(options.body, vote, memberMap, partyMap, options.session);
       if (seatData.rows && !options.rows) options.rows = seatData.rows;
     } else {
       seatData = buildSeatsFromVote(vote, members, parties, seatOrder, memberMap, partyMap);

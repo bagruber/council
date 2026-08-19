@@ -14221,6 +14221,16 @@
       "yes": 10,
       "no": 1,
       "absent": 1
+    },
+    "voters": {
+      "dollinger": "yes",
+      "stanglmaier": "yes",
+      "linz_kilian": "yes",
+      "reif": "yes"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2023-09-21_asylwohnen"
     }
   },
   {
