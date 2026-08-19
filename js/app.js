@@ -392,6 +392,11 @@ const SHOW_PRONOUNS = true;
       renderMemberProfile(path.split("/member/")[1]);
       return;
     }
+    if (path.startsWith("/fraktion/")) {
+      switchTab("gremien");
+      renderFraktion(path.split("/fraktion/")[1]);
+      return;
+    }
     switchTab("themen");
     main.innerHTML = "";
     if (path.startsWith("/topic/")) {
@@ -1485,16 +1490,34 @@ const SHOW_PRONOUNS = true;
     block.appendChild(chartEl);
     container.appendChild(block);
 
+    const hasIndividualData = vote.type === "named"
+                            || (vote.voters && Object.keys(vote.voters).length > 0);
+    const drawSeats = () => {
+      const body = bodyForVote(vote);
+      VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder, body ? { body } : {});
+    };
+
+    // Einstimmig heißt: das Halbrund sagt nichts, was der Balken nicht schon
+    // sagt. Es bleibt eingeklappt — außer jemand war befangen oder enthalten,
+    // denn dann steht im Halbrund etwas, das die Zahlen nicht zeigen.
+    const quiet = hasIndividualData && Council.isUnanimous(vote)
+                  && !(vote.excluded || []).length;
+
     requestAnimationFrame(() => {
-      const hasIndividualData = vote.type === "named"
-                              || (vote.voters && Object.keys(vote.voters).length > 0);
-      if (!hasIndividualData) {
-        VoteVis.drawBar(chartEl, vote.results);
-      } else {
-        const body = bodyForVote(vote);
-        VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder, body ? { body } : {});
-      }
+      if (!hasIndividualData || quiet) VoteVis.drawBar(chartEl, vote.results);
+      else drawSeats();
     });
+
+    if (quiet) {
+      const toggle = document.createElement("button");
+      toggle.className = "vote-expand";
+      toggle.textContent = "Einzelstimmen";
+      toggle.addEventListener("click", () => {
+        toggle.remove();
+        drawSeats();
+      });
+      block.appendChild(toggle);
+    }
   }
 
   // -- Calendar --
@@ -1634,6 +1657,10 @@ const SHOW_PRONOUNS = true;
       renderMemberProfile(hash.split("/member/")[1]);
       return;
     }
+    if (hash.startsWith("/fraktion/")) {
+      renderFraktion(hash.split("/fraktion/")[1]);
+      return;
+    }
     gremienMain.innerHTML = "";
 
     const wrap = document.createElement("div");
@@ -1689,9 +1716,10 @@ const SHOW_PRONOUNS = true;
       const group = grouped[pid];
       if (!group || !group.length) return;
       const party = partyMap[pid];
-      const fh = document.createElement("div");
+      const fh = document.createElement("a");
       fh.className = "faction-head";
-      fh.innerHTML = `<span class="member-dot" style="background:${party.color}"></span><span class="faction-name">${party.name}</span><span class="faction-count">${group.length}</span>`;
+      fh.href = "#/fraktion/" + pid;
+      fh.innerHTML = `<span class="member-dot" style="background:${party.color}"></span><span class="faction-name">${party.name}</span><span class="faction-count">${group.length}</span><svg class="icon faction-go"><use href="#i-chevron_right"/></svg>`;
       factionSec.appendChild(fh);
       group.sort((a, b) => a.name.localeCompare(b.name));
       group.forEach(m => factionSec.appendChild(makeMemberRow(m)));
@@ -2062,6 +2090,9 @@ const SHOW_PRONOUNS = true;
     const facts = renderMemberFacts(m, profile);
     if (facts) wrap.appendChild(facts);
 
+    const sim = renderSimilarity(m);
+    if (sim) wrap.appendChild(sim);
+
     // motions
     if (profile.motions && profile.motions.length) {
       const motionSec = document.createElement("div");
@@ -2376,6 +2407,183 @@ const SHOW_PRONOUNS = true;
     const d = new Date(iso + "T12:00:00");
     d.setDate(d.getDate() + 1);
     return d.toISOString().slice(0, 10);
+  }
+
+  // -- Fraktionszugehörigkeit --
+
+  // Ein Mandat kann die Fraktion wechseln; `partyHistory` hält das fest. Ohne
+  // Historie gilt die aktuelle Partei für das ganze Mandat.
+  function partySpans(m) {
+    const mandate = m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }];
+    const first = mandate[0].from, last = mandate[mandate.length - 1].to;
+    if (!m.partyHistory || !m.partyHistory.length) {
+      return [{ party: m.party, from: first, to: last }];
+    }
+    return m.partyHistory.map(p => ({
+      party: p.party,
+      from: p.from && p.from > first ? p.from : first,
+      to: p.to && (!last || p.to < last) ? p.to : last,
+    }));
+  }
+
+  function factionRoster(pid) {
+    const today = new Date().toISOString().slice(0, 10);
+    const out = [];
+    members.forEach(m => {
+      partySpans(m).filter(s => s.party === pid).forEach(s => {
+        const current = (!s.to || s.to >= today) && Council.memberActiveAt(m, today);
+        out.push({ member: m, span: s, current });
+      });
+    });
+    return out;
+  }
+
+  function renderFraktion(pid) {
+    const party = partyMap[pid];
+    if (!party) { gremienMain.innerHTML = "<p style='padding:40px 24px'>Fraktion nicht gefunden.</p>"; return; }
+    gremienMain.innerHTML = "";
+
+    const wrap = document.createElement("div");
+    wrap.className = "page-wrap";
+
+    const back = document.createElement("a");
+    back.className = "back-link";
+    back.href = "#/gremien";
+    back.innerHTML = '<svg class="icon"><use href="#i-arrow_back"/></svg> Gremien';
+    wrap.appendChild(back);
+
+    const roster = factionRoster(pid);
+    const now = roster.filter(r => r.current);
+    const past = roster.filter(r => !r.current)
+      .sort((a, b) => (b.span.to || "").localeCompare(a.span.to || ""));
+
+    const head = document.createElement("div");
+    head.className = "faction-header";
+    head.innerHTML = `
+      <span class="faction-badge" style="background:${party.color}"></span>
+      <div>
+        <h1>${party.name}</h1>
+        <div class="faction-sub">${now.length} ${now.length === 1 ? "Sitz" : "Sitze"} im Stadtrat
+          · ${roster.length} Personen seit ${roster.reduce((a, r) => r.span.from < a ? r.span.from : a, "9999").slice(0, 4)}</div>
+      </div>`;
+    wrap.appendChild(head);
+
+    const rows = (list, title) => {
+      if (!list.length) return;
+      const h = document.createElement("p");
+      h.className = "section-heading";
+      h.textContent = title;
+      wrap.appendChild(h);
+      list.sort((a, b) => a.member.name.localeCompare(b.member.name));
+      list.forEach(r => {
+        const row = document.createElement("a");
+        row.className = "member-row";
+        row.href = "#/member/" + r.member.id;
+        // Wer die Fraktion gewechselt hat, bringt das mit
+        const other = partySpans(r.member).filter(s => s.party !== pid);
+        const move = other.length
+          ? `<span class="faction-move">${other.map(s => partyMap[s.party] ? partyMap[s.party].name : s.party).join(", ")}</span>`
+          : "";
+        row.innerHTML = `
+          <span class="member-dot" style="background:${party.color}"></span>
+          <span class="member-row-name">${r.member.name}</span>
+          ${move}
+          <span class="member-row-meta">${formatPeriod(r.span.from, r.span.to)}</span>`;
+        wrap.appendChild(row);
+      });
+    };
+    rows(now, "Aktuell");
+    rows(past, "Ehemals");
+
+    gremienMain.appendChild(wrap);
+  }
+
+  // -- Abstimmungsähnlichkeit --
+  //
+  // Verglichen wird nur, wo der Rat geteilt war: bei einstimmigen Beschlüssen
+  // stimmen alle gleich, das trägt keine Information. Je Paar und geteiltem
+  // Votum, bei dem von beiden eine Stimme bekannt ist: +1 gleich, −1 ungleich.
+  // Fehlt von einer Seite die Stimme — abwesend, befangen, unbekannt — zählt
+  // das Votum gar nicht.
+  //
+  // Die Summe wird nicht durch n geteilt, sondern durch (n + K). Damit zieht
+  // eine dünne Grundlage das Ergebnis zur Mitte: zehn von zehn übereinstimmenden
+  // Stimmen ergeben 0,67, fünf von fünf nur 0,50. Genau das ist gewollt —
+  // Abwesenheit schwächt das Maß, statt es zu verzerren.
+  const SIM_K = 5;
+  const SIM_MIN = 5;   // darunter wird nichts ausgewiesen
+  let simCache = null;
+
+  function similarity() {
+    if (simCache) return simCache;
+    const pairs = {};
+    votes.forEach(v => {
+      if (Council.isUnanimous(v)) return;
+      const st = {};
+      if (v.type === "named") {
+        v.results.yes.forEach(id => st[id] = "yes");
+        v.results.no.forEach(id => st[id] = "no");
+      }
+      Object.entries(v.voters || {}).forEach(([id, s]) => {
+        if (s === "yes" || s === "no") st[id] = s;
+      });
+      (v.excluded || []).forEach(e => delete st[e.member]);
+
+      const ids = Object.keys(st);
+      for (let i = 0; i < ids.length; i++) {
+        for (let j = i + 1; j < ids.length; j++) {
+          const key = ids[i] < ids[j] ? ids[i] + "|" + ids[j] : ids[j] + "|" + ids[i];
+          const p = pairs[key] || (pairs[key] = { n: 0, raw: 0 });
+          p.n++;
+          p.raw += st[ids[i]] === st[ids[j]] ? 1 : -1;
+        }
+      }
+    });
+    simCache = pairs;
+    return pairs;
+  }
+
+  function similarFor(id) {
+    const pairs = similarity();
+    const out = [];
+    Object.entries(pairs).forEach(([key, p]) => {
+      const [a, b] = key.split("|");
+      if (a !== id && b !== id) return;
+      if (p.n < SIM_MIN) return;
+      out.push({ other: a === id ? b : a, n: p.n, score: p.raw / (p.n + SIM_K) });
+    });
+    out.sort((x, y) => y.score - x.score);
+    return out;
+  }
+
+  function renderSimilarity(m) {
+    const list = similarFor(m.id);
+    if (list.length < 4) return null;
+    const top = list.slice(0, 3);
+    const bottom = list.slice(-3).reverse();
+
+    const line = e => {
+      const o = memberMap[e.other];
+      const p = o && partyMap[o.party];
+      const pct = Math.round(Math.abs(e.score) * 100);
+      return `<a class="sim-row" href="#/member/${e.other}">
+        <span class="member-dot" style="background:${p ? p.color : "#ccc"}"></span>
+        <span class="sim-name">${o ? o.name : e.other}</span>
+        <span class="sim-bar"><span style="width:${pct}%;background:${e.score >= 0 ? "var(--yes)" : "var(--no)"}"></span></span>
+        <span class="sim-val">${e.score >= 0 ? "+" : "−"}${pct}</span>
+        <span class="sim-n">${e.n}</span></a>`;
+    };
+
+    const box = document.createElement("details");
+    box.className = "profile-section sim-box";
+    box.innerHTML = `
+      <summary>Wer ähnlich stimmt</summary>
+      <p class="sim-note">Nur geteilte Abstimmungen, bei denen von beiden eine Stimme
+        bekannt ist. Die letzte Spalte nennt die Zahl der Vergleiche — je kleiner,
+        desto vorsichtiger ist der Wert zu lesen.</p>
+      <div class="sim-group">Stimmt am ehesten mit</div>${top.map(line).join("")}
+      <div class="sim-group">Stimmt am seltensten mit</div>${bottom.map(line).join("")}`;
+    return box;
   }
 
   // Kerndaten zur Person. Bleibt weg, solange nichts hinterlegt ist — die
