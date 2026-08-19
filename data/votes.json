@@ -16159,29 +16159,39 @@
     "date": "2024-06-10",
     "title": "Kindergartengebühren – Erhöhung 30 €",
     "text": "Kindergarten-Gebühren ab Kita-Jahr 2024/25 um 30 € pro Buchungskategorie erhöht (10:8).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 10,
-      "no": 8,
-      "absent": 7
-    },
-    "voters": {
-      "dollinger": "yes",
-      "weber": "yes",
-      "haberl": "yes",
-      "pschorr": "yes",
-      "fincke": "yes",
-      "kaestl": "yes",
-      "gruebl": "yes",
-      "grundner": "yes",
-      "kieninger": "yes",
-      "linz_karin": "no",
-      "tristl": "no",
-      "strobl": "no",
-      "gruber": "no",
-      "von_pressentin": "no",
-      "linz_kilian": "no",
-      "beibl": "no"
+      "yes": [
+        "dollinger",
+        "weber",
+        "haberl",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "linz_karin",
+        "tristl",
+        "strobl",
+        "gruber",
+        "reif",
+        "von_pressentin",
+        "linz_kilian",
+        "beibl"
+      ],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beubl",
+        "heinz",
+        "welter"
+      ]
     },
     "source": {
       "tier": "tracked",
@@ -16196,31 +16206,41 @@
     "date": "2024-06-10",
     "title": "Geschwisterermäßigung abschaffen",
     "text": "Antrag, die Geschwisterermäßigung aufzuheben, wird mit 7:11 abgelehnt.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 7,
-      "no": 11,
-      "absent": 7
+      "yes": [
+        "dollinger",
+        "weber",
+        "haberl",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr"
+      ],
+      "no": [
+        "linz_karin",
+        "tristl",
+        "fincke",
+        "kaestl",
+        "strobl",
+        "gruber",
+        "gruebl",
+        "reif",
+        "von_pressentin",
+        "linz_kilian",
+        "beibl"
+      ],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beubl",
+        "heinz",
+        "welter"
+      ]
     },
     "result": "rejected",
-    "voters": {
-      "dollinger": "yes",
-      "weber": "yes",
-      "haberl": "yes",
-      "pschorr": "yes",
-      "grundner": "yes",
-      "kieninger": "yes",
-      "linz_karin": "no",
-      "tristl": "no",
-      "fincke": "no",
-      "kaestl": "no",
-      "strobl": "no",
-      "gruber": "no",
-      "gruebl": "no",
-      "von_pressentin": "no",
-      "linz_kilian": "no",
-      "beibl": "no"
-    },
     "source": {
       "tier": "tracked",
       "by": "gruber",
