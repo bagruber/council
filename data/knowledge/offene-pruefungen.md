@@ -11,7 +11,7 @@ Wenn geprüft: Flag entfernen und die Zeile hier streichen.
 | `sr_20250224_01` Kostenloser Hallenbadeintritt für Kinder | 24.02.2025 | Die Ja-Seite außer Beibl: fresh, Linke, Grüne, Beubl (8 Personen) | eigene Notizen |
 
 Bestätigt ist an diesem Votum nur, was der Merkur-Artikel vom 24.02.2025 nennt:
-Beibl dafür, Dollinger dagegen.
+Beibl dafür, Dollinger und Pschorr dagegen.
 
 Die abgeleiteten acht ergeben zusammen mit Beibl exakt die neun Ja-Stimmen der
 Niederschrift — das stützt die Notiz, beweist sie aber nicht. Denkbar wäre, dass
