@@ -1494,7 +1494,9 @@ const SHOW_PRONOUNS = true;
     let html = parts.join(" · ");
     const art = vote.source.pressId && pressMap[vote.source.pressId];
     if (art) {
-      html += ` · <a href="${art.url}" target="_blank" rel="noopener">durch Presse bestätigt</a>`;
+      // Bei Stufe "press" ist der Artikel die Quelle, nicht die Bestätigung
+      const what = vote.source.tier === "press" ? "zum Artikel" : "durch Presse bestätigt";
+      html += ` · <a href="${art.url}" target="_blank" rel="noopener">${what}</a>`;
     } else if (vote.source.pressVerified) {
       html += " · durch Presse bestätigt";
     }

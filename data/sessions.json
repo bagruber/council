@@ -1329,6 +1329,10 @@
         "voteIds": [
           "sr_20201026_03",
           "sr_20201026_04"
+        ],
+        "press": [
+          "mz_2020-10-26_plan-tiefgarage",
+          "merkur_2020-10-26_plan-tiefgarage"
         ]
       },
       {
@@ -1769,6 +1773,9 @@
           "sr_20210208_03",
           "sr_20210208_04",
           "sr_20210208_05"
+        ],
+        "press": [
+          "mz_2021-02-08_ganztagsbetreuung"
         ]
       },
       {
@@ -3264,6 +3271,9 @@
         "voteIds": [
           "sr_20211025_04",
           "sr_20211025_05"
+        ],
+        "press": [
+          "sz_2021-10-25_hundesteuer"
         ]
       },
       {
@@ -4623,7 +4633,10 @@
         "number": 5,
         "title": "Auf dem Plan – Grundsatzentscheidung Granitpflaster (abgelehnt 11:10)",
         "topicId": "t3",
-        "voteId": "sr_20230112_02"
+        "voteId": "sr_20230112_02",
+        "press": [
+          "sz_2023-01-12_granitpflaster"
+        ]
       },
       {
         "number": 6,
@@ -5095,7 +5108,10 @@
         "number": "4.1",
         "title": "Schloss-Aschwiese aus Untersuchungsgebiet (abgelehnt 9:13)",
         "topicId": "t13",
-        "voteId": "sr_20230417_01"
+        "voteId": "sr_20230417_01",
+        "press": [
+          "merkur_2023-04-17_schloss-aschwiese"
+        ]
       },
       {
         "number": "4.2",
@@ -7328,7 +7344,11 @@
         "number": 7,
         "title": "Hallenbad – Freier Eintritt Kinder Weihnachtsferien (vertagt 12:9)",
         "topicId": "t16",
-        "voteId": "sr_20241104_05"
+        "voteId": "sr_20241104_05",
+        "press": [
+          "merkur_2024-11-04_hallenbad-kinder",
+          "mz_2024-11-04_hallenbad-kinder"
+        ]
       },
       {
         "number": 8,
@@ -9373,7 +9393,10 @@
       {
         "number": 7,
         "title": "Aufstellung Bebauungsplan Aich",
-        "voteId": "sr_20260223_04"
+        "voteId": "sr_20260223_04",
+        "press": [
+          "merkur_2026-02-23_bplan-aich"
+        ]
       },
       {
         "number": 8,
