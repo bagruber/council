@@ -7809,11 +7809,44 @@
     "date": "2021-10-11",
     "title": "Erlass der Verordnung über einen verkaufsoffenen Sonntag am 17. Oktober 2021",
     "text": "Der Stadtrat beschließt den Erlass der Verordnung über den verkaufsoffenen Sonntag am 17. Oktober 2021.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 23,
-      "no": 1,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "john"
+      ],
+      "absent": [
+        "wittmann"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
     }
   },
   {
@@ -9610,6 +9643,14 @@
       "yes": 17,
       "no": 1,
       "absent": 7
+    },
+    "voters": {
+      "john": "no"
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
     }
   },
   {
@@ -21582,12 +21623,15 @@
       "absent": 6
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "grundner": "no",
+      "lauterbach": "no",
+      "reif": "no",
+      "beibl": "yes"
     },
     "source": {
-      "tier": "tracked",
-      "by": "gruber",
-      "pressVerified": false
+      "tier": "press",
+      "pressId": "merkur_2025-06-23_alte-polizei"
     }
   },
   {
@@ -21936,7 +21980,11 @@
       "absent": 3
     },
     "voters": {
-      "gruber": "no"
+      "gruber": "no",
+      "pschorr": "yes",
+      "grundner": "yes",
+      "lauterbach": "yes",
+      "kieninger": "yes"
     },
     "source": {
       "tier": "tracked",
@@ -23861,8 +23909,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20251110_02",
@@ -23879,8 +23926,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20251110_03",
@@ -23897,8 +23943,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20251110_04",
@@ -23915,8 +23960,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "inferable": false
+    }
   },
   {
     "id": "sr_20251110_05",
@@ -23962,8 +24006,7 @@
         "member": "becher_j",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20251110_07",
@@ -23986,8 +24029,7 @@
         "member": "becher_j",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20251110_08",
@@ -24010,8 +24052,7 @@
         "member": "becher_j",
         "reason": "kurzfristig abwesend"
       }
-    ],
-    "inferable": false
+    ]
   },
   {
     "id": "sr_20251201_01",
