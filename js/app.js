@@ -2533,11 +2533,14 @@ const SHOW_PRONOUNS = true;
         const move = other.length
           ? `<span class="faction-move">${other.map(s => partyMap[s.party] ? partyMap[s.party].name : s.party).join(", ")}</span>`
           : "";
+        // Der Bürgermeister sitzt kraft Amtes im Rat, nicht über die Liste
+        const office = r.member.role === "mayor"
+          ? `<span class="faction-office">Bürgermeister</span>` : "";
         row.innerHTML = `
           <span class="member-dot" style="background:${party.color}"></span>
           <span class="member-row-name">${r.member.name}</span>
-          ${move}
-          <span class="member-row-meta">${formatPeriod(r.span.from, r.span.to)}</span>`;
+          ${office}${move}
+          <span class="member-row-meta">${formatMonthPeriod(r.span.from, r.span.to)}</span>`;
         wrap.appendChild(row);
       });
     };
@@ -2566,8 +2569,11 @@ const SHOW_PRONOUNS = true;
       total++;
       const counts = {};
       group.forEach(([, s]) => counts[s] = (counts[s] || 0) + 1);
-      const majority = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
       if (Object.keys(counts).length === 1) united++;
+      // Wer abweicht, weicht von einer Mehrheit ab. Bei zwei Stimmen gibt es
+      // keine — dort steht Aussage gegen Aussage.
+      if (group.length < 3) return;
+      const majority = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
       group.forEach(([id, s]) => {
         const d = dev[id] || (dev[id] = { n: 0, off: 0 });
         d.n++;
@@ -2592,10 +2598,13 @@ const SHOW_PRONOUNS = true;
         und mindestens zwei Stimmen aus der Fraktion bekannt sind</span></div>
       ${ranked.length ? `<div class="cohesion-dev">${ranked.map(r => {
         const m = memberMap[r.id];
-        return `<a href="#/member/${r.id}"><span>${m ? m.name : r.id}</span>
+        const office = m && m.role === "mayor"
+          ? ` <span class="faction-office">Bürgermeister</span>` : "";
+        return `<a href="#/member/${r.id}"><span>${m ? m.name : r.id}</span>${office}
                   <b>${Math.round(r.share * 100)} %</b>
                   <small>${r.off} von ${r.n}</small></a>`;
-      }).join("")}<p>weicht am häufigsten von der eigenen Fraktion ab</p></div>` : ""}`;
+      }).join("")}<p>weicht am häufigsten von der Mehrheit der eigenen Fraktion ab —
+        gezählt bei Beschlüssen mit mindestens drei bekannten Stimmen aus der Fraktion</p></div>` : ""}`;
     return box;
   }
 
@@ -2995,6 +3004,21 @@ const SHOW_PRONOUNS = true;
   function formatDate(iso) {
     const d = new Date(iso + "T00:00:00");
     return d.toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" });
+  }
+
+  // Fraktionszugehörigkeit endet selten zum Jahreswechsel. "2014–2025" liest
+  // sich, als wäre Dollinger das ganze Jahr 2025 noch bei den FW gewesen —
+  // tatsächlich war im Januar Schluss.
+  const MON = ["", "Jan.", "Feb.", "März", "Apr.", "Mai", "Juni",
+               "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez."];
+  function monthLabel(iso) {
+    return MON[+iso.slice(5, 7)] + " " + iso.slice(0, 4);
+  }
+
+  function formatMonthPeriod(from, to) {
+    if (!from) return to ? "bis " + monthLabel(to) : "";
+    if (!to) return "seit " + monthLabel(from);
+    return monthLabel(from) + " – " + monthLabel(to);
   }
 
   function formatPeriod(from, to) {
