@@ -4635,7 +4635,8 @@
         "topicId": "t3",
         "voteId": "sr_20230112_02",
         "press": [
-          "sz_2023-01-12_granitpflaster"
+          "sz_2023-01-12_granitpflaster",
+          "sz_2023-01-12_pflaster-mehrkosten"
         ]
       },
       {
@@ -5189,7 +5190,10 @@
       {
         "number": "6.1",
         "title": "Erhöhung Ausschusssitze BPU/HVFA (abgelehnt 8:12)",
-        "voteId": "sr_20230424_04"
+        "voteId": "sr_20230424_04",
+        "press": [
+          "merkur_2023-04-24_ausschussgroesse"
+        ]
       },
       {
         "number": 7,
