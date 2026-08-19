@@ -11150,10 +11150,17 @@
     "result": "rejected",
     "source": {
       "tier": "press",
-      "pressId": "sz_2023-01-12_granitpflaster"
+      "pressId": [
+        "sz_2023-01-12_granitpflaster",
+        "sz_2023-01-12_pflaster-mehrkosten"
+      ]
     },
     "voters": {
-      "dollinger": "yes"
+      "dollinger": "yes",
+      "heinz": "yes",
+      "hadersdorfer": "yes",
+      "weber": "yes",
+      "haberl": "yes"
     }
   },
   {
@@ -12722,7 +12729,19 @@
       "no": 12,
       "absent": 5
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "weber": "no",
+      "pschorr": "no",
+      "dollinger": "no",
+      "kieninger": "no",
+      "kaestl": "yes",
+      "gruebl": "yes"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2023-04-24_ausschussgroesse"
+    }
   },
   {
     "id": "sr_20230424_05",
@@ -16049,11 +16068,44 @@
     "date": "2024-06-10",
     "title": "Arbeitsmarktzulage Erzieher/Kinderpfleger",
     "text": "Pädagogisches Personal in Kindertageseinrichtungen erhält ab 01.09.2024 monatlich 120 € Arbeitsmarktzulage für zunächst zwei Jahre (15:3).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 15,
-      "no": 3,
-      "absent": 7
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "grundner",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "kaestl",
+        "strobl"
+      ],
+      "no": [
+        "tristl",
+        "fincke",
+        "lauterbach"
+      ],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beubl",
+        "heinz",
+        "welter"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
     }
   },
   {
@@ -16112,6 +16164,29 @@
       "yes": 10,
       "no": 8,
       "absent": 7
+    },
+    "voters": {
+      "dollinger": "yes",
+      "weber": "yes",
+      "haberl": "yes",
+      "pschorr": "yes",
+      "fincke": "yes",
+      "kaestl": "yes",
+      "gruebl": "yes",
+      "grundner": "yes",
+      "kieninger": "yes",
+      "linz_karin": "no",
+      "tristl": "no",
+      "strobl": "no",
+      "gruber": "no",
+      "von_pressentin": "no",
+      "linz_kilian": "no",
+      "beibl": "no"
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
     }
   },
   {
@@ -16127,7 +16202,30 @@
       "no": 11,
       "absent": 7
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "dollinger": "yes",
+      "weber": "yes",
+      "haberl": "yes",
+      "pschorr": "yes",
+      "grundner": "yes",
+      "kieninger": "yes",
+      "linz_karin": "no",
+      "tristl": "no",
+      "fincke": "no",
+      "kaestl": "no",
+      "strobl": "no",
+      "gruber": "no",
+      "gruebl": "no",
+      "von_pressentin": "no",
+      "linz_kilian": "no",
+      "beibl": "no"
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
   },
   {
     "id": "sr_20240610_06",
@@ -16212,14 +16310,39 @@
     "date": "2024-06-10",
     "title": "Tempo-30-Zone Wohngebiet",
     "text": "Wohngebiet zwischen Banater-, Neustadt-, Sudetenland- und Neuer Industriestraße als Tempo-30-Zone ausgewiesen (13:5).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 13,
-      "no": 5,
-      "absent": 7
-    },
-    "voters": {
-      "gruber": "yes"
+      "yes": [
+        "dollinger",
+        "weber",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "kaestl",
+        "strobl"
+      ],
+      "no": [
+        "linz_karin",
+        "haberl",
+        "tristl",
+        "fincke",
+        "grundner"
+      ],
+      "absent": [
+        "hadersdorfer",
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "beubl",
+        "heinz",
+        "welter"
+      ]
     },
     "source": {
       "tier": "tracked",
@@ -21919,21 +22042,59 @@
     "date": "2025-07-28",
     "title": "Abbruchbeschluss Wachbaracken aufheben",
     "text": "Der Stadtrat hebt den Beschluss vom 10.12.2012 zum Abbruch der Wachbaracken an der Schlesierstraße 3 und 5 auf. Stattdessen soll eine denkmalgerechte Sanierung und Erhaltung angestrebt werden. Ein Nutzungskonzept wird erarbeitet.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 19,
-      "no": 1,
-      "absent": 5
-    },
-    "voters": {
-      "gruber": "yes",
-      "hobmaier": "yes"
+      "yes": [
+        "dollinger",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "gruber",
+        "hobmaier",
+        "welter",
+        "strobl"
+      ],
+      "no": [
+        "haberl"
+      ],
+      "absent": [
+        "stanglmaier",
+        "becher_a",
+        "linz_karin",
+        "fincke",
+        "kaestl"
+      ]
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
-    }
+    },
+    "excluded": [
+      {
+        "member": "linz_karin",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "fincke",
+        "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "kaestl",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
   },
   {
     "id": "sr_20250728_04",

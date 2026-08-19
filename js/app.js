@@ -1502,9 +1502,16 @@ const SHOW_PRONOUNS = true;
     const confirm = vote.source.tier === "press" ? "zum Artikel"
       : vote.source.pressScope === "full" ? "durch Presse bestätigt"
       : "teilweise durch Presse bestätigt";
-    const art = vote.source.pressId && pressMap[vote.source.pressId];
-    if (art) {
-      html += ` · <a href="${art.url}" target="_blank" rel="noopener">${confirm}</a>`;
+    // Eine Abstimmung kann auf mehreren Artikeln ruhen — dann bekommt jeder
+    // seinen eigenen Link, mit dem Medium als Beschriftung.
+    const ids = [].concat(vote.source.pressId || []);
+    const arts = ids.map(id => pressMap[id]).filter(Boolean);
+    if (arts.length === 1) {
+      html += ` · <a href="${arts[0].url}" target="_blank" rel="noopener">${confirm}</a>`;
+    } else if (arts.length > 1) {
+      html += " · " + confirm + ": " + arts.map(a =>
+        `<a href="${a.url}" target="_blank" rel="noopener">${
+          (mediaMap[a.media] || {}).name || a.media}</a>`).join(", ");
     } else if (vote.source.pressVerified) {
       html += " · " + confirm;
     }
