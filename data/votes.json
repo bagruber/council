@@ -18482,8 +18482,8 @@
     "sessionId": "sr_20241021",
     "topicId": null,
     "date": "2024-10-21",
-    "title": "Schaffung Stelle Jugendreferent",
-    "text": "Schaffung der Funktion Jugendreferent (15:2).",
+    "title": "Schaffung eines Jugendbeauftragten",
+    "text": "Die Funktion des Jugendreferenten wird in einen Jugendbeauftragten umgeformt, der das Amt auch ohne Stadtratsmandat weiterführen kann (15:2).",
     "type": "anonymous",
     "results": {
       "yes": 15,
@@ -18495,13 +18495,19 @@
       "hobmaier": "yes",
       "pschorr": "no",
       "strobl": "yes",
-      "beubl": "yes"
+      "beubl": "yes",
+      "linz_kilian": "yes",
+      "beibl": "yes",
+      "becher_a": "yes",
+      "von_pressentin": "yes",
+      "dollinger": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": true,
-      "pressId": "merkur_2024-10-21_jugendbeauftragter"
+      "pressId": "merkur_2024-10-21_jugendbeauftragter",
+      "provisional": true
     }
   },
   {

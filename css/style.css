@@ -2960,6 +2960,12 @@ a.tier-chip.on {
 .sim-box summary::before { content: "▸ "; color: var(--text-muted); }
 .sim-box[open] summary::before { content: "▾ "; }
 
+.sim-period {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
 .sim-note {
   margin: 8px 0 4px;
   font-size: 0.74rem;
@@ -3037,15 +3043,15 @@ a.tier-chip.on {
 .heatmap { max-width: 100%; height: auto; }
 .hm-name { font-size: 9px; font-weight: 600; }
 
-/* Paare, die es nie gab: ausgewaschenes Gold statt Grau. Sie sind nicht
-   unbekannt, sondern unmöglich — und das ist ein anderer Zustand als eine
-   Lücke, auch wenn beides nach "kein Wert" aussieht. */
-.hm-gap-mark {
-  font-size: 10px;
-  fill: var(--accent-text);
-  opacity: 0.6;
-  pointer-events: none;
-}
+/* Paare, die es nie gab: goldene Schraffur auf Weiss. Sie sind nicht unbekannt,
+   sondern unmöglich — und das ist ein anderer Zustand als eine Lücke, auch wenn
+   beides nach "kein Wert" aussieht. Die Umrandung hält die Zelle zusammen,
+   sonst laufen benachbarte Schraffuren ineinander. */
+.hm-gap { stroke: var(--accent); stroke-width: 0.6; stroke-opacity: 0.45; }
+
+/* Der Fraktionsblock, an der Diagonale gespiegelt */
+.hm-frame { fill: none; stroke-width: 1.6; stroke-opacity: 0.75; }
+.hm-frame-label { font-size: 8.5px; font-weight: 600; }
 
 .hm-legend {
   display: flex;
@@ -3072,7 +3078,18 @@ a.tier-chip.on {
   background: linear-gradient(to right,
     rgba(155,0,0,0.85), var(--bg) 50%, rgba(79,138,22,0.85));
 }
-.hm-key-gap  { background: var(--gap); }
+.hm-key-gap {
+  background: repeating-linear-gradient(45deg,
+    var(--accent) 0 2px, #fff 2px 5px);
+  border-color: var(--accent);
+}
+.hm-key-frame {
+  border: none;
+  border-top: 2px solid var(--text-muted);
+  border-right: 2px solid var(--text-muted);
+  height: 10px;
+  width: 18px;
+}
 .hm-key-none { background: var(--bg); }
 
 .simgraph { max-width: 100%; height: auto; }
