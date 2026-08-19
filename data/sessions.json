@@ -5412,7 +5412,10 @@
       {
         "number": "4.1",
         "title": "Mietanpassung Sudetenlandstr. (15 %; 12:10)",
-        "voteId": "sr_20230626_02"
+        "voteId": "sr_20230626_02",
+        "press": [
+          "merkur_2023-06-26_mieterhoehung"
+        ]
       },
       {
         "number": "4.2",
