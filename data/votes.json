@@ -18492,12 +18492,16 @@
     },
     "voters": {
       "gruber": "yes",
-      "hobmaier": "yes"
+      "hobmaier": "yes",
+      "pschorr": "no",
+      "strobl": "yes",
+      "beubl": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
-      "pressVerified": false
+      "pressVerified": true,
+      "pressId": "merkur_2024-10-21_jugendbeauftragter"
     }
   },
   {

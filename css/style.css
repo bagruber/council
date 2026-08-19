@@ -15,6 +15,8 @@
   --accent-text: #6E5A30;
   --accent-light: #E8D5A3;
   --bg: #FAF7F2;
+  /* Ausgewaschenes Gold fuer Paare, die es nie geben konnte */
+  --gap: #EFE4C9;
   --surface: #fff;
   --text: #1C1C1C;
   --text-muted: #6F6F6F;
@@ -3034,7 +3036,44 @@ a.tier-chip.on {
 
 .heatmap { max-width: 100%; height: auto; }
 .hm-name { font-size: 9px; font-weight: 600; }
-.hm-self { fill: var(--border); }
+
+/* Paare, die es nie gab: ausgewaschenes Gold statt Grau. Sie sind nicht
+   unbekannt, sondern unmöglich — und das ist ein anderer Zustand als eine
+   Lücke, auch wenn beides nach "kein Wert" aussieht. */
+.hm-gap-mark {
+  font-size: 10px;
+  fill: var(--accent-text);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hm-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.hm-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.hm-legend i {
+  width: 30px;
+  height: 12px;
+  border-radius: 1px;
+  border: 1px solid var(--border);
+  font-style: normal;
+  font-size: 9px;
+  line-height: 10px;
+  text-align: center;
+  color: var(--accent-text);
+}
+.hm-key-scale {
+  border-color: transparent;
+  background: linear-gradient(to right,
+    rgba(155,0,0,0.85), var(--bg) 50%, rgba(79,138,22,0.85));
+}
+.hm-key-gap  { background: var(--gap); }
+.hm-key-none { background: var(--bg); }
 
 .simgraph { max-width: 100%; height: auto; }
 .simgraph text {

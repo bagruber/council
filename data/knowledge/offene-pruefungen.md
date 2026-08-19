@@ -37,3 +37,10 @@ Diese stehen nirgends im Bestand, sollen aber nicht verlorengehen.
   Abstimmung zählt sieben.
 - **`sr_20230626_03` Garagengebühr** (21:1). Ginge auf, wenn die eine
   Gegenstimme bekannt wäre.
+- **`sr_20241021_03` Jugendreferent/Jugendbeauftragter** (15:2, 21.10.2024).
+  Belegt aus dem Merkur-Artikel: Pschorr dagegen; fresh, Linke und Beubl dafür.
+  Notiz, noch nicht eingetragen: dafür ebenfalls die anwesenden ÖDP, Grüne,
+  Fincke (FDP) und Dollinger. Nicht übernommen, weil unklar bleibt, wer von den
+  Grünen anwesend war — die Sitzungsliste kennt vier Abwesende, die Abstimmung
+  zählt acht. Und Fincke steht in der Sitzungsliste als abwesend, kann also
+  nicht mitgestimmt haben.

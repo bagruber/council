@@ -1072,8 +1072,7 @@ const SHOW_PRONOUNS = true;
 
     periodCard(main, "Nähe-Matrix",
       "Zeilen und Spalten nach Fraktion sortiert — die Blöcke an der Diagonale sind die Fraktionen. "
-      + "Gold schraffiert: die beiden saßen nie gleichzeitig im Rat, meist Vorgänger und Nachfolger "
-      + "auf demselben Sitz. Leer: sie saßen zusammen, aber es ist zu wenig bekannt.",
+      + "Nur die untere Hälfte, die obere wäre ihr Spiegelbild.",
       drawSimMatrix);
     periodCard(main, "Nähe-Netz",
       "Alle Kanten, ohne Schwellenwert: schwache Verbindungen verblassen, statt zu verschwinden. "
@@ -2973,18 +2972,20 @@ const SHOW_PRONOUNS = true;
     }
     const W = el.clientWidth || 640;
     const spread = simSpread(pairs);
-    // Links die Zeilennamen, rechts oben laufen dieselben Namen als
-    // Spaltenbeschriftung in die freigewordene Hälfte hinein.
-    const label = 92, tail = 86;
-    const cell = Math.max(9, Math.min(22, (W - label - tail - 4) / nodes.length));
+    // Zeilennamen links, dieselben Namen gekippt an der Unterkante als
+    // Spaltenbeschriftung. Die Hypotenuse bleibt frei.
+    const label = 92, foot = 78;
+    const cell = Math.max(9, Math.min(22, (W - label - 4) / nodes.length));
     const size = cell * nodes.length;
 
     let cells = "", ticks = "";
     nodes.forEach((a, i) => {
       const color = a.party ? a.party.color : "#999";
-      const y = i * cell + cell / 2 + 3;
-      ticks += `<text class="hm-name" x="${label - 6}" y="${y}" text-anchor="end" fill="${color}">${a.m.lastName}</text>`
-             + `<text class="hm-name" x="${label + (i + 1) * cell + 5}" y="${y}" fill="${color}">${a.m.lastName}</text>`;
+      ticks += `<text class="hm-name" x="${label - 6}" y="${i * cell + cell / 2 + 3}"
+                  text-anchor="end" fill="${color}">${a.m.lastName}</text>`
+             + `<text class="hm-name" text-anchor="end" fill="${color}"
+                  transform="rotate(-90 ${label + i * cell + cell / 2 + 3} ${size + 6})"
+                  x="${label + i * cell + cell / 2 + 3}" y="${size + 6}">${a.m.lastName}</text>`;
 
       // Nur die untere Hälfte: die obere sagte dasselbe noch einmal
       for (let j = 0; j < i; j++) {
@@ -2992,28 +2993,32 @@ const SHOW_PRONOUNS = true;
         const p = pairs[a.m.id < b.m.id ? a.m.id + "|" + b.m.id : b.m.id + "|" + a.m.id];
         const r = simScore(pairs, a.m.id, b.m.id);
         const never = !p || !p.joint;
-        const fill = r ? simColor(r.s, spread) : never ? "url(#hm-gap)" : "var(--bg)";
+        const x = label + j * cell, y = i * cell;
+        const fill = r ? simColor(r.s, spread) : never ? "var(--gap)" : "var(--bg)";
         const title = r
           ? `${a.m.name} / ${b.m.name}: ${r.s >= 0 ? "+" : "−"}${Math.round(Math.abs(r.s) * 100)} `
             + `aus ${r.n} bekannten von ${r.joint} gemeinsamen Beschlüssen`
           : never
             ? `${a.m.name} / ${b.m.name}: saßen nie gleichzeitig im Rat`
             : `${a.m.name} / ${b.m.name}: nur ${(p && p.n) || 0} von ${p.joint} gemeinsamen Beschlüssen bekannt`;
-        cells += `<rect x="${label + j * cell}" y="${i * cell}" width="${cell}" height="${cell}"
+        cells += `<rect x="${x}" y="${y}" width="${cell}" height="${cell}"
                     fill="${fill}"><title>${title}</title></rect>`;
+        // Das Zeichen trägt die Aussage, wenn die Fläche zu klein für Farbe ist
+        if (never && cell >= 12) {
+          cells += `<text class="hm-gap-mark" x="${x + cell / 2}" y="${y + cell / 2 + 3}"
+                      text-anchor="middle">∅</text>`;
+        }
       }
     });
 
-    // Schraffur für Paare, die es nie gab — sie sind nicht unbekannt, sondern
-    // unmöglich, und das soll anders aussehen als eine Lücke.
-    const defs = `<defs><pattern id="hm-gap" width="4" height="4"
-        patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-        <rect width="4" height="4" fill="var(--bg)"/>
-        <line x1="0" y1="0" x2="0" y2="4" stroke="var(--accent)" stroke-width="1.4" opacity="0.55"/>
-      </pattern></defs>`;
-    el.innerHTML = `<svg class="chart heatmap" width="${label + size + tail}" height="${size}"
-        viewBox="0 0 ${label + size + tail} ${size}" role="img" aria-label="Ähnlichkeitsmatrix">
-        ${defs}${cells}${ticks}</svg>`;
+    el.innerHTML = `<svg class="chart heatmap" width="${label + size}" height="${size + foot}"
+        viewBox="0 0 ${label + size} ${size + foot}" role="img" aria-label="Ähnlichkeitsmatrix">
+        ${cells}${ticks}</svg>`
+      + `<div class="hm-legend">
+           <span><i class="hm-key-scale"></i>stimmt gegeneinander … zusammen</span>
+           <span><i class="hm-key-gap">∅</i>saßen nie gleichzeitig im Rat</span>
+           <span><i class="hm-key-none"></i>zu wenig bekannt</span>
+         </div>`;
   }
 
   // Kräftebasierte Anordnung, Fruchterman-Reingold. Positive Nähe zieht
