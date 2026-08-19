@@ -2983,9 +2983,11 @@ main {
   font-variant-numeric: tabular-nums;
   font-size: 0.68rem;
   color: var(--text-muted);
-  width: 20px;
+  width: 46px;
   text-align: right;
 }
+/* Der Nenner tritt zurück: er qualifiziert die Zahl, er ist nicht die Zahl */
+.sim-n i { font-style: normal; opacity: 0.55; }
 
 /* -- Nähe-Diagramme -- */
 

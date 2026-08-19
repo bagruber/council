@@ -1070,17 +1070,19 @@ const SHOW_PRONOUNS = true;
       + "Mitte gezogen werden. Paare unter fünf Vergleichen bleiben leer.";
     main.appendChild(intro);
 
-    main.appendChild(periodCard("Nähe-Matrix",
+    periodCard(main, "Nähe-Matrix",
       "Zeilen und Spalten nach Fraktion sortiert — die Blöcke auf der Diagonale sind die Fraktionen.",
-      drawSimMatrix));
-    main.appendChild(periodCard("Nähe-Netz",
+      drawSimMatrix);
+    periodCard(main, "Nähe-Netz",
       "Alle Kanten, ohne Schwellenwert: schwache Verbindungen verblassen, statt zu verschwinden. "
       + "Grün zieht zusammen, rot drückt auseinander. Klick öffnet das Profil.",
-      drawSimGraph));
+      drawSimGraph);
   }
 
-  // Kartenrahmen mit Umschalter für die Wahlperiode
-  function periodCard(title, foot, drawFn) {
+  // Kartenrahmen mit Umschalter für die Wahlperiode. Wird sofort eingehängt,
+  // weil die Breite erst im Dokument messbar ist — und weil ein nachgereichtes
+  // Diagramm die Seite unter dem Finger wachsen lässt.
+  function periodCard(parent, title, foot, drawFn) {
     const card = document.createElement("div");
     card.className = "chart-card";
     card.innerHTML = `<h3>${title}</h3>
@@ -1101,8 +1103,10 @@ const SHOW_PRONOUNS = true;
         drawFn(chartEl, btn.dataset.p);
       });
     });
-    requestAnimationFrame(() => drawFn(chartEl, PERIODS[0].id));
-    return card;
+    parent.appendChild(card);
+    drawFn(chartEl, PERIODS[0].id);
+    // Höhe festhalten, sonst springt die Seite beim Periodenwechsel
+    chartEl.style.minHeight = chartEl.offsetHeight + "px";
   }
 
   // -- Datenlage: was liegt zu welcher Sitzung vor --
@@ -2653,15 +2657,29 @@ const SHOW_PRONOUNS = true;
     const per = PERIODS.find(p => p.id === periodId) || PERIODS[0];
     if (simCaches[per.id]) return simCaches[per.id];
     const pairs = {};
+    const key = (a, b) => a < b ? a + "|" + b : b + "|" + a;
+    const bucket = k => pairs[k] || (pairs[k] = { n: 0, raw: 0, joint: 0 });
     votes.forEach(v => {
       if (Council.isUnanimous(v)) return;
       if (v.date < per.from || v.date > per.to) return;
+      const session = sessionMap[v.sessionId];
+
+      // Gelegenheit: beide saßen im Saal und waren stimmberechtigt. Das ist der
+      // Nenner, der zeigt, wie dünn die Kenntnis ist — 19 Vergleiche aus 144
+      // gemeinsamen Beschlüssen liest sich anders als 19 aus 25.
+      const part = members.filter(m => {
+        const s = Council.voteStatus(m.id, v, session, m);
+        return s && s !== "absent" && s !== "excluded"
+                 && s !== "abstained" && s !== "restricted";
+      }).map(m => m.id);
+      for (let i = 0; i < part.length; i++)
+        for (let j = i + 1; j < part.length; j++) bucket(key(part[i], part[j])).joint++;
+
       const st = stances(v);
       const ids = Object.keys(st);
       for (let i = 0; i < ids.length; i++) {
         for (let j = i + 1; j < ids.length; j++) {
-          const key = ids[i] < ids[j] ? ids[i] + "|" + ids[j] : ids[j] + "|" + ids[i];
-          const p = pairs[key] || (pairs[key] = { n: 0, raw: 0 });
+          const p = bucket(key(ids[i], ids[j]));
           p.n++;
           p.raw += st[ids[i]] === st[ids[j]] ? 1 : -1;
         }
@@ -2678,7 +2696,7 @@ const SHOW_PRONOUNS = true;
       const [a, b] = key.split("|");
       if (a !== id && b !== id) return;
       if (p.n < SIM_MIN) return;
-      out.push({ other: a === id ? b : a, n: p.n, score: p.raw / (p.n + SIM_K) });
+      out.push({ other: a === id ? b : a, n: p.n, joint: p.joint, score: p.raw / (p.n + SIM_K) });
     });
     out.sort((x, y) => y.score - x.score);
     return out;
@@ -2702,7 +2720,7 @@ const SHOW_PRONOUNS = true;
         <span class="sim-name">${o ? o.name : e.other}</span>
         <span class="sim-bar"><span style="width:${pct}%;background:${e.score >= 0 ? "var(--yes)" : "var(--no)"}"></span></span>
         <span class="sim-val">${e.score >= 0 ? "+" : "−"}${pct}</span>
-        <span class="sim-n">${e.n}</span></a>`;
+        <span class="sim-n" title="${e.n} von ${e.joint} gemeinsamen geteilten Beschlüssen">${e.n}<i>/${e.joint}</i></span></a>`;
     };
 
     const box = document.createElement("details");
@@ -2710,8 +2728,10 @@ const SHOW_PRONOUNS = true;
     box.innerHTML = `
       <summary>Wer ähnlich stimmt</summary>
       <p class="sim-note">Nur geteilte Abstimmungen, bei denen von beiden eine Stimme
-        bekannt ist. Die letzte Spalte nennt die Zahl der Vergleiche — je kleiner,
-        desto vorsichtiger ist der Wert zu lesen.</p>
+        bekannt ist. Die letzte Spalte nennt die Zahl dieser Vergleiche und dahinter,
+        bei wie vielen geteilten Beschlüssen beide überhaupt im Saal saßen — je
+        weiter die zwei Zahlen auseinanderliegen, desto vorsichtiger ist der Wert
+        zu lesen.</p>
       <div class="sim-group">Stimmt am ehesten mit</div>${top.map(line).join("")}
       <div class="sim-group">Stimmt am seltensten mit</div>${bottom.map(line).join("")}`;
     return box;
@@ -2747,12 +2767,24 @@ const SHOW_PRONOUNS = true;
 
   function simScore(pairs, a, b) {
     const p = pairs[a < b ? a + "|" + b : b + "|" + a];
-    return p && p.n >= SIM_MIN ? { s: p.raw / (p.n + SIM_K), n: p.n } : null;
+    return p && p.n >= SIM_MIN
+      ? { s: p.raw / (p.n + SIM_K), n: p.n, joint: p.joint } : null;
+  }
+
+  // Die Farbe reizt den tatsächlich vorkommenden Bereich aus, statt gegen eine
+  // feste Obergrenze zu laufen. Untergrenze 0,5, damit eine dünn besetzte
+  // Periode nicht drei Werte zu Vollton aufbläst.
+  function simSpread(pairs) {
+    let max = 0.5;
+    Object.values(pairs).forEach(p => {
+      if (p.n >= SIM_MIN) max = Math.max(max, Math.abs(p.raw / (p.n + SIM_K)));
+    });
+    return max;
   }
 
   // Grün = stimmt zusammen, Rot = stimmt gegeneinander, Grau = zu wenig Daten
-  function simColor(s) {
-    const a = Math.min(1, Math.abs(s) / 0.8);
+  function simColor(s, max) {
+    const a = Math.min(1, Math.abs(s) / max);
     return s >= 0 ? `rgba(79,138,22,${0.12 + a * 0.8})` : `rgba(155,0,0,${0.12 + a * 0.8})`;
   }
 
@@ -2764,6 +2796,7 @@ const SHOW_PRONOUNS = true;
       return;
     }
     const W = el.clientWidth || 640;
+    const spread = simSpread(pairs);
     const label = 96;
     const cell = Math.max(9, Math.min(22, (W - label - 4) / nodes.length));
     const size = cell * nodes.length;
@@ -2778,9 +2811,10 @@ const SHOW_PRONOUNS = true;
           return;
         }
         const r = simScore(pairs, a.m.id, b.m.id);
-        const fill = r ? simColor(r.s) : "var(--bg)";
+        const fill = r ? simColor(r.s, spread) : "var(--bg)";
         const title = r
-          ? `${a.m.name} / ${b.m.name}: ${r.s >= 0 ? "+" : "−"}${Math.round(Math.abs(r.s) * 100)} bei ${r.n} Vergleichen`
+          ? `${a.m.name} / ${b.m.name}: ${r.s >= 0 ? "+" : "−"}${Math.round(Math.abs(r.s) * 100)} `
+            + `aus ${r.n} bekannten von ${r.joint} gemeinsamen Beschlüssen`
           : `${a.m.name} / ${b.m.name}: zu wenige Vergleiche`;
         cells += `<rect x="${label + j * cell}" y="${i * cell}" width="${cell}" height="${cell}"
                     fill="${fill}"><title>${title}</title></rect>`;
@@ -2846,10 +2880,36 @@ const SHOW_PRONOUNS = true;
       });
     }
 
+    // Die Kräfte allein schieben Knoten übereinander, sobald eine Fraktion eng
+    // zusammenhält. Ein paar Entzerrungsschritte am Ende drücken sie auf
+    // Lesbarkeitsabstand, ohne die Anordnung zu verwerfen.
+    const MIN = 34;
+    for (let it = 0; it < 60; it++) {
+      let moved = false;
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const d = Math.hypot(dx, dy) || 0.01;
+          if (d >= MIN) continue;
+          const push = (MIN - d) / 2;
+          a.x += dx / d * push; a.y += dy / d * push;
+          b.x -= dx / d * push; b.y -= dy / d * push;
+          moved = true;
+        }
+      }
+      nodes.forEach(n => {
+        n.x = Math.max(28, Math.min(W - 28, n.x));
+        n.y = Math.max(22, Math.min(H - 22, n.y));
+      });
+      if (!moved) break;
+    }
+
+    const spread = simSpread(pairs);
     const lines = edges
       .slice().sort((p, q) => Math.abs(p.s) - Math.abs(q.s))
       .map(e => {
-        const a = Math.min(1, Math.abs(e.s) / 0.8);
+        const a = Math.min(1, Math.abs(e.s) / spread);
         return `<line x1="${e.a.x.toFixed(1)}" y1="${e.a.y.toFixed(1)}"
                  x2="${e.b.x.toFixed(1)}" y2="${e.b.y.toFixed(1)}"
                  stroke="${e.s >= 0 ? "#4F8A16" : "#9B0000"}"
