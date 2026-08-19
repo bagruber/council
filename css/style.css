@@ -2978,6 +2978,86 @@ main {
   text-align: right;
 }
 
+/* -- Nähe-Diagramme -- */
+
+.period-switch { display: flex; gap: 4px; margin: 2px 0 10px; }
+.period-switch button {
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font: inherit;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.period-switch button.on {
+  background: var(--chrome, var(--primary));
+  border-color: var(--chrome, var(--primary));
+  color: #fff;
+}
+
+.heatmap { max-width: 100%; height: auto; }
+.hm-name { font-size: 9px; font-weight: 600; }
+.hm-self { fill: var(--border); }
+
+.simgraph { max-width: 100%; height: auto; }
+.simgraph text {
+  font-size: 9.5px;
+  fill: var(--text);
+  paint-order: stroke;
+  stroke: var(--surface);
+  stroke-width: 3px;
+}
+.sg-node { cursor: pointer; }
+.sg-node circle { stroke: var(--surface); stroke-width: 1.5; }
+.sg-node:hover circle { stroke: var(--text); }
+
+/* -- Fraktionsgeschlossenheit -- */
+
+.cohesion {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 14px;
+  align-items: baseline;
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.cohesion-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--primary-dark);
+  font-variant-numeric: tabular-nums;
+}
+.cohesion-label { font-size: 0.85rem; }
+.cohesion-label span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.cohesion-dev { grid-column: 1 / -1; margin-top: 10px; }
+.cohesion-dev a {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 0.82rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.cohesion-dev a:hover span { text-decoration: underline; }
+.cohesion-dev b { margin-left: auto; font-variant-numeric: tabular-nums; }
+.cohesion-dev small { color: var(--text-muted); font-size: 0.7rem; width: 62px; text-align: right; }
+.cohesion-dev p { margin-top: 4px; font-size: 0.72rem; color: var(--text-muted); }
+
 /* -- Responsive -- */
 
 @media (max-width: 600px) {
