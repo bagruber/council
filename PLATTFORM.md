@@ -11,17 +11,12 @@ Kontext steht im Repo `bagruber/moosburg-eu` in `BRIEFING.md`.
 
 | | Adresse | Quelle |
 |---|---|---|
-| GitHub Pages | `bagruber.github.io/council/` | Branch `parliament-v2`, roh ausgeliefert |
-| moosburg.eu | `moosburg.eu/stadtrat/` | Branch `parliament-v2` über `.github/workflows/deploy.yml` |
+| GitHub Pages | `bagruber.github.io/council/` | Branch `main`, roh ausgeliefert |
+| moosburg.eu | `moosburg.eu/stadtrat/` | Branch `main` über `.github/workflows/deploy.yml` |
 
-**Beide kommen aus `parliament-v2`.** Ein Commit dorthin erreicht beide
-Varianten — es braucht keine Doppelpflege. Ein Commit nach `main` erscheint
-dagegen **nirgends**: `main` liegt zurück und ist an keinen der beiden
-Auslieferungswege angeschlossen.
-
-Sollte `parliament-v2` je nach `main` gemergt werden, müssen beide Stellen
-umgestellt werden: die Pages-Quelle in den Repo-Einstellungen und der Trigger
-in `deploy.yml`.
+**Beide kommen aus `main`.** Ein Commit dorthin erreicht beide Varianten, es
+braucht keine Doppelpflege. Der frühere Arbeitsbranch `parliament-v2` ist im
+August 2026 nach `main` gemergt und gelöscht worden.
 
 ## Was nicht mit auf den Server geht
 
@@ -31,7 +26,7 @@ Der Workflow schließt aus:
 |---|---|
 | `img/members/originals/**` | 167 MB unkomprimierte PNG-Vorlagen, aus denen die `.webp` erzeugt wurden. Die Seite referenziert sie nirgends. Ohne sie sinkt der Upload von 199 MB auf 32 MB. |
 | Werkzeug-Ordner mit führendem Punkt | Konkrete Einträge siehe `deploy.yml`. `**/.git*` deckt `.github` und `.gitignore` ab, **nicht** beliebige Punkt-Ordner: Deren `.md`-Dateien fielen zwar unter `**/*.md`, die leeren Verzeichnisse landeten trotzdem auf dem Server. Wer einen neuen anlegt, trägt ihn nach. |
-| `docs/**`, `scripts/**`, `**/*.md`, `debug.log` | Gehört nicht zur ausgelieferten Seite. |
+| `docs/**`, `scripts/**`, `**/*.md` | Gehört nicht zur ausgelieferten Seite. |
 
 Der erste Deploy überträgt rund 32 MB und dauert etwa zwei Minuten, danach
 läuft er inkrementell.

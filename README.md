@@ -41,9 +41,8 @@ Bewusst minimal:
   Pure-SVG-Code in `js/parliament.js`.
 - Hash-basiertes Routing (`#/topic/t3`, `#/member/gruber`, `#/session/sr_20240612`).
 - Statische JSON-Dateien als Datenquelle (siehe `data/`).
-- Deployment aus `parliament-v2` — sowohl auf GitHub Pages als auch nach
-  `moosburg.eu/stadtrat/`. Ein Commit nach `main` erscheint nirgends.
-  Siehe [PLATTFORM.md](PLATTFORM.md).
+- Deployment aus `main`, sowohl auf GitHub Pages als auch nach
+  `moosburg.eu/stadtrat/`. Siehe [PLATTFORM.md](PLATTFORM.md).
 
 ## Projektstruktur
 
