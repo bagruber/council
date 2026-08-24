@@ -2,10 +2,7 @@ name: Deploy auf moosburg.eu/stadtrat/
 
 on:
   push:
-    # Nicht main: parliament-v2 ist der weiter fortgeschrittene Stand und das,
-    # was online gehört. Sobald der Branch nach main gemerged ist, gehört hier
-    # wieder main hin — sonst deployt eine Karteileiche.
-    branches: [parliament-v2]
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -51,4 +48,3 @@ jobs:
             docs/**
             scripts/**
             **/*.md
-            debug.log
