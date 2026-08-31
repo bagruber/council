@@ -1,0 +1,11 @@
+# HTML, CSS, JS und JSON immer beim Server rückfragen. Seit dem Schnitt in
+# ES-Module laden die Module einander über relative Pfade ohne
+# Cache-Busting-Parameter — ohne diese Regel könnte ein Browser nach einem
+# Deploy alte und neue Module mischen. no-cache erlaubt 304-Antworten,
+# kostet also nur die Nachfrage, nicht die Übertragung. Bilder und Schriften
+# behalten die Fristen aus der Domain-Wurzel.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
