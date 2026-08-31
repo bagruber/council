@@ -111,6 +111,12 @@ export function initRouting() {
     const h = window.location.hash.slice(1) || "/";
     if (!h.startsWith("/member/")) lastListHash = h;
   });
+
+  // Besuchszähler der Domain: Routenwechsel selbst melden, sonst steht in
+  // der Auswertung nur der Einstieg (siehe moosburg.eu/assets/zaehler.js).
+  window.addEventListener("hashchange", () => {
+    if (window.zaehl) window.zaehl(location.pathname + location.hash);
+  });
 }
 
 export { switchTab, setChrome, navigate, route, lastListHash };
