@@ -53,7 +53,12 @@ council/
 ├── js/
 │   ├── core.js             # geteilte Vote-/Period-Logik (siehe docs/CORE.md)
 │   ├── parliament.js       # Sitzverteilungs-Visualisierung
-│   └── app.js              # Routing, Views, Suche
+│   ├── app.js              # Einstieg als ES-Modul (siehe docs/MODULE.md)
+│   ├── daten.js            # JSON-Bestand und Nachschlage-Maps
+│   ├── routing.js          # Hash-Routen, Tabs
+│   ├── suche.js            # globale Suche
+│   ├── hilfen.js           # Format-Helfer
+│   └── views/              # eine Datei je Seite
 ├── data/
 │   ├── members.json        # Mitglieder, Parteien, Gremien, Medien
 │   ├── sessions.json       # Sitzungen + Tagesordnung

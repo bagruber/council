@@ -5,8 +5,8 @@ Implementierungen hatten:
 
 | Konsument | Was er braucht |
 |---|---|
-| `app.js` Profilansicht (Sitzungsliste) | Pro Vote: wie hat dieses Mitglied gestimmt? Label "Ja"/"Nein"/"Ja\*"/"?" |
-| `app.js` Statistik-Card | Gleiche Frage, aber als grobe Eimer (yes/no/absent/unknown) für Aggregate |
+| `views/profil.js` Profilansicht (Sitzungsliste) | Pro Vote: wie hat dieses Mitglied gestimmt? Label "Ja"/"Nein"/"Ja\*"/"?" |
+| `views/profil.js` Statistik-Card | Gleiche Frage, aber als grobe Eimer (yes/no/absent/unknown) für Aggregate |
 | `parliament.js` Sitzfarbe | Gleiche Frage, aber pro Sitz in der Visualisierung |
 
 Davor: drei leicht unterschiedliche Implementierungen, drei Fehlerquellen.
@@ -92,5 +92,5 @@ session.absent + session.substitutes.
 
 ## Wo wird's benutzt?
 
-- `app.js` → `getMemberVoteStatus`, `computeVotingStats` (Profilansicht & Statistik-Card)
+- `views/profil.js` → `computeVotingStats`, `renderMemberTimeline` (Statistik-Card & Profilansicht)
 - `parliament.js` → `voteResMap` (Sitzfärbung im Sitzungssaal)
