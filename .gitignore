@@ -4,3 +4,10 @@ package.json
 package-lock.json
 __pycache__/
 debug.log
+data/crawl/cache/
+data/crawl/index.json
+data/crawl/sweep.log
+data/crawl/findings.json
+data/crawl/targets.json
+data/crawl/candidates.json
+data/crawl/zuordnung.json

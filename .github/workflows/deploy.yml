@@ -47,4 +47,5 @@ jobs:
             img/members/originals/**
             docs/**
             scripts/**
+            data/crawl/**
             **/*.md
