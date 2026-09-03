@@ -2105,11 +2105,43 @@
     "date": "2020-06-15",
     "title": "Beschluss über den Anschluss des Schulzentrums Nord an ein Wärmenetz Grundsatzbeschluss",
     "text": "Der Stadtrat beschließt, die Energieversorgung des Schulzentrums Nord für 2021 neu auszu- schreiben. Bei der Ausschreibung soll ein Primärenergiefaktor von 0,0 berücksichtigt werden, was ein Nahwärmenetz ermöglicht.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 22,
-      "no": 1,
-      "absent": 2
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "wittmann",
+        "neumayr",
+        "welter",
+        "fincke",
+        "john"
+      ],
+      "no": [
+        "pschorr"
+      ],
+      "absent": [
+        "kaestl",
+        "reif"
+      ]
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2020-06-19_waermenetz-schulzentrum"
     }
   },
   {
@@ -4482,7 +4514,35 @@
         "member": "welter",
         "reason": "kurzfristig abwesend"
       }
-    ]
+    ],
+    "voters": {
+      "dollinger": "no",
+      "becher_j": "yes",
+      "beibl": "yes",
+      "beubl": "yes",
+      "altenbeck": "yes",
+      "stanglmaier": "yes",
+      "wagner": "yes",
+      "neumayr": "yes",
+      "wittmann": "yes",
+      "john": "yes"
+    },
+    "voterEvidence": {
+      "dollinger": "weich",
+      "becher_j": "weich",
+      "beibl": "weich",
+      "beubl": "weich",
+      "altenbeck": "weich",
+      "stanglmaier": "weich",
+      "wagner": "weich",
+      "neumayr": "weich",
+      "wittmann": "weich",
+      "john": "weich"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2021-02-27_moria-aufnahme"
+    }
   },
   {
     "id": "sr_20210222_01",
@@ -5708,6 +5768,22 @@
       "yes": 14,
       "no": 9,
       "absent": 2
+    },
+    "voters": {
+      "wagner": "no",
+      "kaestl": "no",
+      "beubl": "yes",
+      "heinz": "yes"
+    },
+    "voterEvidence": {
+      "wagner": "weich",
+      "kaestl": "weich",
+      "beubl": "weich",
+      "heinz": "weich"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2021-03-15_planetenviertel"
     }
   },
   {
@@ -5722,6 +5798,16 @@
       "yes": 16,
       "no": 7,
       "absent": 2
+    },
+    "voters": {
+      "heinz": "yes"
+    },
+    "voterEvidence": {
+      "heinz": "weich"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2021-03-15_planetenviertel"
     }
   },
   {
@@ -12885,11 +12971,17 @@
       "dollinger": "no",
       "kieninger": "no",
       "kaestl": "yes",
-      "gruebl": "yes"
+      "gruebl": "yes",
+      "fincke": "yes",
+      "stanglmaier": "yes"
     },
     "source": {
       "tier": "press",
       "pressId": "merkur_2023-04-24_ausschussgroesse"
+    },
+    "voterEvidence": {
+      "fincke": "weich",
+      "stanglmaier": "weich"
     }
   },
   {
@@ -17218,6 +17310,16 @@
       "yes": 7,
       "no": 4,
       "absent": 1
+    },
+    "voters": {
+      "beibl": "no",
+      "beubl": "no",
+      "gruebl": "no",
+      "linz_kilian": "no"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "sz_2024-07-16_rockermaier-bauantraege"
     }
   },
   {
@@ -17232,6 +17334,16 @@
       "yes": 7,
       "no": 4,
       "absent": 1
+    },
+    "voters": {
+      "beibl": "no",
+      "beubl": "no",
+      "gruebl": "no",
+      "linz_kilian": "no"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "sz_2024-07-16_rockermaier-bauantraege"
     }
   },
   {
@@ -17246,6 +17358,16 @@
       "yes": 7,
       "no": 4,
       "absent": 1
+    },
+    "voters": {
+      "beibl": "no",
+      "beubl": "no",
+      "gruebl": "no",
+      "linz_kilian": "no"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "sz_2024-07-16_rockermaier-bauantraege"
     }
   },
   {
@@ -17260,6 +17382,16 @@
       "yes": 7,
       "no": 4,
       "absent": 1
+    },
+    "voters": {
+      "beibl": "no",
+      "beubl": "no",
+      "gruebl": "no",
+      "linz_kilian": "no"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "sz_2024-07-16_rockermaier-bauantraege"
     }
   },
   {
@@ -17274,6 +17406,16 @@
       "yes": 7,
       "no": 4,
       "absent": 1
+    },
+    "voters": {
+      "beibl": "no",
+      "beubl": "no",
+      "gruebl": "no",
+      "linz_kilian": "no"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "sz_2024-07-16_rockermaier-bauantraege"
     }
   },
   {
@@ -21393,7 +21535,17 @@
       "no": 18,
       "absent": 5
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterEvidence": {
+      "marcus": "weich"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2025-04-30_badegebuehren"
+    }
   },
   {
     "id": "sr_20250428_05",
@@ -21407,6 +21559,16 @@
       "yes": 19,
       "no": 1,
       "absent": 5
+    },
+    "voters": {
+      "stanglmaier": "yes"
+    },
+    "voterEvidence": {
+      "stanglmaier": "weich"
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2025-04-30_badegebuehren"
     }
   },
   {
@@ -21416,11 +21578,43 @@
     "date": "2025-04-28",
     "title": "Badegebührenordnung Freibad",
     "text": "Beschluss der Badegebührenordnung mit Stanglmaier-Änderung; Variante A mit günstigeren Saisonkarten (19:1).",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 19,
-      "no": 1,
-      "absent": 5
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "gruber",
+        "heinz",
+        "hobmaier",
+        "von_pressentin",
+        "welter"
+      ]
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2025-04-30_badegebuehren"
     }
   },
   {
@@ -26288,11 +26482,42 @@
     "date": "2026-05-11",
     "title": "Beschlussfassung über die Anzahl der weiteren Bürgermeister",
     "text": "Der Stadtrat beschließt, für die Wahlzeit vom 1. Mai 2026 bis 30.04.2032 zwei weitere Bürger- meister zu wählen.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 24,
-      "no": 1,
-      "absent": 0
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "beibl",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [
+        "welter"
+      ],
+      "absent": []
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2026-05-13_konstituierende-sitzung"
     }
   },
   {
