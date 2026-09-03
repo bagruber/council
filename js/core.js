@@ -175,10 +175,31 @@ const Council = (() => {
     }[s.tier] || null;
   }
 
+  // Woher die Stimme dieser einen Person kommt. Die Stufe am Votum sagt, wie
+  // das Ergebnis insgesamt belegt ist; hier geht es um den Einzelfall — eine
+  // Zeitung, die "gegen die Stimmen von X" schreibt, belegt etwas anderes als
+  // eine, die X in der Debatte zitiert. Ohne Eintrag gilt die Stufe des Votums.
+  function evidenceNote(vote, memberId) {
+    if (!vote || !vote.voterEvidence) return null;
+    if (vote.voterEvidence[memberId] !== "weich") return null;
+    return "aus einer Wortmeldung erschlossen, nicht als Stimme berichtet";
+  }
+
+  // Statuszeile plus Herkunft, für Titel-Attribute in den Übersichten.
+  // Wo nichts überliefert ist, sagt die Herkunft nichts — dann bleibt sie weg,
+  // sonst stünde "Nicht überliefert — Aus Presseberichten" da, was klingt, als
+  // stamme die Lücke aus der Zeitung.
+  function statusProvenance(status, vote, memberId) {
+    if (status === "unknown") return voteStatusTitle(status);
+    const note = evidenceNote(vote, memberId) || sourceLabel(vote);
+    return note ? voteStatusTitle(status) + " — " + note : voteStatusTitle(status);
+  }
+
   return {
     withinPeriod, endOfPeriod,
     memberActiveAt,
     bodyConfigAt, isRegularOf,
     voteStatus, voteStatusLabel, voteStatusTitle, sourceLabel, isUnanimous,
+    evidenceNote, statusProvenance,
   };
 })();

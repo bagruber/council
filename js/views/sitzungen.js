@@ -78,6 +78,18 @@ function renderSession(id) {
     main.appendChild(subs);
   }
 
+  // Presse zum Abend als Ganzes. Ein Lokalbericht handelt meist mehrere
+  // Punkte ab; die Kopfzeile zeigt, was über die Sitzung geschrieben wurde,
+  // die Artikel stehen zusätzlich an den Punkten, die sie wirklich behandeln.
+  const sessionPress = renderPressLinks(session.press);
+  if (sessionPress) {
+    const wrap = document.createElement("div");
+    wrap.className = "session-press";
+    wrap.innerHTML = "<span>Presse zur Sitzung</span>";
+    wrap.appendChild(sessionPress);
+    main.appendChild(wrap);
+  }
+
   const list = document.createElement("div");
   list.className = "agenda-list";
 

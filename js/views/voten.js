@@ -51,6 +51,17 @@ function renderVoteSource(vote) {
   } else if (vote.source.pressVerified) {
     html += " · " + confirm;
   }
+  // Wo einzelne Positionen nur aus einer Wortmeldung stammen, steht das dabei.
+  // Keine eigene Farbe im Halbrund — wer etwas befürwortet hat, wird in der
+  // Regel auch dafür gestimmt haben; sicher ist es nur nicht.
+  const weich = Object.entries(vote.voterEvidence || {})
+    .filter(([, e]) => e === "weich").map(([id]) => id);
+  if (weich.length) {
+    const namen = weich.map(id => (members.find(m => m.id === id) || {}).lastName)
+                       .filter(Boolean).join(", ");
+    html += `<br><span class="vote-source-weich">${namen}: aus der Debatte`
+          + ` erschlossen, nicht als Stimme berichtet.</span>`;
+  }
   return `<div class="vote-source">${html}</div>`;
 }
 

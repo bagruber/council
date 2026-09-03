@@ -621,7 +621,7 @@ function renderMemberTimeline(container, member) {
       const voteRow = document.createElement("div");
       voteRow.className = "mtl-vote";
       voteRow.innerHTML = `
-        <span class="mtl-vote-chip ${chipClass}" title="${Council.voteStatusTitle(status)}">${chipLabel}</span>
+        <span class="mtl-vote-chip ${chipClass}${Council.evidenceNote(vote, member.id) ? " weich" : ""}" title="${Council.statusProvenance(status, vote, member.id)}">${chipLabel}</span>
         <span class="mtl-vote-title">${vote.title}</span>`;
 
       const detail = document.createElement("div");

@@ -735,6 +735,21 @@ main {
 
 .session-badge .icon { font-size: 14px; }
 
+/* Presse zum ganzen Abend. Ruhiger als die Vertretungszeile darüber — es ist
+   eine Fundstelle, keine Angabe zur Beschlussfähigkeit. */
+.session-press {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.session-press > span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
 .session-subs {
   display: flex;
   flex-direction: column;
@@ -1252,6 +1267,8 @@ main {
 }
 
 .vote-source a:hover { color: var(--primary); }
+
+.vote-source-weich { font-style: italic; }
 
 .vote-legend span {
   display: flex;
@@ -2372,6 +2389,13 @@ main {
 .mtl-vote-chip.nein { background: var(--no); }
 .mtl-vote-chip.abwesend { background: var(--absent); }
 .mtl-vote-chip.unknown { background: var(--border); color: var(--text-muted); }
+/* Aus einer Wortmeldung erschlossen. Keine eigene Farbe — die Position ist
+   dieselbe wie bei jeder anderen Ja-Stimme, nur die Grundlage ist dünner.
+   Der gestrichelte Boden sagt das, ohne eine sechste Farbe einzuführen. */
+.mtl-vote-chip.weich { border-bottom: 2px dotted rgba(255, 255, 255, 0.7); }
+.mtl-vote-chip.unknown.weich, .mtl-vote-chip.sonder.weich {
+  border-bottom: 2px dotted var(--text-muted);
+}
 /* Befangenheit und Enthaltung: unter 8 % der Stimmen und inhaltlich Randfälle.
    Unbunt und schmaler gesetzt, damit Ja/Nein/Unbekannt die Spalte führen. */
 .mtl-vote-chip.sonder {
@@ -2785,6 +2809,22 @@ a.tier-chip.on {
   font-size: 0.72rem;
   color: var(--accent-text);
   white-space: nowrap;
+}
+
+/* Presselage im Register. Als Rechercheanzeige gedacht, deshalb ist der
+   Strich für "nichts gefunden" genauso wichtig wie die Zahl. */
+.reg-presse {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0 5px;
+}
+
+.reg-presse.none {
+  border-color: transparent;
+  opacity: 0.45;
 }
 
 .source-note {

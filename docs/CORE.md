@@ -53,6 +53,24 @@ Council.voteStatusLabel("absent")              // → "–"
 Council.voteStatusBucket("yes-inferred")       // → "yes"  (für Aggregate)
 ```
 
+### Herkunft
+
+`sourceLabel` gibt die Stufe des ganzen Votums, `evidenceNote` den Sonderfall
+einer einzelnen Person, `statusProvenance` beides zusammengesetzt für
+`title`-Attribute.
+
+```js
+Council.sourceLabel(vote)                       // → "Aus Presseberichten"
+Council.evidenceNote(vote, "dollinger")         // → "aus einer Wortmeldung …" | null
+Council.statusProvenance(status, vote, "dollinger")
+// → "Nein — aus einer Wortmeldung erschlossen, nicht als Stimme berichtet"
+```
+
+`vote.voterEvidence[memberId] === "weich"` heißt: die Zeitung berichtet, wie
+diese Person *argumentiert* hat, nicht wie sie gestimmt hat. Die Position steht
+trotzdem im Datensatz — mit Hinweis, ohne eigene Farbe. Ohne Eintrag gilt die
+Stufe des Votums.
+
 ## Wie ändere ich Verhalten?
 
 **„Ich will, dass Enthaltungen im Profil anders dargestellt werden":** in

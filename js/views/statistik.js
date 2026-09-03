@@ -180,8 +180,37 @@ const TIERS = [
   { key: "sum",      label: "nur Ergebnis",  hint: "Nur die Gesamtzahlen sind bekannt." },
 ];
 
+// Wie viel Presse liegt zu einer Sitzung vor — am Abend selbst und an
+// einzelnen Punkten. Die Zahl ist als Rechercheanzeige gedacht: wo nichts
+// steht, lohnt das Nachsehen, wo etwas steht, ist es schon gesichtet.
+function pressOfSession(session) {
+  if (!session) return { session: 0, tops: 0, total: 0, topsWith: 0, topsVoted: 0 };
+  const ids = new Set(session.press || []);
+  let topsWith = 0, topsVoted = 0;
+  (session.agenda || []).forEach(a => {
+    if (a.voteId || (a.voteIds || []).length) topsVoted++;
+    if ((a.press || []).length) {
+      topsWith++;
+      a.press.forEach(id => ids.add(id));
+    }
+  });
+  return { session: (session.press || []).length, tops: topsWith,
+           total: ids.size, topsWith, topsVoted };
+}
+
+function pressBadge(p) {
+  if (!p.total) {
+    return `<span class="reg-presse none" title="Kein Zeitungsartikel verknüpft">–</span>`;
+  }
+  const anTops = p.topsWith
+    ? `, davon ${p.topsWith} von ${p.topsVoted} Punkten zugeordnet`
+    : ", noch keinem Punkt zugeordnet";
+  return `<span class="reg-presse" title="${p.total} Artikel${anTops}">`
+       + `${p.total} Presse</span>`;
+}
+
 // `filter` schränkt auf eine Herkunftsstufe (explicit/implicit/tracked/press/
-// sum) oder eine Erfassungsstufe (protokoll/auszug/keine) ein.
+// sum) oder eine Erfassungsstufe (protokoll/auszug/keine/presse/ohne-presse) ein.
 function renderDatenlage(filter) {
   setChrome("sitzung");
   main.appendChild(breadcrumb([{ label: "Übersicht", href: "#/" }]));
@@ -227,6 +256,19 @@ function renderDatenlage(filter) {
            "Weder Niederschrift noch Auszug veröffentlicht");
   main.appendChild(levels);
 
+  // Presselage getrennt von der Aktenlage: eine Sitzung kann lückenlos
+  // protokolliert und trotzdem unbeschrieben sein, und umgekehrt.
+  const mitPresse = erfasst.filter(r => pressOfSession(r.session).total);
+  const presse = document.createElement("div");
+  presse.className = "tier-legend";
+  presse.innerHTML =
+    chip("presse", "level-protokoll", "mit Presseartikel", mitPresse.length,
+         "Mindestens ein Zeitungsartikel ist verknüpft")
+    + chip("ohne-presse", "level-keine", "ohne Presseartikel",
+           erfasst.length - mitPresse.length,
+           "Noch kein Artikel verknüpft — hier lohnt die Recherche");
+  main.appendChild(presse);
+
   const legend = document.createElement("div");
   legend.className = "tier-legend";
   legend.innerHTML = TIERS.map(t =>
@@ -240,9 +282,11 @@ function renderDatenlage(filter) {
     main.appendChild(tierVoteList(tier, erfasst));
     return;
   }
-  const rows = filter === "protokoll" ? protokoll
-             : filter === "auszug"    ? auszug
-             : filter === "keine"     ? reg.filter(r => !r.session)
+  const rows = filter === "protokoll"    ? protokoll
+             : filter === "auszug"       ? auszug
+             : filter === "keine"        ? reg.filter(r => !r.session)
+             : filter === "presse"       ? mitPresse
+             : filter === "ohne-presse"  ? erfasst.filter(r => !pressOfSession(r.session).total)
              : reg;
   if (filter && rows !== reg) {
     const note = document.createElement("p");
@@ -291,7 +335,7 @@ function renderDatenlage(filter) {
       <td class="reg-data">${r.session
         ? `<a href="#/session/${r.session.id}">${r.votes.length} Abstimmung${r.votes.length === 1 ? "" : "en"}</a>`
           + (web ? `<span class="reg-flag">ohne Anwesenheitsliste</span>` : "")
-          + bar + doc
+          + bar + doc + pressBadge(pressOfSession(r.session))
         : `<span class="reg-none">nichts veröffentlicht</span>`}</td>`;
     body.appendChild(tr);
   });
@@ -349,9 +393,17 @@ function tierVoteList(tier, erfasst) {
 // wird der Weg umgedreht: je Artikel, woran er hängt.
 function pressContext() {
   const ctx = {};
-  const add = (ids, entry) => (ids || []).forEach(id => (ctx[id] || (ctx[id] = [])).push(entry));
-  sessions.forEach(s => s.agenda.forEach(a =>
-    add(a.press, { kind: "Sitzung", label: s.title, href: "#/session/" + s.id })));
+  // Ein Artikel hängt oft an der Sitzung und zusätzlich an einem ihrer Punkte.
+  // In der Presseschau ist das derselbe Verweis und soll nur einmal stehen.
+  const add = (ids, entry) => (ids || []).forEach(id => {
+    const list = ctx[id] || (ctx[id] = []);
+    if (!list.some(e => e.href === entry.href && e.kind === entry.kind)) list.push(entry);
+  });
+  sessions.forEach(s => {
+    add(s.press, { kind: "Sitzung", label: s.title, href: "#/session/" + s.id });
+    s.agenda.forEach(a =>
+      add(a.press, { kind: "Sitzung", label: s.title, href: "#/session/" + s.id }));
+  });
   topics.forEach(t => (t.history || []).forEach(h =>
     add(h.press, { kind: "Dossier", label: t.title, href: "#/topic/" + t.id })));
   members.forEach(m => ((m.profile || {}).motions || []).forEach(mo =>
