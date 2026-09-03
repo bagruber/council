@@ -513,13 +513,19 @@
       {
         "number": "6.5",
         "title": "Bestellung eines Vertreters/Stellvertreters für den Erholungsflächenverein",
-        "voteId": "sr_20200504_15"
+        "voteId": "sr_20200504_15",
+        "press": [
+          "merkur_2020-05-05_moosburgs-neue-buergermeister"
+        ]
       },
       {
         "number": "7",
         "title": "Anfragen (konstituierende Sitzung) vom 04.05.2020",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2020-05-05_moosburgs-neue-buergermeister"
     ]
   },
   {
@@ -1269,7 +1275,10 @@
       {
         "number": "7.4",
         "title": "Vorfahrtsregelung Westerbergstraße/Am Stadion",
-        "voteId": "sr_20201005_05"
+        "voteId": "sr_20201005_05",
+        "press": [
+          "mz_2020-10-06_geaenderte-vorfahrt-beschlossen"
+        ]
       },
       {
         "number": "8",
@@ -1287,6 +1296,9 @@
       "Zweiter Bürgermeister anwesend ab 18.10 Uur",
       "anwesend ab 18.30 Uhr",
       "Hadersdorfer, Georg anwesend von 18.15 Uhr bis 20.35 Uhr"
+    ],
+    "press": [
+      "mz_2020-10-06_geaenderte-vorfahrt-beschlossen"
     ]
   },
   {
@@ -1343,7 +1355,10 @@
           "sr_20201026_05",
           "sr_20201026_06"
         ],
-        "topicId": "t29"
+        "topicId": "t29",
+        "press": [
+          "merkur_2020-10-27_buergerbegehren-fuer-vertraeglicheres"
+        ]
       },
       {
         "number": "7",
@@ -1372,6 +1387,9 @@
     ],
     "notes": [
       "Dollinger, Josef (anwesend ab 19.05 Uhr)"
+    ],
+    "press": [
+      "merkur_2020-10-27_buergerbegehren-fuer-vertraeglicheres"
     ]
   },
   {
@@ -1518,6 +1536,9 @@
         "voteIds": [
           "sr_20201214_03",
           "sr_20201214_04"
+        ],
+        "press": [
+          "merkur_2020-12-16_haushalt-2021"
         ]
       },
       {
@@ -1786,7 +1807,11 @@
       {
         "number": "7",
         "title": "Aufnahme von Flüchtlingen aus Moria - Antrag Fraktion Bündnis 90/Die Grünen, Fresh, StRe Beubl, Fincke und John",
-        "voteId": "sr_20210208_07"
+        "voteId": "sr_20210208_07",
+        "press": [
+          "mz_2021-02-09_moria-aufnahme",
+          "merkur_2021-02-27_moria-aufnahme"
+        ]
       },
       {
         "number": "8",
@@ -1797,6 +1822,10 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "mz_2021-02-09_moria-aufnahme",
+      "mz_2021-02-08_ganztagsbetreuung"
     ]
   },
   {
@@ -2506,7 +2535,10 @@
       {
         "number": "7",
         "title": "Vorstellung Breitbandförderung \"Gigabitrichtlinie Bayern\"",
-        "voteId": "sr_20210412_04"
+        "voteId": "sr_20210412_04",
+        "press": [
+          "mz_2021-04-13_moosburger-will-breitbandfoerderung"
+        ]
       },
       {
         "number": "8",
@@ -2522,6 +2554,9 @@
     "notes": [
       "Dollinger, Josef (anwesend ab 20.00 Uhr)",
       "(anwesend bis 21.00 Uhr)"
+    ],
+    "press": [
+      "mz_2021-04-13_moosburger-will-breitbandfoerderung"
     ]
   },
   {
@@ -2553,7 +2588,10 @@
       {
         "number": "4",
         "title": "Antrag von StR Fincke auf Umsetzung der Änderung der Gemeindeordnung (Art. 47 a GO) - virtuelle Teilnahme an der Stadtratssitzung",
-        "voteId": "sr_20210426_02"
+        "voteId": "sr_20210426_02",
+        "press": [
+          "merkur_2021-04-28_trotz-mehrheit-fuer"
+        ]
       },
       {
         "number": "5",
@@ -2578,6 +2616,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2021-04-28_trotz-mehrheit-fuer"
     ]
   },
   {
@@ -2690,13 +2731,19 @@
       {
         "number": "7",
         "title": "Kostenloser Eintritt für Kinder unter 12 Jahre ins Freibad Moosburg für die Badesaison 2021 (Antrag StRin Kuch)",
-        "voteId": "sr_20210607_08"
+        "voteId": "sr_20210607_08",
+        "press": [
+          "merkur_2021-06-08_beschlossene-sache-kinder"
+        ]
       },
       {
         "number": "8",
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2021-06-08_beschlossene-sache-kinder"
     ]
   },
   {
@@ -3058,7 +3105,10 @@
           "sr_20210906_03",
           "sr_20210906_04"
         ],
-        "topicId": "t28"
+        "topicId": "t28",
+        "press": [
+          "merkur_2021-09-07_debatte-firmen-erweiterung"
+        ]
       },
       {
         "number": "5",
@@ -3082,6 +3132,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2021-09-07_debatte-firmen-erweiterung"
     ]
   },
   {
@@ -3210,13 +3263,19 @@
       {
         "number": "11",
         "title": "Einstellung von HH-Mitteln im HHJahr 2022 für die Veranstaltung \"Kunst im Stalag Moosburg\"",
-        "voteId": "sr_20211011_06"
+        "voteId": "sr_20211011_06",
+        "press": [
+          "mz_2021-10-13_moosburger-stalag-kunst"
+        ]
       },
       {
         "number": "12",
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "mz_2021-10-13_moosburger-stalag-kunst"
     ]
   },
   {
@@ -3392,6 +3451,9 @@
         "voteIds": [
           "sr_20211122_04",
           "sr_20211122_05"
+        ],
+        "press": [
+          "merkur_2021-11-24_beschlossen-moosburger-innenstadt"
         ]
       },
       {
@@ -3404,6 +3466,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2021-11-24_beschlossen-moosburger-innenstadt"
     ]
   },
   {
@@ -3925,13 +3990,19 @@
       {
         "number": 8,
         "title": "KITA Erzgebirgsstraße – 3 Kindergartengruppen",
-        "voteId": "sr_20220905_07"
+        "voteId": "sr_20220905_07",
+        "press": [
+          "mz_2022-09-06_erzgebirgstrasse-beschlossen"
+        ]
       },
       {
         "number": 9,
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "mz_2022-09-06_erzgebirgstrasse-beschlossen"
     ]
   },
   {
@@ -4011,7 +4082,10 @@
       {
         "number": "7.1",
         "title": "Eisstadion – Gebührensatzung",
-        "voteId": "sr_20220919_10"
+        "voteId": "sr_20220919_10",
+        "press": [
+          "mz_2022-09-20_hoehere-gebuehren-fuer"
+        ]
       },
       {
         "number": "7.2",
@@ -4024,6 +4098,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "mz_2022-09-20_hoehere-gebuehren-fuer"
     ]
   },
   {
@@ -4980,13 +5057,19 @@
         "number": "6.1",
         "title": "Verkehrsführung Thalbacher/Bahnhofstr.",
         "topicId": "t4",
-        "voteId": "bpu_20230320_09"
+        "voteId": "bpu_20230320_09",
+        "press": [
+          "merkur_2023-03-21_kreuzung-westerberg"
+        ]
       },
       {
         "number": "6.2",
         "title": "Verkehrsführung Münchener/Westerbergstr.",
         "topicId": "t4",
-        "voteId": "bpu_20230320_10"
+        "voteId": "bpu_20230320_10",
+        "press": [
+          "merkur_2023-03-21_kreuzung-westerberg"
+        ]
       },
       {
         "number": "6.3",
@@ -5292,12 +5375,18 @@
       {
         "number": "4.1",
         "title": "B-Plan 79 GE Unterreit – Aufstellung (12:7)",
-        "voteId": "sr_20230522_02"
+        "voteId": "sr_20230522_02",
+        "press": [
+          "merkur_2023-05-23_unterreit"
+        ]
       },
       {
         "number": "4.2",
         "title": "B-Plan 79 GE Unterreit – Städtebaulicher Vertrag (12:7)",
-        "voteId": "sr_20230522_03"
+        "voteId": "sr_20230522_03",
+        "press": [
+          "merkur_2023-05-23_unterreit"
+        ]
       },
       {
         "number": 5,
@@ -5583,7 +5672,10 @@
       {
         "number": "6.1",
         "title": "Niederlegung Mandat StR John – Strobl rückt nach",
-        "voteId": "sr_20230724_01"
+        "voteId": "sr_20230724_01",
+        "press": [
+          "merkur_2023-07-25_wechsel-moosburger-alexander"
+        ]
       },
       {
         "number": "6.2",
@@ -5627,6 +5719,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2023-07-25_wechsel-moosburger-alexander"
     ]
   },
   {
@@ -5675,7 +5770,10 @@
       {
         "number": "6.1",
         "title": "Regenbogenflagge am Rathaus (abgelehnt 9:11)",
-        "voteId": "sr_20230904_05"
+        "voteId": "sr_20230904_05",
+        "press": [
+          "merkur_2023-09-05_regenbogenfahne-rathaus-flaggenfrage"
+        ]
       },
       {
         "number": "6.2",
@@ -5692,6 +5790,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2023-09-05_regenbogenfahne-rathaus-flaggenfrage"
     ]
   },
   {
@@ -6499,7 +6600,8 @@
         "topicId": "t22",
         "voteId": "sr_20240506_02",
         "press": [
-          "sz_2024-05_windenergie"
+          "sz_2024-05_windenergie",
+          "merkur_2024-05-08_plant-windrad-kirchamper"
         ]
       },
       {
@@ -6519,6 +6621,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2024-05-08_plant-windrad-kirchamper"
     ]
   },
   {
@@ -6562,12 +6667,19 @@
       {
         "number": "4.2",
         "title": "Arbeitsmarktzulage – Zuschuss freie Träger",
-        "voteId": "sr_20240610_03"
+        "voteId": "sr_20240610_03",
+        "press": [
+          "sz_2024-06_kitas-arbeitsmarktzulage"
+        ]
       },
       {
         "number": "5.1",
         "title": "Kindergartengebühren – Erhöhung um 30€ (10:8)",
-        "voteId": "sr_20240610_04"
+        "voteId": "sr_20240610_04",
+        "press": [
+          "sz_2024-06_kitas-arbeitsmarktzulage",
+          "mz_2024-06-11_moosburger-hebt-kindergartengebuehren"
+        ]
       },
       {
         "number": "5.2",
@@ -6592,7 +6704,11 @@
         "number": "6.1",
         "title": "Schulwegpläne TG/Anton-Vizthum (abgelehnt 11:7)",
         "topicId": "t8",
-        "voteId": "sr_20240610_08"
+        "voteId": "sr_20240610_08",
+        "press": [
+          "sz_2024-06-12_grundschulen-schulwegplaene-abgelehnt",
+          "merkur_2024-06-14_probleme-elterntaxis-forderung"
+        ]
       },
       {
         "number": "6.2",
@@ -6615,6 +6731,12 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "sz_2024-06_kitas-arbeitsmarktzulage",
+      "mz_2024-06-11_moosburger-hebt-kindergartengebuehren",
+      "sz_2024-06-12_grundschulen-schulwegplaene-abgelehnt",
+      "merkur_2024-06-14_probleme-elterntaxis-forderung"
     ]
   },
   {
@@ -6666,7 +6788,10 @@
         "number": "6.1",
         "title": "Rockermaier-Straßenname – Saliterstraße",
         "topicId": "t5",
-        "voteId": "sr_20240617_05"
+        "voteId": "sr_20240617_05",
+        "press": [
+          "merkur_2024-06-20_adeliger-strassenname-fuer"
+        ]
       },
       {
         "number": "6.2",
@@ -6695,6 +6820,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2024-06-20_adeliger-strassenname-fuer"
     ]
   },
   {
@@ -6749,13 +6877,19 @@
         "number": 7,
         "title": "Überplanmäßige Ausgaben (635.266,42 €)",
         "topicId": "t7",
-        "voteId": "sr_20240701_04"
+        "voteId": "sr_20240701_04",
+        "press": [
+          "sz_2024-07-03_haushalt-halbjahresbericht-ruecklagen"
+        ]
       },
       {
         "number": 8,
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "sz_2024-07-03_haushalt-halbjahresbericht-ruecklagen"
     ]
   },
   {
@@ -7027,7 +7161,10 @@
       {
         "number": "4.2",
         "title": "B-Plan 79 Unterreit – Lärmschutzwand erforderlich",
-        "voteId": "sr_20240923_03"
+        "voteId": "sr_20240923_03",
+        "press": [
+          "mz_2024-09-24_moosburger-zwingt-investor"
+        ]
       },
       {
         "number": "5.1",
@@ -7055,6 +7192,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "mz_2024-09-24_moosburger-zwingt-investor"
     ]
   },
   {
@@ -7100,12 +7240,18 @@
       {
         "number": "4.2a",
         "title": "Mehrfamilienhaus 12 WE Bahnhofstr. 60 – Einvernehmen erteilt (abgelehnt)",
-        "voteId": "bpu_20240930_03"
+        "voteId": "bpu_20240930_03",
+        "press": [
+          "sz_2024-10-01_bahnhofstrasse-bahnhofsviertel-stadtentwicklung"
+        ]
       },
       {
         "number": "4.2b",
         "title": "Mehrfamilienhaus 12 WE Bahnhofstr. 60 – Einvernehmen verweigert",
-        "voteId": "bpu_20240930_04"
+        "voteId": "bpu_20240930_04",
+        "press": [
+          "sz_2024-10-01_bahnhofstrasse-bahnhofsviertel-stadtentwicklung"
+        ]
       },
       {
         "number": "4.3",
@@ -7142,6 +7288,9 @@
         "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
+    ],
+    "press": [
+      "sz_2024-10-01_bahnhofstrasse-bahnhofsviertel-stadtentwicklung"
     ]
   },
   {
@@ -7362,7 +7511,8 @@
         "voteId": "sr_20241104_05",
         "press": [
           "merkur_2024-11-04_hallenbad-kinder",
-          "mz_2024-11-04_hallenbad-kinder"
+          "mz_2024-11-04_hallenbad-kinder",
+          "sz_2024-11-06_hallenbad"
         ]
       },
       {
@@ -7370,6 +7520,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "sz_2024-11-06_hallenbad"
     ]
   },
   {
@@ -7417,7 +7570,11 @@
       {
         "number": 8,
         "title": "Zuschuss DAV Kletter-/Boulderhalle (€292.000 / 20%)",
-        "voteId": "sr_20241118_04"
+        "voteId": "sr_20241118_04",
+        "press": [
+          "sz_2024-11-19_deutscher-alpenverein-kletterhalle",
+          "merkur_2024-11-22_fast-moosburger-genehmigt"
+        ]
       },
       {
         "number": 9,
@@ -7429,6 +7586,10 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "sz_2024-11-19_deutscher-alpenverein-kletterhalle",
+      "merkur_2024-11-22_fast-moosburger-genehmigt"
     ]
   },
   {
@@ -7555,7 +7716,10 @@
         "number": 4,
         "title": "Generalsanierung des städtischen Freibades",
         "voteId": "sr_20241209_02",
-        "topicId": "t12"
+        "topicId": "t12",
+        "press": [
+          "merkur_2024-12-10_sanierungsplaene-fuer-moosburgs"
+        ]
       },
       {
         "number": 5,
@@ -7598,6 +7762,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2024-12-10_sanierungsplaene-fuer-moosburgs"
     ]
   },
   {
@@ -7684,12 +7851,18 @@
       {
         "number": "3.3a",
         "title": "Wohnanlage Stadtwaldstr. 9 – Einvernehmen erteilt (abgelehnt 3:8)",
-        "voteId": "bpu_20250116_03"
+        "voteId": "bpu_20250116_03",
+        "press": [
+          "merkur_2025-02-18_wohnanlage-stadtwaldstrasse"
+        ]
       },
       {
         "number": "3.3b",
         "title": "Wohnanlage Stadtwaldstr. 9 – Einvernehmen verweigert",
-        "voteId": "bpu_20250116_04"
+        "voteId": "bpu_20250116_04",
+        "press": [
+          "merkur_2025-02-18_wohnanlage-stadtwaldstrasse"
+        ]
       },
       {
         "number": "3.4",
@@ -7784,13 +7957,19 @@
         "number": 9,
         "title": "Übertragung Haushaltsreste 2024",
         "topicId": "t7",
-        "voteId": "sr_20250120_08"
+        "voteId": "sr_20250120_08",
+        "press": [
+          "sz_2025-01-31_haushaltsreste-uebertragung-haushalt"
+        ]
       },
       {
         "number": 10,
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "sz_2025-01-31_haushaltsreste-uebertragung-haushalt"
     ]
   },
   {
@@ -7846,7 +8025,10 @@
       {
         "number": 6,
         "title": "Anfragen",
-        "type": "formal"
+        "type": "formal",
+        "press": [
+          "merkur_2025-02-18_wohnanlage-stadtwaldstrasse"
+        ]
       }
     ]
   },
@@ -7878,7 +8060,8 @@
         "title": "Kostenloser Hallenbadeintritt für Kinder (Antrag StRin Beibl)",
         "voteId": "sr_20250224_01",
         "press": [
-          "merkur_2025-02-24_hallenbad-kinder"
+          "merkur_2025-02-24_hallenbad-kinder",
+          "sz_2025-02-25_hallenbad-hohe-auslastung"
         ]
       },
       {
@@ -7921,6 +8104,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "sz_2025-02-25_hallenbad-hohe-auslastung"
     ]
   },
   {
@@ -8012,7 +8198,10 @@
       {
         "number": "4.1",
         "title": "Niederlegung Stadtratsmandats Beubl – Nachrücker Marcus",
-        "voteId": "sr_20250324_03"
+        "voteId": "sr_20250324_03",
+        "press": [
+          "merkur_2025-03-26_nach-jahren-gerhard"
+        ]
       },
       {
         "number": "4.2",
@@ -8044,6 +8233,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2025-03-26_nach-jahren-gerhard"
     ]
   },
   {
@@ -8133,7 +8325,10 @@
       {
         "number": 5,
         "title": "B-Plan Isarstraße – Antrag Deutinger abgelehnt (18:2)",
-        "voteId": "sr_20250428_03"
+        "voteId": "sr_20250428_03",
+        "press": [
+          "sz_2025-05-04_bebauungsplan-isarstrasse-ablehnung"
+        ]
       },
       {
         "number": "6a",
@@ -8158,6 +8353,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "sz_2025-05-04_bebauungsplan-isarstrasse-ablehnung"
     ]
   },
   {
@@ -8634,7 +8832,10 @@
         "number": 4,
         "title": "Verkehrsberuhigung Schulzentrum Süd – Informationsveranstaltung",
         "topicId": "t8",
-        "voteId": "sr_20250908_02"
+        "voteId": "sr_20250908_02",
+        "press": [
+          "merkur_2025-09-09_nach-schwerem-schueler"
+        ]
       },
       {
         "number": "5.1",
@@ -8671,6 +8872,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2025-09-09_nach-schwerem-schueler"
     ]
   },
   {
@@ -9012,6 +9216,9 @@
       "beibl",
       "grundner",
       "hobmaier"
+    ],
+    "press": [
+      "merkur_2025-11-10_kreisverkehr"
     ]
   },
   {
@@ -9264,7 +9471,8 @@
         "topicId": "t1",
         "voteId": "sr_20260112_02",
         "press": [
-          "merkur_2026-01-12_sgt-vereinsheim"
+          "merkur_2026-01-12_sgt-vereinsheim",
+          "merkur_2026-01-14_bahnhof-moosburgs-stadtraete"
         ]
       },
       {
@@ -9281,7 +9489,10 @@
         "number": 7.1,
         "title": "Bahnhof Moosburg – Konzeptausschreibung und Pinselsanierung",
         "topicId": "t2",
-        "voteId": "sr_20260112_05"
+        "voteId": "sr_20260112_05",
+        "press": [
+          "merkur_2026-01-14_bahnhof-moosburgs-stadtraete"
+        ]
       },
       {
         "number": 8,
@@ -9297,6 +9508,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2026-01-14_bahnhof-moosburgs-stadtraete"
     ]
   },
   {
@@ -9504,7 +9718,10 @@
       {
         "number": "2.1",
         "title": "Beschlussfassung über die Anzahl der weiteren Bürgermeister",
-        "voteId": "sr_20260511_01"
+        "voteId": "sr_20260511_01",
+        "press": [
+          "sz_2026-05-13_buergermeister-stellvertreter"
+        ]
       },
       {
         "number": "2.2",
@@ -9534,6 +9751,9 @@
           "sr_20260511_04",
           "sr_20260511_05",
           "sr_20260511_06"
+        ],
+        "press": [
+          "merkur_2026-05-13_konstituierende-sitzung"
         ]
       },
       {
@@ -9559,12 +9779,18 @@
       {
         "number": "4.2",
         "title": "Abberufung der bisherigen Mitglieder",
-        "voteId": "sr_20260511_12"
+        "voteId": "sr_20260511_12",
+        "press": [
+          "merkur_2026-05-13_konstituierende-sitzung"
+        ]
       },
       {
         "number": "4.3",
         "title": "Beschluss über die personelle Besetzung des Aufsichtsrates",
-        "voteId": "sr_20260511_13"
+        "voteId": "sr_20260511_13",
+        "press": [
+          "merkur_2026-05-13_konstituierende-sitzung"
+        ]
       },
       {
         "number": "5",
@@ -9597,6 +9823,9 @@
         "voteIds": [
           "sr_20260511_18",
           "sr_20260511_19"
+        ],
+        "press": [
+          "merkur_2026-05-13_konstituierende-sitzung"
         ]
       },
       {
@@ -9612,6 +9841,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2026-05-13_konstituierende-sitzung"
     ]
   },
   {
@@ -9651,7 +9883,10 @@
       {
         "number": "6",
         "title": "Beschluss über den Antrag des Jazzclub Hirsch auf einen einmaligen Förderzuschuss in Höhe von 3.000 €",
-        "voteId": "sr_20260518_03"
+        "voteId": "sr_20260518_03",
+        "press": [
+          "merkur_2026-05-23_lehnt-sonderzuschuss-fuer"
+        ]
       },
       {
         "number": "7",
@@ -9660,7 +9895,10 @@
       {
         "number": "7.1",
         "title": "Neubau e. Mehrfamilienhauses mit 12 Wohneinh u. Tiefgarage a.d. Bahnhofstr. 60, Moosburg, erneute Behandlung des Bauvorhabens; Schreiben des LRA, FS v.…",
-        "voteId": "sr_20260518_04"
+        "voteId": "sr_20260518_04",
+        "press": [
+          "merkur_2026-05-27_bahnhofstrasse-mfh"
+        ]
       },
       {
         "number": "7.2",
@@ -9676,6 +9914,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "merkur_2026-05-23_lehnt-sonderzuschuss-fuer"
     ]
   }
 ]

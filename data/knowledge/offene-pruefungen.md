@@ -44,3 +44,37 @@ Diese stehen nirgends im Bestand, sollen aber nicht verlorengehen.
   Kästl kamen laut Niederschrift erst um 19:30 bzw. 20:10, Fincke fehlte ganz,
   Grübl zählt nach seiner Niederlegung nicht mehr mit. Es bleibt eine Lücke von
   einer Stimme: 25 minus sieben Abwesende wären 18, abgestimmt haben 17.
+
+---
+
+## Aus der Presserecherche vom 02.09.2026
+
+Eingetragen nach Durchsicht, mit diesen Resten:
+
+- **`sr_20210208_07` Aufnahme aus Moria — erledigt, 15:6 ist richtig.** Beide
+  Blätter schreiben 16:6, die Niederschrift 15:6. Aufgelöst durch die Zeile
+  „StR Welter hat wegen kurzfristiger Abwesenheit nicht an der Abstimmung
+  teilgenommen": 25 Sitze, 3 sitzungsabwesend, Welter nicht mitgestimmt — bleiben
+  21 Stimmen, und 15 + 6 sind 21. Die Zeitungen haben ihn mitgezählt. Der Eintrag
+  stand im Datensatz bereits korrekt unter `excluded`.
+  **Lehre für die Presserecherche:** Weicht eine Zeitungszahl um genau eins ab,
+  zuerst `excluded` und `session.absent` prüfen, bevor die Niederschrift in
+  Zweifel gezogen wird.
+- **`bpu_20240715_05` bis `_09` Rockermaier, je 7:4.** Die vier Nein-Stimmen
+  sind aus der SZ namentlich belegt, damit ist diese Seite vollständig. Die
+  Ja-Seite bleibt offen: anwesend waren laut den namentlichen Voten desselben
+  Abends zwölf, abgestimmt haben elf. Wer von den übrigen acht nicht mitgestimmt
+  hat, steht nicht fest — deshalb wurden die Voten nicht auf `named` gehoben.
+  Die Anwesenheitsliste dieser Niederschrift ist ohnehin noch nicht eingearbeitet
+  (siehe oben).
+- **`sr_20230424_04` Ausschussgröße.** Die schon länger eingetragenen Positionen
+  (Kästl, Grübl dafür; Dollinger, Weber, Kieninger, Pschorr dagegen) tragen keine
+  `voterEvidence`-Markierung und gelten damit als harte Belege. Für Grübl
+  („unterstützte das") ist das streng genommen zu viel — beim nächsten Anfassen
+  auf `weich` setzen.
+- **`sr_20210308_16` ist invertiert.** Der Beschluss lautet, von der Aufstellung
+  eines Bebauungsplans *abzusehen*. Wer den Bebauungsplan wollte, steht dort mit
+  Nein. Beim Nachtragen weiterer Stimmen aus diesem TOP nicht verwechseln.
+- **Artikel-ID `merkur_2023-04-24_ausschussgroesse`** trägt das Sitzungsdatum,
+  erschienen ist der Text am 27.04.2023. Das Feld `date` steht auf dem
+  Erscheinungsdatum, die ID nicht — bei Gelegenheit angleichen.
