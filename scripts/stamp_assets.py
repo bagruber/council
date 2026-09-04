@@ -13,7 +13,7 @@ Vor jedem Commit laufen lassen, der CSS oder JS anfasst.
 import hashlib, os, re, sys
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ASSETS = ['css/fonts.css', 'css/style.css',
+ASSETS = ['css/tokens.css', 'css/fonts.css', 'css/style.css',
           'js/core.js', 'js/parliament.js', 'js/app.js']
 LINK = re.compile(r'(href|src)="((?:css|js)/[\w.-]+)(?:\?v=[0-9a-f]+)?"')
 

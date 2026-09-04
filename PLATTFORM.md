@@ -12,7 +12,7 @@ Kontext steht im Repo `bagruber/moosburg-eu` in `BRIEFING.md`.
 | | Adresse | Quelle |
 |---|---|---|
 | GitHub Pages | `bagruber.github.io/council/` | Branch `main`, roh ausgeliefert |
-| moosburg.eu | `moosburg.eu/stadtrat/` | Branch `main` über `.github/workflows/deploy.yml` |
+| moosburg.eu | `moosburg.eu/stadtrat/` | Branch `main` über `.github/workflows/moosburg-eu.yml` |
 
 **Beide kommen aus `main`.** Ein Commit dorthin erreicht beide Varianten, es
 braucht keine Doppelpflege. Der frühere Arbeitsbranch `parliament-v2` ist im
@@ -25,7 +25,7 @@ Der Workflow schließt aus:
 | Ausschluss | Warum |
 |---|---|
 | `img/members/originals/**` | 167 MB unkomprimierte PNG-Vorlagen, aus denen die `.webp` erzeugt wurden. Die Seite referenziert sie nirgends. Ohne sie sinkt der Upload von 199 MB auf 32 MB. |
-| Werkzeug-Ordner mit führendem Punkt | Konkrete Einträge siehe `deploy.yml`. `**/.git*` deckt `.github` und `.gitignore` ab, **nicht** beliebige Punkt-Ordner: Deren `.md`-Dateien fielen zwar unter `**/*.md`, die leeren Verzeichnisse landeten trotzdem auf dem Server. Wer einen neuen anlegt, trägt ihn nach. |
+| Werkzeug-Ordner mit führendem Punkt | Konkrete Einträge siehe `moosburg-eu.yml`. `**/.git*` deckt `.github` und `.gitignore` ab, **nicht** beliebige Punkt-Ordner: Deren `.md`-Dateien fielen zwar unter `**/*.md`, die leeren Verzeichnisse landeten trotzdem auf dem Server. Wer einen neuen anlegt, trägt ihn nach. |
 | `docs/**`, `scripts/**`, `**/*.md` | Gehört nicht zur ausgelieferten Seite. |
 
 Der erste Deploy überträgt rund 32 MB und dauert etwa zwei Minuten, danach
@@ -84,7 +84,19 @@ Abholen und übertragen ist im README von `moosburg-eu` beschrieben. Das Feld
 
 ## Gestaltung
 
-Die Farb- und Schrift-Tokens stehen in [DESIGN.md](DESIGN.md).
+Die Farbwerte kommen aus dem Kanon in
+[bagruber/moosburg-design](https://github.com/bagruber/moosburg-design). Weil
+diese App ohne Build-Step läuft und die Domain-CSP `style-src 'self'` setzt,
+liegen sie als erzeugte Kopie in `css/tokens.css`; `node scripts/hole-tokens.mjs`
+holt sie, danach `python scripts/stamp_assets.py`. In `css/style.css` stehen nur
+noch die Rollen, die diese App daraus bildet (`--primary`, `--accent` und so
+weiter), plus die Farben, die es im Kanon nicht gibt: die Abstimmungs-Semantik
+und das ausgewaschene Gold.
+
+Bis September 2026 lag daneben eine `DESIGN.md` mit einer abgeschriebenen
+Farbtabelle. Ihre Werte stammten aus der Zeit vor dem Kanon und stimmten nicht
+mehr; wer sie las, bekam ein anderes Rot als die App zeigt. Sie ist deshalb
+weg.
 
 ### Verbotenes Muster: der einseitige Kantenakzent
 
@@ -113,3 +125,15 @@ Die Zahlen zum Bestand (Statistik, Datenlage, Presse) stehen **über** der
 Themenliste, aber zugeklappt. Sie ordnen ein, was folgt — dafür müssen sie
 davor stehen. Aufgeklappt würden sie die Themen unter die Falz drücken, und
 die sind der eigentliche Einstieg.
+
+## Zählung
+
+Eingebunden: `<script src="/assets/zaehler.js" defer></script>` am Ende von
+`index.html`, dazu der Routenwechsel am Ende von `route()` in
+`js/routing.js`, weil diese App über den Hash routet und sonst nur der
+Einstieg in der Auswertung stünde.
+
+Warum die Zählung ohne Einwilligungsbanner auskommt, warum deshalb hier
+niemals eine Sitzungs-ID in `sessionStorage` oder `localStorage` nachgerüstet
+werden darf und warum der Aufruf auf GitHub Pages absichtlich ins Leere läuft,
+steht in `bagruber/moosburg-eu`, `README.md`, Abschnitt „Zählen".
