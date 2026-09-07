@@ -1,9 +1,9 @@
 # Presserecherche: Fundstellen zum Stimmverhalten
 
-Erzeugt 2026-09-03 aus Archivkopien (Internet Archive). Nichts davon ist in die Daten eingetragen.
+Erzeugt 2026-09-07 aus Archivkopien (Internet Archive). Nichts davon ist in die Daten eingetragen.
 
 
-5 Artikel mit Abstimmungssatz und Namen, 8 nur mit Wortmeldung, 159 weitere zu einer Sitzung ohne Namen.
+5 Artikel mit Abstimmungssatz und Namen, 9 nur mit Wortmeldung, 159 weitere zu einer Sitzung ohne Namen.
 
 
 ---
@@ -139,6 +139,15 @@ https://www.merkur.de/lokales/freising/moosburg-ort29088/befestigen-parkhaus-ode
 - Zahlen im Text: 12:7
 - [weich] **yes** → Heinz
   > Rudi Heinz erklärte, dass die Christsozialen für die Fläche ein Parkhaus mit zwei Parkdecks als die ideale Lösung befürworteten.
+
+### 2026-03-27 · sz
+https://www.sueddeutsche.de/muenchen/freising/moosburg-stadtrat-csu-mehrheit-buergermeister-gruene-li.3457133
+- Sitzung sr_20260325 (stadtrat, +2 Tage)
+  - `sr_20260325_06` 17:4 [offen] — „Bauturbo" – Anpassung der Geschäftsordnung
+  - `sr_20260325_03` 21:0 [namentlich] — Theresia-Gerhardinger-Grundschule – Ergebnis der Kostenkommission
+  - `sr_20260325_01` 21:0 [namentlich] — Genehmigung der öffentlichen Niederschriften
+- [weich] **yes** → Dollinger
+  > Dieses Mal war es umgekehrt: Die Freien Wähler unterstützten vor dem zweiten Wahlgang Mader und nicht ihr ehemaliges Mitglied Dollinger.
 
 ### 2026-05-27 · merkur · schon in press.json
 https://www.merkur.de/lokales/freising/moosburg-ort29088/umstrittener-bauantrag-moosburgs-stadtrat-gibt-widerstand-gegen-zwoelf-parteien-haus-auf-94323101.html
@@ -617,12 +626,12 @@ Kandidaten fuer press.json und die Themen-Timeline, ohne Stimmverhalten.
 - 2026-03-06 merkur +11T · sr_20260223
   https://www.merkur.de/lokales/freising/moosburg-ort29088/moosburgs-stadtraete-debattieren-ueber-baederkarten-frauenstreik-und-flexbus-94203735.html
   TOPs: sr_20260223_01
-- 2026-04-21 merkur +8T · bpu_20260413
+- 2026-04-21 merkur +1T · sr_20260420
   https://www.merkur.de/lokales/freising/moosburg-ort29088/das-beruehrt-mich-jetzt-schon-moosburgs-buergermeister-erlebt-emotionalen-moment-im-stadtrat-94272316.html
-  TOPs: -
-- 2026-04-24 merkur +11T · bpu_20260413
+  TOPs: sr_20260420_08, sr_20260420_05, sr_20260420_06
+- 2026-04-24 merkur +4T · sr_20260420
   https://www.merkur.de/lokales/freising/moosburg-ort29088/zwoelf-stadtraete-verlassen-das-moosburger-gremium-martin-pschorr-nach-54-jahren-94277890.html
-  TOPs: -
+  TOPs: sr_20260420_08
 - 2026-05-13 merkur +2T · sr_20260511
   https://www.merkur.de/lokales/freising/moosburg-ort29088/moosburgs-neue-buergermeister-stellvertreter-ein-deal-wahrt-den-frieden-zum-stadtrat-start-94304143.html
   TOPs: sr_20260511_08, sr_20260511_07, sr_20260511_13
