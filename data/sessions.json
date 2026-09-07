@@ -9655,6 +9655,67 @@
     ]
   },
   {
+    "id": "sr_20260325",
+    "date": "2026-03-25",
+    "type": "stadtrat",
+    "title": "4. Stadtratssitzung – März 2026",
+    "absent": [
+      "stanglmaier",
+      "becher_a",
+      "becher_j",
+      "gruber"
+    ],
+    "agenda": [
+      {
+        "number": "3",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "5",
+        "title": "Genehmigung der öffentlichen Niederschriften (StR 02.02.2026; StR 23.02.2026)",
+        "voteId": "sr_20260325_01"
+      },
+      {
+        "number": "6",
+        "title": "Klageverfahren - Studentenwohnheim Rockermaier Areal - weiteres Vorgehen",
+        "topicId": "t5",
+        "voteId": "sr_20260325_02"
+      },
+      {
+        "number": "7",
+        "title": "Erweiterung Theresia-Gerhardinger-Grundschule; Ergebnisse Kostenkommission mit Beschlussfassung zum Entwurf",
+        "topicId": "t6",
+        "voteId": "sr_20260325_03"
+      },
+      {
+        "number": "8",
+        "title": "B-Plan Nr. 66 \"Oberes Gereuth Nordost\" - Vorstellung aktuelle Planung - Billigungsbeschluss",
+        "voteId": "sr_20260325_04"
+      },
+      {
+        "number": "9",
+        "title": "Vollzug der Wassergesetze; Antrag Freistaat Bayern auf wasserrechtliche Plangenehmigung zur Sanierung des Deichabschnitts BA 07, Projekt Isar 2020",
+        "voteId": "sr_20260325_05"
+      },
+      {
+        "number": "10",
+        "title": "Vollzug der Baugesetze; \"Bauturbo\" - Zustimmung der Gemeinde gem. § 36a BauGB - Anpassung der Geschäftsordnung",
+        "voteId": "sr_20260325_06"
+      },
+      {
+        "number": "11",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
     "id": "bpu_20260413",
     "date": "2026-04-13",
     "type": "bpu",
@@ -9688,6 +9749,97 @@
       "kind": "webauszug",
       "url": null
     }
+  },
+  {
+    "id": "sr_20260420",
+    "date": "2026-04-20",
+    "type": "stadtrat",
+    "title": "5. Stadtratssitzung – April 2026",
+    "absent": [
+      "gruber",
+      "heinz"
+    ],
+    "agenda": [
+      {
+        "number": "3",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "5",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "5.1",
+        "title": "Errichtung eines Studentenwohnheims bestehend aus vier Wohngebäude und zugehöriger Tiefgarage - Saliterstr. 8 und 10",
+        "topicId": "t5",
+        "voteId": "sr_20260420_01"
+      },
+      {
+        "number": "5.2",
+        "title": "Neubau eines Mehrfamilienwohnhaus mit 23 Wohneinheiten und Tiefgarage - Graf-Burkhard-Str. 2",
+        "topicId": "t5",
+        "voteId": "sr_20260420_02"
+      },
+      {
+        "number": "5.3",
+        "title": "Neubau eines Mehrfamilienwohnhauses mit 16 Wohneinheiten und Tiefgarage - Weihmühlstr. 21",
+        "topicId": "t5",
+        "voteId": "sr_20260420_03"
+      },
+      {
+        "number": "5.4",
+        "title": "Erweiterungsbau Theresia-Gerhardinger-Grundschule mit Tiefgarage",
+        "topicId": "t6",
+        "voteId": "sr_20260420_04"
+      },
+      {
+        "number": "6",
+        "title": "Aufstellungsbeschluss 18. Änderung Flächennutzungsplan - Windkraft Lohbert",
+        "voteId": "sr_20260420_05"
+      },
+      {
+        "number": "7",
+        "title": "Aufstellungsbeschluss zur 2. Änderung des Bebauungsplan Nr. 3 \"Thalbacher Au Süd-Ost\"",
+        "voteId": "sr_20260420_06"
+      },
+      {
+        "number": "8",
+        "title": "Aufstellungsbeschluss B-Plan Nr. 83 \"Erweiterung Gymnasium\"",
+        "voteId": "sr_20260420_07"
+      },
+      {
+        "number": "9",
+        "title": "Beschluss über die Aufhebungsvereinbarung der Zweckvereinbarung zur Bestellung eines gemeinsamen Datenschutzbeauftragten",
+        "voteId": "sr_20260420_08"
+      },
+      {
+        "number": "10",
+        "title": "Beschlüsse zur Jahresrechnung 2024"
+      },
+      {
+        "number": "10.1",
+        "title": "Beschluss über die Feststellung der Jahresrechnung 2024",
+        "topicId": "t7",
+        "voteId": "sr_20260420_09"
+      },
+      {
+        "number": "10.2",
+        "title": "Beschluss über die Entlastung des RPA zur Jahresrechnung 2024",
+        "topicId": "t7",
+        "voteId": "sr_20260420_10"
+      },
+      {
+        "number": "11",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20260511",
