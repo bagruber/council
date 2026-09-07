@@ -3,6 +3,7 @@
 import { members, votes, memberMap, partyMap } from "../daten.js";
 import { formatMonthPeriod } from "../hilfen.js";
 import { stances, partyAtDate } from "./naehe.js";
+import { backLink } from "../routing.js";
 
 const gremienMain = document.getElementById("gremien-main");
 
@@ -62,11 +63,7 @@ function renderFraktion(pid) {
   const wrap = document.createElement("div");
   wrap.className = "page-wrap";
 
-  const back = document.createElement("a");
-  back.className = "back-link";
-  back.href = "#/gremien";
-  back.innerHTML = '<svg class="icon"><use href="#i-arrow_back"/></svg> Gremien';
-  wrap.appendChild(back);
+  wrap.appendChild(backLink("Gremien", "#/gremien"));
 
   const roster = factionRoster(pid);
   const now = roster.filter(r => r.current);

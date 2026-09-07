@@ -5,7 +5,7 @@ import {
   lengthMin, protocolUrl, isWebauszug, isVorschau,
 } from "../daten.js";
 import { formatDate, formatDuration } from "../hilfen.js";
-import { navigate, setChrome } from "../routing.js";
+import { navigate, setChrome, backLink } from "../routing.js";
 import { renderPressLinks } from "./themen.js";
 import { renderVoteBlock } from "./voten.js";
 
@@ -18,14 +18,7 @@ function renderSession(id) {
   const session = sessionMap[id];
   if (!session) { main.innerHTML = "<p>Sitzung nicht gefunden.</p>"; return; }
 
-  const back = document.createElement("a");
-  back.className = "back-link";
-  back.href = "#/";
-  back.innerHTML = '<svg class="icon"><use href="#i-arrow_back"/></svg> \u00dcbersicht';
-  back.addEventListener("click", e => {
-    if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
-  });
-  main.appendChild(back);
+  main.appendChild(backLink("Übersicht", "#/"));
 
   const header = document.createElement("div");
   header.className = "session-header";

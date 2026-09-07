@@ -114,6 +114,9 @@ function renderTopicList(list) {
 
 // Pfad statt Zurück-Pfeil: er sagt nicht nur, wo es zurückgeht, sondern
 // auch, wo man gerade ist. Der letzte Eintrag ist die aktuelle Seite.
+// Nur Feld und Dossier tragen ihn — sie sind die einzigen Seiten mit einem
+// festen Platz in einer Hierarchie. Alles andere ist aus mehreren Richtungen
+// erreichbar und bekommt den Zurück-Pfeil (backLink in routing.js).
 function breadcrumb(items) {
   const nav = document.createElement("nav");
   nav.className = "crumbs";
@@ -425,4 +428,4 @@ function renderTopic(id) {
 }
 
 export { renderHome, renderFilteredTopics, renderField, renderTopic,
-         breadcrumb, renderPressLinks, DOSSIER_TYPE };
+         renderPressLinks, DOSSIER_TYPE };
