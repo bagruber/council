@@ -175,20 +175,33 @@ const Council = (() => {
              unknown: "Nicht überliefert" }[status] || "Nicht überliefert";
   }
 
-  // Herkunft der Einzelstimmen — vier Stufen, siehe data/knowledge.
-  // Ohne `memberId` die Herkunft des Beschlusses, mit ihr die dieser einen
-  // Stimme: eine Selbstauskunft kann neben einer getrackten Mitschrift stehen,
-  // dann gilt für die Person die schwächere Stufe.
+  // Herkunft der Einzelstimmen, absteigend nach Belastbarkeit.
+  const TIER_RANK = ["protocol-explicit", "protocol-implicit", "tracked",
+                     "press", "selbstauskunft"];
+  const TIER_LABEL = {
+    "protocol-explicit": "Namentlich in der Niederschrift",
+    "protocol-implicit": "Aus der Anwesenheit abgeleitet",
+    tracked: "In der Sitzung mitgeschrieben",
+    press: "Aus Presseberichten",
+    selbstauskunft: "Selbstauskunft",
+  };
+
+  // Alle Belege für die Stimme dieser Person, stärkster zuerst. Mehrere sind
+  // möglich: wer in der Mitschrift steht und später selbst antwortet, ist zwei
+  // Mal belegt. Für die Anzeige zählt der stärkste, die übrigen erhöhen nur
+  // das Gewicht. Ohne eigenen Eintrag gilt die Stufe des Beschlusses.
+  function voterTiers(vote, memberId) {
+    const eigen = memberId && (vote.voterSource || {})[memberId];
+    const liste = eigen ? [].concat(eigen)
+                : (vote.source && vote.source.tier ? [vote.source.tier] : []);
+    return liste.slice().sort((a, b) => TIER_RANK.indexOf(a) - TIER_RANK.indexOf(b));
+  }
+
+  // Ohne `memberId` die Herkunft des Beschlusses, mit ihr die stärkste dieser
+  // einen Stimme.
   function sourceLabel(vote, memberId) {
-    const s = (memberId && (vote.voterSource || {})[memberId]) || vote.source;
-    if (!s) return null;
-    return {
-      "protocol-explicit": "Namentlich in der Niederschrift",
-      "protocol-implicit": "Aus der Anwesenheit abgeleitet",
-      press: "Aus Presseberichten",
-      tracked: "In der Sitzung mitgeschrieben",
-      selbstauskunft: "Vom Mitglied selbst angegeben",
-    }[s.tier] || null;
+    const tiers = voterTiers(vote, memberId);
+    return tiers.length ? (TIER_LABEL[tiers[0]] || null) : null;
   }
 
   // Woher die Stimme dieser einen Person kommt. Die Stufe am Votum sagt, wie
@@ -207,8 +220,17 @@ const Council = (() => {
   // stamme die Lücke aus der Zeitung.
   function statusProvenance(status, vote, memberId) {
     if (status === "unknown") return voteStatusTitle(status);
-    const note = evidenceNote(vote, memberId) || sourceLabel(vote, memberId);
-    return note ? voteStatusTitle(status) + " — " + note : voteStatusTitle(status);
+    const tiers = voterTiers(vote, memberId);
+    // "Ja (aus Anwesenheit abgeleitet) — Aus der Anwesenheit abgeleitet" sagt
+    // dasselbe zwei Mal; die Statuszeile trägt es schon.
+    if (status.endsWith("-inferred") && tiers[0] === "protocol-implicit") {
+      return voteStatusTitle(status);
+    }
+    const note = evidenceNote(vote, memberId) || (tiers.length ? TIER_LABEL[tiers[0]] : null);
+    if (!note) return voteStatusTitle(status);
+    const weitere = tiers.slice(1).map(x => TIER_LABEL[x]).filter(Boolean);
+    return voteStatusTitle(status) + " — " + note
+         + (weitere.length ? ", dazu " + weitere.join(", ").toLowerCase() : "");
   }
 
   return {
@@ -216,6 +238,6 @@ const Council = (() => {
     memberActiveAt,
     bodyConfigAt, isRegularOf,
     voteStatus, voteStatusLabel, voteStatusTitle, sourceLabel, isUnanimous,
-    evidenceNote, statusProvenance,
+    evidenceNote, statusProvenance, voterTiers,
   };
 })();
