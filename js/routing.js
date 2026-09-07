@@ -91,6 +91,23 @@ function route() {
   }
 }
 
+// Zurueck-Pfeil. Die Seiten, die ihn tragen, sind aus mehreren Richtungen
+// erreichbar — von der Uebersicht, aus einem Dossier, aus dem Kalender, aus
+// der Suche. Deshalb springt er in die Historie und nimmt `href` nur als
+// Fallback fuer den Direkteinstieg. Ein Pfad waere hier eine Behauptung ueber
+// einen Weg, den es nicht gibt; den tragen nur Feld und Dossier (breadcrumb
+// in views/themen.js).
+function backLink(label, href) {
+  const a = document.createElement("a");
+  a.className = "back-link";
+  a.href = href;
+  a.innerHTML = `<svg class="icon"><use href="#i-arrow_back"/></svg> ${label}`;
+  a.addEventListener("click", e => {
+    if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
+  });
+  return a;
+}
+
 // Track the most recent non-member hash so the back-link on a member profile
 // can return to where the user actually came from (Gremien, Topic, Session, …).
 let lastListHash = "/";
@@ -119,4 +136,4 @@ export function initRouting() {
   });
 }
 
-export { switchTab, setChrome, navigate, route, lastListHash };
+export { switchTab, setChrome, navigate, route, backLink, lastListHash };

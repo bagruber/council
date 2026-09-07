@@ -7,8 +7,7 @@ import {
   protocolUrl, isWebauszug, SITZUNGSARTEN, sitzungsart,
 } from "../daten.js";
 import { formatDate, formatDuration } from "../hilfen.js";
-import { navigate, setChrome, route } from "../routing.js";
-import { breadcrumb } from "./themen.js";
+import { navigate, setChrome, route, backLink } from "../routing.js";
 import { PERIODS, drawSimMatrix, drawSimGraph } from "./naehe.js";
 
 const main = document.getElementById("main");
@@ -66,14 +65,7 @@ function chartCard(title, foot, drawFn, data, withLegend) {
 }
 
 function renderStatistik() {
-  const back = document.createElement("a");
-  back.className = "back-link";
-  back.href = "#/";
-  back.innerHTML = '<svg class="icon"><use href="#i-arrow_back"/></svg> Übersicht';
-  back.addEventListener("click", e => {
-    if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
-  });
-  main.appendChild(back);
+  main.appendChild(backLink("Übersicht", "#/"));
 
   const entries = [...sessionLengths]
     .map(l => ({ date: l.date, body: l.body, start: l.start, end: l.end, min: lengthMin(l) }))
@@ -208,7 +200,7 @@ function pressBadge(p) {
 // sum) oder eine Erfassungsstufe (protokoll/auszug/keine/presse/ohne-presse) ein.
 function renderDatenlage(filter) {
   setChrome("sitzung");
-  main.appendChild(breadcrumb([{ label: "Übersicht", href: "#/" }]));
+  main.appendChild(backLink("Übersicht", "#/"));
 
   const reg = sessionRegister();
   const erfasst = reg.filter(r => r.session);
@@ -407,7 +399,7 @@ function pressContext() {
 }
 
 function renderPresse() {
-  main.appendChild(breadcrumb([{ label: "Übersicht", href: "#/" }]));
+  main.appendChild(backLink("Übersicht", "#/"));
 
   const ctx = pressContext();
   const arts = [...pressData].sort((a, b) => b.date.localeCompare(a.date));

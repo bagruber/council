@@ -5,7 +5,7 @@ import {
   topicMap, voteMap, sessionsSorted, memberActiveAt, bodyIdForSession,
 } from "../daten.js";
 import { formatDate, formatPeriod, monthNames } from "../hilfen.js";
-import { lastListHash } from "../routing.js";
+import { lastListHash, backLink } from "../routing.js";
 import { renderPressLinks } from "./themen.js";
 import { renderSimilarity } from "./naehe.js";
 
@@ -39,17 +39,14 @@ function renderMemberProfile(id) {
   const wrap = document.createElement("div");
   wrap.className = "page-wrap";
 
-  const back = document.createElement("a");
-  back.className = "back-link";
-  // Return to wherever the user came from (Gremien list, Topic, Session, …)
+  // Das Ziel steht im Label, damit der Pfeil nicht blind ist: von der
+  // Gremienliste, aus einem Dossier, aus einer Sitzung.
   const backHash = lastListHash || "/gremien";
-  back.href = "#" + backHash;
   const backLabel = backHash === "/gremien" ? "Gremien"
                   : backHash.startsWith("/topic/") ? "Thema"
                   : backHash.startsWith("/session/") ? "Sitzung"
                   : "Übersicht";
-  back.innerHTML = `<svg class="icon"><use href="#i-arrow_back"/></svg> ${backLabel}`;
-  wrap.appendChild(back);
+  wrap.appendChild(backLink(backLabel, "#" + backHash));
 
   const currentPartyId = m.partyHistory && m.partyHistory.length
     ? m.partyHistory[m.partyHistory.length - 1].party
