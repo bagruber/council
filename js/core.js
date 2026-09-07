@@ -167,8 +167,8 @@ const Council = (() => {
   // Ausgeschriebene Fassung für Tooltips und Legende.
   function voteStatusTitle(status) {
     return { yes: "Ja", no: "Nein", absent: "Abwesend",
-             "yes-inferred": "Ja (aus Anwesenheit abgeleitet)",
-             "no-inferred": "Nein (aus Anwesenheit abgeleitet)",
+             "yes-inferred": "Ja - aus Anwesenheit abgeleitet",
+             "no-inferred": "Nein - aus Anwesenheit abgeleitet",
              excluded: "Wegen persönlicher Beteiligung ausgeschlossen (Art. 49 GO)",
              abstained: "Enthalten",
              restricted: "Bei dieser Abstimmung nicht stimmberechtigt",
@@ -216,12 +216,12 @@ const Council = (() => {
 
   // Statuszeile plus Herkunft, für Titel-Attribute in den Übersichten.
   // Wo nichts überliefert ist, sagt die Herkunft nichts — dann bleibt sie weg,
-  // sonst stünde "Nicht überliefert — Aus Presseberichten" da, was klingt, als
+  // sonst stünde "Nicht überliefert - Aus Presseberichten" da, was klingt, als
   // stamme die Lücke aus der Zeitung.
   function statusProvenance(status, vote, memberId) {
     if (status === "unknown") return voteStatusTitle(status);
     const tiers = voterTiers(vote, memberId);
-    // "Ja (aus Anwesenheit abgeleitet) — Aus der Anwesenheit abgeleitet" sagt
+    // "Ja - aus Anwesenheit abgeleitet - Aus der Anwesenheit abgeleitet" sagt
     // dasselbe zwei Mal; die Statuszeile trägt es schon.
     if (status.endsWith("-inferred") && tiers[0] === "protocol-implicit") {
       return voteStatusTitle(status);
@@ -229,7 +229,7 @@ const Council = (() => {
     const note = evidenceNote(vote, memberId) || (tiers.length ? TIER_LABEL[tiers[0]] : null);
     if (!note) return voteStatusTitle(status);
     const weitere = tiers.slice(1).map(x => TIER_LABEL[x]).filter(Boolean);
-    return voteStatusTitle(status) + " — " + note
+    return voteStatusTitle(status) + " - " + note
          + (weitere.length ? ", dazu " + weitere.join(", ").toLowerCase() : "");
   }
 
