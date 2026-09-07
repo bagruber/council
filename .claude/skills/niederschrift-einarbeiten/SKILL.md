@@ -135,6 +135,15 @@ Passt ein TOP zu einem Watchlist-Eintrag:
   nachfragen, aber in der Zusammenfassung erwähnen. Danach Status-Spalte der
   Watchlist auf die neue `tN` setzen.
 
+**Kandidaten danach:** dieselbe Datei führt unten Themen, die für ein eigenes
+Dossier noch zu dünn sind, und Stränge, die aus einem bestehenden Thema
+herausgelöst gehören. Für jeden TOP ohne passendes Topic:
+- Steht schon eine Zeile dafür → Belege und Datum ergänzen. Ab dem zweiten
+  Beschluss in einer zweiten Sitzung den Vorschlag in der Zusammenfassung
+  nennen (anlegen erst nach Zuruf).
+- Steht keine Zeile, sieht der TOP aber nach einem wiederkehrenden Thema aus →
+  neue Kandidatenzeile schreiben statt es zu vergessen.
+
 Rules:
 - If a vote clearly belongs to an existing topic → set `topicId` in agenda item and on the vote.
 - Add a `history` entry to the topic in `topics.json`:

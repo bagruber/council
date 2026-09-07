@@ -1,8 +1,13 @@
 # Topic-Watchlist
 
-Vom Betreiber benannte Themen, die auf jeden Fall eigene Seiten (`topics.json`)
-bekommen sollen. Wird beim Einarbeiten von Niederschriften
-(`/niederschrift-einarbeiten`) geprüft:
+Zwei Listen: was auf jeden Fall ein eigenes Thema wird (**Watchlist**), und was
+noch zu dünn dafür ist, aber bei jedem neuen Beschluss neu bewertet gehört
+(**Kandidaten**). Beide werden beim Einarbeiten von Niederschriften
+(`/niederschrift-einarbeiten`) geprüft.
+
+## Watchlist — vorab genehmigt
+
+Vom Betreiber benannte Themen, die eigene Seiten (`topics.json`) bekommen sollen:
 
 - Passt ein TOP zu einem Eintrag → dem Topic zuordnen.
 - Existiert das Topic noch nicht → anlegen. Die Anlage gilt durch den
@@ -16,3 +21,21 @@ Einträge kommen per Zuruf („setz X auf die Watchlist") — eine Zeile pro The
 | _(noch leer)_ | | | |
 
 `Status`: `offen` = noch kein Topic angelegt · `tN` = angelegt (Zeile als Doku behalten oder löschen).
+
+## Kandidaten — bei jedem neuen Beschluss neu prüfen
+
+Themen, die einmal aufgetaucht sind, aber noch kein eigenes Dossier tragen —
+und Stränge, die für eine **Ausgliederung** aus einem bestehenden Thema zu groß
+werden. Ohne diese Liste fällt beides bei jeder Niederschrift neu unter den
+Tisch, weil ein einzelner Beschluss nie nach einem Thema aussieht.
+
+Beim Einarbeiten gilt für jede Zeile: kommt ein neuer Beschluss dazu, den
+Zähler und das Datum hochsetzen. Ab dem zweiten Beschluss in einer zweiten
+Sitzung den Vorschlag in der Zusammenfassung nennen — angelegt wird erst nach
+Zuruf, außer die Zeile steht auch auf der Watchlist oben.
+
+| Kandidat | Art | Belege (Voten) | zuletzt | Notiz |
+|---|---|---|---|---|
+| Windkraft Lohbert | neu | `sr_20260420_05` (18. FNP-Änderung, Flurstück 579 Niederambach, 20:3) | 2026-04-20 | Konkretes Projekt, nicht der Regionalplan aus t22. Warten, ob der Aufstellungsbeschluss eine Fortsetzung bekommt. |
+
+`Art`: `neu` = eigenes Thema · `ausgliederung aus tN` = Strang aus einem bestehenden Thema herauslösen.
