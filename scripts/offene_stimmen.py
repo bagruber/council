@@ -154,11 +154,13 @@ def text_fuer(member, eintraege):
             jahr_offen = s['date'][:4]
             z.append('')
             z.append(f'📆 {jahr_offen} · {jahre.index(jahr_offen) + 1}/{len(jahre)}')
-        z.append('')
-        z.append(f'📅 {datum_kurz(s["date"])} · {BODY_LABEL[bid]}')
-        for v, _, _ in gruppe:
-            r = v['results']
+        else:
             z.append('')
+        z.append(f'⏰ {datum_kurz(s["date"])} · {BODY_LABEL[bid]}')
+        for i, (v, _, _) in enumerate(gruppe):
+            r = v['results']
+            if i:
+                z.append('')
             z.append(f'⬜ *{v["title"]}*')
             if v.get('text'):
                 z.append(kuerzen(v['text']))

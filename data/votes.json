@@ -18888,7 +18888,8 @@
       "absent": 7
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "hobmaier": "yes"
     },
     "source": {
       "tier": "tracked",
@@ -18900,7 +18901,12 @@
         "member": "gruebl",
         "reason": "kein_mandat"
       }
-    ]
+    ],
+    "voterSource": {
+      "hobmaier": {
+        "tier": "selbstauskunft"
+      }
+    }
   },
   {
     "id": "sr_20241021_09",
@@ -19052,12 +19058,18 @@
       "absent": 4
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "hobmaier": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "hobmaier": {
+        "tier": "selbstauskunft"
+      }
     }
   },
   {
@@ -19096,7 +19108,13 @@
     },
     "voters": {
       "beibl": "no",
-      "dollinger": "yes"
+      "dollinger": "yes",
+      "hobmaier": "no"
+    },
+    "voterSource": {
+      "hobmaier": {
+        "tier": "selbstauskunft"
+      }
     }
   },
   {

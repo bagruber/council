@@ -151,17 +151,57 @@ Abstimmung. 12:0 heißt, der Beschluss *zur Ablehnung* ging einstimmig durch.
 
 ### Herkunft des Abstimmungsverhaltens (`source.tier`)
 
-Vier Stufen, absteigend nach Belastbarkeit. Die Oberfläche nennt sie in einer
-stillen Fußnote unter dem Vote-Block (`renderVoteSource`).
+Absteigend nach Belastbarkeit. Die Oberfläche nennt sie in einer stillen
+Fußnote unter dem Vote-Block (`renderVoteSource`) und als Filter auf
+`#/datenlage`.
 
-| Stufe | Bedeutung | Bestand |
-|---|---|---|
-| `protocol-explicit` | Die Niederschrift nennt jeden Namen (namentliche Abstimmung) | 6 |
-| `protocol-implicit` | Einstimmig, also aus der Anwesenheit ableitbar | 537 |
-| `press` | Aus einem Presseartikel rekonstruiert, `pressId` verweist darauf | 0 |
-| `tracked` | Von einer benannten Person mitgeschrieben (`by`), optional presseverifiziert | 57 |
+| Stufe | Bedeutung |
+|---|---|
+| `protocol-explicit` | Die Niederschrift nennt jeden Namen (namentliche Abstimmung) |
+| `protocol-implicit` | Einstimmig, also aus der Anwesenheit abgeleitet |
+| `tracked` | Im Saal **vollständig** erfasst — Tool-Export oder Mitschrift (`by`), optional presseverifiziert |
+| `press` | Aus einem Presseartikel rekonstruiert, `pressId` verweist darauf |
+| `selbstauskunft` | Vom Mitglied nachträglich aus eigener Erinnerung angegeben |
+| — | Ohne Stufe: nur das Gesamtergebnis ist bekannt |
 
-247 Abstimmungen haben keine Stufe — dort ist nur das Gesamtergebnis bekannt.
+Der Unterschied zwischen `tracked` und `selbstauskunft` ist die Vollständigkeit:
+`tracked` erfasst den ganzen Saal in der Sitzung, `selbstauskunft` ist die
+Aussage einer einzelnen Person über sich selbst, oft Jahre später.
+
+**Herkunft je Stimme (`voterSource`).** Ein Beschluss kann Stimmen aus
+verschiedenen Quellen tragen — eine getrackte Mitschrift und daneben die
+Selbstauskunft einer Person, die damals nicht erfasst wurde. `source.tier` gilt
+für den Beschluss als Ganzes, `voterSource[<id>].tier` überschreibt sie für
+diese eine Stimme. `Council.sourceLabel(vote, memberId)` löst das auf; ohne
+`memberId` kommt die Stufe des Beschlusses.
+
+Die Zählung auf `#/datenlage` geht nach der Stufe des Beschlusses. Einzelne
+abweichende Stimmen tauchen dort nicht auf — sie stehen im Profil der Person.
+
+### Selbstauskünfte einsammeln
+
+Der Weg, auf dem `selbstauskunft`-Stimmen entstehen — drei Schritte, alle
+skriptgestützt, damit nichts von Hand in die JSON wandert:
+
+1. `python scripts/offene_stimmen.py --dir docs/offene-stimmen <member-ids>`
+   erzeugt je Person eine Datei mit allen Beschlüssen, bei denen ihre Stimme
+   fehlt: Titel, Beschlusstext und Ergebnis, davor ein ⬜. Format ist auf
+   Messenger ausgelegt (Sternchen für fett, Jahresmarken als Kopiergrenze).
+2. Die Person ersetzt ⬜ durch ✅ ❌ ➖ ❔ und schickt zurück. Die Antwort
+   kommt nach `docs/selbstauskuenfte/<id>.txt` — nicht nach `data/`, denn
+   der Ordner wird mitdeployed, und private Nachrichten gehören nicht ins Netz.
+   Er ist deshalb in `.gitignore`.
+3. `python scripts/selbstauskunft.py <id> docs/selbstauskuenfte/<id>.txt`
+   liest die Sitzungszeile (⏰ Datum · Gremium), sucht den Beschluss über den
+   Titel und trägt `voters[<id>]` plus `voterSource[<id>].tier =
+   "selbstauskunft"` ein. `--dry` zeigt vorher, was passieren würde.
+   Widerspricht die Antwort einer schon erfassten Stimme, wird das gemeldet
+   statt überschrieben.
+
+Danach `mark_inferable.py` **nicht** neu laufen lassen müssen — Selbstauskünfte
+ändern die Anwesenheitsrechnung nicht. Aber `validate_data.py` und, wenn die
+Liste erneut verschickt wird, `offene_stimmen.py` neu erzeugen: beantwortete
+Punkte fallen dann von selbst heraus.
 
 ### Sonderzustände (`excluded[]`)
 
@@ -174,6 +214,7 @@ Nur wenige Beschlüsse pro Wahlperiode, aber ohne sie wird die Statistik falsch.
 | `enthaltung` | „enth." | Ausdrückliche Enthaltung im Protokoll |
 | `nicht_stimmberechtigt` | „n.b." | z.B. neu Gewählte bei der Genehmigung alter Niederschriften |
 | `kurzfristig abwesend` | „–" | Kurz raus, zählt als abwesend |
+| `kein_mandat` | „n.b." | Wechseltag: den Sitz hielt zu dieser Abstimmung die andere Person |
 
 Keiner dieser Zustände zählt in der Statistik als Nein — sie landen im Eimer
 „nicht abgestimmt" (`statKey()`).
@@ -192,9 +233,36 @@ vorher herausgerechnet:
   die Lücke ist erklärt, aber nicht auflösbar. Diese 5 Voten bleiben ohne Ableitung
   und tragen die Begründung in `note`.
 
-Aktuell 39 gesperrte Voten. Die Sperre kostet Information: eine Lücke von einer
-Stimme unter 22 würde 21 richtige Ableitungen verwerfen, um eine falsche zu
-vermeiden — deshalb die Schwelle statt einer harten Regel.
+Die Sperre kostet Information: eine Lücke von einer Stimme unter 22 würde 21
+richtige Ableitungen verwerfen, um eine falsche zu vermeiden — deshalb die
+Schwelle statt einer harten Regel.
+
+### Teilanwesenheit (`session.partial`)
+
+Die Anwesenheitslisten notieren neben einzelnen Namen „ab 18:15 Uhr" oder
+„bis 20:30 Uhr". Diese Vermerke stehen als `partial: [{member, from?, to?}]`
+an der Sitzung — wörtlich wie im Protokoll, ohne Zuordnung zu einzelnen TOPs,
+denn wann welcher Punkt dran war, steht dort nicht.
+
+Sie erklären die Lücke zwischen Anwesenden und abgegebenen Stimmen. Reicht die
+Gruppe der Vermerkten aus, um die Lücke zu decken, setzt `mark_inferable.py`
+statt `inferable: false` den Wert **`inferable: "teilweise"`**: für alle
+durchgehend Anwesenden gilt dann das einstimmige Ergebnis, offen bleibt nur die
+Stimme der Vermerkten. Reicht sie nicht, bleibt der ganze Beschluss gesperrt.
+
+`scripts/teilanwesenheit.py` trägt die Vermerke ein,
+`scripts/anwesenheitsluecken.py` zeigt, wo noch etwas fehlt.
+
+### Mandatswechsel mitten in der Sitzung
+
+An einem Wechseltag stehen zwei Namen in der Anwesenheitsliste, aber es gibt nur
+einen Sitz. Wer ihn zu einer Abstimmung nicht hält, bekommt `excluded` mit Grund
+`kein_mandat` — sonst schreibt die Ableitung bei einstimmigen Beschlüssen beiden
+ein Ja gut. Die Regel: vor dem Wechselbeschluss gehört der Sitz der
+ausscheidenden Person, beim Wechselbeschluss selbst stimmt er nicht mit
+(Art. 49 GO für die eine, fehlende Vereidigung für die andere), danach gehört er
+der nachrückenden. `scripts/mandatswechsel_stimmrecht.py`, erledigt für alle vier
+bekannten Fälle.
 
 **Gesamtstimmen:** 25 Mitglieder (24 StR + 1 BM Dollinger). Bei BPU/HVFA sind es je nach Gremium weniger.
 
