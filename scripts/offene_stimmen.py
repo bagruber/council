@@ -68,7 +68,8 @@ def status(mid, vote, session, member):
     ex = next((e for e in vote.get('excluded') or [] if e['member'] == mid), None)
     if ex:
         return {'beteiligung': 'excluded', 'enthaltung': 'abstained',
-                'nicht_stimmberechtigt': 'restricted'}.get(ex['reason'], 'absent')
+                'nicht_stimmberechtigt': 'restricted',
+                'kein_mandat': 'restricted'}.get(ex['reason'], 'absent')
     if session and mid in (session.get('absent') or []):
         return 'absent'
 
