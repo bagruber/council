@@ -25,10 +25,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'data')
 
 BODY_OF_TYPE = {'stadtrat': 'plenum', 'bpu': 'bpu', 'hvfa': 'hvfa'}
-BODY_LABEL = {'plenum': 'Stadtrat', 'bpu': 'Bau- und Umweltausschuss',
-              'hvfa': 'Haupt- und Finanzausschuss'}
-MONATE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli',
-          'August', 'September', 'Oktober', 'November', 'Dezember']
+BODY_LABEL = {'plenum': 'Stadtrat', 'bpu': 'BPU', 'hvfa': 'HVFA'}
 
 
 def load(n):
@@ -104,9 +101,9 @@ def status(mid, vote, session, member):
     return 'unknown'
 
 
-def datum_lang(d):
+def datum_kurz(d):
     j, m, t = d.split('-')
-    return f'{int(t)}. {MONATE[int(m) - 1]} {j}'
+    return f'{t}.{m}.{j}'
 
 
 def kuerzen(text, grenze=260):
@@ -114,7 +111,8 @@ def kuerzen(text, grenze=260):
     text = re.sub(r'\s*\(\d+\s*:\s*\d+\)\.?$', '.', text)
     # Aus den Niederschriften geerbte Silbentrennung: "abwei- chende".
     # "Bau- und" ist dagegen ein echter Bindestrich und bleibt.
-    text = re.sub(r'([A-Za-zÄÖÜäöüß]*[a-zäöüß])-\s+(?!und|oder|bzw|sowie|wie)([a-zäöüß]{2,})', r'', text)
+    text = re.sub(r'([A-Za-zÄÖÜäöüß]*[a-zäöüß])-\s+(?!(?:und|oder|bzw|sowie|wie)\b)([a-zäöüß]{2,})',
+                  lambda m: m.group(1) + m.group(2), text)
     if len(text) <= grenze:
         return text
     schnitt = text[:grenze].rsplit('. ', 1)
@@ -129,13 +127,12 @@ def einstimmig(v):
 
 KOPF = """Offene Abstimmungen – {name}
 
-Hallo {vorname}, für die folgenden {n} Beschlüsse ist nicht überliefert,
-wie du gestimmt hast — die Niederschrift nennt nur das Gesamtergebnis.
+Hallo {vorname}, bei diesen {n} Beschlüssen ist nicht überliefert, wie du
+gestimmt hast. ⬜ ersetzen durch:
+✅ dafür · ❌ dagegen · ➖ nicht mitgestimmt · ❔ weiß nicht mehr
 
-Wenn du magst: ⬜ ersetzen durch
-✅ dafür · ❌ dagegen · ➖ nicht mitgestimmt · ❔ weiß ich nicht mehr
-
-Auch Teilantworten helfen, und bei den ganz alten ist Raten nicht nötig."""
+Wo „einstimmig" steht, hat niemand dagegen gestimmt — ❌ scheidet dort aus.
+Teilantworten helfen auch."""
 
 
 def text_fuer(member, eintraege):
@@ -156,25 +153,20 @@ def text_fuer(member, eintraege):
         if len(jahre) > 1 and s['date'][:4] != jahr_offen:
             jahr_offen = s['date'][:4]
             z.append('')
-            z.append('')
-            z.append(f'📆 {jahr_offen}   (Teil {jahre.index(jahr_offen) + 1} von {len(jahre)})')
+            z.append(f'📆 {jahr_offen} · {jahre.index(jahr_offen) + 1}/{len(jahre)}')
         z.append('')
-        z.append('━━━━━━━━━━━━━━━━')
-        z.append(f'📅 {datum_lang(s["date"])} · {BODY_LABEL[bid]}')
-        z.append('━━━━━━━━━━━━━━━━')
+        z.append(f'📅 {datum_kurz(s["date"])} · {BODY_LABEL[bid]}')
         for v, _, _ in gruppe:
             r = v['results']
-            hinweis = ('einstimmig – ein Nein ist damit ausgeschlossen'
-                       if einstimmig(v) else 'das Ergebnis ging auseinander')
             z.append('')
             z.append(f'⬜ *{v["title"]}*')
             if v.get('text'):
                 z.append(kuerzen(v['text']))
-            z.append(f'📊 {r["yes"]}:{r["no"]} · {hinweis}')
+            z.append(f'📊 {r["yes"]}:{r["no"]}'
+                     + (' · einstimmig' if einstimmig(v) else ''))
 
     z.append('')
-    z.append('')
-    z.append('Alle Beschlüsse im Zusammenhang: moosburg.eu/stadtrat')
+    z.append('moosburg.eu/stadtrat')
     return '\n'.join(z) + '\n'
 
 
