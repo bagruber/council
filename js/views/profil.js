@@ -270,7 +270,7 @@ function periodOfDate(d) {
 // Bei einstimmigen Votes ist die Einzelstimme weniger aussagekräftig,
 // deshalb werden sie blasser dargestellt — egal ob named oder abgeleitet.
 const STAT_ZERO = () =>
-  ({ uYes:0, uNo:0, sYes:0, sNo:0, sUnknown:0, absU:0, absS:0, total:0 });
+  ({ uYes:0, uNo:0, uUnknown:0, sYes:0, sNo:0, sUnknown:0, absU:0, absS:0, total:0 });
 
 function statKey(raw, unanimous) {
   const base = raw.replace("-inferred", "");
@@ -281,7 +281,10 @@ function statKey(raw, unanimous) {
       || base === "restricted") {
     return unanimous ? "absU" : "absS";
   }
-  if (base === "unknown") return "sUnknown";
+  // Bei einem einstimmigen Beschluss hat niemand dagegen gestimmt. Wessen
+  // Stimme nicht überliefert ist, hat also Ja gestimmt oder gar nicht —
+  // ein Nein ist ausgeschlossen. Das ist mehr als gar nichts zu wissen.
+  if (base === "unknown") return unanimous ? "uUnknown" : "sUnknown";
   return (unanimous ? "u" : "s") + (base === "yes" ? "Yes" : "No");
 }
 
@@ -328,6 +331,7 @@ const VS_SEGMENTS = [
   { key: "uNo",      cls: "no-inf"   },
   { key: "sNo",      cls: "no"       },
   { key: "sUnknown", cls: "unknown"  },
+  { key: "uUnknown", cls: "unknown-u" },
   { key: "sYes",     cls: "yes"      },
   { key: "uYes",     cls: "yes-inf"  },
   { key: "absU",     cls: "absent-u" },
@@ -360,11 +364,12 @@ function renderVotingStatsCard(stats) {
         <div class="vs-legend">
           <div class="vs-legend-row vs-group">
             <span class="vs-legend-head">Einstimmig</span>
-            <span class="vs-legend-share">${fmt(t.uYes + t.uNo)}</span>
+            <span class="vs-legend-share">${fmt(t.uYes + t.uNo + t.uUnknown)}</span>
           </div>
           <div class="vs-legend-row vs-sub">
             <span class="vs-dot yes-inf"></span>Ja ${fmt(t.uYes)}
             <span class="vs-dot no-inf"></span>Nein ${fmt(t.uNo)}
+            <span class="vs-dot unknown-u"></span>unbekannt, kein Nein ${fmt(t.uUnknown)}
           </div>
 
           <div class="vs-legend-row vs-group">

@@ -956,6 +956,8 @@ main {
 .voting-stats .vs-seg.absent   { background: var(--absent); opacity: 0.7; }
 .voting-stats .vs-seg.absent-u { background: var(--absent); opacity: 0.4; }
 .voting-stats .vs-seg.unknown  { background: var(--accent); opacity: 0.5; }
+/* Einstimmig und trotzdem unbekannt: ein Nein ist ausgeschlossen, deshalb blasser */
+.voting-stats .vs-seg.unknown-u { background: var(--accent); opacity: 0.24; }
 
 .voting-stats .vs-legend {
   margin-top: 8px;
@@ -997,6 +999,7 @@ main {
 .voting-stats .vs-dot.absent   { background: var(--absent); }
 .voting-stats .vs-dot.absent-u { background: var(--absent); opacity: 0.45; }
 .voting-stats .vs-dot.unknown  { background: var(--accent); opacity: 0.6; }
+.voting-stats .vs-dot.unknown-u { background: var(--accent); opacity: 0.3; }
 .voting-stats .vs-section {
   margin-top: 14px;
 }
