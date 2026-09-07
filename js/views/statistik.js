@@ -4,7 +4,7 @@
 import {
   sessions, topics, members, pressData, sessionLengths, mediaMap,
   sessionByDateBody, sessionRegister, tierCounts, lengthMin,
-  protocolUrl, isWebauszug,
+  protocolUrl, isWebauszug, SITZUNGSARTEN, sitzungsart,
 } from "../daten.js";
 import { formatDate, formatDuration } from "../hilfen.js";
 import { navigate, setChrome, route } from "../routing.js";
@@ -15,15 +15,10 @@ const main = document.getElementById("main");
 
 // -- Statistik --
 
-// Farben je Gremium stehen als --body-* in css/style.css, damit Diagramm,
-// Register und Legende nicht drei Kopien derselben Rampe pflegen.
-const CHART_BODIES = [
-  { id: "stadtrat", label: "Stadtrat", color: "var(--body-stadtrat)" },
-  { id: "bpu",      label: "BPU",      color: "var(--body-bpu)" },
-  { id: "hvfa",     label: "HVFA",     color: "var(--body-hvfa)" },
-];
+// Diagramme und Register kennen die Sitzung unter ihrer Art (stadtrat/bpu/
+// hvfa), nicht unter ihrem Gremium — Label und Farbe kommen aus daten.js.
 const chartColor = {};
-CHART_BODIES.forEach(b => { chartColor[b.id] = b.color; });
+SITZUNGSARTEN.forEach(a => { chartColor[a.type] = a.color; });
 
 function median(arr) {
   const s = [...arr].sort((a, b) => a - b);
@@ -49,7 +44,7 @@ function chartTipHide() {
 }
 
 function chartLegend() {
-  return `<div class="chart-legend">` + CHART_BODIES.map(b =>
+  return `<div class="chart-legend">` + SITZUNGSARTEN.map(b =>
     `<span><span class="chart-dot" style="background:${b.color}"></span>${b.label}</span>`).join("") + `</div>`;
 }
 
@@ -307,7 +302,7 @@ function renderDatenlage(filter) {
       head.innerHTML = `<th colspan="4">${year}</th>`;
       body.appendChild(head);
     }
-    const label = CHART_BODIES.find(b => b.id === r.body).label;
+    const label = sitzungsart(r.body).label;
     const dur = r.min ? formatDuration(r.min) : r.start ? r.start + " Uhr" : "";
     const c = tierCounts(r.votes);
     const bar = r.votes.length
@@ -366,7 +361,7 @@ function tierVoteList(tier, erfasst) {
   table.className = "register";
   const body = document.createElement("tbody");
   groups.forEach(([r, list]) => {
-    const label = CHART_BODIES.find(b => b.id === r.body).label;
+    const label = sitzungsart(r.body).label;
     const head = document.createElement("tr");
     head.className = "register-group";
     head.innerHTML = `<th colspan="2"><a href="#/session/${r.session.id}"><span class="reg-dot"
@@ -490,7 +485,7 @@ function drawDurationDots(el, entries) {
   el.querySelectorAll(".dt-dot").forEach(dot => {
     const e = entries[dot.dataset.i];
     const session = sessionByDateBody[e.date + "|" + e.body];
-    const label = CHART_BODIES.find(b => b.id === e.body).label;
+    const label = sitzungsart(e.body).label;
     dot.addEventListener("mouseenter", evt => chartTipShow(evt,
       `<strong>${label} · ${formatDate(e.date)}</strong><br>${e.start}–${e.end} Uhr · ${formatDuration(e.min)}`));
     dot.addEventListener("mousemove", chartTipMove);
@@ -511,9 +506,9 @@ function capRect(x, y, w, h) {
 function drawYearHours(el, entries) {
   const years = [...new Set(entries.map(e => e.date.slice(0, 4)))].sort();
   const sums = {};
-  years.forEach(yr => { sums[yr] = { stadtrat: 0, bpu: 0, hvfa: 0 }; });
+  years.forEach(yr => { sums[yr] = {}; SITZUNGSARTEN.forEach(a => { sums[yr][a.type] = 0; }); });
   entries.forEach(e => { sums[e.date.slice(0, 4)][e.body] += e.min; });
-  const totalOf = yr => sums[yr].stadtrat + sums[yr].bpu + sums[yr].hvfa;
+  const totalOf = yr => SITZUNGSARTEN.reduce((n, a) => n + sums[yr][a.type], 0);
 
   const W = el.clientWidth || 640;
   const H = 220, top = 20, right = 8, bottom = 22, left = 36;
@@ -536,14 +531,14 @@ function drawYearHours(el, entries) {
     const bx = Math.round(cx - barW / 2);
     let base = top + plotH;
     let gaps = "";
-    const segs = CHART_BODIES.filter(b => sums[yr][b.id] > 0);
+    const segs = SITZUNGSARTEN.filter(b => sums[yr][b.type] > 0);
     segs.forEach((b, si) => {
-      const h = scale(sums[yr][b.id]);
+      const h = scale(sums[yr][b.type]);
       const sy = base - h;
       if (si === segs.length - 1) {
-        bars += `<path class="yh-seg" data-yr="${yr}" data-b="${b.id}" d="${capRect(bx, sy, barW, h)}" fill="${b.color}"/>`;
+        bars += `<path class="yh-seg" data-yr="${yr}" data-b="${b.type}" d="${capRect(bx, sy, barW, h)}" fill="${b.color}"/>`;
       } else {
-        bars += `<rect class="yh-seg" data-yr="${yr}" data-b="${b.id}" x="${bx}" y="${sy.toFixed(1)}" width="${barW}" height="${h.toFixed(1)}" fill="${b.color}"/>`;
+        bars += `<rect class="yh-seg" data-yr="${yr}" data-b="${b.type}" x="${bx}" y="${sy.toFixed(1)}" width="${barW}" height="${h.toFixed(1)}" fill="${b.color}"/>`;
         // 2px Lücke in Flächenfarbe zwischen den Segmenten
         gaps += `<line x1="${bx}" x2="${bx + barW}" y1="${sy.toFixed(1)}" y2="${sy.toFixed(1)}" stroke="var(--surface)" stroke-width="2"/>`;
       }
@@ -558,7 +553,7 @@ function drawYearHours(el, entries) {
     <g class="chart-grid">${grid}</g>${ticks}${bars}</svg>`;
 
   el.querySelectorAll(".yh-seg").forEach(seg => {
-    const b = CHART_BODIES.find(cb => cb.id === seg.dataset.b);
+    const b = sitzungsart(seg.dataset.b);
     const minutes = sums[seg.dataset.yr][seg.dataset.b];
     seg.addEventListener("mouseenter", evt => chartTipShow(evt,
       `<strong>${b.label} ${seg.dataset.yr}</strong><br>${Math.round(minutes / 60)} Std. in ${entries.filter(e => e.date.slice(0, 4) === seg.dataset.yr && e.body === seg.dataset.b).length} Sitzungen`));
@@ -572,9 +567,9 @@ function drawMedianByBody(el, entries) {
   const med = {}, counts = {};
   years.forEach(yr => {
     med[yr] = {}; counts[yr] = {};
-    CHART_BODIES.forEach(b => {
-      const mins = entries.filter(e => e.date.slice(0, 4) === yr && e.body === b.id).map(e => e.min);
-      if (mins.length) { med[yr][b.id] = median(mins); counts[yr][b.id] = mins.length; }
+    SITZUNGSARTEN.forEach(b => {
+      const mins = entries.filter(e => e.date.slice(0, 4) === yr && e.body === b.type).map(e => e.min);
+      if (mins.length) { med[yr][b.type] = median(mins); counts[yr][b.type] = mins.length; }
     });
   });
 
@@ -584,7 +579,7 @@ function drawMedianByBody(el, entries) {
   const maxMin = Math.ceil(Math.max(...years.map(yr => Math.max(...Object.values(med[yr])))) / 60) * 60;
   const scale = m => m / maxMin * plotH;
   const slot = plotW / years.length;
-  const barW = Math.min(16, Math.floor((slot * 0.7 - 4) / CHART_BODIES.length));
+  const barW = Math.min(16, Math.floor((slot * 0.7 - 4) / SITZUNGSARTEN.length));
 
   let grid = "", ticks = "";
   for (let h = 60; h <= maxMin; h += 60) {
@@ -596,12 +591,12 @@ function drawMedianByBody(el, entries) {
   let bars = "";
   years.forEach((yr, yi) => {
     const cx = left + slot * (yi + 0.5);
-    const present = CHART_BODIES.filter(b => med[yr][b.id] !== undefined);
+    const present = SITZUNGSARTEN.filter(b => med[yr][b.type] !== undefined);
     const groupW = present.length * barW + (present.length - 1) * 2;
     present.forEach((b, bi) => {
       const bx = Math.round(cx - groupW / 2 + bi * (barW + 2));
-      const h = scale(med[yr][b.id]);
-      bars += `<path class="mb-bar" data-yr="${yr}" data-b="${b.id}" d="${capRect(bx, top + plotH - h, barW, h)}" fill="${b.color}"/>`;
+      const h = scale(med[yr][b.type]);
+      bars += `<path class="mb-bar" data-yr="${yr}" data-b="${b.type}" d="${capRect(bx, top + plotH - h, barW, h)}" fill="${b.color}"/>`;
     });
     ticks += `<text class="chart-tick" x="${cx.toFixed(1)}" y="${H - 6}" text-anchor="middle">${yr}</text>`;
   });
@@ -611,7 +606,7 @@ function drawMedianByBody(el, entries) {
 
   el.querySelectorAll(".mb-bar").forEach(bar => {
     const yr = bar.dataset.yr, bid = bar.dataset.b;
-    const b = CHART_BODIES.find(cb => cb.id === bid);
+    const b = sitzungsart(bid);
     bar.addEventListener("mouseenter", evt => chartTipShow(evt,
       `<strong>${b.label} ${yr}</strong><br>Median ${formatDuration(med[yr][bid])} (${counts[yr][bid]} Sitzung${counts[yr][bid] > 1 ? "en" : ""})`));
     bar.addEventListener("mousemove", chartTipMove);

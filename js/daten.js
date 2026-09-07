@@ -58,9 +58,24 @@ async function ladeDaten() {
   votes.forEach(v => { (votesBySession[v.sessionId] || (votesBySession[v.sessionId] = [])).push(v); });
 }
 
-const PDF_PREFIX = { stadtrat: "SR", bpu: "BPU", hvfa: "HVF" };
+// Eine Sitzungsart, zwei Namen: im Gremienteil heisst das Gremium "Plenum",
+// weil es dort neben den Ausschuessen steht und die Unterscheidung der Punkt
+// ist. In Statistik, Register und Kalender heisst dieselbe Sitzung "Stadtrat",
+// weil sie dort neben anderen Sitzungen steht. Beides ist richtig, nur stand
+// die Zuordnung bisher dreimal im Code — hier, in bodyIdForSession und als
+// CHART_BODIES in statistik.js.
+const SITZUNGSARTEN = [
+  { type: "stadtrat", body: "plenum", label: "Stadtrat", pdf: "SR",
+    color: "var(--body-stadtrat)" },
+  { type: "bpu", body: "bpu", label: "BPU", pdf: "BPU",
+    color: "var(--body-bpu)" },
+  { type: "hvfa", body: "hvfa", label: "HVFA", pdf: "HVF",
+    color: "var(--body-hvfa)" },
+];
+const sitzungsart = type => SITZUNGSARTEN.find(a => a.type === type) || null;
+
 function protocolUrl(s) {
-  return "data/niederschriften/" + PDF_PREFIX[s.type || "stadtrat"]
+  return "data/niederschriften/" + sitzungsart(s.type).pdf
        + "_" + s.date.replace(/-/g, "") + ".pdf";
 }
 
@@ -142,11 +157,8 @@ const memberActiveAt = Council.memberActiveAt;
 const isActive = (m) => Council.memberActiveAt(m, nowStr);
 
 function bodyIdForSession(s) {
-  if (!s) return null;
-  if (s.type === "stadtrat") return "plenum";
-  if (s.type === "bpu")      return "bpu";
-  if (s.type === "hvfa")     return "hvfa";
-  return null;
+  const art = s && sitzungsart(s.type);
+  return art ? art.body : null;
 }
 
 export {
@@ -155,6 +167,7 @@ export {
   members, parties, bodies, seatOrder, mediaSources, mediaMap, pressMap,
   topicMap, sessionMap, voteMap, tagMap, memberMap, partyMap, bodyMap,
   sessionsSorted, lengthMap, sessionByDateBody, votesBySession,
+  SITZUNGSARTEN, sitzungsart,
   protocolUrl, isWebauszug, isVorschau, sessionRegister, tierCounts, lengthMin,
   nowStr, memberActiveAt, isActive, bodyIdForSession,
 };
