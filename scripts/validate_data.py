@@ -11,6 +11,7 @@ Catches the kinds of issues that have bitten us before:
   - session.agenda[].topicId references a missing topic
   - session.absent ids that aren't valid members
   - history entry references missing sessionId/voteId
+  - history entry whose vote carries no topicId (undercounts the dossier)
   - press references with broken ids
   - member period gaps / overlaps within member.periods[]
   - BPU composition mismatch (welter-on-BPU-2022 type issues)
@@ -132,6 +133,20 @@ for v in votes:
     for mid in (v.get("voters") or {}):
         if mid not in member_ids:
             err(f"vote {v['id']}: voters['{mid}'] not a member")
+
+# ── Historie gegen votes[].topicId ─────────────────────────────────────────────
+# Steht ein Votum in der Historie eines Dossiers, soll es irgendein Dossier als
+# topicId tragen -- sonst zaehlt es nirgends und erscheint auf der Feldseite als
+# themenloser Einzelbeschluss. Welches Dossier, bleibt offen: ein Votum kann in
+# zwei Historien stehen, das Feld ist einwertig, und der Zaehler bildet ohnehin
+# die Vereinigung aus beidem.
+vote_by_id = {v['id']: v for v in votes}
+for t in topics:
+    for h in t.get('history', []):
+        v = vote_by_id.get(h.get('voteId'))
+        if v is not None and not v.get('topicId'):
+            warn(f"topic {t['id']}: vote {v['id']} steht in der Historie, tragt aber "
+                 f"keine topicId -- zaehlt in keinem Dossier")
 
 # ── Member periods ───────────────────────────────────────────────────────────
 for m in members:

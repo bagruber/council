@@ -262,7 +262,14 @@ function renderDossierHead(topic) {
         : `<span class="dossier-status">${span}</span>`);
   }
 
-  const n = votes.filter(v => v.topicId === topic.id).length;
+  // Die Zuordnung steht an zwei Stellen: als Feld am Votum und als voteId in
+  // der Historie. Das Feld ist die vollstaendige Zuordnung, die Historie die
+  // kuratierte Auswahl -- aber ein Votum kann in zwei Dossiers vorkommen, und
+  // das Feld ist einwertig. Gezaehlt wird deshalb die Vereinigung.
+  const n = new Set([
+    ...votes.filter(v => v.topicId === topic.id).map(v => v.id),
+    ...(topic.history || []).map(h => h.voteId).filter(Boolean),
+  ]).size;
   if (n) bits.push(`<span class="dossier-count">${n} Abstimmung${n === 1 ? "" : "en"}</span>`);
 
   const parent = topic.partOf && topicMap[topic.partOf];
