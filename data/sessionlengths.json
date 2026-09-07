@@ -994,5 +994,47 @@
     "body": "stadtrat",
     "start": "18:00",
     "end": "21:52"
+  },
+  {
+    "date": "2026-05-11",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:20"
+  },
+  {
+    "date": "2026-05-18",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "20:55"
+  },
+  {
+    "date": "2026-06-15",
+    "body": "stadtrat",
+    "start": "19:00",
+    "end": "21:55"
+  },
+  {
+    "date": "2026-06-29",
+    "body": "stadtrat",
+    "start": "18:00",
+    "end": "20:47"
+  },
+  {
+    "date": "2026-07-13",
+    "body": "bpu",
+    "start": "19:00",
+    "end": "20:00"
+  },
+  {
+    "date": "2026-07-20",
+    "body": "stadtrat",
+    "start": "18:30",
+    "end": "21:00"
+  },
+  {
+    "date": "2026-07-27",
+    "body": "stadtrat",
+    "start": "18:30",
+    "end": "22:27"
   }
 ]
