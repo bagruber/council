@@ -369,9 +369,9 @@ function tierVoteList(tier, erfasst) {
   groups.forEach(([r, list]) => {
     const label = CHART_BODIES.find(b => b.id === r.body).label;
     const head = document.createElement("tr");
-    head.className = "register-year";
-    head.innerHTML = `<th colspan="2"><a href="#/session/${r.session.id}">${formatDate(r.date)}
-      · ${label}</a></th>`;
+    head.className = "register-group";
+    head.innerHTML = `<th colspan="2"><a href="#/session/${r.session.id}"><span class="reg-dot"
+      style="background:${chartColor[r.body]}"></span>${formatDate(r.date)} · ${label}</a></th>`;
     body.appendChild(head);
     list.forEach(v => {
       const res = v.type === "named"
