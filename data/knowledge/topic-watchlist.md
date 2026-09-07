@@ -36,6 +36,7 @@ Zuruf, außer die Zeile steht auch auf der Watchlist oben.
 
 | Kandidat | Art | Belege (Voten) | zuletzt | Notiz |
 |---|---|---|---|---|
+| Mehrfamilienhaus Sternstr. 12 | neu | `bpu_20260413_02`, `bpu_20260413_03` (Einvernehmen verweigert, Klage empfohlen), `sr_20260615_04` (Klageerhebung, 23:0) | 2026-06-15 | Zweite Sitzung, zweiter Beschluss. Der Strang laeuft seit Dezember 2025 und geht jetzt vor Gericht — als Fall von gemeindlichem Einvernehmen gegen das Landratsamt einen Vorschlag wert. |
 | Windkraft Lohbert | neu | `sr_20260420_05` (18. FNP-Änderung, Flurstück 579 Niederambach, 20:3) | 2026-04-20 | Konkretes Projekt, nicht der Regionalplan aus t22. Warten, ob der Aufstellungsbeschluss eine Fortsetzung bekommt. |
 
 `Art`: `neu` = eigenes Thema · `ausgliederung aus tN` = Strang aus einem bestehenden Thema herauslösen.

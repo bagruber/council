@@ -123,8 +123,12 @@ for v in votes:
 for v in votes:
     if v.get("type") != "anonymous": continue
     r = v["results"]
-    if not all(isinstance(r.get(k), int) for k in ("yes","no","absent")):
-        err(f"vote {v['id']}: anonymous results must have integer yes/no/absent")
+    if not all(isinstance(r.get(k), int) for k in ("yes","no")):
+        err(f"vote {v['id']}: anonymous results must have integer yes/no")
+    # absent darf fehlen: Beschlussauszuege nennen keine Anwesenheit, und eine
+    # 0 waere dort eine Behauptung. Wenn sie dasteht, muss sie eine Zahl sein.
+    if "absent" in r and not isinstance(r["absent"], int):
+        err(f"vote {v['id']}: anonymous results.absent must be an integer")
     for mid in (v.get("voters") or {}):
         if mid not in member_ids:
             err(f"vote {v['id']}: voters['{mid}'] not a member")

@@ -10173,6 +10173,96 @@
     ]
   },
   {
+    "id": "sr_20260615",
+    "date": "2026-06-15",
+    "type": "stadtrat",
+    "title": "8. Stadtratssitzung – Juni 2026",
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der öffentlichen Niederschriften (StR 11.05.2026; StR 18.05.2026)",
+        "voteId": "sr_20260615_01"
+      },
+      {
+        "number": "4",
+        "title": "19. Änderung des Flächennutzungsplans Bereich \"Degernpoint Nord\" - Aufstellungsbeschluss",
+        "voteId": "sr_20260615_02",
+        "topicId": "t18"
+      },
+      {
+        "number": "5",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "5.1",
+        "title": "Vorbescheid - Neubau eines Logistikgebäudes - Driescherstr. 3",
+        "voteId": "sr_20260615_03"
+      },
+      {
+        "number": "5.2",
+        "title": "Genehmigung Vorbescheid z. Neubau e. Mehrfamilienhauses mit 7 Wohneinheiten - Sternstr. 12 - Klageerhebung gegen die Genehmigung",
+        "voteId": "sr_20260615_04"
+      },
+      {
+        "number": "6",
+        "title": "Stadtrats- und Bürgermeisterangelegenheiten"
+      },
+      {
+        "number": "6.1",
+        "title": "Bestellung des Vorsitzes und der Stellvertretung des Rechnungsprüfungsausschusses",
+        "voteId": "sr_20260615_05"
+      },
+      {
+        "number": "6.2",
+        "title": "Festsetzung der Dienstaufwandsentschädigung für den Ersten Bürgermeister",
+        "voteId": "sr_20260615_06"
+      },
+      {
+        "number": "6.3",
+        "title": "Beschluss über die Festsetzung der Aufwandsentschädigung für den Zweiten und Dritten Bürgermeister",
+        "voteId": "sr_20260615_07"
+      },
+      {
+        "number": "6.4",
+        "title": "Besetzung des Energiebeirates und der Fairtrade Lenkungsgruppe",
+        "voteId": "sr_20260615_08"
+      },
+      {
+        "number": "7",
+        "title": "Sanierung des Rathauses Moosburg - Fassadensanierung und Sanierung der oberen Geschosse"
+      },
+      {
+        "number": "7.1",
+        "title": "Kurze Ortseinsicht vor dem Rathaus mit Begutachtung der Farbmuster und Erläuterung durch Architekten Paringer"
+      },
+      {
+        "number": "7.2",
+        "title": "Sanierung des Rathauses Moosburg | Fassadensanierung und Sanierung der oberen Geschosse - 3.BA - Entscheidung über das Farbkonzept der Fassade",
+        "voteId": "sr_20260615_09",
+        "topicId": "t17"
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "source": {
+      "kind": "webauszug",
+      "url": null
+    }
+  },
+  {
     "id": "sr_20260907",
     "date": "2026-09-07",
     "type": "stadtrat",
