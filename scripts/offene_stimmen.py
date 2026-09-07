@@ -134,8 +134,11 @@ def main():
     zeilen.append('Nur Sitzungen mit veröffentlichter Anwesenheitsliste. Beschlussauszüge')
     zeilen.append('der Stadt (BPU ohne Anwesenheitsliste) sind bewusst nicht enthalten.')
     zeilen.append('')
-    zeilen.append('Grund "geteilt"      — Ergebnis ging auseinander, Einzelstimmen nicht überliefert.')
+    zeilen.append('Grund "geteilt"      — Ergebnis ging auseinander, Einzelstimmen nicht')
+    zeilen.append('                        überliefert. Ja oder Nein, beides möglich.')
     zeilen.append('Grund "nicht ableitbar" — einstimmig, aber weniger Stimmen als Anwesende.')
+    zeilen.append('                        Ein Nein ist ausgeschlossen: entweder Ja oder')
+    zeilen.append('                        gar nicht mitgestimmt.')
     zeilen.append('')
 
     for mid in args.ids:
