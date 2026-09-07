@@ -26240,6 +26240,192 @@
     }
   },
   {
+    "id": "sr_20260325_01",
+    "sessionId": "sr_20260325",
+    "topicId": null,
+    "date": "2026-03-25",
+    "title": "Genehmigung der öffentlichen Niederschriften",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift der Stadtratssitzungen vom 02.02.2026 und 23.02.2026.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "gruber"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260325_02",
+    "sessionId": "sr_20260325",
+    "topicId": "t5",
+    "date": "2026-03-25",
+    "title": "Klageverfahren Studentenwohnheim Rockermaier Areal",
+    "text": "Der Stadtrat beschließt, die Klage gegen die Baugenehmigung für das Studentenwohnheim auf Flurnummer 673 gemäß dem noch abzuschließenden Vergleichsvertrag zurückzuziehen. Bürgermeister und Verwaltung ziehen die Klage zurück, sobald die Voraussetzungen des Vergleichs vorliegen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 1,
+      "absent": 4
+    }
+  },
+  {
+    "id": "sr_20260325_03",
+    "sessionId": "sr_20260325",
+    "topicId": "t6",
+    "date": "2026-03-25",
+    "title": "Theresia-Gerhardinger-Grundschule – Ergebnis der Kostenkommission",
+    "text": "Dem Ergebnis der Kostenkommission mit Kosteneinsparungsvorschlägen in Höhe von 516.477,63 € brutto wird die Zustimmung erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "gruber"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260325_04",
+    "sessionId": "sr_20260325",
+    "topicId": null,
+    "date": "2026-03-25",
+    "title": "B-Plan Nr. 66 „Oberes Gereuth Nord-Ost\" – Billigungsbeschluss",
+    "text": "Der Stadtrat nimmt den Entwurf des Bebauungsplans mit Grünordnungsplan, Begründung und Umweltbericht in der Fassung vom 26.02.2026 zur Kenntnis und billigt die Planunterlagen zur öffentlichen Auslegung nach § 3 Abs. 2 BauGB.",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 1,
+      "absent": 5
+    },
+    "excluded": [
+      {
+        "member": "fincke",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20260325_05",
+    "sessionId": "sr_20260325",
+    "topicId": null,
+    "date": "2026-03-25",
+    "title": "Deichsanierung BA 07 – Projekt Isar 2020",
+    "text": "Der Stadtrat erteilt zum Antrag des Freistaats Bayern auf wasserrechtliche Plangenehmigung zur Sanierung des Deichabschnitts BA 07 das gemeindliche Einvernehmen, einschließlich der Ausnahmen von den Festsetzungen des Natura-2000-Gebiets „Isarauen von Unterföhring bis Landshut\".",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "gruber",
+        "fincke"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "fincke",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20260325_06",
+    "sessionId": "sr_20260325",
+    "topicId": null,
+    "date": "2026-03-25",
+    "title": "„Bauturbo\" – Anpassung der Geschäftsordnung",
+    "text": "Der Stadtrat beschließt die 1. Änderung der Geschäftsordnung des Stadtrats. Die Änderung betrifft § 13 Abs. 2 Nr. 4 Nr. 1 und regelt die Zustimmung der Gemeinde nach § 36a BauGB.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 4,
+      "absent": 4
+    }
+  },
+  {
     "id": "bpu_20260413_01",
     "sessionId": "bpu_20260413",
     "topicId": null,
@@ -26474,6 +26660,338 @@
       "pressVerified": false
     },
     "note": "Nachfrage Stanglmaier nach Stellplatzsatzung."
+  },
+  {
+    "id": "sr_20260420_01",
+    "sessionId": "sr_20260420",
+    "topicId": "t5",
+    "date": "2026-04-20",
+    "title": "Studentenwohnheim Saliterstraße 8 und 10",
+    "text": "Das gemeindliche Einvernehmen ist nach § 36 BauGB nicht erforderlich, da der gemeindliche Planungswille durch Wahrung des Bebauungsplans gewürdigt wurde. Der Stadtrat beschließt, keine weiteren Maßnahmen zur Sicherung der Bauleitplanung nach §§ 14 und 15 BauGB zu treffen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 22,
+      "no": 1,
+      "absent": 2
+    }
+  },
+  {
+    "id": "sr_20260420_02",
+    "sessionId": "sr_20260420",
+    "topicId": "t5",
+    "date": "2026-04-20",
+    "title": "Mehrfamilienhaus mit 23 Wohneinheiten – Graf-Burkhard-Straße 2",
+    "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen und stimmt den beantragten Befreiungen von den Festsetzungen des Bebauungsplans zu.",
+    "type": "anonymous",
+    "results": {
+      "yes": 22,
+      "no": 1,
+      "absent": 2
+    }
+  },
+  {
+    "id": "sr_20260420_03",
+    "sessionId": "sr_20260420",
+    "topicId": "t5",
+    "date": "2026-04-20",
+    "title": "Mehrfamilienhaus mit 16 Wohneinheiten – Weihmühlstraße 21",
+    "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen und stimmt den beantragten Befreiungen von den Festsetzungen des Bebauungsplans zu.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 1,
+      "absent": 3
+    },
+    "excluded": [
+      {
+        "member": "hadersdorfer",
+        "reason": "kurzfristig abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20260420_04",
+    "sessionId": "sr_20260420",
+    "topicId": "t6",
+    "date": "2026-04-20",
+    "title": "Erweiterungsbau Theresia-Gerhardinger-Grundschule",
+    "text": "Der Stadtrat erteilt zum Erweiterungsbau der Theresia-Gerhardinger-Grundschule mit Tiefgarage das gemeindliche Einvernehmen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "gruber",
+        "heinz"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260420_05",
+    "sessionId": "sr_20260420",
+    "topicId": null,
+    "date": "2026-04-20",
+    "title": "18. Änderung Flächennutzungsplan – Windkraft Lohbert",
+    "text": "Der Stadtrat beschließt die 18. Änderung des Flächennutzungsplans im Regelverfahren nach § 2 BauGB. Der Umgriff umfasst das Flurstück 579 der Gemarkung Niederambach; die Verwaltung erstellt die Planunterlagen und führt die Beteiligungen durch.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 3,
+      "absent": 2
+    }
+  },
+  {
+    "id": "sr_20260420_06",
+    "sessionId": "sr_20260420",
+    "topicId": null,
+    "date": "2026-04-20",
+    "title": "2. Änderung B-Plan Nr. 3 „Thalbacher Au Süd-Ost\"",
+    "text": "Der Stadtrat nimmt den städtebaulichen Entwurf (Variante 3) in der Fassung vom 13.04.2026 zur Kenntnis und beschließt die 2. Änderung im vereinfachten Verfahren nach § 13 BauGB. Der Entwurf wird weiter ausgearbeitet und vor den Beteiligungen erneut vorgelegt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "gruber",
+        "heinz"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260420_07",
+    "sessionId": "sr_20260420",
+    "topicId": null,
+    "date": "2026-04-20",
+    "title": "Aufstellungsbeschluss B-Plan Nr. 83 „Erweiterung Gymnasium\"",
+    "text": "Der Stadtrat beschließt die Aufstellung des Bebauungsplans „Erweiterung Gymnasium\" für das Flurstück 703 der Gemarkung Moosburg a.d. Isar im vereinfachten Verfahren nach § 13 BauGB. Als Art der baulichen Nutzung wird ein Sondergebiet „Schule\" festgesetzt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "gruber",
+        "heinz"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260420_08",
+    "sessionId": "sr_20260420",
+    "topicId": null,
+    "date": "2026-04-20",
+    "title": "Gemeinsamer Datenschutzbeauftragter – Aufhebungsvereinbarung",
+    "text": "Der Stadtrat stimmt der Kündigung der Zweckvereinbarung zwischen dem Landkreis Freising und den beteiligten Gebietskörperschaften über die gemeinsame Bestellung eines Datenschutzbeauftragten zum 01.07.2026 zu und beauftragt den Ersten Bürgermeister mit den weiteren Schritten.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "gruber",
+        "heinz"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260420_09",
+    "sessionId": "sr_20260420",
+    "topicId": "t7",
+    "date": "2026-04-20",
+    "title": "Feststellung der Jahresrechnung 2024",
+    "text": "Der Stadtrat stellt die Jahresrechnung nach Art. 102 Abs. 3 Satz 1 GO fest. Die Verwaltung nimmt zu den Feststellungen des Rechnungsprüfungsausschusses Stellung.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "gruber",
+        "heinz"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260420_10",
+    "sessionId": "sr_20260420",
+    "topicId": "t7",
+    "date": "2026-04-20",
+    "title": "Entlastung zur Jahresrechnung 2024",
+    "text": "Der Stadtrat erteilt die Entlastung gem. Art. 102 Abs. 3 Satz 1 GO zur Jahresrechnung 2024.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "gruber",
+        "heinz",
+        "dollinger"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "dollinger",
+        "reason": "persönliche Beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20260511_01",

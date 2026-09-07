@@ -347,6 +347,30 @@
         "press": [
           "merkur_2026-02-02_studentenwohnheim"
         ]
+      },
+      {
+        "date": "2026-03-25",
+        "type": "vote",
+        "title": "Klage wird zurückgezogen",
+        "text": "Nach dem ausgehandelten Vergleichsvertrag zieht die Stadt ihre Klage gegen die Baugenehmigung zurück (20:1). Damit endet das Verfahren, das der Stadtrat im Februar beschlossen hatte.",
+        "sessionId": "sr_20260325",
+        "voteId": "sr_20260325_02"
+      },
+      {
+        "date": "2026-04-20",
+        "type": "vote",
+        "title": "Keine weiteren Sicherungsmaßnahmen",
+        "text": "Für das Studentenwohnheim an der Saliterstraße ist das gemeindliche Einvernehmen nicht erforderlich. Der Stadtrat verzichtet mit 22:1 auf weitere Maßnahmen zur Sicherung der Bauleitplanung.",
+        "sessionId": "sr_20260420",
+        "voteId": "sr_20260420_01"
+      },
+      {
+        "date": "2026-04-20",
+        "type": "vote",
+        "title": "Einvernehmen für zwei Mehrfamilienhäuser",
+        "text": "Graf-Burkhard-Straße 2 (23 Wohneinheiten, 22:1) und Weihmühlstraße 21 (16 Wohneinheiten, 21:1) erhalten das gemeindliche Einvernehmen samt Befreiungen vom Bebauungsplan.",
+        "sessionId": "sr_20260420",
+        "voteId": "sr_20260420_02"
       }
     ],
     "field": "building",
@@ -417,6 +441,22 @@
         "text": "Der Stadtrat beauftragt die Verwaltung, die Planungen für Erweiterung und Generalsanierung weiterzuführen.",
         "sessionId": "sr_20251215",
         "voteId": "sr_20251215_02"
+      },
+      {
+        "date": "2026-03-25",
+        "type": "vote",
+        "title": "Kostenkommission spart 516.000 €",
+        "text": "Die Kostenkommission legt ihre Vorschläge vor: 516.477,63 € brutto weniger als geplant. Der Stadtrat stimmt dem Ergebnis einstimmig zu.",
+        "sessionId": "sr_20260325",
+        "voteId": "sr_20260325_03"
+      },
+      {
+        "date": "2026-04-20",
+        "type": "vote",
+        "title": "Einvernehmen für den Erweiterungsbau",
+        "text": "Der Stadtrat erteilt dem Erweiterungsbau mit Tiefgarage einstimmig das gemeindliche Einvernehmen — der bauliche Startschuss nach der Kostenrunde im März.",
+        "sessionId": "sr_20260420",
+        "voteId": "sr_20260420_04"
       }
     ],
     "field": "education",
@@ -550,6 +590,14 @@
         "text": "Der Stadtrat beschließt einstimmig die Haushaltssatzung mit Haushaltsplan für 2026.",
         "sessionId": "sr_20251215",
         "voteId": "sr_20251215_03"
+      },
+      {
+        "date": "2026-04-20",
+        "type": "vote",
+        "title": "Jahresrechnung 2024 festgestellt",
+        "text": "Der Stadtrat stellt die Jahresrechnung 2024 fest und erteilt die Entlastung. Bürgermeister Dollinger war wegen persönlicher Beteiligung nicht stimmberechtigt.",
+        "sessionId": "sr_20260420",
+        "voteId": "sr_20260420_09"
       }
     ],
     "field": "budget",
