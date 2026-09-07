@@ -127,6 +127,16 @@ const Council = (() => {
     // Stimmberechtigte da waren, setzt der Import `inferable: false` —
     // dann bleibt es beim ehrlichen Fragezeichen.
     const { yes, no } = vote.results;
+
+    // `teilweise`: es haben weniger mitgestimmt als anwesend waren, aber die
+    // Niederschrift nennt, wer später kam oder früher ging. Offen bleibt dann
+    // nur deren Stimme — für alle anderen im Saal gilt das einstimmige
+    // Ergebnis, sonst stünde bei zwanzig Personen ein Fragezeichen, weil eine
+    // fehlte.
+    if (vote.inferable === "teilweise"
+        && ((session && session.partial) || []).some(p => p.member === memberId)) {
+      return "unknown";
+    }
     if (vote.inferable !== false) {
       if (yes > 0 && no === 0) return "yes-inferred";
       if (no  > 0 && yes === 0) return "no-inferred";

@@ -83,6 +83,9 @@ def status(mid, vote, session, member):
         return vote['voters'][mid]
     if mid in (r.get('absent_ids') or []):
         return 'absent'
+    if vote.get('inferable') == 'teilweise' and any(
+            e['member'] == mid for e in (session or {}).get('partial') or []):
+        return 'unknown'
     if vote.get('inferable') is not False:
         if r['yes'] > 0 and r['no'] == 0:
             return 'yes-inferred'
