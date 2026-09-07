@@ -633,7 +633,9 @@ function renderMemberTimeline(container, member) {
       detail.className = "mtl-vote-detail hidden";
       let detailHTML = `<p>${vote.text}</p>`;
       if (vote.type === "anonymous") {
-        detailHTML += `<p style="margin-top:4px">${vote.results.yes} Ja, ${vote.results.no} Nein, ${vote.results.absent} Abwesend</p>`;
+        const abw = vote.results.absent === undefined
+          ? "Abwesenheit nicht überliefert" : vote.results.absent + " Abwesend";
+        detailHTML += `<p style="margin-top:4px">${vote.results.yes} Ja, ${vote.results.no} Nein, ${abw}</p>`;
       }
       if (item.topicId && topicMap[item.topicId]) {
         detailHTML += `<a href="#/topic/${item.topicId}"><svg class="icon"><use href="#i-open_in_new"/></svg> ${topicMap[item.topicId].title}</a>`;

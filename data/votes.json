@@ -28301,5 +28301,122 @@
     "source": {
       "tier": "protocol-implicit"
     }
+  },
+  {
+    "id": "sr_20260615_01",
+    "sessionId": "sr_20260615",
+    "topicId": null,
+    "date": "2026-06-15",
+    "title": "Genehmigung der öffentlichen Niederschriften (StR 11.05.2026; StR 18.05.2026)",
+    "text": "Beschlossen mit 23:0.",
+    "type": "anonymous",
+    "results": {
+      "yes": 23,
+      "no": 0
+    }
+  },
+  {
+    "id": "sr_20260615_02",
+    "sessionId": "sr_20260615",
+    "topicId": "t18",
+    "date": "2026-06-15",
+    "title": "19. Änderung des Flächennutzungsplans Bereich \"Degernpoint Nord\" - Aufstellungsbeschluss",
+    "text": "Aufstellungsbeschluss für die 19. Änderung des Flächennutzungsplans im Bereich Degernpoint Nord, beschlossen mit 23:0.",
+    "type": "anonymous",
+    "results": {
+      "yes": 23,
+      "no": 0
+    }
+  },
+  {
+    "id": "sr_20260615_03",
+    "sessionId": "sr_20260615",
+    "topicId": null,
+    "date": "2026-06-15",
+    "title": "Vorbescheid - Neubau eines Logistikgebäudes - Driescherstr. 3",
+    "text": "Beschlossen mit 24:0.",
+    "type": "anonymous",
+    "results": {
+      "yes": 24,
+      "no": 0
+    }
+  },
+  {
+    "id": "sr_20260615_04",
+    "sessionId": "sr_20260615",
+    "topicId": null,
+    "date": "2026-06-15",
+    "title": "Genehmigung Vorbescheid z. Neubau e. Mehrfamilienhauses mit 7 Wohneinheiten - Sternstr. 12 - Klageerhebung gegen die Genehmigung",
+    "text": "Klage gegen die Genehmigung des Vorbescheids, beschlossen mit 23:0. Der Bauausschuss hatte die Klage am 13.04.2026 empfohlen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 23,
+      "no": 0
+    }
+  },
+  {
+    "id": "sr_20260615_05",
+    "sessionId": "sr_20260615",
+    "topicId": null,
+    "date": "2026-06-15",
+    "title": "Bestellung des Vorsitzes und der Stellvertretung des Rechnungsprüfungsausschusses",
+    "text": "Beschlossen mit 24:0.",
+    "type": "anonymous",
+    "results": {
+      "yes": 24,
+      "no": 0
+    }
+  },
+  {
+    "id": "sr_20260615_06",
+    "sessionId": "sr_20260615",
+    "topicId": null,
+    "date": "2026-06-15",
+    "title": "Festsetzung der Dienstaufwandsentschädigung für den Ersten Bürgermeister",
+    "text": "Beschlossen mit 21:2.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 2
+    }
+  },
+  {
+    "id": "sr_20260615_07",
+    "sessionId": "sr_20260615",
+    "topicId": null,
+    "date": "2026-06-15",
+    "title": "Beschluss über die Festsetzung der Aufwandsentschädigung für den Zweiten und Dritten Bürgermeister",
+    "text": "Beschlossen mit 21:1.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 1
+    }
+  },
+  {
+    "id": "sr_20260615_08",
+    "sessionId": "sr_20260615",
+    "topicId": null,
+    "date": "2026-06-15",
+    "title": "Besetzung des Energiebeirates und der Fairtrade Lenkungsgruppe",
+    "text": "Mehrfachbeschluss über die Besetzung beider Gremien, beschlossen mit 24:0. Der Auszug weist die Einzelbeschlüsse nicht getrennt aus.",
+    "type": "anonymous",
+    "results": {
+      "yes": 24,
+      "no": 0
+    }
+  },
+  {
+    "id": "sr_20260615_09",
+    "sessionId": "sr_20260615",
+    "topicId": "t17",
+    "date": "2026-06-15",
+    "title": "Sanierung des Rathauses Moosburg | Fassadensanierung und Sanierung der oberen Geschosse - 3.BA - Entscheidung über das Farbkonzept der Fassade",
+    "text": "Das Farbkonzept für die Fassade wird mit 12:11 beschlossen — die knappste Entscheidung des Abends. Vorausgegangen war eine Ortseinsicht vor dem Rathaus mit Begutachtung der Farbmuster.",
+    "type": "anonymous",
+    "results": {
+      "yes": 12,
+      "no": 11
+    }
   }
 ]

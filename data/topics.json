@@ -1147,6 +1147,14 @@
         "text": "Kostenberechnung und Planung mit Gesamtkosten 3.988.000 € einstimmig zustimmend zur Kenntnis genommen.",
         "sessionId": "sr_20250324",
         "voteId": "sr_20250324_07"
+      },
+      {
+        "date": "2026-06-15",
+        "type": "vote",
+        "title": "Rathaus 3. BA – Farbkonzept der Fassade",
+        "text": "Nach einer Ortseinsicht mit Farbmustern entscheidet sich der Stadtrat mit 12:11 für ein Farbkonzept. Die knappste Abstimmung des Abends.",
+        "sessionId": "sr_20260615",
+        "voteId": "sr_20260615_09"
       }
     ],
     "field": "building",
@@ -1194,6 +1202,14 @@
         "text": "Einstimmig: Aufstellungsbeschluss mit flexibler Parzellierung für Handwerk/Gewerbe; SWM-Umspannwerk eingeplant.",
         "sessionId": "sr_20250120",
         "voteId": "sr_20250120_05"
+      },
+      {
+        "date": "2026-06-15",
+        "type": "vote",
+        "title": "19. FNP-Änderung \"Degernpoint Nord\" – Aufstellungsbeschluss",
+        "text": "Der Stadtrat stellt den Flächennutzungsplan für den Bereich Degernpoint Nord zur Änderung auf, 23:0.",
+        "sessionId": "sr_20260615",
+        "voteId": "sr_20260615_02"
       }
     ],
     "field": "economy",

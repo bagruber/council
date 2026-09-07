@@ -482,7 +482,8 @@ const VoteVis = (() => {
       showTooltip(evt, `
         <div><strong>Ja:</strong> ${results.yes} (${pctYes} %)</div>
         <div><strong>Nein:</strong> ${results.no} (${pctNo} %)</div>
-        <div><strong>Abwesend:</strong> ${results.absent}</div>
+        <div><strong>Abwesend:</strong> ${results.absent === undefined
+          ? "nicht überliefert" : results.absent}</div>
         <div style="margin-top:4px;opacity:.7">${capacity} Mitglieder gesamt</div>`);
     }
     wrap.addEventListener("mouseenter", barTip);
