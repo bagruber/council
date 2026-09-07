@@ -111,9 +111,6 @@ const VoteVis = (() => {
   };
   const VOTE_ICON  = { yes: "✓", no: "✗", absent: "–", unknown: "?",
                        excluded: "§", abstained: "◦", restricted: "◦" };
-  const VOTE_LABEL = { yes: "Ja", no: "Nein", absent: "Abwesend", unknown: "Unbekannt",
-                       excluded: "Befangen (Art. 49 GO)", abstained: "Enthalten",
-                       restricted: "Nicht stimmberechtigt (neu gewählt)" };
 
   // ─── Tooltip (desktop hover) ─────────────────────────────────────────────
 
@@ -195,7 +192,7 @@ const VoteVis = (() => {
     return `
       <div class="seat-name">${seat.name}${titlePart}</div>
       <div class="seat-party"><span class="seat-party-dot" style="background:${seat.party?.color || "#aaa"}"></span>${seat.party?.name || ""}</div>
-      <div class="seat-vote vote-${seat.vote}">${VOTE_LABEL[seat.vote] || seat.vote}</div>`;
+      <div class="seat-vote vote-${seat.vote.replace("-inferred", "")}">${Council.voteStatusTitle(seat.vote)}</div>`;
   }
 
   // ─── Row guides (subtle arcs behind each row) ────────────────────────────
@@ -228,9 +225,12 @@ const VoteVis = (() => {
 
   function drawSeat(svg, pos, seat, opts) {
     const r       = opts.seatRadius;
-    const stroke  = VOTE_COLOR[seat.vote] || VOTE_COLOR.unknown;
+    // Aus der Anwesenheit abgeleitet heißt: dieselbe Farbe, dasselbe Zeichen.
+    // Dass es eine Ableitung ist, sagt der Tooltip, nicht der Sitz.
+    const basis   = seat.vote.replace("-inferred", "");
+    const stroke  = VOTE_COLOR[basis] || VOTE_COLOR.unknown;
     const fill    = seat.party?.color || "#aaa";
-    const grayed  = seat.vote === "absent";
+    const grayed  = basis === "absent";
 
     const g = svgEl("g");
     g.classList.add("seat");
@@ -305,7 +305,7 @@ const VoteVis = (() => {
     txt.classList.add("seat-indicator-icon");
     txt.style.pointerEvents = "none";
     txt.style.userSelect    = "none";
-    txt.textContent = VOTE_ICON[seat.vote] || "";
+    txt.textContent = VOTE_ICON[seat.vote.replace("-inferred", "")] || "";
     content.appendChild(txt);
 
     // ─── interaction ───
@@ -575,7 +575,8 @@ const VoteVis = (() => {
     // Chair (if defined, e.g. mayor)
     if (cfg.chair) {
       const m = memberMap[cfg.chair];
-      if (m) mayor = makeEntry(m, voteRes[m.id], partyMap, vote.date);
+      if (m) mayor = makeEntry(m, voteRes[m.id]
+                     || Council.voteStatus(m.id, vote, session, m), partyMap, vote.date);
     }
 
     // Committees may have vice-chairs flanking the chair. Place them at the
@@ -609,7 +610,10 @@ const VoteVis = (() => {
         else m = reg;
       }
       if (!m) { seats.push(null); return; }
-      voteVal = voteRes[m.id] || "unknown";
+      // Anonyme Beschlüsse führen keine Einzelstimmen. Was sich aus Anwesenheit
+      // und Einstimmigkeit ergibt, weiß Council — dieselbe Quelle wie Profil
+      // und Statistik, damit nicht zwei Antworten für dieselbe Person stehen.
+      voteVal = voteRes[m.id] || Council.voteStatus(m.id, vote, session, m) || "unknown";
       seats.push(makeEntry(m, voteVal, partyMap, vote.date));
     });
 

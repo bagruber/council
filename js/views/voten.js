@@ -103,14 +103,17 @@ function renderVoteBlock(container, vote) {
   block.appendChild(chartEl);
   container.appendChild(block);
 
-  const hasIndividualData = vote.type === "named"
-                          || (vote.voters && Object.keys(vote.voters).length > 0);
+  // Überliefert heißt: die Niederschrift führt die Einzelstimmen. Sonst zeigt
+  // das Halbrund, was sich aus Anwesenheit und Einstimmigkeit ergibt.
+  const ueberliefert = vote.type === "named"
+                     || (vote.voters && Object.keys(vote.voters).length > 0);
 
-  // Einstimmig heißt: das Halbrund sagt nichts, was der Balken nicht schon
-  // sagt. Es bleibt eingeklappt — außer jemand war befangen oder enthalten,
-  // denn dann steht im Halbrund etwas, das die Zahlen nicht zeigen.
-  const quiet = hasIndividualData && Council.isUnanimous(vote)
-                && !(vote.excluded || []).length;
+  // Eingeklappt, wenn das Halbrund nichts sagt, was der Balken nicht schon
+  // sagt: bei einstimmigen Beschlüssen — außer jemand war befangen oder
+  // enthalten — und überall dort, wo die Einzelstimmen nicht überliefert,
+  // sondern abgeleitet sind. Gezeichnet wird es trotzdem immer.
+  const quiet = !ueberliefert
+                || (Council.isUnanimous(vote) && !(vote.excluded || []).length);
 
   // Der Balken und das Halbrund bekommen eigene Flächen. Vorher teilten sie
   // sich eine, und das Ausklappen hat den Balken überschrieben.
@@ -123,7 +126,7 @@ function renderVoteBlock(container, vote) {
     : vote.results;
 
   requestAnimationFrame(() => {
-    if (!hasIndividualData || quiet) VoteVis.drawBar(chartEl, counts);
+    if (quiet) VoteVis.drawBar(chartEl, counts);
     else {
       const body = bodyForVote(vote);
       VoteVis.drawParliament(chartEl, vote, members, parties, seatOrder,
