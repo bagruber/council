@@ -2,7 +2,7 @@
 // Tagesordnung mit eingebetteten Abstimmungen.
 import {
   sessionMap, bodyMap, memberMap, topicMap, voteMap, lengthMap,
-  lengthMin, protocolUrl, isWebauszug,
+  lengthMin, protocolUrl, isWebauszug, isVorschau,
 } from "../daten.js";
 import { formatDate, formatDuration } from "../hilfen.js";
 import { navigate, setChrome } from "../routing.js";
@@ -41,15 +41,29 @@ function renderSession(id) {
     const dur = lengthMin(len);
     timeLine = `<div class="session-time"><svg class="icon"><use href="#i-schedule"/></svg>${len.start}${len.end ? "–" + len.end : ""} Uhr${dur ? " · " + formatDuration(dur) : ""}</div>`;
   }
-  const src = isWebauszug(session)
-    ? (session.source.url
-        ? `<a class="session-pdf" href="${session.source.url}" target="_blank" rel="noopener">
-             <svg class="icon"><use href="#i-language"/></svg> Beschlussauszug der Stadt Moosburg</a>`
-        : "")
-    : `<a class="session-pdf" href="${protocolUrl(session)}" target="_blank" rel="noopener">
-         <svg class="icon"><use href="#i-description"/></svg> Niederschrift (PDF)</a>`;
+  let src = "";
+  if (isWebauszug(session)) {
+    if (session.source.url) {
+      src = `<a class="session-pdf" href="${session.source.url}" target="_blank" rel="noopener">
+               <svg class="icon"><use href="#i-language"/></svg> Beschlussauszug der Stadt Moosburg</a>`;
+    }
+  } else if (!isVorschau(session)) {
+    src = `<a class="session-pdf" href="${protocolUrl(session)}" target="_blank" rel="noopener">
+             <svg class="icon"><use href="#i-description"/></svg> Niederschrift (PDF)</a>`;
+  }
   header.innerHTML = `<h1>${session.title}</h1><div class="session-date">${formatDate(session.date)}</div>${timeLine}${badge}${src}`;
   main.appendChild(header);
+
+  if (isVorschau(session)) {
+    const note = document.createElement("div");
+    note.className = "source-note";
+    note.innerHTML = `
+      <svg class="icon"><use href="#i-info"/></svg>
+      <div><strong>Die Sitzung hat noch nicht stattgefunden.</strong>
+      Hier steht die Tagesordnung, wie die Stadt sie veröffentlicht hat. Beschlüsse,
+      Abstimmungen und die Niederschrift kommen nach der Sitzung dazu.</div>`;
+    main.appendChild(note);
+  }
 
   if (isWebauszug(session)) {
     const note = document.createElement("div");

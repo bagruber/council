@@ -72,6 +72,12 @@ function isWebauszug(s) {
   return !!(s.source && s.source.kind === "webauszug");
 }
 
+// Die Tagesordnung steht, die Sitzung hat aber noch nicht stattgefunden:
+// keine Niederschrift, keine Beschlüsse.
+function isVorschau(s) {
+  return !!(s.source && s.source.kind === "vorschau");
+}
+
 // Ein Eintrag je Sitzung, die stattgefunden hat — unabhängig davon, ob eine
 // Niederschrift vorliegt. Die Dauern reichen weiter als die erfassten
 // Sitzungen, die erfassten Sitzungen weiter zurück als die Dauern.
@@ -87,6 +93,7 @@ function sessionRegister() {
     r.start = l.start; r.end = l.end; r.min = lengthMin(l);
   });
   sessions.forEach(s => {
+    if (isVorschau(s)) return;
     const r = put(s.date, s.type || "stadtrat");
     r.session = s;
     r.votes = votesBySession[s.id] || [];
@@ -145,6 +152,6 @@ export {
   members, parties, bodies, seatOrder, mediaSources, mediaMap, pressMap,
   topicMap, sessionMap, voteMap, tagMap, memberMap, partyMap, bodyMap,
   sessionsSorted, lengthMap, sessionByDateBody, votesBySession,
-  protocolUrl, isWebauszug, sessionRegister, tierCounts, lengthMin,
+  protocolUrl, isWebauszug, isVorschau, sessionRegister, tierCounts, lengthMin,
   nowStr, memberActiveAt, isActive, bodyIdForSession,
 };

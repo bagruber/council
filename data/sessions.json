@@ -9918,5 +9918,65 @@
     "press": [
       "merkur_2026-05-23_lehnt-sonderzuschuss-fuer"
     ]
+  },
+  {
+    "id": "sr_20260907",
+    "date": "2026-09-07",
+    "type": "stadtrat",
+    "title": "12. Stadtratssitzung – September 2026",
+    "absent": [],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der öffentlichen Niederschriften (StR 29.06.2026, StR 20.07.2026, StR 27.07.2026, BA 13.07.2026)"
+      },
+      {
+        "number": "4",
+        "title": "Vereidigung der Ortssprecherin der früheren Gemeinde Niederambach, Frau Ingrid Neumayer",
+        "type": "formal"
+      },
+      {
+        "number": "5",
+        "title": "Neubaugebiet Amperauen - Vorstellung der Ergebnisse der Bachelorarbeit",
+        "topicId": "t20",
+        "type": "discussion"
+      },
+      {
+        "number": "6",
+        "title": "Vorstellung Aktivitäten Klimaschutzmanagement und Energiebeirat",
+        "type": "discussion"
+      },
+      {
+        "number": "7",
+        "title": "Besetzung der Fairtrade Lenkungsgruppe"
+      },
+      {
+        "number": "8",
+        "title": "BI Isarsiedlung - Beschluss des Stadtrates zur Unterstützung der Petition der BI zur Binnenentwässerung"
+      },
+      {
+        "number": "9",
+        "title": "Kläranlage Moosburg GmbH - Beschluss zur Entlastung des Aufsichtsrates für das Geschäftsjahr 2025"
+      },
+      {
+        "number": "10",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "source": {
+      "kind": "vorschau",
+      "url": null
+    }
   }
 ]
