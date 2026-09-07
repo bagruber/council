@@ -9,6 +9,29 @@ import { initStatistik } from "./views/statistik.js";
 import { initKalender } from "./views/kalender.js";
 import { initNaehe } from "./views/naehe.js";
 
+// Overlays: Impressum, Kontakt, Legende, Kalenderblatt. Früher hingen die
+// Handler als onclick im HTML — die Content-Security-Policy von moosburg.eu
+// erlaubt kein inline-Skript, und damit ging kein Overlay mehr zu. Ein
+// delegierter Listener kommt ohne aus und deckt auch später eingefügte
+// Knöpfe ab. Läuft vor dem Laden der Daten, damit Impressum und Kontakt
+// auch dann erreichbar bleiben, wenn der Bestand nicht kommt.
+document.addEventListener("click", evt => {
+  const oeffner = evt.target.closest("[data-modal]");
+  if (oeffner) {
+    document.getElementById(oeffner.dataset.modal).classList.remove("hidden");
+    return;
+  }
+  const schliessen = evt.target.closest(".modal-close");
+  if (schliessen) {
+    schliessen.closest(".modal-overlay, .bottom-sheet").classList.add("hidden");
+    return;
+  }
+  // Klick auf den Schleier selbst, nicht auf den Inhalt darin
+  if (evt.target.matches(".modal-overlay, .bottom-sheet")) {
+    evt.target.classList.add("hidden");
+  }
+});
+
 (async function () {
   const main = document.getElementById("main");
 

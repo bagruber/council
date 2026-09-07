@@ -135,10 +135,10 @@
       <span class="toggle-switch"></span>
     </label>
     <h3>Informationen</h3>
-    <button class="settings-link" onclick="document.getElementById('impressum-modal').classList.remove('hidden')">
+    <button class="settings-link" data-modal="impressum-modal">
       <svg class="icon"><use href="#i-info"/></svg> Impressum
     </button>
-    <button class="settings-link" onclick="document.getElementById('kontakt-modal').classList.remove('hidden')">
+    <button class="settings-link" data-modal="kontakt-modal">
       <svg class="icon"><use href="#i-mail"/></svg> Kontakt &amp; Hinweise
     </button>
   </div>
@@ -167,7 +167,7 @@
 </div>
 
 <!-- Calendar day detail sheet -->
-<div id="cal-sheet" class="bottom-sheet hidden" onclick="if(event.target===this)this.classList.add('hidden')">
+<div id="cal-sheet" class="bottom-sheet hidden">
   <div class="sheet-content">
     <div class="sheet-handle"></div>
     <div id="cal-sheet-body"></div>
@@ -175,11 +175,11 @@
 </div>
 
 <!-- Impressum modal -->
-<div id="impressum-modal" class="modal-overlay hidden" onclick="if(event.target===this)this.classList.add('hidden')">
+<div id="impressum-modal" class="modal-overlay hidden">
   <div class="modal">
     <div class="modal-header">
       <h2>Impressum</h2>
-      <button class="modal-close" onclick="this.closest('.modal-overlay').classList.add('hidden')"><svg class="icon"><use href="#i-close"/></svg></button>
+      <button class="modal-close"><svg class="icon"><use href="#i-close"/></svg></button>
     </div>
     <div class="modal-body">
       <p><strong>Verantwortlich i.S.d. § 18 Abs. 2 MStV</strong></p>
@@ -194,11 +194,11 @@
 </div>
 
 <!-- Vote-Legenden modal -->
-<div id="vote-legend-modal" class="modal-overlay hidden" onclick="if(event.target===this)this.classList.add('hidden')">
+<div id="vote-legend-modal" class="modal-overlay hidden">
   <div class="modal">
     <div class="modal-header">
       <h2>Wie ist die Abstimmung dargestellt?</h2>
-      <button class="modal-close" onclick="this.closest('.modal-overlay').classList.add('hidden')"><svg class="icon"><use href="#i-close"/></svg></button>
+      <button class="modal-close"><svg class="icon"><use href="#i-close"/></svg></button>
     </div>
     <div class="modal-body">
       <div class="legend-row">
@@ -317,11 +317,11 @@
 </div>
 
 <!-- Kontakt modal -->
-<div id="kontakt-modal" class="modal-overlay hidden" onclick="if(event.target===this)this.classList.add('hidden')">
+<div id="kontakt-modal" class="modal-overlay hidden">
   <div class="modal">
     <div class="modal-header">
       <h2>Kontakt &amp; Hinweise</h2>
-      <button class="modal-close" onclick="this.closest('.modal-overlay').classList.add('hidden')"><svg class="icon"><use href="#i-close"/></svg></button>
+      <button class="modal-close"><svg class="icon"><use href="#i-close"/></svg></button>
     </div>
     <div class="modal-body">
       <p>Für Fragen und Anregungen zum Ratsinformationssystem wenden Sie sich an die Geschäftsstelle des Stadtrats.</p>
