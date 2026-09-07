@@ -94,7 +94,10 @@ def main():
         if not sess or not size:
             continue
 
-        excl = len(v.get('excluded', []))
+        # `kein_mandat` heisst: an diesem Votum hielt die andere Person des
+        # Wechsels den Sitz. Der Sitz stimmt mit, nur eben durch sie.
+        excl = len([e for e in v.get('excluded', [])
+                    if e.get('reason') != 'kein_mandat'])
         entitled = size - len(sess.get('absent', [])) - excl
         voted = r['yes'] + r['no']
 

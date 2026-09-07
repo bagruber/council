@@ -554,6 +554,7 @@ const VoteVis = (() => {
       if (e.reason === "beteiligung") m[e.member] = "excluded";
       else if (e.reason === "enthaltung") m[e.member] = "abstained";
       else if (e.reason === "nicht_stimmberechtigt") m[e.member] = "restricted";
+      else if (e.reason === "kein_mandat") m[e.member] = "restricted";
     });
     if (vote.voters) {
       Object.entries(vote.voters).forEach(([id, status]) => {

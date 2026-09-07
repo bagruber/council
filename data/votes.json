@@ -7960,7 +7960,7 @@
     "results": {
       "yes": 18,
       "no": 0,
-      "absent": 8
+      "absent": 7
     },
     "source": {
       "tier": "protocol-implicit"
@@ -7969,6 +7969,10 @@
       {
         "member": "wittmann",
         "reason": "beteiligung"
+      },
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
       }
     ]
   },
@@ -7983,11 +7987,17 @@
     "results": {
       "yes": 20,
       "no": 0,
-      "absent": 6
+      "absent": 5
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "wittmann",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20211025_03",
@@ -8000,11 +8010,17 @@
     "results": {
       "yes": 21,
       "no": 0,
-      "absent": 5
+      "absent": 4
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "wittmann",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20211025_04",
@@ -8017,7 +8033,7 @@
     "results": {
       "yes": 10,
       "no": 11,
-      "absent": 5
+      "absent": 4
     },
     "result": "rejected",
     "source": {
@@ -8027,7 +8043,13 @@
     "voters": {
       "pschorr": "no",
       "becher_j": "yes"
-    }
+    },
+    "excluded": [
+      {
+        "member": "wittmann",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20211025_05",
@@ -8040,11 +8062,17 @@
     "results": {
       "yes": 21,
       "no": 0,
-      "absent": 5
+      "absent": 4
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "wittmann",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20211025_06",
@@ -8057,7 +8085,7 @@
     "results": {
       "yes": 20,
       "no": 0,
-      "absent": 6
+      "absent": 5
     },
     "source": {
       "tier": "protocol-implicit"
@@ -8066,6 +8094,10 @@
       {
         "member": "kieninger",
         "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "wittmann",
+        "reason": "kein_mandat"
       }
     ]
   },
@@ -8080,8 +8112,14 @@
     "results": {
       "yes": 19,
       "no": 2,
-      "absent": 5
-    }
+      "absent": 4
+    },
+    "excluded": [
+      {
+        "member": "wittmann",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20211108_01",
@@ -10022,11 +10060,21 @@
     "results": {
       "yes": 21,
       "no": 0,
-      "absent": 5
+      "absent": 4
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "gruber",
+        "reason": "kein_mandat"
+      },
+      {
+        "member": "neumayr",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20221010_02",
@@ -10039,11 +10087,17 @@
     "results": {
       "yes": 21,
       "no": 0,
-      "absent": 5
+      "absent": 4
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "neumayr",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20221010_03",
@@ -10056,11 +10110,17 @@
     "results": {
       "yes": 21,
       "no": 0,
-      "absent": 5
+      "absent": 4
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "neumayr",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20221010_04",
@@ -10073,8 +10133,14 @@
     "results": {
       "yes": 21,
       "no": 1,
-      "absent": 4
-    }
+      "absent": 3
+    },
+    "excluded": [
+      {
+        "member": "neumayr",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20221024_01",
@@ -13934,7 +14000,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "john",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20230724_03",
@@ -14021,6 +14093,10 @@
       {
         "member": "gruebl",
         "reason": "beteiligung"
+      },
+      {
+        "member": "john",
+        "reason": "kein_mandat"
       }
     ],
     "inferable": false
@@ -14040,7 +14116,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "john",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20230724_06",
@@ -14062,6 +14144,10 @@
       {
         "member": "heinz",
         "reason": "beteiligung"
+      },
+      {
+        "member": "john",
+        "reason": "kein_mandat"
       }
     ]
   },
@@ -14085,6 +14171,10 @@
       {
         "member": "grundner",
         "reason": "kurzfristig abwesend"
+      },
+      {
+        "member": "john",
+        "reason": "kein_mandat"
       }
     ]
   },
@@ -18599,6 +18689,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "hobmaier",
+        "reason": "kein_mandat"
+      }
+    ],
     "inferable": false
   },
   {
@@ -18617,6 +18713,16 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "hobmaier",
+        "reason": "kein_mandat"
+      },
+      {
+        "member": "gruebl",
+        "reason": "beteiligung"
+      }
+    ],
     "inferable": false
   },
   {
@@ -18650,7 +18756,13 @@
       "pressVerified": true,
       "pressId": "merkur_2024-10-21_jugendbeauftragter",
       "provisional": true
-    }
+    },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20241021_04",
@@ -18668,6 +18780,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
+      }
+    ],
     "inferable": false
   },
   {
@@ -18686,6 +18804,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
+      }
+    ],
     "inferable": false
   },
   {
@@ -18704,6 +18828,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
+      }
+    ],
     "inferable": false
   },
   {
@@ -18722,6 +18852,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
+      }
+    ],
     "inferable": false
   },
   {
@@ -18744,7 +18880,13 @@
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
-    }
+    },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20241021_09",
@@ -18762,6 +18904,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
+      }
+    ],
     "inferable": false
   },
   {
@@ -18780,6 +18928,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
+      }
+    ],
     "inferable": false
   },
   {
@@ -18803,7 +18957,13 @@
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
-    }
+    },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20241021_12",
@@ -18820,7 +18980,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "gruebl",
+        "reason": "kein_mandat"
+      }
+    ]
   },
   {
     "id": "sr_20241104_01",

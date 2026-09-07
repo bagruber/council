@@ -101,6 +101,8 @@ const Council = (() => {
       if (ex.reason === "beteiligung")           return "excluded";
       if (ex.reason === "enthaltung")            return "abstained";
       if (ex.reason === "nicht_stimmberechtigt") return "restricted";
+      // Wechseltag: den Sitz hielt zu dieser Abstimmung die andere Person.
+      if (ex.reason === "kein_mandat")            return "restricted";
       return "absent";                  // kurzfristig abwesend
     }
 
@@ -159,7 +161,7 @@ const Council = (() => {
              "no-inferred": "Nein (aus Anwesenheit abgeleitet)",
              excluded: "Wegen persönlicher Beteiligung ausgeschlossen (Art. 49 GO)",
              abstained: "Enthalten",
-             restricted: "Nicht stimmberechtigt — neu gewählt, bei der Sitzung nicht dabei",
+             restricted: "Bei dieser Abstimmung nicht stimmberechtigt",
              unknown: "Nicht überliefert" }[status] || "Nicht überliefert";
   }
 
