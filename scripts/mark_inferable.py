@@ -34,7 +34,12 @@ ENTLASTUNG_NOTE = ('Die Mitglieder des Aufsichtsrats stimmen über ihre eigene '
                    'unter der Zahl der Anwesenden.')
 WEBAUSZUG_NOTE = ('Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. '
                   'Da nicht alle Sitze mitgestimmt haben, lässt sich das '
-                  'Stimmverhalten niemandem zuordnen.')
+                  'Stimmverhalten niemandem zuordnen.')
+
+TEIL_NOTE = ('Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift '
+             'vermerkt {n} Person{s}, die später kam{s} oder früher ging{s} — deren '
+             'Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige '
+             'Ergebnis.')
 
 
 def load(n):
@@ -80,9 +85,12 @@ def main():
     path = os.path.join(DATA, 'votes.json')
     votes = json.load(open(path, encoding='utf-8'))
 
-    stats = {'ableitbar': 0, 'entlastung': 0, 'ohne anwesenheit': 0, 'zu grosse lücke': 0}
+    stats = {'ableitbar': 0, 'teilweise': 0, 'entlastung': 0,
+             'ohne anwesenheit': 0, 'zu grosse lücke': 0}
     for v in votes:
         v.pop('inferable', None)
+        if v.get('note', '').startswith('Es haben weniger mitgestimmt'):
+            v.pop('note')
         if v['type'] != 'anonymous':
             continue
         r = v['results']
@@ -112,8 +120,19 @@ def main():
             v.setdefault('note', WEBAUSZUG_NOTE)
             stats['ohne anwesenheit'] += 1
         elif entitled > 0 and voted / entitled < THRESHOLD:
-            v['inferable'] = False
-            stats['zu grosse lücke'] += 1
+            # Nennt die Niederschrift, wer später kam oder früher ging, und
+            # reicht diese Gruppe aus, um die Lücke zu erklären, dann ist nur
+            # deren Stimme offen — der Rest des Saals hat einstimmig so
+            # gestimmt, wie das Ergebnis sagt.
+            teil = [e['member'] for e in sess.get('partial') or []]
+            if teil and entitled - voted <= len(teil):
+                v['inferable'] = 'teilweise'
+                v.setdefault('note', TEIL_NOTE.format(
+                    n=len(teil), s='' if len(teil) == 1 else 'n'))
+                stats['teilweise'] += 1
+            else:
+                v['inferable'] = False
+                stats['zu grosse lücke'] += 1
         else:
             stats['ableitbar'] += 1
 

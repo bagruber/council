@@ -12679,7 +12679,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 5 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20230327_02",
@@ -13110,7 +13111,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 3 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20230515_02",
@@ -15293,7 +15295,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20231214_03",
@@ -15325,7 +15328,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20231214_05",
@@ -15372,7 +15376,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20231214_08",
@@ -15390,7 +15395,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20231218_01",
@@ -15408,7 +15414,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 5 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20231218_02",
@@ -15426,7 +15433,8 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 5 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20231218_03",
@@ -18695,7 +18703,8 @@
         "reason": "kein_mandat"
       }
     ],
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20241021_02",
@@ -18723,7 +18732,8 @@
         "reason": "beteiligung"
       }
     ],
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20241021_03",
@@ -18786,7 +18796,8 @@
         "reason": "kein_mandat"
       }
     ],
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20241021_05",
@@ -18810,7 +18821,8 @@
         "reason": "kein_mandat"
       }
     ],
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20241021_06",
@@ -18834,7 +18846,8 @@
         "reason": "kein_mandat"
       }
     ],
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20241021_07",
@@ -18858,7 +18871,8 @@
         "reason": "kein_mandat"
       }
     ],
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20241021_08",
@@ -18910,7 +18924,8 @@
         "reason": "kein_mandat"
       }
     ],
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20241021_10",
@@ -18934,7 +18949,8 @@
         "reason": "kein_mandat"
       }
     ],
-    "inferable": false
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20241021_11",
