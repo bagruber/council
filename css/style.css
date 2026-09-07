@@ -33,13 +33,20 @@
   --purple: #9B59B6;
   /* Seltene Stimmzustände — bewusst unbunt, damit Ja/Nein/Unbekannt dominieren */
   --abstained: #8C8C8C;
-  /* Gremienfarben fuer Diagramme und Register: an die Kalender-Punkte
-     angelehnt, aber dunkler abgestuft, damit Gold und Blau auf hellem Grund
-     und fuer Farbenblinde unterscheidbar bleiben. Standen bis hierher als
-     Hex-Literale in js/views/statistik.js. */
-  --body-stadtrat: #E6001E;
-  --body-bpu: #8a6d1e;
-  --body-hvfa: #3d7fc1;
+  /* Gremienfarben fuer Kalender, Diagramme und Register. Bis August 2026
+     gab es davon zwei Saetze: der Kalender faerbte aus dem Kanon, die
+     Diagramme aus drei eigenen Hex-Werten, angeblich der Barrierefreiheit
+     wegen. Nachgerechnet stimmte das nicht — unter Deuteranopie lagen alle
+     drei Diagrammfarben in derselben Helligkeit (Abstand 0,02–0,05) und
+     Rot und Gold wurden nahezu derselbe Ton.
+     Der Satz hier ist eine Helligkeitsleiter, die auch ohne Farbsehen
+     traegt: dunkles Blau, mittleres Rot, helles Gold. Abstaende unter
+     Deuteranopie 0,12 bis 0,27, Kontrast auf Creme 8,3 / 5,5 / 3,0.
+     Das Gold ist die einzige Abweichung vom Kanon: gold-500 traegt nur
+     2,6:1 und verfehlt damit die 3:1 fuer grafische Elemente. */
+  --body-stadtrat: var(--color-red-500);
+  --body-bpu: #ac8a45;
+  --body-hvfa: var(--color-rb-7);
   --excluded: #8C8C8C;
   /* Rainbow-Akzent, feste Reihenfolge, nur als 4px-Streifen — nie als Verlauf */
   --rb-1: var(--color-rb-1); --rb-2: var(--color-rb-2); --rb-3: var(--color-rb-3);
@@ -1564,9 +1571,9 @@ main {
   background: var(--text-muted);
 }
 
-.cal-dot.stadtrat { background: var(--primary-bright); }
-.cal-dot.bpu { background: var(--accent); }
-.cal-dot.hvfa { background: var(--info); }
+.cal-dot.stadtrat { background: var(--body-stadtrat); }
+.cal-dot.bpu { background: var(--body-bpu); }
+.cal-dot.hvfa { background: var(--body-hvfa); }
 
 /* -- Bottom sheet -- */
 
@@ -1630,8 +1637,8 @@ main {
 
 .sheet-event:last-child { margin-bottom: 0; }
 .sheet-event:hover { box-shadow: var(--shadow-lg); }
-.sheet-event.bpu { border-left-color: var(--accent); }
-.sheet-event.hvfa { border-left-color: var(--info); }
+.sheet-event.bpu { border-left-color: var(--body-bpu); }
+.sheet-event.hvfa { border-left-color: var(--body-hvfa); }
 
 .sheet-event .icon {
   font-size: 20px;

@@ -59,3 +59,10 @@ niemandem auf, und die Farbe kann nicht mehr driften) oder mit einem Satz
 begruenden, warum diese App hier abweicht. Ebenfalls nicht aus dem Kanon,
 aber begruendet: die Abstimmungsfarben, das ausgewaschene Gold `--gap` und
 `--surface`.
+
+Seit dem 08.09.2026 gehoert `--body-bpu: #ac8a45` dazu. Die Gremienfarben
+bilden eine Helligkeitsleiter, damit sie ohne Farbsehen auseinanderzuhalten
+sind; `--color-gold-500` traegt auf Creme nur 2,6:1 und verfehlt damit die
+3:1 aus WCAG 1.4.11 fuer grafische Elemente, `#ac8a45` erreicht 3,0:1. Die
+beiden anderen Stufen kommen aus dem Kanon (`red-500`, `rb-7`). Aendert sich
+der Kanon, ist das der Wert, der nachgezogen werden muss.
