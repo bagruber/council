@@ -93,7 +93,6 @@ function renderFraktion(pid) {
     list.sort((a, b) => a.member.name.localeCompare(b.member.name));
     list.forEach(r => {
       const row = document.createElement("a");
-      row.className = "member-row";
       row.href = "#/member/" + r.member.id;
       // Wechsel mit Richtung: woher jemand kam, wohin er ging
       const chip = (other, dir) => {
@@ -104,6 +103,7 @@ function renderFraktion(pid) {
           >${dir === "in" ? label + " →" : "→ " + label}</span>`;
       };
       const move = (r.from ? chip(r.from, "in") : "") + (r.to ? chip(r.to, "out") : "");
+      row.className = "member-row" + (move ? " has-move" : "");
       // Der Bürgermeister sitzt kraft Amtes im Rat, nicht über die Liste
       const office = r.member.role === "mayor"
         ? `<span class="faction-office">Bürgermeister</span>` : "";

@@ -378,7 +378,7 @@ function tierVoteList(tier, erfasst) {
         ? `${v.results.yes.length}:${v.results.no.length}`
         : `${v.results.yes}:${v.results.no}`;
       const tr = document.createElement("tr");
-      tr.innerHTML = `<td class="reg-data"><a href="#/session/${r.session.id}">${v.title}</a></td>
+      tr.innerHTML = `<td class="reg-title"><a href="#/session/${r.session.id}">${v.title}</a></td>
                       <td class="reg-dur">${res}</td>`;
       body.appendChild(tr);
     });
