@@ -171,9 +171,19 @@ Aussage einer einzelnen Person über sich selbst, oft Jahre später.
 **Herkunft je Stimme (`voterSource`).** Ein Beschluss kann Stimmen aus
 verschiedenen Quellen tragen — eine getrackte Mitschrift und daneben die
 Selbstauskunft einer Person, die damals nicht erfasst wurde. `source.tier` gilt
-für den Beschluss als Ganzes, `voterSource[<id>].tier` überschreibt sie für
-diese eine Stimme. `Council.sourceLabel(vote, memberId)` löst das auf; ohne
-`memberId` kommt die Stufe des Beschlusses.
+für den Beschluss als Ganzes, `voterSource[<id>]` ist die **Liste der Belege**
+für diese eine Stimme:
+
+```json
+"voterSource": { "hobmaier": ["tracked", "selbstauskunft"] }
+```
+
+Für die Anzeige zählt der stärkste Beleg — eine Selbstauskunft wertet eine
+Mitschrift nie ab, sie kommt daneben. `Council.voterTiers(vote, memberId)` gibt
+die Liste sortiert zurück, `sourceLabel(vote, memberId)` den stärksten Titel,
+`statusProvenance()` die Zeile für den Tooltip („Nein — Selbstauskunft", bei
+mehreren Belegen „… , dazu selbstauskunft"). Ohne eigenen Eintrag gilt die
+Stufe des Beschlusses.
 
 Die Zählung auf `#/datenlage` geht nach der Stufe des Beschlusses. Einzelne
 abweichende Stimmen tauchen dort nicht auf — sie stehen im Profil der Person.

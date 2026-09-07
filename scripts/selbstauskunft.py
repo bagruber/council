@@ -7,10 +7,11 @@ Das Skript liest die Sitzungszeile (⏰ Datum · Gremium), sucht den Beschluss
 
 Eingetragen wird zweierlei:
   * `voters[<id>]`      — die Stimme selbst
-  * `voterSource[<id>]` — Herkunft `selbstauskunft`, weil sie schwächer wiegt
-                          als Niederschrift, Mitschrift oder Presse. Die Stufe
-                          gilt je Person: derselbe Beschluss kann eine
-                          getrackte und eine erinnerte Stimme enthalten.
+  * `voterSource[<id>]` — Liste der Belege für diese eine Stimme. Stand sie
+                          schon in der Mitschrift oder in der Zeitung, kommt
+                          `selbstauskunft` dazu statt sie zu ersetzen: die
+                          stärkere Quelle bleibt maßgeblich, die schwächere
+                          erhöht nur das Gewicht.
 
 Die vote-weite `source` bleibt unberührt, solange sie schon gesetzt ist.
 
@@ -90,11 +91,21 @@ def main():
         alt = (v.get('voters') or {}).get(args.member)
         if alt and alt != stimme:
             print(f'  ! {v["id"]}: bisher {alt}, laut Selbstauskunft {stimme}')
+
+        belege = (v.get('voterSource') or {}).get(args.member)
+        if belege is None:
+            # Ohne eigenen Eintrag galt bisher die Quelle des Beschlusses. War
+            # die Stimme daraus schon bekannt, bleibt dieser Beleg erhalten.
+            vorher = (v.get('source') or {}).get('tier')
+            belege = [vorher] if (alt and vorher) else []
+        if 'selbstauskunft' not in belege:
+            belege.append('selbstauskunft')
+
         v.setdefault('voters', {})[args.member] = stimme
-        v.setdefault('voterSource', {})[args.member] = {'tier': 'selbstauskunft'}
+        v.setdefault('voterSource', {})[args.member] = belege
         # Beschlüsse ohne jede Herkunft bekommen sie jetzt von hier
         v.setdefault('source', {'tier': 'selbstauskunft'})
-        print(f'  {v["id"]:18s} {stimme:6s} {titel[:52]}')
+        print(f'  {v["id"]:18s} {stimme:6s} {"+".join(belege):28s} {titel[:40]}')
         n += 1
 
     print(f'{n} Stimmen' + (' (dry run)' if args.dry else ''))

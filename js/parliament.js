@@ -192,7 +192,7 @@ const VoteVis = (() => {
     return `
       <div class="seat-name">${seat.name}${titlePart}</div>
       <div class="seat-party"><span class="seat-party-dot" style="background:${seat.party?.color || "#aaa"}"></span>${seat.party?.name || ""}</div>
-      <div class="seat-vote vote-${seat.vote.replace("-inferred", "")}">${Council.voteStatusTitle(seat.vote)}</div>`;
+      <div class="seat-vote vote-${seat.vote.replace("-inferred", "")}">${seat.info || Council.voteStatusTitle(seat.vote)}</div>`;
   }
 
   // ─── Row guides (subtle arcs behind each row) ────────────────────────────
@@ -526,13 +526,16 @@ const VoteVis = (() => {
     return at ? at.party : m.party;
   }
 
-  function makeEntry(m, voteVal, partyMap, date) {
+  // `info`: Statuszeile samt Herkunft, wie sie im Tooltip stehen soll. Wo sie
+  // fehlt, bleibt es beim nackten Status.
+  function makeEntry(m, voteVal, partyMap, date, info) {
     return {
       id:    m.id,
       name:  memberLabel(m),
       title: m.title || "",
       party: partyMap[partyAt(m, date)],
       vote:  voteVal || "unknown",
+      info:  info || null,
       hasStar: m.role === "mayor" || isViceMayorAt(m, date),
     };
   }
@@ -575,8 +578,11 @@ const VoteVis = (() => {
     // Chair (if defined, e.g. mayor)
     if (cfg.chair) {
       const m = memberMap[cfg.chair];
-      if (m) mayor = makeEntry(m, voteRes[m.id]
-                     || Council.voteStatus(m.id, vote, session, m), partyMap, vote.date);
+      if (m) {
+        const st = voteRes[m.id] || Council.voteStatus(m.id, vote, session, m);
+        mayor = makeEntry(m, st, partyMap, vote.date,
+                          Council.statusProvenance(st, vote, m.id));
+      }
     }
 
     // Committees may have vice-chairs flanking the chair. Place them at the
@@ -591,11 +597,18 @@ const VoteVis = (() => {
     seatList.forEach(seatDef => {
       let m = null, voteVal = "unknown";
       if (seatDef.occupants) {
-        // Prefer the occupant who actually voted (handles overlapping date ranges)
-        const inVote = seatDef.occupants.find(o => voteRes[o.member] != null);
+        // An einem Wechseltag stehen beide Namen am selben Sitz. Wer ihn zu
+        // dieser Abstimmung nicht hielt, trägt `kein_mandat` — der kommt hier
+        // gar nicht erst in Frage, sonst säße nach dem Wechsel weiter die
+        // ausgeschiedene Person im Halbrund.
+        const ohneMandat = new Set((vote.excluded || [])
+          .filter(e => e.reason === "kein_mandat").map(e => e.member));
+        const moeglich = seatDef.occupants.filter(o => !ohneMandat.has(o.member));
+        // Danach: wer tatsächlich mitgestimmt hat (überlappende Zeiträume)
+        const inVote = moeglich.find(o => voteRes[o.member] != null);
         if (inVote) m = memberMap[inVote.member];
         else {
-          const occ = activeAt(seatDef.occupants, vote.date);
+          const occ = activeAt(moeglich, vote.date);
           if (occ) m = memberMap[occ.member];
         }
       } else if (seatDef.member) {
@@ -614,7 +627,8 @@ const VoteVis = (() => {
       // und Einstimmigkeit ergibt, weiß Council — dieselbe Quelle wie Profil
       // und Statistik, damit nicht zwei Antworten für dieselbe Person stehen.
       voteVal = voteRes[m.id] || Council.voteStatus(m.id, vote, session, m) || "unknown";
-      seats.push(makeEntry(m, voteVal, partyMap, vote.date));
+      seats.push(makeEntry(m, voteVal, partyMap, vote.date,
+                           Council.statusProvenance(voteVal, vote, m.id)));
     });
 
     return { seats, mayor, rows: cfg.rows || body.rows };

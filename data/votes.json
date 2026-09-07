@@ -18903,9 +18903,9 @@
       }
     ],
     "voterSource": {
-      "hobmaier": {
-        "tier": "selbstauskunft"
-      }
+      "hobmaier": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -19067,9 +19067,9 @@
       "pressVerified": false
     },
     "voterSource": {
-      "hobmaier": {
-        "tier": "selbstauskunft"
-      }
+      "hobmaier": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -19112,9 +19112,9 @@
       "hobmaier": "no"
     },
     "voterSource": {
-      "hobmaier": {
-        "tier": "selbstauskunft"
-      }
+      "hobmaier": [
+        "selbstauskunft"
+      ]
     }
   },
   {
