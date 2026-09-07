@@ -33,6 +33,13 @@
   --purple: #9B59B6;
   /* Seltene Stimmzustände — bewusst unbunt, damit Ja/Nein/Unbekannt dominieren */
   --abstained: #8C8C8C;
+  /* Gremienfarben fuer Diagramme und Register: an die Kalender-Punkte
+     angelehnt, aber dunkler abgestuft, damit Gold und Blau auf hellem Grund
+     und fuer Farbenblinde unterscheidbar bleiben. Standen bis hierher als
+     Hex-Literale in js/views/statistik.js. */
+  --body-stadtrat: #E6001E;
+  --body-bpu: #8a6d1e;
+  --body-hvfa: #3d7fc1;
   --excluded: #8C8C8C;
   /* Rainbow-Akzent, feste Reihenfolge, nur als 4px-Streifen — nie als Verlauf */
   --rb-1: var(--color-rb-1); --rb-2: var(--color-rb-2); --rb-3: var(--color-rb-3);
@@ -88,17 +95,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 1.05;
-}
-
-/* Abschnittsmarke — steht für sich als Überschrift, nie als Kicker über einer
-   zweiten Überschrift. Ein Gliederungselement, kein Schmuck. */
-.section-label {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--accent-text);
 }
 
 /* Statusmarke — dichter und schwerer als die Abschnittsmarke. Ein Label
@@ -475,6 +471,8 @@ main {
   .tag-pill .icon { font-size: 13px; }
 }
 
+/* Abschnittsmarke — steht für sich als Überschrift, nie als Kicker über einer
+   zweiten Überschrift. Ein Gliederungselement, kein Schmuck. */
 .section-heading,
 .section-label {
   font-family: 'Inter', sans-serif;

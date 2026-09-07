@@ -15,13 +15,12 @@ const main = document.getElementById("main");
 
 // -- Statistik --
 
-// Farben je Gremium: an die Kalender-Punkte angelehnt, aber dunkler
-// abgestuft, damit Gold/Blau auf hellem Grund und für Farbenblinde
-// unterscheidbar bleiben.
+// Farben je Gremium stehen als --body-* in css/style.css, damit Diagramm,
+// Register und Legende nicht drei Kopien derselben Rampe pflegen.
 const CHART_BODIES = [
-  { id: "stadtrat", label: "Stadtrat", color: "#E6001E" },
-  { id: "bpu",      label: "BPU",      color: "#8a6d1e" },
-  { id: "hvfa",     label: "HVFA",     color: "#3d7fc1" },
+  { id: "stadtrat", label: "Stadtrat", color: "var(--body-stadtrat)" },
+  { id: "bpu",      label: "BPU",      color: "var(--body-bpu)" },
+  { id: "hvfa",     label: "HVFA",     color: "var(--body-hvfa)" },
 ];
 const chartColor = {};
 CHART_BODIES.forEach(b => { chartColor[b.id] = b.color; });
