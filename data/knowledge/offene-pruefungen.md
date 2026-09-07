@@ -78,3 +78,16 @@ Eingetragen nach Durchsicht, mit diesen Resten:
 - **Artikel-ID `merkur_2023-04-24_ausschussgroesse`** trägt das Sitzungsdatum,
   erschienen ist der Text am 27.04.2023. Das Feld `date` steht auf dem
   Erscheinungsdatum, die ID nicht — bei Gelegenheit angleichen.
+
+---
+
+## `tracked` auftrennen
+
+Die Stufe `tracked` meint: im Saal vollständig erfasst, Tool-Export oder
+Mitschrift. Ein Teil der 61 so markierten Voten ist aber in Wahrheit die
+Erinnerung einer einzelnen Person und gehört nach `selbstauskunft` — die
+schwächere Stufe. Beim Durchgehen hilft `source.by`: wo eine Person nur die
+eigene Stimme beigesteuert hat, ist es keine Erfassung des Saals.
+
+Noch nicht angefasst, weil es eine Einzelfallprüfung je Votum ist.
+

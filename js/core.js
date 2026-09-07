@@ -176,14 +176,18 @@ const Council = (() => {
   }
 
   // Herkunft der Einzelstimmen — vier Stufen, siehe data/knowledge.
-  function sourceLabel(vote) {
-    const s = vote.source;
+  // Ohne `memberId` die Herkunft des Beschlusses, mit ihr die dieser einen
+  // Stimme: eine Selbstauskunft kann neben einer getrackten Mitschrift stehen,
+  // dann gilt für die Person die schwächere Stufe.
+  function sourceLabel(vote, memberId) {
+    const s = (memberId && (vote.voterSource || {})[memberId]) || vote.source;
     if (!s) return null;
     return {
       "protocol-explicit": "Namentlich in der Niederschrift",
       "protocol-implicit": "Aus der Anwesenheit abgeleitet",
       press: "Aus Presseberichten",
       tracked: "In der Sitzung mitgeschrieben",
+      selbstauskunft: "Vom Mitglied selbst angegeben",
     }[s.tier] || null;
   }
 
@@ -203,7 +207,7 @@ const Council = (() => {
   // stamme die Lücke aus der Zeitung.
   function statusProvenance(status, vote, memberId) {
     if (status === "unknown") return voteStatusTitle(status);
-    const note = evidenceNote(vote, memberId) || sourceLabel(vote);
+    const note = evidenceNote(vote, memberId) || sourceLabel(vote, memberId);
     return note ? voteStatusTitle(status) + " — " + note : voteStatusTitle(status);
   }
 

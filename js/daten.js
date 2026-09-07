@@ -101,17 +101,20 @@ function sessionRegister() {
   return [...rows.values()].sort((a, b) => b.date.localeCompare(a.date));
 }
 
-// Wie belastbar ist das Stimmverhalten dieser Sitzung? Zählt die vier
+// Wie belastbar ist das Stimmverhalten dieser Sitzung? Zählt die
 // Herkunftsstufen aus vote.source.tier durch; ohne Stufe ist nur das
-// Gesamtergebnis bekannt.
+// Gesamtergebnis bekannt. Gezählt wird je Beschluss nach seiner
+// Hauptquelle — einzelne Stimmen können daneben aus `voterSource` stammen.
 function tierCounts(votes) {
-  const c = { explicit: 0, implicit: 0, tracked: 0, press: 0, sum: 0 };
+  const c = { explicit: 0, implicit: 0, tracked: 0, press: 0,
+              selbstauskunft: 0, sum: 0 };
   votes.forEach(v => {
     const t = (v.source || {}).tier;
     if (t === "protocol-explicit")      c.explicit++;
     else if (t === "protocol-implicit") c.implicit++;
     else if (t === "tracked")           c.tracked++;
     else if (t === "press")             c.press++;
+    else if (t === "selbstauskunft")    c.selbstauskunft++;
     else                                c.sum++;
   });
   return c;

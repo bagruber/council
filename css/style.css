@@ -2708,6 +2708,7 @@ main {
 .tier-implicit { background: var(--accent-text); }
 .tier-tracked  { background: var(--accent); }
 .tier-press    { background: #D9C89A; }
+.tier-selbstauskunft { background: #C6BBA6; }
 .tier-sum      { background: var(--border); }
 
 .tier-legend {
@@ -2740,6 +2741,7 @@ main {
 .tier-chip.tier-implicit::before { background: var(--accent-text); }
 .tier-chip.tier-tracked::before  { background: var(--accent); }
 .tier-chip.tier-press::before    { background: #D9C89A; }
+.tier-chip.tier-selbstauskunft::before { background: #C6BBA6; }
 .tier-chip.tier-sum::before      { background: var(--border); }
 .tier-chip b { color: var(--text); font-variant-numeric: tabular-nums; }
 

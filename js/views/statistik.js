@@ -175,8 +175,9 @@ function periodCard(parent, title, foot, drawFn) {
 const TIERS = [
   { key: "explicit", label: "namentlich",    hint: "Die Niederschrift nennt jeden Namen." },
   { key: "implicit", label: "abgeleitet",    hint: "Einstimmig, aus der Anwesenheit erschlossen." },
-  { key: "tracked",  label: "mitgeschrieben", hint: "Von einer benannten Person im Saal erfasst." },
+  { key: "tracked",  label: "mitgeschrieben", hint: "Im Saal vollständig erfasst — Tool oder Mitschrift." },
   { key: "press",    label: "aus Presse",    hint: "Aus einem Zeitungsartikel rekonstruiert." },
+  { key: "selbstauskunft", label: "Selbstauskunft", hint: "Vom Mitglied nachträglich aus eigener Erinnerung angegeben." },
   { key: "sum",      label: "nur Ergebnis",  hint: "Nur die Gesamtzahlen sind bekannt." },
 ];
 
