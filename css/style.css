@@ -3236,7 +3236,25 @@ a.tier-chip.on {
 }
 .sg-node { cursor: pointer; }
 .sg-node circle { stroke: var(--surface); stroke-width: 1.5; }
-.sg-node:hover circle { stroke: var(--text); }
+.sg-node:hover circle, .sg-node.on circle { stroke: var(--text); }
+
+/* Initialen sitzen im Kreis und tragen die Schriftfarbe der Parteifarbe --
+   ohne den Halo, den die Namen brauchen. */
+.sg-ini {
+  font-size: 10.5px;
+  font-weight: 600;
+  stroke: none;
+  pointer-events: none;
+}
+.sg-ini.lang { font-size: 8.5px; }
+
+/* Der ganze Name erscheint beim Zeigen, auf dem Handy beim ersten Tippen. */
+.sg-name {
+  opacity: 0;
+  transition: opacity 0.12s;
+  pointer-events: none;
+}
+.sg-node:hover .sg-name, .sg-node.on .sg-name { opacity: 1; }
 
 /* -- Fraktionsgeschlossenheit -- */
 

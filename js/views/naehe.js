@@ -308,6 +308,45 @@ function drawSimMatrix(el, periodId) {
 // Kräftebasierte Anordnung, Fruchterman-Reingold. Positive Nähe zieht
 // zusammen, negative drückt auseinander. Kein Schwellenwert: schwache Kanten
 // verschwinden über die Deckkraft, nicht über einen Filter.
+// Der Knoten traegt die Initialen, nicht den Namen. Zweiunddreissig Namen
+// nebeneinander ueberlagern sich, zweiunddreissig Kreise nicht. Der ganze Name
+// kommt beim Zeigen -- auf dem Handy beim ersten Tippen, der zweite Tipp
+// oeffnet das Profil.
+const SG_R = 13;
+
+// Ob die letzte Eingabe eine Beruehrung war. Auf dem Handy gibt es kein
+// Zeigen, also braucht der Name dort einen eigenen Schritt.
+//
+// Gefragt wird pointerdown, nicht touchstart: nach einer Beruehrung schickt
+// der Browser zusaetzlich Maus-Ereignisse hinterher, damit alte Seiten
+// funktionieren. Ein touchstart-Merker, den ein mousemove wieder loescht,
+// steht beim Klick deshalb schon wieder auf falsch.
+let sgFinger = false;
+document.addEventListener("pointerdown",
+  e => { sgFinger = e.pointerType !== "mouse"; }, { passive: true });
+
+// Zwei Buchstaben reichen fast immer. Karin und Kilian Linz sassen zusammen im
+// Rat; dort wird der Vorname zweistellig, sonst stuende zweimal "KL".
+function sgInitialen(nodes) {
+  // "von Pressentin" faengt klein an, die Initiale nicht.
+  const gross = t => t[0].toUpperCase();
+  const kurz = n => gross(n.m.firstName) + gross(n.m.lastName);
+  const zahl = {};
+  nodes.forEach(n => { const k = kurz(n); zahl[k] = (zahl[k] || 0) + 1; });
+  return n => zahl[kurz(n)] > 1
+    ? n.m.firstName.slice(0, 2) + gross(n.m.lastName)
+    : kurz(n);
+}
+
+// Schrift auf der Parteifarbe: FDP-Gelb braucht schwarze Initialen, CSU-Schwarz
+// weisse. Entschieden wird nach relativer Leuchtdichte, nicht nach Augenmass.
+function sgSchrift(hex) {
+  const [r, g, b] = [1, 3, 5]
+    .map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
+    .map(c => c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.4 ? "#1c1c1c" : "#fff";
+}
+
 function drawSimGraph(el, periodId) {
   const nodes = simNodes(periodId).map(n => ({ ...n, x: 0, y: 0, dx: 0, dy: 0 }));
   const pairs = similarity(periodId);
@@ -364,15 +403,16 @@ function drawSimGraph(el, periodId) {
     });
     nodes.forEach(n => {
       const d = Math.hypot(n.dx, n.dy) || 0.01;
-      n.x = Math.max(28, Math.min(W - 28, n.x + n.dx / d * Math.min(d, temp)));
-      n.y = Math.max(22, Math.min(H - 22, n.y + n.dy / d * Math.min(d, temp)));
+      n.x = Math.max(SG_R + 6, Math.min(W - SG_R - 6, n.x + n.dx / d * Math.min(d, temp)));
+      n.y = Math.max(SG_R + 14, Math.min(H - SG_R - 6, n.y + n.dy / d * Math.min(d, temp)));
     });
   }
 
   // Die Kräfte allein schieben Knoten übereinander, sobald eine Fraktion eng
   // zusammenhält. Ein paar Entzerrungsschritte am Ende drücken sie auf
   // Lesbarkeitsabstand, ohne die Anordnung zu verwerfen.
-  const MIN = 26;
+  // Groessere Kreise brauchen mehr Luft, sonst beruehren sie sich.
+  const MIN = SG_R * 2 + 6;
   for (let it = 0; it < 240; it++) {
     let moved = false;
     for (let i = 0; i < nodes.length; i++) {
@@ -387,8 +427,8 @@ function drawSimGraph(el, periodId) {
       }
     }
     nodes.forEach(n => {
-      n.x = Math.max(28, Math.min(W - 28, n.x));
-      n.y = Math.max(22, Math.min(H - 22, n.y));
+      n.x = Math.max(SG_R + 6, Math.min(W - SG_R - 6, n.x));
+      n.y = Math.max(SG_R + 14, Math.min(H - SG_R - 6, n.y));
     });
     if (!moved) break;
   }
@@ -404,17 +444,50 @@ function drawSimGraph(el, periodId) {
                stroke-opacity="${(a * a * 0.5).toFixed(3)}"
                stroke-width="${(0.4 + a * 2).toFixed(2)}"/>`;
     }).join("");
-  const dots = nodes.map(n => `
+  const ini = sgInitialen(nodes);
+  const dots = nodes.map(n => {
+    const farbe = n.party ? n.party.color : "#999999";
+    const k = ini(n);
+    // Ein mittig gesetzter Name laeuft am Rand aus dem Bild. Dort haengt er
+    // deshalb an der Innenseite des Knotens statt an dessen Mitte.
+    const anker = n.x < 60 ? "start" : n.x > W - 60 ? "end" : "middle";
+    const nx = anker === "start" ? -SG_R : anker === "end" ? SG_R : 0;
+    return `
     <g class="sg-node" transform="translate(${n.x.toFixed(1)},${n.y.toFixed(1)})">
-      <circle r="7" fill="${n.party ? n.party.color : "#999"}"/>
-      <text y="-11" text-anchor="middle">${n.m.lastName}</text>
+      <circle r="${SG_R}" fill="${farbe}"/>
+      <text class="sg-ini${k.length > 2 ? " lang" : ""}" y="3.6" text-anchor="middle"
+            fill="${sgSchrift(farbe)}">${k}</text>
+      <text class="sg-name" x="${nx}" y="${-(SG_R + 7)}" text-anchor="${anker}">${n.m.name}</text>
       <title>${n.m.name}${n.party ? " · " + n.party.name : ""}</title>
-    </g>`).join("");
+    </g>`;
+  }).join("");
 
   el.innerHTML = `<svg class="chart simgraph" width="${W}" height="${H}"
       viewBox="0 0 ${W} ${H}" role="img" aria-label="Nähe-Netz">${lines}${dots}</svg>`;
-  el.querySelectorAll(".sg-node").forEach((g, i) => {
-    g.addEventListener("click", () => navigate("/member/" + nodes[i].m.id));
+  // Mit der Maus steht der Name schon beim Zeigen da, der Klick darf sofort
+  // oeffnen. Mit dem Finger gibt es kein Zeigen -- dort nennt der erste Tipp
+  // den Namen, der zweite oeffnet das Profil.
+  // SVG kennt kein z-index: ein spaeter gezeichneter Kreis deckt den Namen
+  // eines frueheren zu. Der angesprochene Knoten wandert deshalb ans Ende.
+  const nachVorn = g => g.parentNode.appendChild(g);
+  const svg = el.querySelector("svg");
+  const knoten = [...svg.querySelectorAll(".sg-node")];
+  knoten.forEach(g => g.addEventListener("mouseenter", () => nachVorn(g)));
+
+  // Der Klick haengt am SVG, nicht an jedem Knoten: nach einer Beruehrung
+  // schickt der Browser den Klick mitunter an das SVG statt an den Kreis
+  // darin. Ueber das SVG kommt beides an, und beim Neuzeichnen ist der
+  // Zuhoerer mit dem alten SVG weg.
+  svg.addEventListener("click", e => {
+    const g = e.target.closest && e.target.closest(".sg-node");
+    if (!g) return;
+    if (sgFinger && !g.classList.contains("on")) {
+      knoten.forEach(o => o.classList.remove("on"));
+      g.classList.add("on");
+      nachVorn(g);
+      return;
+    }
+    navigate("/member/" + nodes[knoten.indexOf(g)].m.id);
   });
 }
 
