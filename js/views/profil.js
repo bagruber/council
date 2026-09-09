@@ -615,16 +615,21 @@ function renderMemberTimeline(container, member) {
       // Einstimmig mitgegangen \u2192 blasser Chip (gleiche Logik wie Statistik)
       const isUnanimous = Council.isUnanimous(vote);
       const base = status.replace("-inferred", "");
-      const chipClass = ({ yes: "ja", no: "nein", absent: "abwesend",
-                          excluded: "sonder", abstained: "sonder",
-                          restricted: "sonder" }[base] || "unknown")
-                      + (isUnanimous ? " inferred" : "");
+      // Einstimmig und ohne Eintrag: die Richtung ist klar, offen ist nur, ob
+      // die Person überhaupt da war. Das Fragezeichen bleibt, der Chip wird
+      // grau — dieselbe Lesart wie in der Statistik.
+      const unklar = base === "unknown" && isUnanimous;
+      const chipClass = unklar ? "unklar"
+        : ({ yes: "ja", no: "nein", absent: "abwesend",
+             excluded: "sonder", abstained: "sonder",
+             restricted: "sonder" }[base] || "unknown")
+          + (isUnanimous ? " inferred" : "");
       const chipLabel = Council.voteStatusLabel(status);
 
       const voteRow = document.createElement("div");
       voteRow.className = "mtl-vote";
       voteRow.innerHTML = `
-        <span class="mtl-vote-chip ${chipClass}${Council.evidenceNote(vote, member.id) ? " weich" : ""}" title="${Council.statusProvenance(status, vote, member.id)}">${chipLabel}</span>
+        <span class="mtl-vote-chip ${chipClass}${Council.evidenceNote(vote, member.id) ? " weich" : ""}" title="${unklar ? "Anwesenheit nicht überliefert" : Council.statusProvenance(status, vote, member.id)}">${chipLabel}</span>
         <span class="mtl-vote-title">${vote.title}</span>`;
 
       const detail = document.createElement("div");

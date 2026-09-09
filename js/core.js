@@ -167,8 +167,8 @@ const Council = (() => {
   // Ausgeschriebene Fassung für Tooltips und Legende.
   function voteStatusTitle(status) {
     return { yes: "Ja", no: "Nein", absent: "Abwesend",
-             "yes-inferred": "Ja - aus Anwesenheit abgeleitet",
-             "no-inferred": "Nein - aus Anwesenheit abgeleitet",
+             "yes-inferred": "Ja - aus öff. Niederschrift abgeleitet",
+             "no-inferred": "Nein - aus öff. Niederschrift abgeleitet",
              excluded: "Wegen persönlicher Beteiligung ausgeschlossen (Art. 49 GO)",
              abstained: "Enthalten",
              restricted: "Bei dieser Abstimmung nicht stimmberechtigt",
@@ -180,7 +180,7 @@ const Council = (() => {
                      "press", "selbstauskunft"];
   const TIER_LABEL = {
     "protocol-explicit": "Namentlich in der Niederschrift",
-    "protocol-implicit": "Aus der Anwesenheit abgeleitet",
+    "protocol-implicit": "Aus der öff. Niederschrift abgeleitet",
     tracked: "In der Sitzung mitgeschrieben",
     press: "Aus Presseberichten",
     selbstauskunft: "Selbstauskunft",
@@ -221,8 +221,8 @@ const Council = (() => {
   function statusProvenance(status, vote, memberId) {
     if (status === "unknown") return voteStatusTitle(status);
     const tiers = voterTiers(vote, memberId);
-    // "Ja - aus Anwesenheit abgeleitet - Aus der Anwesenheit abgeleitet" sagt
-    // dasselbe zwei Mal; die Statuszeile trägt es schon.
+    // "Ja - aus öff. Niederschrift abgeleitet - Aus der öff. Niederschrift
+    // abgeleitet" sagt dasselbe zwei Mal; die Statuszeile trägt es schon.
     if (status.endsWith("-inferred") && tiers[0] === "protocol-implicit") {
       return voteStatusTitle(status);
     }
