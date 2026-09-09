@@ -10271,6 +10271,127 @@
     ]
   },
   {
+    "id": "sr_20260629",
+    "date": "2026-06-29",
+    "type": "stadtrat",
+    "title": "9. Stadtratssitzung – Juni 2026",
+    "absent": [
+      "heinz",
+      "linz_karin",
+      "roeck"
+    ],
+    "agenda": [
+      {
+        "number": "2",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2.1",
+        "title": "Vorstellung Projekt \"Lange Nacht der Demokratie\" durch VHS Moosburg",
+        "type": "discussion"
+      },
+      {
+        "number": "3",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Einbeziehungssatzung \"Niederambach Süd\"",
+        "voteId": "sr_20260629_01"
+      },
+      {
+        "number": "5",
+        "title": "Teilfortschreibung des Landesentwicklungsprogramms Bayern zur vorläufigen Sicherung der Lärmschutzbereiche der Flugplätze Lechfeld, München und Salzburg",
+        "voteId": "sr_20260629_02"
+      },
+      {
+        "number": "6",
+        "title": "Vorlage der Jahresrechnung 2025 gem. Art. 102 Abs. 2 GO",
+        "type": "discussion"
+      },
+      {
+        "number": "7",
+        "title": "Beschluss über die Änderung des Widmungszwecks/der Nutzung der Stadthalle Moosburg - Ausschluss von Parteiveranstaltungen",
+        "voteId": "sr_20260629_03"
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ],
+    "partial": [
+      {
+        "member": "beibl",
+        "to": "20:30"
+      }
+    ]
+  },
+  {
+    "id": "sr_20260720",
+    "date": "2026-07-20",
+    "type": "stadtrat",
+    "title": "10. Stadtratssitzung – Juli 2026",
+    "absent": [
+      "stanglmaier",
+      "heinz"
+    ],
+    "agenda": [
+      {
+        "number": "2",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Genehmigung der öffentlichen Niederschriften (StR 15.06.2026)",
+        "voteId": "sr_20260720_01"
+      },
+      {
+        "number": "5",
+        "title": "Einbeziehungssatzung \"Niederambach Süd\"",
+        "voteId": "sr_20260720_02"
+      },
+      {
+        "number": "6",
+        "title": "Aufstellungsbeschluss Bebauungsplan Nr. 85 nebst 20. Änderung des Flächennutzungsplans für die Flurstücke 1277, 1277/1, 1277/3, 1277/4, 1277/5, 1277/6, 1278 u. 1279 - Gemarkung Pfrombach",
+        "voteId": "sr_20260720_03",
+        "voteIds": [
+          "sr_20260720_03",
+          "sr_20260720_04",
+          "sr_20260720_05"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Haushalt 2026 - Finanzbericht zum 30.06.2026",
+        "type": "discussion"
+      },
+      {
+        "number": "8",
+        "title": "Kläranlage Moosburg GmbH - Feststellung des Jahresabschlusses 2025 und Beschluss über die Ergebnisverwendung",
+        "voteId": "sr_20260720_06"
+      },
+      {
+        "number": "9",
+        "title": "Beschluss über Weitergewährung einer Arbeitsmarktzulage für Erzieher/innen und Kinderpfleger/innen in den Kindertageseinrichtungen",
+        "voteId": "sr_20260720_07"
+      },
+      {
+        "number": "10",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
+  },
+  {
     "id": "sr_20260907",
     "date": "2026-09-07",
     "type": "stadtrat",

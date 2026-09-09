@@ -23,6 +23,16 @@ sich zwei Abweichungen gegenseitig aufheben.
 
 Diese stehen nirgends im Bestand, sollen aber nicht verlorengehen.
 
+- **Beginnzeiten: Niederschrift gegen Sitzungsregister.** Die Niederschrift zum
+  20.07.2026 nennt 19:00 Uhr als Eröffnung der öffentlichen Sitzung,
+  `sessionlengths.json` führt für den Abend 18:30–21:00. Ähnlich der 29.06.2026:
+  die Niederschrift lässt Beginn und Ende leer, das Register sagt 18:00–20:47.
+  Vermutlich misst das Register die ganze Sitzung inklusive nichtöffentlichem
+  Teil, die Niederschrift nur den öffentlichen. Solange das nicht geklärt ist,
+  bleibt beides stehen wie es ist — die Dauerstatistik zieht aus dem Register,
+  die Sitzungsseite zeigt dessen Zeiten. Wenn die Deutung stimmt, gehört das in
+  einen Satz auf der Statistikseite, nicht in eine Korrektur der Daten.
+
 - **HVFA 07.12.2023, Pressestelle schaffen.** Die Sitzung steht im
   Sitzungsregister (19:00–22:35), eine Niederschrift liegt nicht vor. Notiz aus
   dem Gedächtnis: dagegen FW und Dollinger, Welter, Tristl. Die genannten
