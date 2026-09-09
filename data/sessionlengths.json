@@ -987,7 +987,13 @@
     "date": "2026-04-13",
     "body": "bpu",
     "start": "19:00",
-    "end": "19:20"
+    "end": "19:20",
+    "quellen": {
+      "mitschrift": {
+        "start": "20:34",
+        "end": "20:44"
+      }
+    }
   },
   {
     "date": "2026-04-20",
@@ -1005,7 +1011,13 @@
     "date": "2026-05-18",
     "body": "stadtrat",
     "start": "19:00",
-    "end": "20:55"
+    "end": "20:55",
+    "quellen": {
+      "mitschrift": {
+        "start": "19:03",
+        "end": "19:42"
+      }
+    }
   },
   {
     "date": "2026-06-15",
@@ -1017,7 +1029,13 @@
     "date": "2026-06-29",
     "body": "stadtrat",
     "start": "18:00",
-    "end": "20:47"
+    "end": "20:47",
+    "quellen": {
+      "mitschrift": {
+        "start": "19:00",
+        "end": "20:27"
+      }
+    }
   },
   {
     "date": "2026-07-13",
@@ -1029,12 +1047,27 @@
     "date": "2026-07-20",
     "body": "stadtrat",
     "start": "18:30",
-    "end": "21:00"
+    "end": "21:00",
+    "quellen": {
+      "niederschrift": {
+        "start": "19:00"
+      },
+      "mitschrift": {
+        "start": "19:15",
+        "end": "20:35"
+      }
+    }
   },
   {
     "date": "2026-07-27",
     "body": "stadtrat",
     "start": "18:30",
-    "end": "22:27"
+    "end": "22:27",
+    "quellen": {
+      "mitschrift": {
+        "start": "18:37",
+        "end": "21:19"
+      }
+    }
   }
 ]
