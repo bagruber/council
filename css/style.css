@@ -2459,6 +2459,14 @@ main {
   letter-spacing: 0.02em;
 }
 .mtl-vote-chip.inferred { opacity: 0.55; }
+/* Einstimmig und ohne Eintrag: gefragt ist die Anwesenheit, nicht die Haltung.
+   Das Fragezeichen bleibt stehen, aber unbunt — es soll nicht aussehen wie
+   eine unbekannte Stimmrichtung. */
+.mtl-vote-chip.unklar {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
 
 .mtl-vote-title {
   flex: 1;
