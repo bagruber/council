@@ -3246,29 +3246,28 @@ a.tier-chip.on {
 .hm-key-none { background: var(--bg); }
 
 .simgraph { max-width: 100%; height: auto; }
-.simgraph text {
-  font-size: 9.5px;
-  fill: var(--text);
-  paint-order: stroke;
-  stroke: var(--surface);
-  stroke-width: 3px;
-}
+.simgraph text { font-size: 9.5px; }
 .sg-node { cursor: pointer; }
 .sg-node circle { stroke: var(--surface); stroke-width: 1.5; }
 .sg-node:hover circle, .sg-node.on circle { stroke: var(--text); }
 
-/* Initialen sitzen im Kreis und tragen die Schriftfarbe der Parteifarbe --
-   ohne den Halo, den die Namen brauchen. */
-.sg-ini {
+/* Nur Buchstaben, kein Halo. Die Farbe steht als fill-Attribut am Element und
+   richtet sich nach der Parteifarbe darunter — hier darf deshalb keine
+   CSS-Regel `fill` setzen, die schlüge das Attribut. */
+.simgraph .sg-ini {
   font-size: 10.5px;
   font-weight: 600;
-  stroke: none;
   pointer-events: none;
 }
-.sg-ini.lang { font-size: 8.5px; }
+.simgraph .sg-ini.lang { font-size: 8.5px; }
 
-/* Der ganze Name erscheint beim Zeigen, auf dem Handy beim ersten Tippen. */
-.sg-name {
+/* Der Name erscheint beim Zeigen, auf dem Handy beim ersten Tippen. Er liegt
+   über den Kanten und braucht deshalb den Halo. */
+.simgraph .sg-name {
+  fill: var(--text);
+  paint-order: stroke;
+  stroke: var(--surface);
+  stroke-width: 3px;
   opacity: 0;
   transition: opacity 0.12s;
   pointer-events: none;
