@@ -10249,7 +10249,11 @@
         "number": "7.2",
         "title": "Sanierung des Rathauses Moosburg | Fassadensanierung und Sanierung der oberen Geschosse - 3.BA - Entscheidung über das Farbkonzept der Fassade",
         "voteId": "sr_20260615_09",
-        "topicId": "t17"
+        "topicId": "t17",
+        "press": [
+          "mz_2026-06-16_rathaus-farbe",
+          "merkur_2026-06-18_rathaus-farbe"
+        ]
       },
       {
         "number": "8",
@@ -10260,7 +10264,11 @@
     "source": {
       "kind": "webauszug",
       "url": null
-    }
+    },
+    "press": [
+      "mz_2026-06-16_rathaus-farbe",
+      "merkur_2026-06-18_rathaus-farbe"
+    ]
   },
   {
     "id": "sr_20260907",

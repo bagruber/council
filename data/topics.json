@@ -1154,7 +1154,11 @@
         "title": "Rathaus 3. BA – Farbkonzept der Fassade",
         "text": "Nach einer Ortseinsicht mit Farbmustern entscheidet sich der Stadtrat mit 12:11 für ein Farbkonzept. Die knappste Abstimmung des Abends.",
         "sessionId": "sr_20260615",
-        "voteId": "sr_20260615_09"
+        "voteId": "sr_20260615_09",
+        "press": [
+          "mz_2026-06-16_rathaus-farbe",
+          "merkur_2026-06-18_rathaus-farbe"
+        ]
       }
     ],
     "field": "building",
