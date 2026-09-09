@@ -28839,13 +28839,140 @@
     "sessionId": "sr_20260720",
     "topicId": null,
     "date": "2026-07-20",
-    "title": "Arbeitsmarktzulage Erzieher/Kinderpfleger – Erhöhung auf 125 €",
-    "text": "Der Stadtrat beschließt, die Arbeitsmarktzulage ab 01.09.2026 auf 125,00 € zu erhöhen.",
-    "type": "anonymous",
+    "title": "Arbeitsmarktzulage – Änderungsantrag auf 130 € abgelehnt",
+    "text": "Der Antrag, die Arbeitsmarktzulage auf 130,00 € zu erhöhen, findet mit 10:13 keine Mehrheit.",
+    "type": "named",
     "results": {
-      "yes": 13,
-      "no": 10,
-      "absent": 2
+      "yes": [
+        "dick",
+        "ghadieh",
+        "kehlringer",
+        "linz_kilian",
+        "marcus",
+        "marschoun",
+        "ruemelin",
+        "sabanovic",
+        "strobl",
+        "welter"
+      ],
+      "no": [
+        "beibl",
+        "grundner",
+        "haberl",
+        "hadersdorfer",
+        "lauterbach",
+        "linz_karin",
+        "mader",
+        "meier",
+        "reither",
+        "roeck",
+        "schweiger",
+        "sixt",
+        "tristl"
+      ],
+      "absent": [
+        "stanglmaier",
+        "heinz"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "sr_20260720_08",
+    "sessionId": "sr_20260720",
+    "topicId": null,
+    "date": "2026-07-20",
+    "title": "Arbeitsmarktzulage Erzieher/Kinderpfleger – Erhöhung auf 125 €",
+    "text": "Der Stadtrat beschließt, die Arbeitsmarktzulage ab 01.09.2026 auf 125,00 € zu erhöhen. Der Beschluss, den die Niederschrift ausweist.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "beibl",
+        "dick",
+        "ghadieh",
+        "hadersdorfer",
+        "kehlringer",
+        "linz_kilian",
+        "marcus",
+        "marschoun",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "strobl",
+        "welter"
+      ],
+      "no": [
+        "grundner",
+        "haberl",
+        "lauterbach",
+        "linz_karin",
+        "mader",
+        "meier",
+        "reither",
+        "schweiger",
+        "sixt",
+        "tristl"
+      ],
+      "absent": [
+        "stanglmaier",
+        "heinz"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260720_09",
+    "sessionId": "sr_20260720",
+    "topicId": null,
+    "date": "2026-07-20",
+    "title": "Arbeitsmarktzulage – Gesamtbeschluss",
+    "text": "Der Gesamtbeschluss über die Weitergewährung der Arbeitsmarktzulage geht einstimmig durch – nach zwei Abstimmungen über die Höhe, in denen sich der Rat in zwei fast gleich große Lager teilte.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "beibl",
+        "dick",
+        "ghadieh",
+        "grundner",
+        "haberl",
+        "hadersdorfer",
+        "kehlringer",
+        "lauterbach",
+        "linz_karin",
+        "linz_kilian",
+        "mader",
+        "marcus",
+        "marschoun",
+        "meier",
+        "reither",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "schweiger",
+        "sixt",
+        "strobl",
+        "tristl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "stanglmaier",
+        "heinz"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
     }
   }
 ]

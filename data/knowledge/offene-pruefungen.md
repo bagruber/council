@@ -23,15 +23,27 @@ sich zwei Abweichungen gegenseitig aufheben.
 
 Diese stehen nirgends im Bestand, sollen aber nicht verlorengehen.
 
-- **Beginnzeiten: Niederschrift gegen Sitzungsregister.** Die Niederschrift zum
-  20.07.2026 nennt 19:00 Uhr als Eröffnung der öffentlichen Sitzung,
-  `sessionlengths.json` führt für den Abend 18:30–21:00. Ähnlich der 29.06.2026:
-  die Niederschrift lässt Beginn und Ende leer, das Register sagt 18:00–20:47.
-  Vermutlich misst das Register die ganze Sitzung inklusive nichtöffentlichem
-  Teil, die Niederschrift nur den öffentlichen. Solange das nicht geklärt ist,
-  bleibt beides stehen wie es ist — die Dauerstatistik zieht aus dem Register,
-  die Sitzungsseite zeigt dessen Zeiten. Wenn die Deutung stimmt, gehört das in
-  einen Satz auf der Statistikseite, nicht in eine Korrektur der Daten.
+- **Ö4 am 29.06.2026: 22:0 oder 21:1?** Die Niederschrift weist die Vertagung der
+  Einbeziehungssatzung „Niederambach Süd" als 22:0 aus, die Mitschrift als 21:1
+  mit Marschoun als einziger Gegenstimme. Beide Quellen sind in sich stimmig und
+  zählen dieselben 22 Stimmberechtigten. Im Bestand steht die Niederschrift, weil
+  ein namentlich zugeschriebenes Nein schwerer wiegt als eine fehlende Zahl —
+  falsch veröffentlicht wäre es ein Schaden am Stimmprofil einer Person.
+  Auflösbar wäre das durch Nachfrage bei Marschoun oder eine zweite Mitschrift.
+
+  Der zweite Widerspruch desselben Abends hat sich dagegen aufgelöst: zu Ö5 nennt
+  die Mitschrift 22:0 einschließlich Hadersdorfer, die Niederschrift 21:0 mit dem
+  Vermerk, er sei kurzfristig abwesend gewesen. Der Zeitstempel der Mitschrift
+  entscheidet — die Abstimmung fiel auf 19:23, und Hadersdorfer ist dort für
+  19:23 als abwesend eingetragen. Die Ja-Liste war eine Minute zu spät.
+
+- **Beginnzeiten: drei Quellen, drei Zeiten.** Maßgeblich ist das Sitzungsregister
+  der Stadt (`start`/`end` in `sessionlengths.json`) — so entschieden am
+  09.09.2026. Niederschrift und Mitschrift stehen daneben unter `quellen` und
+  werden von der App nicht gelesen. Eine Regel, wie sie zusammenhängen, gibt es
+  nicht: die Mitschrift misst, wie lange mitgeschrieben wurde, und beginnt am
+  13.04.2026 sogar nach dem Registerende. Wer das je klären will, hat die Werte
+  beisammen.
 
 - **HVFA 07.12.2023, Pressestelle schaffen.** Die Sitzung steht im
   Sitzungsregister (19:00–22:35), eine Niederschrift liegt nicht vor. Notiz aus
