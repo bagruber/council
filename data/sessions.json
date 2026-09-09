@@ -10382,7 +10382,12 @@
       {
         "number": "9",
         "title": "Beschluss über Weitergewährung einer Arbeitsmarktzulage für Erzieher/innen und Kinderpfleger/innen in den Kindertageseinrichtungen",
-        "voteId": "sr_20260720_07"
+        "voteId": "sr_20260720_07",
+        "voteIds": [
+          "sr_20260720_07",
+          "sr_20260720_08",
+          "sr_20260720_09"
+        ]
       },
       {
         "number": "10",
