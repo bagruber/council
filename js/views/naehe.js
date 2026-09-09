@@ -338,13 +338,18 @@ function sgInitialen(nodes) {
     : kurz(n);
 }
 
-// Schrift auf der Parteifarbe: FDP-Gelb braucht schwarze Initialen, CSU-Schwarz
-// weisse. Entschieden wird nach relativer Leuchtdichte, nicht nach Augenmass.
+// Schrift auf der Parteifarbe: CSU-Schwarz braucht weisse Initialen, FDP-Gelb
+// schwarze. Gerechnet wird der Kontrast zu beiden Kandidaten, und der
+// groessere gewinnt -- eine feste Helligkeitsschwelle liegt sonst leicht
+// daneben. Bei Gruenen-Gruen etwa traegt Schwarz doppelt so weit wie Weiss.
 function sgSchrift(hex) {
   const [r, g, b] = [1, 3, 5]
     .map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
     .map(c => c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.4 ? "#1c1c1c" : "#fff";
+  const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  const aufWeiss = 1.05 / (L + 0.05);
+  const aufDunkel = (L + 0.05) / (0.0114 + 0.05);   // #1c1c1c
+  return aufWeiss > aufDunkel ? "#fff" : "#1c1c1c";
 }
 
 function drawSimGraph(el, periodId) {
@@ -411,8 +416,9 @@ function drawSimGraph(el, periodId) {
   // Die Kräfte allein schieben Knoten übereinander, sobald eine Fraktion eng
   // zusammenhält. Ein paar Entzerrungsschritte am Ende drücken sie auf
   // Lesbarkeitsabstand, ohne die Anordnung zu verwerfen.
-  // Groessere Kreise brauchen mehr Luft, sonst beruehren sie sich.
-  const MIN = SG_R * 2 + 6;
+  // Gerade so viel, dass sich die Kreise nicht ueberlappen. Jeder Pixel mehr
+  // verschiebt das Bild gegen die Kraefte, die es eigentlich zeigen soll.
+  const MIN = SG_R * 2;
   for (let it = 0; it < 240; it++) {
     let moved = false;
     for (let i = 0; i < nodes.length; i++) {
