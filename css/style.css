@@ -964,8 +964,10 @@ main {
 .voting-stats .vs-seg.absent   { background: var(--absent); opacity: 0.7; }
 .voting-stats .vs-seg.absent-u { background: var(--absent); opacity: 0.4; }
 .voting-stats .vs-seg.unknown  { background: var(--accent); opacity: 0.5; }
-/* Einstimmig und trotzdem unbekannt: ein Nein ist ausgeschlossen, deshalb blasser */
-.voting-stats .vs-seg.unknown-u { background: var(--accent); opacity: 0.24; }
+/* Einstimmig und trotzdem ohne Eintrag: offen ist nicht die Richtung, sondern
+   ob die Person da war. Das ist ein Fall von Abwesenheit, nicht von Stimme —
+   deshalb Grau und die hellste Stufe der drei. */
+.voting-stats .vs-seg.unknown-u { background: var(--absent); opacity: 0.25; }
 
 .voting-stats .vs-legend {
   margin-top: 8px;
@@ -992,6 +994,15 @@ main {
   padding-left: 4px;
   font-size: 0.74rem;
 }
+
+/* Punkt und Beschriftung sind ein Element, sonst reisst der Umbruch sie
+   auseinander und der Punkt steht am Ende der Zeile davor. */
+.voting-stats .vs-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.voting-stats .vs-item .vs-dot { margin: 0 5px 0 0; }
 .voting-stats .vs-sub + .vs-group { margin-top: 8px; }
 .voting-stats .vs-dot {
   display: inline-block;
@@ -1007,7 +1018,7 @@ main {
 .voting-stats .vs-dot.absent   { background: var(--absent); }
 .voting-stats .vs-dot.absent-u { background: var(--absent); opacity: 0.45; }
 .voting-stats .vs-dot.unknown  { background: var(--accent); opacity: 0.6; }
-.voting-stats .vs-dot.unknown-u { background: var(--accent); opacity: 0.3; }
+.voting-stats .vs-dot.unknown-u { background: var(--absent); opacity: 0.35; }
 .voting-stats .vs-section {
   margin-top: 14px;
 }

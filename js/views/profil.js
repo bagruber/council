@@ -279,8 +279,9 @@ function statKey(raw, unanimous) {
     return unanimous ? "absU" : "absS";
   }
   // Bei einem einstimmigen Beschluss hat niemand dagegen gestimmt. Wessen
-  // Stimme nicht überliefert ist, hat also Ja gestimmt oder gar nicht —
-  // ein Nein ist ausgeschlossen. Das ist mehr als gar nichts zu wissen.
+  // Stimme dort nicht überliefert ist, hat mitgetragen oder gefehlt — die
+  // offene Frage ist die Anwesenheit, nicht die Richtung. Bei geteilten
+  // Beschlüssen ist dagegen die Stimme selbst unbekannt.
   if (base === "unknown") return unanimous ? "uUnknown" : "sUnknown";
   return (unanimous ? "u" : "s") + (base === "yes" ? "Yes" : "No");
 }
@@ -321,16 +322,16 @@ function computeVotingStats(member) {
   return out;
 }
 
-// Bar-Reihenfolge — symmetrisch um die Mitte: links Ablehnung (einstimmig
-// außen, knapp innen), Mitte Unbekannt, rechts Zustimmung; Abwesende ganz
-// außen rechts (einstimmige Abstimmungen blasser).
+// Bar-Reihenfolge — links Ablehnung (einstimmig außen, knapp innen), Mitte die
+// unbekannte Stimme, rechts Zustimmung. Ganz außen rechts der graue Block: wer
+// nicht mitgestimmt hat, und wessen Anwesenheit offen ist.
 const VS_SEGMENTS = [
   { key: "uNo",      cls: "no-inf"   },
   { key: "sNo",      cls: "no"       },
   { key: "sUnknown", cls: "unknown"  },
-  { key: "uUnknown", cls: "unknown-u" },
   { key: "sYes",     cls: "yes"      },
   { key: "uYes",     cls: "yes-inf"  },
+  { key: "uUnknown", cls: "unknown-u" },
   { key: "absU",     cls: "absent-u" },
   { key: "absS",     cls: "absent"   },
 ];
@@ -361,12 +362,11 @@ function renderVotingStatsCard(stats) {
         <div class="vs-legend">
           <div class="vs-legend-row vs-group">
             <span class="vs-legend-head">Einstimmig</span>
-            <span class="vs-legend-share">${fmt(t.uYes + t.uNo + t.uUnknown)}</span>
+            <span class="vs-legend-share">${fmt(t.uYes + t.uNo)}</span>
           </div>
           <div class="vs-legend-row vs-sub">
-            <span class="vs-dot yes-inf"></span>Ja ${fmt(t.uYes)}
-            <span class="vs-dot no-inf"></span>Nein ${fmt(t.uNo)}
-            <span class="vs-dot unknown-u"></span>unbekannt, kein Nein ${fmt(t.uUnknown)}
+            <span class="vs-item"><span class="vs-dot yes-inf"></span>Ja ${fmt(t.uYes)}</span>
+            <span class="vs-item"><span class="vs-dot no-inf"></span>Nein ${fmt(t.uNo)}</span>
           </div>
 
           <div class="vs-legend-row vs-group">
@@ -374,18 +374,19 @@ function renderVotingStatsCard(stats) {
             <span class="vs-legend-share">${fmt(t.sYes + t.sNo + t.sUnknown)}</span>
           </div>
           <div class="vs-legend-row vs-sub">
-            <span class="vs-dot yes"></span>Ja ${fmt(t.sYes)}
-            <span class="vs-dot unknown"></span>Unbekannt ${fmt(t.sUnknown)}
-            <span class="vs-dot no"></span>Nein ${fmt(t.sNo)}
+            <span class="vs-item"><span class="vs-dot yes"></span>Ja ${fmt(t.sYes)}</span>
+            <span class="vs-item"><span class="vs-dot unknown"></span>Unbekannt ${fmt(t.sUnknown)}</span>
+            <span class="vs-item"><span class="vs-dot no"></span>Nein ${fmt(t.sNo)}</span>
           </div>
 
           <div class="vs-legend-row vs-group">
-            <span class="vs-legend-head">Abwesend</span>
-            <span class="vs-legend-share">${fmt(t.absU + t.absS)}</span>
+            <span class="vs-legend-head">Nicht mitgestimmt</span>
+            <span class="vs-legend-share">${fmt(t.absU + t.absS + t.uUnknown)}</span>
           </div>
           <div class="vs-legend-row vs-sub">
-            <span class="vs-dot absent-u"></span>bei einstimmigen ${fmt(t.absU)}
-            <span class="vs-dot absent"></span>bei nicht einstimmigen ${fmt(t.absS)}
+            <span class="vs-item"><span class="vs-dot unknown-u"></span>Anwesenheit unklar ${fmt(t.uUnknown)}</span>
+            <span class="vs-item"><span class="vs-dot absent-u"></span>abwesend bei einstimmigen ${fmt(t.absU)}</span>
+            <span class="vs-item"><span class="vs-dot absent"></span>abwesend bei nicht einstimmigen ${fmt(t.absS)}</span>
           </div>
         </div>
       </div>
