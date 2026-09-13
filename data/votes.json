@@ -28571,6 +28571,307 @@
     }
   },
   {
+    "id": "bpu_20260713_01",
+    "sessionId": "bpu_20260713",
+    "topicId": null,
+    "date": "2026-07-13",
+    "title": "Blütenstr. 5 – Einvernehmen verweigert",
+    "text": "Der Bauausschuss verweigert zum beantragten Vorhaben das gemeindliche Einvernehmen. Ein dreigeschossiger Baukörper mit einer Wandhöhe von ca. 8,9 m fügt sich nicht in die nähere Umgebung ein. Die Anforderungen an gesunde Wohnverhältnisse in der Nachbarschaft bleiben nicht gewahrt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "welter",
+        "sabanovic",
+        "sixt",
+        "meier",
+        "beibl"
+      ],
+      "no": [],
+      "absent": [
+        "marschoun",
+        "schweiger"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20260713_02",
+    "sessionId": "bpu_20260713",
+    "topicId": null,
+    "date": "2026-07-13",
+    "title": "Blütenstr. 5 – Zustimmung nach § 36a BauGB verweigert",
+    "text": "Der Bauausschuss stimmt dem beantragten Vorhaben nach § 36 a Abs. 1 BauGB nicht zu. Das Vorhaben ist mit den Vorstellungen der Stadt hinsichtlich der städtebaulichen Entwicklung und Ordnung in diesem Bereich nicht vereinbar.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "welter",
+        "sabanovic",
+        "sixt",
+        "meier",
+        "beibl"
+      ],
+      "no": [],
+      "absent": [
+        "marschoun",
+        "schweiger"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20260713_03",
+    "sessionId": "bpu_20260713",
+    "topicId": null,
+    "date": "2026-07-13",
+    "title": "Asternstr. 50 – Einvernehmen erteilt",
+    "text": "Der Bauausschuss erteilt zum beantragten Bauvorhaben das gemeindliche Einvernehmen und stimmt den erforderlichen Befreiungen von den Festsetzungen des Bebauungsplans zu.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "welter",
+        "sabanovic",
+        "sixt",
+        "meier",
+        "beibl"
+      ],
+      "no": [],
+      "absent": [
+        "marschoun",
+        "schweiger"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20260713_04",
+    "sessionId": "bpu_20260713",
+    "topicId": null,
+    "date": "2026-07-13",
+    "title": "Landshuter Str. 34 – Einvernehmen zum Vorbescheid erteilt",
+    "text": "Der Bauausschuss erteilt zum beantragten Vorbescheid das gemeindliche Einvernehmen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "welter",
+        "sabanovic",
+        "sixt",
+        "meier",
+        "beibl"
+      ],
+      "no": [],
+      "absent": [
+        "marschoun",
+        "schweiger"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20260713_05",
+    "sessionId": "bpu_20260713",
+    "topicId": null,
+    "date": "2026-07-13",
+    "title": "Landshuter Str. 34 – Zustimmung nach § 36a BauGB verweigert",
+    "text": "Der Bauausschuss stimmt dem beantragten Vorhaben nach § 36 a Abs. 1 BauGB nicht zu. Das Vorhaben ist mit den Vorstellungen der Stadt hinsichtlich der städtebaulichen Entwicklung und Ordnung in diesem Bereich nicht vereinbar.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "welter",
+        "sabanovic",
+        "sixt",
+        "meier",
+        "beibl"
+      ],
+      "no": [],
+      "absent": [
+        "marschoun",
+        "schweiger"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20260713_06",
+    "sessionId": "bpu_20260713",
+    "topicId": "t8",
+    "date": "2026-07-13",
+    "title": "Digitale Schulwegpläne – vertagt, Entscheidung im Stadtrat",
+    "text": "Der Bauausschuss beschließt, die Beschlussfassung über den Antrag von Bündnis 90/Die Grünen zu vertagen. Die Beschlussfassung über dieses Thema soll im Stadtrat erfolgen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "welter",
+        "sabanovic",
+        "sixt",
+        "meier",
+        "beibl"
+      ],
+      "no": [],
+      "absent": [
+        "marschoun",
+        "schweiger"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20260713_07",
+    "sessionId": "bpu_20260713",
+    "topicId": "t8",
+    "date": "2026-07-13",
+    "title": "Tempo 30 Münchener Straße – Variante 1 abgelehnt",
+    "text": "Der Vorschlag, Tempo 30 von Montag bis Freitag von 7.00 bis 16.30 Uhr im Bereich der Anton-Vitzthum-Grundschule in Variante 1 anzuordnen, findet mit 4:7 keine Mehrheit.",
+    "type": "anonymous",
+    "results": {
+      "yes": 4,
+      "no": 7,
+      "absent": 1
+    },
+    "result": "rejected"
+  },
+  {
+    "id": "bpu_20260713_08",
+    "sessionId": "bpu_20260713",
+    "topicId": "t8",
+    "date": "2026-07-13",
+    "title": "Tempo 30 Münchener Straße – Variante 2 beschlossen",
+    "text": "Der Bau-, Planungs- und Umweltausschuss stimmt der Anordnung einer Geschwindigkeitsbegrenzung von 30 km/h von Montag bis Freitag von 7.00 Uhr bis 16.30 Uhr im Bereich der Anton-Vitzthum-Grundschule mit der Variante 2 zu.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "welter",
+        "sabanovic",
+        "sixt",
+        "meier",
+        "beibl"
+      ],
+      "no": [],
+      "absent": [
+        "marschoun",
+        "schweiger"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20260713_09",
+    "sessionId": "bpu_20260713",
+    "topicId": null,
+    "date": "2026-07-13",
+    "title": "Widmung Ortsstraße „Semptanger\"",
+    "text": "Der Bau-, Planungs- und Umweltausschuss beschließt, die Straße „Semptanger\" mit den Fl.Nrn. 608/14 und 608/38 der Gemarkung Pfrombach nach Art. 6 BayStrWG als Ortsstraße zu widmen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "welter",
+        "sixt",
+        "meier",
+        "beibl"
+      ],
+      "no": [],
+      "absent": [
+        "marschoun",
+        "schweiger",
+        "sabanovic"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "sabanovic",
+        "reason": "kurzfristig abwesend"
+      }
+    ],
+    "note": "Herr Sabanovic war zum Zeitpunkt der Abstimmung nicht anwesend."
+  },
+  {
+    "id": "bpu_20260713_10",
+    "sessionId": "bpu_20260713",
+    "topicId": null,
+    "date": "2026-07-13",
+    "title": "Widmung Fußgängerweg „Semptanger\"",
+    "text": "Der Bau-, Planungs- und Umweltausschuss beschließt, den beschränkt-öffentlichen Weg „Semptanger\" mit den Teilflächen der Flurnummern 608/13 und 667 der Gemarkung Pfrombach nach Art. 6 BayStrWG als öffentlichen Fußgängerweg zu widmen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "hadersdorfer",
+        "stanglmaier",
+        "linz_karin",
+        "tristl",
+        "welter",
+        "sabanovic",
+        "sixt",
+        "meier",
+        "beibl"
+      ],
+      "no": [],
+      "absent": [
+        "marschoun",
+        "schweiger"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
     "id": "sr_20260720_01",
     "sessionId": "sr_20260720",
     "topicId": null,

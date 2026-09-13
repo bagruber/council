@@ -48,6 +48,11 @@ def mitschrift_zeiten():
         with zipfile.ZipFile(os.path.join(TRACKING, name)) as z:
             txt = z.read('protokoll.txt').decode('utf-8')
             meta = json.loads(z.read('oeffentlich.json').decode('utf-8'))
+        # Testlaeufe des Mitschrift-Werkzeugs tragen "(Demo)" im Titel. Das
+        # Archiv zum 13.07.2026 ist so einer: 04:51 Uhr, eine Abstimmung namens
+        # "awawdawd" -- als Sitzungszeit waere das Unsinn.
+        if '(Demo)' in txt[:300]:
+            continue
         beginn = re.search(r'ANWESENHEIT ZU BEGINN \((\d\d:\d\d)\)', txt)
         ende = re.search(r'(\d\d:\d\d)\s+Sitzung beendet', txt)
         body = 'bpu' if name.endswith('_bpu.zip') else 'stadtrat'
