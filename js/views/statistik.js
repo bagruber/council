@@ -6,7 +6,7 @@ import {
   sessionByDateBody, sessionRegister, tierCounts, lengthMin,
   protocolUrl, isWebauszug, SITZUNGSARTEN, sitzungsart,
 } from "../daten.js";
-import { formatDate, formatDuration } from "../hilfen.js";
+import { formatDate, formatDuration, monthNames } from "../hilfen.js";
 import { navigate, setChrome, route, backLink } from "../routing.js";
 import { PERIODS, drawSimMatrix, drawSimGraph } from "./naehe.js";
 
@@ -24,6 +24,12 @@ function median(arr) {
   const mid = s.length >> 1;
   return s.length % 2 ? s[mid] : Math.round((s[mid - 1] + s[mid]) / 2);
 }
+
+// Zeitraeume stehen nicht mehr fest im Text. "Wahlperiode 2020-2026" und
+// "seit Mai 2020" waren beide falsch, sobald die Daten ueber die Grenzen
+// hinausreichten -- und jede neue Sitzung haette sie wieder veralten lassen.
+const monat = iso => monthNames[Number(iso.slice(5, 7)) - 1];
+const monatJahr = iso => monat(iso) + " " + iso.slice(0, 4);
 
 const chartTip = document.getElementById("tooltip");
 
@@ -74,17 +80,24 @@ function renderStatistik() {
   const totalMin = timed.reduce((s, e) => s + e.min, 0);
   const srMins = timed.filter(e => e.body === "stadtrat").map(e => e.min);
 
+  // Welche Sitzungen es gab, sagt dieselbe Liste wie in der Datenlage: das
+  // Register der Stadt plus jede Sitzung, zu der eine Niederschrift vorliegt.
+  // Zwei Stadtratssitzungen vom Januar und Februar 2020 fehlen im Register,
+  // sind aber protokolliert -- sie zaehlen mit, eine Dauer haben sie nicht.
+  const reg = sessionRegister();
+  const erste = reg[reg.length - 1].date;
+
   const header = document.createElement("div");
   header.className = "topic-header";
   header.innerHTML = `
     <h1>Sitzungsstatistik</h1>
-    <div class="topic-summary">Dauer der öffentlichen Sitzungen von Stadtrat, Bau-, Planungs- und Umweltausschuss (BPU) und Hauptverwaltungs- und Finanzausschuss (HVFA) in der Wahlperiode 2020–2026.</div>`;
+    <div class="topic-summary">Dauer der öffentlichen Sitzungen von Stadtrat, Bau-, Planungs- und Umweltausschuss (BPU) und Hauptverwaltungs- und Finanzausschuss (HVFA) seit ${monatJahr(erste)}.</div>`;
   main.appendChild(header);
 
   const tiles = document.createElement("div");
   tiles.className = "stat-tiles";
   tiles.innerHTML = `
-    <div class="stat-tile"><div class="stat-tile-value">${entries.length}</div><div class="stat-tile-label">Sitzungen</div></div>
+    <div class="stat-tile"><div class="stat-tile-value">${reg.length}</div><div class="stat-tile-label">Sitzungen, ${timed.length} davon mit Dauer</div></div>
     <div class="stat-tile"><div class="stat-tile-value">${Math.round(totalMin / 60)} Std.</div><div class="stat-tile-label">Gesamtdauer</div></div>
     <div class="stat-tile"><div class="stat-tile-value">${formatDuration(median(srMins))}</div><div class="stat-tile-label">Stadtratssitzung im Median</div></div>`;
   main.appendChild(tiles);
@@ -93,7 +106,8 @@ function renderStatistik() {
     "Jeder Punkt ist eine Sitzung. Klick öffnet die Sitzungsseite, sofern sie erfasst ist.",
     drawDurationDots, timed, true));
   main.appendChild(chartCard("Sitzungsstunden pro Jahr",
-    "2020 ab Mai, 2026 bis April (Wahlperiode).",
+    `${timed[0].date.slice(0, 4)} ab ${monat(timed[0].date)}, `
+      + `${timed[timed.length - 1].date.slice(0, 4)} bis ${monat(timed[timed.length - 1].date)}.`,
     drawYearHours, timed, true));
   main.appendChild(chartCard("Sitzungsdauer im Median",
     "Median pro Jahr und Gremium.",
@@ -214,7 +228,7 @@ function renderDatenlage(filter) {
   header.className = "topic-header";
   header.innerHTML = `
     <h1>Datenlage</h1>
-    <div class="topic-summary">Jede öffentliche Sitzung seit Mai 2020, und was von ihr vorliegt.
+    <div class="topic-summary">Jede öffentliche Sitzung seit ${monatJahr(reg[reg.length - 1].date)}, und was von ihr vorliegt.
       Sitzungen ohne Niederschrift sind hier bewusst mit aufgeführt — die Lücke gehört zur
       Auskunft dazu.</div>`;
   main.appendChild(header);
