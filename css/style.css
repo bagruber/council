@@ -3247,9 +3247,18 @@ a.tier-chip.on {
 
 .simgraph { max-width: 100%; height: auto; }
 .simgraph text { font-size: 9.5px; }
+/* Kanten sind Bild, kein Ziel. Sonst nimmt Chrome sie nach einer Berührung
+   als Klickziel, weil sie unter dem Finger quer durchs Netz laufen. */
+.simgraph line { pointer-events: none; }
 .sg-node { cursor: pointer; }
 .sg-node circle { stroke: var(--surface); stroke-width: 1.5; }
-.sg-node:hover circle, .sg-node.on circle { stroke: var(--text); }
+.sg-node.on circle { stroke: var(--text); }
+/* Nur wo es wirklich ein Zeigen gibt. Auf dem Handy bliebe :hover nach dem
+   Tippen kleben, und iOS nimmt eine Änderung beim Zeigen zum Anlass, den
+   Klick zu schlucken. */
+@media (hover: hover) {
+  .sg-node:hover circle { stroke: var(--text); }
+}
 
 /* Nur Buchstaben, kein Halo. Die Farbe steht als fill-Attribut am Element und
    richtet sich nach der Parteifarbe darunter — hier darf deshalb keine
@@ -3261,8 +3270,9 @@ a.tier-chip.on {
 }
 .simgraph .sg-ini.lang { font-size: 8.5px; }
 
-/* Der Name erscheint beim Zeigen, auf dem Handy beim ersten Tippen. Er liegt
-   über den Kanten und braucht deshalb den Halo. */
+/* Der Name erscheint auf dem Handy nach dem ersten Tippen. Am Rechner nennt
+   ihn der Tooltip, dort bleibt er ausgeblendet. Er liegt über den Kanten und
+   braucht deshalb den Halo. */
 .simgraph .sg-name {
   fill: var(--text);
   paint-order: stroke;
@@ -3272,7 +3282,7 @@ a.tier-chip.on {
   transition: opacity 0.12s;
   pointer-events: none;
 }
-.sg-node:hover .sg-name, .sg-node.on .sg-name { opacity: 1; }
+.sg-node.on .sg-name { opacity: 1; }
 
 /* -- Fraktionsgeschlossenheit -- */
 

@@ -309,9 +309,9 @@ function drawSimMatrix(el, periodId) {
 // zusammen, negative drückt auseinander. Kein Schwellenwert: schwache Kanten
 // verschwinden über die Deckkraft, nicht über einen Filter.
 // Der Knoten traegt die Initialen, nicht den Namen. Zweiunddreissig Namen
-// nebeneinander ueberlagern sich, zweiunddreissig Kreise nicht. Der ganze Name
-// kommt beim Zeigen -- auf dem Handy beim ersten Tippen, der zweite Tipp
-// oeffnet das Profil.
+// nebeneinander ueberlagern sich, zweiunddreissig Kreise nicht. Name und
+// Fraktion nennt am Rechner der Tooltip; auf dem Handy erscheint der Name nach
+// dem ersten Tipp, der zweite oeffnet das Profil.
 const SG_R = 13;
 
 // Ob die letzte Eingabe eine Beruehrung war. Auf dem Handy gibt es kein
@@ -470,22 +470,35 @@ function drawSimGraph(el, periodId) {
 
   el.innerHTML = `<svg class="chart simgraph" width="${W}" height="${H}"
       viewBox="0 0 ${W} ${H}" role="img" aria-label="Nähe-Netz">${lines}${dots}</svg>`;
-  // Mit der Maus steht der Name schon beim Zeigen da, der Klick darf sofort
-  // oeffnen. Mit dem Finger gibt es kein Zeigen -- dort nennt der erste Tipp
-  // den Namen, der zweite oeffnet das Profil.
-  // SVG kennt kein z-index: ein spaeter gezeichneter Kreis deckt den Namen
-  // eines frueheren zu. Der angesprochene Knoten wandert deshalb ans Ende.
+  // Am Rechner nennt der Tooltip Namen und Fraktion, der Klick oeffnet sofort.
+  // Mit dem Finger gibt es kein Zeigen -- dort nennt der erste Tipp den Namen,
+  // der zweite oeffnet das Profil.
+  //
+  // Beim Zeigen darf sich am Knoten nichts bewegen. Wandert er auf mouseenter
+  // ans Ende des SVG, bricht das am Rechner den Tooltip ab, und auf dem Handy,
+  // wo der Browser nach dem Tap Mausereignisse nachschiebt, verschluckt es den
+  // ersten Klick. Nach vorn geholt wird deshalb erst beim Tippen, wenn der Name
+  // erscheint -- sonst deckt ihn ein spaeter gezeichneter Kreis zu.
   const nachVorn = g => g.parentNode.appendChild(g);
   const svg = el.querySelector("svg");
   const knoten = [...svg.querySelectorAll(".sg-node")];
-  knoten.forEach(g => g.addEventListener("mouseenter", () => nachVorn(g)));
 
   // Der Klick haengt am SVG, nicht an jedem Knoten: nach einer Beruehrung
   // schickt der Browser den Klick mitunter an das SVG statt an den Kreis
   // darin. Ueber das SVG kommt beides an, und beim Neuzeichnen ist der
   // Zuhoerer mit dem alten SVG weg.
-  svg.addEventListener("click", e => {
-    const g = e.target.closest && e.target.closest(".sg-node");
+  //
+  // Welcher Knoten gemeint war, weiss aber nur pointerdown. Chrome verschiebt
+  // den Klick nach einer Beruehrung auf das Element, das es fuer das
+  // wahrscheinlichste Ziel haelt -- im dichten Netz eine Kante oder der
+  // Nachbarkreis. Gemerkt wird deshalb der Knoten unter dem Finger beim
+  // Aufsetzen, und der gilt beim Klick.
+  let gedrueckt = null;
+  svg.addEventListener("pointerdown", e => {
+    gedrueckt = e.target.closest ? e.target.closest(".sg-node") : null;
+  });
+  svg.addEventListener("click", () => {
+    const g = gedrueckt;
     if (!g) return;
     if (sgFinger && !g.classList.contains("on")) {
       knoten.forEach(o => o.classList.remove("on"));
