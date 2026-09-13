@@ -5,6 +5,11 @@ Eingabe ist die zurückgeschickte Nachricht, so wie sie aus
 Das Skript liest die Sitzungszeile (⏰ Datum · Gremium), sucht den Beschluss
 über den Titel und trägt die Stimme ein.
 
+Gleiche Titel in einer Sitzung trennt die 📊-Zeile unter dem Punkt. In der
+konstituierenden Sitzung vom 11.05.2026 heißen vier Abstimmungen "Entscheidung
+über die nummerische Besetzung der Ausschüsse" und unterscheiden sich nur im
+Ergebnis — der Titel allein fände dort vier Treffer.
+
 Eingetragen wird zweierlei:
   * `voters[<id>]`      — die Stimme selbst
   * `voterSource[<id>]` — Liste der Belege für diese eine Stimme. Stand sie
@@ -30,6 +35,7 @@ GREMIUM = {'Stadtrat': 'stadtrat', 'BPU': 'bpu', 'HVFA': 'hvfa'}
 
 SITZUNG = re.compile(r'^[⏰📅]\s*(\d{2})\.(\d{2})\.(\d{4})\s*·\s*(\S+)')
 PUNKT = re.compile(r'^(\S)\s*\*(.+?)\*\s*$')
+STAND = re.compile(r'^📊\s*(\d+)\s*:\s*(\d+)')
 
 
 def load(n):
@@ -37,7 +43,9 @@ def load(n):
 
 
 def lies(pfad):
-    """(datum, gremium, zeichen, titel) je beantwortetem Punkt."""
+    """Je beantwortetem Punkt: Datum, Gremium, Stimme, Titel und das Ergebnis
+    aus der 📊-Zeile darunter, soweit vorhanden."""
+    punkte, letzter = [], None
     datum = gremium = None
     for zeile in open(pfad, encoding='utf-8'):
         zeile = zeile.strip()
@@ -52,10 +60,27 @@ def lies(pfad):
         if m and datum:
             zeichen, titel = m.groups()
             if zeichen in UNKLAR:
+                # Die 📊-Zeile darunter gehört zu diesem Punkt, nicht zum
+                # vorigen beantworteten.
+                letzter = None
                 continue
             if zeichen not in STIMME:
                 sys.exit(f'Unbekanntes Zeichen "{zeichen}" bei: {titel}')
-            yield datum, gremium, STIMME[zeichen], titel
+            letzter = {'datum': datum, 'gremium': gremium, 'stimme': STIMME[zeichen],
+                       'titel': titel, 'stand': None}
+            punkte.append(letzter)
+            continue
+        m = STAND.match(zeile)
+        if m and letzter and letzter['stand'] is None:
+            letzter['stand'] = (int(m.group(1)), int(m.group(2)))
+    return punkte
+
+
+def stand(v):
+    r = v['results']
+    if isinstance(r['yes'], list):
+        return len(r['yes']), len(r['no'])
+    return r['yes'], r['no']
 
 
 def main():
@@ -79,11 +104,14 @@ def main():
     sitzung_von = {(s['date'], s.get('type') or 'stadtrat'): s['id'] for s in sessions}
 
     n = 0
-    for datum, gremium, stimme, titel in lies(os.path.join(ROOT, args.datei)):
-        sid = sitzung_von.get((datum, gremium))
+    for p in lies(os.path.join(ROOT, args.datei)):
+        stimme, titel = p['stimme'], p['titel']
+        sid = sitzung_von.get((p['datum'], p['gremium']))
         if not sid:
-            sys.exit(f'Keine Sitzung am {datum} ({gremium})')
+            sys.exit(f'Keine Sitzung am {p["datum"]} ({p["gremium"]})')
         treffer = [v for v in nach_sitzung.get(sid, []) if v['title'] == titel]
+        if len(treffer) > 1 and p['stand']:
+            treffer = [v for v in treffer if stand(v) == p['stand']]
         if len(treffer) != 1:
             sys.exit(f'{len(treffer)} Treffer für "{titel}" in {sid}')
         v = treffer[0]
