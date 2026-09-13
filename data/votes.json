@@ -21556,6 +21556,17 @@
       "yes": 15,
       "no": 4,
       "absent": 6
+    },
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
     }
   },
   {
@@ -21720,7 +21731,18 @@
       "no": 2,
       "absent": 5
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
+    }
   },
   {
     "id": "sr_20250428_04",
@@ -21761,7 +21783,8 @@
       "absent": 5
     },
     "voters": {
-      "stanglmaier": "yes"
+      "stanglmaier": "yes",
+      "marcus": "yes"
     },
     "voterEvidence": {
       "stanglmaier": "weich"
@@ -21769,6 +21792,11 @@
     "source": {
       "tier": "press",
       "pressId": "merkur_2025-04-30_badegebuehren"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -21863,12 +21891,18 @@
     },
     "result": "rejected",
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -22009,12 +22043,18 @@
       "absent": 2
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -22392,11 +22432,17 @@
       "grundner": "no",
       "lauterbach": "no",
       "reif": "no",
-      "beibl": "yes"
+      "beibl": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "press",
       "pressId": "merkur_2025-06-23_alte-polizei"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -22412,6 +22458,17 @@
       "yes": 9,
       "no": 10,
       "absent": 6
+    },
+    "voters": {
+      "marcus": "no"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
     }
   },
   {
@@ -22749,12 +22806,18 @@
       "pschorr": "yes",
       "grundner": "yes",
       "lauterbach": "yes",
-      "kieninger": "yes"
+      "kieninger": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -22850,7 +22913,15 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false
+    "inferable": false,
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    }
   },
   {
     "id": "sr_20250728_02",
@@ -22986,7 +23057,15 @@
         "reason": "beteiligung"
       }
     ],
-    "inferable": false
+    "inferable": false,
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    }
   },
   {
     "id": "sr_20250728_06",
@@ -23002,12 +23081,18 @@
       "absent": 2
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -23383,12 +23468,18 @@
       "absent": 8
     },
     "voters": {
-      "hobmaier": "no"
+      "hobmaier": "no",
+      "marcus": "no"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -23406,12 +23497,18 @@
     },
     "voters": {
       "gruber": "yes",
-      "hobmaier": "yes"
+      "hobmaier": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -24108,12 +24205,18 @@
       "absent": 1
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -24576,6 +24679,17 @@
       "yes": 15,
       "no": 3,
       "absent": 7
+    },
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
     }
   },
   {
@@ -24591,6 +24705,17 @@
       "yes": 7,
       "no": 11,
       "absent": 7
+    },
+    "voters": {
+      "marcus": "no"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
     }
   },
   {
@@ -24608,12 +24733,18 @@
     },
     "voters": {
       "gruber": "yes",
-      "hobmaier": "yes"
+      "hobmaier": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -24742,12 +24873,18 @@
       "absent": 4
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "marcus": "no"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -25046,12 +25183,18 @@
       "absent": 3
     },
     "voters": {
-      "hobmaier": "yes"
+      "hobmaier": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -25200,12 +25343,18 @@
       "absent": 3
     },
     "voters": {
-      "hobmaier": "no"
+      "hobmaier": "no",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -25222,12 +25371,18 @@
       "absent": 3
     },
     "voters": {
-      "hobmaier": "yes"
+      "hobmaier": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -26173,12 +26328,18 @@
       "absent": 3
     },
     "voters": {
-      "gruber": "yes"
+      "gruber": "yes",
+      "marcus": "yes"
     },
     "source": {
       "tier": "tracked",
       "by": "gruber",
       "pressVerified": false
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -26193,6 +26354,17 @@
       "yes": 20,
       "no": 2,
       "absent": 3
+    },
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
     }
   },
   {
@@ -26393,7 +26565,13 @@
     "voters": {
       "tristl": "yes",
       "pschorr": "yes",
-      "beibl": "no"
+      "beibl": "no",
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
     }
   },
   {
@@ -26496,6 +26674,17 @@
       "yes": 20,
       "no": 1,
       "absent": 4
+    },
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
     }
   },
   {
@@ -26560,7 +26749,18 @@
         "member": "fincke",
         "reason": "kurzfristig abwesend"
       }
-    ]
+    ],
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
+    }
   },
   {
     "id": "sr_20260325_05",
@@ -26624,6 +26824,17 @@
       "yes": 17,
       "no": 4,
       "absent": 4
+    },
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
     }
   },
   {
@@ -26874,6 +27085,17 @@
       "yes": 22,
       "no": 1,
       "absent": 2
+    },
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
     }
   },
   {
@@ -26888,6 +27110,17 @@
       "yes": 22,
       "no": 1,
       "absent": 2
+    },
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
     }
   },
   {
@@ -26908,7 +27141,18 @@
         "member": "hadersdorfer",
         "reason": "kurzfristig abwesend"
       }
-    ]
+    ],
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
+    }
   },
   {
     "id": "sr_20260420_04",
@@ -26966,6 +27210,17 @@
       "yes": 20,
       "no": 3,
       "absent": 2
+    },
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
     }
   },
   {
@@ -27381,7 +27636,18 @@
       "no": 22,
       "absent": 0
     },
-    "result": "rejected"
+    "result": "rejected",
+    "voters": {
+      "marcus": "yes"
+    },
+    "voterSource": {
+      "marcus": [
+        "selbstauskunft"
+      ]
+    },
+    "source": {
+      "tier": "selbstauskunft"
+    }
   },
   {
     "id": "sr_20260511_06",
