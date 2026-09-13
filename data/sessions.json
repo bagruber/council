@@ -10330,6 +10330,98 @@
     ]
   },
   {
+    "id": "bpu_20260713",
+    "date": "2026-07-13",
+    "type": "bpu",
+    "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – Juli 2026",
+    "absent": [
+      "marschoun",
+      "schweiger"
+    ],
+    "substitutes": [
+      {
+        "member": "marschoun",
+        "substitute": "marcus"
+      }
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 und § 36 Abs. 1 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Baugesuche und Anträge"
+      },
+      {
+        "number": "3.1",
+        "title": "Neubau e. Wohnhauses mit drei Wohnungen u. Stellplätzen - Blütenstr. 5",
+        "voteId": "bpu_20260713_01",
+        "voteIds": [
+          "bpu_20260713_01",
+          "bpu_20260713_02"
+        ]
+      },
+      {
+        "number": "3.2",
+        "title": "Neubau eines Einfamilienhauses mit Doppelgarage - Asternstr. 50",
+        "voteId": "bpu_20260713_03"
+      },
+      {
+        "number": "3.3",
+        "title": "Neubau eines Wohnquartiers mit vier Mehrfamilienhäusern - Landshuter Str. 34",
+        "voteId": "bpu_20260713_04",
+        "voteIds": [
+          "bpu_20260713_04",
+          "bpu_20260713_05"
+        ]
+      },
+      {
+        "number": "3.4",
+        "title": "Abbruch d. besteh. Dachgeschosses u. Aufstockung e. Obergeschosses u. e. Dachgeschosses m. Erricht. zweier Dachgauben - Drosselweg 7",
+        "type": "discussion",
+        "note": "Kein Beschluss erforderlich, es wurde nur ein Meinungsbild eingeholt."
+      },
+      {
+        "number": "4",
+        "title": "Antrag Bündnis 90/DIE GRÜNEN; Sichere Straßen für Alle - Schulwegsicherheit durch digitale Schulwegpläne",
+        "voteId": "bpu_20260713_06",
+        "topicId": "t8"
+      },
+      {
+        "number": "5",
+        "title": "Anordnung von Tempo 30 km/h in der Münchener Straße auf Höhe der Anton-Vitzthum-Grundschule",
+        "voteId": "bpu_20260713_07",
+        "voteIds": [
+          "bpu_20260713_07",
+          "bpu_20260713_08"
+        ],
+        "topicId": "t8"
+      },
+      {
+        "number": "6",
+        "title": "Widmung der Straße \"Semptanger\"",
+        "voteId": "bpu_20260713_09"
+      },
+      {
+        "number": "7",
+        "title": "Widmung öffentlicher Fußgängerweg \"Semptanger\"",
+        "voteId": "bpu_20260713_10"
+      },
+      {
+        "number": "8",
+        "title": "Anfragen und Sonstiges",
+        "type": "formal"
+      }
+    ]
+  },
+  {
     "id": "sr_20260720",
     "date": "2026-07-20",
     "type": "stadtrat",

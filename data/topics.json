@@ -666,6 +666,22 @@
         "press": [
           "merkur_2026-02-23_schulweg"
         ]
+      },
+      {
+        "date": "2026-07-13",
+        "type": "vote",
+        "title": "Digitale Schulwegpläne an den Stadtrat verwiesen",
+        "text": "Der Bauausschuss vertagt den Antrag von Bündnis 90/Die Grünen auf digitale Schulwegpläne einstimmig: entscheiden soll der Stadtrat.",
+        "sessionId": "bpu_20260713",
+        "voteId": "bpu_20260713_06"
+      },
+      {
+        "date": "2026-07-13",
+        "type": "vote",
+        "title": "Tempo 30 vor der Anton-Vitzthum-Grundschule",
+        "text": "Variante 1 scheitert mit 4:7, Variante 2 geht einstimmig durch: Tempo 30 werktags von 7 bis 16.30 Uhr in der Münchener Straße.",
+        "sessionId": "bpu_20260713",
+        "voteId": "bpu_20260713_08"
       }
     ],
     "field": "mobility",
