@@ -177,7 +177,7 @@ const TIERS = [
   { key: "implicit", label: "abgeleitet",    hint: "Einstimmig, aus der Anwesenheit erschlossen." },
   { key: "tracked",  label: "mitgeschrieben", hint: "Im Saal vollständig erfasst — Tool oder Mitschrift." },
   { key: "press",    label: "aus Presse",    hint: "Aus einem Zeitungsartikel rekonstruiert." },
-  { key: "selbstauskunft", label: "Selbstauskunft", hint: "Vom Mitglied nachträglich aus eigener Erinnerung angegeben." },
+  { key: "selbstauskunft", label: "Selbstauskunft", hint: "Aus eigenen Notizen eines Ratsmitglieds rekonstruiert." },
   { key: "sum",      label: "nur Ergebnis",  hint: "Nur die Gesamtzahlen sind bekannt." },
 ];
 

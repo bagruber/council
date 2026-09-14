@@ -106,8 +106,8 @@ Eingetragen nach Durchsicht, mit diesen Resten:
 ## `tracked` auftrennen
 
 Die Stufe `tracked` meint: im Saal vollständig erfasst, Tool-Export oder
-Mitschrift. Ein Teil der 61 so markierten Voten ist aber in Wahrheit die
-Erinnerung einer einzelnen Person und gehört nach `selbstauskunft` — die
+Mitschrift. Ein Teil der 61 so markierten Voten ist aber in Wahrheit aus den
+Notizen einer einzelnen Person rekonstruiert und gehört nach `selbstauskunft` — die
 schwächere Stufe. Beim Durchgehen hilft `source.by`: wo eine Person nur die
 eigene Stimme beigesteuert hat, ist es keine Erfassung des Saals.
 
