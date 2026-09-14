@@ -183,7 +183,7 @@ const Council = (() => {
     "protocol-implicit": "Aus der öff. Niederschrift abgeleitet",
     tracked: "In der Sitzung mitgeschrieben",
     press: "Aus Presseberichten",
-    selbstauskunft: "Selbstauskunft",
+    selbstauskunft: "Aus eigenen Notizen rekonstruiert",
   };
 
   // Alle Belege für die Stimme dieser Person, stärkster zuerst. Mehrere sind

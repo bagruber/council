@@ -161,7 +161,7 @@ Fußnote unter dem Vote-Block (`renderVoteSource`) und als Filter auf
 | `protocol-implicit` | Einstimmig, also aus der Anwesenheit abgeleitet |
 | `tracked` | Im Saal **vollständig** erfasst — Tool-Export oder Mitschrift (`by`), optional presseverifiziert |
 | `press` | Aus einem Presseartikel rekonstruiert, `pressId` verweist darauf |
-| `selbstauskunft` | Vom Mitglied nachträglich aus eigener Erinnerung angegeben |
+| `selbstauskunft` | Aus eigenen Notizen eines Ratsmitglieds rekonstruiert, auch über andere Mitglieder |
 | — | Ohne Stufe: nur das Gesamtergebnis ist bekannt |
 
 Der Unterschied zwischen `tracked` und `selbstauskunft` ist die Vollständigkeit:
@@ -181,8 +181,8 @@ für diese eine Stimme:
 Für die Anzeige zählt der stärkste Beleg — eine Selbstauskunft wertet eine
 Mitschrift nie ab, sie kommt daneben. `Council.voterTiers(vote, memberId)` gibt
 die Liste sortiert zurück, `sourceLabel(vote, memberId)` den stärksten Titel,
-`statusProvenance()` die Zeile für den Tooltip („Nein — Selbstauskunft", bei
-mehreren Belegen „… , dazu selbstauskunft"). Ohne eigenen Eintrag gilt die
+`statusProvenance()` die Zeile für den Tooltip („Nein — Aus eigenen Notizen
+rekonstruiert", bei mehreren Belegen „… , dazu aus eigenen notizen rekonstruiert"). Ohne eigenen Eintrag gilt die
 Stufe des Beschlusses.
 
 Die Zählung auf `#/datenlage` geht nach der Stufe des Beschlusses. Einzelne

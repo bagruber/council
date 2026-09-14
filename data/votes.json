@@ -17105,15 +17105,21 @@
       "gruber": "no"
     },
     "voterEvidence": {
-      "becher_j": "weich",
-      "becher_a": "weich",
-      "linz_kilian": "weich",
       "dollinger": "weich",
       "heinz": "weich",
       "linz_karin": "weich"
     },
     "voterSource": {
       "gruber": [
+        "selbstauskunft"
+      ],
+      "becher_j": [
+        "selbstauskunft"
+      ],
+      "becher_a": [
+        "selbstauskunft"
+      ],
+      "linz_kilian": [
         "selbstauskunft"
       ]
     }
