@@ -4218,7 +4218,10 @@
       {
         "number": "5",
         "title": "Aufhebung der Betriebssatzung des städtischen Wasserwerks",
-        "voteId": "sr_20221010_04"
+        "voteId": "sr_20221010_04",
+        "press": [
+          "sz_2022-10-13_wasserwerk"
+        ]
       },
       {
         "number": "6",
@@ -4229,6 +4232,9 @@
         "title": "Anfragen",
         "type": "formal"
       }
+    ],
+    "press": [
+      "sz_2022-10-13_wasserwerk"
     ]
   },
   {
