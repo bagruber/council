@@ -6892,7 +6892,11 @@
         "number": "6.3",
         "title": "Rockermaier-Straßenname – Graf-Burkhard-Straße (12:8)",
         "topicId": "t5",
-        "voteId": "sr_20240617_07"
+        "voteId": "sr_20240617_07",
+        "press": [
+          "merkur_2024-06-20_adeliger-strassenname-fuer",
+          "sz_2024-06-27_graf-burkhard"
+        ]
       },
       {
         "number": "7.1",
@@ -6911,7 +6915,8 @@
       }
     ],
     "press": [
-      "merkur_2024-06-20_adeliger-strassenname-fuer"
+      "merkur_2024-06-20_adeliger-strassenname-fuer",
+      "sz_2024-06-27_graf-burkhard"
     ]
   },
   {
