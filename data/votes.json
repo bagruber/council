@@ -17088,6 +17088,34 @@
       "yes": 12,
       "no": 8,
       "absent": 5
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2024-06-20_adeliger-strassenname-fuer"
+    },
+    "voters": {
+      "beibl": "no",
+      "strobl": "no",
+      "becher_j": "no",
+      "becher_a": "no",
+      "linz_kilian": "no",
+      "dollinger": "yes",
+      "heinz": "yes",
+      "linz_karin": "yes",
+      "gruber": "no"
+    },
+    "voterEvidence": {
+      "becher_j": "weich",
+      "becher_a": "weich",
+      "linz_kilian": "weich",
+      "dollinger": "weich",
+      "heinz": "weich",
+      "linz_karin": "weich"
+    },
+    "voterSource": {
+      "gruber": [
+        "selbstauskunft"
+      ]
     }
   },
   {
