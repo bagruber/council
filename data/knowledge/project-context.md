@@ -165,8 +165,10 @@ Fußnote unter dem Vote-Block (`renderVoteSource`) und als Filter auf
 | — | Ohne Stufe: nur das Gesamtergebnis ist bekannt |
 
 Der Unterschied zwischen `tracked` und `selbstauskunft` ist die Vollständigkeit:
-`tracked` erfasst den ganzen Saal in der Sitzung, `selbstauskunft` ist die
-Aussage einer einzelnen Person über sich selbst, oft Jahre später.
+`tracked` erfasst den ganzen Saal in der Sitzung, `selbstauskunft` stammt aus den
+Notizen einer einzelnen Person — über die eigene Stimme oder die anderer, oft
+Jahre später rekonstruiert. Weiche Pressebelege sind etwas anderes, siehe
+`weiche-belege.md`.
 
 **Herkunft je Stimme (`voterSource`).** Ein Beschluss kann Stimmen aus
 verschiedenen Quellen tragen — eine getrackte Mitschrift und daneben die
