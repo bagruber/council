@@ -10129,18 +10129,50 @@
     "date": "2022-10-10",
     "title": "Aufhebung der Betriebssatzung des städtischen Wasserwerks",
     "text": "Der Stadtrat beschließt, die Betriebssatzung vom 01.12.2010 zum 31.12.2022 aufzuheben. Die Verwaltung wird beauftragt die notwendigen Schritte zur Rückführung zum Regiebetrieb durch- zuführen.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 21,
-      "no": 1,
-      "absent": 3
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "pschorr"
+      ],
+      "absent": [
+        "gruebl",
+        "john",
+        "tristl"
+      ]
     },
     "excluded": [
       {
         "member": "neumayr",
         "reason": "kein_mandat"
       }
-    ]
+    ],
+    "source": {
+      "tier": "press",
+      "pressId": "sz_2022-10-13_wasserwerk"
+    }
   },
   {
     "id": "sr_20221024_01",
@@ -22913,7 +22945,6 @@
     "source": {
       "tier": "protocol-implicit"
     },
-    "inferable": false,
     "voters": {
       "marcus": "yes"
     },
@@ -22921,7 +22952,8 @@
       "marcus": [
         "selbstauskunft"
       ]
-    }
+    },
+    "inferable": false
   },
   {
     "id": "sr_20250728_02",
@@ -23057,7 +23089,6 @@
         "reason": "beteiligung"
       }
     ],
-    "inferable": false,
     "voters": {
       "marcus": "yes"
     },
@@ -23065,7 +23096,8 @@
       "marcus": [
         "selbstauskunft"
       ]
-    }
+    },
+    "inferable": false
   },
   {
     "id": "sr_20250728_06",
@@ -28580,8 +28612,8 @@
       "yes": 23,
       "no": 0
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_02",
@@ -28595,8 +28627,8 @@
       "yes": 23,
       "no": 0
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_03",
@@ -28610,8 +28642,8 @@
       "yes": 24,
       "no": 0
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_04",
@@ -28625,8 +28657,8 @@
       "yes": 23,
       "no": 0
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_05",
@@ -28640,8 +28672,8 @@
       "yes": 24,
       "no": 0
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_06",
@@ -28681,8 +28713,8 @@
       "yes": 24,
       "no": 0
     },
-    "inferable": false,
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_09",
