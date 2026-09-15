@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stadtrat Moosburg a.d. Isar</title>
-  <link rel="stylesheet" href="css/tokens.css?v=5058a3ec">
-  <link rel="stylesheet" href="css/fonts.css?v=5058a3ec">
-  <link rel="stylesheet" href="css/style.css?v=5058a3ec">
+  <link rel="stylesheet" href="css/tokens.css?v=99fef07a">
+  <link rel="stylesheet" href="css/fonts.css?v=99fef07a">
+  <link rel="stylesheet" href="css/style.css?v=99fef07a">
 </head>
 <body>
 
@@ -70,29 +70,65 @@
 <symbol id="i-badge" viewBox="0 0 256 256" fill="currentColor"><path d="M216,96A88,88,0,1,0,72,163.83V240a8,8,0,0,0,11.58,7.16L128,225l44.43,22.21A8.07,8.07,0,0,0,176,248a8,8,0,0,0,8-8V163.83A87.85,87.85,0,0,0,216,96ZM56,96a72,72,0,1,1,72,72A72.08,72.08,0,0,1,56,96ZM168,227.06l-36.43-18.21a8,8,0,0,0-7.16,0L88,227.06V174.37a87.89,87.89,0,0,0,80,0ZM128,152A56,56,0,1,0,72,96,56.06,56.06,0,0,0,128,152Zm0-96A40,40,0,1,1,88,96,40,40,0,0,1,128,56Z"/></symbol>
 </svg>
 
-<nav class="navbar">
-  <a href="#/" class="nav-logo">
-    <svg class="icon" style="font-size:24px"><use href="#i-account_balance"/></svg>
-    <span>Stadtrat Moosburg</span>
-  </a>
-</nav>
+<!-- Probe Formsprache, vorläufig (14.09.2026): Kopf nach Navigation Variante A -->
+<header class="kopf">
+  <div class="rainbow-stripe" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="kopf-zeile">
+    <a class="kopf-familie" href="https://moosburg.eu/"><span class="rose" aria-hidden="true"></span>moosburg.eu</a>
+    <span class="kopf-trenner" aria-hidden="true"></span>
+    <a href="#/" class="nav-logo"><span class="rose rose--logo" aria-hidden="true"></span><span>Stadtrat Moosburg</span></a>
+    <nav class="kopf-nav" aria-label="Bereiche">
+      <a class="kopf-tab" data-tab="themen" href="#/">Themen</a>
+      <a class="kopf-tab" data-tab="kalender" href="#/kalender">Kalender</a>
+      <a class="kopf-tab" data-tab="gremien" href="#/gremien">Gremien</a>
+      <a class="kopf-tab" data-tab="einstellungen" href="#/einstellungen">Einstellungen</a>
+    </nav>
+    <span class="kopf-trenner" aria-hidden="true"></span>
+    <div class="ueber" data-ueber>
+      <button class="ueber-knopf" type="button" aria-expanded="false" aria-controls="ueber-panel"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Über das Projekt<svg class="icon ueber-caret" aria-hidden="true"><use href="#i-expand_more"/></svg></button>
+      <button class="ueber-rose" type="button" aria-expanded="false" aria-controls="ueber-panel" aria-label="moosburg.eu und Über das Projekt"><span class="rose" aria-hidden="true"></span></button>
+      <div class="ueber-panel" id="ueber-panel" hidden>
+        <a class="ueber-familie" href="https://moosburg.eu/"><span class="rose" aria-hidden="true"></span>moosburg.eu, alle Projekte</a>
+        <p class="ueber-titel">Stadtratstransparenz</p>
+        <p>Abstimmungsverhalten im Moosburger Stadtrat, aufbereitet aus den öffentlichen Niederschriften.</p>
+        <p class="ueber-hinweis">Privates Projekt, kein Auftritt der Stadt. Verbindlich bleibt die amtliche Niederschrift.</p>
+        <ul class="ueber-liste">
+          <li><a href="#/datenlage"><svg class="icon" aria-hidden="true"><use href="#i-fact_check"/></svg>Woher die Daten kommen</a></li>
+          <li><button type="button" data-modal="kontakt-modal"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Kontakt</button></li>
+          <li><button type="button" data-modal="impressum-modal"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Impressum</button></li>
+          <li><a href="https://github.com/bagruber/council" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-open_in_new"/></svg>Quellcode auf GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
 
 <!-- Tab: Themen -->
 <div id="tab-themen" class="tab-content">
   <div class="search-wrap">
+    <span class="kopf-zeichnung" aria-hidden="true"><span></span></span>
+    <header class="seitenkopf">
+      <h1 class="seitentitel hat-script"><span class="script" aria-hidden="true">nachvollziehbar</span><span class="titel-text">Themen</span></h1>
+      <p class="seitenkopf-meta" id="themen-bestand"></p>
+    </header>
     <div class="search-container">
       <svg class="icon search-icon"><use href="#i-search"/></svg>
       <input type="text" id="search" placeholder="Thema, Abstimmung, Sitzung oder Person suchen…" autocomplete="off">
       <div id="search-dropdown" class="search-dropdown hidden"></div>
     </div>
-    <div id="tag-bar" class="tag-bar"></div>
+    <div class="chiprow">
+      <div id="tag-bar" class="tag-bar" role="group" aria-label="Nach Thema filtern"></div>
+      <button class="chip chip-mehr" type="button" id="themen-alle" aria-controls="themen-sheet"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg><span class="sr-only">Alle Themen</span></button>
+    </div>
   </div>
-  <div class="rainbow-stripe" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   <main id="main"></main>
 </div>
 
 <!-- Tab: Kalender -->
 <div id="tab-kalender" class="tab-content hidden">
+  <header class="seitenkopf seitenkopf--schmal">
+    <h1 class="seitentitel hat-script"><span class="script" aria-hidden="true">öffentlich</span><span class="titel-text">Kalender</span></h1>
+  </header>
   <div class="cal-header">
     <button id="cal-prev" class="cal-nav-btn"><svg class="icon"><use href="#i-chevron_left"/></svg></button>
     <h2 id="cal-title"></h2>
@@ -107,18 +143,23 @@
 <!-- Tab: Gremien -->
 <div id="tab-gremien" class="tab-content hidden">
   <div class="search-wrap">
+    <header class="seitenkopf">
+      <h1 class="seitentitel hat-script"><span class="script" aria-hidden="true">gewählt</span><span class="titel-text">Gremien</span></h1>
+    </header>
     <div class="search-container">
       <svg class="icon search-icon"><use href="#i-search"/></svg>
       <input type="text" id="gremien-search" placeholder="Person, Gremium oder Abstimmung suchen…" autocomplete="off">
       <div id="gremien-search-dropdown" class="search-dropdown hidden"></div>
     </div>
   </div>
-  <div class="rainbow-stripe" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   <main id="gremien-main"></main>
 </div>
 
 <!-- Tab: Einstellungen -->
 <div id="tab-einstellungen" class="tab-content hidden">
+  <header class="seitenkopf seitenkopf--schmal">
+    <h1 class="seitentitel">Einstellungen</h1>
+  </header>
   <div class="settings-page">
     <div class="settings-info">
       <p>Ratsinformationssystem der Stadt Moosburg a.d. Isar. Hier finden Sie Themen, Sitzungen und Abstimmungsergebnisse des Stadtrats auf Basis der offiziellen Niederschriften.</p>
@@ -150,19 +191,19 @@
 <!-- Bottom tab bar -->
 <div class="tab-bar">
   <button class="tab-btn active" data-tab="themen">
-    <svg class="icon"><use href="#i-how_to_vote"/></svg>
+    <span class="tab-pill"><svg class="icon"><use href="#i-how_to_vote"/></svg></span>
     <span>Themen</span>
   </button>
   <button class="tab-btn" data-tab="kalender">
-    <svg class="icon"><use href="#i-calendar_month"/></svg>
+    <span class="tab-pill"><svg class="icon"><use href="#i-calendar_month"/></svg></span>
     <span>Kalender</span>
   </button>
   <button class="tab-btn" data-tab="gremien">
-    <svg class="icon"><use href="#i-groups"/></svg>
+    <span class="tab-pill"><svg class="icon"><use href="#i-groups"/></svg></span>
     <span>Gremien</span>
   </button>
   <button class="tab-btn" data-tab="einstellungen">
-    <svg class="icon"><use href="#i-settings"/></svg>
+    <span class="tab-pill"><svg class="icon"><use href="#i-settings"/></svg></span>
     <span>Einstellungen</span>
   </button>
 </div>
@@ -172,6 +213,18 @@
   <div class="sheet-content">
     <div class="sheet-handle"></div>
     <div id="cal-sheet-body"></div>
+  </div>
+</div>
+
+<!-- Probe Formsprache: alle Themen als Blatt -->
+<div id="themen-sheet" class="bottom-sheet hidden">
+  <div class="sheet-content" role="dialog" aria-modal="true" aria-labelledby="themen-sheet-titel">
+    <div class="sheet-handle"></div>
+    <div class="sheet-kopf">
+      <h2 id="themen-sheet-titel" class="sheet-date">Alle Themen</h2>
+      <button class="modal-close" type="button" aria-label="Schließen"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <div id="themen-sheet-liste" class="sheet-themen"></div>
   </div>
 </div>
 
@@ -334,26 +387,27 @@
 <script type="importmap">
 {
   "imports": {
-    "./js/app.js": "./js/app.js?v=5058a3ec",
-    "./js/daten.js": "./js/daten.js?v=5058a3ec",
-    "./js/hilfen.js": "./js/hilfen.js?v=5058a3ec",
-    "./js/routing.js": "./js/routing.js?v=5058a3ec",
-    "./js/suche.js": "./js/suche.js?v=5058a3ec",
-    "./js/views/fraktion.js": "./js/views/fraktion.js?v=5058a3ec",
-    "./js/views/gremien.js": "./js/views/gremien.js?v=5058a3ec",
-    "./js/views/kalender.js": "./js/views/kalender.js?v=5058a3ec",
-    "./js/views/naehe.js": "./js/views/naehe.js?v=5058a3ec",
-    "./js/views/profil.js": "./js/views/profil.js?v=5058a3ec",
-    "./js/views/sitzungen.js": "./js/views/sitzungen.js?v=5058a3ec",
-    "./js/views/statistik.js": "./js/views/statistik.js?v=5058a3ec",
-    "./js/views/themen.js": "./js/views/themen.js?v=5058a3ec",
-    "./js/views/voten.js": "./js/views/voten.js?v=5058a3ec"
+    "./js/app.js": "./js/app.js?v=99fef07a",
+    "./js/daten.js": "./js/daten.js?v=99fef07a",
+    "./js/hilfen.js": "./js/hilfen.js?v=99fef07a",
+    "./js/kopf.js": "./js/kopf.js?v=99fef07a",
+    "./js/routing.js": "./js/routing.js?v=99fef07a",
+    "./js/suche.js": "./js/suche.js?v=99fef07a",
+    "./js/views/fraktion.js": "./js/views/fraktion.js?v=99fef07a",
+    "./js/views/gremien.js": "./js/views/gremien.js?v=99fef07a",
+    "./js/views/kalender.js": "./js/views/kalender.js?v=99fef07a",
+    "./js/views/naehe.js": "./js/views/naehe.js?v=99fef07a",
+    "./js/views/profil.js": "./js/views/profil.js?v=99fef07a",
+    "./js/views/sitzungen.js": "./js/views/sitzungen.js?v=99fef07a",
+    "./js/views/statistik.js": "./js/views/statistik.js?v=99fef07a",
+    "./js/views/themen.js": "./js/views/themen.js?v=99fef07a",
+    "./js/views/voten.js": "./js/views/voten.js?v=99fef07a"
   }
 }
 </script>
-<script src="js/core.js?v=5058a3ec"></script>
-<script src="js/parliament.js?v=5058a3ec"></script>
-<script type="module" src="js/app.js?v=5058a3ec"></script>
+<script src="js/core.js?v=99fef07a"></script>
+<script src="js/parliament.js?v=99fef07a"></script>
+<script type="module" src="js/app.js?v=99fef07a"></script>
 <!-- Besuchszähler von moosburg.eu; auf anderen Hosts läuft die Datei ins Leere. -->
 <script src="/assets/zaehler.js" defer></script>
 </body>

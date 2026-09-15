@@ -12,8 +12,17 @@ import { renderVoteBlock } from "./voten.js";
 
 const main = document.getElementById("main");
 
+// Probe Formsprache, vorläufig (14.09.2026): die Bestandszeile steht unter dem
+// Seitentitel „Themen“.
+function bestandZeile() {
+  const reg = sessionRegister();
+  document.getElementById("themen-bestand").textContent =
+    `${sessionLengths.length} Sitzungen, ${reg.filter(r => r.session).length} von ${reg.length} mit Niederschrift`;
+}
+
 function renderHome() {
   syncTagPills([]);
+  bestandZeile();
 
   const totalH = Math.round(sessionLengths.reduce((s, l) => s + (lengthMin(l) || 0), 0) / 60);
   const reg = sessionRegister();
@@ -63,6 +72,7 @@ function renderHome() {
 
 function renderFilteredTopics(tagIds) {
   syncTagPills(tagIds);
+  bestandZeile();
   const filtered = topics.filter(t => tagIds.some(id => t.tags.includes(id)));
   const label = tagIds.map(id => tagMap[id].name).join(", ");
   const heading = document.createElement("p");

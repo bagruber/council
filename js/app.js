@@ -8,6 +8,10 @@ import { initSuche } from "./suche.js";
 import { initStatistik } from "./views/statistik.js";
 import { initKalender } from "./views/kalender.js";
 import { initNaehe } from "./views/naehe.js";
+import { initKopf } from "./kopf.js";
+
+// Der Kopf braucht keine Daten und bleibt auch ohne sie bedienbar.
+initKopf();
 
 // Overlays: Impressum, Kontakt, Legende, Kalenderblatt. Früher hingen die
 // Handler als onclick im HTML — die Content-Security-Policy von moosburg.eu

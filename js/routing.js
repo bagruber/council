@@ -14,6 +14,7 @@ import { renderFraktion } from "./views/fraktion.js";
 const main = document.getElementById("main");
 
 const tabBtns = document.querySelectorAll(".tab-btn");
+const kopfTabs = document.querySelectorAll(".kopf-tab");
 const tabPanes = {
   themen: document.getElementById("tab-themen"),
   kalender: document.getElementById("tab-kalender"),
@@ -26,6 +27,11 @@ let activeTab = "themen";
 function switchTab(name) {
   activeTab = name;
   tabBtns.forEach(b => b.classList.toggle("active", b.dataset.tab === name));
+  kopfTabs.forEach(a => {
+    a.classList.toggle("active", a.dataset.tab === name);
+    if (a.dataset.tab === name) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
   Object.entries(tabPanes).forEach(([k, el]) => el.classList.toggle("hidden", k !== name));
   if (name === "kalender") renderCalendar();
   if (name === "gremien") renderGremien();
@@ -47,6 +53,9 @@ function navigate(path) {
 function route() {
   const hash = window.location.hash.slice(1) || "/";
   const [path, query] = hash.split("?");
+  // Probe Formsprache: Seitentitel mit Handschrift nur auf den Übersichten
+  document.body.toggleAttribute("data-uebersicht",
+    ["/", "/kalender", "/gremien", "/einstellungen"].includes(path));
   if (path === "/kalender") {
     switchTab("kalender");
     return;

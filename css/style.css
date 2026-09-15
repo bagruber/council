@@ -55,8 +55,9 @@
   --radius: var(--radius-md);
   --shadow: var(--shadow-soft);
   --shadow-lg: var(--shadow-lift);
-  --tab-height: 56px;
-  --nav-height: 48px;
+  --tab-height: 64px;
+  /* Kopf samt Stripe und Linie; ab 1024 px 69 px, siehe Kopf */
+  --nav-height: 61px;
   /* Probe Formsprache, vorläufig (14.09.2026): Familienschriften statt
      Playfair und Inter. Eingebunden in css/fonts.css. */
   --font-display: "Source Serif 4 Variable", Georgia, serif;
@@ -68,16 +69,12 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Chrome-Farben je Bereich. Rot ist der Hauptweg (Themen und Dossiers),
-   das dunkle Wappenrot die Ebene darüber (Themenfelder), Gold der
-   Terminstrang, das Tiefschwarz die Menschen. Einstellungen bleiben hell —
-   Verwaltung braucht kein Wappen. */
-:root { --chrome: var(--primary); --chrome-on: #fff; }
-body[data-chrome="feld"]          { --chrome: var(--primary-dark); }
-body[data-chrome="sitzung"]       { --chrome: var(--accent-text); }
-body[data-chrome="kalender"]      { --chrome: var(--accent-text); }
-body[data-chrome="gremien"]       { --chrome: var(--text); }
-body[data-chrome="einstellungen"] { --chrome: var(--bg); --chrome-on: var(--text); }
+/* Probe Formsprache, vorläufig (14.09.2026): Seitenköpfe Variante 1. Der Kopf
+   ist überall hell, Orientierung geben Seitentitel und aktiver Tab. Bis dahin
+   trug jeder Bereich eine eigene Farbe (Themen Rot, Felder Wappenrot, Sitzung
+   und Kalender Gold, Gremien Tinte). body[data-chrome] setzt routing.js
+   weiter, als Haken für Variante 2. */
+:root { --chrome: var(--bg); --chrome-on: var(--text); }
 
 body {
   font-family: var(--font-sans);
@@ -85,7 +82,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
-  padding-bottom: var(--tab-height);
+  padding-bottom: calc(var(--tab-height) + env(safe-area-inset-bottom));
   -webkit-font-smoothing: antialiased;
   /* Amtsdeutsch produziert Wörter wie "Kläranlagenbenutzungsordnung". In
      einer 360px-Spalte laufen die sonst rechts aus dem Bild. */
@@ -141,13 +138,6 @@ h1, h2, h3, .headline {
 .rainbow-stripe span:nth-child(8) { background: var(--rb-8); }
 .rainbow-stripe span:nth-child(9) { background: var(--rb-9); }
 
-/* Ohne Hero (Kalender, Einstellungen) schliesst der Streifen die Navbar ab */
-.navbar + .rainbow-stripe {
-  position: sticky;
-  top: var(--nav-height);
-  z-index: 100;
-}
-
 /* Icons: Phosphor-Sprite, inline in index.html. In em bemessen, damit die
    font-size-Angaben der einzelnen Kontexte weiter greifen.
    Probe Formsprache, vorläufig (14.09.2026): Phosphor ist gefüllt, kein Strich. */
@@ -161,24 +151,58 @@ h1, h2, h3, .headline {
   fill: currentColor;
 }
 
-/* -- Navbar -- */
+/* -- Kopf -- */
 
-/* Navbar und Hero sind eine Flaeche. Die Farbe kommt aus --chrome und
-   wechselt mit dem Seitentyp — so weiss man am oberen Rand, in welchem
-   Teil der App man sich befindet, bevor man liest. */
-.navbar {
+/* Probe Formsprache, vorläufig (14.09.2026): Navigation Variante A. Ab 1024 px
+   eine Zeile mit Familien-Eintrag, Tool-Name, Bereichen und „Über das
+   Projekt“; darunter eine App-Leiste mit Rosen-Knopf und die Tab-Leiste unten.
+   Kein backdrop-filter: im Haushalt wurde der Kopf dadurch zum Bezugsrahmen
+   des mobilen Blatts. z-index über der Tab-Leiste, damit das Blatt aus dem
+   Kopf sie überdeckt; Modals und Kalenderblatt liegen weiter darüber. */
+.kopf {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 150;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.kopf-zeile {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 16px;
+  height: calc(var(--nav-height) - 5px);
   padding: 0 24px;
-  height: var(--nav-height);
-  background: var(--chrome, var(--bg));
-  color: var(--chrome-on, var(--text));
-  border-bottom: none;
-  transition: background 0.25s ease;
+}
+
+.rose {
+  display: inline-block;
+  flex: none;
+  width: 15px;
+  height: 15px;
+  background: var(--primary-bright);
+  -webkit-mask: url("../img/formsprache/rose.svg") center / contain no-repeat;
+  mask: url("../img/formsprache/rose.svg") center / contain no-repeat;
+}
+/* Logo-Platz: bis es Tool-Logos gibt, steht auch hier die Rose. */
+.rose--logo { width: 22px; height: 22px; background: var(--primary); }
+
+.kopf-familie {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.9375rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.kopf-familie:hover { color: var(--primary); }
+
+.kopf-trenner {
+  flex: none;
+  width: 1px;
+  height: 24px;
+  background: var(--border);
 }
 
 .nav-logo {
@@ -186,14 +210,156 @@ h1, h2, h3, .headline {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: currentColor;
+  color: var(--text);
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  white-space: nowrap;
+}
+
+.kopf-nav {
+  display: flex;
+  align-self: stretch;
+  gap: 4px;
+  margin-left: auto;
+}
+.kopf-tab {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.kopf-tab:hover { color: var(--text); }
+.kopf-tab.active {
+  color: var(--text);
+  font-weight: 600;
+  border-bottom-color: var(--primary);
+}
+
+.ueber { position: relative; }
+.ueber-knopf,
+.ueber-rose {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.ueber-knopf:hover,
+.ueber-rose:hover { background: var(--color-cream-dark); }
+.ueber-knopf .icon { font-size: 18px; color: var(--text-muted); }
+.ueber-knopf .ueber-caret { font-size: 14px; transition: transform 0.15s; }
+.ueber-knopf[aria-expanded="true"] .ueber-caret { transform: rotate(180deg); }
+.ueber-rose .rose { width: 22px; height: 22px; }
+
+.ueber-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 120;
+  width: 23rem;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+}
+.ueber-panel[hidden],
+.ueber-schleier[hidden] { display: none; }
+.ueber-panel p { font-size: 0.9375rem; line-height: 1.5; color: var(--text-muted); }
+.ueber-panel p + p { margin-top: 8px; }
+.ueber-panel .ueber-titel {
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+.ueber-panel .ueber-hinweis { color: var(--text); }
+.ueber-liste {
+  display: grid;
+  gap: 2px;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+.ueber-liste a,
+.ueber-liste button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 7px 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--text);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ueber-liste a:hover,
+.ueber-liste button:hover { color: var(--primary); }
+.ueber-liste .icon { font-size: 18px; color: var(--text-muted); }
+.ueber-familie { display: none; }
+.ueber-schleier {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  background: rgba(0,0,0,0.3);
+}
+
+@media (max-width: 1023.98px) {
+  .kopf-familie, .kopf-trenner, .kopf-nav, .ueber-knopf { display: none; }
+  .ueber { margin-left: auto; }
+  .ueber-panel {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px 24px calc(24px + env(safe-area-inset-bottom));
+    border-bottom: 0;
+    border-radius: 10px 10px 0 0;
+  }
+  .ueber-familie {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root { --nav-height: 69px; }
+  .ueber-rose, .ueber-schleier { display: none; }
+  body { padding-bottom: 0; }
 }
 
 /* -- Tab bar -- */
 
+/* Probe Formsprache, vorläufig (14.09.2026): Icon mit Pillen-Markierung,
+   Beschriftung 12 px. Ab 1024 px übernimmt die Navigation im Kopf. */
 .tab-bar {
   position: fixed;
   bottom: 0;
@@ -201,9 +367,10 @@ h1, h2, h3, .headline {
   right: 0;
   z-index: 100;
   display: flex;
+  height: calc(var(--tab-height) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
   background: var(--surface);
   border-top: 1px solid var(--border);
-  height: var(--tab-height);
 }
 
 .tab-btn {
@@ -213,14 +380,22 @@ h1, h2, h3, .headline {
   align-items: center;
   justify-content: center;
   gap: 2px;
+  padding: 4px 0;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--text-muted);
-  font-size: 0.64rem;
+  font-size: 0.75rem;
   font-family: inherit;
-  transition: color 0.15s;
-  padding: 4px 0;
+}
+
+.tab-pill {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 30px;
+  border-radius: 999px;
+  transition: background 0.15s;
 }
 
 .tab-btn .icon {
@@ -229,10 +404,16 @@ h1, h2, h3, .headline {
 
 .tab-btn.active {
   color: var(--primary);
+  font-weight: 600;
+}
+.tab-btn.active .tab-pill { background: var(--color-red-50); }
+
+@media (min-width: 1024px) {
+  .tab-bar { display: none; }
 }
 
 .tab-btn:hover {
-  color: var(--primary-dark);
+  color: var(--text);
 }
 
 .tab-content.hidden {
@@ -241,15 +422,100 @@ h1, h2, h3, .headline {
 
 /* -- Search -- */
 
+/* Probe Formsprache, vorläufig (14.09.2026): Seitenkopf, Suche und Chips auf
+   hellem Grund. Die Fläche trägt keine Bereichsfarbe mehr. */
 .search-wrap {
-  background: var(--chrome, var(--primary));
-  padding: 20px 24px 22px;
-  transition: background 0.25s ease;
+  position: relative;
+  background: var(--chrome, var(--bg));
+  padding: 8px 24px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Seitentitel oben links in der Titelschrift, auf den Übersichten der
+   Bereiche. Auf Detailseiten steht der Titel der Sache, nicht der des
+   Bereichs; routing.js setzt dafür body[data-uebersicht]. */
+.seitenkopf {
+  position: relative;
+  max-width: 752px;
+  margin: 0 auto 16px;
+}
+.seitenkopf--schmal {
+  max-width: 600px;
+  margin-bottom: 0;
+  padding: 0 24px;
+}
+body:not([data-uebersicht]) .seitenkopf,
+body:not([data-uebersicht]) .kopf-zeichnung { display: none; }
+
+.seitentitel {
+  margin-top: 0.85em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.05;
+  color: var(--text);
+}
+.seitenkopf-meta {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.seitenkopf-meta:empty { display: none; }
+
+/* Handschrift hinter dem Titel, Überlappung Variante 1 mit den Werten aus der
+   Portal-Probe (top −0,42 em, 0,85 em Abstand darüber). Das Script ist
+   aria-hidden; der zugängliche Name bleibt der Titeltext. */
+.hat-script { position: relative; }
+.hat-script .script {
+  position: absolute;
+  left: -0.05em;
+  top: -0.42em;
+  transform: rotate(-6deg);
+  transform-origin: left bottom;
+  font-family: var(--font-script);
+  font-size: 1.45em;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--accent);
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+}
+.hat-script .titel-text { position: relative; }
+
+@media (min-width: 1024px) {
+  .seitentitel { font-size: 2.75rem; }
+}
+
+/* Federzeichnung als Maske in Gold, rechts unten angeschnitten. Beschnitten
+   wird nur der Rahmen, nie ein Element mit Handschrift. Erst ab 1280 px,
+   darunter läge sie hinter Suche und Chips. */
+.kopf-zeichnung {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.kopf-zeichnung span {
+  position: absolute;
+  right: -1rem;
+  bottom: -7rem;
+  width: 26rem;
+  height: 26rem;
+  background: var(--accent);
+  opacity: 0.3;
+  -webkit-mask: url("../img/formsprache/rathausC.svg") bottom right / contain no-repeat;
+  mask: url("../img/formsprache/rathausC.svg") bottom right / contain no-repeat;
+}
+@media (max-width: 1279.98px) {
+  .kopf-zeichnung { display: none; }
 }
 
 .search-container {
   position: relative;
-  max-width: 640px;
+  max-width: 752px;
   margin: 0 auto;
 }
 
@@ -266,20 +532,25 @@ h1, h2, h3, .headline {
 #search,
 #gremien-search {
   width: 100%;
-  padding: 14px 16px 14px 44px;
+  height: 48px;
+  padding: 0 16px 0 44px;
   font-size: 1rem;
-  border: none;
-  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  border-radius: 10px;
   background: var(--surface);
-  box-shadow: var(--shadow-lg);
+  color: var(--text);
   outline: none;
-  transition: box-shadow 0.2s;
   font-family: inherit;
 }
 
-#search:focus,
-#gremien-search:focus {
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.4), var(--shadow-lg);
+#search:focus-visible,
+#gremien-search:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (min-width: 1024px) {
+  #search, #gremien-search { height: 44px; }
 }
 
 .search-dropdown {
@@ -362,39 +633,71 @@ h1, h2, h3, .headline {
   min-width: 50px;
 }
 
-.tag-bar {
-  max-width: 640px;
-  margin: 12px auto 0;
+/* Probe Formsprache, vorläufig (14.09.2026): Themen als seitlich scrollbare
+   Zeile, am Ende fest der Knopf „Alle Themen“ (Versuch). Das weiche
+   Ausblenden am rechten Rand zeigt, dass es weitergeht. */
+.chiprow {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
+  max-width: 752px;
+  margin: 12px auto 0;
 }
 
-.tag-pill {
-  --cat-color: #fff;
+.tag-bar {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 8px;
+  padding: 3px 28px 3px 3px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent);
+}
+.tag-bar::-webkit-scrollbar { display: none; }
+
+.tag-pill,
+.chip {
+  flex: none;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 14px 5px 11px;
-  border-radius: var(--radius-sm);
-  font-size: 0.82rem;
-  cursor: pointer;
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.35);
-  transition: background 0.15s, transform 0.1s;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
   font-family: inherit;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  cursor: pointer;
 }
-.tag-pill .icon { font-size: 16px; }
-
-.tag-pill:hover { background: rgba(255,255,255,0.28); }
+.tag-pill .icon,
+.chip .icon { font-size: 16px; }
+.tag-pill:hover,
+.chip:hover { border-color: var(--text-muted); }
+.tag-pill:focus-visible,
+.chip:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
+.chip-mehr { padding: 0 11px; }
 
 .tag-pill.active {
-  background: #fff;
-  color: var(--cat-color, var(--primary));
+  background: var(--color-red-50);
+  border-color: transparent;
+  color: var(--primary);
   font-weight: 600;
-  border-color: #fff;
 }
+
+.sheet-kopf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.sheet-kopf .sheet-date { margin-bottom: 0; font-size: 1.15rem; }
+.sheet-themen { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* -- Main -- */
 
@@ -496,15 +799,6 @@ a.cat-line:hover { text-decoration: underline; }
 }
 .topic-title h1 { margin-bottom: 0; }
 
-@media (max-width: 600px) {
-  .tag-pill {
-    gap: 4px;
-    padding: 3px 10px 3px 8px;
-    font-size: 0.72rem;
-    border-radius: var(--radius-sm);
-  }
-  .tag-pill .icon { font-size: 13px; }
-}
 
 /* Abschnittsmarke — steht für sich als Überschrift, nie als Kicker über einer
    zweiten Überschrift. Ein Gliederungselement, kein Schmuck. */
@@ -2807,8 +3101,8 @@ a.cat-line:hover { text-decoration: underline; }
 a.tier-chip { text-decoration: none; cursor: pointer; }
 a.tier-chip:hover { border-color: var(--text-muted); }
 a.tier-chip.on {
-  border-color: var(--chrome, var(--primary));
-  box-shadow: inset 0 0 0 1px var(--chrome, var(--primary));
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
 }
 
 .register {
@@ -3180,8 +3474,8 @@ a.tier-chip.on {
   cursor: pointer;
 }
 .period-switch button.on {
-  background: var(--chrome, var(--primary));
-  border-color: var(--chrome, var(--primary));
+  background: var(--primary);
+  border-color: var(--primary);
   color: #fff;
 }
 
@@ -3324,8 +3618,11 @@ a.tier-chip.on {
 /* -- Responsive -- */
 
 @media (max-width: 600px) {
-  .navbar { padding: 0 16px; }
-  .search-wrap { padding: 24px 16px 16px; }
+  .kopf-zeile { padding: 0 16px; }
+  .search-wrap { padding: 4px 16px 16px; }
+  .chiprow { margin-right: -16px; }
+  .chip-mehr { margin-right: 16px; }
+  #tab-einstellungen .seitenkopf { padding: 0 16px; }
   main { padding: 24px 16px 48px; }
   /* Probe Formsprache: in Satzschreibung braucht der Titel mehr Größe als in Versalien */
   .topic-header h1 { font-size: 1.75rem; }
@@ -3348,3 +3645,12 @@ a.tier-chip.on {
 
 /* -- Utility -- */
 .hidden { display: none !important; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

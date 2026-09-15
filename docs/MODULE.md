@@ -13,6 +13,7 @@ den Modulen und sind aus ihnen heraus sichtbar.
 | `daten.js` | die sieben JSON-Dateien, Nachschlage-Maps, Daten-Helfer |
 | `hilfen.js` | Datums- und Zeitraum-Formatierung, Töne der Themenfarben (Probe Formsprache) |
 | `routing.js` | Hash-Routen, Tabs, Seiten-Chrome |
+| `kopf.js` | Kopf: „Über das Projekt“ als Panel, mobil als Blatt (Probe Formsprache) |
 | `suche.js` | globale Suche, Tag-Pillen, Gremien-Suche |
 | `views/themen.js` | Startseite, Themenfelder, Dossiers; Brotkrumen und Presse-Links |
 | `views/sitzungen.js` | Sitzungsseite mit Tagesordnung |
