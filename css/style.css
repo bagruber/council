@@ -1954,7 +1954,8 @@ a.cat-line:hover { text-decoration: underline; }
   font-size: 0.9375rem;
   text-decoration: none;
 }
-.naechste-kompakt b { font-weight: 600; color: var(--color-gold-200); }
+.naechste-kompakt b { flex: none; font-weight: 600; color: var(--color-gold-200); }
+.naechste-kompakt span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .naechste-kompakt .icon { margin-left: auto; font-size: 16px; }
 
 /* -- Bottom sheet -- */
