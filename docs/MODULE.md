@@ -11,7 +11,7 @@ den Modulen und sind aus ihnen heraus sichtbar.
 |---|---|
 | `app.js` | Einstieg: Daten laden, Einstellungen, Verdrahtung, Router starten |
 | `daten.js` | die sieben JSON-Dateien, Nachschlage-Maps, Daten-Helfer |
-| `hilfen.js` | Datums- und Zeitraum-Formatierung |
+| `hilfen.js` | Datums- und Zeitraum-Formatierung, Töne der Themenfarben (Probe Formsprache) |
 | `routing.js` | Hash-Routen, Tabs, Seiten-Chrome |
 | `suche.js` | globale Suche, Tag-Pillen, Gremien-Suche |
 | `views/themen.js` | Startseite, Themenfelder, Dossiers; Brotkrumen und Presse-Links |

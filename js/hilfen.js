@@ -35,4 +35,34 @@ function formatPeriod(from, to) {
   return f + "\u2013" + t;
 }
 
-export { formatDuration, formatDate, monthNames, monthLabel, formatMonthPeriod, formatPeriod };
+// Probe Formsprache, vorläufig (14.09.2026): Töne einer Themenfarbe aus
+// tags.json. Als Text sind die Farben zu hell, deshalb ein dunkler Ton für
+// Icon und Name und ein heller für die Fläche des Kleckses, nach der Formel
+// aus dem Haushalt. Reicht der dunkle Ton auf Creme nicht für 4,5:1 (Wirtschaft),
+// wird weiter abgedunkelt. Gerechnet wird hier, nicht im Datenbestand.
+function mischen(hex, ziel, t) {
+  return "#" + [1, 3, 5].map(i => {
+    const v = parseInt(hex.slice(i, i + 2), 16);
+    return Math.round(v + (ziel - v) * t).toString(16).padStart(2, "0");
+  }).join("");
+}
+
+function luminanz(hex) {
+  const [r, g, b] = [1, 3, 5].map(i => {
+    const c = parseInt(hex.slice(i, i + 2), 16) / 255;
+    return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+function kategorieTon(farbe) {
+  const creme = luminanz("#faf7f2");
+  let t = 0.35, text = mischen(farbe, 0, t);
+  while ((creme + 0.05) / (luminanz(text) + 0.05) < 4.5 && t < 0.9) {
+    t += 0.05;
+    text = mischen(farbe, 0, t);
+  }
+  return { text, flaeche: mischen(farbe, 255, 0.78) };
+}
+
+export { formatDuration, formatDate, monthNames, monthLabel, formatMonthPeriod, formatPeriod, kategorieTon };
