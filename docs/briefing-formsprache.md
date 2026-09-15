@@ -1,7 +1,9 @@
 # Briefing: Formsprache-Probe im Stadtrat
 
-*Angelegt am 14.09.2026. Status: **Probe, nicht freigegeben.** Alles hier setzt
-vorläufige Entscheidungen um; nichts davon ist Kanon.*
+*Angelegt am 14.09.2026. Status: **umgesetzt und gemergt am 16.09.2026.**
+Was daraus geworden ist, steht in `docs/formsprache-probe/ERGEBNIS.md`; dieses
+Briefing bleibt als Auftragslage stehen. Die Entscheidungen sind weiter
+vorläufig, Kanon ist allein `../moosburg-design/css/theme.css`.*
 
 Dieses Briefing beschreibt, wie die Stadtratstransparenz (`moosburg.eu/stadtrat/`)
 probeweise auf die neue Formsprache umgestellt wird. Es ist so geschrieben, dass eine neue
