@@ -57,16 +57,16 @@ const MAP = {
   // sonst steht ein Kreis im Kreis.
   cancel:       'X',
   check_circle: 'Check',
-  // Identitaets-Chips. Vorschlag, nicht entschieden (Probe Formsprache).
+  // Identitaets-Chips, gewählt am 15.09.2026 (Probe Formsprache)
   queer:      'Rainbow',
-  flinta:     'GenderTransgender',
+  flinta:     'GenderFemale',
   migrant:    'GlobeHemisphereWest',
   disability: 'Wheelchair',
-  // Funktionen im Rat. Vorschlag, nicht entschieden (Probe Formsprache).
+  // Funktionen im Rat, gewählt am 15.09.2026; Megaphone noch nicht befriedigend
   referent:   'Megaphone',
-  ausschuss:  'Users',
+  ausschuss:  'UsersThree',
   vorsitz:    'Gavel',
-  aufsichtsrat: 'Briefcase',
+  aufsichtsrat: 'BuildingOffice',
   history:    'Clock',
   star:       'Star',
   badge:      'Medal',
