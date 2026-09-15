@@ -26,4 +26,4 @@
   src: url('../fonts/PlayfairDisplay-latin-700.woff2') format('woff2');
 }
 
-/* Icons liegen als Lucide-SVG-Sprite inline in index.html — keine Icon-Font. */
+/* Icons liegen als Phosphor-SVG-Sprite inline in index.html, keine Icon-Font. */
