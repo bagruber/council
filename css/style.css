@@ -75,7 +75,7 @@ body[data-chrome="gremien"]       { --chrome: var(--text); }
 body[data-chrome="einstellungen"] { --chrome: var(--bg); --chrome-on: var(--text); }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -97,7 +97,7 @@ body {
 /* Playfair nur für Seiten- und Abschnittstitel. Nie in Datenzellen:
    die Serifen kosten dort Lesbarkeit, ohne Charakter zu gewinnen. */
 .headline {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.01em;
@@ -107,7 +107,7 @@ body {
 /* Statusmarke — dichter und schwerer als die Abschnittsmarke. Ein Label
    gliedert, ein Badge meldet; gleiche Behandlung macht beide unsichtbar. */
 .badge-label {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.6875rem;
   text-transform: uppercase;
@@ -179,7 +179,7 @@ body {
   gap: 10px;
   text-decoration: none;
   color: currentColor;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1rem;
   text-transform: uppercase;
@@ -426,7 +426,7 @@ main {
 .topic-card:hover { border-color: var(--accent); }
 
 .topic-card h3 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.18rem;
   line-height: 1.25;
@@ -482,7 +482,7 @@ main {
    zweiten Überschrift. Ein Gliederungselement, kein Schmuck. */
 .section-heading,
 .section-label {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -503,7 +503,7 @@ main {
 }
 
 .topic-header h1 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.005em;
@@ -709,7 +709,7 @@ main {
 .session-header { margin-bottom: 28px; }
 
 .session-header h1 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.4rem;
   margin-bottom: 4px;
   color: var(--primary-dark);
@@ -861,7 +861,7 @@ main {
 }
 .legend-row:last-of-type { border-bottom: none; }
 .legend-row svg { flex-shrink: 0; }
-.legend-row strong { font-family: 'Playfair Display', Georgia, serif; }
+.legend-row strong { font-family: var(--font-display); }
 .legend-explain {
   display: block;
   margin-top: 2px;
@@ -877,7 +877,7 @@ main {
 }
 
 .legend-heading {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1rem;
   text-transform: uppercase;
@@ -1498,7 +1498,7 @@ main {
 }
 
 .cal-header h2 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   color: var(--primary-dark);
 }
@@ -1625,7 +1625,7 @@ main {
 }
 
 .sheet-date {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1rem;
   color: var(--primary-dark);
   margin-bottom: 12px;
@@ -1792,7 +1792,7 @@ main {
 }
 
 .modal-header h2 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   color: var(--primary);
 }
@@ -2115,7 +2115,7 @@ main {
 }
 
 .profile-surname {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 3.2rem;
   font-weight: 900;
   line-height: 1;
@@ -2385,7 +2385,7 @@ main {
   z-index: 10;
   background: var(--bg);
   padding: 10px 0 6px;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 0.88rem;
   font-weight: 700;
   color: var(--primary-dark);
@@ -2830,7 +2830,7 @@ a.tier-chip.on {
 .register-year th {
   padding: 22px 0 6px;
   text-align: left;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   color: var(--primary-dark);
 }
@@ -2866,7 +2866,7 @@ a.tier-chip.on {
 .register-group th {
   padding: 20px 0 5px;
   text-align: left;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -3299,7 +3299,7 @@ a.tier-chip.on {
 }
 
 .cohesion-value {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 2rem;
   line-height: 1;
   color: var(--primary-dark);
