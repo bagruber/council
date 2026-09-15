@@ -140,8 +140,9 @@ body {
   z-index: 100;
 }
 
-/* Icons: Lucide-Sprite, inline in index.html. In em bemessen, damit die
-   font-size-Angaben der einzelnen Kontexte weiter greifen. */
+/* Icons: Phosphor-Sprite, inline in index.html. In em bemessen, damit die
+   font-size-Angaben der einzelnen Kontexte weiter greifen.
+   Probe Formsprache, vorläufig (14.09.2026): Phosphor ist gefüllt, kein Strich. */
 .icon {
   display: inline-block;
   width: 1em;
@@ -149,8 +150,7 @@ body {
   font-size: 24px;
   flex-shrink: 0;
   vertical-align: -0.15em;
-  stroke: currentColor;
-  fill: none;
+  fill: currentColor;
 }
 
 /* -- Navbar -- */
@@ -595,7 +595,7 @@ main {
 }
 /* Der Punkt behaelt seine Bedeutungsfarbe und bekommt nur einen Ring —
    sonst wuerde die Hervorhebung die Semantik ueberschreiben. */
-.tl-key .tl-dot .icon { font-size: 19px; stroke-width: 2.6; }
+.tl-key .tl-dot .icon { font-size: 19px; }
 
 /* Der Marker sitzt auf der Achse und unterbricht sie durch seine Flaeche.
    Kein Rahmen, kein Kreis: das Zeichen selbst ist die Markierung. Ein Haken
@@ -614,7 +614,7 @@ main {
   z-index: 2;
 }
 
-.tl-dot .icon { font-size: 15px; stroke-width: 2.25; }
+.tl-dot .icon { font-size: 15px; }
 
 .tl-dot.proposal       { color: var(--info); }
 .tl-dot.committee      { color: var(--accent-text); }

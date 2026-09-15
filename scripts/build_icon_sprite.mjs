@@ -1,92 +1,96 @@
-// Baut aus lucide-react ein SVG-Sprite mit genau den Icons, die die App nutzt.
+// Baut aus @phosphor-icons/react ein SVG-Sprite mit genau den Icons, die die App nutzt.
+// Gewicht regular, gefüllte Pfade. Die Symbol-IDs tragen weiter Material-Namen,
+// damit kein JS angefasst werden muss.
 import { readFileSync, writeFileSync } from 'node:fs';
-import { pathToFileURL } from 'node:url';
 
-const L = 'C:/Users/bened/Documents/GitHub/bagruber/pridemap/node_modules/lucide-react/dist/esm/icons';
+const P = 'C:/Users/bened/Documents/GitHub/bagruber/haushaltvis/node_modules/@phosphor-icons/react/dist/defs';
 
-// Material-Icons-Name → Lucide-Name
+// Material-Icons-Name → Phosphor-Name
 const MAP = {
-  account_balance: 'landmark',
-  arrow_back:      'arrow-left',
-  calendar_month:  'calendar',
-  chevron_left:    'chevron-left',
-  chevron_right:   'chevron-right',
-  close:           'x',
-  contrast:        'contrast',
-  edit_note:       'square-pen',
-  email:           'mail',
-  expand_more:     'chevron-down',
-  groups:          'users',
-  help_outline:    'circle-question-mark',   // circle-help ist nur ein Alias
-  how_to_vote:     'vote',
-  info:            'info',
-  insights:        'chart-line',
-  language:        'globe',
-  link:            'link',
-  mail:            'mail',
-  open_in_new:     'external-link',
-  schedule:        'clock',
-  search:          'search',
-  settings:        'settings',
-  swap_horiz:      'arrow-left-right',
-  table_rows:      'rows-3',
-  text_increase:   'a-large-small',
+  account_balance: 'Bank',
+  arrow_back:      'ArrowLeft',
+  calendar_month:  'CalendarDots',
+  chevron_left:    'CaretLeft',
+  chevron_right:   'CaretRight',
+  close:           'X',
+  contrast:        'CircleHalf',
+  edit_note:       'NotePencil',
+  email:           'Envelope',
+  expand_more:     'CaretDown',
+  groups:          'UsersThree',
+  help_outline:    'Question',
+  how_to_vote:     'ListChecks',
+  info:            'Info',
+  insights:        'ChartLineUp',
+  language:        'Globe',
+  link:            'Link',
+  mail:            'Envelope',
+  open_in_new:     'ArrowSquareOut',
+  schedule:        'Clock',
+  search:          'MagnifyingGlass',
+  settings:        'GearSix',
+  swap_horiz:      'ArrowsLeftRight',
+  table_rows:      'Rows',
+  text_increase:   'TextAa',
+  sliders:         'SlidersHorizontal',
   // aus tags.json
-  architecture:        'drafting-compass',
-  commute:             'bus',
-  museum:              'drama',
-  park:                'trees',
-  school:              'graduation-cap',
-  shield:              'shield',
-  sports:              'trophy',
-  storefront:          'store',
-  volunteer_activism:  'heart-handshake',
+  architecture:        'PencilRuler',
+  commute:             'Bus',
+  museum:              'MaskHappy',
+  park:                'Tree',
+  school:              'GraduationCap',
+  shield:              'Shield',
+  sports:              'SoccerBall',
+  storefront:          'Storefront',
+  volunteer_activism:  'HandHeart',
   // aus members.json (bodies)
-  engineering: 'hard-hat',
-  fact_check:  'clipboard-check',
-  payments:    'banknote',
-  person:      'user',
-  savings:     'piggy-bank',
-  water_drop:  'droplet',
+  engineering: 'HardHat',
+  fact_check:  'ClipboardText',
+  payments:    'Money',
+  person:      'User',
+  savings:     'PiggyBank',
+  water_drop:  'Drop',
   // Timeline
-  description:  'file-text',
-  flag:         'flag',
+  description:  'FileText',
+  flag:         'Flag',
   // Timeline-Marker sitzen auf der Achse: blanke Zeichen, keine Kreise —
   // sonst steht ein Kreis im Kreis.
-  cancel:       'x',
-  check_circle: 'check',
-  // Identitaets-Chips
-  queer:      'rainbow',
-  flinta:     'transgender',
-  migrant:    'earth',
-  disability: 'accessibility',
-  // Funktionen im Rat
-  referent:   'megaphone',
-  ausschuss:  'users-round',
-  vorsitz:    'gavel',
-  aufsichtsrat: 'briefcase',
-  history:    'clock',
-  star:       'star',
-  badge:      'award',
+  cancel:       'X',
+  check_circle: 'Check',
+  // Identitaets-Chips. Vorschlag, nicht entschieden (Probe Formsprache).
+  queer:      'Rainbow',
+  flinta:     'GenderTransgender',
+  migrant:    'GlobeHemisphereWest',
+  disability: 'Wheelchair',
+  // Funktionen im Rat. Vorschlag, nicht entschieden (Probe Formsprache).
+  referent:   'Megaphone',
+  ausschuss:  'Users',
+  vorsitz:    'Gavel',
+  aufsichtsrat: 'Briefcase',
+  history:    'Clock',
+  star:       'Star',
+  badge:      'Medal',
 };
-
-const attrs = o => Object.entries(o)
-  .filter(([k]) => k !== 'key')
-  .map(([k, v]) => `${k}="${v}"`).join(' ');
 
 const seen = new Map();
 const symbols = [];
 const missing = [];
 
-for (const [name, lucide] of Object.entries(MAP)) {
-  if (seen.has(lucide)) { seen.get(lucide).push(name); continue; }
-  seen.set(lucide, [name]);
-  let mod;
+for (const [name, phosphor] of Object.entries(MAP)) {
+  if (seen.has(phosphor)) { seen.get(phosphor).push(name); continue; }
+  seen.set(phosphor, [name]);
+  let src;
   try {
-    mod = await import(pathToFileURL(`${L}/${lucide}.mjs`).href);
-  } catch { missing.push(`${name} → ${lucide}`); continue; }
-  const body = mod.__iconNode.map(([tag, o]) => `<${tag} ${attrs(o)}/>`).join('');
-  symbols.push({ lucide, body });
+    src = readFileSync(`${P}/${phosphor}.es.js`, 'utf8');
+  } catch { missing.push(`${name} → ${phosphor}`); continue; }
+  const regular = src.slice(src.indexOf('"regular"'), src.indexOf('"thin"'));
+  const body = [...regular.matchAll(/createElement\("(\w+)", \{([^}]*)\}/g)]
+    .map(([, tag, props]) => {
+      const attrs = [...props.matchAll(/(\w+): "([^"]*)"/g)].map(([, k, v]) => `${k}="${v}"`).join(' ');
+      return `<${tag} ${attrs}/>`;
+    }).join('');
+  if (!body) { missing.push(`${name} → ${phosphor} (keine Pfade)`); continue; }
+  symbols.push({ phosphor, body });
 }
 
 if (missing.length) {
@@ -96,10 +100,9 @@ if (missing.length) {
 
 const out = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
 ${symbols.map(s => {
-  const names = seen.get(s.lucide);
-  return `<symbol id="i-${names[0]}" viewBox="0 0 24 24" fill="none" stroke="currentColor" `
-       + `stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${s.body}</symbol>`
-       + names.slice(1).map(n => `\n<symbol id="i-${n}" viewBox="0 0 24 24"><use href="#i-${names[0]}"/></symbol>`).join('');
+  const names = seen.get(s.phosphor);
+  return `<symbol id="i-${names[0]}" viewBox="0 0 256 256" fill="currentColor">${s.body}</symbol>`
+       + names.slice(1).map(n => `\n<symbol id="i-${n}" viewBox="0 0 256 256"><use href="#i-${names[0]}"/></symbol>`).join('');
 }).join('\n')}
 </svg>`;
 
