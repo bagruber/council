@@ -19,7 +19,6 @@ const tabPanes = {
   themen: document.getElementById("tab-themen"),
   kalender: document.getElementById("tab-kalender"),
   gremien: document.getElementById("tab-gremien"),
-  einstellungen: document.getElementById("tab-einstellungen"),
 };
 
 let activeTab = "themen";
@@ -35,13 +34,6 @@ function switchTab(name) {
   Object.entries(tabPanes).forEach(([k, el]) => el.classList.toggle("hidden", k !== name));
   if (name === "kalender") renderCalendar();
   if (name === "gremien") renderGremien();
-  setChrome(name === "themen" ? "themen" : name);
-}
-
-// Farbe von Navbar und Hero. Wird von den Detailseiten überschrieben,
-// damit ein Themenfeld anders aussieht als ein Dossier.
-function setChrome(kind) {
-  document.body.dataset.chrome = kind;
 }
 
 // -- Routing --
@@ -55,13 +47,15 @@ function route() {
   const [path, query] = hash.split("?");
   // Probe Formsprache: Seitentitel mit Handschrift nur auf den Übersichten
   document.body.toggleAttribute("data-uebersicht",
-    ["/", "/kalender", "/gremien", "/einstellungen"].includes(path));
+    ["/", "/kalender", "/gremien"].includes(path));
   if (path === "/kalender") {
     switchTab("kalender");
     return;
   }
+  // Die Einstellungen sind in „Über das Projekt“ aufgegangen (16.09.2026);
+  // alte Links landen auf der Startseite.
   if (path === "/einstellungen") {
-    switchTab("einstellungen");
+    navigate("/");
     return;
   }
   if (path === "/gremien") {
@@ -145,4 +139,4 @@ export function initRouting() {
   });
 }
 
-export { switchTab, setChrome, navigate, route, backLink, lastListHash };
+export { switchTab, navigate, route, backLink, lastListHash };

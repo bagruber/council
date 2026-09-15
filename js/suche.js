@@ -1,7 +1,7 @@
 // Globale Suche über alle Inhaltsarten, Tag-Pillen und die zweite Suche im
 // Gremien-Tab. Beide Eingabefelder teilen sich Index und Trefferliste.
 import {
-  tags, topics, votes, sessions, members, parties, partyMap, isActive,
+  tags, topics, votes, sessions, members, parties, partyMap, isActive, bodies,
 } from "./daten.js";
 import { navigate } from "./routing.js";
 import { formatDate } from "./hilfen.js";
@@ -42,15 +42,23 @@ function searchNorm(s) {
 // Ergebnisse werden nach Art gruppiert: bei gemischten Treffern ist die Art
 // die erste Frage, nicht die Reihenfolge.
 
-const SEARCH_KINDS = [
-  { id: "feld",       label: "Themenfelder",  icon: "table_rows" },
-  { id: "dossier",    label: "Dossiers",      icon: "description" },
-  { id: "abstimmung", label: "Abstimmungen",  icon: "how_to_vote" },
-  { id: "sitzung",    label: "Sitzungen",     icon: "calendar_month" },
-  { id: "person",     label: "Personen",      icon: "person" },
-  { id: "fraktion",   label: "Fraktionen",    icon: "groups" },
-  { id: "seite",      label: "Seiten",        icon: "fact_check" },
-];
+const SEARCH_KINDS = {
+  feld:       { label: "Themenfelder", icon: "table_rows" },
+  dossier:    { label: "Dossiers",     icon: "description" },
+  abstimmung: { label: "Abstimmungen", icon: "how_to_vote" },
+  sitzung:    { label: "Sitzungen",    icon: "calendar_month" },
+  gremium:    { label: "Gremien",      icon: "account_balance" },
+  person:     { label: "Personen",     icon: "person" },
+  fraktion:   { label: "Fraktionen",   icon: "groups" },
+  seite:      { label: "Seiten",       icon: "fact_check" },
+};
+
+// Gesucht wird überall dasselbe; nur die Reihenfolge der Gruppen richtet sich
+// danach, wo man steht (16.09.2026).
+const REIHENFOLGE = {
+  themen:  ["feld", "dossier", "abstimmung", "sitzung", "gremium", "person", "fraktion", "seite"],
+  gremien: ["person", "fraktion", "gremium", "abstimmung", "sitzung", "dossier", "feld", "seite"],
+};
 
 // Übersichtsseiten ohne eigenen Datensatz. Sie über die Suche erreichbar zu
 // machen ist billiger, als sie irgendwo in die Navigation zu quetschen.
@@ -62,8 +70,15 @@ const SEARCH_PAGES = [
 ];
 
 function globalSearch(q) {
-  const hits = { feld: [], dossier: [], abstimmung: [], sitzung: [], person: [],
-                 fraktion: [], seite: [] };
+  const hits = { feld: [], dossier: [], abstimmung: [], sitzung: [], gremium: [],
+                 person: [], fraktion: [], seite: [] };
+
+  bodies.forEach(b => {
+    if (!searchNorm(b.name + " " + (b.shortName || "")).includes(q)) return;
+    const n = (b.seats || []).length;
+    hits.gremium.push({ href: "#/gremien", title: b.name,
+                        meta: n ? n + " Sitze" : "" });
+  });
 
   tags.forEach(t => {
     if (searchNorm(t.name).includes(q))
@@ -122,7 +137,7 @@ function globalSearch(q) {
   return hits;
 }
 
-function renderSearchResults(box, hits, onPick) {
+function renderSearchResults(box, hits, onPick, reihenfolge) {
   const total = Object.values(hits).reduce((n, a) => n + a.length, 0);
   if (!total) { box.classList.add("hidden"); return; }
 
@@ -130,8 +145,9 @@ function renderSearchResults(box, hits, onPick) {
   // Bei vielen Treffern bekommt jede Art ein Kontingent, damit eine
   // Kategorie mit hundert Treffern die anderen nicht verdrängt.
   const perKind = total > 14 ? 4 : 8;
-  SEARCH_KINDS.forEach(kind => {
-    const rows = hits[kind.id];
+  reihenfolge.forEach(id => {
+    const kind = SEARCH_KINDS[id];
+    const rows = hits[id];
     if (!rows.length) return;
     const head = document.createElement("div");
     head.className = "dd-group";
@@ -141,7 +157,7 @@ function renderSearchResults(box, hits, onPick) {
 
     rows.slice(0, perKind).forEach(r => {
       const a = document.createElement("a");
-      a.className = "dd-item dd-" + kind.id;
+      a.className = "dd-item dd-" + id;
       a.href = r.href;
       a.innerHTML =
         (r.color ? `<span class="dd-dot" style="background:${r.color}"></span>` : "")
@@ -206,7 +222,7 @@ export function initSuche() {
     const q = searchNorm(searchInput.value.trim());
     if (q.length < 1) { dropdown.classList.add("hidden"); return; }
 
-    renderSearchResults(dropdown, globalSearch(q), () => { searchInput.value = ""; });
+    renderSearchResults(dropdown, globalSearch(q), () => { searchInput.value = ""; }, REIHENFOLGE.themen);
   });
 
   document.addEventListener("click", evt => {
@@ -228,7 +244,7 @@ export function initSuche() {
     const q = searchNorm(gremienSearchInput.value.trim());
     if (q.length < 1) { gremienDropdown.classList.add("hidden"); return; }
     renderSearchResults(gremienDropdown, globalSearch(q),
-                        () => { gremienSearchInput.value = ""; });
+                        () => { gremienSearchInput.value = ""; }, REIHENFOLGE.gremien);
   });
 }
 

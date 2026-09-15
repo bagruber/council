@@ -28,7 +28,6 @@ const MAP = {
   open_in_new:     'ArrowSquareOut',
   schedule:        'Clock',
   search:          'MagnifyingGlass',
-  settings:        'GearSix',
   swap_horiz:      'ArrowsLeftRight',
   table_rows:      'Rows',
   text_increase:   'TextAa',
@@ -70,6 +69,11 @@ const MAP = {
   history:    'Clock',
   star:       'Star',
   badge:      'Medal',
+  // Kontaktwege auf Profilen (16.09.2026): Phosphor statt Font-Awesome-Pfaden
+  instagram:  'InstagramLogo',
+  threads:    'ThreadsLogo',
+  linkedin:   'LinkedinLogo',
+  facebook:   'FacebookLogo',
 };
 
 const seen = new Map();

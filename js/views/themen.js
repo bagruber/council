@@ -6,7 +6,6 @@ import {
   sessionMap, pressMap, mediaMap, sessionRegister, lengthMin,
 } from "../daten.js";
 import { formatDate, kategorieTon } from "../hilfen.js";
-import { setChrome } from "../routing.js";
 import { syncTagPills } from "../suche.js";
 import { renderVoteBlock } from "./voten.js";
 
@@ -79,17 +78,26 @@ function renderFilteredTopics(tagIds) {
   heading.className = "section-heading";
   heading.textContent = "Themen: " + label;
   main.appendChild(heading);
-  renderTopicList(filtered);
 
   // Bei genau einem Filter führt der Weg weiter aufs Feld — dort stehen auch
-  // die Beschlüsse, die es zu keinem Dossier gebracht haben.
+  // die Beschlüsse, die es zu keinem Dossier gebracht haben. Der Weg steht
+  // über der Liste, nicht darunter (16.09.2026).
   if (tagIds.length === 1) {
-    const more = document.createElement("a");
-    more.className = "field-more";
-    more.href = "#/feld/" + tagIds[0];
-    more.textContent = `Alles zu ${tagMap[tagIds[0]].name} — auch einzelne Beschlüsse`;
-    main.appendChild(more);
+    const t = tagMap[tagIds[0]];
+    const ton = kategorieTon(t.color || "#888888");
+    const knopf = document.createElement("a");
+    knopf.className = "feld-knopf";
+    knopf.href = "#/feld/" + tagIds[0];
+    knopf.style.setProperty("--feld-hell", ton.flaeche);
+    knopf.style.setProperty("--feld-text", ton.text);
+    knopf.innerHTML = `${klecks(tagIds[0])}`
+      + `<span><b>Zum Themenfeld ${t.name}</b><small>Dossiers und einzelne Beschlüsse</small></span>`
+      + `<svg class="icon" aria-hidden="true"><use href="#i-chevron_right"/></svg>`;
+    main.appendChild(knopf);
   }
+
+  renderTopicList(filtered);
+
 }
 
 // Probe Formsprache, vorläufig (14.09.2026): Kategoriezeile statt Pille.
@@ -187,7 +195,6 @@ function renderField(fieldId) {
   const field = tagMap[fieldId];
   if (!field) { main.innerHTML = "<p>Feld nicht gefunden.</p>"; return; }
 
-  setChrome("feld");
 
   const dossiers = topics.filter(t => t.field === fieldId || (t.tags || []).includes(fieldId));
   const ids = new Set(dossiers.map(t => t.id));
@@ -207,8 +214,7 @@ function renderField(fieldId) {
       <span class="dossier-type"><svg class="icon"><use href="#i-${field.icon}"/></svg>Themenfeld</span>
       <span class="dossier-count">${dossiers.length} Dossiers · ${loose.length} einzelne Beschlüsse</span>
     </div>
-    <div class="topic-title">${klecks(fieldId)}<h1>${field.name}</h1></div>
-    <div class="rainbow-stripe" aria-hidden="true">${"<span></span>".repeat(9)}</div>`;
+    <div class="topic-title">${klecks(fieldId)}<h1>${field.name}</h1></div>`;
   header.prepend(breadcrumb([{ label: "Themen", href: "#/" }]));
   main.appendChild(header);
 
