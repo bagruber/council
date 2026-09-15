@@ -96,6 +96,18 @@ function isVorschau(s) {
   return !!(s.source && s.source.kind === "vorschau");
 }
 
+// Probe Formsprache: das Gremium einer Sitzung oder eines Termins, für
+// Kategoriezeile und Flächenfarbe.
+function gremium(s) {
+  const art = sitzungsart(s.type || "stadtrat");
+  const body = art && bodyMap[art.body];
+  return {
+    art: art ? art.type : "stadtrat",
+    name: body ? body.name : (art ? art.label : ""),
+    icon: body && body.icon ? body.icon : "account_balance",
+  };
+}
+
 // Probe Formsprache: der nächste angekündigte Termin ab heute. Bestimmt beim
 // Rendern, nie fest eingetragen; ohne Termin null.
 function naechsteSitzung() {
@@ -179,6 +191,6 @@ export {
   topicMap, sessionMap, voteMap, tagMap, memberMap, partyMap, bodyMap,
   sessionsSorted, lengthMap, sessionByDateBody, votesBySession,
   SITZUNGSARTEN, sitzungsart,
-  protocolUrl, isWebauszug, isVorschau, naechsteSitzung, sessionRegister, tierCounts, lengthMin,
+  protocolUrl, isWebauszug, isVorschau, naechsteSitzung, gremium, sessionRegister, tierCounts, lengthMin,
   nowStr, memberActiveAt, isActive, bodyIdForSession,
 };

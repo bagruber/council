@@ -1,10 +1,10 @@
 // Sitzungsseite: Kopf mit Dauer und Niederschrift, Vertretungen,
 // Tagesordnung mit eingebetteten Abstimmungen.
 import {
-  sessionMap, bodyMap, memberMap, topicMap, voteMap, lengthMap,
-  lengthMin, protocolUrl, isWebauszug, isVorschau,
+  sessionMap, memberMap, topicMap, voteMap, lengthMap,
+  lengthMin, protocolUrl, isWebauszug, isVorschau, gremium,
 } from "../daten.js";
-import { formatDate, formatDuration } from "../hilfen.js";
+import { formatDate, formatDuration, sitzungKurz } from "../hilfen.js";
 import { navigate, setChrome, backLink } from "../routing.js";
 import { renderPressLinks } from "./themen.js";
 import { renderVoteBlock } from "./voten.js";
@@ -18,16 +18,12 @@ function renderSession(id) {
   const session = sessionMap[id];
   if (!session) { main.innerHTML = "<p>Sitzung nicht gefunden.</p>"; return; }
 
-  main.appendChild(backLink("Übersicht", "#/"));
-
+  // Probe Formsprache, vorläufig (15.09.2026): Kopf als Band in der Farbe des
+  // Gremiums; das Gremium steht als Kategoriezeile über dem kurzen Titel.
   const header = document.createElement("div");
-  header.className = "session-header";
-  let badge = "";
-  if (session.type && session.type !== "stadtrat") {
-    const body = bodyMap[session.type];
-    const label = body ? body.shortName : session.type;
-    badge = `<div class="session-badge"><svg class="icon"><use href="#i-groups"/></svg> ${label}</div>`;
-  }
+  header.className = "session-header band";
+  const g = gremium(session);
+  header.dataset.gremium = g.art;
   const len = lengthMap[session.date + "|" + (session.type || "stadtrat")];
   let timeLine = "";
   if (len) {
@@ -44,7 +40,9 @@ function renderSession(id) {
     src = `<a class="session-pdf" href="${protocolUrl(session)}" target="_blank" rel="noopener">
              <svg class="icon"><use href="#i-description"/></svg> Niederschrift (PDF)</a>`;
   }
-  header.innerHTML = `<h1>${session.title}</h1><div class="session-date">${formatDate(session.date)}</div>${timeLine}${badge}${src}`;
+  header.innerHTML = `<p class="gremium-zeile"><svg class="icon" aria-hidden="true"><use href="#i-${g.icon}"/></svg>${g.name}</p>`
+    + `<h1>${sitzungKurz(session)}</h1><div class="session-date">${formatDate(session.date)}</div>${timeLine}${src}`;
+  header.prepend(backLink("Übersicht", "#/"));
   main.appendChild(header);
 
   if (isVorschau(session)) {

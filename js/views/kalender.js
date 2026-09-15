@@ -1,6 +1,6 @@
 // Kalender-Tab: Monatsraster mit Sitzungspunkten und Tages-Sheet.
-import { sessions, sessionMap, naechsteSitzung } from "../daten.js";
-import { formatDate, monthNames } from "../hilfen.js";
+import { sessions, sessionMap, naechsteSitzung, gremium } from "../daten.js";
+import { formatDate, monthNames, sitzungKurz } from "../hilfen.js";
 
 let calYear, calMonth;
 const calTitle = document.getElementById("cal-title");
@@ -115,14 +115,16 @@ function openDaySheet(dateStr, events) {
     const row = document.createElement("a");
     row.className = "sheet-event";
     row.href = "#/session/" + s.id;
-    if (s.type && s.type !== "stadtrat") row.classList.add(s.type);
-    const icon = s.type === "bpu" ? "engineering"
-               : (s.type && s.type !== "stadtrat") ? "groups"
-               : "account_balance";
+    // Probe Formsprache (15.09.2026): das Gremium als Kategoriezeile, darunter
+    // nur Nummer und Datum, ohne den Gremiennamen ein zweites Mal.
+    const g = gremium(s);
+    row.dataset.gremium = g.art;
     row.innerHTML = `
-      <svg class="icon"><use href="#i-${icon}"/></svg>
-      <div class="sheet-event-text">${s.title}</div>
-      <svg class="icon"><use href="#i-chevron_right"/></svg>`;
+      <div class="sheet-event-text">
+        <span class="gremium-zeile"><svg class="icon" aria-hidden="true"><use href="#i-${g.icon}"/></svg>${g.name}</span>
+        ${sitzungKurz(s)}, ${formatDate(s.date)}
+      </div>
+      <svg class="icon" aria-hidden="true"><use href="#i-chevron_right"/></svg>`;
     row.addEventListener("click", () => calSheet.classList.add("hidden"));
     calSheetBody.appendChild(row);
   });
@@ -137,6 +139,7 @@ function renderNaechsteSitzung() {
   const box = document.getElementById("naechste-sitzung");
   const t = naechsteSitzung();
   if (!t) { box.hidden = true; return; }
+  box.dataset.gremium = gremium(t).art;
   const tag = new Date(t.date + "T00:00:00")
     .toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" });
   const knopf = sessionMap[t.id]
@@ -148,8 +151,7 @@ function renderNaechsteSitzung() {
       <p class="flaeche-gross">${tag}</p>
       <p class="flaeche-text">${t.title}, ${t.time} Uhr<br>${t.location}</p>
       ${knopf}
-    </div>
-    <div class="rainbow-stripe" aria-hidden="true">${"<span></span>".repeat(9)}</div>`;
+    </div>`;
 }
 
 export { renderCalendar };
