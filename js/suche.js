@@ -17,9 +17,13 @@ const tagBar = document.getElementById("tag-bar");
 const gremienSearchInput = document.getElementById("gremien-search");
 const gremienDropdown = document.getElementById("gremien-search-dropdown");
 
+// Zeile und Blatt tragen dieselben Chips; „Alle“ hat keine tagId.
 function syncTagPills(ids) {
-  tagBar.querySelectorAll(".tag-pill").forEach(p =>
-    p.classList.toggle("active", ids.includes(p.dataset.tagId)));
+  document.querySelectorAll(".tag-pill").forEach(p => {
+    const an = p.dataset.tagId ? ids.includes(p.dataset.tagId) : !ids.length;
+    p.classList.toggle("active", an);
+    p.setAttribute("aria-pressed", String(an));
+  });
 }
 
 // Normalise Umlaute & accents so "Ru" matches "Rümelin", "Stoss" matches "Stoß".
@@ -153,21 +157,50 @@ function renderSearchResults(box, hits, onPick) {
 
 // Ehemals frei laufende Verdrahtung aus app.js, unverändert.
 export function initSuche() {
-  tags.forEach(tag => {
+  // Probe Formsprache, vorläufig (14.09.2026): Chip-Zeile mit „Alle“ vorn und
+  // dieselben Chips noch einmal im Blatt „Alle Themen“. Welche Themen gewählt
+  // sind, steht in der URL; beide Sätze lesen es von dort.
+  const sheet = document.getElementById("themen-sheet");
+  const sheetListe = document.getElementById("themen-sheet-liste");
+  const mehr = document.getElementById("themen-alle");
+
+  const chip = (id, inhalt, onClick) => {
     const pill = document.createElement("button");
+    pill.type = "button";
     pill.className = "tag-pill";
-    pill.dataset.tagId = tag.id;
-    if (tag.color) pill.style.setProperty("--cat-color", tag.color);
-    pill.innerHTML = (tag.icon ? `<svg class="icon"><use href="#i-${tag.icon}"/></svg>` : "")
-                   + `<span>${tag.name}</span>`;
-    pill.addEventListener("click", () => {
-      pill.classList.toggle("active");
-      const active = tagBar.querySelectorAll(".tag-pill.active");
-      const activeIds = Array.from(active).map(el => el.dataset.tagId);
-      navigate(activeIds.length ? "/?tags=" + activeIds.join(",") : "/");
-    });
-    tagBar.appendChild(pill);
+    pill.dataset.tagId = id;
+    pill.setAttribute("aria-pressed", "false");
+    pill.innerHTML = inhalt;
+    pill.addEventListener("click", onClick);
+    return pill;
+  };
+
+  tagBar.appendChild(chip("", "Alle", () => navigate("/")));
+  tags.forEach(tag => {
+    const inhalt = (tag.icon ? `<svg class="icon" aria-hidden="true"><use href="#i-${tag.icon}"/></svg>` : "")
+                 + `<span>${tag.name}</span>`;
+    const umschalten = () => {
+      const query = window.location.hash.split("?")[1] || "";
+      const aktiv = (new URLSearchParams(query).get("tags") || "").split(",").filter(Boolean);
+      const neu = aktiv.includes(tag.id) ? aktiv.filter(id => id !== tag.id) : [...aktiv, tag.id];
+      navigate(neu.length ? "/?tags=" + neu.join(",") : "/");
+    };
+    tagBar.appendChild(chip(tag.id, inhalt, umschalten));
+    sheetListe.appendChild(chip(tag.id, inhalt, umschalten));
   });
+
+  // Das Blatt schließen die gemeinsamen Handler (Esc, Schleier, Schließen-Knopf);
+  // danach kehrt der Fokus zum Knopf zurück.
+  let offen = false;
+  mehr.addEventListener("click", () => {
+    sheet.classList.remove("hidden");
+    sheetListe.querySelector(".tag-pill").focus();
+  });
+  new MutationObserver(() => {
+    const jetzt = !sheet.classList.contains("hidden");
+    if (offen && !jetzt) mehr.focus();
+    offen = jetzt;
+  }).observe(sheet, { attributes: true, attributeFilter: ["class"] });
 
   searchInput.addEventListener("input", () => {
     const q = searchNorm(searchInput.value.trim());
