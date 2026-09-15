@@ -5,7 +5,7 @@ import {
   lengthMin, protocolUrl, isWebauszug, isVorschau, gremium,
 } from "../daten.js";
 import { formatDate, formatDuration, sitzungKurz } from "../hilfen.js";
-import { navigate, setChrome, backLink } from "../routing.js";
+import { navigate, backLink } from "../routing.js";
 import { renderPressLinks } from "./themen.js";
 import { renderVoteBlock } from "./voten.js";
 
@@ -14,7 +14,6 @@ const main = document.getElementById("main");
 // -- Session detail --
 
 function renderSession(id) {
-  setChrome("sitzung");
   const session = sessionMap[id];
   if (!session) { main.innerHTML = "<p>Sitzung nicht gefunden.</p>"; return; }
 

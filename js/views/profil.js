@@ -180,13 +180,17 @@ function renderMemberProfile(id) {
   }
 
   if (profile.titles) {
-    profile.titles.forEach(t => {
-      // Referent:innen vertreten ein Sachgebiet nach außen — das Megafon
-      // trifft das besser als ein Orden.
-      const icon = t.title.includes("rgermeister") ? "star"
-                 : /Referent|Beauftragt/i.test(t.title) ? "referent"
-                 : "badge";
-      rolesSection.appendChild(makeRoleRow(icon, t.title, [{ from: t.from, to: t.to }]));
+    // Referent:innen vertreten ein Sachgebiet nach außen — das Megafon
+    // trifft das besser als ein Orden. Ämter laufen wie Gremiensitze durch
+    // mergeRoles: zwei Wahlperioden nacheinander sind ein Zeitraum.
+    const titel = profile.titles.map(t => ({
+      icon: t.title.includes("rgermeister") ? "star"
+          : /Referent|Beauftragt/i.test(t.title) ? "referent"
+          : "badge",
+      label: t.title, from: t.from, to: t.to,
+    }));
+    mergeRoles(titel).forEach(r => {
+      rolesSection.appendChild(makeRoleRow(r.icon, r.label, r.spans));
     });
   }
 
@@ -423,16 +427,12 @@ function makeContactLink(type, href) {
     threads: "Threads", linkedin: "LinkedIn", facebook: "Facebook",
   };
   a.setAttribute("aria-label", labels[type] || type);
-  // Brand-Pfade aus Font Awesome Free 6.5.1 (CC BY 4.0), inline statt CDN
-  const icons = {
-    email: '<svg class="icon"><use href="#i-email"/></svg>',
-    website: '<svg class="icon"><use href="#i-language"/></svg>',
-    instagram: '<svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>',
-    threads: '<svg viewBox="0 0 448 512"><path d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"/></svg>',
-    linkedin: '<svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>',
-    facebook: '<svg viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>',
+  // Alle Zeichen aus dem Phosphor-Sprite, auch die Logos (16.09.2026).
+  const ids = {
+    email: "email", website: "language", instagram: "instagram",
+    threads: "threads", linkedin: "linkedin", facebook: "facebook",
   };
-  a.innerHTML = icons[type] || '<svg class="icon"><use href="#i-link"/></svg>';
+  a.innerHTML = `<svg class="icon"><use href="#i-${ids[type] || "link"}"/></svg>`;
   return a;
 }
 
@@ -498,7 +498,7 @@ function mergeRoles(rows) {
   rows.forEach(r => {
     const key = r.icon + "|" + r.label;
     if (!groups.has(key)) groups.set(key, { icon: r.icon, label: r.label, spans: [] });
-    groups.get(key).spans.push({ from: r.from, to: r.to });
+    groups.get(key).spans.push({ from: vollTag(r.from, false), to: vollTag(r.to, true) });
   });
   return [...groups.values()].map(g => {
     g.spans.sort((a, b) => (a.from || "").localeCompare(b.from || ""));
@@ -511,6 +511,16 @@ function mergeRoles(rows) {
     }, []);
     return g;
   });
+}
+
+// Manche Angaben stehen nur als Monat ("2020-05"). Für den Vergleich zählt
+// dann der Monatsanfang, als Ende das Monatsende — sonst stoßen zwei
+// lückenlose Zeiträume nicht aneinander und bleiben getrennte Zeilen.
+function vollTag(iso, ende) {
+  if (!iso || iso.length !== 7) return iso;
+  if (!ende) return iso + "-01";
+  const [j, m] = iso.split("-").map(Number);
+  return new Date(Date.UTC(j, m, 0)).toISOString().slice(0, 10);
 }
 
 function dayAfter(iso) {
@@ -527,13 +537,7 @@ function renderMemberFacts(m, profile) {
   if (profile.occupation) rows.push(["Beruf", profile.occupation]);
   if (profile.district)   rows.push(["Ortsteil", profile.district]);
 
-  // Ratsjahre über alle Mandate, Wechseltage nicht doppelt gezählt
-  const spans = m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }];
-  const days = spans.reduce((n, s) => n + (s.from
-    ? (Date.parse(s.to || new Date().toISOString().slice(0, 10)) - Date.parse(s.from)) / 864e5
-    : 0), 0);
-  if (days > 0) rows.push(["Im Rat seit", `${spans[0].from.slice(0, 4)} · ${Math.round(days / 365)} Jahre`]);
-
+  // „Im Rat seit“ stand schon in den Mandaten darüber und ist hier raus.
   const el = profile.elections || [];
   if (!rows.length && !el.length) return null;
 

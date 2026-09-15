@@ -55,8 +55,6 @@
   /* Probe Formsprache, vorläufig (14.09.2026): 4 px für Marken und Kleinteile
      (--radius), 10 px für Kacheln, Buttons, Suche und Flächen (--radius-xl). */
   --radius: var(--radius-md);
-  /* Probe Formsprache (15.09.2026): 8 statt 10 px, Vorschlag für den Kanon */
-  --radius-xl: 8px;
   --shadow: var(--shadow-soft);
   --shadow-lg: var(--shadow-lift);
   --tab-height: 64px;
@@ -73,12 +71,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Probe Formsprache, vorläufig (14.09.2026): Seitenköpfe Variante 1. Der Kopf
-   ist überall hell, Orientierung geben Seitentitel und aktiver Tab. Bis dahin
-   trug jeder Bereich eine eigene Farbe (Themen Rot, Felder Wappenrot, Sitzung
-   und Kalender Gold, Gremien Tinte). body[data-chrome] setzt routing.js
-   weiter, als Haken für Variante 2. */
-:root { --chrome: var(--bg); --chrome-on: var(--text); }
 
 body {
   font-family: var(--font-sans);
@@ -318,6 +310,16 @@ h1, h2, h3, .headline {
 .ueber-liste a:hover,
 .ueber-liste button:hover { color: var(--primary); }
 .ueber-liste .icon { font-size: 18px; color: var(--text-muted); }
+.ueber-gruppe {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.ueber-panel .toggle-row { padding: 9px 0; font-size: 0.9375rem; border-bottom: 0; }
+.ueber-rose .icon { font-size: 22px; }
 .ueber-familie { display: none; }
 .ueber-schleier {
   position: fixed;
@@ -431,7 +433,7 @@ h1, h2, h3, .headline {
    hellem Grund. Die Fläche trägt keine Bereichsfarbe mehr. */
 .search-wrap {
   position: relative;
-  background: var(--chrome, var(--bg));
+  background: var(--bg);
   padding: 8px 24px 20px;
   border-bottom: 1px solid var(--border);
 }
@@ -849,10 +851,6 @@ a.cat-line:hover { text-decoration: underline; }
 
 .topic-header .topic-tags { margin-top: 18px; }
 
-/* Der Feldkopf braucht kein eigenes Band mehr: Navbar und Hero tragen auf
-   Feldseiten bereits das dunkle Wappenrot. Zwei dunkle Flaechen
-   uebereinander waren genau die Luecke, die dazwischen sichtbar wurde. */
-.topic-header--field .rainbow-stripe { display: none; }
 
 .topic-header .topic-summary { color: var(--text-muted); font-size: 1rem; }
 .topic-header .topic-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
@@ -1549,18 +1547,25 @@ a.cat-line:hover { text-decoration: underline; }
 
 /* ─── Feldseite ─── */
 
-.field-more {
-  display: block;
-  margin-top: 16px;
-  padding: 12px 14px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+
+/* Probe Formsprache (16.09.2026): Der Weg ins Themenfeld steht über der Liste
+   und trägt die helle Tönung des Feldes, ohne Kante an der Seite. */
+.feld-knopf {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
   border-radius: var(--radius-xl);
-  color: var(--primary);
+  background: var(--feld-hell);
+  color: var(--feld-text);
   text-decoration: none;
-  font-size: 0.88rem;
 }
-.field-more:hover { border-color: var(--accent); }
+.feld-knopf b { display: block; font-weight: 600; }
+.feld-knopf small { font-size: 0.8125rem; opacity: 0.85; }
+.feld-knopf .klecks { width: 38px; height: 38px; }
+.feld-knopf .klecks .icon { font-size: 19px; }
+.feld-knopf > .icon { margin-left: auto; font-size: 18px; }
 
 .field-loose { margin-top: 28px; }
 
@@ -2000,35 +2005,6 @@ a.cat-line:hover { text-decoration: underline; }
 
 .sheet-event-text { font-size: 0.9rem; flex: 1; }
 
-/* -- Settings page -- */
-
-.settings-page {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 24px;
-}
-
-.settings-info {
-  background: var(--accent-light);
-  border-radius: var(--radius-xl);
-  padding: 14px 16px;
-  font-size: 0.88rem;
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.settings-info p + p {
-  margin-top: 8px;
-  opacity: 0.7;
-  font-size: 0.82rem;
-}
-
-.settings-page h3 {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  margin: 24px 0 12px;
-}
-
 .toggle-row {
   display: flex;
   align-items: center;
@@ -2078,25 +2054,6 @@ a.cat-line:hover { text-decoration: underline; }
 .toggle-row input:checked + .toggle-switch { background: var(--primary); }
 .toggle-row input:checked + .toggle-switch::after { transform: translateX(20px); }
 
-.settings-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  padding: 14px 0;
-  background: none;
-  border: none;
-  border-bottom: 1px solid var(--border);
-  cursor: pointer;
-  font-size: 0.92rem;
-  font-family: inherit;
-  color: var(--text);
-  text-align: left;
-}
-
-.settings-link:last-child { border-bottom: none; }
-.settings-link:hover { color: var(--primary); }
-.settings-link .icon { font-size: 20px; color: var(--text-muted); }
 
 /* -- Modal -- */
 
@@ -2576,13 +2533,7 @@ a.cat-line:hover { text-decoration: underline; }
 
 .contact-link:hover { opacity: 0.8; transform: scale(1.08); }
 
-.contact-link svg {
-  width: 13px;
-  height: 13px;
-  fill: currentColor;
-}
-
-.contact-link .icon { font-size: 15px; }
+.contact-link .icon { font-size: 16px; }
 
 .contact-link.cl-email { background: var(--primary); }
 .contact-link.cl-website { background: #555; }
@@ -3727,7 +3678,6 @@ body { overflow-x: clip; }
   .search-wrap { padding: 4px 16px 16px; }
   .chiprow { margin-right: -16px; }
   .chip-mehr { margin-right: 16px; }
-  #tab-einstellungen .seitenkopf { padding: 0 16px; }
   /* Probe Formsprache (15.09.2026): am Handy steht der Klecks über dem Titel */
   .topic-title { flex-direction: column; align-items: flex-start; gap: 10px; }
   main { padding: 24px 16px 48px; }
@@ -3736,7 +3686,6 @@ body { overflow-x: clip; }
   .stat-tile-value { font-size: 1.05rem; }
   .stat-tile { padding: 10px 12px; }
   .cal-day { font-size: 0.8rem; }
-  .settings-page { padding: 20px 16px; }
   .profile-header { gap: 12px; }
 }
 

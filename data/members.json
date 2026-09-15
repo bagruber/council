@@ -2313,16 +2313,6 @@
       "icon": "engineering",
       "description": "Der Bauausschuss entscheidet über Bauanträge, Bebauungspläne, Verkehrsplanung und Umweltfragen. Er besteht aus 9 stimmberechtigten Mitgliedern plus dem Vorsitzenden.",
       "chair": "mader",
-      "vicechairs": [
-        {
-          "member": "hadersdorfer",
-          "sub": "kehlringer"
-        },
-        {
-          "member": "stanglmaier",
-          "sub": "linz_kilian"
-        }
-      ],
       "seats": [
         {
           "member": "linz_karin",
@@ -2359,6 +2349,14 @@
         {
           "member": "beibl",
           "sub": "roeck"
+        },
+        {
+          "member": "hadersdorfer",
+          "sub": "kehlringer"
+        },
+        {
+          "member": "stanglmaier",
+          "sub": "linz_kilian"
         }
       ],
       "pastSeats": [
@@ -2387,16 +2385,6 @@
           "from": "2020-05-01",
           "to": "2026-04-30",
           "chair": "dollinger",
-          "vicechairs": [
-            {
-              "member": "hadersdorfer",
-              "sub": "heinz"
-            },
-            {
-              "member": "stanglmaier",
-              "sub": "becher_j"
-            }
-          ],
           "seats": [
             {
               "member": "linz_karin",
@@ -2465,22 +2453,20 @@
                   "from": "2022-06-20"
                 }
               ]
+            },
+            {
+              "member": "hadersdorfer",
+              "sub": "heinz"
+            },
+            {
+              "member": "stanglmaier",
+              "sub": "becher_j"
             }
           ]
         },
         {
           "from": "2026-05-01",
           "chair": "mader",
-          "vicechairs": [
-            {
-              "member": "hadersdorfer",
-              "sub": "kehlringer"
-            },
-            {
-              "member": "stanglmaier",
-              "sub": "linz_kilian"
-            }
-          ],
           "seats": [
             {
               "member": "linz_karin",
@@ -2517,6 +2503,14 @@
             {
               "member": "beibl",
               "sub": "roeck"
+            },
+            {
+              "member": "hadersdorfer",
+              "sub": "kehlringer"
+            },
+            {
+              "member": "stanglmaier",
+              "sub": "linz_kilian"
             }
           ]
         }
@@ -2609,7 +2603,6 @@
           "from": "2020-05-01",
           "to": "2026-04-30",
           "chair": "dollinger",
-          "vicechairs": [],
           "seats": [
             {
               "member": "haberl",
@@ -2624,8 +2617,8 @@
               "sub": "pschorr"
             },
             {
-              "member": "hobmaier",
-              "sub": "gruber"
+              "member": "gruber",
+              "sub": "hobmaier"
             },
             {
               "member": "reif",
@@ -2691,8 +2684,7 @@
             }
           ]
         }
-      ],
-      "vicechairs": []
+      ]
     },
     {
       "id": "pa",
@@ -2751,7 +2743,6 @@
           "from": "2020-05-01",
           "to": "2026-04-30",
           "chair": "dollinger",
-          "vicechairs": [],
           "seats": [
             {
               "member": "weber",
@@ -2801,8 +2792,7 @@
             }
           ]
         }
-      ],
-      "vicechairs": []
+      ]
     },
     {
       "id": "rpa",
@@ -2861,7 +2851,6 @@
           "from": "2020-05-01",
           "to": "2026-04-30",
           "chair": "lauterbach",
-          "vicechairs": [],
           "seats": [
             {
               "member": "linz_karin",
@@ -2917,8 +2906,7 @@
             }
           ]
         }
-      ],
-      "vicechairs": []
+      ]
     },
     {
       "id": "ar_klaeranlage",

@@ -7,7 +7,7 @@ import {
   protocolUrl, isWebauszug, SITZUNGSARTEN, sitzungsart,
 } from "../daten.js";
 import { formatDate, formatDuration, monthNames } from "../hilfen.js";
-import { navigate, setChrome, route, backLink } from "../routing.js";
+import { navigate, route, backLink } from "../routing.js";
 import { PERIODS, drawSimMatrix, drawSimGraph } from "./naehe.js";
 
 const main = document.getElementById("main");
@@ -213,7 +213,6 @@ function pressBadge(p) {
 // `filter` schränkt auf eine Herkunftsstufe (explicit/implicit/tracked/press/
 // sum) oder eine Erfassungsstufe (protokoll/auszug/keine/presse/ohne-presse) ein.
 function renderDatenlage(filter) {
-  setChrome("sitzung");
   main.appendChild(backLink("Übersicht", "#/"));
 
   const reg = sessionRegister();
