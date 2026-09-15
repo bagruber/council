@@ -10,7 +10,7 @@ den Modulen und sind aus ihnen heraus sichtbar.
 | Modul | Verantwortung |
 |---|---|
 | `app.js` | Einstieg: Daten laden, Einstellungen, Verdrahtung, Router starten |
-| `daten.js` | die sieben JSON-Dateien, Nachschlage-Maps, Daten-Helfer |
+| `daten.js` | die acht JSON-Dateien, Nachschlage-Maps, Daten-Helfer |
 | `hilfen.js` | Datums- und Zeitraum-Formatierung, Töne der Themenfarben (Probe Formsprache) |
 | `routing.js` | Hash-Routen, Tabs, Seiten-Chrome |
 | `kopf.js` | Kopf: „Über das Projekt“ als Panel, mobil als Blatt (Probe Formsprache) |
