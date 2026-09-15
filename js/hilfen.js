@@ -62,7 +62,17 @@ function kategorieTon(farbe) {
     t += 0.05;
     text = mischen(farbe, 0, t);
   }
-  return { text, flaeche: mischen(farbe, 255, 0.78) };
+  // tief: Band im Kopf des Themenfelds (15.09.2026), Creme darauf mindestens 8,4:1
+  return { text, flaeche: mischen(farbe, 255, 0.78), tief: mischen(farbe, 0, 0.6) };
 }
 
-export { formatDuration, formatDate, monthNames, monthLabel, formatMonthPeriod, formatPeriod, kategorieTon };
+// Probe Formsprache (15.09.2026): Steht das Gremium schon als Kategoriezeile
+// darüber, reicht vom Titel die Nummer. „12. Stadtratssitzung – September 2026“
+// wird „12. Sitzung“; ein Zusatz in Klammern bleibt stehen.
+function sitzungKurz(s) {
+  const nr = s.title.match(/^(\d+)\./);
+  const zusatz = s.title.match(/\(([^)]+)\)\s*$/);
+  return (nr ? nr[1] + ". Sitzung" : "Sitzung") + (zusatz ? " (" + zusatz[1] + ")" : "");
+}
+
+export { formatDuration, formatDate, monthNames, monthLabel, formatMonthPeriod, formatPeriod, kategorieTon, sitzungKurz };

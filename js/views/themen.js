@@ -188,7 +188,6 @@ function renderField(fieldId) {
   if (!field) { main.innerHTML = "<p>Feld nicht gefunden.</p>"; return; }
 
   setChrome("feld");
-  main.appendChild(breadcrumb([{ label: "Themen", href: "#/" }]));
 
   const dossiers = topics.filter(t => t.field === fieldId || (t.tags || []).includes(fieldId));
   const ids = new Set(dossiers.map(t => t.id));
@@ -197,11 +196,12 @@ function renderField(fieldId) {
     .filter(v => voteInField(v, fieldId))
     .sort((a, b) => b.date.localeCompare(a.date));
 
-  // Feldseiten tragen das dunkle Wappenrot, Dossiers den hellen Grund.
-  // So ist auf einen Blick klar, ob man in einer Übersicht steht oder in
-  // einer Sache — ohne dass es irgendwo geschrieben stehen muss.
+  // Feldseiten tragen ein Band im tiefen Ton ihrer Themenfarbe, Dossiers den
+  // hellen Grund. So ist auf einen Blick klar, ob man in einer Übersicht steht
+  // oder in einer Sache (Probe Formsprache, 15.09.2026).
   const header = document.createElement("div");
-  header.className = "topic-header topic-header--field";
+  header.className = "topic-header topic-header--field band";
+  header.style.setProperty("--band-flaeche", kategorieTon(field.color || "#888888").tief);
   header.innerHTML = `
     <div class="dossier-meta">
       <span class="dossier-type"><svg class="icon"><use href="#i-${field.icon}"/></svg>Themenfeld</span>
@@ -209,6 +209,7 @@ function renderField(fieldId) {
     </div>
     <div class="topic-title">${klecks(fieldId)}<h1>${field.name}</h1></div>
     <div class="rainbow-stripe" aria-hidden="true">${"<span></span>".repeat(9)}</div>`;
+  header.prepend(breadcrumb([{ label: "Themen", href: "#/" }]));
   main.appendChild(header);
 
   if (dossiers.length) {
