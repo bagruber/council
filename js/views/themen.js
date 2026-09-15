@@ -4,7 +4,6 @@
 import {
   topics, votes, sessionLengths, pressData, tagMap, topicMap, voteMap,
   sessionMap, pressMap, mediaMap, sessionRegister, lengthMin,
-  naechsteSitzung, sitzungsart,
 } from "../daten.js";
 import { formatDate, kategorieTon } from "../hilfen.js";
 import { setChrome } from "../routing.js";
@@ -62,21 +61,6 @@ function renderHome() {
       <svg class="icon"><use href="#i-chevron_right"/></svg>`;
     meta.appendChild(teaser);
   });
-  // Probe Formsprache: „nächste Sitzung“ als eine Zeile auf der Startseite.
-  // Nur für den Vergleich mit der Fläche im Kalender gebaut und per CSS
-  // ausgeblendet; vor dem Merge bleibt eine der beiden Fassungen.
-  const n = naechsteSitzung();
-  if (n) {
-    const zeile = document.createElement("a");
-    zeile.className = "naechste-kompakt";
-    zeile.href = sessionMap[n.id] ? "#/session/" + n.id : "#/kalender";
-    const tag = new Date(n.date + "T00:00:00")
-      .toLocaleDateString("de-DE", { weekday: "short", day: "numeric", month: "short" });
-    const art = sitzungsart(n.type);
-    zeile.innerHTML = `<b>Nächste Sitzung</b><span>${tag}, ${n.time} Uhr, ${art ? art.label : n.title}</span>`
-      + `<svg class="icon" aria-hidden="true"><use href="#i-chevron_right"/></svg>`;
-    main.appendChild(zeile);
-  }
   main.appendChild(meta);
 
   const heading = document.createElement("p");
