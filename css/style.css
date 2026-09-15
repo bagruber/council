@@ -57,6 +57,11 @@
   --shadow-lg: var(--shadow-lift);
   --tab-height: 56px;
   --nav-height: 48px;
+  /* Probe Formsprache, vorläufig (14.09.2026): Familienschriften statt
+     Playfair und Inter. Eingebunden in css/fonts.css. */
+  --font-display: "Source Serif 4 Variable", Georgia, serif;
+  --font-sans: "Atkinson Hyperlegible Next Variable", system-ui, sans-serif;
+  --font-script: "Madelon Script", cursive;
 }
 
 html {
@@ -81,7 +86,6 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   padding-bottom: var(--tab-height);
-  font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   /* Amtsdeutsch produziert Wörter wie "Kläranlagenbenutzungsordnung". In
      einer 360px-Spalte laufen die sonst rechts aus dem Bild. */
@@ -91,10 +95,18 @@ body {
 /* Ziffern in Abstimmungstabellen und Ergebnissen laufen einspaltig —
    sonst springt jede Spalte je nach Ziffernbreite. */
 .vote-results, .voting-stats, .vote-count, .mtl-vote-chip, .stat-value {
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
-/* Playfair nur für Seiten- und Abschnittstitel. Nie in Datenzellen:
+/* Probe Formsprache, vorläufig (14.09.2026): Source Serif 4 wählt die
+   optische Größe selbst, Ziffern stehen auf der Zeile statt mit Ober- und
+   Unterlängen. */
+h1, h2, h3, .headline {
+  font-optical-sizing: auto;
+  font-variant-numeric: lining-nums;
+}
+
+/* Die Titelschrift nur für Seiten- und Abschnittstitel. Nie in Datenzellen:
    die Serifen kosten dort Lesbarkeit, ohne Charakter zu gewinnen. */
 .headline {
   font-family: var(--font-display);

@@ -1,29 +1,32 @@
-/* Self-hosted Fonts — keine externen CDN-Requests (DSGVO).
-   Inter Variable + Playfair Display: latin-Subset, OFL.
-   Beide aus dem Moosburg Design System. */
+/* Self-hosted Fonts, keine externen CDN-Requests (DSGVO).
+   Probe Formsprache, vorläufig (14.09.2026): Source Serif 4 (optische Größen),
+   Atkinson Hyperlegible Next und Madelon Script. Die woff2 aus Fontsource 5.3.0,
+   latin-Subset, OFL; Madelon wie in haushaltvis. Familiennamen wie bei
+   Fontsource, damit ein späterer Kanon-Eintrag überall gleich heißt.
+   Inter und Playfair liegen weiter in fonts/, sind aber nicht mehr eingebunden. */
 
 @font-face {
-  font-family: 'Inter';
+  font-family: "Source Serif 4 Variable";
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 200 900;
   font-display: swap;
-  src: url('../fonts/Inter-latin-var.woff2') format('woff2');
+  src: url("../fonts/source-serif-4-latin-opsz-normal.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Playfair Display';
+  font-family: "Atkinson Hyperlegible Next Variable";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("../fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Madelon Script";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/PlayfairDisplay-latin-400.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/PlayfairDisplay-latin-700.woff2') format('woff2');
+  src: url("../fonts/MadelonScript.otf") format("opentype");
 }
 
 /* Icons liegen als Phosphor-SVG-Sprite inline in index.html, keine Icon-Font. */
