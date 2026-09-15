@@ -1,9 +1,9 @@
-// Datenbestand und Nachschlagewerke. Lädt die sieben JSON-Dateien und baut
+// Datenbestand und Nachschlagewerke. Lädt die acht JSON-Dateien und baut
 // daraus die Maps, die alle Views teilen. Die Exporte sind live bindings:
 // sie stehen erst nach ladeDaten() — der Einstieg (app.js) wartet darauf,
 // bevor er rendert.
 
-let topics, sessions, votes, tags, membersData, pressData, sessionLengths;
+let topics, sessions, votes, tags, membersData, pressData, sessionLengths, termine;
 let members, parties, bodies, seatOrder, mediaSources;
 const mediaMap = {};
 const pressMap = {};
@@ -20,7 +20,8 @@ const sessionByDateBody = {};
 const votesBySession = {};
 
 async function ladeDaten() {
-  [topics, sessions, votes, tags, membersData, pressData, sessionLengths] = await Promise.all([
+  let termineData;
+  [topics, sessions, votes, tags, membersData, pressData, sessionLengths, termineData] = await Promise.all([
     fetch("data/topics.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     fetch("data/sessions.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     fetch("data/votes.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
@@ -28,7 +29,9 @@ async function ladeDaten() {
     fetch("data/members.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     fetch("data/press.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     fetch("data/sessionlengths.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+    fetch("data/termine.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
   ]);
+  termine = termineData.termine || [];
 
   members = membersData.members;
   members.forEach(m => { if (!m.name) m.name = m.firstName + " " + m.lastName; });
@@ -91,6 +94,14 @@ function isWebauszug(s) {
 // keine Niederschrift, keine Beschlüsse.
 function isVorschau(s) {
   return !!(s.source && s.source.kind === "vorschau");
+}
+
+// Probe Formsprache: der nächste angekündigte Termin ab heute. Bestimmt beim
+// Rendern, nie fest eingetragen; ohne Termin null.
+function naechsteSitzung() {
+  return termine
+    .filter(t => t.date >= nowStr)
+    .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time))[0] || null;
 }
 
 // Ein Eintrag je Sitzung, die stattgefunden hat — unabhängig davon, ob eine
@@ -163,11 +174,11 @@ function bodyIdForSession(s) {
 
 export {
   ladeDaten,
-  topics, sessions, votes, tags, membersData, pressData, sessionLengths,
+  topics, sessions, votes, tags, membersData, pressData, sessionLengths, termine,
   members, parties, bodies, seatOrder, mediaSources, mediaMap, pressMap,
   topicMap, sessionMap, voteMap, tagMap, memberMap, partyMap, bodyMap,
   sessionsSorted, lengthMap, sessionByDateBody, votesBySession,
   SITZUNGSARTEN, sitzungsart,
-  protocolUrl, isWebauszug, isVorschau, sessionRegister, tierCounts, lengthMin,
+  protocolUrl, isWebauszug, isVorschau, naechsteSitzung, sessionRegister, tierCounts, lengthMin,
   nowStr, memberActiveAt, isActive, bodyIdForSession,
 };

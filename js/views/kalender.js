@@ -1,5 +1,5 @@
 // Kalender-Tab: Monatsraster mit Sitzungspunkten und Tages-Sheet.
-import { sessions } from "../daten.js";
+import { sessions, sessionMap, naechsteSitzung } from "../daten.js";
 import { formatDate, monthNames } from "../hilfen.js";
 
 let calYear, calMonth;
@@ -20,6 +20,7 @@ export function initKalender() {
   const now = new Date();
   calYear = now.getFullYear();
   calMonth = now.getMonth();
+  renderNaechsteSitzung();
 
   document.getElementById("cal-prev").addEventListener("click", () => {
     if (--calMonth < 0) { calMonth = 11; calYear--; }
@@ -127,6 +128,28 @@ function openDaySheet(dateStr, events) {
   });
 
   calSheet.classList.remove("hidden");
+}
+
+// Probe Formsprache, vorläufig (14.09.2026): Farbfläche „nächste Sitzung“ oben
+// im Kalender. Ohne Termin ab heute gibt es keine Fläche; den Knopf zur
+// Tagesordnung nur, wenn es die Sitzungsseite schon gibt.
+function renderNaechsteSitzung() {
+  const box = document.getElementById("naechste-sitzung");
+  const t = naechsteSitzung();
+  if (!t) { box.hidden = true; return; }
+  const tag = new Date(t.date + "T00:00:00")
+    .toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" });
+  const knopf = sessionMap[t.id]
+    ? `<a class="flaeche-knopf" href="#/session/${t.id}">Tagesordnung<svg class="icon" aria-hidden="true"><use href="#i-chevron_right"/></svg></a>`
+    : "";
+  box.innerHTML = `
+    <div class="flaeche-inhalt">
+      <h2 class="flaeche-etikett" id="naechste-sitzung-titel">Nächste Sitzung</h2>
+      <p class="flaeche-gross">${tag}</p>
+      <p class="flaeche-text">${t.title}, ${t.time} Uhr<br>${t.location}</p>
+      ${knopf}
+    </div>
+    <div class="rainbow-stripe" aria-hidden="true">${"<span></span>".repeat(9)}</div>`;
 }
 
 export { renderCalendar };

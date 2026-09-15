@@ -1887,6 +1887,76 @@ a.cat-line:hover { text-decoration: underline; }
 .cal-dot.bpu { background: var(--body-bpu); }
 .cal-dot.hvfa { background: var(--body-hvfa); }
 
+/* Probe Formsprache, vorläufig (14.09.2026): Farbfläche „nächste Sitzung“
+   oben im Kalender. Werte aus dem Protokoll: dunkle Fläche, Creme-Schrift,
+   Etikett in Gold-200, Stripe als unterer Abschluss, keine Handschrift
+   (Werkzeug-Profil). Welche Farbe die Fläche trägt, ist offen; sie steht
+   deshalb in einer Variable. */
+.flaeche,
+.naechste-kompakt { --flaeche-sitzung: var(--color-gold-700); }
+
+.flaeche {
+  width: calc(100% - 48px);
+  max-width: 552px;
+  margin: 16px auto 4px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--flaeche-sitzung);
+  color: var(--color-cream);
+}
+.flaeche[hidden] { display: none; }
+.flaeche-inhalt { padding: 18px 20px 20px; }
+.flaeche-etikett {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gold-200);
+}
+.flaeche-gross {
+  margin-top: 2px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 1.15;
+  color: var(--color-cream);
+}
+.flaeche-text {
+  margin-top: 6px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgb(250 247 242 / 0.88);
+}
+.flaeche-knopf {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 14px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: var(--color-cream);
+  color: var(--flaeche-sitzung);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+.flaeche-knopf .icon { font-size: 16px; }
+
+/* Variante Startseite, eine Zeile. Nur für den Vergleich gebaut und
+   ausgeblendet; vor dem Merge fällt eine der beiden Fassungen weg. */
+.naechste-kompakt {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--flaeche-sitzung);
+  color: var(--color-cream);
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+.naechste-kompakt b { font-weight: 600; color: var(--color-gold-200); }
+.naechste-kompakt .icon { margin-left: auto; font-size: 16px; }
+
 /* -- Bottom sheet -- */
 
 .bottom-sheet {
