@@ -5,7 +5,7 @@ import {
   topics, votes, sessionLengths, pressData, tagMap, topicMap, voteMap,
   sessionMap, pressMap, mediaMap, sessionRegister, lengthMin,
 } from "../daten.js";
-import { formatDate } from "../hilfen.js";
+import { formatDate, kategorieTon } from "../hilfen.js";
 import { setChrome } from "../routing.js";
 import { syncTagPills } from "../suche.js";
 import { renderVoteBlock } from "./voten.js";
@@ -82,16 +82,29 @@ function renderFilteredTopics(tagIds) {
   }
 }
 
+// Probe Formsprache, vorläufig (14.09.2026): Kategoriezeile statt Pille.
 function categoryChip(tid, asLink) {
   const t = tagMap[tid];
-  if (!t) return `<span class="cat-chip">${tid}</span>`;
-  const color = t.color || "#888";
-  const icon = t.icon ? `<svg class="icon cat-chip-icon"><use href="#i-${t.icon}"/></svg>` : "";
+  if (!t) return `<span class="cat-line">${tid}</span>`;
+  const color = kategorieTon(t.color || "#888888").text;
+  const icon = t.icon ? `<svg class="icon" aria-hidden="true"><use href="#i-${t.icon}"/></svg>` : "";
   const inner = `${icon}<span>${t.name}</span>`;
-  // In Karten muss der Chip ein span bleiben — verschachtelte Links sind ungültig.
+  // In Karten muss die Zeile ein span bleiben, verschachtelte Links sind ungültig.
   return asLink
-    ? `<a class="cat-chip" href="#/feld/${tid}" style="--cat-color:${color}">${inner}</a>`
-    : `<span class="cat-chip" style="--cat-color:${color}">${inner}</span>`;
+    ? `<a class="cat-line" href="#/feld/${tid}" style="--cat-color:${color}">${inner}</a>`
+    : `<span class="cat-line" style="--cat-color:${color}">${inner}</span>`;
+}
+
+// Klecks nur in den Köpfen von Themenfeld und Dossier, nie in Listen.
+const KLECKS = "M25 3.5c8.6.3 17.8 5.2 19.2 14.6 1.5 9.8-4 21.5-14.4 24.9C19.7 46.3 6.6 41.5 4.3 30.7 2 19.6 12.2 3 25 3.5z";
+
+function klecks(tid) {
+  const t = tagMap[tid];
+  if (!t || !t.icon) return "";
+  const ton = kategorieTon(t.color || "#888888");
+  return `<span class="klecks" style="--klecks-flaeche:${ton.flaeche};--klecks-ton:${ton.text}" aria-hidden="true">`
+    + `<svg viewBox="0 0 48 48"><path d="${KLECKS}"/></svg>`
+    + `<svg class="icon"><use href="#i-${t.icon}"/></svg></span>`;
 }
 
 function renderTopicList(list) {
@@ -102,7 +115,7 @@ function renderTopicList(list) {
     card.className = "topic-card";
     card.href = "#/topic/" + topic.id;
     card.innerHTML = `
-      <div class="topic-categories">${(topic.tags || []).map(categoryChip).join("")}</div>
+      <div class="topic-categories">${(topic.tags || []).map(t => categoryChip(t)).join("")}</div>
       <h3>${topic.title}</h3>
       <div class="topic-summary">${topic.summary}</div>`;
     wrap.appendChild(card);
@@ -184,7 +197,7 @@ function renderField(fieldId) {
       <span class="dossier-type"><svg class="icon"><use href="#i-${field.icon}"/></svg>Themenfeld</span>
       <span class="dossier-count">${dossiers.length} Dossiers · ${loose.length} einzelne Beschlüsse</span>
     </div>
-    <h1>${field.name}</h1>
+    <div class="topic-title">${klecks(fieldId)}<h1>${field.name}</h1></div>
     <div class="rainbow-stripe" aria-hidden="true">${"<span></span>".repeat(9)}</div>`;
   main.appendChild(header);
 
@@ -329,7 +342,7 @@ function renderTopic(id) {
   header.className = "topic-header";
   header.innerHTML = `
     ${renderDossierHead(topic)}
-    <h1>${topic.title}</h1>
+    <div class="topic-title">${klecks((topic.tags || [])[0])}<h1>${topic.title}</h1></div>
     <div class="topic-summary">${topic.summary}</div>
     <div class="topic-tags">${(topic.tags || []).map(t => categoryChip(t, true)).join("")}</div>`;
   main.appendChild(header);
