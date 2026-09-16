@@ -427,9 +427,10 @@ function makeContactLink(type, href) {
     threads: "Threads", linkedin: "LinkedIn", facebook: "Facebook",
   };
   a.setAttribute("aria-label", labels[type] || type);
-  // Alle Zeichen aus dem Phosphor-Sprite, auch die Logos (16.09.2026).
+  // Eigene, kräftigere Zeichen für diese Reihe: die Glyphe steht weiß in einer
+  // 26 px kleinen farbigen Fläche (16.09.2026).
   const ids = {
-    email: "email", website: "language", instagram: "instagram",
+    email: "kontakt_email", website: "kontakt_website", instagram: "instagram",
     threads: "threads", linkedin: "linkedin", facebook: "facebook",
   };
   a.innerHTML = `<svg class="icon"><use href="#i-${ids[type] || "link"}"/></svg>`;
