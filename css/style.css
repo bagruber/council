@@ -1654,6 +1654,7 @@ a.cat-line:hover { text-decoration: underline; }
 .parliament-wrap .seat.seat-absent .seat-content { opacity: 0.45; }
 .parliament-wrap .seat:hover .seat-content { opacity: 0.85; }
 .parliament-wrap .seat.seat-absent:hover .seat-content { opacity: 0.7; }
+.parliament-wrap .seat-mayor-label { font-size: 0.6875rem; }
 
 /* Seat info (used in tooltip + popover) */
 .seat-name {
@@ -2975,12 +2976,12 @@ a.cat-line:hover { text-decoration: underline; }
 }
 
 .chart-tick {
-  font-size: 10px;
+  font-size: 0.625rem;
   fill: var(--text-muted);
 }
 
 .chart-cap {
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 600;
   fill: var(--text);
 }
@@ -3164,7 +3165,7 @@ a.tier-chip.on {
   min-width: 48px;
   max-width: 180px;
   height: 5px;
-  border-radius: 3px;
+  border-radius: var(--radius-md);
   overflow: hidden;
 }
 .tier-bar > span { display: block; }
@@ -3460,7 +3461,7 @@ a.tier-chip.on {
 .period-switch button {
   padding: 3px 10px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xl);
   background: var(--surface);
   font: inherit;
   font-size: 0.75rem;
@@ -3484,7 +3485,7 @@ a.tier-chip.on {
 
 /* Der Fraktionsblock, an der Diagonale gespiegelt */
 .hm-frame { fill: none; stroke-width: 1.6; stroke-opacity: 0.75; }
-.hm-frame-label { font-size: 8.5px; font-weight: 600; }
+.hm-frame-label { font-size: 0.53125rem; font-weight: 600; }
 
 .hm-legend {
   display: flex;
@@ -3526,7 +3527,7 @@ a.tier-chip.on {
 .hm-key-none { background: var(--bg); }
 
 .simgraph { max-width: 100%; height: auto; }
-.simgraph text { font-size: 9.5px; }
+.simgraph text { font-size: 0.59375rem; }
 /* Kanten sind Bild, kein Ziel. Sonst nimmt Chrome sie nach einer Berührung
    als Klickziel, weil sie unter dem Finger quer durchs Netz laufen. */
 .simgraph line { pointer-events: none; }
