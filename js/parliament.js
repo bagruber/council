@@ -164,7 +164,7 @@ const VoteVis = (() => {
     const pop = document.createElement("div");
     pop.className = "seat-popover";
     pop.innerHTML = `
-      <button class="seat-popover-close" aria-label="Schließen">&times;</button>
+      <button class="seat-popover-close" aria-label="Schließen"><svg class="icon"><use href="#i-close"/></svg></button>
       <div class="seat-popover-body">${seatInfoHTML(seat)}</div>
       <a href="#/member/${seat.id}" class="seat-popover-link">Profil ansehen →</a>`;
 
@@ -386,7 +386,7 @@ const VoteVis = (() => {
       lbl.setAttribute("x", mx);
       lbl.setAttribute("y", my + o.seatRadius * 1.4 + 10);
       lbl.setAttribute("text-anchor", "middle");
-      lbl.setAttribute("font-size", "11");
+      lbl.setAttribute("class", "seat-mayor-label");
       lbl.setAttribute("fill", "var(--text-muted)");
       lbl.textContent = "BM";
       svg.appendChild(lbl);
