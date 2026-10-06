@@ -79,7 +79,7 @@ TOPIC_ONLY = {
 
 
 def active(m, d):
-    sp = m.get('periods') or [{'from': m.get('from'), 'to': m.get('to')}]
+    sp = m['mandates']
     return any((s.get('from') or '0') <= d and (not s.get('to') or s['to'] >= d)
                for s in sp)
 
@@ -89,7 +89,7 @@ def main():
     load = lambda n: json.load(open(os.path.join(DATA, n), encoding='utf-8'))
     press, votes, sessions, topics = (load('press.json'), load('votes.json'),
                                       load('sessions.json'), load('topics.json'))
-    members = load('members.json')['members']
+    members = load('members.json')
     vmap = {v['id']: v for v in votes}
     smap = {s['id']: s for s in sessions}
 

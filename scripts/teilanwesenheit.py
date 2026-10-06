@@ -63,7 +63,7 @@ def main():
     pfad = os.path.join(DATA, 'sessions.json')
     sessions = json.load(open(pfad, encoding='utf-8'))
     members = {m['id'] for m in json.load(
-        open(os.path.join(DATA, 'members.json'), encoding='utf-8'))['members']}
+        open(os.path.join(DATA, 'members.json'), encoding='utf-8'))}
 
     nach_id = {s['id']: s for s in sessions}
     for sid, eintraege in VERMERKE.items():

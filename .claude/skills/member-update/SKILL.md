@@ -1,6 +1,6 @@
 ---
 name: member-update
-description: Trägt einen Mitglieder-Wechsel sauber in members.json ein — Nachrücker:in tritt ein, Vorgänger:in scheidet aus, Funktionen wechseln (3. BM, Referent:in), Ausschuss-Sitze gehen über. Setzt automatisch das to-Datum des Vorgängers, das from-Datum der Nachfolge, und ergänzt seatConfigs.occupants. Kann auch reine Funktions-Updates (Referatswechsel, Vize-BM-Wechsel) abdecken.
+description: Trägt einen Mitglieder-Wechsel sauber in members.json und bodies.json ein — Nachrücker:in tritt ein, Vorgänger:in scheidet aus, Funktionen wechseln (3. BM, Referent:in), Ausschuss-Sitze gehen über. Schliesst den Mandatsabschnitt des Vorgängers, öffnet den der Nachfolge, setzt succeeds und ergänzt seatConfigs.occupants. Kann auch reine Funktions-Updates (Referatswechsel, Vize-BM-Wechsel) abdecken.
 ---
 
 # Mitglieder-Update einarbeiten
@@ -23,15 +23,23 @@ Mindestens: wer, was, wann. Beispiele:
 
 ## Datenmodell (Cheatsheet)
 
+Seit Oktober 2026 liegt der Bestand in vier Dateien: `members.json`,
+`parties.json` (Fraktionen und beide Sitzordnungen), `bodies.json`,
+`media.json`. Die Form steht in `data/schema/*.schema.json`.
+
 ```jsonc
 // data/members.json
 {
-  "id": "strobl", "name": "...",
-  "from": "2023-07-24",            // tag der Vereidigung / Nachrückung
-  "to":   null,                    // null = aktuell aktiv
-  "periods": [ ... ],              // OPTIONAL: nur bei nicht-zusammenhängenden Mandaten
-  "party": "spd", "partyHistory": [...],
-  "role": "councillor" | "mayor",
+  "id": "strobl",
+  "firstName": "...", "lastName": "...",
+  // Mandat, Fraktion und Rolle in einer geordneten Liste. Kein Abstand
+  // zwischen zwei Abschnitten heisst Fraktions- oder Rollenwechsel, eine
+  // Luecke heisst unterbrochenes Mandat (Marschoun 2014-2020 und seit 2026).
+  // Beruehren sich zwei Abschnitte an ihrer Grenze, gilt der spaetere.
+  "mandates": [
+    {"from": "2023-07-24", "party": "linke", "role": "councillor"}
+  ],
+  "succeeds": ["john"],            // OPTIONAL: fuer wen nachgerueckt wurde
   "title": "3. Bürgermeister:in",  // OPTIONAL, aktuelle Funktion
   "profile": {
     "titles": [                    // OPTIONAL: vollständige Funktions-Historie
@@ -42,8 +50,11 @@ Mindestens: wer, was, wann. Beispiele:
 }
 ```
 
+`from`, `to`, `party` und `role` am Mitglied gibt es nicht mehr; die App
+leitet sie beim Laden aus dem ersten und letzten Abschnitt ab.
+
 ```jsonc
-// data/members.json → bodies[].seatConfigs[].seats[]
+// data/bodies.json → [].seatConfigs[].seats[]
 {
   "occupants": [
     {"member": "john",   "from": "2020-05-01", "to": "2023-07-23"},
@@ -60,13 +71,14 @@ Absolutes Datum. Nie „nächste Woche" oder „Mai". Wenn User unklar, **nachfr
 
 ### 2. Vorgänger:in
 
-- `member.to = YYYY-MM-DD` (Tag vor Eintritt der Nachfolge).
+- Im letzten Abschnitt von `mandates` das `to` setzen (Tag vor Eintritt der Nachfolge).
 - Falls eine Niederschrift den Tag bestätigt, voteId/sessionId zur Doku im commit message erwähnen.
 
 ### 3. Nachfolger:in
 
-- Falls schon in `members.json`: `member.from = YYYY-MM-DD` setzen, `member.to = null` (falls vorher gesetzt).
-- Falls neu: vollen Datensatz anlegen — id (snake_case Nachname), name, party, role, from. Bild-Datei `img/members/originals/<id>.png` einfordern.
+- Falls schon in `members.json` (Rückkehr): einen neuen Abschnitt an `mandates` anhängen, mit `from` und ohne `to`.
+- Falls neu: vollen Datensatz anlegen — id (snake_case Nachname), firstName, lastName, ein `mandates`-Abschnitt. Bild-Datei `img/members/originals/<id>.png` einfordern.
+- `succeeds: ["<id der vorgängerin>"]` setzen. Mehrere nur, wenn mehrere gleichzeitig ausschieden und nicht überliefert ist, wer für wen nachrückte. **Beim Wechsel der Wahlperiode gibt es keine Nachfolge** — dort wurde gewählt.
 
 ### 4. seatConfigs.occupants
 
@@ -96,6 +108,7 @@ Erwartete clean. Wenn Warnings über Period-Overlap auftauchen — fixen.
 
 ## Edge Cases
 
-- **Marschoun-Muster**: Person war früher schon mal im Rat, kommt zurück → `periods: [...]` statt `from`/`to`.
+- **Marschoun-Muster**: Person war früher schon mal im Rat, kommt zurück → zweiter Abschnitt in `mandates` mit einer Lücke davor.
+- **Fraktionswechsel mitten im Mandat**: den laufenden Abschnitt mit `to` auf den Wechseltag schliessen und einen neuen mit demselben `from` anlegen. Kein `succeeds`, das Mandat läuft weiter.
 - **Mitten in Sitzung**: Niederlegung passiert in einer Sitzung; Voten *vor* der Vereidigung gehören dem Vorgänger, *nach* der Nachfolge dem Nachfolger. Beim Einarbeiten der Niederschrift entsprechend per-Vote die `voters`-Map nutzen.
 - **Stellvertreter:in-Wechsel** (häufiger als Hauptsitz-Wechsel): nur die `sub`-Felder der relevanten `vicechairs[]` / `seats[]` updaten. Keine `occupants`-Historie nötig, weil Stellv. nicht stimmen, wenn der Hauptsitz da ist — und wenn er stimmt, ergibt sich's aus der Niederschrift.

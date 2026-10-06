@@ -1,6 +1,6 @@
 ---
 name: build-data
-description: Baut data/bundle.json (kombinierte JSON + vorberechnete Indizes) aus den 6 hand-gepflegten Datenquellen. Nicht zwingend für die Live-App, aber nützlich für schnelle Querys, Smoke-Tests, Statistiken. Ruft auch validate-data zur Sicherheit auf.
+description: Baut data/bundle.json (kombinierte JSON + vorberechnete Indizes) aus den 9 hand-gepflegten Datenquellen. Nicht zwingend für die Live-App, aber nützlich für schnelle Querys, Smoke-Tests, Statistiken. Ruft auch validate-data zur Sicherheit auf.
 ---
 
 # Bundle bauen
@@ -25,7 +25,10 @@ Schreibt `data/bundle.json`.
 
 ```jsonc
 {
-  "members":  {...},               // 1:1 aus members.json
+  "members":  [...],               // 1:1 aus members.json
+  "parties":  {...},               // 1:1 aus parties.json
+  "bodies":   [...],               // 1:1 aus bodies.json
+  "media":    [...],               // 1:1 aus media.json
   "sessions": [...],
   "votes":    [...],
   "topics":   [...],

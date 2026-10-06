@@ -143,7 +143,7 @@ def main():
 
     load = lambda n: json.load(open(os.path.join(DATA, n), encoding='utf-8'))
     votes, sessions, press = load('votes.json'), load('sessions.json'), load('press.json')
-    members = load('members.json')['members']
+    members = load('members.json')
     findings = json.load(open(os.path.join(CRAWL, 'findings.json'), encoding='utf-8'))
     idf, _ = build_idf(votes)
     names = name_stems(members)

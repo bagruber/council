@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Abstimmungen",
+  "description": "Das Datum steht an der Sitzung, nicht hier. `source` sagt, woher das Ergebnis stammt, `voters` woher die einzelne Stimme.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "sessionId", "title", "type", "results", "source"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "string" },
+      "sessionId": { "type": "string" },
+      "topicId": { "type": ["string", "null"] },
+      "title": { "type": "string" },
+      "text": { "type": "string" },
+      "type": { "enum": ["named", "anonymous"] },
+      "result": { "enum": ["rejected"] },
+      "results": {
+        "oneOf": [
+          {
+            "description": "named: die Niederschrift nennt jeden Namen",
+            "type": "object",
+            "required": ["yes", "no", "absent"],
+            "additionalProperties": false,
+            "properties": {
+              "yes": { "type": "array", "items": { "type": "string" } },
+              "no": { "type": "array", "items": { "type": "string" } },
+              "absent": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          {
+            "description": "anonymous: nur Zahlen",
+            "type": "object",
+            "required": ["yes", "no"],
+            "additionalProperties": false,
+            "properties": {
+              "yes": { "type": "integer" },
+              "no": { "type": "integer" },
+              "absent": { "type": "integer" },
+              "absent_ids": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        ]
+      },
+      "inferable": {
+        "description": "false sperrt die Ableitung aus Einstimmigkeit, \"teilweise\" nur für die Teilanwesenden.",
+        "enum": [false, "teilweise"]
+      },
+      "source": {
+        "type": "object",
+        "required": ["tier"],
+        "additionalProperties": false,
+        "properties": {
+          "tier": {
+            "enum": ["protocol-explicit", "protocol-implicit", "tracked",
+                     "press", "selbstauskunft", "result-only"]
+          },
+          "by": { "type": "string", "description": "Mitglieds-ID" },
+          "byName": { "type": "string", "description": "Für Erfasser ohne Mandat" },
+          "pressId": { "type": ["string", "array"], "items": { "type": "string" } },
+          "pressVerified": { "type": "boolean" },
+          "pressScope": { "enum": ["full", "partial"] },
+          "provisional": { "type": "boolean" }
+        }
+      },
+      "excluded": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["member", "reason"],
+          "additionalProperties": false,
+          "properties": {
+            "member": { "type": "string" },
+            "reason": {
+              "description": "beteiligung = persönlich beteiligt (Art. 49 GO); kein_mandat = am Wechseltag hielt die andere Person den Sitz.",
+              "enum": ["beteiligung", "enthaltung", "nicht_stimmberechtigt",
+                       "kein_mandat", "kurz_abwesend"]
+            }
+          }
+        }
+      },
+      "voters": {
+        "description": "Je Person: Stimme und Herkunft. Ein Eintrag ohne `vote` trägt nur die Herkunft.",
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "vote": { "enum": ["yes", "no", "absent"] },
+            "tiers": {
+              "type": "array", "minItems": 1,
+              "items": { "enum": ["protocol-explicit", "protocol-implicit", "tracked",
+                                  "press", "selbstauskunft"] }
+            },
+            "by": { "type": "string" },
+            "evidence": {
+              "description": "soft = aus einer Wortmeldung erschlossen, nicht als Stimme berichtet.",
+              "enum": ["soft"]
+            },
+            "note": { "type": "string" }
+          }
+        }
+      },
+      "note": { "type": "string" }
+    }
+  }
+}

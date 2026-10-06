@@ -9,20 +9,9 @@ const gremienMain = document.getElementById("gremien-main");
 
 // -- Fraktionszugehörigkeit --
 
-// Ein Mandat kann die Fraktion wechseln; `partyHistory` hält das fest. Ohne
-// Historie gilt die aktuelle Partei für das ganze Mandat.
-function partySpans(m) {
-  const mandate = m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }];
-  const first = mandate[0].from, last = mandate[mandate.length - 1].to;
-  if (!m.partyHistory || !m.partyHistory.length) {
-    return [{ party: m.party, from: first, to: last }];
-  }
-  return m.partyHistory.map(p => ({
-    party: p.party,
-    from: p.from && p.from > first ? p.from : first,
-    to: p.to && (!last || p.to < last) ? p.to : last,
-  }));
-}
+// Ein Mandat kann die Fraktion wechseln; die Abschnitte in `mandates`
+// halten das fest, Council.partySpans fasst sie je Fraktion zusammen.
+const partySpans = m => Council.partySpans(m);
 
 function factionRoster(pid) {
   const today = new Date().toISOString().slice(0, 10);

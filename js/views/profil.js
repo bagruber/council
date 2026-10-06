@@ -48,10 +48,7 @@ function renderMemberProfile(id) {
                   : "Übersicht";
   wrap.appendChild(backLink(backLabel, "#" + backHash));
 
-  const currentPartyId = m.partyHistory && m.partyHistory.length
-    ? m.partyHistory[m.partyHistory.length - 1].party
-    : m.party;
-  const party = partyMap[currentPartyId] || partyMap[m.party];
+  const party = partyMap[m.party];
   const profile = m.profile || {};
 
   // header
@@ -161,18 +158,20 @@ function renderMemberProfile(id) {
   rolesSection.innerHTML = "<h3>Mandate & Funktionen</h3>";
 
   const roleLabel = r => r === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
-  const mandates = ((m.periods && m.periods.length) ? m.periods : [{ from: m.from, to: m.to }])
-    .map(p => ({ icon: "account_balance", label: roleLabel(m.role), from: p.from, to: p.to }))
-    .concat((m.roleHistory || []).map(rh =>
-      ({ icon: "account_balance", label: roleLabel(rh.role), from: rh.from, to: rh.to })));
+  const mandates = m.mandates.map(p =>
+    ({ icon: "account_balance", label: roleLabel(p.role), from: p.from, to: p.to }));
+
   mergeRoles(mandates).forEach(r => {
     rolesSection.appendChild(makeRoleRow(r.icon, r.label, r.spans));
   });
 
-  if (m.partyHistory && m.partyHistory.length) {
+  // Nur wo wirklich gewechselt wurde. Ein unterbrochenes Mandat ergibt zwei
+  // Abschnitte derselben Fraktion — das ist kein Wechsel.
+  const spans = Council.partySpans(m);
+  if (new Set(spans.map(x => x.party)).size > 1) {
     const phWrap = document.createElement("div");
     phWrap.className = "party-history";
-    m.partyHistory.forEach(ph => {
+    spans.forEach(ph => {
       const p = partyMap[ph.party];
       const color = p ? p.color : "#999";
       const name = p ? p.name : ph.party;
@@ -475,7 +474,9 @@ function committeeRoles(m) {
       }
       if (role === null) return;
       // Der Sitz kann nicht vor dem Mandat beginnen und nicht danach enden.
-      const span = (m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }])
+      // Zugeschnitten wird am Mandat, nicht am einzelnen Abschnitt: ein
+      // Fraktionswechsel mitten im Mandat verkürzt keinen Ausschusssitz.
+      const span = Council.mandateSpans(m)
         .find(p => (!p.to || !from || p.to >= from) && (!to || !p.from || p.from <= to));
       if (span) {
         if (span.from && (!from || span.from > from)) from = span.from;

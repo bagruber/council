@@ -118,13 +118,13 @@ def find_names(sentence, members):
     for ln, group in by_last.items():
         if len(group) == 1:
             g = group[0]
-            out.append({'id': g['id'], 'name': ln, 'party': g.get('party'),
+            out.append({'id': g['id'], 'name': ln, 'party': partei(g),
                         'ambiguous': False})
             continue
         named = [g for g in group if g.get('firstName') and g['firstName'] in sentence]
         if len(named) == 1:
             g = named[0]
-            out.append({'id': g['id'], 'name': ln, 'party': g.get('party'),
+            out.append({'id': g['id'], 'name': ln, 'party': partei(g),
                         'ambiguous': False})
         else:
             out.append({'id': None, 'name': ln, 'ambiguous': True,
@@ -218,10 +218,16 @@ def load():
     return votes, sess, mem, press, url_media
 
 
+# Die Fraktion steht am letzten Mandatsabschnitt.
+def partei(m):
+    return m['mandates'][-1]['party'] if m.get('mandates') else None
+
+
 def members_at(members, date):
     return [m for m in members
-            if not (m.get('from') and m['from'] > date)
-            and not (m.get('to') and m['to'] < date)]
+            if any(not (p.get('from') and p['from'] > date)
+                   and not (p.get('to') and p['to'] < date)
+                   for p in m['mandates'])]
 
 
 def run(window=14):

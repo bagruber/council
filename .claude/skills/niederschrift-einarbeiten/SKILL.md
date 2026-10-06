@@ -43,7 +43,7 @@ For each session extract:
 - **Absent members (full session)** as member IDs (snake_case lastnames).
 - **Partial attendees** with times — `"haberl ab 18:15"`, `"tristl bis 20:40"`.
 - **Per-vote brief absences** if explicitly noted.
-- **Complete agenda** with item numbers (3, 4.1, 5a, …).
+- **Complete agenda** with item numbers (3, 4.1, 5a, …). Immer als Text, nie als Zahl — `6.10` ist keine `6.1`.
 - **All votes**: item number, short title, 1–2-sentence summary, yes/no/absent counts (totals: 25 stadtrat, 12 BPU, 8 HVFA pre-2026 or 12 from 2026+), unanimous flag, rejected flag, any named/roll-call vote info.
 
 ### 3. Period-aware member roster
@@ -52,7 +52,7 @@ Active members depend on session date — pick the right roster:
 
 | Period | List |
 |---|---|
-| 2014-09 → 2020-04 (PRE-Mai 2020) | check members.json with `from` ≤ date ≤ `to` |
+| 2014-09 → 2020-04 (PRE-Mai 2020) | check members.json: ein Abschnitt in `mandates` enthält das Datum |
 | 2020-05 → 2021-10 (Wittmann era) | standard 2020-2026 with wittmann/neumayr as fresh |
 | 2021-10 → 2022-10 (Grübl/Neumayr) | gruebl + neumayr |
 | 2022-10 → 2024-10 (Grübl/Gruber) | gruebl + gruber |
@@ -82,28 +82,47 @@ For BPU/HVFA: use the `seatConfigs` to determine the right composition for that 
     "absent": ["id1", "id2"],
     "substitutes": [{"member": "regular_id", "substitute": "sub_id"}],
     "agenda": [
-      {"number": 3, "title": "...", "voteId": "sr_YYYYMMDD_01", "topicId": "tN" /* optional */, "press": ["..."] /* optional */},
-      {"number": 4, "title": "...", "type": "discussion"} /* non-voting */
+      {"number": "3", "title": "...", "voteIds": ["sr_YYYYMMDD_01"], "topicId": "tN" /* optional */, "press": ["..."] /* optional */},
+      {"number": "4", "title": "...", "type": "discussion"} /* non-voting */
     ]
   }
   ```
 - Vote shape:
   - **Named** (unanimous derivable from attendance):
     ```json
-    {"id":"...","sessionId":"...","topicId":null,"date":"...",
+    {"id":"...","sessionId":"...","topicId":null,
      "title":"...","text":"...",
      "type":"named",
-     "results":{"yes":[...ids],"no":[...ids],"absent":[...ids]}}
+     "results":{"yes":[...ids],"no":[...ids],"absent":[...ids]},
+     "source":{"tier":"protocol-explicit"}}
     ```
   - **Anonymous** (split or partial knowledge):
     ```json
-    {"id":"...","sessionId":"...","topicId":null,"date":"...",
+    {"id":"...","sessionId":"...","topicId":null,
      "title":"...","text":"...",
      "type":"anonymous",
      "results":{"yes":N,"no":N,"absent":N},
-     "voters":{"member_id":"yes|no|absent"}  /* OPTIONAL, partial known */
+     "source":{"tier":"protocol-implicit"},
+     /* OPTIONAL, wo einzelne Stimmen bekannt sind */
+     "voters":{"member_id":{"vote":"yes|no|absent"}}
     }
     ```
+
+**Die Stufe ist Pflicht.** `source.tier` sagt, woher das Ergebnis stammt:
+
+| tier | wann |
+|---|---|
+| `protocol-explicit` | Die Niederschrift nennt jeden Namen. |
+| `protocol-implicit` | Einstimmig, Einzelstimmen aus der Anwesenheit abgeleitet. |
+| `tracked` | Im Saal mitgeschrieben; `by` nennt die Person. |
+| `press` | Aus einem Zeitungsartikel rekonstruiert; `pressId` nennt ihn. |
+| `selbstauskunft` | Aus eigenen Notizen eines Mitglieds. |
+| `result-only` | Nur Ja und Nein überliefert, sonst nichts. |
+
+`voters[<id>]` trägt dieselbe Sprache für die einzelne Stimme: `vote`,
+`tiers` (Belege, stärkster zuerst), `by` (wer sie berichtet hat), `evidence`
+(`"soft"` = aus einer Wortmeldung erschlossen, nicht als Stimme berichtet)
+und `note`. Ein Eintrag ohne `vote` trägt nur die Herkunft.
 - For **rejected** votes (more no than yes, or expressly noted): set `"result": "rejected"` on the vote object.
 
 ### Sitzungen ohne Niederschrift (Beschlussauszug)
@@ -132,6 +151,11 @@ Rule: if `yes_count + no_count == 25 − len(session.absent)` AND vote is unanim
 For BPU/HVFA: same logic but using committee composition (chair + vicechairs + seats).
 
 If vote is unanimous but attendance doesn't match cleanly (extra brief absences), **leave anonymous** or add an explanatory note in `voters`.
+
+Kurzfristige Abwesenheit, Befangenheit und fehlendes Stimmrecht stehen in
+`excluded: [{"member": "...", "reason": "..."}]`. Erlaubt sind nur die Codes
+`beteiligung`, `enthaltung`, `nicht_stimmberechtigt`, `kein_mandat` und
+`kurz_abwesend` — Prosa als Grund fällt stillschweigend auf „abwesend".
 
 ### 6. Aggregate sub-votes when appropriate
 
@@ -174,7 +198,7 @@ Rules:
 
 - Use a Python helper script (under `scripts/`) when bulk-integrating, especially if more than a handful of votes are involved. Pattern: load JSONs → modify dicts → save.
 - **Always validate** that named-vote arrays sum to expected (25/12/8 depending on body/period).
-- For brand-new members not yet in `members.json` (e.g. surprise nachgerückte Person): pause and ask the user before adding.
+- For brand-new members not yet in `members.json` (e.g. surprise nachgerückte Person): pause and ask the user before adding — der Eintrag braucht `mandates` und `succeeds`, siehe `/member-update`.
 
 ### 9. Commit
 
@@ -185,7 +209,7 @@ Rules:
 ## Edge cases & traps
 
 - **AR Kläranlage-Entlastung**: members on the AR (currently Dollinger, Weber, Haberl, Reif, Hobmaier 2020–2026) are excluded from this specific vote. Set them as `absent` in the named conversion.
-- **Niederlegung-Sitzungen**: e.g. sr_20241021 has a member-change mid-session. Pre-Niederlegung votes use the old member; post-Niederlegung votes use the successor. The `voters` field can mark this per-vote if both are relevant.
+- **Niederlegung-Sitzungen**: e.g. sr_20241021 has a member-change mid-session. Pre-Niederlegung votes use the old member; post-Niederlegung votes use the successor. Wer an einem Votum den Sitz nicht hielt, bekommt `excluded` mit `reason: "kein_mandat"`.
 - **„Einvernehmen verweigert"** votes are often shown as e.g. `10:0` — the *resolution* is to deny; passing the resolution means 10 yes, 0 no. Don't flip to no=10 unless the framing was actually `Einvernehmen erteilt`.
 - **Tag „innercity"** is legacy — prefer the new 10 categories from `data/tags.json`.
 - **Strobl-only-dissenter** votes (verkaufsoffene Sonntage, Wahlhelferbonus etc.) are typically fully reconstructable. Convert to named with strobl in `no` and rest in `yes`.

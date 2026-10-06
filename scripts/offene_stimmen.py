@@ -41,7 +41,7 @@ def within(span, datum):
 
 def aktiv_am(m, datum):
     # Geteilte Mandate (Marschoun) liegen in periods; from/to spannt die Lücke.
-    perioden = m.get('periods') or [{'from': m.get('from'), 'to': m.get('to')}]
+    perioden = m['mandates']
     return any(within(p, datum) for p in perioden)
 
 
@@ -179,9 +179,8 @@ def main():
     ap.add_argument('--dir')
     args = ap.parse_args()
 
-    md = load('members.json')
-    members = {m['id']: m for m in md['members']}
-    bodies = {b['id']: b for b in md['bodies']}
+    members = {m['id']: m for m in load('members.json')}
+    bodies = {b['id']: b for b in load('bodies.json')}
     sessions = {s['id']: s for s in load('sessions.json')}
     votes = load('votes.json')
 

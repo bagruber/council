@@ -25,15 +25,14 @@ def within(span, d):
 
 
 def aktiv_am(m, d):
-    return any(within(p, d) for p in
-               (m.get('periods') or [{'from': m.get('from'), 'to': m.get('to')}]))
+    return any(within(p, d) for p in m['mandates'])
 
 
 def sitze_am(members, d):
     """Aktive Mandate, Wechseltag als ein Sitz."""
     live = [m for m in members if aktiv_am(m, d)]
-    rein = {m['id'] for m in live if m.get('from') == d}
-    return [m for m in live if not (m.get('to') == d and rein)]
+    rein = {m['id'] for m in live if m['mandates'][0]['from'] == d}
+    return [m for m in live if not (m['mandates'][-1].get('to') == d and rein)]
 
 
 def main():
@@ -41,8 +40,8 @@ def main():
     ap.add_argument('--out')
     args = ap.parse_args()
 
-    md = load('members.json')
-    members, bodies = md['members'], {b['id']: b for b in md['bodies']}
+    members = load('members.json')
+    bodies = {b['id']: b for b in load('bodies.json')}
     namen = {m['id']: f"{m['firstName']} {m['lastName']}" for m in members}
     S = {s['id']: s for s in load('sessions.json')}
     votes = load('votes.json')

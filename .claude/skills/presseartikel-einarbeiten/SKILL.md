@@ -15,7 +15,7 @@ A URL, optionally accompanied by a hint where it belongs („zur Sitzung", „zu
 
 ### 1. Determine media source
 
-Check `data/members.json` → `media` array for the existing sources:
+Check `data/media.json` for the existing sources:
 
 | URL pattern | media id |
 |---|---|
@@ -23,7 +23,7 @@ Check `data/members.json` → `media` array for the existing sources:
 | `sueddeutsche.de` | `sz` |
 | `ardmediathek.de` / `br.de` | `br` |
 | `moosburger-zeitung.de` | `mz` |
-| other | ask user; add to `media` if confirmed |
+| other | ask user; add to `data/media.json` if confirmed |
 
 ### 2. Fetch metadata if missing
 
@@ -116,7 +116,7 @@ Concise message, e.g. `press: SZ-Artikel zu Windenergie + Merkur Kitagebühren`.
 
 ## Edge cases
 
-- **New media outlet** (e.g. taz, BR-Beitrag): ask user before adding to `data/members.json` `media[]`. Provide a name, accent colour and logo path placeholder.
+- **New media outlet** (e.g. taz, BR-Beitrag): ask user before adding to `data/media.json`. Provide a name, accent colour and logo path placeholder.
 - **Multiple articles same topic same date**: prefix the slug with the medium-specific angle, e.g. `merkur_2024-06-10_kitagebuehren-zumutbar` vs `sz_2024-06-10_kitagebuehren-arbeitsmarktzulage`.
 - **Paywall / can't fetch**: ask the user for title + date directly. Don't guess.
 - **Article references multiple sessions** (e.g. an analysis piece): link to the topic's history entry rather than a single session item.

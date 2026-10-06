@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fraktionen und Sitzordnungen",
+  "description": "Zwei Reihenfolgen, beide bewusst: seatOrder ordnet die Fraktionen im Halbrund der Abstimmungsgrafik, councilOrder die Personen im physischen Sitzkreis.",
+  "type": "object",
+  "required": ["parties", "seatOrder"],
+  "additionalProperties": false,
+  "properties": {
+    "parties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "color"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+          "accent": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }
+        }
+      }
+    },
+    "seatOrder": { "type": "array", "items": { "type": "string" } },
+    "councilOrder": { "type": "array", "items": { "type": "string" } }
+  }
+}

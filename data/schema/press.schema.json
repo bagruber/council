@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Presseartikel",
+  "description": "Externe Quellen werden verlinkt, nicht dupliziert.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "media", "date", "title", "url"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "string", "description": "{media}_{YYYY-MM-DD}_{slug}" },
+      "media": { "type": "string" },
+      "date": { "$ref": "datum.schema.json" },
+      "title": { "type": "string" },
+      "url": { "type": "string", "pattern": "^https?://" }
+    }
+  }
+}

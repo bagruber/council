@@ -46,19 +46,18 @@ function stances(v) {
   return st;
 }
 
-// Endet ein Mandat an dem Tag, an dem ein anderes beginnt, teilen sich die
-// beiden einen Sitz: bis zum Wechselbeschluss stimmt der Alte, danach der
-// Neue. Gemeinsam abgestimmt haben sie nie — auch nicht an diesem einen Tag.
+// Wer nachrückt, teilt sich den Sitz mit der Vorgängerin: bis zum
+// Wechselbeschluss stimmt die eine, danach die andere. Gemeinsam abgestimmt
+// haben sie nie, also wird das Paar nicht verglichen. Die Nachfolge steht als
+// `succeeds` am Mitglied; vorher wurde sie aus Fraktion und Abstand geraten,
+// und das traf über den Wahlwechsel hinweg jede Fraktionskollegin.
 const seatSwap = new Set();
+const paarKey = (a, b) => a < b ? a + "|" + b : b + "|" + a;
 
-// Ehemals frei laufende Verdrahtung aus app.js, unverändert.
+// Ehemals frei laufende Verdrahtung aus app.js.
 export function initNaehe() {
-  members.forEach(a => members.forEach(b => {
-    if (a === b) return;
-    const pa = a.periods && a.periods.length ? a.periods : [{ from: a.from, to: a.to }];
-    const pb = b.periods && b.periods.length ? b.periods : [{ from: b.from, to: b.to }];
-    if (pa.some(x => x.to && pb.some(y => y.from === x.to)))
-      seatSwap.add(a.id < b.id ? a.id + "|" + b.id : b.id + "|" + a.id);
+  members.forEach(m => (m.succeeds || []).forEach(vorher => {
+    if (memberMap[vorher]) seatSwap.add(paarKey(m.id, vorher));
   }));
 }
 
@@ -194,12 +193,7 @@ function simNodes(periodId) {
     });
 }
 
-function partyAtDate(m, date) {
-  const h = m.partyHistory;
-  if (!h || !h.length) return m.party;
-  const at = h.find(p => (p.from || "0") <= date && (!p.to || p.to > date));
-  return at ? at.party : m.party;
-}
+const partyAtDate = (m, date) => Council.partyAt(m, date) || m.party;
 
 function simScore(pairs, a, b) {
   const p = pairs[a < b ? a + "|" + b : b + "|" + a];
@@ -625,22 +619,18 @@ function drawSimGraph(el, periodId) {
   // Anordnung, nicht im Bild, bekommen sie deshalb die Nähe, die
   // Fraktionskollegen in dieser Periode typischerweise haben (Median).
   //
-  // Als Nachfolge gilt: dieselbe Fraktion, Eintritt höchstens einen Monat
-  // nach dem Austritt. Zwischen Beubl und Marcus liegt ein Tag, zwischen
-  // Wagner und Altenbeck und Kilian Linz und A. Becher knapp drei Wochen.
-  // Wer dort wem folgte, steht nirgends, also gilt jede der vier
-  // Verbindungen.
+  // Die Nachfolge steht als `succeeds` am Mitglied. Wagner und Altenbeck
+  // schieden am selben Tag aus; wer von Kilian Linz und A. Becher für wen
+  // nachrückte, gibt die Liste von 2020 her, und die liegt nicht vor —
+  // deshalb nennen beide beide, und es bleibt bei den vier Kreuzpaaren.
   const kollegen = edges
     .filter(e => e.a.party && e.b.party && e.a.party.id === e.b.party.id)
     .map(e => e.s).sort((x, y) => x - y);
-  const spannen = m => m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }];
-  const folgt = (a, b) => spannen(a).some(x => x.to && spannen(b).some(y => {
-    const tage = (Date.parse(y.from) - Date.parse(x.to)) / 864e5;
-    return tage >= 0 && tage <= 31 && partyAtDate(a, x.to) === partyAtDate(b, y.from);
-  }));
+  const folgt = (a, b) => (a.succeeds || []).includes(b.id)
+                       || (b.succeeds || []).includes(a.id);
   const lage = edges.slice();
   if (kollegen.length) nodes.forEach(a => nodes.forEach(b => {
-    if (folgt(a.m, b.m)) lage.push({ a, b, s: kollegen[kollegen.length >> 1] });
+    if (a !== b && folgt(a.m, b.m)) lage.push({ a, b, s: kollegen[kollegen.length >> 1] });
   }));
   // Im Raum anderthalb Kreise Abstand statt einem: von vorn gesehen rücken
   // die Kreise durch die Tiefe ohnehin zusammen

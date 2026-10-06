@@ -35,21 +35,51 @@ test("Monatsangabe als Ende reicht bis zum Monatsletzten", () => {
   assert.equal(Council.withinPeriod({ to: "2024-10" }, "2024-11-01"), false);
 });
 
-test("Mandat: einfacher Zeitraum", () => {
-  const m = { id: "a", from: "2020-05-01", to: "2026-04-30" };
+const mandat = (from, to, party = "csu", role = "councillor") =>
+  to ? { from, to, party, role } : { from, party, role };
+
+test("Mandat: ein Abschnitt", () => {
+  const m = { id: "a", mandates: [mandat("2020-05-01", "2026-04-30")] };
   assert.equal(Council.memberActiveAt(m, "2023-07-24"), true);
   assert.equal(Council.memberActiveAt(m, "2020-04-30"), false);
   assert.equal(Council.memberActiveAt(m, "2026-05-02"), false);
 });
 
-test("Mandat: zwei getrennte Perioden, die Lücke dazwischen zählt nicht", () => {
-  const m = { id: "marschoun", from: "2014-05-01", periods: [
-    { from: "2014-05-01", to: "2020-04-30" },
-    { from: "2026-05-01" },
+test("Mandat: zwei getrennte Abschnitte, die Lücke dazwischen zählt nicht", () => {
+  const m = { id: "marschoun", mandates: [
+    mandat("2014-05-01", "2020-04-30", "spd"),
+    mandat("2026-05-01", null, "spd"),
   ] };
   assert.equal(Council.memberActiveAt(m, "2015-01-01"), true);
   assert.equal(Council.memberActiveAt(m, "2023-07-24"), false);
   assert.equal(Council.memberActiveAt(m, "2026-06-01"), true);
+  assert.deepEqual(Council.mandateSpans(m).length, 2, "die Lücke trennt");
+});
+
+test("Fraktionswechsel teilt den Abschnitt, nicht das Mandat", () => {
+  const m = { id: "hadersdorfer", mandates: [
+    mandat("2014-05-01", "2017-10-06", "fw"),
+    mandat("2017-10-06", null, "csu"),
+  ] };
+  assert.equal(Council.memberActiveAt(m, "2016-01-01"), true);
+  assert.equal(Council.partyAt(m, "2016-01-01"), "fw");
+  assert.equal(Council.partyAt(m, "2017-10-06"), "csu",
+    "an der Grenze gilt der spätere Abschnitt");
+  assert.equal(Council.partyAt(m, "2017-10-05"), "fw");
+  assert.equal(Council.partyAt(m, "2013-01-01"), null, "ohne Mandat keine Fraktion");
+  assert.equal(Council.mandateSpans(m).length, 1, "ein durchgehendes Mandat");
+  assert.deepEqual(Council.partySpans(m).map(x => x.party), ["fw", "csu"]);
+});
+
+test("Rollenwechsel im laufenden Mandat", () => {
+  const m = { id: "dollinger", mandates: [
+    mandat("2014-05-01", "2020-05-01", "fw", "councillor"),
+    mandat("2020-05-01", "2026-04-30", "fw", "mayor"),
+  ] };
+  assert.equal(Council.mandateAt(m, "2016-01-01").role, "councillor");
+  assert.equal(Council.mandateAt(m, "2022-01-01").role, "mayor");
+  assert.equal(Council.mandateAt(m, "2030-01-01"), null);
+  assert.equal(Council.partySpans(m).length, 1, "die Fraktion blieb dieselbe");
 });
 
 const bpu = {

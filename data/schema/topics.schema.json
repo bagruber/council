@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Themen",
+  "description": "Themen sind die Navigationseinheit, nicht Einzeldokumente. Jedes hat eine Zeitleiste aus Meilensteinen, Anträgen und Abstimmungen.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "title", "summary", "tags", "field", "type", "history"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "string", "pattern": "^t[0-9]+$" },
+      "title": { "type": "string" },
+      "summary": { "type": "string" },
+      "tags": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+      "field": { "type": "string", "description": "Themenfeld, ein Tag-Id" },
+      "type": { "enum": ["vorhaben", "konflikt", "gebiet", "zyklus", "einrichtung", "regelwerk"] },
+      "status": { "enum": ["laufend", "abgeschlossen"] },
+      "image": { "type": ["string", "null"] },
+      "figures": {
+        "description": "Tabelle beschlossener Fassungen, etwa einer Gebührenordnung.",
+        "type": "object",
+        "required": ["title", "rows"],
+        "additionalProperties": false,
+        "properties": {
+          "title": { "type": "string" },
+          "note": { "type": "string" },
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["date", "label"],
+              "additionalProperties": false,
+              "properties": {
+                "date": { "$ref": "datum.schema.json" },
+                "label": { "type": "string" },
+                "voteId": { "type": "string" }
+              }
+            }
+          }
+        }
+      },
+      "history": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["date", "type", "title", "text"],
+          "additionalProperties": false,
+          "properties": {
+            "date": { "$ref": "datum.schema.json" },
+            "type": { "enum": ["vote", "milestone", "committee", "proposal", "discussion"] },
+            "title": { "type": "string" },
+            "text": { "type": "string" },
+            "sessionId": { "type": "string" },
+            "voteId": { "type": "string" },
+            "press": { "type": "array", "items": { "type": "string" } },
+            "image": { "type": "string" },
+            "key": { "type": "boolean", "description": "Schlüsselmoment der Zeitleiste" }
+          }
+        }
+      }
+    }
+  }
+}

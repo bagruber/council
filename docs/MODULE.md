@@ -10,7 +10,7 @@ den Modulen und sind aus ihnen heraus sichtbar.
 | Modul | Verantwortung |
 |---|---|
 | `app.js` | Einstieg: Daten laden, Einstellungen, Verdrahtung, Router starten |
-| `daten.js` | die sechs JSON-Dateien, Nachschlage-Maps, das Sitzungsregister und die eine Zählstelle (`bestand()`) |
+| `daten.js` | die neun JSON-Dateien, Nachschlage-Maps, das Sitzungsregister und die eine Zählstelle (`bestand()`); leitet ausserdem ab, was doppelt stand: `vote.date` von der Sitzung, `member.from`/`to`/`party`/`role` vom ersten und letzten Mandatsabschnitt |
 | `hilfen.js` | Datums- und Zeitraum-Formatierung, Töne der Themenfarben (Probe Formsprache) |
 | `routing.js` | Hash-Routen, Tabs, Seiten-Chrome |
 | `kopf.js` | Kopf: „Über das Projekt“ als Panel, mobil als Blatt (Probe Formsprache) |

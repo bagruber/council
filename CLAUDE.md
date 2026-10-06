@@ -14,12 +14,19 @@
 ## Datenquellen
 
 ### Aktuell: Statische JSON-Dateien
-- `data/members.json` — Mitglieder, Parteien, Gremien, Medien
+- `data/members.json` — Mitglieder mit `mandates` (Zeitraum, Fraktion, Rolle je Abschnitt) und `succeeds`
+- `data/parties.json` — Fraktionen und beide Sitzordnungen (Halbrund und physischer Kreis)
+- `data/bodies.json` — Gremien mit `seatConfigs`
+- `data/media.json` — Medien
 - `data/topics.json` — Themen mit Timeline-History
-- `data/sessions.json` — Sitzungen mit Tagesordnung
-- `data/votes.json` — Abstimmungen mit Einzelstimmen
+- `data/sessions.json` — das vollständige Sitzungsregister: auch Sitzungen ohne Niederschrift und angekündigte, mit `niederschrift` und Zeiten
+- `data/votes.json` — Abstimmungen; `source` für den Beschluss, `voters` für die einzelne Stimme, kein eigenes Datum
 - `data/tags.json` — Themen-Tags
 - `data/press.json` — Presseartikel als eigenständige Entitäten (ID-Format: `{media}_{YYYY-MM-DD}_{slug}`)
+
+Die Form steht als JSON Schema in `data/schema/`; `python scripts/validate_data.py`
+prüft dagegen und zusätzlich den Zusammenhang zwischen den Dateien
+(`pip install -r scripts/requirements.txt`).
 
 ### Bilder
 - `img/topics/` — Bilder für Themen-Timelines, referenziert über `image`-Feld in topics.json

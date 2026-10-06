@@ -23,13 +23,53 @@ const Council = (() => {
     return true;
   }
 
-  // Member's mandate is active on `date`. Honours both top-level from/to and
-  // optional `periods: [...]` for split mandates.
+  // Mandat, Fraktion und Rolle stehen als eine geordnete Liste von Abschnitten
+  // am Mitglied: `mandates: [{from, to, party, role}]`. Eine Lücke zwischen
+  // zwei Abschnitten ist eine Unterbrechung des Mandats (Marschoun 2014–2020
+  // und seit 2026), kein Abstand heißt Fraktions- oder Rollenwechsel.
+  // Überlappen zwei Abschnitte an ihrer Grenze, gilt der spätere — ein
+  // Wechsel am 6. Oktober heißt, dass der 6. Oktober schon der neuen Seite
+  // gehört.
   function memberActiveAt(member, date) {
-    const periods = (member.periods && member.periods.length)
-      ? member.periods
-      : [{ from: member.from, to: member.to }];
-    return periods.some(p => withinPeriod(p, date));
+    return (member.mandates || []).some(p => withinPeriod(p, date));
+  }
+
+  // Fraktion bzw. Rolle an einem Tag. Ohne Mandat an dem Tag null.
+  function mandateAt(member, date) {
+    let treffer = null;
+    (member.mandates || []).forEach(p => { if (withinPeriod(p, date)) treffer = p; });
+    return treffer;
+  }
+
+  function partyAt(member, date) {
+    const m = mandateAt(member, date);
+    return m ? m.party : null;
+  }
+
+  // Die eigentlichen Mandatszeiten: aufeinanderfolgende Abschnitte sind ein
+  // Mandat, eine Lücke dazwischen ist eine Unterbrechung. Fraktions- und
+  // Rollenwechsel schneiden die Abschnitte, nicht das Mandat.
+  function mandateSpans(member) {
+    const out = [];
+    (member.mandates || []).forEach(p => {
+      const letzte = out[out.length - 1];
+      if (letzte && letzte.to === p.from) letzte.to = p.to;
+      else out.push({ from: p.from, to: p.to });
+    });
+    return out;
+  }
+
+  // Die Abschnitte zu Zeitspannen je Fraktion zusammengefasst, für die
+  // Fraktionszeile im Profil. Aufeinanderfolgende Abschnitte derselben
+  // Fraktion sind eine Spanne, auch wenn die Rolle dazwischen wechselt.
+  function partySpans(member) {
+    const out = [];
+    (member.mandates || []).forEach(p => {
+      const letzte = out[out.length - 1];
+      if (letzte && letzte.party === p.party && letzte.to === p.from) letzte.to = p.to;
+      else out.push({ party: p.party, from: p.from, to: p.to });
+    });
+    return out;
   }
 
   // ── Body composition ──────────────────────────────────────────────────────
@@ -241,7 +281,7 @@ const Council = (() => {
 
   return {
     withinPeriod, endOfPeriod,
-    memberActiveAt,
+    memberActiveAt, mandateAt, mandateSpans, partyAt, partySpans,
     bodyConfigAt, isRegularOf,
     voteStatus, voteStatusLabel, voteStatusTitle, sourceLabel, isUnanimous,
     evidenceNote, statusProvenance, voterTiers,
