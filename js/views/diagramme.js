@@ -1,8 +1,9 @@
-// Werkzeug für die Diagramme der Übersichtsseiten: Farben je Gremium,
-// Kartenrahmen, Tooltip, Median.
+// Werkzeug der Diagramme: Farben je Gremium, Median, Kartenrahmen, Tooltip.
 import { SITZUNGSARTEN } from "../daten.js";
 import { monthNames } from "../hilfen.js";
 import { html } from "../html.js";
+
+// -- Statistik --
 
 // Diagramme und Register kennen die Sitzung unter ihrer Art (stadtrat/bpu/
 // hvfa), nicht unter ihrem Gremium — Label und Farbe kommen aus daten.js.

@@ -5,7 +5,9 @@
 import { tagMap } from "./daten.js";
 import { renderHome, renderFilteredTopics, renderTopic, renderField } from "./views/themen.js";
 import { renderSession } from "./views/sitzungen.js";
-import { renderStatistik, renderDatenlage, renderPresse } from "./views/statistik.js";
+import { renderStatistik } from "./views/statistik.js";
+import { renderDatenlage } from "./views/datenlage.js";
+import { renderPresse } from "./views/presse.js";
 import { renderCalendar } from "./views/kalender.js";
 import { renderGremien } from "./views/gremien.js";
 import { renderMemberProfile } from "./views/profil.js";
