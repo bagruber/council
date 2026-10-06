@@ -53,8 +53,8 @@ votes_by_topic   = defaultdict(list)
 for v in bundle["votes"]:
     votes_by_session[v["sessionId"]].append(v["id"])
     votes_by_year[session_date[v["sessionId"]][:4]].append(v["id"])
-    if v.get("topicId"):
-        votes_by_topic[v["topicId"]].append(v["id"])
+    for tid in v.get("topicIds", []):
+        votes_by_topic[tid].append(v["id"])
 
 sessions_by_year = defaultdict(list)
 for s in bundle["sessions"]:

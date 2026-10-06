@@ -10,7 +10,10 @@
     "properties": {
       "id": { "type": "string" },
       "sessionId": { "type": "string" },
-      "topicId": { "type": ["string", "null"] },
+      "topicIds": {
+        "description": "Die Dossiers, in die der Beschluss zählt. Mehrere, wenn er fachlich in mehrere gehört.",
+        "type": "array", "minItems": 1, "items": { "type": "string" }
+      },
       "title": { "type": "string" },
       "text": { "type": "string" },
       "type": { "enum": ["named", "anonymous"] },

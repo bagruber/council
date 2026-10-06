@@ -655,11 +655,11 @@ function renderMemberTimeline(container, member) {
           ? "Abwesenheit nicht überliefert" : vote.results.absent + " Abwesend";
         teile.push(html`<p class="mtl-zahlen">${vote.results.yes} Ja, ${vote.results.no} Nein, ${abw}</p>`);
       }
-      // Das Dossier steht an der Abstimmung; der Tagesordnungspunkt kann
-      // mehrere tragen und auf ein anderes zeigen.
-      if (vote.topicId && topicMap[vote.topicId]) {
-        teile.push(html`<a href="#/topic/${vote.topicId}"><svg class="icon"><use href="#i-open_in_new"/></svg> ${topicMap[vote.topicId].title}</a>`);
-      }
+      // Die Dossiers stehen an der Abstimmung, nicht am Tagesordnungspunkt:
+      // ein Beschluss kann in zwei gehoeren, ein Punkt mehrere tragen.
+      (vote.topicIds || []).filter(id => topicMap[id]).forEach(id => {
+        teile.push(html`<a href="#/topic/${id}"><svg class="icon"><use href="#i-open_in_new"/></svg> ${topicMap[id].title}</a>`);
+      });
       detail.innerHTML = html`${teile}`;
 
       voteRow.querySelector(".mtl-vote-title").addEventListener("click", () => {
