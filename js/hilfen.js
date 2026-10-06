@@ -69,7 +69,10 @@ function kategorieTon(farbe) {
 // Probe Formsprache (15.09.2026): Steht das Gremium schon als Kategoriezeile
 // darüber, reicht vom Titel die Nummer. „12. Stadtratssitzung – September 2026“
 // wird „12. Sitzung“; ein Zusatz in Klammern bleibt stehen.
+// Ohne Niederschrift gibt es keine Nummer. Erfinden darf man sie nicht, die
+// Zaehlung der Stadt steht nur dort.
 function sitzungKurz(s) {
+  if (!s.title) return "Sitzung";
   const nr = s.title.match(/^(\d+)\./);
   const zusatz = s.title.match(/\(([^)]+)\)\s*$/);
   return (nr ? nr[1] + ". Sitzung" : "Sitzung") + (zusatz ? " (" + zusatz[1] + ")" : "");

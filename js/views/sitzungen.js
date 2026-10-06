@@ -1,8 +1,8 @@
 // Sitzungsseite: Kopf mit Dauer und Niederschrift, Vertretungen,
 // Tagesordnung mit eingebetteten Abstimmungen.
 import {
-  sessionMap, memberMap, topicMap, voteMap, lengthMap,
-  lengthMin, protocolUrl, isWebauszug, isVorschau, gremium,
+  sessionMap, memberMap, topicMap, voteMap,
+  dauerMin, protocolUrl, isWebauszug, istGehalten, gremium,
 } from "../daten.js";
 import { formatDate, formatDuration, sitzungKurz } from "../hilfen.js";
 import { navigate, backLink } from "../routing.js";
@@ -23,19 +23,17 @@ function renderSession(id) {
   header.className = "session-header band";
   const g = gremium(session);
   header.dataset.gremium = g.art;
-  const len = lengthMap[session.date + "|" + (session.type || "stadtrat")];
-  let timeLine = "";
-  if (len) {
-    const dur = lengthMin(len);
-    timeLine = `<div class="session-time"><svg class="icon"><use href="#i-schedule"/></svg>${len.start}${len.end ? "–" + len.end : ""} Uhr${dur ? " · " + formatDuration(dur) : ""}</div>`;
-  }
+  const dur = dauerMin(session);
+  const timeLine = session.start
+    ? `<div class="session-time"><svg class="icon"><use href="#i-schedule"/></svg>${session.start}${session.end ? "–" + session.end : ""} Uhr${dur ? " · " + formatDuration(dur) : ""}</div>`
+    : "";
   let src = "";
   if (isWebauszug(session)) {
-    if (session.source.url) {
+    if ((session.source || {}).url) {
       src = `<a class="session-pdf" href="${session.source.url}" target="_blank" rel="noopener">
                <svg class="icon"><use href="#i-language"/></svg> Beschlussauszug der Stadt Moosburg</a>`;
     }
-  } else if (!isVorschau(session)) {
+  } else if (session.niederschrift === "vollständig") {
     src = `<a class="session-pdf" href="${protocolUrl(session)}" target="_blank" rel="noopener">
              <svg class="icon"><use href="#i-description"/></svg> Niederschrift (PDF)</a>`;
   }
@@ -44,14 +42,25 @@ function renderSession(id) {
   header.prepend(backLink("Übersicht", "#/"));
   main.appendChild(header);
 
-  if (isVorschau(session)) {
+  if (!istGehalten(session)) {
     const note = document.createElement("div");
     note.className = "source-note";
     note.innerHTML = `
       <svg class="icon"><use href="#i-info"/></svg>
       <div><strong>Die Sitzung hat noch nicht stattgefunden.</strong>
-      Hier steht die Tagesordnung, wie die Stadt sie veröffentlicht hat. Beschlüsse,
+      ${session.agenda ? "Hier steht die Tagesordnung, wie die Stadt sie veröffentlicht hat. Beschlüsse,"
+        : "Die Tagesordnung veröffentlicht die Stadt wenige Tage vorher. Beschlüsse,"}
       Abstimmungen und die Niederschrift kommen nach der Sitzung dazu.</div>`;
+    main.appendChild(note);
+  } else if (session.niederschrift === "keine") {
+    const note = document.createElement("div");
+    note.className = "source-note";
+    note.innerHTML = `
+      <svg class="icon"><use href="#i-info"/></svg>
+      <div><strong>Nichts veröffentlicht.</strong>
+      Dass diese Sitzung stattgefunden hat, steht im Sitzungsregister der Stadt.
+      Weder Niederschrift noch Beschlussauszug liegen vor — was beschlossen wurde,
+      ist deshalb nicht nachvollziehbar.</div>`;
     main.appendChild(note);
   }
 
@@ -97,7 +106,7 @@ function renderSession(id) {
   const list = document.createElement("div");
   list.className = "agenda-list";
 
-  session.agenda.forEach(item => {
+  (session.agenda || []).forEach(item => {
     const el = document.createElement("div");
     el.className = "agenda-item";
 

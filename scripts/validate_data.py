@@ -16,6 +16,8 @@ Catches the kinds of issues that have bitten us before:
   - member period gaps / overlaps within member.periods[]
   - BPU composition mismatch (welter-on-BPU-2022 type issues)
   - duplicate ids in press, sessions, votes, topics, members
+  - Sitzungsregister: niederschrift-Stufe, ID zu Datum und Gremium, Zeiten
+  - Identitaetsmerkmale ohne belegte Selbstauskunft
 """
 import json, sys, os
 from collections import Counter, defaultdict
@@ -66,7 +68,29 @@ for v in votes:
     if v.get("topicId") and v["topicId"] not in topic_ids:
         err(f"vote {v['id']}: topicId '{v['topicId']}' missing")
 
+NIEDERSCHRIFT = {"vollständig", "auszug", "keine"}
+PRAEFIX = {"stadtrat": "sr", "bpu": "bpu", "hvfa": "hvfa"}
+
 for s in sessions:
+    # Seit Oktober 2026 ist sessions.json das vollstaendige Register und
+    # ersetzt sessionlengths.json und termine.json. Jede Sitzung sagt, was von
+    # ihr vorliegt; ob sie war, sagt ihr Datum.
+    stufe = s.get("niederschrift")
+    if stufe not in NIEDERSCHRIFT:
+        err(f"session {s['id']}: niederschrift '{stufe}' - erlaubt sind {sorted(NIEDERSCHRIFT)}")
+    if s.get("type") not in PRAEFIX:
+        err(f"session {s['id']}: unbekanntes Gremium '{s.get('type')}'")
+    else:
+        soll = PRAEFIX[s["type"]] + "_" + s["date"].replace("-", "")
+        if s["id"] != soll:
+            err(f"session {s['id']}: ID passt nicht zu Datum und Gremium (erwartet {soll})")
+    if stufe == "auszug" and not (s.get("source") or {}).get("kind") == "webauszug":
+        err(f"session {s['id']}: als Auszug gefuehrt, aber ohne source.kind webauszug")
+    if stufe != "keine" and not s.get("agenda"):
+        err(f"session {s['id']}: {stufe} veroeffentlicht, aber ohne Tagesordnung")
+    if s.get("end") and not s.get("start"):
+        err(f"session {s['id']}: Ende ohne Beginn")
+
     for i, item in enumerate(s.get("agenda", [])):
         vid = item.get("voteId")
         if vid and vid not in vote_ids:

@@ -1,9 +1,9 @@
-// Datenbestand und Nachschlagewerke. Lädt die acht JSON-Dateien und baut
+// Datenbestand und Nachschlagewerke. Lädt die sechs JSON-Dateien und baut
 // daraus die Maps, die alle Views teilen. Die Exporte sind live bindings:
 // sie stehen erst nach ladeDaten() — der Einstieg (app.js) wartet darauf,
 // bevor er rendert.
 
-let topics, sessions, votes, tags, membersData, pressData, sessionLengths, termine;
+let topics, sessions, votes, tags, membersData, pressData;
 let members, parties, bodies, seatOrder, mediaSources;
 const mediaMap = {};
 const pressMap = {};
@@ -15,23 +15,17 @@ const memberMap = {};
 const partyMap = {};
 const bodyMap = {};
 let sessionsSorted;
-const lengthMap = {};
-const sessionByDateBody = {};
 const votesBySession = {};
 
 async function ladeDaten() {
-  let termineData;
-  [topics, sessions, votes, tags, membersData, pressData, sessionLengths, termineData] = await Promise.all([
+  [topics, sessions, votes, tags, membersData, pressData] = await Promise.all([
     fetch("data/topics.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     fetch("data/sessions.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     fetch("data/votes.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     fetch("data/tags.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     fetch("data/members.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     fetch("data/press.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-    fetch("data/sessionlengths.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-    fetch("data/termine.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
   ]);
-  termine = termineData.termine || [];
 
   members = membersData.members;
   members.forEach(m => { if (!m.name) m.name = m.firstName + " " + m.lastName; });
@@ -51,12 +45,6 @@ async function ladeDaten() {
   bodies.forEach(b => { bodyMap[b.id] = b; });
 
   sessionsSorted = [...sessions].sort((a, b) => b.date.localeCompare(a.date));
-
-  // Sitzungsdauern aus den Niederschriften, Zuordnung über Datum + Gremium.
-  // Nicht jede Sitzung ist in sessions.json erfasst — die Statistik nutzt
-  // alle Einträge, die Sitzungsseite nur den passenden.
-  sessionLengths.forEach(l => { lengthMap[l.date + "|" + l.body] = l; });
-  sessions.forEach(s => { sessionByDateBody[s.date + "|" + (s.type || "stadtrat")] = s; });
 
   votes.forEach(v => { (votesBySession[v.sessionId] || (votesBySession[v.sessionId] = [])).push(v); });
 }
@@ -82,18 +70,29 @@ function protocolUrl(s) {
        + "_" + s.date.replace(/-/g, "") + ".pdf";
 }
 
-// Manche Sitzungen erscheinen nie als Niederschrift, sondern nur als
-// Beschlussauszug auf der Website der Stadt. Die Beschlüsse stehen dort, die
-// Anwesenheitsliste nicht — deshalb eine eigene Stufe, nicht bloß eine
-// andere Quellenangabe.
+// Was von einer Sitzung vorliegt. Steht als `niederschrift` am Datensatz:
+//   "vollständig" — Niederschrift mit Anwesenheitsliste
+//   "auszug"      — Beschlussauszug der Stadt, ohne Anwesenheitsliste
+//   "keine"       — nichts veröffentlicht
+// Der Beschlussauszug ist eine eigene Stufe und nicht bloß eine andere
+// Quellenangabe: die Beschlüsse stehen dort, die Anwesenheit nicht.
+const NIEDERSCHRIFT = [
+  { stufe: "vollständig", label: "Niederschrift",
+    hinweis: "Niederschrift mit Anwesenheitsliste" },
+  { stufe: "auszug", label: "nur Beschlussauszug",
+    hinweis: "Beschlussauszug der Stadt, ohne Anwesenheitsliste" },
+  { stufe: "keine", label: "nichts veröffentlicht",
+    hinweis: "Weder Niederschrift noch Auszug veröffentlicht" },
+];
+
 function isWebauszug(s) {
-  return !!(s.source && s.source.kind === "webauszug");
+  return s.niederschrift === "auszug";
 }
 
-// Die Tagesordnung steht, die Sitzung hat aber noch nicht stattgefunden:
-// keine Niederschrift, keine Beschlüsse.
-function isVorschau(s) {
-  return !!(s.source && s.source.kind === "vorschau");
+// Ob eine Sitzung war, sagt ihr Datum. Ein gepflegtes Statusfeld ginge am Tag
+// der Sitzung schief und stünde dann im Widerspruch zur Liste darunter.
+function istGehalten(s) {
+  return s.date <= nowStr;
 }
 
 // Probe Formsprache: das Gremium einer Sitzung oder eines Termins, für
@@ -108,36 +107,42 @@ function gremium(s) {
   };
 }
 
-// Probe Formsprache: der nächste angekündigte Termin ab heute. Bestimmt beim
+// Probe Formsprache: die nächste angekündigte Sitzung ab heute. Bestimmt beim
 // Rendern, nie fest eingetragen; ohne Termin null.
 function naechsteSitzung() {
-  return termine
-    .filter(t => t.date >= nowStr)
-    .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time))[0] || null;
+  return sessions
+    .filter(s => s.date >= nowStr)
+    .sort((a, b) => (a.date + (a.start || "")).localeCompare(b.date + (b.start || "")))[0] || null;
 }
 
-// Ein Eintrag je Sitzung, die stattgefunden hat — unabhängig davon, ob eine
-// Niederschrift vorliegt. Die Dauern reichen weiter als die erfassten
-// Sitzungen, die erfassten Sitzungen weiter zurück als die Dauern.
+// Das Sitzungsregister: jede Sitzung, die stattgefunden hat, neueste zuerst —
+// unabhängig davon, ob etwas von ihr veröffentlicht ist. Seit Oktober 2026 ist
+// das schlicht sessions.json; davor standen die Sitzungen in drei Dateien und
+// wurden an drei Stellen verschieden gezählt.
 function sessionRegister() {
-  const rows = new Map();
-  const put = (date, body) => {
-    const key = date + "|" + body;
-    if (!rows.has(key)) rows.set(key, { date, body, votes: [] });
-    return rows.get(key);
-  };
-  sessionLengths.forEach(l => {
-    const r = put(l.date, l.body);
-    r.start = l.start; r.end = l.end; r.min = lengthMin(l);
-  });
-  sessions.forEach(s => {
-    if (isVorschau(s)) return;
-    const r = put(s.date, s.type || "stadtrat");
-    r.session = s;
-    r.votes = votesBySession[s.id] || [];
-  });
-  return [...rows.values()].sort((a, b) => b.date.localeCompare(a.date));
+  return sessionsSorted.filter(istGehalten);
 }
+
+// Die eine Zählstelle. Startseite, Statistik und Datenlage lesen nur von hier;
+// die Seiten nennen die Definition, die hier steht.
+function bestand() {
+  const reg = sessionRegister();
+  const zaehle = stufe => reg.filter(s => s.niederschrift === stufe).length;
+  const voten = reg.reduce((n, s) => n + votenVon(s).length, 0);
+  return {
+    sitzungen: reg.length,
+    vollstaendig: zaehle("vollständig"),
+    auszug: zaehle("auszug"),
+    keine: zaehle("keine"),
+    mitDauer: reg.filter(dauerMin).length,
+    minuten: reg.reduce((n, s) => n + (dauerMin(s) || 0), 0),
+    abstimmungen: voten,
+    presse: pressData.length,
+    seit: reg.length ? reg[reg.length - 1].date : null,
+  };
+}
+
+const votenVon = s => votesBySession[s.id] || [];
 
 // Wie belastbar ist das Stimmverhalten dieser Sitzung? Zählt die
 // Herkunftsstufen aus vote.source.tier durch; ohne Stufe ist nur das
@@ -163,8 +168,9 @@ function timeToMin(t) {
   return p[0] * 60 + +p[1];
 }
 
-function lengthMin(l) {
-  return l.end ? timeToMin(l.end) - timeToMin(l.start) : null;
+// Dauer in Minuten, sofern Beginn und Ende überliefert sind.
+function dauerMin(s) {
+  return s.start && s.end ? timeToMin(s.end) - timeToMin(s.start) : null;
 }
 
 const nowStr = (() => {
@@ -186,11 +192,12 @@ function bodyIdForSession(s) {
 
 export {
   ladeDaten,
-  topics, sessions, votes, tags, membersData, pressData, sessionLengths, termine,
+  topics, sessions, votes, tags, membersData, pressData,
   members, parties, bodies, seatOrder, mediaSources, mediaMap, pressMap,
   topicMap, sessionMap, voteMap, tagMap, memberMap, partyMap, bodyMap,
-  sessionsSorted, lengthMap, sessionByDateBody, votesBySession,
-  SITZUNGSARTEN, sitzungsart,
-  protocolUrl, isWebauszug, isVorschau, naechsteSitzung, gremium, sessionRegister, tierCounts, lengthMin,
+  sessionsSorted, votesBySession,
+  SITZUNGSARTEN, sitzungsart, NIEDERSCHRIFT,
+  protocolUrl, isWebauszug, istGehalten, naechsteSitzung, gremium,
+  sessionRegister, bestand, votenVon, tierCounts, dauerMin,
   nowStr, memberActiveAt, isActive, bodyIdForSession,
 };

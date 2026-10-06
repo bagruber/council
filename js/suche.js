@@ -107,8 +107,10 @@ function globalSearch(q) {
       rejected: v.result === "rejected",
     });
   });
+  // Sitzungen ohne Niederschrift tragen keinen Titel und sind ueber die
+  // Suche nach Worten nicht zu finden; sie stehen im Register der Datenlage.
   sessions.forEach(s => {
-    if (searchNorm(s.title).includes(q))
+    if (s.title && searchNorm(s.title).includes(q))
       hits.sitzung.push({ href: "#/session/" + s.id, title: s.title,
                           meta: formatDate(s.date) });
   });

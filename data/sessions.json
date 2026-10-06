@@ -3,6 +3,7 @@
     "id": "sr_20200120",
     "date": "2020-01-20",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
     "title": "1. Stadtratssitzung – Januar 2020",
     "absent": [],
     "agenda": [
@@ -41,11 +42,15 @@
     "id": "bpu_20200127",
     "date": "2020-01-27",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "19:45",
     "title": "Sitzung Bau-, Planungs- und Umweltausschuss – Januar 2020",
     "source": {
       "kind": "webauszug",
       "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2273&smcmode=32832"
     },
+    "absent": [],
     "agenda": [
       {
         "number": "1",
@@ -111,13 +116,13 @@
         "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
-    ],
-    "absent": []
+    ]
   },
   {
     "id": "sr_20200210",
     "date": "2020-02-10",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
     "title": "2. Stadtratssitzung – Februar 2020",
     "absent": [
       "marschoun"
@@ -264,11 +269,15 @@
     "id": "bpu_20200302",
     "date": "2020-03-02",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "20:05",
     "title": "Sitzung Bau-, Planungs- und Umweltausschuss – März 2020",
     "source": {
       "kind": "webauszug",
       "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2281&smcmode=32832"
     },
+    "absent": [],
     "agenda": [
       {
         "number": "1",
@@ -363,13 +372,15 @@
         "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
-    ],
-    "absent": []
+    ]
   },
   {
     "id": "sr_20200504",
     "date": "2020-05-04",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:55",
     "title": "5. Stadtratssitzung – Mai 2020 (konstituierend)",
     "absent": [],
     "agenda": [
@@ -532,6 +543,9 @@
     "id": "sr_20200525",
     "date": "2020-05-25",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:35",
     "title": "6. Stadtratssitzung – Mai 2020",
     "absent": [
       "kaestl"
@@ -750,6 +764,9 @@
     "id": "sr_20200615",
     "date": "2020-06-15",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:45",
     "title": "7. Stadtratssitzung – Juni 2020",
     "absent": [
       "kaestl",
@@ -832,6 +849,9 @@
     "id": "sr_20200706",
     "date": "2020-07-06",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:15",
     "title": "8. Stadtratssitzung – Juli 2020",
     "absent": [
       "linz_karin"
@@ -919,6 +939,9 @@
     "id": "sr_20200720",
     "date": "2020-07-20",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:10",
     "title": "9. Stadtratssitzung – Juli 2020",
     "absent": [
       "linz_karin",
@@ -995,6 +1018,9 @@
     "id": "sr_20200722",
     "date": "2020-07-22",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "20:40",
     "title": "10. Stadtratssitzung – Juli 2020",
     "absent": [
       "kaestl",
@@ -1060,6 +1086,9 @@
     "id": "sr_20200914",
     "date": "2020-09-14",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:15",
     "title": "11. Stadtratssitzung – September 2020",
     "absent": [
       "beubl",
@@ -1097,6 +1126,9 @@
     "id": "bpu_20200921",
     "date": "2020-09-21",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:05",
+    "end": "19:45",
     "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – September 2020",
     "source": {
       "kind": "webauszug",
@@ -1173,6 +1205,9 @@
     "id": "sr_20200928",
     "date": "2020-09-28",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:20",
     "title": "12. Stadtratssitzung – September 2020",
     "absent": [
       "hadersdorfer",
@@ -1225,6 +1260,9 @@
     "id": "sr_20201005",
     "date": "2020-10-05",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "22:20",
     "title": "13. Stadtratssitzung – Oktober 2020",
     "absent": [
       "reif",
@@ -1291,20 +1329,23 @@
         "type": "formal"
       }
     ],
+    "press": [
+      "mz_2020-10-06_geaenderte-vorfahrt-beschlossen"
+    ],
     "notes": [
       "Dollinger, Josef anwesend ab 18.35 Uhr",
       "Zweiter Bürgermeister anwesend ab 18.10 Uur",
       "anwesend ab 18.30 Uhr",
       "Hadersdorfer, Georg anwesend von 18.15 Uhr bis 20.35 Uhr"
-    ],
-    "press": [
-      "mz_2020-10-06_geaenderte-vorfahrt-beschlossen"
     ]
   },
   {
     "id": "sr_20201026",
     "date": "2020-10-26",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:10",
     "title": "15. Stadtratssitzung – Oktober 2020",
     "absent": [
       "hadersdorfer",
@@ -1385,22 +1426,26 @@
         "type": "formal"
       }
     ],
-    "notes": [
-      "Dollinger, Josef (anwesend ab 19.05 Uhr)"
-    ],
     "press": [
       "merkur_2020-10-27_buergerbegehren-fuer-vertraeglicheres"
+    ],
+    "notes": [
+      "Dollinger, Josef (anwesend ab 19.05 Uhr)"
     ]
   },
   {
     "id": "bpu_20201109",
     "date": "2020-11-09",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "20:45",
     "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – November 2020",
     "source": {
       "kind": "webauszug",
       "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2300&smcmode=32832"
     },
+    "absent": [],
     "agenda": [
       {
         "number": "1",
@@ -1485,13 +1530,23 @@
         "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
-    ],
-    "absent": []
+    ]
+  },
+  {
+    "id": "hvfa_20201207",
+    "date": "2020-12-07",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "17:00",
+    "end": "22:15"
   },
   {
     "id": "sr_20201214",
     "date": "2020-12-14",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:15",
     "title": "17. Stadtratssitzung – Dezember 2020",
     "absent": [
       "becher_j"
@@ -1560,6 +1615,9 @@
     "id": "bpu_20201217",
     "date": "2020-12-17",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "20:05",
     "title": "3. Sitzung Bau-, Planungs- und Umweltausschuss – Dezember 2020",
     "source": {
       "kind": "webauszug",
@@ -1631,6 +1689,9 @@
     "id": "sr_20210118",
     "date": "2021-01-18",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:25",
     "title": "1. Stadtratssitzung – Januar 2021",
     "absent": [
       "von_pressentin"
@@ -1692,11 +1753,15 @@
     "id": "bpu_20210201",
     "date": "2021-02-01",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "18:00",
+    "end": "20:40",
     "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – Februar 2021",
     "source": {
       "kind": "webauszug",
       "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2321&smcmode=32832"
     },
+    "absent": [],
     "agenda": [
       {
         "number": "1",
@@ -1752,13 +1817,15 @@
         "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
-    ],
-    "absent": []
+    ]
   },
   {
     "id": "sr_20210208",
     "date": "2021-02-08",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:45",
     "title": "2. Stadtratssitzung – Februar 2021",
     "absent": [
       "fincke",
@@ -1832,6 +1899,9 @@
     "id": "sr_20210222",
     "date": "2021-02-22",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:50",
     "title": "3. Stadtratssitzung – Februar 2021",
     "absent": [
       "kaestl",
@@ -2221,6 +2291,9 @@
     "id": "sr_20210308",
     "date": "2021-03-08",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:10",
     "title": "4. Stadtratssitzung – März 2021",
     "absent": [
       "reif",
@@ -2341,6 +2414,9 @@
     "id": "bpu_20210318",
     "date": "2021-03-18",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:05",
+    "end": "19:40",
     "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – März 2021",
     "source": {
       "kind": "webauszug",
@@ -2441,6 +2517,9 @@
     "id": "sr_20210322",
     "date": "2021-03-22",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:50",
     "title": "5. Stadtratssitzung – März 2021",
     "absent": [
       "fincke",
@@ -2497,6 +2576,9 @@
     "id": "sr_20210412",
     "date": "2021-04-12",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:05",
     "title": "6. Stadtratssitzung – April 2021",
     "absent": [
       "reif",
@@ -2551,18 +2633,21 @@
         "type": "formal"
       }
     ],
+    "press": [
+      "mz_2021-04-13_moosburger-will-breitbandfoerderung"
+    ],
     "notes": [
       "Dollinger, Josef (anwesend ab 20.00 Uhr)",
       "(anwesend bis 21.00 Uhr)"
-    ],
-    "press": [
-      "mz_2021-04-13_moosburger-will-breitbandfoerderung"
     ]
   },
   {
     "id": "sr_20210426",
     "date": "2021-04-26",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:40",
     "title": "7. Stadtratssitzung – April 2021",
     "absent": [
       "hadersdorfer",
@@ -2625,6 +2710,9 @@
     "id": "bpu_20210429",
     "date": "2021-04-29",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "19:50",
     "title": "3. Sitzung Bau-, Planungs- und Umweltausschuss – April 2021",
     "source": {
       "kind": "webauszug",
@@ -2678,9 +2766,20 @@
     ]
   },
   {
+    "id": "sr_20210510",
+    "date": "2021-05-10",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
     "id": "sr_20210607",
     "date": "2021-06-07",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:00",
     "title": "9. Stadtratssitzung – Juni 2021",
     "absent": [
       "hadersdorfer",
@@ -2750,6 +2849,9 @@
     "id": "bpu_20210614",
     "date": "2021-06-14",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "20:10",
     "title": "4. Sitzung Bau-, Planungs- und Umweltausschuss – Juni 2021",
     "source": {
       "kind": "webauszug",
@@ -2821,6 +2923,9 @@
     "id": "sr_20210621",
     "date": "2021-06-21",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:20",
     "title": "10. Stadtratssitzung – Juni 2021",
     "absent": [
       "beubl",
@@ -2880,6 +2985,9 @@
     "id": "sr_20210712",
     "date": "2021-07-12",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:25",
     "title": "11. Stadtratssitzung – Juli 2021",
     "absent": [
       "stanglmaier"
@@ -2936,6 +3044,9 @@
     "id": "bpu_20210719",
     "date": "2021-07-19",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "19:45",
     "title": "5. Sitzung Bau-, Planungs- und Umweltausschuss – Juli 2021",
     "source": {
       "kind": "webauszug",
@@ -3002,6 +3113,9 @@
     "id": "sr_20210726",
     "date": "2021-07-26",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:05",
     "title": "12. Stadtratssitzung – Juli 2021",
     "absent": [
       "welter",
@@ -3074,6 +3188,9 @@
     "id": "sr_20210906",
     "date": "2021-09-06",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:00",
     "title": "13. Stadtratssitzung – September 2021",
     "absent": [
       "heinz",
@@ -3141,6 +3258,9 @@
     "id": "bpu_20210927",
     "date": "2021-09-27",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "20:55",
     "title": "6. Sitzung Bau-, Planungs- und Umweltausschuss – September 2021",
     "source": {
       "kind": "webauszug",
@@ -3207,6 +3327,9 @@
     "id": "sr_20211011",
     "date": "2021-10-11",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "20:30",
     "title": "14. Stadtratssitzung – Oktober 2021",
     "absent": [
       "wittmann"
@@ -3282,6 +3405,9 @@
     "id": "sr_20211025",
     "date": "2021-10-25",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:30",
     "title": "15. Stadtratssitzung – Oktober 2021",
     "absent": [
       "dollinger",
@@ -3356,6 +3482,9 @@
     "id": "sr_20211108",
     "date": "2021-11-08",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:30",
     "title": "17. Stadtratssitzung – November 2021",
     "absent": [
       "hadersdorfer",
@@ -3403,6 +3532,8 @@
     "id": "sr_20211122",
     "date": "2021-11-22",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
     "title": "18. Stadtratssitzung – November 2021",
     "absent": [
       "dollinger",
@@ -3472,9 +3603,36 @@
     ]
   },
   {
+    "id": "hvfa_20211125",
+    "date": "2021-11-25",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "id": "hvfa_20211129",
+    "date": "2021-11-29",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:35"
+  },
+  {
+    "id": "hvfa_20211202",
+    "date": "2021-12-02",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "17:00",
+    "end": "19:00"
+  },
+  {
     "id": "sr_20211206",
     "date": "2021-12-06",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:40",
     "title": "19. Stadtratssitzung – Dezember 2021",
     "absent": [
       "becher_j",
@@ -3575,6 +3733,9 @@
     "id": "sr_20211213",
     "date": "2021-12-13",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "22:05",
     "title": "20. Stadtratssitzung – Dezember 2021",
     "absent": [
       "john",
@@ -3654,9 +3815,20 @@
     ]
   },
   {
+    "id": "sr_20220117",
+    "date": "2022-01-17",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "21:55"
+  },
+  {
     "id": "bpu_20220124",
     "date": "2022-01-24",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "20:20",
     "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – Januar 2022",
     "source": {
       "kind": "webauszug",
@@ -3774,9 +3946,36 @@
     ]
   },
   {
+    "id": "sr_20220207",
+    "date": "2022-02-07",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "21:45"
+  },
+  {
+    "id": "sr_20220221",
+    "date": "2022-02-21",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "18:30",
+    "end": "22:30"
+  },
+  {
+    "id": "sr_20220314",
+    "date": "2022-03-14",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:20"
+  },
+  {
     "id": "bpu_20220324",
     "date": "2022-03-24",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "19:50",
     "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – März 2022",
     "source": {
       "kind": "webauszug",
@@ -3855,9 +4054,44 @@
     ]
   },
   {
+    "id": "sr_20220328",
+    "date": "2022-03-28",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
+    "id": "sr_20220404",
+    "date": "2022-04-04",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
+    "id": "sr_20220502",
+    "date": "2022-05-02",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "18:00",
+    "end": "20:35"
+  },
+  {
+    "id": "sr_20220509",
+    "date": "2022-05-09",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:10"
+  },
+  {
     "id": "bpu_20220523",
     "date": "2022-05-23",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "20:05",
     "title": "3. Sitzung Bau-, Planungs- und Umweltausschuss – Mai 2022",
     "source": {
       "kind": "webauszug",
@@ -3926,9 +4160,52 @@
     ]
   },
   {
+    "id": "sr_20220530",
+    "date": "2022-05-30",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "21:30"
+  },
+  {
+    "id": "sr_20220704",
+    "date": "2022-07-04",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:30"
+  },
+  {
+    "id": "sr_20220711",
+    "date": "2022-07-11",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "18:30",
+    "end": "20:25"
+  },
+  {
+    "id": "sr_20220718",
+    "date": "2022-07-18",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "20:30"
+  },
+  {
+    "id": "sr_20220725",
+    "date": "2022-07-25",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "18:00",
+    "end": "20:30"
+  },
+  {
     "id": "sr_20220905",
     "date": "2022-09-05",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:55",
     "title": "14. Stadtratssitzung – September 2022",
     "absent": [
       "beubl",
@@ -4009,6 +4286,9 @@
     "id": "sr_20220919",
     "date": "2022-09-19",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:00",
     "title": "15. Stadtratssitzung – September 2022",
     "absent": [
       "hadersdorfer",
@@ -4107,11 +4387,15 @@
     "id": "bpu_20220926",
     "date": "2022-09-26",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "20:35",
     "title": "4. Sitzung Bau-, Planungs- und Umweltausschuss – September 2022",
     "source": {
       "kind": "webauszug",
       "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2402&smcmode=32832"
     },
+    "absent": [],
     "agenda": [
       {
         "number": "1",
@@ -4167,13 +4451,15 @@
         "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
-    ],
-    "absent": []
+    ]
   },
   {
     "id": "sr_20221010",
     "date": "2022-10-10",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:05",
     "title": "16. Stadtratssitzung – Oktober 2022",
     "absent": [
       "gruebl",
@@ -4241,6 +4527,9 @@
     "id": "sr_20221024",
     "date": "2022-10-24",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "17:45",
+    "end": "21:20",
     "title": "17. Stadtratssitzung – Oktober 2022 (Niederlegung Neumayr, Eintritt Gruber)",
     "absent": [
       "beubl",
@@ -4336,9 +4625,20 @@
     ]
   },
   {
+    "id": "sr_20221107",
+    "date": "2022-11-07",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "21:10"
+  },
+  {
     "id": "bpu_20221117",
     "date": "2022-11-17",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:15",
     "title": "5. BPU – November 2022",
     "absent": [
       "welter"
@@ -4430,6 +4730,9 @@
     "id": "sr_20221121",
     "date": "2022-11-21",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:30",
     "title": "19. Stadtratssitzung – November 2022",
     "absent": [
       "hadersdorfer",
@@ -4488,9 +4791,36 @@
     ]
   },
   {
+    "id": "hvfa_20221124",
+    "date": "2022-11-24",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:10"
+  },
+  {
+    "id": "hvfa_20221128",
+    "date": "2022-11-28",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "21:55"
+  },
+  {
+    "id": "hvfa_20221205",
+    "date": "2022-12-05",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "18:00",
+    "end": "21:00"
+  },
+  {
     "id": "sr_20221212",
     "date": "2022-12-12",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:25",
     "title": "20. Stadtratssitzung – Dezember 2022",
     "absent": [
       "reif",
@@ -4618,6 +4948,9 @@
     "id": "sr_20221219",
     "date": "2022-12-19",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "20:35",
     "title": "21. Stadtratssitzung – Dezember 2022",
     "absent": [
       "beibl",
@@ -4684,6 +5017,9 @@
     "id": "sr_20230112",
     "date": "2023-01-12",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:15",
     "title": "1. Stadtratssitzung – Januar 2023",
     "absent": [
       "becher_a",
@@ -4733,7 +5069,11 @@
     "id": "bpu_20230123",
     "date": "2023-01-23",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "19:50",
     "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – Januar 2023",
+    "absent": [],
     "agenda": [
       {
         "number": 1,
@@ -4810,13 +5150,15 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "absent": []
+    ]
   },
   {
     "id": "sr_20230130",
     "date": "2023-01-30",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:45",
     "title": "2. Stadtratssitzung – Januar 2023",
     "absent": [
       "beubl",
@@ -4887,6 +5229,9 @@
     "id": "sr_20230213",
     "date": "2023-02-13",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:00",
     "title": "3. Stadtratssitzung – Februar 2023",
     "absent": [
       "dollinger",
@@ -4936,6 +5281,9 @@
     "id": "sr_20230306",
     "date": "2023-03-06",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "22:20",
     "title": "4. Stadtratssitzung – März 2023",
     "absent": [
       "beubl"
@@ -4998,6 +5346,9 @@
     "id": "bpu_20230320",
     "date": "2023-03-20",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:40",
     "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – März 2023",
     "absent": [
       "gruebl"
@@ -5101,12 +5452,37 @@
     "id": "sr_20230327",
     "date": "2023-03-27",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "22:05",
     "title": "5. Stadtratssitzung – März 2023",
     "absent": [
       "john",
       "linz_karin",
       "pschorr",
       "tristl"
+    ],
+    "partial": [
+      {
+        "member": "stanglmaier",
+        "from": "18:20"
+      },
+      {
+        "member": "becher_j",
+        "from": "18:45"
+      },
+      {
+        "member": "gruber",
+        "from": "20:45"
+      },
+      {
+        "member": "kaestl",
+        "from": "18:15"
+      },
+      {
+        "member": "von_pressentin",
+        "to": "20:30"
+      }
     ],
     "agenda": [
       {
@@ -5167,34 +5543,15 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "partial": [
-      {
-        "member": "stanglmaier",
-        "from": "18:20"
-      },
-      {
-        "member": "becher_j",
-        "from": "18:45"
-      },
-      {
-        "member": "gruber",
-        "from": "20:45"
-      },
-      {
-        "member": "kaestl",
-        "from": "18:15"
-      },
-      {
-        "member": "von_pressentin",
-        "to": "20:30"
-      }
     ]
   },
   {
     "id": "sr_20230417",
     "date": "2023-04-17",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:50",
     "title": "6. Stadtratssitzung – April 2023",
     "absent": [
       "stanglmaier",
@@ -5263,6 +5620,9 @@
     "id": "sr_20230424",
     "date": "2023-04-24",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:30",
     "title": "7. Stadtratssitzung – April 2023",
     "absent": [
       "becher_j",
@@ -5321,15 +5681,40 @@
     ]
   },
   {
+    "id": "hvfa_20230511",
+    "date": "2023-05-11",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "21:30"
+  },
+  {
     "id": "sr_20230515",
     "date": "2023-05-15",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:35",
     "title": "8. Stadtratssitzung – Mai 2023",
     "absent": [
       "stanglmaier",
       "becher_a",
       "kaestl",
       "linz_kilian"
+    ],
+    "partial": [
+      {
+        "member": "gruber",
+        "from": "18:10"
+      },
+      {
+        "member": "von_pressentin",
+        "from": "18:10"
+      },
+      {
+        "member": "linz_karin",
+        "to": "19:10"
+      }
     ],
     "agenda": [
       {
@@ -5371,26 +5756,15 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "partial": [
-      {
-        "member": "gruber",
-        "from": "18:10"
-      },
-      {
-        "member": "von_pressentin",
-        "from": "18:10"
-      },
-      {
-        "member": "linz_karin",
-        "to": "19:10"
-      }
     ]
   },
   {
     "id": "sr_20230522",
     "date": "2023-05-22",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "20:50",
     "title": "9. Stadtratssitzung – Mai 2023",
     "absent": [
       "hadersdorfer",
@@ -5481,6 +5855,9 @@
     "id": "sr_20230612",
     "date": "2023-06-12",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:35",
     "title": "10. Stadtratssitzung – Juni 2023",
     "absent": [
       "beibl",
@@ -5524,6 +5901,9 @@
     "id": "sr_20230626",
     "date": "2023-06-26",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:45",
     "title": "11. Stadtratssitzung – Juni 2023",
     "absent": [
       "becher_j",
@@ -5577,9 +5957,20 @@
     ]
   },
   {
+    "id": "hvfa_20230703",
+    "date": "2023-07-03",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
     "id": "sr_20230710",
     "date": "2023-07-10",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:10",
     "title": "12. Stadtratssitzung – Juli 2023",
     "absent": [
       "hadersdorfer"
@@ -5621,6 +6012,9 @@
     "id": "bpu_20230717",
     "date": "2023-07-17",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "19:45",
     "title": "3. Sitzung Bau-, Planungs- und Umweltausschuss – Juli 2023",
     "absent": [
       "hadersdorfer",
@@ -5696,6 +6090,9 @@
     "id": "sr_20230724",
     "date": "2023-07-24",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:05",
     "title": "13. Stadtratssitzung – Juli 2023",
     "absent": [
       "becher_a"
@@ -5770,6 +6167,9 @@
     "id": "sr_20230904",
     "date": "2023-09-04",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:50",
     "title": "14. Stadtratssitzung – September 2023",
     "absent": [
       "fincke",
@@ -5841,6 +6241,9 @@
     "id": "bpu_20230921",
     "date": "2023-09-21",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "19:50",
     "title": "4. Sitzung Bau-, Planungs- und Umweltausschuss – September 2023",
     "absent": [
       "hadersdorfer",
@@ -5926,9 +6329,28 @@
     ]
   },
   {
+    "id": "sr_20230925",
+    "date": "2023-09-25",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:30"
+  },
+  {
+    "id": "sr_20231016",
+    "date": "2023-10-16",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "18:00",
+    "end": "21:10"
+  },
+  {
     "id": "sr_20231023",
     "date": "2023-10-23",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:00",
     "title": "17. Stadtratssitzung – Oktober 2023",
     "absent": [
       "gruber",
@@ -5983,10 +6405,30 @@
     ]
   },
   {
+    "id": "sr_20231113",
+    "date": "2023-11-13",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "20:25"
+  },
+  {
+    "id": "hvfa_20231120",
+    "date": "2023-11-20",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:15"
+  },
+  {
     "id": "bpu_20231123",
     "date": "2023-11-23",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:35",
     "title": "5. Sitzung Bau-, Planungs- und Umweltausschuss – November 2023",
+    "absent": [],
     "agenda": [
       {
         "number": 1,
@@ -6105,13 +6547,47 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "absent": []
+    ]
+  },
+  {
+    "id": "hvfa_20231127",
+    "date": "2023-11-27",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:20"
+  },
+  {
+    "id": "hvfa_20231130",
+    "date": "2023-11-30",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:10"
+  },
+  {
+    "id": "sr_20231204",
+    "date": "2023-12-04",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "18:00",
+    "end": "21:25"
+  },
+  {
+    "id": "hvfa_20231207",
+    "date": "2023-12-07",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:35"
   },
   {
     "id": "sr_20231214",
     "date": "2023-12-14",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "20:40",
     "title": "20. Stadtratssitzung – Dezember 2023",
     "absent": [
       "becher_a",
@@ -6121,6 +6597,25 @@
       "linz_karin",
       "pschorr",
       "reif"
+    ],
+    "partial": [
+      {
+        "member": "beibl",
+        "from": "18:10",
+        "to": "19:30"
+      },
+      {
+        "member": "fincke",
+        "to": "19:30"
+      },
+      {
+        "member": "gruebl",
+        "from": "18:15"
+      },
+      {
+        "member": "von_pressentin",
+        "from": "18:15"
+      }
     ],
     "agenda": [
       {
@@ -6180,36 +6675,42 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "partial": [
-      {
-        "member": "beibl",
-        "from": "18:10",
-        "to": "19:30"
-      },
-      {
-        "member": "fincke",
-        "to": "19:30"
-      },
-      {
-        "member": "gruebl",
-        "from": "18:15"
-      },
-      {
-        "member": "von_pressentin",
-        "from": "18:15"
-      }
     ]
   },
   {
     "id": "sr_20231218",
     "date": "2023-12-18",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "20:55",
     "title": "21. Stadtratssitzung – Dezember 2023",
     "absent": [
       "beibl",
       "gruber",
       "pschorr"
+    ],
+    "partial": [
+      {
+        "member": "becher_a",
+        "from": "18:20"
+      },
+      {
+        "member": "becher_j",
+        "from": "19:10"
+      },
+      {
+        "member": "fincke",
+        "from": "18:05"
+      },
+      {
+        "member": "kaestl",
+        "from": "18:15"
+      },
+      {
+        "member": "von_pressentin",
+        "from": "18:10"
+      }
     ],
     "agenda": [
       {
@@ -6244,34 +6745,23 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "partial": [
-      {
-        "member": "becher_a",
-        "from": "18:20"
-      },
-      {
-        "member": "becher_j",
-        "from": "19:10"
-      },
-      {
-        "member": "fincke",
-        "from": "18:05"
-      },
-      {
-        "member": "kaestl",
-        "from": "18:15"
-      },
-      {
-        "member": "von_pressentin",
-        "from": "18:10"
-      }
     ]
+  },
+  {
+    "id": "sr_20240115",
+    "date": "2024-01-15",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "21:45"
   },
   {
     "id": "sr_20240201",
     "date": "2024-02-01",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:15",
     "title": "2. Stadtratssitzung – Februar 2024",
     "absent": [
       "stanglmaier",
@@ -6326,6 +6816,9 @@
     "id": "sr_20240219",
     "date": "2024-02-19",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:25",
     "title": "3. Stadtratssitzung – Februar 2024",
     "absent": [
       "stanglmaier",
@@ -6371,10 +6864,19 @@
     "id": "sr_20240304",
     "date": "2024-03-04",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:40",
     "title": "4. Stadtratssitzung – März 2024",
     "absent": [
       "beubl",
       "weber"
+    ],
+    "partial": [
+      {
+        "member": "hadersdorfer",
+        "to": "20:15"
+      }
     ],
     "agenda": [
       {
@@ -6420,18 +6922,15 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "partial": [
-      {
-        "member": "hadersdorfer",
-        "to": "20:15"
-      }
     ]
   },
   {
     "id": "bpu_20240314",
     "date": "2024-03-14",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "19:45",
     "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – März 2024",
     "absent": [
       "stanglmaier",
@@ -6505,6 +7004,9 @@
     "id": "sr_20240318",
     "date": "2024-03-18",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:05",
     "title": "5. Stadtratssitzung – März 2024",
     "absent": [
       "beubl",
@@ -6561,6 +7063,9 @@
     "id": "sr_20240408",
     "date": "2024-04-08",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:50",
     "title": "6. Stadtratssitzung – April 2024",
     "absent": [
       "stanglmaier",
@@ -6619,6 +7124,9 @@
     "id": "sr_20240422",
     "date": "2024-04-22",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:05",
     "title": "7. Stadtratssitzung – April 2024",
     "absent": [
       "fincke",
@@ -6662,6 +7170,9 @@
     "id": "sr_20240506",
     "date": "2024-05-06",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:00",
     "title": "8. Stadtratssitzung – Mai 2024",
     "absent": [
       "stanglmaier",
@@ -6719,6 +7230,9 @@
     "id": "sr_20240610",
     "date": "2024-06-10",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:40",
     "title": "9. Stadtratssitzung – Juni 2024",
     "absent": [
       "hadersdorfer",
@@ -6832,6 +7346,9 @@
     "id": "sr_20240617",
     "date": "2024-06-17",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:30",
     "title": "10. Stadtratssitzung – Juni 2024",
     "absent": [
       "hadersdorfer",
@@ -6923,6 +7440,9 @@
     "id": "sr_20240701",
     "date": "2024-07-01",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:00",
     "title": "11. Stadtratssitzung – Juli 2024",
     "absent": [
       "fincke",
@@ -6990,6 +7510,9 @@
     "id": "bpu_20240715",
     "date": "2024-07-15",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:45",
     "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – Juli 2024",
     "substitutes": [
       {
@@ -7082,6 +7605,9 @@
     "id": "sr_20240722",
     "date": "2024-07-22",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:15",
     "title": "12. Stadtratssitzung – Juli 2024",
     "absent": [
       "stanglmaier",
@@ -7125,6 +7651,9 @@
     "id": "sr_20240902",
     "date": "2024-09-02",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:00",
     "title": "13. Stadtratssitzung – September 2024",
     "absent": [
       "hadersdorfer",
@@ -7223,6 +7752,9 @@
     "id": "sr_20240923",
     "date": "2024-09-23",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:05",
     "title": "14. Stadtratssitzung – September 2024",
     "absent": [
       "hadersdorfer",
@@ -7295,6 +7827,9 @@
     "id": "bpu_20240930",
     "date": "2024-09-30",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "19:45",
     "title": "3. Sitzung Bau-, Planungs- und Umweltausschuss – September 2024",
     "substitutes": [
       {
@@ -7391,6 +7926,9 @@
     "id": "sr_20241007",
     "date": "2024-10-07",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:25",
     "title": "15. Stadtratssitzung – Oktober 2024",
     "absent": [
       "hadersdorfer",
@@ -7454,12 +7992,33 @@
     "id": "sr_20241021",
     "date": "2024-10-21",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:35",
     "title": "16. Stadtratssitzung – Oktober 2024",
     "absent": [
       "hadersdorfer",
       "fincke",
       "haberl",
       "reif"
+    ],
+    "partial": [
+      {
+        "member": "stanglmaier",
+        "from": "20:10"
+      },
+      {
+        "member": "becher_j",
+        "from": "20:10"
+      },
+      {
+        "member": "kaestl",
+        "from": "19:30"
+      },
+      {
+        "member": "linz_karin",
+        "to": "21:00"
+      }
     ],
     "agenda": [
       {
@@ -7555,30 +8114,15 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "partial": [
-      {
-        "member": "stanglmaier",
-        "from": "20:10"
-      },
-      {
-        "member": "becher_j",
-        "from": "20:10"
-      },
-      {
-        "member": "kaestl",
-        "from": "19:30"
-      },
-      {
-        "member": "linz_karin",
-        "to": "21:00"
-      }
     ]
   },
   {
     "id": "sr_20241104",
     "date": "2024-11-04",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:10",
     "title": "17. Stadtratssitzung – November 2024",
     "absent": [
       "becher_j",
@@ -7641,6 +8185,9 @@
     "id": "sr_20241118",
     "date": "2024-11-18",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:20",
     "title": "18. Stadtratssitzung – November 2024",
     "absent": [
       "heinz",
@@ -7705,9 +8252,28 @@
     ]
   },
   {
+    "id": "hvfa_20241121",
+    "date": "2024-11-21",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:05"
+  },
+  {
+    "id": "hvfa_20241125",
+    "date": "2024-11-25",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "end": "22:00"
+  },
+  {
     "id": "hvfa_20241128",
     "date": "2024-11-28",
     "type": "hvfa",
+    "niederschrift": "vollständig",
+    "start": "17:00",
+    "end": "19:15",
     "title": "3. Sitzung Hauptverwaltungs- und Finanzausschuss – November 2024",
     "agenda": [
       {
@@ -7757,6 +8323,9 @@
     "id": "sr_20241202",
     "date": "2024-12-02",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:45",
     "title": "19. Stadtratssitzung – Dezember 2024",
     "absent": [
       "stanglmaier",
@@ -7798,6 +8367,9 @@
     "id": "sr_20241209",
     "date": "2024-12-09",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:35",
     "title": "20. Stadtratssitzung – Dezember 2024",
     "absent": [
       "becher_j",
@@ -7883,7 +8455,18 @@
     "id": "sr_20241216",
     "date": "2024-12-16",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:10",
     "title": "21. Stadtratssitzung – Dezember 2024",
+    "absent": [
+      "becher_a",
+      "beubl",
+      "heinz",
+      "hobmaier",
+      "reif",
+      "tristl"
+    ],
     "agenda": [
       {
         "number": 1,
@@ -7915,20 +8498,15 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "absent": [
-      "becher_a",
-      "beubl",
-      "heinz",
-      "hobmaier",
-      "reif",
-      "tristl"
     ]
   },
   {
     "id": "bpu_20250116",
     "date": "2025-01-16",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:15",
     "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – Januar 2025",
     "absent": [
       "linz_karin"
@@ -8007,6 +8585,9 @@
     "id": "sr_20250120",
     "date": "2025-01-20",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "22:10",
     "title": "1. Stadtratssitzung – Januar 2025",
     "absent": [
       "stanglmaier",
@@ -8088,6 +8669,9 @@
     "id": "sr_20250210",
     "date": "2025-02-10",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:40",
     "title": "2. Stadtratssitzung – Februar 2025",
     "absent": [
       "dollinger",
@@ -8148,6 +8732,9 @@
     "id": "sr_20250224",
     "date": "2025-02-24",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:35",
     "title": "3. Stadtratssitzung – Februar 2025",
     "absent": [
       "grundner",
@@ -8225,7 +8812,13 @@
     "id": "bpu_20250317",
     "date": "2025-03-17",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "19:50",
     "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss",
+    "absent": [
+      "tristl"
+    ],
     "substitutes": [
       {
         "member": "tristl",
@@ -8273,15 +8866,15 @@
         "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
-    ],
-    "absent": [
-      "tristl"
     ]
   },
   {
     "id": "sr_20250324",
     "date": "2025-03-24",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:25",
     "title": "4. Stadtratssitzung – März 2025",
     "absent": [
       "dollinger"
@@ -8354,6 +8947,9 @@
     "id": "sr_20250410",
     "date": "2025-04-10",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:05",
     "title": "5. Stadtratssitzung – April 2025",
     "absent": [
       "dollinger",
@@ -8405,6 +9001,9 @@
     "id": "sr_20250428",
     "date": "2025-04-28",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:40",
     "title": "6. Stadtratssitzung – April 2025",
     "absent": [
       "gruber",
@@ -8474,6 +9073,9 @@
     "id": "bpu_20250522",
     "date": "2025-05-22",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:00",
     "title": "3. Sitzung Bau-, Planungs- und Umweltausschuss – Mai 2025",
     "absent": [
       "hadersdorfer",
@@ -8570,6 +9172,9 @@
     "id": "sr_20250602",
     "date": "2025-06-02",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:12",
     "title": "8. Stadtratssitzung – Juni 2025",
     "absent": [
       "hadersdorfer",
@@ -8632,6 +9237,9 @@
     "id": "sr_20250623",
     "date": "2025-06-23",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:45",
     "title": "9. Stadtratssitzung – Juni 2025",
     "absent": [
       "hadersdorfer",
@@ -8692,6 +9300,9 @@
     "id": "sr_20250714",
     "date": "2025-07-14",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "22:00",
     "title": "10. Stadtratssitzung – Juli 2025",
     "absent": [
       "hobmaier",
@@ -8771,6 +9382,9 @@
     "id": "bpu_20250721",
     "date": "2025-07-21",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "18:00",
+    "end": "19:20",
     "title": "4. Sitzung Bau-, Planungs- und Umweltausschuss – Juli 2025",
     "source": {
       "kind": "webauszug",
@@ -8832,9 +9446,20 @@
     ]
   },
   {
+    "id": "hvfa_20250721",
+    "date": "2025-07-21",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:28",
+    "end": "22:10"
+  },
+  {
     "id": "sr_20250728",
     "date": "2025-07-28",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:30",
     "title": "11. Stadtratssitzung – Juli 2025",
     "absent": [
       "stanglmaier",
@@ -8913,6 +9538,9 @@
     "id": "sr_20250908",
     "date": "2025-09-08",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:15",
     "title": "12. Stadtratssitzung – September 2025",
     "absent": [
       "hadersdorfer",
@@ -8993,6 +9621,9 @@
     "id": "sr_20250922",
     "date": "2025-09-22",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:15",
     "title": "13. Stadtratssitzung – September 2025",
     "absent": [
       "hadersdorfer",
@@ -9077,6 +9708,9 @@
     "id": "bpu_20251006",
     "date": "2025-10-06",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "19:50",
     "title": "5. Sitzung Bau-, Planungs- und Umweltausschuss",
     "absent": [
       "welter"
@@ -9138,6 +9772,9 @@
     "id": "sr_20251013",
     "date": "2025-10-13",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:20",
     "title": "14. Stadtratssitzung – Oktober 2025",
     "absent": [
       "stanglmaier",
@@ -9197,6 +9834,9 @@
     "id": "sr_20251029",
     "date": "2025-10-29",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:50",
     "title": "15. Stadtratssitzung – Oktober 2025",
     "absent": [
       "stanglmaier",
@@ -9254,7 +9894,16 @@
     "id": "sr_20251110",
     "date": "2025-11-10",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "20:55",
     "title": "16. Stadtratssitzung – November 2025",
+    "absent": [
+      "becher_a",
+      "beibl",
+      "grundner",
+      "hobmaier"
+    ],
     "agenda": [
       {
         "number": 1,
@@ -9323,21 +9972,47 @@
         "type": "formal"
       }
     ],
-    "absent": [
-      "becher_a",
-      "beibl",
-      "grundner",
-      "hobmaier"
-    ],
     "press": [
       "merkur_2025-11-10_kreisverkehr"
     ]
   },
   {
+    "id": "hvfa_20251120",
+    "date": "2025-11-20",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:06",
+    "end": "22:09"
+  },
+  {
+    "id": "hvfa_20251124",
+    "date": "2025-11-24",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:03",
+    "end": "22:20"
+  },
+  {
+    "id": "hvfa_20251127",
+    "date": "2025-11-27",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "18:00",
+    "end": "22:20"
+  },
+  {
     "id": "sr_20251201",
     "date": "2025-12-01",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:15",
     "title": "17. Stadtratssitzung – Dezember 2025",
+    "absent": [
+      "gruber",
+      "grundner",
+      "kieninger"
+    ],
     "agenda": [
       {
         "number": 2,
@@ -9416,18 +10091,22 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "absent": [
-      "gruber",
-      "grundner",
-      "kieninger"
     ]
   },
   {
     "id": "bpu_20251208",
     "date": "2025-12-08",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "19:30",
     "title": "6. Sitzung Bau-, Planungs- und Umweltausschuss",
+    "absent": [
+      "hobmaier",
+      "kieninger",
+      "linz_karin",
+      "welter"
+    ],
     "substitutes": [
       {
         "member": "hobmaier",
@@ -9483,18 +10162,15 @@
         "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
-    ],
-    "absent": [
-      "hobmaier",
-      "kieninger",
-      "linz_karin",
-      "welter"
     ]
   },
   {
     "id": "sr_20251215",
     "date": "2025-12-15",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:35",
     "title": "18. Stadtratssitzung – Dezember 2025",
     "absent": [
       "becher_a",
@@ -9554,13 +10230,16 @@
     "id": "sr_20260112",
     "date": "2026-01-12",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "22:10",
+    "title": "1. Stadtratssitzung – Januar 2026",
     "absent": [
       "hobmaier",
       "kaestl",
       "becher_a",
       "becher_j"
     ],
-    "title": "1. Stadtratssitzung – Januar 2026",
     "agenda": [
       {
         "number": 1,
@@ -9629,6 +10308,9 @@
     "id": "sr_20260202",
     "date": "2026-02-02",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:15",
+    "end": "21:40",
     "title": "2. Stadtratssitzung – Februar 2026",
     "absent": [
       "beibl",
@@ -9701,6 +10383,9 @@
     "id": "sr_20260223",
     "date": "2026-02-23",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:50",
     "title": "3. Stadtratssitzung – Februar 2026",
     "absent": [
       "becher_a",
@@ -9770,6 +10455,9 @@
     "id": "sr_20260325",
     "date": "2026-03-25",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "20:40",
     "title": "4. Stadtratssitzung – März 2026",
     "absent": [
       "stanglmaier",
@@ -9831,7 +10519,20 @@
     "id": "bpu_20260413",
     "date": "2026-04-13",
     "type": "bpu",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "19:20",
     "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss",
+    "source": {
+      "kind": "webauszug",
+      "url": null
+    },
+    "quellen": {
+      "mitschrift": {
+        "start": "20:34",
+        "end": "20:44"
+      }
+    },
     "absent": [
       "hobmaier"
     ],
@@ -9856,16 +10557,15 @@
         "number": "4.4",
         "title": "Antrag auf isolierte Befreiung zwecks Nutzungsänder. des Dachgeschosses eines Fitnessstudios zur Wohnnutzung mit 5 WE a.d. Bahnhofstr. 50, Moosburg"
       }
-    ],
-    "source": {
-      "kind": "webauszug",
-      "url": null
-    }
+    ]
   },
   {
     "id": "sr_20260420",
     "date": "2026-04-20",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "21:52",
     "title": "5. Stadtratssitzung – April 2026",
     "absent": [
       "gruber",
@@ -9957,6 +10657,9 @@
     "id": "sr_20260511",
     "date": "2026-05-11",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:20",
     "title": "6. Stadtratssitzung – Mai 2026 (konstituierend)",
     "absent": [],
     "agenda": [
@@ -10114,7 +10817,16 @@
     "id": "sr_20260518",
     "date": "2026-05-18",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:55",
     "title": "7. Stadtratssitzung – Mai 2026",
+    "quellen": {
+      "mitschrift": {
+        "start": "19:03",
+        "end": "19:42"
+      }
+    },
     "absent": [
       "marschoun",
       "stanglmaier"
@@ -10187,7 +10899,14 @@
     "id": "sr_20260615",
     "date": "2026-06-15",
     "type": "stadtrat",
+    "niederschrift": "auszug",
+    "start": "19:00",
+    "end": "21:55",
     "title": "8. Stadtratssitzung – Juni 2026",
+    "source": {
+      "kind": "webauszug",
+      "url": null
+    },
     "agenda": [
       {
         "number": "1",
@@ -10272,10 +10991,6 @@
         "type": "formal"
       }
     ],
-    "source": {
-      "kind": "webauszug",
-      "url": null
-    },
     "press": [
       "mz_2026-06-16_rathaus-farbe",
       "merkur_2026-06-18_rathaus-farbe"
@@ -10285,11 +11000,26 @@
     "id": "sr_20260629",
     "date": "2026-06-29",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:00",
+    "end": "20:47",
     "title": "9. Stadtratssitzung – Juni 2026",
+    "quellen": {
+      "mitschrift": {
+        "start": "19:00",
+        "end": "20:27"
+      }
+    },
     "absent": [
       "heinz",
       "linz_karin",
       "roeck"
+    ],
+    "partial": [
+      {
+        "member": "beibl",
+        "to": "20:30"
+      }
     ],
     "agenda": [
       {
@@ -10332,18 +11062,15 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "partial": [
-      {
-        "member": "beibl",
-        "to": "20:30"
-      }
     ]
   },
   {
     "id": "bpu_20260713",
     "date": "2026-07-13",
     "type": "bpu",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "20:00",
     "title": "2. Sitzung Bau-, Planungs- und Umweltausschuss – Juli 2026",
     "absent": [
       "marschoun",
@@ -10436,7 +11163,19 @@
     "id": "sr_20260720",
     "date": "2026-07-20",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "18:30",
+    "end": "21:00",
     "title": "10. Stadtratssitzung – Juli 2026",
+    "quellen": {
+      "niederschrift": {
+        "start": "19:00"
+      },
+      "mitschrift": {
+        "start": "19:15",
+        "end": "20:35"
+      }
+    },
     "absent": [
       "stanglmaier",
       "heinz"
@@ -10500,9 +11239,26 @@
     ]
   },
   {
+    "id": "sr_20260727",
+    "date": "2026-07-27",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "18:30",
+    "end": "22:27",
+    "quellen": {
+      "mitschrift": {
+        "start": "18:37",
+        "end": "21:19"
+      }
+    }
+  },
+  {
     "id": "sr_20260907",
     "date": "2026-09-07",
     "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "18:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14",
     "title": "12. Stadtratssitzung – September 2026",
     "absent": [],
     "agenda": [
@@ -10553,10 +11309,86 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "source": {
-      "kind": "vorschau",
-      "url": null
-    }
+    ]
+  },
+  {
+    "id": "sr_20260928",
+    "date": "2026-09-28",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "18:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14"
+  },
+  {
+    "id": "bpu_20261005",
+    "date": "2026-10-05",
+    "type": "bpu",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14"
+  },
+  {
+    "id": "sr_20261019",
+    "date": "2026-10-19",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14"
+  },
+  {
+    "id": "sr_20261109",
+    "date": "2026-11-09",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14"
+  },
+  {
+    "id": "hvfa_20261119",
+    "date": "2026-11-19",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14"
+  },
+  {
+    "id": "hvfa_20261123",
+    "date": "2026-11-23",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14"
+  },
+  {
+    "id": "hvfa_20261126",
+    "date": "2026-11-26",
+    "type": "hvfa",
+    "niederschrift": "keine",
+    "start": "17:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14"
+  },
+  {
+    "id": "sr_20261130",
+    "date": "2026-11-30",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14"
+  },
+  {
+    "id": "bpu_20261207",
+    "date": "2026-12-07",
+    "type": "bpu",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14"
+  },
+  {
+    "id": "sr_20261216",
+    "date": "2026-12-16",
+    "type": "stadtrat",
+    "niederschrift": "keine",
+    "start": "19:00",
+    "location": "Sitzungssaal des Feyerabendhauses, Stadtplatz 14"
   }
 ]

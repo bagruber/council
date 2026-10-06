@@ -2,8 +2,8 @@
 // (Dauer-Punkte, Jahresstunden, Mediane), Datenlage (Register mit
 // Herkunftsstufen) und Presseschau.
 import {
-  sessions, topics, members, pressData, sessionLengths, mediaMap,
-  sessionByDateBody, sessionRegister, tierCounts, lengthMin,
+  sessions, topics, members, pressData, mediaMap,
+  sessionMap, sessionRegister, bestand, votenVon, tierCounts, dauerMin,
   protocolUrl, isWebauszug, SITZUNGSARTEN, sitzungsart,
 } from "../daten.js";
 import { formatDate, formatDuration, monthNames } from "../hilfen.js";
@@ -73,32 +73,28 @@ function chartCard(title, foot, drawFn, data, withLegend) {
 function renderStatistik() {
   main.appendChild(backLink("Übersicht", "#/"));
 
-  const entries = [...sessionLengths]
-    .map(l => ({ date: l.date, body: l.body, start: l.start, end: l.end, min: lengthMin(l) }))
-    .sort((a, b) => a.date.localeCompare(b.date));
+  const b = bestand();
+  const entries = sessionRegister()
+    .map(s => ({ id: s.id, date: s.date, body: s.type, start: s.start, end: s.end,
+                 min: dauerMin(s), erfasst: !!s.agenda }))
+    .sort((a, b2) => a.date.localeCompare(b2.date));
   const timed = entries.filter(e => e.min !== null);
-  const totalMin = timed.reduce((s, e) => s + e.min, 0);
   const srMins = timed.filter(e => e.body === "stadtrat").map(e => e.min);
-
-  // Welche Sitzungen es gab, sagt dieselbe Liste wie in der Datenlage: das
-  // Register der Stadt plus jede Sitzung, zu der eine Niederschrift vorliegt.
-  // Zwei Stadtratssitzungen vom Januar und Februar 2020 fehlen im Register,
-  // sind aber protokolliert -- sie zaehlen mit, eine Dauer haben sie nicht.
-  const reg = sessionRegister();
-  const erste = reg[reg.length - 1].date;
 
   const header = document.createElement("div");
   header.className = "topic-header";
   header.innerHTML = `
     <h1>Sitzungsstatistik</h1>
-    <div class="topic-summary">Dauer der öffentlichen Sitzungen von Stadtrat, Bau-, Planungs- und Umweltausschuss (BPU) und Hauptverwaltungs- und Finanzausschuss (HVFA) seit ${monatJahr(erste)}.</div>`;
+    <div class="topic-summary">Dauer der öffentlichen Sitzungen von Stadtrat, Bau-, Planungs- und Umweltausschuss (BPU) und Hauptverwaltungs- und Finanzausschuss (HVFA) seit ${monatJahr(b.seit)}.
+      Gezählt ist jede Sitzung, die stattgefunden hat — auch die, von denen nichts
+      veröffentlicht ist. Von ${b.sitzungen - b.mitDauer} ist keine Dauer überliefert.</div>`;
   main.appendChild(header);
 
   const tiles = document.createElement("div");
   tiles.className = "stat-tiles";
   tiles.innerHTML = `
-    <div class="stat-tile"><div class="stat-tile-value">${reg.length}</div><div class="stat-tile-label">Sitzungen, ${timed.length} davon mit Dauer</div></div>
-    <div class="stat-tile"><div class="stat-tile-value">${Math.round(totalMin / 60)} Std.</div><div class="stat-tile-label">Gesamtdauer</div></div>
+    <div class="stat-tile"><div class="stat-tile-value">${b.sitzungen}</div><div class="stat-tile-label">Sitzungen, ${b.mitDauer} davon mit Dauer</div></div>
+    <div class="stat-tile"><div class="stat-tile-value">${Math.round(b.minuten / 60)} Std.</div><div class="stat-tile-label">Gesamtdauer</div></div>
     <div class="stat-tile"><div class="stat-tile-value">${formatDuration(median(srMins))}</div><div class="stat-tile-label">Stadtratssitzung im Median</div></div>`;
   main.appendChild(tiles);
 
@@ -215,29 +211,30 @@ function pressBadge(p) {
 function renderDatenlage(filter) {
   main.appendChild(backLink("Übersicht", "#/"));
 
+  const b = bestand();
   const reg = sessionRegister();
-  const erfasst = reg.filter(r => r.session);
-  const protokoll = erfasst.filter(r => !isWebauszug(r.session));
-  const auszug = erfasst.filter(r => isWebauszug(r.session));
-  const totalVotes = erfasst.reduce((n, r) => n + r.votes.length, 0);
-  const all = tierCounts(erfasst.flatMap(r => r.votes));
-  const traceable = totalVotes - all.sum;
+  const stufe = x => reg.filter(r => r.niederschrift === x);
+  const protokoll = stufe("vollständig");
+  const auszug = stufe("auszug");
+  const erfasst = reg.filter(r => r.niederschrift !== "keine");
+  const all = tierCounts(reg.flatMap(votenVon));
+  const traceable = b.abstimmungen - all.sum;
 
   const header = document.createElement("div");
   header.className = "topic-header";
   header.innerHTML = `
     <h1>Datenlage</h1>
-    <div class="topic-summary">Jede öffentliche Sitzung seit ${monatJahr(reg[reg.length - 1].date)}, und was von ihr vorliegt.
-      Sitzungen ohne Niederschrift sind hier bewusst mit aufgeführt — die Lücke gehört zur
-      Auskunft dazu.</div>`;
+    <div class="topic-summary">Jede öffentliche Sitzung seit ${monatJahr(b.seit)}, und was von ihr vorliegt.
+      Gezählt ist, was stattgefunden hat — Sitzungen ohne Niederschrift stehen
+      bewusst mit in der Liste, die Lücke gehört zur Auskunft dazu.</div>`;
   main.appendChild(header);
 
   const tiles = document.createElement("div");
   tiles.className = "stat-tiles";
   tiles.innerHTML = `
-    <div class="stat-tile"><div class="stat-tile-value">${protokoll.length} <small>/ ${reg.length}</small></div><div class="stat-tile-label">Sitzungen mit Niederschrift</div></div>
-    <div class="stat-tile"><div class="stat-tile-value">${totalVotes}</div><div class="stat-tile-label">erfasste Abstimmungen</div></div>
-    <div class="stat-tile"><div class="stat-tile-value">${Math.round(traceable / totalVotes * 100)} %</div><div class="stat-tile-label">Stimmverhalten nachvollziehbar</div></div>`;
+    <div class="stat-tile"><div class="stat-tile-value">${b.vollstaendig} <small>/ ${b.sitzungen}</small></div><div class="stat-tile-label">Sitzungen mit Niederschrift</div></div>
+    <div class="stat-tile"><div class="stat-tile-value">${b.abstimmungen}</div><div class="stat-tile-label">erfasste Abstimmungen</div></div>
+    <div class="stat-tile"><div class="stat-tile-value">${Math.round(traceable / b.abstimmungen * 100)} %</div><div class="stat-tile-label">Stimmverhalten nachvollziehbar</div></div>`;
   main.appendChild(tiles);
 
   // Jede Kennzahl ist ein Filter auf sich selbst. Nochmal draufklicken hebt auf.
@@ -248,17 +245,17 @@ function renderDatenlage(filter) {
   const levels = document.createElement("div");
   levels.className = "tier-legend";
   levels.innerHTML =
-    chip("protokoll", "level-protokoll", "Niederschrift", protokoll.length,
+    chip("protokoll", "level-protokoll", "Niederschrift", b.vollstaendig,
          "Niederschrift mit Anwesenheitsliste")
-    + chip("auszug", "level-auszug", "nur Beschlussauszug", auszug.length,
+    + chip("auszug", "level-auszug", "nur Beschlussauszug", b.auszug,
            "Beschlussauszug der Stadt, ohne Anwesenheitsliste")
-    + chip("keine", "level-keine", "nichts veröffentlicht", reg.length - erfasst.length,
+    + chip("keine", "level-keine", "nichts veröffentlicht", b.keine,
            "Weder Niederschrift noch Auszug veröffentlicht");
   main.appendChild(levels);
 
   // Presselage getrennt von der Aktenlage: eine Sitzung kann lückenlos
   // protokolliert und trotzdem unbeschrieben sein, und umgekehrt.
-  const mitPresse = erfasst.filter(r => pressOfSession(r.session).total);
+  const mitPresse = erfasst.filter(r => pressOfSession(r).total);
   const presse = document.createElement("div");
   presse.className = "tier-legend";
   presse.innerHTML =
@@ -284,9 +281,9 @@ function renderDatenlage(filter) {
   }
   const rows = filter === "protokoll"    ? protokoll
              : filter === "auszug"       ? auszug
-             : filter === "keine"        ? reg.filter(r => !r.session)
+             : filter === "keine"        ? stufe("keine")
              : filter === "presse"       ? mitPresse
-             : filter === "ohne-presse"  ? erfasst.filter(r => !pressOfSession(r.session).total)
+             : filter === "ohne-presse"  ? erfasst.filter(r => !pressOfSession(r).total)
              : reg;
   if (filter && rows !== reg) {
     const note = document.createElement("p");
@@ -307,35 +304,37 @@ function renderDatenlage(filter) {
       head.innerHTML = `<th colspan="4">${year}</th>`;
       body.appendChild(head);
     }
-    const label = sitzungsart(r.body).label;
-    const dur = r.min ? formatDuration(r.min) : r.start ? r.start + " Uhr" : "";
-    const c = tierCounts(r.votes);
-    const bar = r.votes.length
+    const label = sitzungsart(r.type).label;
+    const min = dauerMin(r);
+    const dur = min ? formatDuration(min) : r.start ? r.start + " Uhr" : "";
+    const voten = votenVon(r);
+    const c = tierCounts(voten);
+    const bar = voten.length
       ? `<span class="tier-bar">${TIERS.filter(t => c[t.key])
           .map(t => `<span class="tier-${t.key}" style="flex:${c[t.key]}" title="${c[t.key]}× ${t.label}"></span>`)
           .join("")}</span>`
       : "";
 
-    const web = r.session && isWebauszug(r.session);
-    const doc = !r.session ? ""
+    const web = isWebauszug(r);
+    const doc = r.niederschrift === "keine" ? ""
       : web
-        ? (r.session.source.url
-            ? `<a class="reg-pdf" href="${r.session.source.url}" target="_blank" rel="noopener"
+        ? ((r.source || {}).url
+            ? `<a class="reg-pdf" href="${r.source.url}" target="_blank" rel="noopener"
                   title="Beschlussauszug der Stadt, ohne Anwesenheitsliste"><svg class="icon"><use href="#i-language"/></svg></a>`
             : "")
-        : `<a class="reg-pdf" href="${protocolUrl(r.session)}" target="_blank" rel="noopener"
+        : `<a class="reg-pdf" href="${protocolUrl(r)}" target="_blank" rel="noopener"
               title="Niederschrift als PDF"><svg class="icon"><use href="#i-description"/></svg></a>`;
 
     const tr = document.createElement("tr");
-    tr.className = r.session ? (web ? "register-partial" : "") : "register-gap";
+    tr.className = r.niederschrift === "keine" ? "register-gap" : web ? "register-partial" : "";
     tr.innerHTML = `
       <td class="reg-date">${formatDate(r.date)}</td>
-      <td class="reg-body"><span class="reg-dot" style="background:${chartColor[r.body]}"></span>${label}</td>
+      <td class="reg-body"><span class="reg-dot" style="background:${chartColor[r.type]}"></span>${label}</td>
       <td class="reg-dur">${dur}</td>
-      <td class="reg-data">${r.session
-        ? `<a href="#/session/${r.session.id}">${r.votes.length} Abstimmung${r.votes.length === 1 ? "" : "en"}</a>`
+      <td class="reg-data">${r.agenda
+        ? `<a href="#/session/${r.id}">${voten.length} Abstimmung${voten.length === 1 ? "" : "en"}</a>`
           + (web ? `<span class="reg-flag">ohne Anwesenheitsliste</span>` : "")
-          + bar + doc + pressBadge(pressOfSession(r.session))
+          + bar + doc + pressBadge(pressOfSession(r))
         : `<span class="reg-none">nichts veröffentlicht</span>`}</td>`;
     body.appendChild(tr);
   });
@@ -346,7 +345,7 @@ function renderDatenlage(filter) {
 // Alle Abstimmungen einer Herkunftsstufe, nach Sitzung gruppiert
 function tierVoteList(tier, erfasst) {
   const wrap = document.createElement("div");
-  const hit = r => r.votes.filter(v => {
+  const hit = r => votenVon(r).filter(v => {
     const t = (v.source || {}).tier;
     return tier.key === "sum" ? !t
          : tier.key === "explicit" ? t === "protocol-explicit"
@@ -366,18 +365,18 @@ function tierVoteList(tier, erfasst) {
   table.className = "register";
   const body = document.createElement("tbody");
   groups.forEach(([r, list]) => {
-    const label = sitzungsart(r.body).label;
+    const label = sitzungsart(r.type).label;
     const head = document.createElement("tr");
     head.className = "register-group";
-    head.innerHTML = `<th colspan="2"><a href="#/session/${r.session.id}"><span class="reg-dot"
-      style="background:${chartColor[r.body]}"></span>${formatDate(r.date)} · ${label}</a></th>`;
+    head.innerHTML = `<th colspan="2"><a href="#/session/${r.id}"><span class="reg-dot"
+      style="background:${chartColor[r.type]}"></span>${formatDate(r.date)} · ${label}</a></th>`;
     body.appendChild(head);
     list.forEach(v => {
       const res = v.type === "named"
         ? `${v.results.yes.length}:${v.results.no.length}`
         : `${v.results.yes}:${v.results.no}`;
       const tr = document.createElement("tr");
-      tr.innerHTML = `<td class="reg-title"><a href="#/session/${r.session.id}">${v.title}</a></td>
+      tr.innerHTML = `<td class="reg-title"><a href="#/session/${r.id}">${v.title}</a></td>
                       <td class="reg-dur">${res}</td>`;
       body.appendChild(tr);
     });
@@ -401,7 +400,7 @@ function pressContext() {
   });
   sessions.forEach(s => {
     add(s.press, { kind: "Sitzung", label: s.title, href: "#/session/" + s.id });
-    s.agenda.forEach(a =>
+    (s.agenda || []).forEach(a =>
       add(a.press, { kind: "Sitzung", label: s.title, href: "#/session/" + s.id }));
   });
   topics.forEach(t => (t.history || []).forEach(h =>
@@ -480,7 +479,7 @@ function drawDurationDots(el, entries) {
   }
 
   const dots = entries.map((e, i) => {
-    const linked = sessionByDateBody[e.date + "|" + e.body] ? " linked" : "";
+    const linked = e.erfasst ? " linked" : "";
     return `<circle class="dt-dot${linked}" data-i="${i}" cx="${x(e.date).toFixed(1)}" cy="${y(e.min).toFixed(1)}" r="4" fill="${chartColor[e.body]}"/>`;
   }).join("");
 
@@ -489,15 +488,14 @@ function drawDurationDots(el, entries) {
 
   el.querySelectorAll(".dt-dot").forEach(dot => {
     const e = entries[dot.dataset.i];
-    const session = sessionByDateBody[e.date + "|" + e.body];
     const label = sitzungsart(e.body).label;
     dot.addEventListener("mouseenter", evt => chartTipShow(evt,
       `<strong>${label} · ${formatDate(e.date)}</strong><br>${e.start}–${e.end} Uhr · ${formatDuration(e.min)}`));
     dot.addEventListener("mousemove", chartTipMove);
     dot.addEventListener("mouseleave", chartTipHide);
-    if (session) dot.addEventListener("click", () => {
+    if (e.erfasst) dot.addEventListener("click", () => {
       chartTipHide();
-      navigate("/session/" + session.id);
+      navigate("/session/" + e.id);
     });
   });
 }

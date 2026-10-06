@@ -15,12 +15,20 @@ User typically mentions which PDFs to process — sometimes just "die neuen Nied
 
 ### 1. Determine unprocessed PDFs
 
+`data/sessions.json` ist seit Oktober 2026 das vollständige Register: es führt
+auch Sitzungen, von denen nichts veröffentlicht ist (`niederschrift: "keine"`)
+sowie angekündigte. Eine neue Niederschrift legt deshalb meist **keinen neuen
+Eintrag** an, sondern füllt einen vorhandenen.
+
 ```bash
 python3 -c "
 import json, os
 pdfs = {os.path.splitext(p)[0].lower().replace('hvf_','hvfa_') for p in os.listdir('data/niederschriften')}
-with open('data/sessions.json') as f: existing = {s['id'] for s in json.load(f)}
-print('Unprocessed:', sorted(pdfs - existing))
+with open('data/sessions.json') as f: reg = json.load(f)
+fertig = {s['id'] for s in reg if s.get('niederschrift') == 'vollständig'}
+leer = {s['id'] for s in reg if s.get('niederschrift') == 'keine'}
+print('Unprocessed:', sorted(pdfs - fertig))
+print('davon schon im Register (ergänzen, nicht anlegen):', sorted((pdfs - fertig) & leer))
 "
 ```
 
@@ -57,12 +65,19 @@ For BPU/HVFA: use the `seatConfigs` to determine the right composition for that 
 ### 4. Build session/vote entries
 
 - IDs: `sr_YYYYMMDD`, `bpu_YYYYMMDD`, `hvfa_YYYYMMDD`. Vote IDs: `<session>_NN` sequential.
+- Steht die Sitzung schon im Register, den vorhandenen Eintrag ergänzen:
+  `niederschrift` auf `"vollständig"` setzen, `title`, `absent`, `agenda`
+  hinzufügen, `start`/`end` gegen die Niederschrift prüfen. **ID, Datum und
+  Gremium nicht ändern** — der Validator prüft, dass die ID zu beidem passt.
 - Session shape:
   ```json
   {
     "id": "sr_YYYYMMDD",
     "date": "YYYY-MM-DD",
     "type": "stadtrat",
+    "niederschrift": "vollständig",
+    "start": "19:00",
+    "end": "21:30",
     "title": "N. Stadtratssitzung – Monat YYYY",
     "absent": ["id1", "id2"],
     "substitutes": [{"member": "regular_id", "substitute": "sub_id"}],
@@ -97,6 +112,7 @@ Manche BPU-Sitzungen erscheinen nur als Beschlussauszug auf der Website der Stad
 **Niemals eine PDF dafür erzeugen** — verlinkt wird die Seite der Stadt:
 
 ```json
+"niederschrift": "auszug",
 "source": { "kind": "webauszug", "url": "https://www.moosburg.de/…" }
 ```
 
