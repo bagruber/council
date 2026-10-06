@@ -18,11 +18,11 @@ noch `pyproject.toml`. Sie erzeugen `data/bundle.json`, das ebenfalls ignoriert
 wird. Der Teil des Projekts, der die Substanz liefert - die Datenpipeline -
 ist damit der am schlechtesten dokumentierte.
 
-**Empfehlung, hier bewusst nicht ausgefuehrt:** eine `requirements.txt` (oder
-ein `pyproject.toml`, falls ohnehin ein venv im Spiel ist), und zwei Saetze im
-README, dass das Frontend absichtlich ohne Build laeuft. Was in die
-`.gitignore` gehoert und was ein Projekt ueber sich behauptet, ist eine
-Entscheidung und keine Aufraeumarbeit.
+**Teils erledigt (Oktober 2026):** `scripts/requirements.txt` gibt es jetzt
+(jsonschema, fuer die Formpruefung in `validate_data.py`), und README und
+CLAUDE.md sagen, dass das Frontend absichtlich ohne Build laeuft. Offen
+bleibt, ob `package.json` und `package-lock.json` in der `.gitignore` bleiben
+sollen — das ist eine Entscheidung und keine Aufraeumarbeit.
 
 ## Haengt an gruber.am
 
