@@ -20,7 +20,7 @@
 - `data/media.json` — Medien
 - `data/topics.json` — Themen mit Timeline-History
 - `data/sessions.json` — das vollständige Sitzungsregister: auch Sitzungen ohne Niederschrift und angekündigte, mit `niederschrift` und Zeiten
-- `data/votes.json` — Abstimmungen; `source` für den Beschluss, `voters` für die einzelne Stimme, kein eigenes Datum
+- `data/votes.json` — Abstimmungen; `source` für den Beschluss, `voters` für die einzelne Stimme, `topicIds` als Liste (ein Beschluss kann in zwei Dossiers gehören), kein eigenes Datum
 - `data/tags.json` — Themen-Tags
 - `data/press.json` — Presseartikel als eigenständige Entitäten (ID-Format: `{media}_{YYYY-MM-DD}_{slug}`)
 
@@ -56,6 +56,11 @@ nicht als Rohfassung im Repo.
 - Abstimmungsverhalten wird transparent gemacht, auch in Member-Profilen
 - Externe Quellen (Presse, Dokumente) werden verlinkt, nicht dupliziert
 - Relative Datumsangaben immer in absolute Daten umwandeln
+- **Nur Amtliches wird zum Bestand.** Liegt nur ein Beschlussauszug aus dem
+  Ratsinformationssystem vor, dürfen die Ergebnisse rein; Stimmverhalten und
+  Dossier-Zuordnung warten auf die Niederschrift. Liegt nur die eigene
+  Mitschrift vor, bleiben die Ergebnisse draußen — die Tagesordnung darf
+  stehen. Dasselbe gilt für Sitzungen, die noch bevorstehen.
 
 ## UI & Design
 

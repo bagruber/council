@@ -59,7 +59,7 @@ Nicht passend: ein einmaliger Antrag, ein Personalbeschluss, eine routinemäßig
    - Mögliche Abgrenzungen zu bestehenden Topics
 2. Nach OK: nächste freie `tN` ermitteln (`max(int(t['id'][1:]) for t in topics) + 1`).
 3. Eintrag anlegen, sortiert nach Datum.
-4. Existierende Voten/Sitzungen verknüpfen: pro Vote `topicId` setzen, in der Session-`agenda` ggf. auch.
+4. Existierende Voten/Sitzungen verknüpfen: pro Vote die neue ID an `topicIds` anhängen (die Liste kann mehrere Dossiers nennen, ein bestehendes wird nicht ersetzt), in der Session-`agenda` ggf. auch `topicId`.
 5. Tags prüfen in `data/tags.json`. Falls passender Tag fehlt → mit User klären, ob neuer Tag oder bestehender genügt.
 6. `validate-data` ausführen.
 7. Commit: `topic: t21 Hochwasserschutz Amperufer (initial 4 history entries)`.

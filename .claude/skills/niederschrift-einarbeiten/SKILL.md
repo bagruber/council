@@ -90,7 +90,7 @@ For BPU/HVFA: use the `seatConfigs` to determine the right composition for that 
 - Vote shape:
   - **Named** (unanimous derivable from attendance):
     ```json
-    {"id":"...","sessionId":"...","topicId":null,
+    {"id":"...","sessionId":"...","topicIds":["tN"],
      "title":"...","text":"...",
      "type":"named",
      "results":{"yes":[...ids],"no":[...ids],"absent":[...ids]},
@@ -98,7 +98,7 @@ For BPU/HVFA: use the `seatConfigs` to determine the right composition for that 
     ```
   - **Anonymous** (split or partial knowledge):
     ```json
-    {"id":"...","sessionId":"...","topicId":null,
+    {"id":"...","sessionId":"...","topicIds":["tN"],
      "title":"...","text":"...",
      "type":"anonymous",
      "results":{"yes":N,"no":N,"absent":N},
@@ -125,21 +125,41 @@ For BPU/HVFA: use the `seatConfigs` to determine the right composition for that 
 und `note`. Ein Eintrag ohne `vote` trägt nur die Herkunft.
 - For **rejected** votes (more no than yes, or expressly noted): set `"result": "rejected"` on the vote object.
 
-### Sitzungen ohne Niederschrift (Beschlussauszug)
+### Sitzungen ohne Niederschrift
 
-Manche BPU-Sitzungen erscheinen nur als Beschlussauszug auf der Website der Stadt.
-**Niemals eine PDF dafür erzeugen** — verlinkt wird die Seite der Stadt:
+Zwei Fälle, die gleich aussehen und streng zu trennen sind.
+
+**a) Beschlussauszug im Ratsinformationssystem** — die Ergebnisse stehen
+öffentlich, nur ohne Anwesenheitsliste. Das ist amtlich.
 
 ```json
 "niederschrift": "auszug",
 "source": { "kind": "webauszug", "url": "https://www.moosburg.de/…" }
 ```
 
-Dort gibt es keine Anwesenheitsliste. Daraus folgt:
-- Haben **alle** Sitze mitgestimmt (BPU: 12), waren alle regulären Sitze da → `named`
-  mit vollständiger Besetzung.
-- Sonst → `anonymous`, **kein `absent`-Array** (leer hieße „alle da"). `mark_inferable.py`
-  sperrt die Ableitung dann automatisch.
+**Niemals eine PDF dafür erzeugen**, verlinkt wird die Seite der Stadt. Die
+Ergebnisse dürfen eingetragen werden. Was ohne Niederschrift **wartet**:
+
+- **Stimmverhalten.** Ohne Anwesenheitsliste ist nicht zuzuordnen, wer wie
+  gestimmt hat. Einzige Ausnahme: haben **alle** Sitze mitgestimmt (BPU: 12),
+  waren alle regulären Sitze da → `named` mit vollständiger Besetzung. Sonst
+  `anonymous`, **kein `absent`-Array** (leer hieße „alle da"), und
+  `mark_inferable.py` sperrt die Ableitung.
+- **Die Dossier-Zuordnung.** `topicIds` bleibt leer, bis die Niederschrift
+  sagt, was beschlossen wurde. Ein Beschluss im falschen Dossier erzählt eine
+  falsche Geschichte.
+
+**b) Nur eigene Mitschrift (Vote-Tracking-ZIP), nichts Veröffentlichtes** —
+dann gehören **keine Ergebnisse** in den Bestand. Die Tagesordnungspunkte
+dürfen stehen, mehr nicht:
+
+```json
+"niederschrift": "keine"
+```
+
+Dasselbe gilt für Sitzungen, die noch nicht stattgefunden haben: Tagesordnung
+ja, Inhalte nein. Die Mitschrift wandert in `votes.json`, sobald die
+Niederschrift da ist und sie bestätigt.
 
 ### 5. Convert to named where derivable
 
@@ -185,7 +205,7 @@ herausgelöst gehören. Für jeden TOP ohne passendes Topic:
   neue Kandidatenzeile schreiben statt es zu vergessen.
 
 Rules:
-- If a vote clearly belongs to an existing topic → set `topicId` in agenda item and on the vote.
+- If a vote clearly belongs to an existing topic → `topicIds` am Vote setzen, `topicId` am Tagesordnungspunkt dazu. **`topicIds` ist eine Liste:** gehört ein Beschluss fachlich in zwei Dossiers (eine Kreditermächtigung ist Vorhaben *und* Haushalt), nennt er beide. Steht er in der Historie eines Dossiers, muss er es auch in `topicIds` nennen — der Validator prüft das.
 - Add a `history` entry to the topic in `topics.json`:
   ```json
   {"date":"YYYY-MM-DD","type":"vote|milestone|committee|proposal",
