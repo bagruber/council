@@ -352,6 +352,258 @@ function sgSchrift(hex) {
   return aufWeiss > aufDunkel ? "#fff" : "#1c1c1c";
 }
 
+function sgFlach(nodes, edges, W, H) {
+    // Zwei Knoten auf demselben Punkt haben keine Richtung, in die man sie
+    // schieben könnte — dx/d wäre null. Dann gibt der Index eine her, immer
+    // dieselbe, damit das Bild reproduzierbar bleibt.
+    const apart = (a, b, i, j) => {
+      const dx = a.x - b.x, dy = a.y - b.y;
+      const d = Math.hypot(dx, dy);
+      if (d > 1e-6) return [dx, dy, d];
+      const t = ((i * 7 + j * 13) % 360) * Math.PI / 180;
+      return [Math.cos(t), Math.sin(t), 1];
+    };
+
+    nodes.forEach((n, i) => {
+      const a = 2 * Math.PI * i / nodes.length;
+      n.x = W / 2 + Math.cos(a) * W / 5;
+      n.y = H / 2 + Math.sin(a) * H / 5;
+    });
+    const k = Math.sqrt(W * H / nodes.length) * 0.55;
+    const STEPS = 400;
+    for (let it = 0; it < STEPS; it++) {
+      const temp = (1 - it / STEPS) * k * 0.4;
+      nodes.forEach(n => { n.dx = 0; n.dy = 0; });
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const [dx, dy, d] = apart(nodes[i], nodes[j], i, j);
+          const f = k * k / d;
+          nodes[i].dx += dx / d * f; nodes[i].dy += dy / d * f;
+          nodes[j].dx -= dx / d * f; nodes[j].dy -= dy / d * f;
+        }
+      }
+      edges.forEach(e => {
+        const dx = e.a.x - e.b.x, dy = e.a.y - e.b.y;
+        const d = Math.hypot(dx, dy) || 0.01;
+        const f = e.s * d * d / k;
+        e.a.dx -= dx / d * f; e.a.dy -= dy / d * f;
+        e.b.dx += dx / d * f; e.b.dy += dy / d * f;
+      });
+      nodes.forEach(n => {
+        const d = Math.hypot(n.dx, n.dy) || 0.01;
+        n.x = Math.max(SG_R + 6, Math.min(W - SG_R - 6, n.x + n.dx / d * Math.min(d, temp)));
+        n.y = Math.max(SG_R + 14, Math.min(H - SG_R - 6, n.y + n.dy / d * Math.min(d, temp)));
+      });
+    }
+
+    // Die Kräfte allein schieben Knoten übereinander, sobald eine Fraktion eng
+    // zusammenhält. Ein paar Entzerrungsschritte am Ende drücken sie auf
+    // Lesbarkeitsabstand, ohne die Anordnung zu verwerfen.
+    // Gerade so viel, dass sich die Kreise nicht ueberlappen. Jeder Pixel mehr
+    // verschiebt das Bild gegen die Kraefte, die es eigentlich zeigen soll.
+    const MIN = SG_R * 2;
+    for (let it = 0; it < 240; it++) {
+      let moved = false;
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const [dx, dy, d] = apart(a, b, i, j);
+          if (d >= MIN) continue;
+          const push = (MIN - d) / 2;
+          a.x += dx / d * push; a.y += dy / d * push;
+          b.x -= dx / d * push; b.y -= dy / d * push;
+          moved = true;
+        }
+      }
+      nodes.forEach(n => {
+        n.x = Math.max(SG_R + 6, Math.min(W - SG_R - 6, n.x));
+        n.y = Math.max(SG_R + 14, Math.min(H - SG_R - 6, n.y));
+      });
+      if (!moved) break;
+    }
+}
+
+// -- Das Netz im Raum, ein Versuch --
+//
+// Dieselben Kräfte mit einer dritten Achse, in einer Kugel statt im Rechteck.
+// Was sich in der Fläche überdeckt, kann im Raum auseinanderliegen. Muss aber
+// nicht: bei dreißig Leuten trägt die Tiefe oft wenig, deshalb bleibt die
+// Fläche die Vorgabe.
+let sgRaum = false;
+
+// Abstand der Kamera vom Kugelmittelpunkt, in Kugelradien. Näher heißt mehr
+// Perspektive: vorne bis zu D/(D-1) mal so groß wie in der Mitte.
+const SG_D = 4;
+// Pixel je Kugelradius, so dass auch die vorderste Seite ins Bild passt
+const sgMass = (W, H) => (Math.min(W, H) / 2 - SG_R - 14) * (SG_D - 1) / SG_D;
+
+function sgRaumLage(nodes, edges, MIN) {
+  const N = nodes.length;
+  // Start auf einer Spirale über die Kugel, damit das Bild reproduzierbar bleibt
+  nodes.forEach((n, i) => {
+    const y = 1 - 2 * (i + 0.5) / N, r = Math.sqrt(1 - y * y), t = i * 2.39996;
+    n.p = [Math.cos(t) * r * 0.4, y * 0.4, Math.sin(t) * r * 0.4];
+  });
+  const apart = (a, b, i, j) => {
+    const v = a.p.map((c, x) => c - b.p[x]);
+    const d = Math.hypot(...v);
+    if (d > 1e-6) return [v.map(c => c / d), d];
+    const t = ((i * 7 + j * 13) % 360) * Math.PI / 180;
+    return [[Math.cos(t), Math.sin(t), 0], 1e-3];
+  };
+  const schiebe = (n, u, f) => { for (let c = 0; c < 3; c++) n.d[c] += u[c] * f; };
+  const kugel = n => {
+    const r = Math.hypot(...n.p);
+    if (r > 1) n.p = n.p.map(c => c / r);
+  };
+
+  // Der Faktor vor k ist gut dreimal so groß wie in der Fläche. Dort
+  // drücken die Wände eine enge Fraktion auseinander, in der Kugel stapeln
+  // sich ihre Kreise in der Tiefe und decken sich von vorn gesehen zu. Der
+  // Preis: die Abstände tragen etwas weniger von der Nähe als in der Fläche.
+  const k = 1.8 * Math.cbrt(4.19 / N);   // 4,19: Volumen der Einheitskugel
+  const STEPS = 400;
+  for (let it = 0; it < STEPS; it++) {
+    const temp = (1 - it / STEPS) * k * 0.4;
+    nodes.forEach(n => { n.d = [0, 0, 0]; });
+    for (let i = 0; i < N; i++) {
+      for (let j = i + 1; j < N; j++) {
+        const [u, d] = apart(nodes[i], nodes[j], i, j);
+        schiebe(nodes[i], u, k * k / d);
+        schiebe(nodes[j], u, -k * k / d);
+      }
+    }
+    edges.forEach(e => {
+      const [u, d] = apart(e.a, e.b, 0, 0);
+      const f = e.s * d * d / k;
+      schiebe(e.a, u, -f);
+      schiebe(e.b, u, f);
+    });
+    nodes.forEach(n => {
+      const d = Math.hypot(...n.d) || 0.01;
+      n.p = n.p.map((c, x) => c + n.d[x] / d * Math.min(d, temp));
+      kugel(n);
+    });
+  }
+
+  // Die Mitte der Ausdehnung, nicht der Schwerpunkt. Der läge in der großen
+  // Fraktion, zwei Ausreißer reichten dann bis an den Rand, und das Aufziehen
+  // auf die Kugel drückte alle anderen in der Mitte zusammen.
+  const mitte = [0, 1, 2].map(c => {
+    const v = nodes.map(n => n.p[c]);
+    return (Math.min(...v) + Math.max(...v)) / 2;
+  });
+  nodes.forEach(n => { n.p = n.p.map((c, x) => c - mitte[x]); });
+  const rand = Math.max(...nodes.map(n => Math.hypot(...n.p))) || 1;
+  nodes.forEach(n => { n.p = n.p.map(c => c / rand); });
+
+  for (let it = 0; it < 240; it++) {
+    let moved = false;
+    for (let i = 0; i < N; i++) {
+      for (let j = i + 1; j < N; j++) {
+        const a = nodes[i], b = nodes[j];
+        const [u, d] = apart(a, b, i, j);
+        if (d >= MIN) continue;
+        const push = (MIN - d) / 2;
+        a.p = a.p.map((c, x) => c + u[x] * push);
+        b.p = b.p.map((c, x) => c - u[x] * push);
+        moved = true;
+      }
+    }
+    nodes.forEach(kugel);
+    if (!moved) break;
+  }
+}
+
+// Drehen per Ziehen. Bis zum ersten Griff dreht sich das Netz langsam von
+// selbst, erst die Bewegung macht die Tiefe lesbar. Steht der Zeiger auf einem
+// Kreis, hält es an, sonst läuft er unter dem Tooltip weg.
+function sgDrehen(svg, nodes, edges, knoten, W, H) {
+  const S = sgMass(W, H);
+  const linien = [...svg.querySelectorAll("line")];
+  const namen = knoten.map(g => g.querySelector(".sg-name"));
+  let yaw = 0.5, pitch = 0.35, reihe = "";
+
+  const zeichne = () => {
+    const cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+    nodes.forEach(n => {
+      const [x, y, z] = n.p;
+      const x1 = x * cy + z * sy, z1 = z * cy - x * sy;
+      n.t = y * sp + z1 * cp;                 // Tiefe, groesser ist naeher
+      n.f = SG_D / (SG_D - n.t);
+      n.x = W / 2 + x1 * n.f * S;
+      n.y = H / 2 + (y * cp - z1 * sp) * n.f * S;
+    });
+    edges.forEach((e, i) => {
+      linien[i].setAttribute("x1", e.a.x.toFixed(1));
+      linien[i].setAttribute("y1", e.a.y.toFixed(1));
+      linien[i].setAttribute("x2", e.b.x.toFixed(1));
+      linien[i].setAttribute("y2", e.b.y.toFixed(1));
+    });
+    knoten.forEach((g, i) => {
+      const n = nodes[i];
+      g.setAttribute("transform",
+        `translate(${n.x.toFixed(1)},${n.y.toFixed(1)}) scale(${n.f.toFixed(3)})`);
+      const anker = n.x < 60 ? "start" : n.x > W - 60 ? "end" : "middle";
+      namen[i].setAttribute("x", anker === "start" ? -SG_R : anker === "end" ? SG_R : 0);
+      namen[i].setAttribute("text-anchor", anker);
+    });
+    // Hinten zuerst. Ein angetippter Kreis bleibt vorn, sonst verdeckt ein
+    // naeherer seinen Namen.
+    const tiefe = i => knoten[i].classList.contains("on") ? Infinity : nodes[i].t;
+    const neu = nodes.map((n, i) => i).sort((a, b) => tiefe(a) - tiefe(b));
+    if (neu.join() !== reihe) {
+      neu.forEach(i => svg.appendChild(knoten[i]));
+      reihe = neu.join();
+    }
+  };
+  zeichne();
+
+  let auto = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let zeigt = false, sichtbar = true, vorher = 0;
+  const io = new IntersectionObserver(([e]) => { sichtbar = e.isIntersecting; });
+  io.observe(svg);
+  const lauf = jetzt => {
+    if (!auto || !svg.isConnected) { io.disconnect(); return; }
+    if (vorher && sichtbar && !zeigt) {
+      yaw += Math.min(jetzt - vorher, 50) * 0.00018;   // eine Runde in gut einer halben Minute
+      zeichne();
+    }
+    vorher = jetzt;
+    requestAnimationFrame(lauf);
+  };
+  requestAnimationFrame(lauf);
+
+  svg.addEventListener("pointerover", e => {
+    zeigt = e.pointerType === "mouse" && !!e.target.closest(".sg-node");
+  });
+  svg.addEventListener("pointerleave", () => { zeigt = false; });
+
+  // Erst ab ein paar Pixeln ist es ein Ziehen. Darunter bleibt es ein Klick,
+  // der wie in der Fläche den Namen zeigt oder das Profil oeffnet.
+  let start = null, gezogen = false;
+  svg.addEventListener("pointerdown", e => {
+    auto = false;
+    start = [e.clientX, e.clientY, yaw, pitch];
+    gezogen = false;
+  });
+  svg.addEventListener("pointermove", e => {
+    if (!start) return;
+    const dx = e.clientX - start[0], dy = e.clientY - start[1];
+    if (!gezogen && Math.hypot(dx, dy) < 5) return;
+    if (!gezogen) svg.setPointerCapture(e.pointerId);
+    gezogen = true;
+    yaw = start[2] + dx * 0.01;
+    pitch = Math.max(-1.4, Math.min(1.4, start[3] - dy * 0.01));
+    zeichne();
+  });
+  svg.addEventListener("pointerup", () => { start = null; });
+  svg.addEventListener("pointercancel", () => { start = null; });
+  // Vor dem Klick-Zuhoerer in drawSimGraph, der sonst nach dem Loslassen das
+  // Profil oeffnet
+  svg.addEventListener("click", e => { if (gezogen) e.stopImmediatePropagation(); }, true);
+}
+
 function drawSimGraph(el, periodId) {
   const nodes = simNodes(periodId).map(n => ({ ...n, x: 0, y: 0, dx: 0, dy: 0 }));
   const pairs = similarity(periodId);
@@ -369,79 +621,16 @@ function drawSimGraph(el, periodId) {
     edges.push({ a: nodes[idx[a]], b: nodes[idx[b]], s: p.raw / (p.n + SIM_K), n: p.n });
   });
 
-  // Zwei Knoten auf demselben Punkt haben keine Richtung, in die man sie
-  // schieben könnte — dx/d wäre null. Dann gibt der Index eine her, immer
-  // dieselbe, damit das Bild reproduzierbar bleibt.
-  const apart = (a, b, i, j) => {
-    const dx = a.x - b.x, dy = a.y - b.y;
-    const d = Math.hypot(dx, dy);
-    if (d > 1e-6) return [dx, dy, d];
-    const t = ((i * 7 + j * 13) % 360) * Math.PI / 180;
-    return [Math.cos(t), Math.sin(t), 1];
-  };
-
   const W = el.clientWidth || 640, H = 420;
-  nodes.forEach((n, i) => {
-    const a = 2 * Math.PI * i / nodes.length;
-    n.x = W / 2 + Math.cos(a) * W / 5;
-    n.y = H / 2 + Math.sin(a) * H / 5;
-  });
-  const k = Math.sqrt(W * H / nodes.length) * 0.55;
-  const STEPS = 400;
-  for (let it = 0; it < STEPS; it++) {
-    const temp = (1 - it / STEPS) * k * 0.4;
-    nodes.forEach(n => { n.dx = 0; n.dy = 0; });
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const [dx, dy, d] = apart(nodes[i], nodes[j], i, j);
-        const f = k * k / d;
-        nodes[i].dx += dx / d * f; nodes[i].dy += dy / d * f;
-        nodes[j].dx -= dx / d * f; nodes[j].dy -= dy / d * f;
-      }
-    }
-    edges.forEach(e => {
-      const dx = e.a.x - e.b.x, dy = e.a.y - e.b.y;
-      const d = Math.hypot(dx, dy) || 0.01;
-      const f = e.s * d * d / k;
-      e.a.dx -= dx / d * f; e.a.dy -= dy / d * f;
-      e.b.dx += dx / d * f; e.b.dy += dy / d * f;
-    });
-    nodes.forEach(n => {
-      const d = Math.hypot(n.dx, n.dy) || 0.01;
-      n.x = Math.max(SG_R + 6, Math.min(W - SG_R - 6, n.x + n.dx / d * Math.min(d, temp)));
-      n.y = Math.max(SG_R + 14, Math.min(H - SG_R - 6, n.y + n.dy / d * Math.min(d, temp)));
-    });
-  }
-
-  // Die Kräfte allein schieben Knoten übereinander, sobald eine Fraktion eng
-  // zusammenhält. Ein paar Entzerrungsschritte am Ende drücken sie auf
-  // Lesbarkeitsabstand, ohne die Anordnung zu verwerfen.
-  // Gerade so viel, dass sich die Kreise nicht ueberlappen. Jeder Pixel mehr
-  // verschiebt das Bild gegen die Kraefte, die es eigentlich zeigen soll.
-  const MIN = SG_R * 2;
-  for (let it = 0; it < 240; it++) {
-    let moved = false;
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i], b = nodes[j];
-        const [dx, dy, d] = apart(a, b, i, j);
-        if (d >= MIN) continue;
-        const push = (MIN - d) / 2;
-        a.x += dx / d * push; a.y += dy / d * push;
-        b.x -= dx / d * push; b.y -= dy / d * push;
-        moved = true;
-      }
-    }
-    nodes.forEach(n => {
-      n.x = Math.max(SG_R + 6, Math.min(W - SG_R - 6, n.x));
-      n.y = Math.max(SG_R + 14, Math.min(H - SG_R - 6, n.y));
-    });
-    if (!moved) break;
-  }
+  // Im Raum anderthalb Kreise Abstand statt einem: von vorn gesehen rücken
+  // die Kreise durch die Tiefe ohnehin zusammen
+  if (sgRaum) sgRaumLage(nodes, edges, 3 * SG_R / sgMass(W, H));
+  else sgFlach(nodes, edges, W, H);
 
   const spread = simSpread(pairs);
+  // Sortiert an Ort und Stelle: im Raum findet sgDrehen Kante i als i-te Linie
   const lines = edges
-    .slice().sort((p, q) => Math.abs(p.s) - Math.abs(q.s))
+    .sort((p, q) => Math.abs(p.s) - Math.abs(q.s))
     .map(e => {
       const a = Math.min(1, Math.abs(e.s) / spread);
       return `<line x1="${e.a.x.toFixed(1)}" y1="${e.a.y.toFixed(1)}"
@@ -468,8 +657,19 @@ function drawSimGraph(el, periodId) {
     </g>`;
   }).join("");
 
-  el.innerHTML = `<svg class="chart simgraph" width="${W}" height="${H}"
-      viewBox="0 0 ${W} ${H}" role="img" aria-label="Nähe-Netz">${lines}${dots}</svg>`;
+  el.innerHTML = `<div class="sg-ansicht">
+      <div class="period-switch">
+        <button data-a="flach"${sgRaum ? "" : ' class="on"'}>Fläche</button>
+        <button data-a="raum"${sgRaum ? ' class="on"' : ""}>Raum</button>
+      </div>${sgRaum ? '<span class="sg-hinweis">Versuch. Ziehen dreht das Netz.</span>' : ""}
+    </div>
+    <svg class="chart simgraph${sgRaum ? " raum" : ""}" width="${W}" height="${H}"
+      viewBox="0 0 ${W} ${H}" role="img"
+      aria-label="Nähe-Netz${sgRaum ? " im Raum" : ""}">${lines}${dots}</svg>`;
+  el.querySelectorAll(".sg-ansicht button").forEach(b => b.addEventListener("click", () => {
+    sgRaum = b.dataset.a === "raum";
+    drawSimGraph(el, periodId);
+  }));
   // Am Rechner nennt der Tooltip Namen und Fraktion, der Klick oeffnet sofort.
   // Mit dem Finger gibt es kein Zeigen -- dort nennt der erste Tipp den Namen,
   // der zweite oeffnet das Profil.
@@ -508,6 +708,7 @@ function drawSimGraph(el, periodId) {
     }
     navigate("/member/" + nodes[knoten.indexOf(g)].m.id);
   });
+  if (sgRaum) sgDrehen(svg, nodes, edges, knoten, W, H);
 }
 
 export { PERIODS, stances, partyAtDate, renderSimilarity, drawSimMatrix, drawSimGraph };

@@ -3565,6 +3565,13 @@ a.tier-chip.on {
 }
 .sg-node.on .sg-name { opacity: 1; }
 
+.sg-ansicht { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.sg-hinweis { font-size: 0.75rem; color: var(--text-muted); }
+/* Waagrecht dreht der Finger das Netz, senkrecht scrollt er weiter die Seite.
+   Ganz gesperrt hielte das Netz jeden fest, der nur vorbeiwischen will. */
+.simgraph.raum { touch-action: pan-y; cursor: grab; user-select: none; }
+.simgraph.raum:active { cursor: grabbing; }
+
 /* -- Fraktionsgeschlossenheit -- */
 
 .cohesion {
