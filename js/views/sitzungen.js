@@ -131,11 +131,14 @@ function renderSession(id) {
     }
     if (item.note) el.innerHTML += `<p class="ai-note">${item.note}</p>`;
 
-    if (item.voteId && voteMap[item.voteId]) {
+    // Ein Punkt kann mehrere Beschluesse tragen — ein Vorbescheid mit zwoelf
+    // Einzelfragen steht in der Niederschrift als ein Punkt.
+    (item.voteIds || []).forEach(vid => {
+      if (!voteMap[vid]) return;
       const voteEl = document.createElement("div");
-      renderVoteBlock(voteEl, voteMap[item.voteId]);
+      renderVoteBlock(voteEl, voteMap[vid]);
       el.appendChild(voteEl);
-    }
+    });
 
     const agendaPress = renderPressLinks(item.press);
     if (agendaPress) el.appendChild(agendaPress);

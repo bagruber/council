@@ -37,13 +37,19 @@ bundle = {
 }
 
 # ── Indexes ──────────────────────────────────────────────────────────────────
+# Das Datum gehoert der Sitzung; im Bundle steht es der Bequemlichkeit halber
+# auch an der Abstimmung, so wie js/daten.js es beim Laden anheftet.
+session_date = {s["id"]: s["date"] for s in bundle["sessions"]}
+for v in bundle["votes"]:
+    v["date"] = session_date.get(v["sessionId"])
+
 votes_by_session = defaultdict(list)
 votes_by_year    = defaultdict(list)
 votes_by_topic   = defaultdict(list)
 
 for v in bundle["votes"]:
     votes_by_session[v["sessionId"]].append(v["id"])
-    votes_by_year[v["date"][:4]].append(v["id"])
+    votes_by_year[session_date[v["sessionId"]][:4]].append(v["id"])
     if v.get("topicId"):
         votes_by_topic[v["topicId"]].append(v["id"])
 

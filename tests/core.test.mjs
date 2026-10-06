@@ -113,6 +113,7 @@ test("Die Gründe der Ausschlussliste führen auf eigene Status", () => {
   assert.equal(fall("enthaltung"), "abstained");
   assert.equal(fall("nicht_stimmberechtigt"), "restricted");
   assert.equal(fall("kein_mandat"), "restricted");
+  assert.equal(fall("kurz_abwesend"), "absent");
   assert.equal(fall("kurz_weg"), "absent", "unbekannter Grund heißt abwesend");
 });
 
@@ -129,8 +130,15 @@ test("Namentliche Abstimmung liest aus den Listen", () => {
 });
 
 test("Einzelstimme am anonymen Votum schlägt die Ableitung", () => {
-  const v = anon(10, 2, { voters: { a: "no" } });
+  const v = anon(10, 2, { voters: { a: { vote: "no" } } });
   assert.equal(Council.voteStatus("a", v, null, null), "no");
+});
+
+test("Ein voters-Eintrag ohne Stimme trägt nur die Herkunft", () => {
+  const v = anon(20, 0, { voters: { a: { tiers: ["selbstauskunft"], by: "a" } } });
+  assert.equal(Council.voteStatus("a", v, null, null), "yes-inferred",
+    "die Ableitung gilt weiter");
+  assert.deepEqual(Council.voterTiers(v, "a"), ["selbstauskunft"]);
 });
 
 test("Kurze Abwesenheit am Votum selbst", () => {
@@ -173,7 +181,7 @@ test("Kurzlabel, mit und ohne Stern", () => {
 test("Herkunft: Stufe des Votums, Einzelbeleg schlägt sie", () => {
   const v = anon(12, 8, {
     source: { tier: "press" },
-    voterSource: { a: ["tracked", "selbstauskunft"] },
+    voters: { a: { vote: "no", tiers: ["tracked", "selbstauskunft"] } },
   });
   assert.deepEqual(Council.voterTiers(v, "b"), ["press"]);
   assert.deepEqual(Council.voterTiers(v, "a"), ["tracked", "selbstauskunft"],
@@ -183,7 +191,8 @@ test("Herkunft: Stufe des Votums, Einzelbeleg schlägt sie", () => {
 });
 
 test("Weicher Beleg wird benannt, nicht als Stimme ausgegeben", () => {
-  const v = anon(12, 8, { source: { tier: "press" }, voterEvidence: { a: "weich" } });
+  const v = anon(12, 8, { source: { tier: "press" },
+                          voters: { a: { vote: "no", evidence: "soft" } } });
   assert.match(Council.evidenceNote(v, "a"), /Wortmeldung/);
   assert.equal(Council.evidenceNote(v, "b"), null);
   assert.match(Council.statusProvenance("no", v, "a"), /^Nein - aus einer Wortmeldung/);
@@ -193,4 +202,12 @@ test("Abgeleitet aus der Niederschrift sagt die Herkunft nicht zweimal", () => {
   const v = anon(20, 0, { source: { tier: "protocol-implicit" } });
   assert.equal(Council.statusProvenance("yes-inferred", v, "a"),
     "Ja - aus öff. Niederschrift abgeleitet");
+});
+
+test("Nur das Ergebnis bekannt: die Stufe steht da, zu benennen gibt es nichts", () => {
+  const v = anon(12, 8, { source: { tier: "result-only" } });
+  assert.deepEqual(Council.voterTiers(v, "a"), ["result-only"]);
+  assert.equal(Council.sourceLabel(v), null,
+    "views/voten.js setzt dort seinen eigenen Satz");
+  assert.equal(Council.statusProvenance("unknown", v, "a"), "Nicht überliefert");
 });

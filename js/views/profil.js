@@ -596,8 +596,9 @@ function renderMemberTimeline(container, member) {
   let currentMonth = "";
 
   relevant.forEach(session => {
-    const votedItems = (session.agenda || []).filter(a => a.voteId && voteMap[a.voteId]);
-    if (!votedItems.length) return;
+    const votedVotes = (session.agenda || [])
+      .flatMap(a => (a.voteIds || []).map(vid => voteMap[vid]).filter(Boolean));
+    if (!votedVotes.length) return;
 
     // Der Monatskopf erst, wenn feststeht, dass etwas unter ihm steht. Seit
     // sessions.json auch Sitzungen ohne Niederschrift fuehrt, gaebe es sonst
@@ -621,8 +622,7 @@ function renderMemberTimeline(container, member) {
     sHeader.innerHTML = `<svg class="icon"><use href="#i-${icon}"/></svg> <a href="#/session/${session.id}">${session.title}</a>`;
     sessionEl.appendChild(sHeader);
 
-    votedItems.forEach(item => {
-      const vote = voteMap[item.voteId];
+    votedVotes.forEach(vote => {
       const status = Council.voteStatus(member.id, vote, session, member);
       if (status === null) return;
       // Einstimmig mitgegangen \u2192 blasser Chip (gleiche Logik wie Statistik)
@@ -653,8 +653,10 @@ function renderMemberTimeline(container, member) {
           ? "Abwesenheit nicht überliefert" : vote.results.absent + " Abwesend";
         detailHTML += `<p style="margin-top:4px">${vote.results.yes} Ja, ${vote.results.no} Nein, ${abw}</p>`;
       }
-      if (item.topicId && topicMap[item.topicId]) {
-        detailHTML += `<a href="#/topic/${item.topicId}"><svg class="icon"><use href="#i-open_in_new"/></svg> ${topicMap[item.topicId].title}</a>`;
+      // Das Dossier steht an der Abstimmung; der Tagesordnungspunkt kann
+      // mehrere tragen und auf ein anderes zeigen.
+      if (vote.topicId && topicMap[vote.topicId]) {
+        detailHTML += `<a href="#/topic/${vote.topicId}"><svg class="icon"><use href="#i-open_in_new"/></svg> ${topicMap[vote.topicId].title}</a>`;
       }
       detail.innerHTML = detailHTML;
 

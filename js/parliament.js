@@ -561,8 +561,8 @@ const VoteVis = (() => {
       else if (e.reason === "kein_mandat") m[e.member] = "restricted";
     });
     if (vote.voters) {
-      Object.entries(vote.voters).forEach(([id, status]) => {
-        if (!(id in m)) m[id] = status;
+      Object.entries(vote.voters).forEach(([id, w]) => {
+        if (w.vote && !(id in m)) m[id] = w.vote;
       });
     }
     return m;

@@ -46,7 +46,13 @@ async function ladeDaten() {
 
   sessionsSorted = [...sessions].sort((a, b) => b.date.localeCompare(a.date));
 
-  votes.forEach(v => { (votesBySession[v.sessionId] || (votesBySession[v.sessionId] = [])).push(v); });
+  // Das Datum stand an jeder Abstimmung noch einmal. Es gehoert der Sitzung;
+  // hier wird es angeheftet, damit die Views es weiter direkt lesen koennen.
+  votes.forEach(v => {
+    const s = sessionMap[v.sessionId];
+    if (s) v.date = s.date;
+    (votesBySession[v.sessionId] || (votesBySession[v.sessionId] = [])).push(v);
+  });
 }
 
 // Eine Sitzungsart, zwei Namen: im Gremienteil heisst das Gremium "Plenum",
@@ -148,18 +154,21 @@ const votenVon = s => votesBySession[s.id] || [];
 // Herkunftsstufen aus vote.source.tier durch; ohne Stufe ist nur das
 // Gesamtergebnis bekannt. Gezählt wird je Beschluss nach seiner
 // Hauptquelle — einzelne Stimmen können daneben aus `voterSource` stammen.
+// Die Schluessel sind die der Oberflaeche und stehen so in den Adressen
+// (#/datenlage/sum); die Stufen sind die der Daten.
+const TIER_KEY = {
+  "protocol-explicit": "explicit",
+  "protocol-implicit": "implicit",
+  tracked: "tracked",
+  press: "press",
+  selbstauskunft: "selbstauskunft",
+  "result-only": "sum",
+};
+
 function tierCounts(votes) {
   const c = { explicit: 0, implicit: 0, tracked: 0, press: 0,
               selbstauskunft: 0, sum: 0 };
-  votes.forEach(v => {
-    const t = (v.source || {}).tier;
-    if (t === "protocol-explicit")      c.explicit++;
-    else if (t === "protocol-implicit") c.implicit++;
-    else if (t === "tracked")           c.tracked++;
-    else if (t === "press")             c.press++;
-    else if (t === "selbstauskunft")    c.selbstauskunft++;
-    else                                c.sum++;
-  });
+  votes.forEach(v => { c[TIER_KEY[(v.source || {}).tier] || "sum"]++; });
   return c;
 }
 

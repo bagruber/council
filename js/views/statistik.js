@@ -185,7 +185,7 @@ function pressOfSession(session) {
   const ids = new Set(session.press || []);
   let topsWith = 0, topsVoted = 0;
   (session.agenda || []).forEach(a => {
-    if (a.voteId || (a.voteIds || []).length) topsVoted++;
+    if ((a.voteIds || []).length) topsVoted++;
     if ((a.press || []).length) {
       topsWith++;
       a.press.forEach(id => ids.add(id));

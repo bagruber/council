@@ -54,8 +54,8 @@ function renderVoteSource(vote) {
   // Wo einzelne Positionen nur aus einer Wortmeldung stammen, steht das dabei.
   // Keine eigene Farbe im Halbrund — wer etwas befürwortet hat, wird in der
   // Regel auch dafür gestimmt haben; sicher ist es nur nicht.
-  const weich = Object.entries(vote.voterEvidence || {})
-    .filter(([, e]) => e === "weich").map(([id]) => id);
+  const weich = Object.entries(vote.voters || {})
+    .filter(([, w]) => w.evidence === "soft").map(([id]) => id);
   if (weich.length) {
     const namen = weich.map(id => (members.find(m => m.id === id) || {}).lastName)
                        .filter(Boolean).join(", ");

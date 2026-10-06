@@ -70,7 +70,7 @@ def regulaer(mid, body, datum):
 
 
 def status(mid, vote, session, member):
-    if member and not aktiv_am(member, vote['date']):
+    if member and not aktiv_am(member, session['date']):
         return None
     ex = next((e for e in vote.get('excluded') or [] if e['member'] == mid), None)
     if ex:
@@ -86,8 +86,9 @@ def status(mid, vote, session, member):
             if mid in r[feld]:
                 return feld
         return None
-    if (vote.get('voters') or {}).get(mid):
-        return vote['voters'][mid]
+    eigen = (vote.get('voters') or {}).get(mid) or {}
+    if eigen.get('vote'):
+        return eigen['vote']
     if mid in (r.get('absent_ids') or []):
         return 'absent'
     if vote.get('inferable') == 'teilweise' and any(
@@ -202,9 +203,9 @@ def main():
         for mid in args.ids:
             m = members[mid]
             if bid == 'plenum':
-                if not aktiv_am(m, v['date']):
+                if not aktiv_am(m, session['date']):
                     continue
-            elif not regulaer(mid, body, v['date']):
+            elif not regulaer(mid, body, session['date']):
                 continue
             if status(mid, v, session, m) == 'unknown':
                 offen[mid].append((v, session, bid))

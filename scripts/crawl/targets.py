@@ -71,7 +71,7 @@ def score(vote, session):
         s += 10
     if (session or {}).get('type') == 'stadtrat':
         s += 15          # Ausschuesse werden selten besetzt berichtet
-    if not vote.get('voters'):
+    if not bekannte_stimmen(vote):
         s += 10
     return round(s, 1)
 
@@ -99,10 +99,19 @@ def queries(vote, kws):
     return out
 
 
+# Ein voters-Eintrag kann auch nur die Herkunft tragen, ohne eigene Stimme.
+def bekannte_stimmen(vote):
+    return any(w.get('vote') for w in (vote.get('voters') or {}).values())
+
+
 def load():
     votes = json.load(open(os.path.join(DATA, 'votes.json'), encoding='utf-8'))
     sess = {s['id']: s for s in json.load(open(os.path.join(DATA, 'sessions.json'), encoding='utf-8'))}
     press = json.load(open(os.path.join(DATA, 'press.json'), encoding='utf-8'))
+    # Das Datum gehoert der Sitzung; hier angeheftet, weil nichts
+    # zurueckgeschrieben wird.
+    for v in votes:
+        v['date'] = (sess.get(v['sessionId']) or {}).get('date')
     return votes, sess, press
 
 
@@ -114,7 +123,7 @@ def build(limit=40, since=None, until=None):
 
     rows = []
     for v in votes:
-        if v['type'] == 'named' or v.get('voters'):
+        if v['type'] == 'named' or bekannte_stimmen(v):
             continue
         if since and v['date'] < since:
             continue
