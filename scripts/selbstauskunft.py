@@ -10,14 +10,13 @@ konstituierenden Sitzung vom 11.05.2026 heißen vier Abstimmungen "Entscheidung
 über die nummerische Besetzung der Ausschüsse" und unterscheiden sich nur im
 Ergebnis — der Titel allein fände dort vier Treffer.
 
-Eingetragen wird zweierlei:
-  * `voters[<id>]`      — die Stimme selbst
-  * `voterSource[<id>]` — Liste der Belege für diese eine Stimme. Stand sie
-                          schon in der Mitschrift oder in der Zeitung, kommt
-                          `selbstauskunft` dazu statt sie zu ersetzen: die
-                          stärkere Quelle bleibt maßgeblich, die schwächere
-                          erhöht nur das Gewicht.
-  * `voterSourceBy[<id>]` — aus wessen Notizen, hier die Person selbst
+Eingetragen wird alles unter `voters[<id>]`:
+  * `vote`  — die Stimme selbst
+  * `tiers` — Liste der Belege für diese eine Stimme. Stand sie schon in der
+              Mitschrift oder in der Zeitung, kommt `selbstauskunft` dazu statt
+              sie zu ersetzen: die stärkere Quelle bleibt maßgeblich, die
+              schwächere erhöht nur das Gewicht.
+  * `by`    — aus wessen Notizen, hier die Person selbst
 
 Die vote-weite `source` bleibt unberührt, solange sie schon gesetzt ist.
 
@@ -117,11 +116,12 @@ def main():
             sys.exit(f'{len(treffer)} Treffer für "{titel}" in {sid}')
         v = treffer[0]
 
-        alt = (v.get('voters') or {}).get(args.member)
+        eigen = (v.get('voters') or {}).get(args.member) or {}
+        alt = eigen.get('vote')
         if alt and alt != stimme:
             print(f'  ! {v["id"]}: bisher {alt}, laut Selbstauskunft {stimme}')
 
-        belege = (v.get('voterSource') or {}).get(args.member)
+        belege = eigen.get('tiers')
         if belege is None:
             # Ohne eigenen Eintrag galt bisher die Quelle des Beschlusses. War
             # die Stimme daraus schon bekannt, bleibt dieser Beleg erhalten.
@@ -130,9 +130,8 @@ def main():
         if 'selbstauskunft' not in belege:
             belege.append('selbstauskunft')
 
-        v.setdefault('voters', {})[args.member] = stimme
-        v.setdefault('voterSource', {})[args.member] = belege
-        v.setdefault('voterSourceBy', {})[args.member] = args.member
+        v.setdefault('voters', {})[args.member] = dict(
+            eigen, vote=stimme, tiers=belege, by=args.member)
         # Beschlüsse ohne jede Herkunft bekommen sie jetzt von hier
         v.setdefault('source', {'tier': 'selbstauskunft'})
         print(f'  {v["id"]:18s} {stimme:6s} {"+".join(belege):28s} {titel[:40]}')

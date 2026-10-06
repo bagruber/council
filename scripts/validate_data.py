@@ -7,7 +7,8 @@ Catches the kinds of issues that have bitten us before:
   - Vote yes/no/absent arrays don't sum to expected body size
   - vote.sessionId points to a non-existent session
   - vote.topicId points to a non-existent topic
-  - session.agenda[].voteId references a missing vote
+  - session.agenda[].voteIds references a missing vote
+  - Abstimmungen, die kein Tagesordnungspunkt nennt (sie fehlen auf der Sitzungsseite)
   - session.agenda[].topicId references a missing topic
   - session.absent ids that aren't valid members
   - history entry references missing sessionId/voteId
@@ -60,6 +61,8 @@ for label, items in [("member", [m["id"] for m in members]),
 
 # ── Cross references ─────────────────────────────────────────────────────────
 session_by_id = {s["id"]: s for s in sessions}
+# Das Datum steht an der Sitzung, nicht mehr an jeder Abstimmung.
+session_date = lambda v: (session_by_id.get(v["sessionId"]) or {}).get("date")
 vote_by_id    = {v["id"]: v for v in votes}
 
 for v in votes:
@@ -92,9 +95,13 @@ for s in sessions:
         err(f"session {s['id']}: Ende ohne Beginn")
 
     for i, item in enumerate(s.get("agenda", [])):
-        vid = item.get("voteId")
-        if vid and vid not in vote_ids:
-            err(f"session {s['id']} agenda[{i}]: voteId '{vid}' missing")
+        for vid in item.get("voteIds", []):
+            if vid not in vote_ids:
+                err(f"session {s['id']} agenda[{i}]: voteId '{vid}' missing")
+            elif item.get("topicId") and vote_by_id[vid].get("topicId")                     and item["topicId"] != vote_by_id[vid]["topicId"]:
+                warn(f"session {s['id']} agenda[{i}]: Punkt zeigt auf Thema "
+                     f"{item['topicId']}, Abstimmung {vid} auf "
+                     f"{vote_by_id[vid]['topicId']}")
         tid = item.get("topicId")
         if tid and tid not in topic_ids:
             err(f"session {s['id']} agenda[{i}]: topicId '{tid}' missing")
@@ -120,6 +127,14 @@ for t in topics:
         for pid in h.get("press", []) or []:
             if pid not in press_ids:
                 err(f"topic {t['id']} history[{i}]: press '{pid}' missing")
+
+# Was kein Tagesordnungspunkt nennt, erscheint auf der Sitzungsseite nicht.
+genannt = {vid for x in sessions for a in x.get("agenda", [])
+           for vid in a.get("voteIds", [])}
+for v in votes:
+    if v["id"] not in genannt:
+        warn(f"vote {v['id']}: kein Tagesordnungspunkt nennt ihn - "
+             f"er fehlt auf der Sitzungsseite")
 
 IDENTITY_WERTE = {"queer", "migrant", "flinta", "disability"}
 
@@ -241,14 +256,16 @@ if bpu:
     for v in votes:
         if not v["sessionId"].startswith("bpu"): continue
         if v.get("type") != "named": continue
-        members_at = seat_members_at(bpu, v["date"])
+        datum = session_date(v)
+        if not datum: continue
+        members_at = seat_members_at(bpu, datum)
         cast = set(v["results"]["yes"] + v["results"]["no"] + v["results"]["absent"])
         # subs not in BPU but voting → conflict only if regular IS in seat list
         session = session_by_id.get(v["sessionId"], {})
         subs = {s["substitute"] for s in (session.get("substitutes") or [])}
         stray = (cast - members_at) - subs
         if stray:
-            warn(f"vote {v['id']}: id(s) {stray} cast vote but aren't in BPU composition for {v['date']}")
+            warn(f"vote {v['id']}: id(s) {stray} cast vote but aren't in BPU composition for {datum}")
 
 # ── Press date sanity ────────────────────────────────────────────────────────
 import re

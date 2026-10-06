@@ -42,14 +42,15 @@ def main():
         if len(out) != r['absent']:
             continue                      # weitere Kurzabwesenheiten, nicht zuzuordnen
 
-        live = [m['id'] for m in members if active(m, v['date'])]
+        live = [m['id'] for m in members if active(m, s['date'])]
         present = [i for i in live if i not in out]
         if len(present) != r['yes'] + r['no']:
             continue
 
         voters = v.get('voters') or {}
-        yes = [i for i in present if voters.get(i) == 'yes']
-        no = [i for i in present if voters.get(i) == 'no']
+        stimme = lambda i: (voters.get(i) or {}).get('vote')
+        yes = [i for i in present if stimme(i) == 'yes']
+        no = [i for i in present if stimme(i) == 'no']
         if len(yes) == r['yes'] and len(no) < r['no']:
             no = [i for i in present if i not in yes]
         elif len(no) == r['no'] and len(yes) < r['yes']:
@@ -60,7 +61,7 @@ def main():
         v['type'] = 'named'
         v['results'] = {'yes': yes, 'no': no, 'absent': out}
         v.pop('voters', None)
-        done.append((v['id'], v['date'], len(yes), len(no), len(out),
+        done.append((v['id'], s['date'], len(yes), len(no), len(out),
                      (v.get('source') or {}).get('provisional')))
 
     for vid, d, y, n, a, prov in done:

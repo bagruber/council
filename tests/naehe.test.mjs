@@ -29,9 +29,21 @@ const MITGLIEDER = [
   { id: "d", firstName: "D", lastName: "Vier", party: "csu", from: "2023-07-01" },
 ];
 
-const votum = (id, date, yes, no, voters) => ({
-  id, date, sessionId: "s1", type: "anonymous", results: { yes, no }, voters,
-});
+// Jedes Votum braucht seine eigene Sitzung: das Datum steht seit AP 4 dort,
+// und daten.js heftet es beim Laden an die Abstimmung.
+const SITZUNGEN = [];
+const votum = (id, date, yes, no, stimmen) => {
+  const sessionId = "s_" + date.replace(/-/g, "");
+  if (!SITZUNGEN.some(s => s.id === sessionId)) {
+    SITZUNGEN.push({ id: sessionId, date, type: "stadtrat",
+                     niederschrift: "vollständig", agenda: [] });
+  }
+  return {
+    id, sessionId, type: "anonymous", results: { yes, no },
+    source: { tier: "tracked" },
+    voters: Object.fromEntries(Object.entries(stimmen).map(([k, v]) => [k, { vote: v }])),
+  };
+};
 
 const VOTEN = [
   // Vier geteilte Beschlüsse: a und b immer gleich, c immer dagegen.
@@ -48,8 +60,7 @@ const VOTEN = [
 
 const BESTAND = {
   "data/topics.json": [],
-  "data/sessions.json": [{ id: "s1", date: "2021-01-01", type: "stadtrat",
-                           niederschrift: "vollständig", agenda: [] }],
+  "data/sessions.json": SITZUNGEN,
   "data/votes.json": VOTEN,
   "data/tags.json": [],
   "data/members.json": {

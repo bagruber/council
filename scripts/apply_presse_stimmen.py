@@ -107,11 +107,12 @@ def main():
         s = smap[v['sessionId']]
         v['source'] = {'tier': 'press', 'pressId': pid}
         if not expand:
-            v.setdefault('voters', {}).update(stances)
+            for mid, stimme in stances.items():
+                v.setdefault('voters', {}).setdefault(mid, {})['vote'] = stimme
             print('  ~ ' + vid + ' ' + str(stances))
             continue
 
-        live = [m['id'] for m in members if active(m, v['date'])]
+        live = [m['id'] for m in members if active(m, s['date'])]
         absent = list(s.get('absent') or [])
         r = v['results']
         if r['yes'] + r['no'] + r['absent'] != len(live):

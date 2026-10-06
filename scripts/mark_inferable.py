@@ -34,8 +34,10 @@ ENTLASTUNG_NOTE = ('Die Mitglieder des Aufsichtsrats stimmen über ihre eigene '
                    'unter der Zahl der Anwesenden.')
 WEBAUSZUG_NOTE = ('Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. '
                   'Da nicht alle Sitze mitgestimmt haben, lässt sich das '
-                  'Stimmverhalten niemandem zuordnen.')
-
+                  'Stimmverhalten niemandem zuordnen.')
+
+
+
 TEIL_NOTE = ('Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift '
              'vermerkt {n} Person{s}, die später kam{s} oder früher ging{s} — deren '
              'Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige '
@@ -98,7 +100,9 @@ def main():
             continue                                   # geteilt → ohnehin '?'
 
         sess = sessions.get(v['sessionId'])
-        size = body_size(v['sessionId'], members, v['date'])
+        if not sess:
+            continue
+        size = body_size(v['sessionId'], members, sess['date'])
         if not sess or not size:
             continue
 

@@ -86,7 +86,7 @@ const Council = (() => {
   //   2. Per-vote exclusion (`vote.excluded`)    → 'excluded' | 'abstained'
   //   3. Session-level absence                   → 'absent'
   //   4. Named vote → arrays of ids              → 'yes' | 'no' | 'absent'
-  //   5. Explicit `vote.voters[id]`              → that status
+  //   5. Explicit `vote.voters[id].vote`         → that status
   //   6. Per-vote temporary absence (rare)       → 'absent'
   //   7. Unanimous anonymous (yes>0, no===0)     → 'yes-inferred'
   //                          (no>0,  yes===0)    → 'no-inferred'
@@ -103,7 +103,7 @@ const Council = (() => {
       if (ex.reason === "nicht_stimmberechtigt") return "restricted";
       // Wechseltag: den Sitz hielt zu dieser Abstimmung die andere Person.
       if (ex.reason === "kein_mandat")            return "restricted";
-      return "absent";                  // kurzfristig abwesend
+      return "absent";                  // kurz_abwesend
     }
 
     if (session && session.absent && session.absent.includes(memberId)) return "absent";
@@ -115,9 +115,11 @@ const Council = (() => {
       return null;
     }
 
-    if (vote.voters && vote.voters[memberId]) {
-      return vote.voters[memberId];                // already 'yes'|'no'|'absent'
-    }
+    // Ein voters-Eintrag kann auch nur die Herkunft tragen, ohne eigene
+    // Stimme — dann gilt weiter, was die Listen oben hergeben.
+    const eigen = (vote.voters || {})[memberId];
+    if (eigen && eigen.vote) return eigen.vote;    // 'yes'|'no'|'absent'
+
     if (vote.results.absent_ids && vote.results.absent_ids.includes(memberId)) {
       return "absent";
     }
@@ -177,13 +179,17 @@ const Council = (() => {
 
   // Herkunft der Einzelstimmen, absteigend nach Belastbarkeit.
   const TIER_RANK = ["protocol-explicit", "protocol-implicit", "tracked",
-                     "press", "selbstauskunft"];
+                     "press", "selbstauskunft", "result-only"];
   const TIER_LABEL = {
     "protocol-explicit": "Namentlich in der Niederschrift",
     "protocol-implicit": "Aus der öff. Niederschrift abgeleitet",
     tracked: "In der Sitzung mitgeschrieben",
     press: "Aus Presseberichten",
     selbstauskunft: "Aus eigenen Notizen rekonstruiert",
+    // Die unterste Stufe hat nichts zu benennen: die Niederschrift nennt Ja
+    // und Nein und sonst nichts. Ohne Beschriftung bleibt die Fußzeile leer,
+    // und views/voten.js setzt dort seinen eigenen Satz.
+    "result-only": null,
   };
 
   // Alle Belege für die Stimme dieser Person, stärkster zuerst. Mehrere sind
@@ -191,7 +197,7 @@ const Council = (() => {
   // Mal belegt. Für die Anzeige zählt der stärkste, die übrigen erhöhen nur
   // das Gewicht. Ohne eigenen Eintrag gilt die Stufe des Beschlusses.
   function voterTiers(vote, memberId) {
-    const eigen = memberId && (vote.voterSource || {})[memberId];
+    const eigen = memberId && ((vote.voters || {})[memberId] || {}).tiers;
     const liste = eigen ? [].concat(eigen)
                 : (vote.source && vote.source.tier ? [vote.source.tier] : []);
     return liste.slice().sort((a, b) => TIER_RANK.indexOf(a) - TIER_RANK.indexOf(b));
@@ -209,8 +215,8 @@ const Council = (() => {
   // Zeitung, die "gegen die Stimmen von X" schreibt, belegt etwas anderes als
   // eine, die X in der Debatte zitiert. Ohne Eintrag gilt die Stufe des Votums.
   function evidenceNote(vote, memberId) {
-    if (!vote || !vote.voterEvidence) return null;
-    if (vote.voterEvidence[memberId] !== "weich") return null;
+    const eigen = vote && (vote.voters || {})[memberId];
+    if (!eigen || eigen.evidence !== "soft") return null;
     return "aus einer Wortmeldung erschlossen, nicht als Stimme berichtet";
   }
 
