@@ -43,7 +43,7 @@ Nicht für: jede einzelne Beschluss-Vorlage. Nur für Anträge, die ein:e Stadtr
 1. Member finden in `data/members.json`. Falls Antrag von Fraktion: meist nur Initiator:in als Eintrag, oder mit Vermerk „im Namen der Fraktion".
 2. `profile.motions` finden oder anlegen (`{ "motions": [] }` falls nicht da).
 3. Eintrag anhängen. Liste nach `date` sortiert halten.
-4. Wenn `voteId` referenziert wird, im entsprechenden Vote-Objekt prüfen, ob `topicId` und das `agenda`-Item zur Topic passen.
+4. Wenn `voteId` referenziert wird, im entsprechenden Vote-Objekt prüfen, ob `topicIds` und das `agenda`-Item zur Topic passen.
 5. Wenn ein Presseartikel verknüpft wird, prüfen ob die Press-ID existiert. Sonst zuerst `presseartikel-einarbeiten` aufrufen.
 6. **`validate-data`** ausführen.
 7. Commit: `motion: gruber – verkehrsberuhigter Bereich auf dem Plan (12.06.2024)`.
