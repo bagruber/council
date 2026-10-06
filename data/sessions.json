@@ -10225,7 +10225,8 @@
         "number": "4.3",
         "title": "Neubesetzung von Ausschüssen und AR Kläranlage",
         "voteIds": [
-          "sr_20250324_04"
+          "sr_20250324_04",
+          "sr_20250324_05"
         ]
       },
       {
@@ -11019,6 +11020,7 @@
         "number": "5.2",
         "title": "Wohnanlage Stadtwaldstraße 9, 9a, 9b – Einvernehmen verweigert (8:9 / 12:5)",
         "voteIds": [
+          "sr_20250908_05",
           "sr_20250908_06"
         ]
       },
@@ -11345,7 +11347,8 @@
         "number": "4",
         "title": "Feuerwehr – Bestätigung Kommandanten",
         "voteIds": [
-          "sr_20251029_02"
+          "sr_20251029_02",
+          "sr_20251029_03"
         ]
       },
       {
@@ -11359,6 +11362,9 @@
         "number": "6.1",
         "title": "Änderung Vereinsförderrichtlinien",
         "voteIds": [
+          "sr_20251029_05",
+          "sr_20251029_06",
+          "sr_20251029_07",
           "sr_20251029_08"
         ]
       },
@@ -11734,6 +11740,7 @@
         "title": "Erweiterung und Generalsanierung Theresia-Gerhardinger-Grundschule",
         "topicId": "t6",
         "voteIds": [
+          "sr_20251215_01",
           "sr_20251215_02"
         ]
       },
@@ -11838,7 +11845,8 @@
         "title": "Parksituation Auf dem Plan",
         "topicId": "t3",
         "voteIds": [
-          "sr_20260112_06"
+          "sr_20260112_06",
+          "sr_20260112_07"
         ],
         "press": [
           "merkur_2026-01-12_parken-plan"
@@ -11926,7 +11934,8 @@
         "title": "Verkehrsberuhigung Innenstadt – Antrag SPD / Grüne",
         "topicId": "t4",
         "voteIds": [
-          "sr_20260202_06"
+          "sr_20260202_06",
+          "sr_20260202_07"
         ]
       },
       {
