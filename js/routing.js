@@ -10,6 +10,7 @@ import { renderCalendar } from "./views/kalender.js";
 import { renderGremien } from "./views/gremien.js";
 import { renderMemberProfile } from "./views/profil.js";
 import { renderFraktion } from "./views/fraktion.js";
+import { html } from "./html.js";
 
 const main = document.getElementById("main");
 
@@ -104,7 +105,7 @@ function backLink(label, href) {
   const a = document.createElement("a");
   a.className = "back-link";
   a.href = href;
-  a.innerHTML = `<svg class="icon"><use href="#i-arrow_back"/></svg> ${label}`;
+  a.innerHTML = html`<svg class="icon"><use href="#i-arrow_back"/></svg> ${label}`;
   a.addEventListener("click", e => {
     if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
   });

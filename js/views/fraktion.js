@@ -2,8 +2,10 @@
 // Geschlossenheit bei geteilten Beschlüssen.
 import { members, votes, memberMap, partyMap } from "../daten.js";
 import { formatMonthPeriod } from "../hilfen.js";
-import { stances, partyAtDate } from "./naehe.js";
+import { stances, partyAtDate } from "../aehnlichkeit.js";
 import { backLink } from "../routing.js";
+import { Council } from "../core.js";
+import { html } from "../html.js";
 
 const gremienMain = document.getElementById("gremien-main");
 
@@ -46,7 +48,7 @@ function factionHistory() {
 
 function renderFraktion(pid) {
   const party = partyMap[pid];
-  if (!party) { gremienMain.innerHTML = "<p style='padding:40px 24px'>Fraktion nicht gefunden.</p>"; return; }
+  if (!party) { gremienMain.innerHTML = html`<p class="nicht-gefunden">Fraktion nicht gefunden.</p>`; return; }
   gremienMain.innerHTML = "";
 
   const wrap = document.createElement("div");
@@ -61,7 +63,7 @@ function renderFraktion(pid) {
 
   const head = document.createElement("div");
   head.className = "faction-header";
-  head.innerHTML = `
+  head.innerHTML = html`
     <span class="faction-badge" style="background:${party.color}"></span>
     <div>
       <h1>${party.name}</h1>
@@ -84,19 +86,17 @@ function renderFraktion(pid) {
       const chip = (other, dir) => {
         const p = partyMap[other];
         const label = p ? p.name : other;
-        return `<span class="faction-move ${dir}" style="--from:${p ? p.color : "#999"}"
+        return html`<span class="faction-move ${dir}" style="--from:${p ? p.color : "#999"}"
           title="${dir === "in" ? "vorher" : "danach"} ${label}"
           >${dir === "in" ? label + " →" : "→ " + label}</span>`;
       };
-      const move = (r.from ? chip(r.from, "in") : "") + (r.to ? chip(r.to, "out") : "");
-      row.className = "member-row" + (move ? " has-move" : "");
-      // Der Bürgermeister sitzt kraft Amtes im Rat, nicht über die Liste
-      const office = r.member.role === "mayor"
-        ? `<span class="faction-office">Bürgermeister</span>` : "";
-      row.innerHTML = `
+      const move = [r.from && chip(r.from, "in"), r.to && chip(r.to, "out")].filter(Boolean);
+      row.className = "member-row" + (move.length ? " has-move" : "");
+      row.innerHTML = html`
         <span class="member-dot" style="background:${party.color}"></span>
         <span class="member-row-name">${r.member.name}</span>
-        ${office}${move}
+        ${/* Der Bürgermeister sitzt kraft Amtes im Rat, nicht über die Liste */
+          r.member.role === "mayor" && html`<span class="faction-office">Bürgermeister</span>`}${move}
         <span class="member-row-meta">${formatMonthPeriod(r.span.from, r.span.to)}</span>`;
       wrap.appendChild(row);
     });
@@ -148,20 +148,19 @@ function factionCohesion(pid) {
 
   const box = document.createElement("div");
   box.className = "cohesion";
-  box.innerHTML = `
+  box.innerHTML = html`
     <div class="cohesion-value">${Math.round(united / total * 100)} %</div>
     <div class="cohesion-label">geschlossen bei geteilten Beschlüssen
       <span>${united} von ${total} Abstimmungen, bei denen der Rat sich nicht einig war
       und mindestens zwei Stimmen aus der Fraktion bekannt sind</span></div>
-    ${ranked.length ? `<div class="cohesion-dev">${ranked.map(r => {
+    ${ranked.length > 0 && html`<div class="cohesion-dev">${ranked.map(r => {
       const m = memberMap[r.id];
-      const office = m && m.role === "mayor"
-        ? ` <span class="faction-office">Bürgermeister</span>` : "";
-      return `<a href="#/member/${r.id}"><span>${m ? m.name : r.id}</span>${office}
+      return html`<a href="#/member/${r.id}"><span>${m ? m.name : r.id}</span>${
+        m && m.role === "mayor" && html` <span class="faction-office">Bürgermeister</span>`}
                 <b>${Math.round(r.share * 100)} %</b>
                 <small>${r.off} von ${r.n}</small></a>`;
-    }).join("")}<p>weicht am häufigsten von der Mehrheit der eigenen Fraktion ab —
-      gezählt bei Beschlüssen mit mindestens drei bekannten Stimmen aus der Fraktion</p></div>` : ""}`;
+    })}<p>weicht am häufigsten von der Mehrheit der eigenen Fraktion ab —
+      gezählt bei Beschlüssen mit mindestens drei bekannten Stimmen aus der Fraktion</p></div>`}`;
   return box;
 }
 

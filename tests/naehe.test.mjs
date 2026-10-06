@@ -1,24 +1,14 @@
-// Prüft das Ähnlichkeitsmaß aus js/views/naehe.js an erfundenen Daten:
+// Prüft das Ähnlichkeitsmaß aus js/aehnlichkeit.js an erfundenen Daten:
 // Dämpfung, Mindestzahl, einstimmige Beschlüsse, Gelegenheit, Sitzwechsel.
 //
-// Die Views greifen beim Laden auf das Dokument zu und daten.js holt die
-// Dateien per fetch. Beides wird hier ersetzt, damit das Maß ohne Browser
-// prüfbar ist. Mit dem Schnitt aus AP 5 (Maß getrennt vom Zeichnen) fällt
-// der Ersatz für das Dokument weg.
+// daten.js holt die Dateien per fetch; das wird hier ersetzt. Ein Dokument
+// braucht es nicht mehr, seit das Maß vom Zeichnen getrennt ist.
 
 import { test, before } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
 
-const K = 5;      // SIM_K in naehe.js
+const K = 5;      // SIM_K in aehnlichkeit.js
 let similarity, simScore;
-
-const KNOTEN = {
-  classList: { toggle() {}, add() {}, remove() {}, contains: () => false },
-  addEventListener() {}, setAttribute() {}, removeAttribute() {},
-  appendChild() {}, querySelector: () => null, querySelectorAll: () => [],
-  innerHTML: "", textContent: "", dataset: {}, style: {},
-};
 
 // Zwei Fraktionen, vier Personen: a und b stimmen zusammen, c dagegen.
 // d rückt für a nach.
@@ -79,19 +69,6 @@ const BESTAND = {
 };
 
 before(async () => {
-  globalThis.document = {
-    getElementById: () => KNOTEN, querySelector: () => KNOTEN,
-    querySelectorAll: () => [], createElement: () => ({ ...KNOTEN }),
-    addEventListener() {}, body: KNOTEN, documentElement: KNOTEN,
-  };
-  globalThis.window = {
-    location: { hash: "" }, addEventListener() {}, history: { length: 1 },
-    innerWidth: 1440, matchMedia: () => ({ matches: false, addEventListener() {} }),
-  };
-  globalThis.localStorage = { getItem: () => null, setItem() {} };
-
-  const quelle = readFileSync(new URL("../js/core.js", import.meta.url), "utf8");
-  globalThis.Council = new Function(quelle + "\nreturn Council;")();
 
   globalThis.fetch = async (pfad) => ({
     ok: true, status: 200, json: async () => BESTAND[pfad],
@@ -99,7 +76,7 @@ before(async () => {
 
   const daten = await import("../js/daten.js");
   await daten.ladeDaten();
-  const naehe = await import("../js/views/naehe.js");
+  const naehe = await import("../js/aehnlichkeit.js");
   naehe.initNaehe();
   similarity = naehe.similarity;
   simScore = naehe.simScore;

@@ -8,7 +8,10 @@
 //   VoteVis.drawBar(container, results)
 //   VoteVis.drawParliament(container, vote, members, parties, seatOrder [, options])
 
-const VoteVis = (() => {
+import { Council } from "./core.js";
+import { html } from "./html.js";
+
+export const VoteVis = (() => {
   const NS  = "http://www.w3.org/2000/svg";
   const DEG = Math.PI / 180;
 
@@ -116,9 +119,9 @@ const VoteVis = (() => {
 
   const tooltipEl = document.getElementById("tooltip");
 
-  function showTooltip(evt, html) {
+  function showTooltip(evt, inhalt) {
     if (!tooltipEl) return;
-    tooltipEl.innerHTML = html;
+    tooltipEl.innerHTML = inhalt;
     tooltipEl.classList.remove("hidden");
     positionTooltip(evt);
   }
@@ -163,7 +166,7 @@ const VoteVis = (() => {
 
     const pop = document.createElement("div");
     pop.className = "seat-popover";
-    pop.innerHTML = `
+    pop.innerHTML = html`
       <button class="seat-popover-close" aria-label="Schließen"><svg class="icon"><use href="#i-close"/></svg></button>
       <div class="seat-popover-body">${seatInfoHTML(seat)}</div>
       <a href="#/member/${seat.id}" class="seat-popover-link">Profil ansehen →</a>`;
@@ -188,9 +191,8 @@ const VoteVis = (() => {
   }
 
   function seatInfoHTML(seat) {
-    const titlePart = seat.title ? ` <span class="seat-title">(${seat.title})</span>` : "";
-    return `
-      <div class="seat-name">${seat.name}${titlePart}</div>
+    return html`
+      <div class="seat-name">${seat.name}${seat.title && html` <span class="seat-title">(${seat.title})</span>`}</div>
       <div class="seat-party"><span class="seat-party-dot" style="background:${seat.party?.color || "#aaa"}"></span>${seat.party?.name || ""}</div>
       <div class="seat-vote vote-${seat.vote.replace("-inferred", "")}">${seat.info || Council.voteStatusTitle(seat.vote)}</div>`;
   }

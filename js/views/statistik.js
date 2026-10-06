@@ -8,7 +8,9 @@ import {
 } from "../daten.js";
 import { formatDate, formatDuration, monthNames } from "../hilfen.js";
 import { navigate, route, backLink } from "../routing.js";
-import { PERIODS, drawSimMatrix, drawSimGraph } from "./naehe.js";
+import { PERIODS } from "../aehnlichkeit.js";
+import { drawSimMatrix, drawSimGraph } from "./naehe.js";
+import { html, roh } from "../html.js";
 
 const main = document.getElementById("main");
 
@@ -33,8 +35,8 @@ const monatJahr = iso => monat(iso) + " " + iso.slice(0, 4);
 
 const chartTip = document.getElementById("tooltip");
 
-function chartTipShow(evt, html) {
-  chartTip.innerHTML = html;
+function chartTipShow(evt, inhalt) {
+  chartTip.innerHTML = inhalt;
   chartTip.classList.remove("hidden");
   chartTipMove(evt);
 }
@@ -49,14 +51,14 @@ function chartTipHide() {
 }
 
 function chartLegend() {
-  return `<div class="chart-legend">` + SITZUNGSARTEN.map(b =>
-    `<span><span class="chart-dot" style="background:${b.color}"></span>${b.label}</span>`).join("") + `</div>`;
+  return html`<div class="chart-legend">${SITZUNGSARTEN.map(b =>
+    html`<span><span class="chart-dot" style="background:${b.color}"></span>${b.label}</span>`)}</div>`;
 }
 
 function chartCard(title, foot, drawFn, data, withLegend) {
   const card = document.createElement("div");
   card.className = "chart-card";
-  card.innerHTML = `<h3>${title}</h3>${withLegend ? chartLegend() : ""}`;
+  card.innerHTML = html`<h3>${title}</h3>${withLegend && chartLegend()}`;
   const chartEl = document.createElement("div");
   card.appendChild(chartEl);
   if (foot) {
@@ -83,7 +85,7 @@ function renderStatistik() {
 
   const header = document.createElement("div");
   header.className = "topic-header";
-  header.innerHTML = `
+  header.innerHTML = html`
     <h1>Sitzungsstatistik</h1>
     <div class="topic-summary">Dauer der öffentlichen Sitzungen von Stadtrat, Bau-, Planungs- und Umweltausschuss (BPU) und Hauptverwaltungs- und Finanzausschuss (HVFA) seit ${monatJahr(b.seit)}.
       Gezählt ist jede Sitzung, die stattgefunden hat — auch die, von denen nichts
@@ -92,7 +94,7 @@ function renderStatistik() {
 
   const tiles = document.createElement("div");
   tiles.className = "stat-tiles";
-  tiles.innerHTML = `
+  tiles.innerHTML = html`
     <div class="stat-tile"><div class="stat-tile-value">${b.sitzungen}</div><div class="stat-tile-label">Sitzungen, ${b.mitDauer} davon mit Dauer</div></div>
     <div class="stat-tile"><div class="stat-tile-value">${Math.round(b.minuten / 60)} Std.</div><div class="stat-tile-label">Gesamtdauer</div></div>
     <div class="stat-tile"><div class="stat-tile-value">${formatDuration(median(srMins))}</div><div class="stat-tile-label">Stadtratssitzung im Median</div></div>`;
@@ -119,11 +121,11 @@ function renderStatistik() {
 
   const intro = document.createElement("p");
   intro.className = "chart-foot";
-  intro.innerHTML = "Verglichen werden nur <strong>geteilte</strong> Beschlüsse — bei "
-    + "Einstimmigkeit stimmen alle gleich, das sagt nichts. Gezählt wird je Paar "
-    + "+1 bei gleicher, −1 bei verschiedener Stimme; wer fehlt, zählt nicht mit. "
-    + "Die Summe wird durch (Vergleiche + 5) geteilt, damit dünne Grundlagen zur "
-    + "Mitte gezogen werden — vier gleiche Stimmen ergeben 0,44, fünfundzwanzig 0,83.";
+  intro.innerHTML = html`Verglichen werden nur <strong>geteilte</strong> Beschlüsse — bei
+    Einstimmigkeit stimmen alle gleich, das sagt nichts. Gezählt wird je Paar
+    +1 bei gleicher, −1 bei verschiedener Stimme; wer fehlt, zählt nicht mit.
+    Die Summe wird durch (Vergleiche + 5) geteilt, damit dünne Grundlagen zur
+    Mitte gezogen werden — vier gleiche Stimmen ergeben 0,44, fünfundzwanzig 0,83.`;
   main.appendChild(intro);
 
   periodCard(main, "Nähe-Matrix",
@@ -142,9 +144,9 @@ function renderStatistik() {
 function periodCard(parent, title, foot, drawFn) {
   const card = document.createElement("div");
   card.className = "chart-card";
-  card.innerHTML = `<h3>${title}</h3>
+  card.innerHTML = html`<h3>${title}</h3>
     <div class="period-switch">${PERIODS.map((p, i) =>
-      `<button data-p="${p.id}"${i === 0 ? ' class="on"' : ""}>${p.label}</button>`).join("")}</div>`;
+      html`<button data-p="${p.id}"${i === 0 ? roh(' class="on"') : ""}>${p.label}</button>`)}</div>`;
   const chartEl = document.createElement("div");
   card.appendChild(chartEl);
   if (foot) {
@@ -197,13 +199,12 @@ function pressOfSession(session) {
 
 function pressBadge(p) {
   if (!p.total) {
-    return `<span class="reg-presse none" title="Kein Zeitungsartikel verknüpft">–</span>`;
+    return html`<span class="reg-presse none" title="Kein Zeitungsartikel verknüpft">–</span>`;
   }
   const anTops = p.topsWith
     ? `, davon ${p.topsWith} von ${p.topsVoted} Punkten zugeordnet`
     : ", noch keinem Punkt zugeordnet";
-  return `<span class="reg-presse" title="${p.total} Artikel${anTops}">`
-       + `${p.total} Presse</span>`;
+  return html`<span class="reg-presse" title="${p.total} Artikel${anTops}">${p.total} Presse</span>`;
 }
 
 // `filter` schränkt auf eine Herkunftsstufe (explicit/implicit/tracked/press/
@@ -222,7 +223,7 @@ function renderDatenlage(filter) {
 
   const header = document.createElement("div");
   header.className = "topic-header";
-  header.innerHTML = `
+  header.innerHTML = html`
     <h1>Datenlage</h1>
     <div class="topic-summary">Jede öffentliche Sitzung seit ${monatJahr(b.seit)}, und was von ihr vorliegt.
       Gezählt ist, was stattgefunden hat — Sitzungen ohne Niederschrift stehen
@@ -231,7 +232,7 @@ function renderDatenlage(filter) {
 
   const tiles = document.createElement("div");
   tiles.className = "stat-tiles";
-  tiles.innerHTML = `
+  tiles.innerHTML = html`
     <div class="stat-tile"><div class="stat-tile-value">${b.vollstaendig} <small>/ ${b.sitzungen}</small></div><div class="stat-tile-label">Sitzungen mit Niederschrift</div></div>
     <div class="stat-tile"><div class="stat-tile-value">${b.abstimmungen}</div><div class="stat-tile-label">erfasste Abstimmungen</div></div>
     <div class="stat-tile"><div class="stat-tile-value">${Math.round(traceable / b.abstimmungen * 100)} %</div><div class="stat-tile-label">Stimmverhalten nachvollziehbar</div></div>`;
@@ -239,18 +240,19 @@ function renderDatenlage(filter) {
 
   // Jede Kennzahl ist ein Filter auf sich selbst. Nochmal draufklicken hebt auf.
   const chip = (key, cls, label, n, hint) =>
-    `<a class="tier-chip ${cls}${filter === key ? " on" : ""}"
+    html`<a class="tier-chip ${cls}${filter === key ? " on" : ""}"
         href="#/datenlage${filter === key ? "" : "/" + key}" title="${hint}">${label} <b>${n}</b></a>`;
 
   const levels = document.createElement("div");
   levels.className = "tier-legend";
-  levels.innerHTML =
+  levels.innerHTML = html`${[
     chip("protokoll", "level-protokoll", "Niederschrift", b.vollstaendig,
-         "Niederschrift mit Anwesenheitsliste")
-    + chip("auszug", "level-auszug", "nur Beschlussauszug", b.auszug,
-           "Beschlussauszug der Stadt, ohne Anwesenheitsliste")
-    + chip("keine", "level-keine", "nichts veröffentlicht", b.keine,
-           "Weder Niederschrift noch Auszug veröffentlicht");
+         "Niederschrift mit Anwesenheitsliste"),
+    chip("auszug", "level-auszug", "nur Beschlussauszug", b.auszug,
+         "Beschlussauszug der Stadt, ohne Anwesenheitsliste"),
+    chip("keine", "level-keine", "nichts veröffentlicht", b.keine,
+         "Weder Niederschrift noch Auszug veröffentlicht"),
+  ]}`;
   main.appendChild(levels);
 
   // Presselage getrennt von der Aktenlage: eine Sitzung kann lückenlos
@@ -258,18 +260,19 @@ function renderDatenlage(filter) {
   const mitPresse = erfasst.filter(r => pressOfSession(r).total);
   const presse = document.createElement("div");
   presse.className = "tier-legend";
-  presse.innerHTML =
+  presse.innerHTML = html`${[
     chip("presse", "level-protokoll", "mit Presseartikel", mitPresse.length,
-         "Mindestens ein Zeitungsartikel ist verknüpft")
-    + chip("ohne-presse", "level-keine", "ohne Presseartikel",
-           erfasst.length - mitPresse.length,
-           "Noch kein Artikel verknüpft — hier lohnt die Recherche");
+         "Mindestens ein Zeitungsartikel ist verknüpft"),
+    chip("ohne-presse", "level-keine", "ohne Presseartikel",
+         erfasst.length - mitPresse.length,
+         "Noch kein Artikel verknüpft — hier lohnt die Recherche"),
+  ]}`;
   main.appendChild(presse);
 
   const legend = document.createElement("div");
   legend.className = "tier-legend";
-  legend.innerHTML = TIERS.map(t =>
-    chip(t.key, "tier-" + t.key, t.label, all[t.key], t.hint)).join("");
+  legend.innerHTML = html`${TIERS.map(t =>
+    chip(t.key, "tier-" + t.key, t.label, all[t.key], t.hint))}`;
   main.appendChild(legend);
 
   // Herkunftsstufe: die Abstimmungen selbst auflisten, nicht die Sitzungen —
@@ -301,7 +304,7 @@ function renderDatenlage(filter) {
       year = r.date.slice(0, 4);
       const head = document.createElement("tr");
       head.className = "register-year";
-      head.innerHTML = `<th colspan="4">${year}</th>`;
+      head.innerHTML = html`<th colspan="4">${year}</th>`;
       body.appendChild(head);
     }
     const label = sitzungsart(r.type).label;
@@ -309,33 +312,30 @@ function renderDatenlage(filter) {
     const dur = min ? formatDuration(min) : r.start ? r.start + " Uhr" : "";
     const voten = votenVon(r);
     const c = tierCounts(voten);
-    const bar = voten.length
-      ? `<span class="tier-bar">${TIERS.filter(t => c[t.key])
-          .map(t => `<span class="tier-${t.key}" style="flex:${c[t.key]}" title="${c[t.key]}× ${t.label}"></span>`)
-          .join("")}</span>`
-      : "";
+    const bar = voten.length > 0 && html`<span class="tier-bar">${TIERS.filter(t => c[t.key])
+          .map(t => html`<span class="tier-${t.key}" style="flex:${c[t.key]}" title="${c[t.key]}× ${t.label}"></span>`)}</span>`;
 
     const web = isWebauszug(r);
     const doc = r.niederschrift === "keine" ? ""
       : web
         ? ((r.source || {}).url
-            ? `<a class="reg-pdf" href="${r.source.url}" target="_blank" rel="noopener"
+            ? html`<a class="reg-pdf" href="${r.source.url}" target="_blank" rel="noopener"
                   title="Beschlussauszug der Stadt, ohne Anwesenheitsliste"><svg class="icon"><use href="#i-language"/></svg></a>`
             : "")
-        : `<a class="reg-pdf" href="${protocolUrl(r)}" target="_blank" rel="noopener"
+        : html`<a class="reg-pdf" href="${protocolUrl(r)}" target="_blank" rel="noopener"
               title="Niederschrift als PDF"><svg class="icon"><use href="#i-description"/></svg></a>`;
 
     const tr = document.createElement("tr");
     tr.className = r.niederschrift === "keine" ? "register-gap" : web ? "register-partial" : "";
-    tr.innerHTML = `
+    tr.innerHTML = html`
       <td class="reg-date">${formatDate(r.date)}</td>
       <td class="reg-body"><span class="reg-dot" style="background:${chartColor[r.type]}"></span>${label}</td>
       <td class="reg-dur">${dur}</td>
       <td class="reg-data">${r.agenda
-        ? `<a href="#/session/${r.id}">${voten.length} Abstimmung${voten.length === 1 ? "" : "en"}</a>`
-          + (web ? `<span class="reg-flag">ohne Anwesenheitsliste</span>` : "")
-          + bar + doc + pressBadge(pressOfSession(r))
-        : `<span class="reg-none">nichts veröffentlicht</span>`}</td>`;
+        ? html`<a href="#/session/${r.id}">${voten.length} Abstimmung${
+            voten.length === 1 ? "" : "en"}</a>${
+            web && html`<span class="reg-flag">ohne Anwesenheitsliste</span>`}${bar}${doc}${pressBadge(pressOfSession(r))}`
+        : html`<span class="reg-none">nichts veröffentlicht</span>`}</td>`;
     body.appendChild(tr);
   });
   table.appendChild(body);
@@ -368,7 +368,7 @@ function tierVoteList(tier, erfasst) {
     const label = sitzungsart(r.type).label;
     const head = document.createElement("tr");
     head.className = "register-group";
-    head.innerHTML = `<th colspan="2"><a href="#/session/${r.id}"><span class="reg-dot"
+    head.innerHTML = html`<th colspan="2"><a href="#/session/${r.id}"><span class="reg-dot"
       style="background:${chartColor[r.type]}"></span>${formatDate(r.date)} · ${label}</a></th>`;
     body.appendChild(head);
     list.forEach(v => {
@@ -376,7 +376,7 @@ function tierVoteList(tier, erfasst) {
         ? `${v.results.yes.length}:${v.results.no.length}`
         : `${v.results.yes}:${v.results.no}`;
       const tr = document.createElement("tr");
-      tr.innerHTML = `<td class="reg-title"><a href="#/session/${r.id}">${v.title}</a></td>
+      tr.innerHTML = html`<td class="reg-title"><a href="#/session/${r.id}">${v.title}</a></td>
                       <td class="reg-dur">${res}</td>`;
       body.appendChild(tr);
     });
@@ -418,7 +418,7 @@ function renderPresse() {
 
   const header = document.createElement("div");
   header.className = "topic-header";
-  header.innerHTML = `
+  header.innerHTML = html`
     <h1>Presseschau</h1>
     <div class="topic-summary">Alle Zeitungsartikel, die in dieser App verlinkt sind — zu Sitzungen,
       Dossiers und Anträgen. Die Artikel bleiben bei ihren Häusern, hier steht nur der Verweis.</div>`;
@@ -438,16 +438,15 @@ function renderPresse() {
     const src = mediaMap[p.media] || { name: p.media, color: "#999" };
     const row = document.createElement("div");
     row.className = "press-row";
-    row.innerHTML = `
+    row.innerHTML = html`
       <span class="press-medium" style="background:${src.color}">${src.logo
-        ? `<img src="${src.logo}" alt="${src.name}">` : src.name}</span>
+        ? html`<img src="${src.logo}" alt="${src.name}">` : src.name}</span>
       <div>
         <a class="press-title" href="${p.url}" target="_blank" rel="noopener">${p.title}
           <svg class="icon"><use href="#i-open_in_new"/></svg></a>
         <div class="press-meta">${formatDate(p.date)} · ${src.name}</div>
         <div class="press-refs">${(ctx[p.id] || [])
-          .map(c => `<a href="${c.href}"><span class="press-ref-kind">${c.kind}</span>${c.label}</a>`)
-          .join("")}</div>
+          .map(c => html`<a href="${c.href}"><span class="press-ref-kind">${c.kind}</span>${c.label}</a>`)}</div>
       </div>`;
     list.appendChild(row);
   });
@@ -464,33 +463,33 @@ function drawDurationDots(el, entries) {
   const x = d => left + (Date.parse(d) - t0) / (t1 - t0) * plotW;
   const y = m => top + plotH * (1 - m / maxMin);
 
-  let grid = "", ticks = "";
+  const grid = [], ticks = [];
   for (let h = 60; h <= maxMin; h += 60) {
-    grid += `<line x1="${left}" x2="${W - right}" y1="${y(h).toFixed(1)}" y2="${y(h).toFixed(1)}"/>`;
-    ticks += `<text class="chart-tick" x="${left - 6}" y="${(y(h) + 3).toFixed(1)}" text-anchor="end">${h / 60} h</text>`;
+    grid.push(html`<line x1="${left}" x2="${W - right}" y1="${y(h).toFixed(1)}" y2="${y(h).toFixed(1)}"/>`);
+    ticks.push(html`<text class="chart-tick" x="${left - 6}" y="${(y(h) + 3).toFixed(1)}" text-anchor="end">${h / 60} h</text>`);
   }
   const firstYear = +entries[0].date.slice(0, 4);
   // Startjahr nur beschriften, wenn es nicht mit dem ersten Jahres-Tick kollidiert
   if (x(firstYear + 1 + "-01-01") - left > 44) {
-    ticks += `<text class="chart-tick" x="${left}" y="${H - 6}" text-anchor="start">${firstYear}</text>`;
+    ticks.push(html`<text class="chart-tick" x="${left}" y="${H - 6}" text-anchor="start">${firstYear}</text>`);
   }
   for (let yr = firstYear + 1; Date.parse(yr + "-01-01") <= t1; yr++) {
-    ticks += `<text class="chart-tick" x="${x(yr + "-01-01").toFixed(1)}" y="${H - 6}" text-anchor="middle">${yr}</text>`;
+    ticks.push(html`<text class="chart-tick" x="${x(yr + "-01-01").toFixed(1)}" y="${H - 6}" text-anchor="middle">${yr}</text>`);
   }
 
   const dots = entries.map((e, i) => {
     const linked = e.erfasst ? " linked" : "";
-    return `<circle class="dt-dot${linked}" data-i="${i}" cx="${x(e.date).toFixed(1)}" cy="${y(e.min).toFixed(1)}" r="4" fill="${chartColor[e.body]}"/>`;
-  }).join("");
+    return html`<circle class="dt-dot${linked}" data-i="${i}" cx="${x(e.date).toFixed(1)}" cy="${y(e.min).toFixed(1)}" r="4" fill="${chartColor[e.body]}"/>`;
+  });
 
-  el.innerHTML = `<svg class="chart" width="${W}" height="${H}" role="img" aria-label="Sitzungsdauer im Zeitverlauf">
+  el.innerHTML = html`<svg class="chart" width="${W}" height="${H}" role="img" aria-label="Sitzungsdauer im Zeitverlauf">
     <g class="chart-grid">${grid}</g>${ticks}${dots}</svg>`;
 
   el.querySelectorAll(".dt-dot").forEach(dot => {
     const e = entries[dot.dataset.i];
     const label = sitzungsart(e.body).label;
     dot.addEventListener("mouseenter", evt => chartTipShow(evt,
-      `<strong>${label} · ${formatDate(e.date)}</strong><br>${e.start}–${e.end} Uhr · ${formatDuration(e.min)}`));
+      html`<strong>${label} · ${formatDate(e.date)}</strong><br>${e.start}–${e.end} Uhr · ${formatDuration(e.min)}`));
     dot.addEventListener("mousemove", chartTipMove);
     dot.addEventListener("mouseleave", chartTipHide);
     if (e.erfasst) dot.addEventListener("click", () => {
@@ -521,45 +520,45 @@ function drawYearHours(el, entries) {
   const slot = plotW / years.length;
   const barW = Math.min(24, Math.round(slot * 0.55));
 
-  let grid = "", ticks = "";
+  const grid = [], ticks = [];
   for (let h = 20; h <= maxH; h += 20) {
     const gy = (top + plotH - scale(h * 60)).toFixed(1);
-    grid += `<line x1="${left}" x2="${W - right}" y1="${gy}" y2="${gy}"/>`;
-    ticks += `<text class="chart-tick" x="${left - 6}" y="${+gy + 3}" text-anchor="end">${h} h</text>`;
+    grid.push(html`<line x1="${left}" x2="${W - right}" y1="${gy}" y2="${gy}"/>`);
+    ticks.push(html`<text class="chart-tick" x="${left - 6}" y="${+gy + 3}" text-anchor="end">${h} h</text>`);
   }
 
-  let bars = "", hover = [];
+  const bars = [], hover = [];
   years.forEach((yr, yi) => {
     const cx = left + slot * (yi + 0.5);
     const bx = Math.round(cx - barW / 2);
     let base = top + plotH;
-    let gaps = "";
+    const gaps = [];
     const segs = SITZUNGSARTEN.filter(b => sums[yr][b.type] > 0);
     segs.forEach((b, si) => {
       const h = scale(sums[yr][b.type]);
       const sy = base - h;
       if (si === segs.length - 1) {
-        bars += `<path class="yh-seg" data-yr="${yr}" data-b="${b.type}" d="${capRect(bx, sy, barW, h)}" fill="${b.color}"/>`;
+        bars.push(html`<path class="yh-seg" data-yr="${yr}" data-b="${b.type}" d="${capRect(bx, sy, barW, h)}" fill="${b.color}"/>`);
       } else {
-        bars += `<rect class="yh-seg" data-yr="${yr}" data-b="${b.type}" x="${bx}" y="${sy.toFixed(1)}" width="${barW}" height="${h.toFixed(1)}" fill="${b.color}"/>`;
+        bars.push(html`<rect class="yh-seg" data-yr="${yr}" data-b="${b.type}" x="${bx}" y="${sy.toFixed(1)}" width="${barW}" height="${h.toFixed(1)}" fill="${b.color}"/>`);
         // 2px Lücke in Flächenfarbe zwischen den Segmenten
-        gaps += `<line x1="${bx}" x2="${bx + barW}" y1="${sy.toFixed(1)}" y2="${sy.toFixed(1)}" stroke="var(--surface)" stroke-width="2"/>`;
+        gaps.push(html`<line x1="${bx}" x2="${bx + barW}" y1="${sy.toFixed(1)}" y2="${sy.toFixed(1)}" stroke="var(--surface)" stroke-width="2"/>`);
       }
       base = sy;
     });
-    bars += gaps;
-    bars += `<text class="chart-cap" x="${cx.toFixed(1)}" y="${(base - 5).toFixed(1)}" text-anchor="middle">${Math.round(totalOf(yr) / 60)}</text>`;
-    ticks += `<text class="chart-tick" x="${cx.toFixed(1)}" y="${H - 6}" text-anchor="middle">${yr}</text>`;
+    bars.push(gaps);
+    bars.push(html`<text class="chart-cap" x="${cx.toFixed(1)}" y="${(base - 5).toFixed(1)}" text-anchor="middle">${Math.round(totalOf(yr) / 60)}</text>`);
+    ticks.push(html`<text class="chart-tick" x="${cx.toFixed(1)}" y="${H - 6}" text-anchor="middle">${yr}</text>`);
   });
 
-  el.innerHTML = `<svg class="chart" width="${W}" height="${H}" role="img" aria-label="Sitzungsstunden pro Jahr">
+  el.innerHTML = html`<svg class="chart" width="${W}" height="${H}" role="img" aria-label="Sitzungsstunden pro Jahr">
     <g class="chart-grid">${grid}</g>${ticks}${bars}</svg>`;
 
   el.querySelectorAll(".yh-seg").forEach(seg => {
     const b = sitzungsart(seg.dataset.b);
     const minutes = sums[seg.dataset.yr][seg.dataset.b];
     seg.addEventListener("mouseenter", evt => chartTipShow(evt,
-      `<strong>${b.label} ${seg.dataset.yr}</strong><br>${Math.round(minutes / 60)} Std. in ${entries.filter(e => e.date.slice(0, 4) === seg.dataset.yr && e.body === seg.dataset.b).length} Sitzungen`));
+      html`<strong>${b.label} ${seg.dataset.yr}</strong><br>${Math.round(minutes / 60)} Std. in ${entries.filter(e => e.date.slice(0, 4) === seg.dataset.yr && e.body === seg.dataset.b).length} Sitzungen`));
     seg.addEventListener("mousemove", chartTipMove);
     seg.addEventListener("mouseleave", chartTipHide);
   });
@@ -584,14 +583,14 @@ function drawMedianByBody(el, entries) {
   const slot = plotW / years.length;
   const barW = Math.min(16, Math.floor((slot * 0.7 - 4) / SITZUNGSARTEN.length));
 
-  let grid = "", ticks = "";
+  const grid = [], ticks = [];
   for (let h = 60; h <= maxMin; h += 60) {
     const gy = (top + plotH - scale(h)).toFixed(1);
-    grid += `<line x1="${left}" x2="${W - right}" y1="${gy}" y2="${gy}"/>`;
-    ticks += `<text class="chart-tick" x="${left - 6}" y="${+gy + 3}" text-anchor="end">${h / 60} h</text>`;
+    grid.push(html`<line x1="${left}" x2="${W - right}" y1="${gy}" y2="${gy}"/>`);
+    ticks.push(html`<text class="chart-tick" x="${left - 6}" y="${+gy + 3}" text-anchor="end">${h / 60} h</text>`);
   }
 
-  let bars = "";
+  const bars = [];
   years.forEach((yr, yi) => {
     const cx = left + slot * (yi + 0.5);
     const present = SITZUNGSARTEN.filter(b => med[yr][b.type] !== undefined);
@@ -599,19 +598,19 @@ function drawMedianByBody(el, entries) {
     present.forEach((b, bi) => {
       const bx = Math.round(cx - groupW / 2 + bi * (barW + 2));
       const h = scale(med[yr][b.type]);
-      bars += `<path class="mb-bar" data-yr="${yr}" data-b="${b.type}" d="${capRect(bx, top + plotH - h, barW, h)}" fill="${b.color}"/>`;
+      bars.push(html`<path class="mb-bar" data-yr="${yr}" data-b="${b.type}" d="${capRect(bx, top + plotH - h, barW, h)}" fill="${b.color}"/>`);
     });
-    ticks += `<text class="chart-tick" x="${cx.toFixed(1)}" y="${H - 6}" text-anchor="middle">${yr}</text>`;
+    ticks.push(html`<text class="chart-tick" x="${cx.toFixed(1)}" y="${H - 6}" text-anchor="middle">${yr}</text>`);
   });
 
-  el.innerHTML = `<svg class="chart" width="${W}" height="${H}" role="img" aria-label="Mediandauer der Sitzungen pro Jahr und Gremium">
+  el.innerHTML = html`<svg class="chart" width="${W}" height="${H}" role="img" aria-label="Mediandauer der Sitzungen pro Jahr und Gremium">
     <g class="chart-grid">${grid}</g>${ticks}${bars}</svg>`;
 
   el.querySelectorAll(".mb-bar").forEach(bar => {
     const yr = bar.dataset.yr, bid = bar.dataset.b;
     const b = sitzungsart(bid);
     bar.addEventListener("mouseenter", evt => chartTipShow(evt,
-      `<strong>${b.label} ${yr}</strong><br>Median ${formatDuration(med[yr][bid])} (${counts[yr][bid]} Sitzung${counts[yr][bid] > 1 ? "en" : ""})`));
+      html`<strong>${b.label} ${yr}</strong><br>Median ${formatDuration(med[yr][bid])} (${counts[yr][bid]} Sitzung${counts[yr][bid] > 1 ? "en" : ""})`));
     bar.addEventListener("mousemove", chartTipMove);
     bar.addEventListener("mouseleave", chartTipHide);
   });
@@ -623,24 +622,24 @@ function buildStatsTable(entries) {
     const inYear = entries.filter(e => e.date.slice(0, 4) === yr);
     const timed = inYear.filter(e => e.min !== null);
     const srMins = timed.filter(e => e.body === "stadtrat").map(e => e.min);
-    return `<tr>
+    return html`<tr>
       <td>${yr}</td>
       <td>${inYear.length}</td>
       <td>${Math.round(timed.reduce((s, e) => s + e.min, 0) / 60)} Std.</td>
       <td>${srMins.length ? formatDuration(median(srMins)) : "–"}</td>
     </tr>`;
-  }).join("");
+  });
 
   const open = entries.filter(e => e.min === null).length;
   const details = document.createElement("details");
   details.className = "stats-table";
-  details.innerHTML = `
+  details.innerHTML = html`
     <summary><svg class="icon"><use href="#i-table_rows"/></svg> Daten als Tabelle</summary>
     <table>
       <thead><tr><th>Jahr</th><th>Sitzungen</th><th>Gesamtdauer</th><th>Stadtrat im Median</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
-    ${open ? `<div class="chart-foot">${open} Sitzung${open > 1 ? "en" : ""} ohne erfasste Endzeit, nicht in den Dauern enthalten.</div>` : ""}`;
+    ${open > 0 && html`<div class="chart-foot">${open} Sitzung${open > 1 ? "en" : ""} ohne erfasste Endzeit, nicht in den Dauern enthalten.</div>`}`;
   return details;
 }
 

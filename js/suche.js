@@ -7,6 +7,7 @@ import { navigate } from "./routing.js";
 import { formatDate } from "./hilfen.js";
 import { DOSSIER_TYPE } from "./views/themen.js";
 import { factionHistory } from "./views/fraktion.js";
+import { html } from "./html.js";
 
 const searchInput = document.getElementById("search");
 const dropdown = document.getElementById("search-dropdown");
@@ -153,18 +154,17 @@ function renderSearchResults(box, hits, onPick, reihenfolge) {
     if (!rows.length) return;
     const head = document.createElement("div");
     head.className = "dd-group";
-    head.innerHTML = `<svg class="icon"><use href="#i-${kind.icon}"/></svg>${kind.label}`
-                   + (rows.length > perKind ? `<span>${rows.length}</span>` : "");
+    head.innerHTML = html`<svg class="icon"><use href="#i-${kind.icon}"/></svg>${kind.label}
+      ${rows.length > perKind && html`<span>${rows.length}</span>`}`;
     box.appendChild(head);
 
     rows.slice(0, perKind).forEach(r => {
       const a = document.createElement("a");
       a.className = "dd-item dd-" + id;
       a.href = r.href;
-      a.innerHTML =
-        (r.color ? `<span class="dd-dot" style="background:${r.color}"></span>` : "")
-        + `<span class="dd-title">${r.title}</span>`
-        + (r.meta ? `<span class="dd-meta">${r.meta}</span>` : "");
+      a.innerHTML = html`${r.color && html`<span class="dd-dot" style="background:${r.color}"></span>`
+        }<span class="dd-title">${r.title}</span>${
+        r.meta && html`<span class="dd-meta">${r.meta}</span>`}`;
       if (r.rejected) a.classList.add("dd-rejected");
       a.addEventListener("click", () => { box.classList.add("hidden"); onPick(); });
       box.appendChild(a);
@@ -193,10 +193,10 @@ export function initSuche() {
     return pill;
   };
 
-  tagBar.appendChild(chip("", "Alle", () => navigate("/")));
+  tagBar.appendChild(chip("", html`Alle`, () => navigate("/")));
   tags.forEach(tag => {
-    const inhalt = (tag.icon ? `<svg class="icon" aria-hidden="true"><use href="#i-${tag.icon}"/></svg>` : "")
-                 + `<span>${tag.name}</span>`;
+    const inhalt = html`${tag.icon && html`<svg class="icon" aria-hidden="true"><use href="#i-${tag.icon}"/></svg>`
+                 }<span>${tag.name}</span>`;
     const umschalten = () => {
       const query = window.location.hash.split("?")[1] || "";
       const aktiv = (new URLSearchParams(query).get("tags") || "").split(",").filter(Boolean);

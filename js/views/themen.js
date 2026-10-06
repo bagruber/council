@@ -8,6 +8,8 @@ import {
 import { formatDate, kategorieTon } from "../hilfen.js";
 import { syncTagPills } from "../suche.js";
 import { renderVoteBlock } from "./voten.js";
+import { Council } from "../core.js";
+import { html, roh } from "../html.js";
 
 const main = document.getElementById("main");
 
@@ -31,7 +33,7 @@ function renderHome() {
   // eigentliche Einstieg.
   const meta = document.createElement("details");
   meta.className = "home-meta";
-  meta.innerHTML = `
+  meta.innerHTML = html`
     <summary>
       <svg class="icon"><use href="#i-insights"/></svg>
       <span class="home-meta-title">Zahlen zum Bestand</span>
@@ -49,7 +51,7 @@ function renderHome() {
     const teaser = document.createElement("a");
     teaser.className = "stats-teaser";
     teaser.href = t.href;
-    teaser.innerHTML = `
+    teaser.innerHTML = html`
       <svg class="icon"><use href="#i-${t.icon}"/></svg>
       <div>
         <div class="stats-teaser-title">${t.title}</div>
@@ -88,9 +90,8 @@ function renderFilteredTopics(tagIds) {
     knopf.href = "#/feld/" + tagIds[0];
     knopf.style.setProperty("--feld-hell", ton.flaeche);
     knopf.style.setProperty("--feld-text", ton.text);
-    knopf.innerHTML = `${klecks(tagIds[0])}`
-      + `<span><b>Zum Themenfeld ${t.name}</b><small>Dossiers und einzelne Beschlüsse</small></span>`
-      + `<svg class="icon" aria-hidden="true"><use href="#i-chevron_right"/></svg>`;
+    knopf.innerHTML = html`${klecks(tagIds[0])}<span><b>Zum Themenfeld ${
+      t.name}</b><small>Dossiers und einzelne Beschlüsse</small></span><svg class="icon" aria-hidden="true"><use href="#i-chevron_right"/></svg>`;
     main.appendChild(knopf);
   }
 
@@ -101,14 +102,13 @@ function renderFilteredTopics(tagIds) {
 // Probe Formsprache, vorläufig (14.09.2026): Kategoriezeile statt Pille.
 function categoryChip(tid, asLink) {
   const t = tagMap[tid];
-  if (!t) return `<span class="cat-line">${tid}</span>`;
+  if (!t) return html`<span class="cat-line">${tid}</span>`;
   const color = kategorieTon(t.color || "#888888").text;
-  const icon = t.icon ? `<svg class="icon" aria-hidden="true"><use href="#i-${t.icon}"/></svg>` : "";
-  const inner = `${icon}<span>${t.name}</span>`;
+  const inner = html`${t.icon && html`<svg class="icon" aria-hidden="true"><use href="#i-${t.icon}"/></svg>`}<span>${t.name}</span>`;
   // In Karten muss die Zeile ein span bleiben, verschachtelte Links sind ungültig.
   return asLink
-    ? `<a class="cat-line" href="#/feld/${tid}" style="--cat-color:${color}">${inner}</a>`
-    : `<span class="cat-line" style="--cat-color:${color}">${inner}</span>`;
+    ? html`<a class="cat-line" href="#/feld/${tid}" style="--cat-color:${color}">${inner}</a>`
+    : html`<span class="cat-line" style="--cat-color:${color}">${inner}</span>`;
 }
 
 // Klecks nur in den Köpfen von Themenfeld und Dossier, nie in Listen.
@@ -118,9 +118,8 @@ function klecks(tid) {
   const t = tagMap[tid];
   if (!t || !t.icon) return "";
   const ton = kategorieTon(t.color || "#888888");
-  return `<span class="klecks" style="--klecks-flaeche:${ton.flaeche};--klecks-ton:${ton.text}" aria-hidden="true">`
-    + `<svg viewBox="0 0 48 48"><path d="${KLECKS}"/></svg>`
-    + `<svg class="icon"><use href="#i-${t.icon}"/></svg></span>`;
+  return html`<span class="klecks" style="--klecks-flaeche:${ton.flaeche};--klecks-ton:${
+    ton.text}" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="${KLECKS}"/></svg><svg class="icon"><use href="#i-${t.icon}"/></svg></span>`;
 }
 
 function renderTopicList(list) {
@@ -130,8 +129,8 @@ function renderTopicList(list) {
     const card = document.createElement("a");
     card.className = "topic-card";
     card.href = "#/topic/" + topic.id;
-    card.innerHTML = `
-      <div class="topic-categories">${(topic.tags || []).map(t => categoryChip(t)).join("")}</div>
+    card.innerHTML = html`
+      <div class="topic-categories">${(topic.tags || []).map(t => categoryChip(t))}</div>
       <h3>${topic.title}</h3>
       <div class="topic-summary">${topic.summary}</div>`;
     wrap.appendChild(card);
@@ -150,9 +149,8 @@ function breadcrumb(items) {
   const nav = document.createElement("nav");
   nav.className = "crumbs";
   nav.setAttribute("aria-label", "Pfad");
-  nav.innerHTML = items.filter(Boolean)
-    .map(c => `<a href="${c.href}">${c.label}</a>`)
-    .join('<span aria-hidden="true">›</span>');
+  nav.innerHTML = html`${items.filter(Boolean).map((c, i) =>
+    html`${i ? roh('<span aria-hidden="true">›</span>') : ""}<a href="${c.href}">${c.label}</a>`)}`;
   return nav;
 }
 
@@ -179,7 +177,7 @@ function renderPressLinks(pressArr) {
     a.title = p.title || src.name;
     a.setAttribute("aria-label", p.title || ("Artikel bei " + src.name));
     a.style.background = src.color;
-    a.innerHTML = `<img src="${src.logo}" alt="${src.name}">`;
+    a.innerHTML = html`<img src="${src.logo}" alt="${src.name}">`;
     wrap.appendChild(a);
   });
   return wrap;
@@ -191,7 +189,7 @@ function renderPressLinks(pressArr) {
 // hunderte Abstimmungen, die nirgends auftauchen.
 function renderField(fieldId) {
   const field = tagMap[fieldId];
-  if (!field) { main.innerHTML = "<p>Feld nicht gefunden.</p>"; return; }
+  if (!field) { main.innerHTML = html`<p>Feld nicht gefunden.</p>`; return; }
 
 
   const dossiers = topics.filter(t => t.field === fieldId || (t.tags || []).includes(fieldId));
@@ -207,7 +205,7 @@ function renderField(fieldId) {
   const header = document.createElement("div");
   header.className = "topic-header topic-header--field band";
   header.style.setProperty("--band-flaeche", kategorieTon(field.color || "#888888").tief);
-  header.innerHTML = `
+  header.innerHTML = html`
     <div class="dossier-meta">
       <span class="dossier-type"><svg class="icon"><use href="#i-${field.icon}"/></svg>Themenfeld</span>
       <span class="dossier-count">${dossiers.length} Dossiers · ${loose.length} einzelne Beschlüsse</span>
@@ -218,7 +216,7 @@ function renderField(fieldId) {
 
   if (dossiers.length) {
     const sec = document.createElement("div");
-    sec.innerHTML = `<h2 class="section-label">Dossiers</h2>`;
+    sec.innerHTML = html`<h2 class="section-label">Dossiers</h2>`;
     main.appendChild(sec);
     renderTopicList(dossiers);
   }
@@ -226,15 +224,12 @@ function renderField(fieldId) {
   if (loose.length) {
     const box = document.createElement("div");
     box.className = "field-loose";
-    box.innerHTML = `<h2 class="section-label">Einzelne Beschlüsse</h2>`
-      + `<p class="figures-note">Entscheidungen in diesem Feld, die für sich stehen
-         und (noch) zu keinem Dossier gehören.</p>`
-      + loose.slice(0, 60).map(v => `
+    box.innerHTML = html`<h2 class="section-label">Einzelne Beschlüsse</h2><p class="figures-note">Entscheidungen in diesem Feld, die für sich stehen
+         und (noch) zu keinem Dossier gehören.</p>${loose.slice(0, 60).map(v => html`
           <a class="field-vote" href="#/session/${v.sessionId}">
             <span class="fv-date">${formatDate(v.date)}</span>
             <span class="fv-title">${v.title}</span>
-          </a>`).join("")
-      + (loose.length > 60 ? `<p class="figures-note">… und ${loose.length - 60} weitere.</p>` : "");
+          </a>`)}${loose.length > 60 && html`<p class="figures-note">… und ${loose.length - 60} weitere.</p>`}`;
     main.appendChild(box);
   }
 }
@@ -276,7 +271,7 @@ const DOSSIER_TYPE = {
 function renderDossierHead(topic) {
   const t = DOSSIER_TYPE[topic.type];
   if (!t) return "";
-  const bits = [`<span class="dossier-type"><svg class="icon"><use href="#i-${t.icon}"/></svg>${t.label}</span>`];
+  const bits = [html`<span class="dossier-type"><svg class="icon"><use href="#i-${t.icon}"/></svg>${t.label}</span>`];
 
   const dates = topic.history.map(h => h.date).sort();
   if (dates.length) {
@@ -284,10 +279,10 @@ function renderDossierHead(topic) {
     const to = dates[dates.length - 1].slice(0, 4);
     const span = from === to ? from : `${from}–${to}`;
     bits.push(topic.status === "abgeschlossen"
-      ? `<span class="dossier-status done">abgeschlossen ${to}</span>`
+      ? html`<span class="dossier-status done">abgeschlossen ${to}</span>`
       : topic.status === "laufend"
-        ? `<span class="dossier-status open">läuft seit ${from}</span>`
-        : `<span class="dossier-status">${span}</span>`);
+        ? html`<span class="dossier-status open">läuft seit ${from}</span>`
+        : html`<span class="dossier-status">${span}</span>`);
   }
 
   // Die Zuordnung steht an zwei Stellen: als Feld am Votum und als voteId in
@@ -298,12 +293,12 @@ function renderDossierHead(topic) {
     ...votes.filter(v => v.topicId === topic.id).map(v => v.id),
     ...(topic.history || []).map(h => h.voteId).filter(Boolean),
   ]).size;
-  if (n) bits.push(`<span class="dossier-count">${n} Abstimmung${n === 1 ? "" : "en"}</span>`);
+  if (n) bits.push(html`<span class="dossier-count">${n} Abstimmung${n === 1 ? "" : "en"}</span>`);
 
   const parent = topic.partOf && topicMap[topic.partOf];
-  if (parent) bits.push(`<a class="dossier-parent" href="#/topic/${parent.id}">Teil von ${parent.title}</a>`);
+  if (parent) bits.push(html`<a class="dossier-parent" href="#/topic/${parent.id}">Teil von ${parent.title}</a>`);
 
-  return `<div class="dossier-meta">${bits.join("")}</div>`;
+  return html`<div class="dossier-meta">${bits}</div>`;
 }
 
 // Kompakte Übersicht für Größen, die sich regelmäßig ändern — Gebühren,
@@ -315,15 +310,15 @@ function renderFigures(topic) {
   const box = document.createElement("div");
   box.className = "figures";
   const rows = f.rows.slice().sort((a, b) => b.date.localeCompare(a.date));
-  box.innerHTML = `
+  box.innerHTML = html`
     <h2 class="section-label">${f.title}</h2>
-    <table class="figures-table"><tbody>${rows.map((r, i) => `
-      <tr${i === 0 ? ' class="current"' : ""}${r.voteId ? ` data-vote="${r.voteId}" tabindex="0"` : ""}>
+    <table class="figures-table"><tbody>${rows.map((r, i) => html`
+      <tr${i === 0 ? roh(' class="current"') : ""}${r.voteId ? html` data-vote="${r.voteId}" tabindex="0"` : ""}>
         <td class="fig-date">${formatDate(r.date)}</td>
         <td class="fig-label">${r.label}</td>
-        ${r.value ? `<td class="fig-value">${r.value}</td>` : ""}
-      </tr>`).join("")}</tbody></table>
-    ${f.note ? `<p class="figures-note">${f.note}</p>` : ""}`;
+        ${r.value && html`<td class="fig-value">${r.value}</td>`}
+      </tr>`)}</tbody></table>
+    ${f.note && html`<p class="figures-note">${f.note}</p>`}`;
 
   // Die Zeilen zeigen auf Beschlüsse, die weiter unten im Zeitstrahl stehen.
   // Ein Hash-Anker geht nicht — der Hash trägt hier die Route.
@@ -344,7 +339,7 @@ function renderFigures(topic) {
 
 function renderTopic(id) {
   const topic = topicMap[id];
-  if (!topic) { main.innerHTML = "<p>Thema nicht gefunden.</p>"; return; }
+  if (!topic) { main.innerHTML = html`<p>Thema nicht gefunden.</p>`; return; }
 
   main.appendChild(breadcrumb([
     { label: "Themen", href: "#/" },
@@ -355,11 +350,11 @@ function renderTopic(id) {
 
   const header = document.createElement("div");
   header.className = "topic-header";
-  header.innerHTML = `
+  header.innerHTML = html`
     ${renderDossierHead(topic)}
     <div class="topic-title">${klecks((topic.tags || [])[0])}<h1>${topic.title}</h1></div>
     <div class="topic-summary">${topic.summary}</div>
-    <div class="topic-tags">${(topic.tags || []).map(t => categoryChip(t, true)).join("")}</div>`;
+    <div class="topic-tags">${(topic.tags || []).map(t => categoryChip(t, true))}</div>`;
   main.appendChild(header);
 
   const figures = renderFigures(topic);
@@ -370,8 +365,8 @@ function renderTopic(id) {
   if (children.length) {
     const box = document.createElement("div");
     box.className = "dossier-children";
-    box.innerHTML = `<h2 class="section-label">Vorhaben in diesem Gebiet</h2>`
-      + children.map(c => `<a href="#/topic/${c.id}">${c.title}</a>`).join("");
+    box.innerHTML = html`<h2 class="section-label">Vorhaben in diesem Gebiet</h2>${
+      children.map(c => html`<a href="#/topic/${c.id}">${c.title}</a>`)}`;
     main.appendChild(box);
   }
 
@@ -413,7 +408,7 @@ function renderTopic(id) {
 
     const dot = document.createElement("div");
     dot.className = "tl-dot " + dotClass;
-    if (iconName) dot.innerHTML = `<svg class="icon"><use href="#i-${iconName}"/></svg>`;
+    if (iconName) dot.innerHTML = html`<svg class="icon"><use href="#i-${iconName}"/></svg>`;
     el.appendChild(dot);
 
     const dateEl = document.createElement("div");
@@ -449,7 +444,7 @@ function renderTopic(id) {
       const link = document.createElement("a");
       link.className = "tl-session-link";
       link.href = "#/session/" + entry.sessionId;
-      link.innerHTML = '<svg class="icon"><use href="#i-open_in_new"/></svg> ' + sessionMap[entry.sessionId].title;
+      link.innerHTML = html`<svg class="icon"><use href="#i-open_in_new"/></svg> ${sessionMap[entry.sessionId].title}`;
       el.appendChild(link);
     }
 

@@ -6,6 +6,7 @@ import {
 import { formatMonthPeriod, formatPeriod } from "../hilfen.js";
 import { factionHistory, renderFraktion } from "./fraktion.js";
 import { renderMemberProfile } from "./profil.js";
+import { html, roh } from "../html.js";
 
 const gremienMain = document.getElementById("gremien-main");
 
@@ -79,7 +80,7 @@ function renderGremien() {
     const fh = document.createElement("a");
     fh.className = "faction-head";
     fh.href = "#/fraktion/" + pid;
-    fh.innerHTML = `<span class="member-dot" style="background:${party.color}"></span><span class="faction-name">${party.name}</span><span class="faction-count">${group.length}</span><svg class="icon faction-go"><use href="#i-chevron_right"/></svg>`;
+    fh.innerHTML = html`<span class="member-dot" style="background:${party.color}"></span><span class="faction-name">${party.name}</span><span class="faction-count">${group.length}</span><svg class="icon faction-go"><use href="#i-chevron_right"/></svg>`;
     factionSec.appendChild(fh);
     group.sort((a, b) => a.name.localeCompare(b.name));
     group.forEach(m => factionSec.appendChild(makeMemberRow(m)));
@@ -89,7 +90,7 @@ function renderGremien() {
     const mh = document.createElement("div");
     mh.className = "faction-head";
     const mp = partyMap[activeMayor.party];
-    mh.innerHTML = `<span class="member-dot" style="background:${mp ? mp.color : '#999'}"></span><span class="faction-name">B\u00fcrgermeister</span>`;
+    mh.innerHTML = html`<span class="member-dot" style="background:${mp ? mp.color : '#999'}"></span><span class="faction-name">B\u00fcrgermeister</span>`;
     factionSec.appendChild(mh);
     factionSec.appendChild(makeMemberRow(activeMayor));
   }
@@ -112,7 +113,7 @@ function renderGremien() {
       const row = document.createElement("a");
       row.className = "faction-head faction-gone";
       row.href = "#/fraktion/" + pid;
-      row.innerHTML = `
+      row.innerHTML = html`
         <span class="member-dot" style="background:${party.color}"></span>
         <span class="faction-name">${party.name}</span>
         <span class="faction-count">${formatMonthPeriod(h.from, h.to)} · ${n} ${n === 1 ? "Person" : "Personen"}</span>
@@ -177,12 +178,12 @@ function makeBodyCard(body) {
   former.sort((a, b) => a.name.localeCompare(b.name));
   const count = body.seats ? body.seats.length + (body.vicechairs ? body.vicechairs.length : 0) + 1 : current.length;
 
-  card.innerHTML = `
+  card.innerHTML = html`
     <div class="body-card-header">
       <svg class="icon"><use href="#i-${body.icon || 'groups'}"/></svg>
       <div>
         <div class="body-card-title">${body.name}</div>
-        ${count ? `<div class="body-card-count">${count} Mitglieder</div>` : ''}
+        ${count && html`<div class="body-card-count">${count} Mitglieder</div>`}
       </div>
       <svg class="icon expand-icon"><use href="#i-expand_more"/></svg>
     </div>
@@ -205,35 +206,32 @@ function makeBodyCard(body) {
 
     const nameCell = (m, role) => {
       const p = partyMap[m.party];
-      const roleTag = role ? ` <span class="seat-role">(${role})</span>` : "";
-      return `<td class="seat-name"><a href="#/member/${m.id}"><span class="member-dot" style="background:${p ? p.color : '#ccc'}"></span> ${m.name}${roleTag}</a></td>`;
+      return html`<td class="seat-name"><a href="#/member/${m.id}"><span class="member-dot" style="background:${p ? p.color : '#ccc'}"></span> ${m.name}${
+        role && html` <span class="seat-role">(${role})</span>`}</a></td>`;
     };
     const subCells = (subId) => {
       if (!hasSubs) return "";
       const s = subId && memberMap[subId];
       return s
-        ? `<td><svg class="icon swap-icon"><use href="#i-swap_horiz"/></svg></td><td class="seat-sub"><a href="#/member/${s.id}">${s.name}</a></td>`
-        : "<td></td><td></td>";
+        ? html`<td><svg class="icon swap-icon"><use href="#i-swap_horiz"/></svg></td><td class="seat-sub"><a href="#/member/${s.id}">${s.name}</a></td>`
+        : roh("<td></td><td></td>");
     };
 
-    let html = "<thead><tr><th>Mitglied</th>";
-    if (hasSubs) html += "<th></th><th>Stellvertretung</th>";
-    html += "</tr></thead><tbody>";
-
+    const zeilen = [];
     if (body.chair && memberMap[body.chair]) {
-      html += "<tr>" + nameCell(memberMap[body.chair], "Vorsitz") + subCells(body.chairSub) + "</tr>";
+      zeilen.push(html`<tr>${nameCell(memberMap[body.chair], "Vorsitz")}${subCells(body.chairSub)}</tr>`);
     }
     (body.vicechairs || []).forEach(vc => {
       const m = memberMap[vc.member];
-      if (m) html += "<tr>" + nameCell(m, "Stellv. Vorsitz") + subCells(vc.sub) + "</tr>";
+      if (m) zeilen.push(html`<tr>${nameCell(m, "Stellv. Vorsitz")}${subCells(vc.sub)}</tr>`);
     });
     body.seats.forEach(seat => {
       const m = memberMap[seat.member];
-      if (m) html += "<tr>" + nameCell(m, seat.role) + subCells(seat.sub) + "</tr>";
+      if (m) zeilen.push(html`<tr>${nameCell(m, seat.role)}${subCells(seat.sub)}</tr>`);
     });
 
-    html += "</tbody>";
-    table.innerHTML = html;
+    table.innerHTML = html`<thead><tr><th>Mitglied</th>${
+      hasSubs && roh("<th></th><th>Stellvertretung</th>")}</tr></thead><tbody>${zeilen}</tbody>`;
     detail.appendChild(table);
   } else {
     // plenum: simple member list
@@ -277,7 +275,7 @@ function makeMemberRow(m, showDates) {
   else if (m.role === "mayor") meta = "BM";
   if (showDates) meta = formatPeriod(m.from, m.to);
 
-  row.innerHTML = `
+  row.innerHTML = html`
     <span class="member-dot" style="background:${color}"></span>
     <span class="member-row-name">${m.name}</span>
     <span class="member-row-meta">${meta}</span>`;

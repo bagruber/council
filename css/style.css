@@ -846,6 +846,15 @@ a.cat-line:hover { text-decoration: underline; }
 
 .topic-header .topic-tags { margin-top: 18px; }
 
+.nicht-gefunden { padding: 40px 24px; }
+
+.mtl-leer {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.mtl-zahlen { margin-top: 4px; }
+
 /* Der Bestand kam nicht an. Liest sich wie eine Seite, nicht wie ein Fehler. */
 .ladefehler {
   padding: 60px 0;

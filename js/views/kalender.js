@@ -1,6 +1,7 @@
 // Kalender-Tab: Monatsraster mit Sitzungspunkten und Tages-Sheet.
 import { sessions, naechsteSitzung, gremium } from "../daten.js";
 import { formatDate, monthNames, sitzungKurz } from "../hilfen.js";
+import { html } from "../html.js";
 
 let calYear, calMonth;
 const calTitle = document.getElementById("cal-title");
@@ -119,7 +120,7 @@ function openDaySheet(dateStr, events) {
     // nur Nummer und Datum, ohne den Gremiennamen ein zweites Mal.
     const g = gremium(s);
     row.dataset.gremium = g.art;
-    row.innerHTML = `
+    row.innerHTML = html`
       <div class="sheet-event-text">
         <span class="gremium-zeile"><svg class="icon" aria-hidden="true"><use href="#i-${g.icon}"/></svg>${g.name}</span>
         ${sitzungKurz(s)}, ${formatDate(s.date)}
@@ -143,15 +144,13 @@ function renderNaechsteSitzung() {
   box.dataset.gremium = g.art;
   const tag = new Date(t.date + "T00:00:00")
     .toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" });
-  const knopf = t.agenda
-    ? `<a class="flaeche-knopf" href="#/session/${t.id}">Tagesordnung<svg class="icon" aria-hidden="true"><use href="#i-chevron_right"/></svg></a>`
-    : "";
-  box.innerHTML = `
+  box.innerHTML = html`
     <div class="flaeche-inhalt">
       <h2 class="flaeche-etikett" id="naechste-sitzung-titel">Nächste Sitzung</h2>
       <p class="flaeche-gross">${tag}</p>
-      <p class="flaeche-text">${g.name}${t.start ? ", " + t.start + " Uhr" : ""}${t.location ? "<br>" + t.location : ""}</p>
-      ${knopf}
+      <p class="flaeche-text">${g.name}${t.start && ", " + t.start + " Uhr"}${
+        t.location && html`<br>${t.location}`}</p>
+      ${t.agenda && html`<a class="flaeche-knopf" href="#/session/${t.id}">Tagesordnung<svg class="icon" aria-hidden="true"><use href="#i-chevron_right"/></svg></a>`}
     </div>`;
 }
 

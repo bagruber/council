@@ -23,11 +23,11 @@ import hashlib, os, re, sys
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LINK = re.compile(r'(href|src)="((?:css|js)/[\w./-]+?)(?:\?v=[0-9a-f]+)?"')
 MAP = re.compile(r'<script type="importmap">.*?</script>\n', re.S)
-MAP_ANCHOR = '<script src="js/core.js'
+MAP_ANCHOR = '<script type="module" src="js/app.js'
 
-# js/core.js und js/parliament.js sind klassische Skripte und stehen mit
-# Query-String direkt in index.html; sie brauchen keinen Map-Eintrag.
-KLASSISCH = ('js/core.js', 'js/parliament.js')
+# Seit Oktober 2026 sind alle JS-Dateien ES-Module; klassische Skripte mit
+# eigenem Tag in index.html gibt es keine mehr.
+KLASSISCH = ()
 
 
 def assets():

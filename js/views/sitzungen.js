@@ -8,14 +8,17 @@ import { formatDate, formatDuration, sitzungKurz } from "../hilfen.js";
 import { navigate, backLink } from "../routing.js";
 import { renderPressLinks } from "./themen.js";
 import { renderVoteBlock } from "./voten.js";
+import { html } from "../html.js";
 
 const main = document.getElementById("main");
+
+const TYP = { formal: "Formell", discussion: "Beratung" };
 
 // -- Session detail --
 
 function renderSession(id) {
   const session = sessionMap[id];
-  if (!session) { main.innerHTML = "<p>Sitzung nicht gefunden.</p>"; return; }
+  if (!session) { main.innerHTML = html`<p>Sitzung nicht gefunden.</p>`; return; }
 
   // Probe Formsprache, vorläufig (15.09.2026): Kopf als Band in der Farbe des
   // Gremiums; das Gremium steht als Kategoriezeile über dem kurzen Titel.
@@ -24,28 +27,27 @@ function renderSession(id) {
   const g = gremium(session);
   header.dataset.gremium = g.art;
   const dur = dauerMin(session);
-  const timeLine = session.start
-    ? `<div class="session-time"><svg class="icon"><use href="#i-schedule"/></svg>${session.start}${session.end ? "–" + session.end : ""} Uhr${dur ? " · " + formatDuration(dur) : ""}</div>`
-    : "";
+  const timeLine = session.start && html`<div class="session-time"><svg class="icon"><use href="#i-schedule"/></svg>${
+    session.start}${session.end && "–" + session.end} Uhr${dur && " · " + formatDuration(dur)}</div>`;
   let src = "";
   if (isWebauszug(session)) {
     if ((session.source || {}).url) {
-      src = `<a class="session-pdf" href="${session.source.url}" target="_blank" rel="noopener">
+      src = html`<a class="session-pdf" href="${session.source.url}" target="_blank" rel="noopener">
                <svg class="icon"><use href="#i-language"/></svg> Beschlussauszug der Stadt Moosburg</a>`;
     }
   } else if (session.niederschrift === "vollständig") {
-    src = `<a class="session-pdf" href="${protocolUrl(session)}" target="_blank" rel="noopener">
+    src = html`<a class="session-pdf" href="${protocolUrl(session)}" target="_blank" rel="noopener">
              <svg class="icon"><use href="#i-description"/></svg> Niederschrift (PDF)</a>`;
   }
-  header.innerHTML = `<p class="gremium-zeile"><svg class="icon" aria-hidden="true"><use href="#i-${g.icon}"/></svg>${g.name}</p>`
-    + `<h1>${sitzungKurz(session)}</h1><div class="session-date">${formatDate(session.date)}</div>${timeLine}${src}`;
+  header.innerHTML = html`<p class="gremium-zeile"><svg class="icon" aria-hidden="true"><use href="#i-${g.icon}"/></svg>${
+    g.name}</p><h1>${sitzungKurz(session)}</h1><div class="session-date">${formatDate(session.date)}</div>${timeLine}${src}`;
   header.prepend(backLink("Übersicht", "#/"));
   main.appendChild(header);
 
   if (!istGehalten(session)) {
     const note = document.createElement("div");
     note.className = "source-note";
-    note.innerHTML = `
+    note.innerHTML = html`
       <svg class="icon"><use href="#i-info"/></svg>
       <div><strong>Die Sitzung hat noch nicht stattgefunden.</strong>
       ${session.agenda ? "Hier steht die Tagesordnung, wie die Stadt sie veröffentlicht hat. Beschlüsse,"
@@ -55,7 +57,7 @@ function renderSession(id) {
   } else if (session.niederschrift === "keine") {
     const note = document.createElement("div");
     note.className = "source-note";
-    note.innerHTML = `
+    note.innerHTML = html`
       <svg class="icon"><use href="#i-info"/></svg>
       <div><strong>Nichts veröffentlicht.</strong>
       Dass diese Sitzung stattgefunden hat, steht im Sitzungsregister der Stadt.
@@ -67,7 +69,7 @@ function renderSession(id) {
   if (isWebauszug(session)) {
     const note = document.createElement("div");
     note.className = "source-note";
-    note.innerHTML = `
+    note.innerHTML = html`
       <svg class="icon"><use href="#i-info"/></svg>
       <div><strong>Keine Niederschrift veröffentlicht.</strong>
       Beschlüsse und Ergebnisse dieser Sitzung stammen aus dem Beschlussauszug auf der
@@ -85,7 +87,7 @@ function renderSession(id) {
       const sub = memberMap[s.substitute];
       const row = document.createElement("div");
       row.className = "sub-row";
-      row.innerHTML = `<svg class="icon"><use href="#i-swap_horiz"/></svg> ${sub ? sub.name : s.substitute} f\u00fcr ${member ? member.name : s.member}`;
+      row.innerHTML = html`<svg class="icon"><use href="#i-swap_horiz"/></svg> ${sub ? sub.name : s.substitute} f\u00fcr ${member ? member.name : s.member}`;
       subs.appendChild(row);
     });
     main.appendChild(subs);
@@ -98,7 +100,7 @@ function renderSession(id) {
   if (sessionPress) {
     const wrap = document.createElement("div");
     wrap.className = "session-press";
-    wrap.innerHTML = "<span>Presse zur Sitzung</span>";
+    wrap.innerHTML = html`<span>Presse zur Sitzung</span>`;
     wrap.appendChild(sessionPress);
     main.appendChild(wrap);
   }
@@ -120,16 +122,11 @@ function renderSession(id) {
       });
     }
 
-    el.innerHTML = `
+    el.innerHTML = html`
       <div class="ai-number">TOP ${item.number}</div>
-      <h3>${hasTopic ? `<a href="#/topic/${item.topicId}">${item.title}</a>` : item.title}</h3>`;
-
-    if (item.type === "formal") {
-      el.innerHTML += '<span class="ai-type">Formell</span>';
-    } else if (item.type === "discussion") {
-      el.innerHTML += '<span class="ai-type">Beratung</span>';
-    }
-    if (item.note) el.innerHTML += `<p class="ai-note">${item.note}</p>`;
+      <h3>${hasTopic ? html`<a href="#/topic/${item.topicId}">${item.title}</a>` : item.title}</h3>${
+      TYP[item.type] && html`<span class="ai-type">${TYP[item.type]}</span>`}${
+      item.note && html`<p class="ai-note">${item.note}</p>`}`;
 
     // Ein Punkt kann mehrere Beschluesse tragen — ein Vorbescheid mit zwoelf
     // Einzelfragen steht in der Niederschrift als ein Punkt.

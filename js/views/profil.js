@@ -8,6 +8,8 @@ import { formatDate, formatPeriod, monthNames } from "../hilfen.js";
 import { lastListHash, backLink } from "../routing.js";
 import { renderPressLinks } from "./themen.js";
 import { renderSimilarity } from "./naehe.js";
+import { Council } from "../core.js";
+import { html, roh } from "../html.js";
 
 const gremienMain = document.getElementById("gremien-main");
 
@@ -33,7 +35,7 @@ function nameColorFromParty(hex, darker) {
 
 function renderMemberProfile(id) {
   const m = memberMap[id];
-  if (!m) { gremienMain.innerHTML = "<p style='padding:40px 24px'>Person nicht gefunden.</p>"; return; }
+  if (!m) { gremienMain.innerHTML = html`<p class="nicht-gefunden">Person nicht gefunden.</p>`; return; }
 
   gremienMain.innerHTML = "";
   const wrap = document.createElement("div");
@@ -66,7 +68,7 @@ function renderMemberProfile(id) {
   const brushFile = brushFiles[memberIdx % brushFiles.length];
   const brushRotation = ((memberIdx * 37 + 13) % 360) - 180;
 
-  header.innerHTML = `
+  header.innerHTML = html`
     <div class="profile-avatar-wrap">
       <div class="avatar-brush" id="avatar-brush"></div>
       <div class="profile-avatar" id="profile-avatar" style="background:${avatarColor}">${initial}</div>
@@ -75,10 +77,10 @@ function renderMemberProfile(id) {
       <div class="profile-name-block"><div class="profile-name-inner">
         <div class="profile-given-name" style="color:${nameColor}">${m.firstName || ""}</div>
         <div class="profile-surname${(m.lastName || m.name).length > 10 ? ' long-name' : ''}" style="color:${surnameColor}">${m.lastName || m.name}</div>
-        ${m.nee ? `<div class="profile-nee" style="color:${nameColor}">(geb. ${m.nee})</div>` : ""}
-        ${SHOW_PRONOUNS && profile.pronouns ? `<div class="profile-pronouns">${profile.pronouns}</div>` : ""}
+        ${m.nee && html`<div class="profile-nee" style="color:${nameColor}">(geb. ${m.nee})</div>`}
+        ${SHOW_PRONOUNS && profile.pronouns && html`<div class="profile-pronouns">${profile.pronouns}</div>`}
         <div class="profile-party"><span class="profile-party-dot" style="background:${avatarColor}"></span>${party ? party.name : ""}</div>
-        ${m.title ? `<div class="profile-title">${m.title}</div>` : ""}
+        ${m.title && html`<div class="profile-title">${m.title}</div>`}
       </div></div>
       <div class="profile-meta" id="profile-meta"></div>
     </div>`;
@@ -103,7 +105,7 @@ function renderMemberProfile(id) {
     identity.values.forEach(id => {
       const b = document.createElement("span");
       b.className = "id-badge " + id;
-      b.innerHTML = (badgeIcons[id] ? `<svg class="icon"><use href="#i-${badgeIcons[id]}"/></svg> ` : "") + (labels[id] || id);
+      b.innerHTML = html`${badgeIcons[id] && html`<svg class="icon"><use href="#i-${badgeIcons[id]}"/></svg> `}${labels[id] || id}`;
       badges.appendChild(b);
     });
     metaEl.appendChild(badges);
@@ -128,7 +130,8 @@ function renderMemberProfile(id) {
       if (!brushEl) return;
       const colored = svgText
         .replace(/fill:\s*#333/g, "fill: " + avatarColor);
-      brushEl.innerHTML = colored;
+      // Eine eigene SVG-Datei aus img/, kein Datenfeld.
+      brushEl.innerHTML = roh(colored);
       const svg = brushEl.querySelector("svg");
       if (svg) {
         svg.style.width = "100%";
@@ -155,7 +158,7 @@ function renderMemberProfile(id) {
   // roles & committees
   const rolesSection = document.createElement("div");
   rolesSection.className = "profile-section";
-  rolesSection.innerHTML = "<h3>Mandate & Funktionen</h3>";
+  rolesSection.innerHTML = html`<h3>Mandate &amp; Funktionen</h3>`;
 
   const roleLabel = r => r === "mayor" ? "B\u00fcrgermeister" : "Stadtrat";
   const mandates = m.mandates.map(p =>
@@ -178,7 +181,7 @@ function renderMemberProfile(id) {
       const period = formatPeriod(ph.from, ph.to);
       const row = document.createElement("div");
       row.className = "party-history-row";
-      row.innerHTML = `<span class="profile-party-dot" style="background:${color}"></span><span>${name}</span><span class="role-dates">${period}</span>`;
+      row.innerHTML = html`<span class="profile-party-dot" style="background:${color}"></span><span>${name}</span><span class="role-dates">${period}</span>`;
       phWrap.appendChild(row);
     });
     rolesSection.appendChild(phWrap);
@@ -218,7 +221,7 @@ function renderMemberProfile(id) {
   if (profile.motions && profile.motions.length) {
     const motionSec = document.createElement("div");
     motionSec.className = "profile-section";
-    motionSec.innerHTML = "<h3>Antr\u00e4ge</h3>";
+    motionSec.innerHTML = html`<h3>Antr\u00e4ge</h3>`;
     profile.motions.forEach(mot => {
       const el = document.createElement("div");
       el.className = "mtl-motion";
@@ -226,14 +229,13 @@ function renderMemberProfile(id) {
         .map(sid => memberMap[sid] ? memberMap[sid].name : sid)
         .join(", ");
       const sessionLink = mot.sessionId && sessionMap[mot.sessionId]
-        ? `<a href="#/session/${mot.sessionId}" class="mtl-motion-link"><svg class="icon"><use href="#i-open_in_new"/></svg>${sessionMap[mot.sessionId].title}</a>`
-        : "";
-      el.innerHTML = `
+        && html`<a href="#/session/${mot.sessionId}" class="mtl-motion-link"><svg class="icon"><use href="#i-open_in_new"/></svg>${sessionMap[mot.sessionId].title}</a>`;
+      el.innerHTML = html`
         <svg class="icon"><use href="#i-edit_note"/></svg>
         <div>
           <div class="mtl-motion-title">${mot.title}</div>
           <div class="mtl-motion-meta">${mot.body} \u2013 ${formatDate(mot.date)}</div>
-          ${coNames ? `<div class="mtl-motion-meta">gemeinsam mit ${coNames}</div>` : ""}
+          ${coNames && html`<div class="mtl-motion-meta">gemeinsam mit ${coNames}</div>`}
           ${sessionLink}
         </div>`;
       const motPress = renderPressLinks(mot.press);
@@ -246,7 +248,7 @@ function renderMemberProfile(id) {
   // personal timeline
   const tlSection = document.createElement("div");
   tlSection.className = "profile-section";
-  tlSection.innerHTML = "<h3>Abstimmungsverhalten</h3>";
+  tlSection.innerHTML = html`<h3>Abstimmungsverhalten</h3>`;
   wrap.appendChild(tlSection);
 
   // Stats card (collapsed by default)
@@ -348,8 +350,7 @@ const VS_SEGMENTS = [
 function barSegments(b, total) {
   return VS_SEGMENTS
     .filter(s => b[s.key] > 0)
-    .map(s => `<span class="vs-seg ${s.cls}" style="width:${(b[s.key]/total*100).toFixed(1)}%" title="${b[s.key]}"></span>`)
-    .join("");
+    .map(s => html`<span class="vs-seg ${s.cls}" style="width:${(b[s.key]/total*100).toFixed(1)}%" title="${b[s.key]}"></span>`);
 }
 
 function renderVotingStatsCard(stats) {
@@ -358,7 +359,7 @@ function renderVotingStatsCard(stats) {
   const fmt = (n) => `${n} (${t.total ? Math.round(n / t.total * 100) : 0}%)`;
   const details = document.createElement("details");
   details.className = "voting-stats";
-  details.innerHTML = `
+  details.innerHTML = html`
     <summary>
       <svg class="icon"><use href="#i-insights"/></svg>
       <span>Statistik anzeigen</span>
@@ -411,14 +412,14 @@ function renderStatsBreakdown(title, bucket, keyLabel) {
   if (!keys.length) return "";
   const rows = keys.map(k => {
     const b = bucket[k];
-    return `
+    return html`
       <div class="vs-row">
         <div class="vs-row-label">${keyLabel(k)}</div>
         <div class="vs-row-bar">${barSegments(b, b.total)}</div>
         <div class="vs-row-count">${b.total}</div>
       </div>`;
-  }).join("");
-  return `<div class="vs-section"><h4>${title}</h4>${rows}</div>`;
+  });
+  return html`<div class="vs-section"><h4>${title}</h4>${rows}</div>`;
 }
 
 function makeContactLink(type, href) {
@@ -438,7 +439,7 @@ function makeContactLink(type, href) {
     email: "kontakt_email", website: "kontakt_website", instagram: "instagram",
     threads: "threads", linkedin: "linkedin", facebook: "facebook",
   };
-  a.innerHTML = `<svg class="icon"><use href="#i-${ids[type] || "link"}"/></svg>`;
+  a.innerHTML = html`<svg class="icon"><use href="#i-${ids[type] || "link"}"/></svg>`;
   return a;
 }
 
@@ -551,23 +552,23 @@ function renderMemberFacts(m, profile) {
 
   const sec = document.createElement("div");
   sec.className = "profile-section";
-  sec.innerHTML = "<h3>Zur Person</h3>"
-    + rows.map(([k, v]) => `<div class="fact-row"><span>${k}</span><span>${v}</span></div>`).join("");
+  sec.innerHTML = html`<h3>Zur Person</h3>${
+    rows.map(([k, v]) => html`<div class="fact-row"><span>${k}</span><span>${v}</span></div>`)}`;
 
   if (el.length) {
     // Der Listenplatz sagt, wohin die Partei jemanden gesetzt hat; der Rang
     // nach Auszählung, wohin die Wählerinnen und Wähler ihn gerückt haben.
-    const rowsHtml = [...el].sort((a, b) => b.year - a.year).map(e => `
+    const rowsHtml = [...el].sort((a, b) => b.year - a.year).map(e => html`
       <tr>
         <td>${e.year}</td>
         <td class="fig-value">${e.votes != null ? e.votes.toLocaleString("de-DE") : "–"}</td>
         <td class="fact-rank">${e.listRank != null && e.resultRank != null
           ? `Liste ${e.listRank} → Platz ${e.resultRank}`
           : e.listRank != null ? `Liste ${e.listRank}` : ""}</td>
-      </tr>`).join("");
+      </tr>`);
     const t = document.createElement("table");
     t.className = "figures-table fact-elections";
-    t.innerHTML = `<thead><tr><th>Wahl</th><th class="fig-value">Stimmen</th><th></th></tr></thead>
+    t.innerHTML = html`<thead><tr><th>Wahl</th><th class="fig-value">Stimmen</th><th></th></tr></thead>
                    <tbody>${rowsHtml}</tbody>`;
     sec.appendChild(t);
   }
@@ -577,10 +578,10 @@ function renderMemberFacts(m, profile) {
 function makeRoleRow(icon, text, spans) {
   const row = document.createElement("div");
   row.className = "role-row";
-  row.innerHTML = `
+  row.innerHTML = html`
     <svg class="icon"><use href="#i-${icon}"/></svg>
     <span>${text}</span>
-    <span class="role-dates">${spans.map(s => formatPeriod(s.from, s.to)).join("<br>")}</span>`;
+    <span class="role-dates">${spans.map((s, i) => html`${i ? roh("<br>") : ""}${formatPeriod(s.from, s.to)}`)}</span>`;
   return row;
 }
 
@@ -590,7 +591,7 @@ function renderMemberTimeline(container, member) {
   const relevant = sessionsSorted.filter(s => memberActiveAt(member, s.date));
 
   if (!relevant.length) {
-    container.innerHTML = '<p style="color:var(--text-muted);font-size:0.88rem">Keine Sitzungsdaten vorhanden.</p>';
+    container.innerHTML = html`<p class="mtl-leer">Keine Sitzungsdaten vorhanden.</p>`;
     return;
   }
 
@@ -620,7 +621,7 @@ function renderMemberTimeline(container, member) {
     const icon = (session.type && session.type !== "stadtrat") ? "groups" : "account_balance";
     const sHeader = document.createElement("div");
     sHeader.className = "mtl-session-header";
-    sHeader.innerHTML = `<svg class="icon"><use href="#i-${icon}"/></svg> <a href="#/session/${session.id}">${session.title}</a>`;
+    sHeader.innerHTML = html`<svg class="icon"><use href="#i-${icon}"/></svg> <a href="#/session/${session.id}">${session.title}</a>`;
     sessionEl.appendChild(sHeader);
 
     votedVotes.forEach(vote => {
@@ -642,24 +643,24 @@ function renderMemberTimeline(container, member) {
 
       const voteRow = document.createElement("div");
       voteRow.className = "mtl-vote";
-      voteRow.innerHTML = `
+      voteRow.innerHTML = html`
         <span class="mtl-vote-chip ${chipClass}${Council.evidenceNote(vote, member.id) ? " weich" : ""}" title="${unklar ? "Anwesenheit nicht überliefert" : Council.statusProvenance(status, vote, member.id)}">${chipLabel}</span>
         <span class="mtl-vote-title">${vote.title}</span>`;
 
       const detail = document.createElement("div");
       detail.className = "mtl-vote-detail hidden";
-      let detailHTML = `<p>${vote.text}</p>`;
+      const teile = [html`<p>${vote.text}</p>`];
       if (vote.type === "anonymous") {
         const abw = vote.results.absent === undefined
           ? "Abwesenheit nicht überliefert" : vote.results.absent + " Abwesend";
-        detailHTML += `<p style="margin-top:4px">${vote.results.yes} Ja, ${vote.results.no} Nein, ${abw}</p>`;
+        teile.push(html`<p class="mtl-zahlen">${vote.results.yes} Ja, ${vote.results.no} Nein, ${abw}</p>`);
       }
       // Das Dossier steht an der Abstimmung; der Tagesordnungspunkt kann
       // mehrere tragen und auf ein anderes zeigen.
       if (vote.topicId && topicMap[vote.topicId]) {
-        detailHTML += `<a href="#/topic/${vote.topicId}"><svg class="icon"><use href="#i-open_in_new"/></svg> ${topicMap[vote.topicId].title}</a>`;
+        teile.push(html`<a href="#/topic/${vote.topicId}"><svg class="icon"><use href="#i-open_in_new"/></svg> ${topicMap[vote.topicId].title}</a>`);
       }
-      detail.innerHTML = detailHTML;
+      detail.innerHTML = html`${teile}`;
 
       voteRow.querySelector(".mtl-vote-title").addEventListener("click", () => {
         detail.classList.toggle("hidden");
