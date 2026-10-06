@@ -56,8 +56,7 @@ function renderStatistik() {
   main.appendChild(buildStatsTable(entries));
 
   const nh = document.createElement("h2");
-  nh.className = "section-label";
-  nh.style.marginTop = "34px";
+  nh.className = "section-label naehe-ueberschrift";
   nh.textContent = "Wer stimmt mit wem";
   main.appendChild(nh);
 

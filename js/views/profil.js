@@ -134,8 +134,6 @@ function renderMemberProfile(id) {
       brushEl.innerHTML = roh(colored);
       const svg = brushEl.querySelector("svg");
       if (svg) {
-        svg.style.width = "100%";
-        svg.style.height = "100%";
         svg.style.transform = "rotate(" + brushRotation + "deg)";
         svg.removeAttribute("id");
       }
@@ -147,6 +145,8 @@ function renderMemberProfile(id) {
     // Use image-set so retina screens fetch the 2x variant, others the lighter 1x.
     avatarEl.style.backgroundImage =
       `image-set(url('${photoPath}') 1x, url('${photoPath2x}') 2x)`;
+    // Inline, nicht als Klasse: der Platzhalter traegt die Fraktionsfarbe als
+    // inline background, und das schlaegt jede Klasse.
     avatarEl.style.backgroundSize = "cover";
     avatarEl.style.backgroundPosition = "center";
     avatarEl.style.backgroundColor = "transparent";
