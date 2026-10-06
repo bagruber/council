@@ -425,9 +425,13 @@ function sgFlach(nodes, edges, W, H) {
 
 // -- Das Netz im Raum, ein Versuch --
 //
-// Dieselben Kräfte mit einer dritten Achse, in einer Kugel statt im Rechteck.
-// Was sich in der Fläche überdeckt, kann im Raum auseinanderliegen. Muss aber
-// nicht: bei dreißig Leuten trägt die Tiefe oft wenig, deshalb bleibt die
+// Im Raum nicht das Kräftespiel der Fläche, sondern Stress-Minimierung (MDS):
+// Jedes Paar bekommt als Sollabstand seine Unähnlichkeit, 1 − Nähe, und die
+// Anordnung sucht die Lage, die diese Abstände am besten trifft. Die Kräfte
+// verteilen die Knoten von sich aus gleichmäßig. In der Kugel, ohne Wände,
+// wurde daraus ein gleichförmiger Ball, der wenig über die Nähe sagte.
+//
+// Bei dreißig Leuten trägt die dritte Achse oft wenig, deshalb bleibt die
 // Fläche die Vorgabe.
 let sgRaum = false;
 
@@ -451,38 +455,30 @@ function sgRaumLage(nodes, edges, MIN) {
     const t = ((i * 7 + j * 13) % 360) * Math.PI / 180;
     return [[Math.cos(t), Math.sin(t), 0], 1e-3];
   };
-  const schiebe = (n, u, f) => { for (let c = 0; c < 3; c++) n.d[c] += u[c] * f; };
   const kugel = n => {
     const r = Math.hypot(...n.p);
     if (r > 1) n.p = n.p.map(c => c / r);
   };
 
-  // Der Faktor vor k ist gut dreimal so groß wie in der Fläche. Dort
-  // drücken die Wände eine enge Fraktion auseinander, in der Kugel stapeln
-  // sich ihre Kreise in der Tiefe und decken sich von vorn gesehen zu. Der
-  // Preis: die Abstände tragen etwas weniger von der Nähe als in der Fläche.
-  const k = 1.8 * Math.cbrt(4.19 / N);   // 4,19: Volumen der Einheitskugel
-  const STEPS = 400;
-  for (let it = 0; it < STEPS; it++) {
-    const temp = (1 - it / STEPS) * k * 0.4;
-    nodes.forEach(n => { n.d = [0, 0, 0]; });
-    for (let i = 0; i < N; i++) {
-      for (let j = i + 1; j < N; j++) {
-        const [u, d] = apart(nodes[i], nodes[j], i, j);
-        schiebe(nodes[i], u, k * k / d);
-        schiebe(nodes[j], u, -k * k / d);
-      }
-    }
-    edges.forEach(e => {
-      const [u, d] = apart(e.a, e.b, 0, 0);
-      const f = e.s * d * d / k;
-      schiebe(e.a, u, -f);
-      schiebe(e.b, u, f);
-    });
-    nodes.forEach(n => {
-      const d = Math.hypot(...n.d) || 0.01;
-      n.p = n.p.map((c, x) => c + n.d[x] / d * Math.min(d, temp));
-      kugel(n);
+  // Paare ohne genug gemeinsame Stimmen haben keinen Sollabstand und ziehen
+  // nicht aneinander. Dass sie sich nicht überdecken, regelt die Entzerrung.
+  const soll = nodes.map(() => []);
+  edges.forEach(e => {
+    const i = nodes.indexOf(e.a), j = nodes.indexOf(e.b);
+    soll[i].push([j, 1 - e.s]);
+    soll[j].push([i, 1 - e.s]);
+  });
+  // Jeder Knoten rückt dahin, wo ihn alle Nachbarn im Sollabstand sähen,
+  // gemittelt (Gansner, Koren, North 2004)
+  for (let it = 0; it < 300; it++) {
+    nodes.forEach((n, i) => {
+      if (!soll[i].length) return;
+      const z = [0, 0, 0];
+      soll[i].forEach(([j, d]) => {
+        const [u] = apart(n, nodes[j], i, j);
+        for (let c = 0; c < 3; c++) z[c] += nodes[j].p[c] + d * u[c];
+      });
+      n.p = z.map(c => c / soll[i].length);
     });
   }
 
