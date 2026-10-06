@@ -74,9 +74,11 @@ def parse(text):
 
 def main():
     sessions = parse(open(SRC, encoding='utf-8').read())
-    known = {s['id'] for s in json.load(open(os.path.join(DATA, 'sessions.json'), encoding='utf-8'))}
-    lengths = {(l['date'], l['body']) for l in
-               json.load(open(os.path.join(DATA, 'sessionlengths.json'), encoding='utf-8'))}
+    register = json.load(open(os.path.join(DATA, 'sessions.json'), encoding='utf-8'))
+    known = {s['id'] for s in register if s.get('agenda')}
+    # Seit Oktober 2026 fuehrt sessions.json auch die Sitzungen ohne
+    # Niederschrift; eine Zeit steht dort schon, wo die Stadt sie nennt.
+    lengths = {(s['date'], s['type']) for s in register if s.get('start')}
 
     total_votes = 0
     for s in sessions:

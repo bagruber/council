@@ -596,9 +596,14 @@ function renderMemberTimeline(container, member) {
   let currentMonth = "";
 
   relevant.forEach(session => {
+    const votedItems = (session.agenda || []).filter(a => a.voteId && voteMap[a.voteId]);
+    if (!votedItems.length) return;
+
+    // Der Monatskopf erst, wenn feststeht, dass etwas unter ihm steht. Seit
+    // sessions.json auch Sitzungen ohne Niederschrift fuehrt, gaebe es sonst
+    // Monate, die nur aus einer Ueberschrift bestehen.
     const d = new Date(session.date + "T00:00:00");
     const monthKey = monthNames[d.getMonth()] + " " + d.getFullYear();
-
     if (monthKey !== currentMonth) {
       currentMonth = monthKey;
       const header = document.createElement("div");
@@ -606,9 +611,6 @@ function renderMemberTimeline(container, member) {
       header.textContent = monthKey;
       container.appendChild(header);
     }
-
-    const votedItems = session.agenda.filter(a => a.voteId && voteMap[a.voteId]);
-    if (!votedItems.length) return;
 
     const sessionEl = document.createElement("div");
     sessionEl.className = "mtl-session";

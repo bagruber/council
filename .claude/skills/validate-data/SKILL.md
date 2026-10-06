@@ -28,6 +28,12 @@ Exit-Code 0 = sauber. 1 = Probleme.
 - **`⚠ Warnings`** = Hinweise, die nicht zwingend Fehler sind, aber Aufmerksamkeit verdienen:
   - `id(s) {…} cast vote but aren't in BPU composition for YYYY-MM-DD` → entweder die Person war an dem Tag wirklich nicht im Ausschuss (dann war der Vote falsch zugeordnet), oder die `seatConfigs` in `members.json` ist unvollständig (dann muss dort ein occupant ergänzt werden). Bekannte offene Fälle: Beubl + Grübl im BPU.
   - `member …: periods overlap` → bei Personen mit `member.periods[]` sich überschneidende Zeiträume.
+  - `member …: identity […] ohne Quelle` → Identitätsmerkmale sind besondere Kategorien nach Art. 9 DSGVO und werden ohne belegte Selbstauskunft nicht angezeigt. Erwartetes Format: `{"values": [...], "source": "selbstauskunft", "date": "YYYY-MM-DD"}`. Nicht eigenmächtig löschen — dem User vorlegen.
+
+Seit Oktober 2026 prüft der Validator zusätzlich das Sitzungsregister:
+`niederschrift` muss `vollständig`, `auszug` oder `keine` sein, die ID muss zu
+Datum und Gremium passen, und was als veröffentlicht gilt, braucht eine
+Tagesordnung.
 
 ## Fix-Workflow
 

@@ -48,7 +48,8 @@ const VOTEN = [
 
 const BESTAND = {
   "data/topics.json": [],
-  "data/sessions.json": [{ id: "s1", date: "2021-01-01", type: "stadtrat", agenda: [] }],
+  "data/sessions.json": [{ id: "s1", date: "2021-01-01", type: "stadtrat",
+                           niederschrift: "vollständig", agenda: [] }],
   "data/votes.json": VOTEN,
   "data/tags.json": [],
   "data/members.json": {
@@ -59,8 +60,6 @@ const BESTAND = {
     bodies: [], media: [],
   },
   "data/press.json": [],
-  "data/sessionlengths.json": [],
-  "data/termine.json": { termine: [] },
 };
 
 before(async () => {

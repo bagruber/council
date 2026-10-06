@@ -2,8 +2,8 @@
 // Bausteine (Brotkrumen, Presse-Links, Kategorie-Chips), die auch andere
 // Views einbetten.
 import {
-  topics, votes, sessionLengths, pressData, tagMap, topicMap, voteMap,
-  sessionMap, pressMap, mediaMap, sessionRegister, lengthMin,
+  topics, votes, pressData, tagMap, topicMap, voteMap,
+  sessionMap, pressMap, mediaMap, bestand,
 } from "../daten.js";
 import { formatDate, kategorieTon } from "../hilfen.js";
 import { syncTagPills } from "../suche.js";
@@ -13,19 +13,17 @@ const main = document.getElementById("main");
 
 // Probe Formsprache, vorläufig (14.09.2026): die Bestandszeile steht unter dem
 // Seitentitel „Themen“.
-function bestandZeile() {
-  const reg = sessionRegister();
+function bestandZeile(b) {
   document.getElementById("themen-bestand").textContent =
-    `${sessionLengths.length} Sitzungen, ${reg.filter(r => r.session).length} von ${reg.length} mit Niederschrift`;
+    `${b.sitzungen} Sitzungen, ${b.vollstaendig} davon mit Niederschrift`;
 }
 
 function renderHome() {
   syncTagPills([]);
-  bestandZeile();
+  const b = bestand();
+  bestandZeile(b);
 
-  const totalH = Math.round(sessionLengths.reduce((s, l) => s + (lengthMin(l) || 0), 0) / 60);
-  const reg = sessionRegister();
-  const withProtocol = reg.filter(r => r.session).length;
+  const stunden = Math.round(b.minuten / 60);
 
   // Die Zahlen zum Bestand stehen oben, aber zugeklappt. Sie ordnen ein,
   // was folgt — dafür muessen sie vor den Themen stehen. Aufgeklappt
@@ -37,16 +35,16 @@ function renderHome() {
     <summary>
       <svg class="icon"><use href="#i-insights"/></svg>
       <span class="home-meta-title">Zahlen zum Bestand</span>
-      <span class="home-meta-hint">${sessionLengths.length} Sitzungen · ${withProtocol} von ${reg.length} mit Niederschrift · ${pressData.length} Artikel</span>
+      <span class="home-meta-hint">${b.sitzungen} Sitzungen · ${b.vollstaendig} mit Niederschrift · ${b.presse} Artikel</span>
     </summary>`;
 
   [
     { href: "#/statistik", icon: "insights", title: "Sitzungsstatistik",
-      sub: `${sessionLengths.length} Sitzungen · ${totalH} Stunden seit Mai 2020` },
+      sub: `${b.sitzungen} Sitzungen · ${stunden} Stunden seit Mai 2020` },
     { href: "#/datenlage", icon: "fact_check", title: "Datenlage",
-      sub: `${withProtocol} von ${reg.length} Sitzungen mit Niederschrift` },
+      sub: `${b.vollstaendig} von ${b.sitzungen} Sitzungen mit Niederschrift` },
     { href: "#/presse", icon: "description", title: "Presseschau",
-      sub: `${pressData.length} verlinkte Zeitungsartikel` },
+      sub: `${b.presse} verlinkte Zeitungsartikel` },
   ].forEach(t => {
     const teaser = document.createElement("a");
     teaser.className = "stats-teaser";
@@ -71,7 +69,7 @@ function renderHome() {
 
 function renderFilteredTopics(tagIds) {
   syncTagPills(tagIds);
-  bestandZeile();
+  bestandZeile(bestand());
   const filtered = topics.filter(t => tagIds.some(id => t.tags.includes(id)));
   const label = tagIds.map(id => tagMap[id].name).join(", ");
   const heading = document.createElement("p");
