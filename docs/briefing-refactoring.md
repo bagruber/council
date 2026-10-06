@@ -208,6 +208,16 @@ freigegeben; jedes Profil zeigt nur belegte Angaben.
 - Kalender-Bug: `termine.json` im Monatsraster markieren (wird mit AP 3 hinfällig, falls
   AP 3 direkt folgt).
 
+**Achtung beim Löschen von Ordnern:** Die FTP-Deploy-Action (v4.3.5) adressiert zu
+löschende Ordner absolut (`/stadtrat/…`) und scheitert mit `550 No such file or
+directory`. Der Lauf bricht ab, ohne seinen Sync-Stand zu speichern, und jeder weitere
+Deploy scheitert an derselben Stelle. Am 06.10.2026 so geschehen mit
+`data/vote_tracking/`; behoben mit einem einmaligen Workflow, der per `curl` relativ zum
+FTP-Login löscht (`DELE`, `RMD`) und `stadtrat/.ftp-deploy-sync-state.json` entfernt
+(Commit `2b336a3`, danach wieder gelöscht). Wer in AP 2 einen ganzen Ordner aus dem
+ausgelieferten Bestand nimmt, plant das ein oder behebt die Ursache im Workflow. Auf dem
+Server liegen außerdem leere Ordner `data/knowledge/` und `data/docs/`.
+
 **Abnahme:** alle Routen ohne 404 und ohne Konsolenfehler, Aufnahmen gleich zu AP 0.
 
 ### AP 3: Ein Sitzungsregister
