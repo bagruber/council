@@ -17,6 +17,7 @@ Eingetragen wird zweierlei:
                           `selbstauskunft` dazu statt sie zu ersetzen: die
                           stärkere Quelle bleibt maßgeblich, die schwächere
                           erhöht nur das Gewicht.
+  * `voterSourceBy[<id>]` — aus wessen Notizen, hier die Person selbst
 
 Die vote-weite `source` bleibt unberührt, solange sie schon gesetzt ist.
 
@@ -131,6 +132,7 @@ def main():
 
         v.setdefault('voters', {})[args.member] = stimme
         v.setdefault('voterSource', {})[args.member] = belege
+        v.setdefault('voterSourceBy', {})[args.member] = args.member
         # Beschlüsse ohne jede Herkunft bekommen sie jetzt von hier
         v.setdefault('source', {'tier': 'selbstauskunft'})
         print(f'  {v["id"]:18s} {stimme:6s} {"+".join(belege):28s} {titel[:40]}')
