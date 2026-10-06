@@ -10,13 +10,13 @@ den Dateien.
 Catches the kinds of issues that have bitten us before:
   - Vote yes/no/absent arrays don't sum to expected body size
   - vote.sessionId points to a non-existent session
-  - vote.topicId points to a non-existent topic
+  - vote.topicIds points to a non-existent topic
   - session.agenda[].voteIds references a missing vote
   - Abstimmungen, die kein Tagesordnungspunkt nennt (sie fehlen auf der Sitzungsseite)
   - session.agenda[].topicId references a missing topic
   - session.absent ids that aren't valid members
   - history entry references missing sessionId/voteId
-  - history entry whose vote carries no topicId (undercounts the dossier)
+  - history entry whose vote carries no topicIds (undercounts the dossier)
   - press references with broken ids
   - Mandatsabschnitte: Reihenfolge, Ueberlappung, Fraktion, Rolle, succeeds
   - BPU composition mismatch (welter-on-BPU-2022 type issues)
@@ -111,8 +111,9 @@ vote_by_id    = {v["id"]: v for v in votes}
 for v in votes:
     if v["sessionId"] not in session_ids:
         err(f"vote {v['id']}: sessionId '{v['sessionId']}' missing")
-    if v.get("topicId") and v["topicId"] not in topic_ids:
-        err(f"vote {v['id']}: topicId '{v['topicId']}' missing")
+    for tid in v.get("topicIds", []):
+        if tid not in topic_ids:
+            err(f"vote {v['id']}: topicIds '{tid}' missing")
 
 NIEDERSCHRIFT = {"vollständig", "auszug", "keine"}
 PRAEFIX = {"stadtrat": "sr", "bpu": "bpu", "hvfa": "hvfa"}
@@ -141,10 +142,10 @@ for s in sessions:
         for vid in item.get("voteIds", []):
             if vid not in vote_ids:
                 err(f"session {s['id']} agenda[{i}]: voteId '{vid}' missing")
-            elif item.get("topicId") and vote_by_id[vid].get("topicId")                     and item["topicId"] != vote_by_id[vid]["topicId"]:
+            elif item.get("topicId") and vote_by_id[vid].get("topicIds")                     and item["topicId"] not in vote_by_id[vid]["topicIds"]:
                 warn(f"session {s['id']} agenda[{i}]: Punkt zeigt auf Thema "
-                     f"{item['topicId']}, Abstimmung {vid} auf "
-                     f"{vote_by_id[vid]['topicId']}")
+                     f"{item['topicId']}, die Abstimmung {vid} nicht "
+                     f"(sondern auf {vote_by_id[vid]['topicIds']})")
         tid = item.get("topicId")
         if tid and tid not in topic_ids:
             err(f"session {s['id']} agenda[{i}]: topicId '{tid}' missing")
@@ -240,19 +241,22 @@ for v in votes:
         if mid not in member_ids:
             err(f"vote {v['id']}: voters['{mid}'] not a member")
 
-# ── Historie gegen votes[].topicId ─────────────────────────────────────────────
-# Steht ein Votum in der Historie eines Dossiers, soll es irgendein Dossier als
-# topicId tragen -- sonst zaehlt es nirgends und erscheint auf der Feldseite als
-# themenloser Einzelbeschluss. Welches Dossier, bleibt offen: ein Votum kann in
-# zwei Historien stehen, das Feld ist einwertig, und der Zaehler bildet ohnehin
-# die Vereinigung aus beidem.
+# -- Historie gegen votes[].topicIds --
+# Steht ein Votum in der Historie eines Dossiers, soll es dieses Dossier auch
+# in topicIds nennen -- sonst zaehlt es dort nicht und erscheint auf der
+# Feldseite als themenloser Einzelbeschluss.
 vote_by_id = {v['id']: v for v in votes}
 for t in topics:
     for h in t.get('history', []):
         v = vote_by_id.get(h.get('voteId'))
-        if v is not None and not v.get('topicId'):
+        if v is None:
+            continue
+        if not v.get('topicIds'):
             warn(f"topic {t['id']}: vote {v['id']} steht in der Historie, tragt aber "
-                 f"keine topicId -- zaehlt in keinem Dossier")
+                 f"keine topicIds -- zaehlt in keinem Dossier")
+        elif t['id'] not in v['topicIds']:
+            warn(f"topic {t['id']}: vote {v['id']} steht in der Historie, nennt aber "
+                 f"nur {v['topicIds']} -- zaehlt in diesem Dossier nicht")
 
 # ── Member periods ───────────────────────────────────────────────────────────
 PARTY_IDS = {p["id"] for p in parties}

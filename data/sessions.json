@@ -12114,23 +12114,16 @@
     "id": "bpu_20260413",
     "date": "2026-04-13",
     "type": "bpu",
-    "niederschrift": "auszug",
+    "niederschrift": "keine",
     "start": "19:00",
     "end": "19:20",
     "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss",
-    "source": {
-      "kind": "webauszug",
-      "url": null
-    },
     "quellen": {
       "mitschrift": {
         "start": "20:34",
         "end": "20:44"
       }
     },
-    "absent": [
-      "hobmaier"
-    ],
     "agenda": [
       {
         "number": "3",

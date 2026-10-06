@@ -192,7 +192,7 @@ function renderField(fieldId) {
   const dossiers = topics.filter(t => t.field === fieldId || (t.tags || []).includes(fieldId));
   const ids = new Set(dossiers.map(t => t.id));
   const loose = votes
-    .filter(v => !v.topicId)
+    .filter(v => !(v.topicIds || []).length)
     .filter(v => voteInField(v, fieldId))
     .sort((a, b) => b.date.localeCompare(a.date));
 
@@ -287,7 +287,7 @@ function renderDossierHead(topic) {
   // kuratierte Auswahl -- aber ein Votum kann in zwei Dossiers vorkommen, und
   // das Feld ist einwertig. Gezaehlt wird deshalb die Vereinigung.
   const n = new Set([
-    ...votes.filter(v => v.topicId === topic.id).map(v => v.id),
+    ...votes.filter(v => (v.topicIds || []).includes(topic.id)).map(v => v.id),
     ...(topic.history || []).map(h => h.voteId).filter(Boolean),
   ]).size;
   if (n) bits.push(html`<span class="dossier-count">${n} Abstimmung${n === 1 ? "" : "en"}</span>`);
