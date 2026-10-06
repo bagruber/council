@@ -618,10 +618,34 @@ function drawSimGraph(el, periodId) {
   });
 
   const W = el.clientWidth || 640, H = 420;
+
+  // Wer nachrückt, hat mit dem Vorgänger nie abgestimmt, das Paar hat keine
+  // Kante, und nichts zieht die beiden zueinander. Im Raum standen John und
+  // Strobl so weit auseinander wie das fernste Fünftel aller Paare. Für die
+  // Anordnung, nicht im Bild, bekommen sie deshalb die Nähe, die
+  // Fraktionskollegen in dieser Periode typischerweise haben (Median).
+  //
+  // Als Nachfolge gilt: dieselbe Fraktion, Eintritt höchstens einen Monat
+  // nach dem Austritt. Zwischen Beubl und Marcus liegt ein Tag, zwischen
+  // Wagner und Altenbeck und Kilian Linz und A. Becher knapp drei Wochen.
+  // Wer dort wem folgte, steht nirgends, also gilt jede der vier
+  // Verbindungen.
+  const kollegen = edges
+    .filter(e => e.a.party && e.b.party && e.a.party.id === e.b.party.id)
+    .map(e => e.s).sort((x, y) => x - y);
+  const spannen = m => m.periods && m.periods.length ? m.periods : [{ from: m.from, to: m.to }];
+  const folgt = (a, b) => spannen(a).some(x => x.to && spannen(b).some(y => {
+    const tage = (Date.parse(y.from) - Date.parse(x.to)) / 864e5;
+    return tage >= 0 && tage <= 31 && partyAtDate(a, x.to) === partyAtDate(b, y.from);
+  }));
+  const lage = edges.slice();
+  if (kollegen.length) nodes.forEach(a => nodes.forEach(b => {
+    if (folgt(a.m, b.m)) lage.push({ a, b, s: kollegen[kollegen.length >> 1] });
+  }));
   // Im Raum anderthalb Kreise Abstand statt einem: von vorn gesehen rücken
   // die Kreise durch die Tiefe ohnehin zusammen
-  if (sgRaum) sgRaumLage(nodes, edges, 3 * SG_R / sgMass(W, H));
-  else sgFlach(nodes, edges, W, H);
+  if (sgRaum) sgRaumLage(nodes, lage, 3 * SG_R / sgMass(W, H));
+  else sgFlach(nodes, lage, W, H);
 
   const spread = simSpread(pairs);
   // Sortiert an Ort und Stelle: im Raum findet sgDrehen Kante i als i-te Linie
