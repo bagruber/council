@@ -8,6 +8,7 @@ import { renderSession } from "./views/sitzungen.js";
 import { renderStatistik } from "./views/statistik.js";
 import { renderDatenlage } from "./views/datenlage.js";
 import { renderPresse } from "./views/presse.js";
+import { renderMethodik } from "./views/methodik.js";
 import { renderCalendar } from "./views/kalender.js";
 import { renderGremien } from "./views/gremien.js";
 import { renderMemberProfile } from "./views/profil.js";
@@ -87,6 +88,10 @@ function route() {
     renderStatistik();
   } else if (path.startsWith("/datenlage")) {
     renderDatenlage(path.split("/datenlage/")[1] || null);
+  } else if (path.startsWith("/methodik")) {
+    // Der Unterpfad ist das Sprungziel; Anker gehen nicht, der Hash traegt
+    // schon die Route.
+    renderMethodik(path.split("/methodik/")[1] || null);
   } else if (path === "/presse") {
     renderPresse();
   } else {

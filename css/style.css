@@ -1220,18 +1220,6 @@ a.cat-line:hover { text-decoration: underline; }
   border-top: 1px solid var(--border);
 }
 
-/* Die vier Herkunftsstufen, absteigend belastbar — die Nummerierung trägt
-   hier Bedeutung und ist keine Dekoration. */
-.legend-sources {
-  margin: 0 0 12px 18px;
-  padding: 0;
-  font-size: 0.86rem;
-  color: var(--text-muted);
-}
-
-.legend-sources li { margin-bottom: 7px; }
-.legend-sources strong { color: var(--text); font-weight: 600; }
-
 /* ─── Voting statistics card on member profile ─── */
 .voting-stats {
   background: var(--surface);
@@ -3748,4 +3736,442 @@ body { overflow-x: clip; }
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+/* ===== Methodik: „So entsteht diese Seite“ ===================================
+   Eine Spalte Lesetext wie der Rest der App; nur das Prozessbild bricht auf
+   volle Breite aus. Farben ausschliesslich aus den Rollen-Tokens. */
+
+.methodik { max-width: 760px; }
+.methodik .topic-header { border-bottom: none; padding-bottom: 8px; margin-bottom: 0; }
+
+.m-abschnitt { padding-top: 48px; scroll-margin-top: calc(var(--nav-height) + 12px); }
+.m-abschnitt h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+.m-abschnitt h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.m-abschnitt p { margin-bottom: 14px; line-height: 1.65; }
+.m-abschnitt ul { margin: 0 0 14px 20px; }
+.m-abschnitt li { margin-bottom: 6px; }
+.m-unter { margin-top: 34px; color: var(--primary-dark); font-size: 1.3rem; }
+
+.m-inhalt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+  list-style: none;
+}
+.m-inhalt a {
+  display: inline-block;
+  padding: 5px 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+.m-inhalt a:hover { border-color: var(--primary); color: var(--primary); }
+
+/* Ein Knopf, der wie ein Link aussieht — das Kontaktformular ist ein Overlay */
+.m-link {
+  font: inherit;
+  color: var(--primary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* -- Markierungen: Raute Sprachmodell, Quadrat Skript, Kreis Mensch -- */
+.m-mark { position: relative; padding-left: 20px; }
+.m-mark::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.52em;
+  width: 9px;
+  height: 9px;
+  background: var(--text);
+}
+.m-mark.ki::before { background: var(--accent); transform: rotate(45deg); }
+.m-mark.mensch::before { background: var(--primary); border-radius: 50%; }
+
+.m-legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 18px 0 20px;
+}
+.m-legende > span { font-size: 0.9rem; color: var(--text-muted); margin-right: 4px; }
+.m-legende button {
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  padding: 5px 13px 5px 30px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+}
+.m-legende button.m-mark::before { left: 13px; top: 0.78em; }
+.m-legende button[aria-pressed="true"] {
+  background: var(--color-red-50);
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+/* -- Prozessbild -- */
+.m-breit { max-width: 1120px; margin-inline: calc((760px - 1120px) / 2); }
+
+.m-fluss {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) minmax(0, 1.35fr) 34px minmax(0, 1.25fr) 34px minmax(0, 0.95fr);
+  column-gap: 22px;
+  row-gap: 10px;
+  align-items: stretch;
+}
+.m-kopf {
+  grid-row: 1;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.m-k1 { grid-column: 1; }
+.m-k2 { grid-column: 2; }
+.m-k4 { grid-column: 4; }
+.m-k6 { grid-column: 6; }
+
+.m-knoten {
+  position: relative;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 11px 13px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  transition: border-color 0.15s, background-color 0.15s, opacity 0.15s;
+}
+.m-knoten:hover { border-color: var(--accent); }
+.m-knoten:focus-visible,
+.m-legende button:focus-visible,
+.m-inhalt a:focus-visible,
+.m-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
+.m-knoten.on { border-color: var(--primary); background: var(--color-red-50); }
+.m-knoten strong { display: block; font-size: 0.97rem; margin-bottom: 2px; color: var(--text); }
+.m-knoten ul { list-style: none; margin: 0; display: grid; gap: 5px; }
+.m-knoten li { margin: 0; transition: opacity 0.15s; }
+.m-zahl {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+.m-amtlich {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  vertical-align: 1px;
+  background: var(--color-red-50);
+  color: var(--primary);
+}
+.m-quelle { grid-column: 1; }
+.m-schritt { grid-column: 2; }
+/* Zeile 1 sind die Spaltenkoepfe, darunter je Quelle eine Zeile. Die fuenf
+   stehen als QUELLEN in js/views/methodik.js; `-1` ginge nicht, das Raster
+   hat keine ausdruecklichen Zeilen. */
+.m-schiene { grid-column: 3; grid-row: 2 / span 5; position: relative; }
+.m-sammel { grid-column: 4; grid-row: 2 / span 5; align-self: center; }
+.m-pfeil { grid-column: 5; grid-row: 2 / span 5; position: relative; }
+.m-bestand { grid-column: 6; grid-row: 2 / span 5; align-self: center; }
+
+/* Pfeil von der Quelle zum Einarbeiten, und vom Einarbeiten an die Schiene */
+.m-quelle::after, .m-schritt::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 22px;
+  height: 1.5px;
+  background: var(--text-muted);
+}
+.m-schritt::after { width: 37px; }
+.m-quelle::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(100% + 15px);
+  border: 4.5px solid transparent;
+  border-left: 6px solid var(--text-muted);
+}
+.m-schiene::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: var(--oben, 40px);
+  bottom: var(--unten, 40px);
+  width: 3px;
+  border-radius: 2px;
+  background: var(--text-muted);
+}
+.m-schiene::after, .m-pfeil::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 6px);
+  right: -22px;
+  border: 6px solid transparent;
+  border-left: 8px solid var(--text-muted);
+}
+.m-schiene i, .m-pfeil i {
+  position: absolute;
+  top: calc(50% - 0.75px);
+  left: 15px;
+  right: 0;
+  height: 1.5px;
+  background: var(--text-muted);
+}
+.m-schiene i { right: -18px; }
+.m-pfeil i { left: -22px; right: -18px; }
+
+/* Die Legende ist zugleich ein Filter */
+.m-fluss[data-hl] .m-knoten li, .m-fluss[data-hl] .m-quelle { opacity: 0.28; }
+.m-fluss[data-hl="ki"] .m-knoten li.ki,
+.m-fluss[data-hl="skript"] .m-knoten li.skript,
+.m-fluss[data-hl="mensch"] .m-knoten li.mensch { opacity: 1; }
+
+.m-erklaerung {
+  margin-top: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 20px 22px 8px;
+}
+.m-erklaerung h3 { color: var(--primary-dark); }
+.m-hinweis { font-size: 0.85rem; color: var(--text-muted); }
+
+@media (max-width: 1159.98px) {
+  .m-breit { max-width: 100%; margin-inline: 0; }
+}
+
+@media (max-width: 860px) {
+  .m-fluss { display: flex; flex-direction: column; gap: 0; }
+  .m-kopf, .m-schiene, .m-pfeil { display: none; }
+  .m-quelle, .m-sammel, .m-bestand { margin-bottom: 6px; }
+  .m-schritt { margin-left: 22px; margin-bottom: 14px; }
+  .m-quelle::after { left: 22px; top: 100%; width: 1.5px; height: 7px; }
+  .m-quelle::before, .m-schritt::after { display: none; }
+  .m-sammel::before, .m-bestand::before {
+    content: attr(data-vorspann);
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .m-sammel { margin-top: 8px; }
+  .m-bestand { margin-top: 18px; }
+}
+
+/* -- Wo ein Sprachmodell mitarbeitet -- */
+.m-kasten {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 22px 24px 10px;
+  margin: 22px 0;
+}
+.m-zwei {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 8px 28px;
+}
+.m-zwei h3 { font-family: var(--font-sans); font-size: 1.02rem; }
+.m-zwei ul { margin: 0 0 14px; list-style: none; display: grid; gap: 7px; font-size: 0.95rem; }
+.m-zwei li { position: relative; padding-left: 20px; margin: 0; }
+.m-tut li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  color: var(--accent);
+  font-size: 0.8em;
+}
+.m-tut-nicht li::before {
+  content: "×";
+  position: absolute;
+  left: 1px;
+  top: -0.05em;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* -- Herkunft der Einzelstimmen -- */
+.m-balken {
+  display: flex;
+  height: 34px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: 18px 0 6px;
+  background: var(--border);
+}
+.m-balken > span { display: block; min-width: 3px; }
+.m-skala {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.m-stufen { list-style: none; margin: 18px 0 0; border-top: 1px solid var(--border); }
+.m-stufen li {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr) auto;
+  gap: 4px 14px;
+  padding: 11px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+.m-farbe { width: 14px; height: 14px; border-radius: var(--radius-sm); align-self: center; }
+.m-farbe.tier-sum { border: 1px solid #cfc8b8; }
+.m-stufen a { font-weight: 700; }
+.m-n {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--text);
+  white-space: nowrap;
+}
+.m-n small { color: var(--text-muted); font-size: 0.82rem; margin-left: 6px; }
+.m-was { grid-column: 2 / 4; font-size: 0.93rem; color: var(--text-muted); }
+
+.m-beispiele { display: grid; gap: 14px; margin-top: 18px; }
+.m-beispiel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 16px 18px 6px;
+}
+.m-beispiel h3 { font-size: 1.08rem; }
+.m-sitze { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0 8px; max-width: 360px; }
+.m-sitze span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--yes);
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  line-height: 1;
+  color: #fff;
+  font-weight: 700;
+}
+.m-sitze .nein { background: var(--no); }
+.m-sitze .stern { opacity: 0.7; }
+.m-sitze .stern::after { content: "*"; transform: translateY(2px); }
+.m-sitze .gerechnet { background: transparent; border: 2.5px solid var(--yes); }
+.m-mini { font-size: 0.82rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.m-mini i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: -1px;
+  background: var(--no);
+}
+.m-mini i.gerechnet { background: transparent; border: 2px solid var(--yes); }
+.m-ergebnis { font-variant-numeric: tabular-nums; }
+
+/* -- Regeln -- */
+.m-regeln { margin-top: 10px; border-top: 1px solid var(--border); }
+.m-regel {
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: 6px 28px;
+  padding: 20px 0 8px;
+  border-bottom: 1px solid var(--border);
+}
+.m-regel > div:last-child { min-width: 0; }
+.m-regel h3 { font-size: 1.12rem; }
+.m-paragraf {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 1px 9px;
+  border-radius: 999px;
+  background: var(--color-cream-dark);
+  color: var(--text-muted);
+}
+@media (max-width: 620px) { .m-regel { grid-template-columns: 1fr; } }
+
+/* -- Betreiber -- */
+.m-brief {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 24px 26px 12px;
+}
+
+/* -- Technik: das Aufklappmuster des Hauses -- */
+.m-details { border-bottom: 1px solid var(--border); }
+.m-details:first-of-type { border-top: 1px solid var(--border); }
+.m-details > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-weight: 600;
+}
+.m-details > summary::-webkit-details-marker { display: none; }
+.m-details > summary::after { content: "+"; color: var(--primary); font-size: 1.25rem; line-height: 1; }
+.m-details[open] > summary::after { content: "–"; }
+.m-details > div { padding-bottom: 8px; }
+
+.m-familie {
+  margin-top: 56px;
+  padding: 24px 26px 12px;
+  background: var(--color-cream-dark);
+  border-radius: var(--radius-xl);
+}
+.m-familie h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+.m-familie p { line-height: 1.65; }
+
+@media (prefers-reduced-motion: reduce) {
+  .m-knoten, .m-knoten li { transition: none; }
 }

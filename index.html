@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stadtrat Moosburg a.d. Isar</title>
-  <link rel="stylesheet" href="css/tokens.css?v=08940b9f">
-  <link rel="stylesheet" href="css/fonts.css?v=08940b9f">
-  <link rel="stylesheet" href="css/style.css?v=08940b9f">
+  <link rel="stylesheet" href="css/tokens.css?v=a3b53376">
+  <link rel="stylesheet" href="css/fonts.css?v=a3b53376">
+  <link rel="stylesheet" href="css/style.css?v=a3b53376">
 </head>
 <body>
 
@@ -109,6 +109,7 @@
         </label>
         <ul class="ueber-liste">
           <li><a href="#/datenlage"><svg class="icon" aria-hidden="true"><use href="#i-fact_check"/></svg>Woher die Daten kommen</a></li>
+          <li><a href="#/methodik"><svg class="icon" aria-hidden="true"><use href="#i-insights"/></svg>So entsteht diese Seite</a></li>
           <li><button type="button" data-modal="kontakt-modal"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Kontakt</button></li>
           <li><button type="button" data-modal="impressum-modal"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Impressum</button></li>
           <li><a href="https://github.com/bagruber/council" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-open_in_new"/></svg>Quellcode auf GitHub</a></li>
@@ -293,31 +294,16 @@
 
       <p class="legend-explain" style="margin:-4px 0 18px">
         <strong>Befangen</strong> heißt: anwesend, aber wegen persönlicher Beteiligung
-        nach Art. 49 GO von der Abstimmung ausgeschlossen. Kommt in rund 6 % der
-        Abstimmungen vor, ebenso selten wie die Enthaltung (<strong>◦</strong>).
+        nach Art. 49 GO von der Abstimmung ausgeschlossen. Eine Enthaltung gibt es im
+        Stadtrat nicht, Art. 48 Abs. 1 Satz 2 GO verbietet sie.
       </p>
 
       <h3 class="legend-heading">Woher die Einzelstimmen stammen</h3>
-      <p class="legend-explain" style="margin-bottom:10px">
-        Niederschriften nennen fast immer nur das Ergebnis. Wer wie gestimmt hat,
-        lässt sich unterschiedlich sicher rekonstruieren — jede Abstimmung trägt
-        deshalb eine Herkunftsangabe.
-      </p>
-      <ol class="legend-sources">
-        <li><strong>Namentlich in der Niederschrift.</strong> Der Rat hat namentliche
-          Abstimmung beschlossen, das Protokoll listet jede Stimme. Der sicherste Fall
-          — und der seltenste.</li>
-        <li><strong>Aus der Anwesenheit abgeleitet.</strong> Einstimmiges Ergebnis:
-          wer laut Anwesenheitsliste da war und mitgestimmt hat, hat so gestimmt.</li>
-        <li><strong>Aus Presseberichten.</strong> Zeitungsberichte nennen einzelne
-          Abweichler. Der Artikel ist verlinkt.</li>
-        <li><strong>In der Sitzung mitgeschrieben.</strong> Während der öffentlichen
-          Sitzung erfasst, mit Namen der erfassenden Person. Wo ein Presseartikel
-          dasselbe berichtet, ist das vermerkt.</li>
-      </ol>
       <p class="legend-explain" style="margin-bottom:18px">
-        Fehlt die Angabe, ist nur das Ergebnis überliefert. Dann steht bei allen
-        Mitgliedern ein Fragezeichen — auch wenn sich eine Vermutung anböte.
+        Niederschriften nennen fast immer nur das Ergebnis; wie sicher daraus hervorgeht,
+        wer wie gestimmt hat, steht als Herkunftsangabe an jeder Abstimmung.
+        <a href="#/methodik/herkunft">So entsteht diese Seite</a> zeigt die sechs Stufen
+        mit ihren Anteilen und die Rechenregeln dahinter.
       </p>
 
       <div class="legend-row">
@@ -368,32 +354,33 @@
 <script type="importmap">
 {
   "imports": {
-    "./js/aehnlichkeit.js": "./js/aehnlichkeit.js?v=08940b9f",
-    "./js/app.js": "./js/app.js?v=08940b9f",
-    "./js/core.js": "./js/core.js?v=08940b9f",
-    "./js/daten.js": "./js/daten.js?v=08940b9f",
-    "./js/hilfen.js": "./js/hilfen.js?v=08940b9f",
-    "./js/html.js": "./js/html.js?v=08940b9f",
-    "./js/kopf.js": "./js/kopf.js?v=08940b9f",
-    "./js/parliament.js": "./js/parliament.js?v=08940b9f",
-    "./js/routing.js": "./js/routing.js?v=08940b9f",
-    "./js/suche.js": "./js/suche.js?v=08940b9f",
-    "./js/views/datenlage.js": "./js/views/datenlage.js?v=08940b9f",
-    "./js/views/diagramme.js": "./js/views/diagramme.js?v=08940b9f",
-    "./js/views/fraktion.js": "./js/views/fraktion.js?v=08940b9f",
-    "./js/views/gremien.js": "./js/views/gremien.js?v=08940b9f",
-    "./js/views/kalender.js": "./js/views/kalender.js?v=08940b9f",
-    "./js/views/naehe.js": "./js/views/naehe.js?v=08940b9f",
-    "./js/views/presse.js": "./js/views/presse.js?v=08940b9f",
-    "./js/views/profil.js": "./js/views/profil.js?v=08940b9f",
-    "./js/views/sitzungen.js": "./js/views/sitzungen.js?v=08940b9f",
-    "./js/views/statistik.js": "./js/views/statistik.js?v=08940b9f",
-    "./js/views/themen.js": "./js/views/themen.js?v=08940b9f",
-    "./js/views/voten.js": "./js/views/voten.js?v=08940b9f"
+    "./js/aehnlichkeit.js": "./js/aehnlichkeit.js?v=a3b53376",
+    "./js/app.js": "./js/app.js?v=a3b53376",
+    "./js/core.js": "./js/core.js?v=a3b53376",
+    "./js/daten.js": "./js/daten.js?v=a3b53376",
+    "./js/hilfen.js": "./js/hilfen.js?v=a3b53376",
+    "./js/html.js": "./js/html.js?v=a3b53376",
+    "./js/kopf.js": "./js/kopf.js?v=a3b53376",
+    "./js/parliament.js": "./js/parliament.js?v=a3b53376",
+    "./js/routing.js": "./js/routing.js?v=a3b53376",
+    "./js/suche.js": "./js/suche.js?v=a3b53376",
+    "./js/views/datenlage.js": "./js/views/datenlage.js?v=a3b53376",
+    "./js/views/diagramme.js": "./js/views/diagramme.js?v=a3b53376",
+    "./js/views/fraktion.js": "./js/views/fraktion.js?v=a3b53376",
+    "./js/views/gremien.js": "./js/views/gremien.js?v=a3b53376",
+    "./js/views/kalender.js": "./js/views/kalender.js?v=a3b53376",
+    "./js/views/methodik.js": "./js/views/methodik.js?v=a3b53376",
+    "./js/views/naehe.js": "./js/views/naehe.js?v=a3b53376",
+    "./js/views/presse.js": "./js/views/presse.js?v=a3b53376",
+    "./js/views/profil.js": "./js/views/profil.js?v=a3b53376",
+    "./js/views/sitzungen.js": "./js/views/sitzungen.js?v=a3b53376",
+    "./js/views/statistik.js": "./js/views/statistik.js?v=a3b53376",
+    "./js/views/themen.js": "./js/views/themen.js?v=a3b53376",
+    "./js/views/voten.js": "./js/views/voten.js?v=a3b53376"
   }
 }
 </script>
-<script type="module" src="js/app.js?v=08940b9f"></script>
+<script type="module" src="js/app.js?v=a3b53376"></script>
 <!-- Besuchszähler von moosburg.eu; auf anderen Hosts läuft die Datei ins Leere. -->
 <script src="/assets/zaehler.js" defer></script>
 </body>

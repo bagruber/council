@@ -31,6 +31,13 @@ document.addEventListener("click", evt => {
     schliessen.closest(".modal-overlay, .bottom-sheet").classList.add("hidden");
     return;
   }
+  // Ein Sprung in die App fuehrt woandershin; das Overlay darf dann nicht
+  // darueber liegenbleiben.
+  const sprung = evt.target.closest('.modal-overlay a[href^="#"], .bottom-sheet a[href^="#"]');
+  if (sprung) {
+    sprung.closest(".modal-overlay, .bottom-sheet").classList.add("hidden");
+    return;
+  }
   // Klick auf den Schleier selbst, nicht auf den Inhalt darin
   if (evt.target.matches(".modal-overlay, .bottom-sheet")) {
     evt.target.classList.add("hidden");

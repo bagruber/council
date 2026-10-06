@@ -70,7 +70,9 @@ function renderDatenlage(filter) {
     <h1>Datenlage</h1>
     <div class="topic-summary">Jede öffentliche Sitzung seit ${monatJahr(b.seit)}, und was von ihr vorliegt.
       Gezählt ist, was stattgefunden hat — Sitzungen ohne Niederschrift stehen
-      bewusst mit in der Liste, die Lücke gehört zur Auskunft dazu.</div>`;
+      bewusst mit in der Liste, die Lücke gehört zur Auskunft dazu.
+      <a href="#/methodik">So entsteht diese Seite</a> erklärt, wie die Angaben
+      zustande kommen.</div>`;
   main.appendChild(header);
 
   const tiles = document.createElement("div");
