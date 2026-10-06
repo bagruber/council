@@ -60,11 +60,6 @@
   --tab-height: 64px;
   /* Kopf samt Stripe und Linie; ab 1024 px 69 px, siehe Kopf */
   --nav-height: 61px;
-  /* Probe Formsprache, vorläufig (14.09.2026): Familienschriften statt
-     Playfair und Inter. Eingebunden in css/fonts.css. */
-  --font-display: "Source Serif 4 Variable", Georgia, serif;
-  --font-sans: "Atkinson Hyperlegible Next Variable", system-ui, sans-serif;
-  --font-script: "Madelon Script", cursive;
 }
 
 html {

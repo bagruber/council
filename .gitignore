@@ -15,3 +15,7 @@ docs/selbstauskuenfte/
 quellen/
 data/vote_tracking/
 data/*.docx
+
+# 167 MB unkomprimierte PNG-Vorlagen, aus denen die .webp erzeugt wurden
+# (scripts/compress_member_images.py). Die Seite verweist nirgends auf sie.
+img/members/originals/
