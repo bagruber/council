@@ -17122,6 +17122,12 @@
       "linz_kilian": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "gruber": "gruber",
+      "becher_j": "gruber",
+      "becher_a": "gruber",
+      "linz_kilian": "gruber"
     }
   },
   {
@@ -18972,6 +18978,9 @@
       "hobmaier": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "hobmaier": "hobmaier"
     }
   },
   {
@@ -19136,6 +19145,9 @@
       "hobmaier": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "hobmaier": "hobmaier"
     }
   },
   {
@@ -19181,6 +19193,9 @@
       "hobmaier": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "hobmaier": "hobmaier"
     }
   },
   {
@@ -21633,6 +21648,9 @@
     },
     "source": {
       "tier": "selbstauskunft"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -21808,6 +21826,9 @@
     },
     "source": {
       "tier": "selbstauskunft"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -21863,6 +21884,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -21969,6 +21993,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -22121,6 +22148,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -22509,6 +22539,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -22535,6 +22568,9 @@
     },
     "source": {
       "tier": "selbstauskunft"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -22884,6 +22920,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -22987,7 +23026,10 @@
         "selbstauskunft"
       ]
     },
-    "inferable": false
+    "inferable": false,
+    "voterSourceBy": {
+      "marcus": "marcus"
+    }
   },
   {
     "id": "sr_20250728_02",
@@ -23131,7 +23173,10 @@
         "selbstauskunft"
       ]
     },
-    "inferable": false
+    "inferable": false,
+    "voterSourceBy": {
+      "marcus": "marcus"
+    }
   },
   {
     "id": "sr_20250728_06",
@@ -23159,6 +23204,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -23546,6 +23594,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -23575,6 +23626,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -24283,6 +24337,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -24756,6 +24813,9 @@
     },
     "source": {
       "tier": "selbstauskunft"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -24782,6 +24842,9 @@
     },
     "source": {
       "tier": "selbstauskunft"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -24811,6 +24874,17 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
+    },
+    "voterHints": {
+      "strobl": {
+        "vote": "yes",
+        "evidence": "weich",
+        "by": "strobl",
+        "note": "„ein Kompromiss, der weitestgehend verträglich ist“"
+      }
     }
   },
   {
@@ -24951,6 +25025,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -25261,6 +25338,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -25421,6 +25501,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -25449,6 +25532,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -26406,6 +26492,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -26431,6 +26520,9 @@
     },
     "source": {
       "tier": "selbstauskunft"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -26638,6 +26730,9 @@
       "marcus": [
         "selbstauskunft"
       ]
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
@@ -26735,22 +26830,55 @@
     "date": "2026-03-25",
     "title": "Klageverfahren Studentenwohnheim Rockermaier Areal",
     "text": "Der Stadtrat beschließt, die Klage gegen die Baugenehmigung für das Studentenwohnheim auf Flurnummer 673 gemäß dem noch abzuschließenden Vergleichsvertrag zurückzuziehen. Bürgermeister und Verwaltung ziehen die Klage zurück, sobald die Voraussetzungen des Vergleichs vorliegen.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 20,
-      "no": 1,
-      "absent": 4
-    },
-    "voters": {
-      "marcus": "yes"
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "gruber"
+      ]
     },
     "voterSource": {
       "marcus": [
         "selbstauskunft"
+      ],
+      "strobl": [
+        "selbstauskunft"
       ]
     },
     "source": {
-      "tier": "selbstauskunft"
+      "tier": "selbstauskunft",
+      "by": "strobl"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus",
+      "strobl": "strobl"
     }
   },
   {
@@ -26804,11 +26932,39 @@
     "date": "2026-03-25",
     "title": "B-Plan Nr. 66 „Oberes Gereuth Nord-Ost\" – Billigungsbeschluss",
     "text": "Der Stadtrat nimmt den Entwurf des Bebauungsplans mit Grünordnungsplan, Begründung und Umweltbericht in der Fassung vom 26.02.2026 zur Kenntnis und billigt die Planunterlagen zur öffentlichen Auslegung nach § 3 Abs. 2 BauGB.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 19,
-      "no": 1,
-      "absent": 5
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl"
+      ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "stanglmaier",
+        "becher_a",
+        "becher_j",
+        "gruber",
+        "fincke"
+      ]
     },
     "excluded": [
       {
@@ -26816,16 +26972,21 @@
         "reason": "kurzfristig abwesend"
       }
     ],
-    "voters": {
-      "marcus": "yes"
-    },
     "voterSource": {
       "marcus": [
+        "selbstauskunft"
+      ],
+      "strobl": [
         "selbstauskunft"
       ]
     },
     "source": {
-      "tier": "selbstauskunft"
+      "tier": "selbstauskunft",
+      "by": "strobl"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus",
+      "strobl": "strobl"
     }
   },
   {
@@ -26892,15 +27053,28 @@
       "absent": 4
     },
     "voters": {
-      "marcus": "yes"
+      "marcus": "yes",
+      "strobl": "no",
+      "hobmaier": "no"
     },
     "voterSource": {
       "marcus": [
+        "selbstauskunft"
+      ],
+      "strobl": [
+        "selbstauskunft"
+      ],
+      "hobmaier": [
         "selbstauskunft"
       ]
     },
     "source": {
       "tier": "selbstauskunft"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus",
+      "strobl": "strobl",
+      "hobmaier": "strobl"
     }
   },
   {
@@ -27146,22 +27320,55 @@
     "date": "2026-04-20",
     "title": "Studentenwohnheim Saliterstraße 8 und 10",
     "text": "Das gemeindliche Einvernehmen ist nach § 36 BauGB nicht erforderlich, da der gemeindliche Planungswille durch Wahrung des Bebauungsplans gewürdigt wurde. Der Stadtrat beschließt, keine weiteren Maßnahmen zur Sicherung der Bauleitplanung nach §§ 14 und 15 BauGB zu treffen.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 22,
-      "no": 1,
-      "absent": 2
-    },
-    "voters": {
-      "marcus": "yes"
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "gruber",
+        "heinz"
+      ]
     },
     "voterSource": {
       "marcus": [
         "selbstauskunft"
+      ],
+      "strobl": [
+        "selbstauskunft"
       ]
     },
     "source": {
-      "tier": "selbstauskunft"
+      "tier": "selbstauskunft",
+      "by": "strobl"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus",
+      "strobl": "strobl"
     }
   },
   {
@@ -27171,22 +27378,55 @@
     "date": "2026-04-20",
     "title": "Mehrfamilienhaus mit 23 Wohneinheiten – Graf-Burkhard-Straße 2",
     "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen und stimmt den beantragten Befreiungen von den Festsetzungen des Bebauungsplans zu.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 22,
-      "no": 1,
-      "absent": 2
-    },
-    "voters": {
-      "marcus": "yes"
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "gruber",
+        "heinz"
+      ]
     },
     "voterSource": {
       "marcus": [
         "selbstauskunft"
+      ],
+      "strobl": [
+        "selbstauskunft"
       ]
     },
     "source": {
-      "tier": "selbstauskunft"
+      "tier": "selbstauskunft",
+      "by": "strobl"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus",
+      "strobl": "strobl"
     }
   },
   {
@@ -27196,11 +27436,39 @@
     "date": "2026-04-20",
     "title": "Mehrfamilienhaus mit 16 Wohneinheiten – Weihmühlstraße 21",
     "text": "Der Stadtrat erteilt das gemeindliche Einvernehmen und stimmt den beantragten Befreiungen von den Festsetzungen des Bebauungsplans zu.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 21,
-      "no": 1,
-      "absent": 3
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "marcus",
+        "hobmaier",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [
+        "strobl"
+      ],
+      "absent": [
+        "gruber",
+        "heinz",
+        "hadersdorfer"
+      ]
     },
     "excluded": [
       {
@@ -27208,16 +27476,21 @@
         "reason": "kurzfristig abwesend"
       }
     ],
-    "voters": {
-      "marcus": "yes"
-    },
     "voterSource": {
       "marcus": [
+        "selbstauskunft"
+      ],
+      "strobl": [
         "selbstauskunft"
       ]
     },
     "source": {
-      "tier": "selbstauskunft"
+      "tier": "selbstauskunft",
+      "by": "strobl"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus",
+      "strobl": "strobl"
     }
   },
   {
@@ -27287,6 +27560,29 @@
     },
     "source": {
       "tier": "selbstauskunft"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
+    },
+    "voterHints": {
+      "strobl": {
+        "vote": "yes",
+        "evidence": "weich",
+        "by": "strobl",
+        "note": "Eigene Wortmeldung für dezentrale Energieversorgung"
+      },
+      "becher_j": {
+        "vote": "yes",
+        "evidence": "weich",
+        "by": "strobl",
+        "note": "„Auch der Hr. Becher bekräftigte dies“ (Flächenverbrauch nicht in Relation)"
+      },
+      "welter": {
+        "vote": "no",
+        "evidence": "weich",
+        "by": "strobl",
+        "note": "„Ich sehe da Felder!“ (Flächenverbrauch)"
+      }
     }
   },
   {
@@ -27713,6 +28009,9 @@
     },
     "source": {
       "tier": "selbstauskunft"
+    },
+    "voterSourceBy": {
+      "marcus": "marcus"
     }
   },
   {
