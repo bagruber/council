@@ -66,6 +66,8 @@ const REIHENFOLGE = {
 const SEARCH_PAGES = [
   { href: "#/statistik", title: "Statistik",  meta: "Abstimmungsverhalten, Nähe-Matrix, Nähe-Netz" },
   { href: "#/datenlage", title: "Datenlage",  meta: "Was zu welcher Sitzung vorliegt" },
+  { href: "#/methodik",  title: "So entsteht diese Seite",
+    meta: "Herkunft der Daten, Rechenregeln, Gemeindeordnung" },
   { href: "#/presse",    title: "Presseschau", meta: "Berichte über Sitzungen und Beschlüsse" },
   { href: "#/gremien",   title: "Gremien",    meta: "Stadtrat, Ausschüsse, Fraktionen" },
 ];
