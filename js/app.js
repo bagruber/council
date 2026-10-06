@@ -42,7 +42,15 @@ document.addEventListener("click", evt => {
   try {
     await ladeDaten();
   } catch (err) {
-    main.innerHTML = `<p style="color:var(--no);padding:40px 0">Daten konnten nicht geladen werden. Bitte mit einem lokalen Webserver \u00f6ffnen (z.B. <code>npx serve</code>).</p>`;
+    // Wer das hier liest, sitzt vor der oeffentlichen Seite und nicht vor dem
+    // Quelltext. Der Hinweis auf einen lokalen Webserver war an die falschen
+    // Leute gerichtet; die Ursache steht in der Konsole.
+    main.innerHTML = `<div class="ladefehler">
+      <h1>Die Daten lassen sich gerade nicht laden.</h1>
+      <p>M\u00f6glicherweise ist die Verbindung unterbrochen \u2014 ein erneutes Laden
+      der Seite hilft meistens. Bleibt es dabei, freue ich mich \u00fcber einen
+      Hinweis an <a href="mailto:info@gruber.am">info@gruber.am</a>.</p>
+    </div>`;
     console.error("Datenfehler:", err);
     return;
   }

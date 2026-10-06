@@ -126,7 +126,7 @@ If 10+ procedural sub-votes (e.g. „15 Stellungnahmen alle 21:0") share the sam
 Existing topics (check `data/topics.json` for current list and titles):
 - t1–t19 currently exist; titles may evolve.
 
-**Watchlist zuerst:** `data/knowledge/topic-watchlist.md` enthält vom User
+**Watchlist zuerst:** `quellen/knowledge/topic-watchlist.md` enthält vom User
 benannte Themen, die auf jeden Fall eigene Topic-Seiten bekommen sollen.
 Passt ein TOP zu einem Watchlist-Eintrag:
 - Topic existiert schon (Status = `tN`) → normal zuordnen.

@@ -851,6 +851,27 @@ a.cat-line:hover { text-decoration: underline; }
 
 .topic-header .topic-tags { margin-top: 18px; }
 
+/* Der Bestand kam nicht an. Liest sich wie eine Seite, nicht wie ein Fehler. */
+.ladefehler {
+  padding: 60px 0;
+  max-width: 54ch;
+}
+
+.ladefehler h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.15;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.ladefehler p {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
 
 .topic-header .topic-summary { color: var(--text-muted); font-size: 1rem; }
 .topic-header .topic-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px 14px; }

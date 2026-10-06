@@ -27,9 +27,16 @@ Der Workflow schließt aus:
 | `img/members/originals/**` | 167 MB unkomprimierte PNG-Vorlagen, aus denen die `.webp` erzeugt wurden. Die Seite referenziert sie nirgends. Ohne sie sinkt der Upload von 199 MB auf 32 MB. |
 | Werkzeug-Ordner mit führendem Punkt | Konkrete Einträge siehe `moosburg-eu.yml`. `**/.git*` deckt `.github` und `.gitignore` ab, **nicht** beliebige Punkt-Ordner: Deren `.md`-Dateien fielen zwar unter `**/*.md`, die leeren Verzeichnisse landeten trotzdem auf dem Server. Wer einen neuen anlegt, trägt ihn nach. |
 | `docs/**`, `scripts/**`, `**/*.md` | Gehört nicht zur ausgelieferten Seite. |
+| `quellen/**` | Rohquellen und Arbeitsnotizen. Steht ohnehin in der `.gitignore`, der Ausschluss gilt dem lokalen Arbeitsstand. |
 
 Der erste Deploy überträgt rund 32 MB und dauert etwa zwei Minuten, danach
 läuft er inkrementell.
+
+**Ein Ausschluss vom Deploy reicht nicht.** GitHub Pages liefert `main` roh
+aus — ohne Workflow, ohne Ausschlussliste. Was nicht öffentlich sein soll,
+muss deshalb aus dem Repo und nicht bloß aus dem Deploy. Dafür gibt es
+`quellen/`: in der `.gitignore`, lokal vollständig. Die Historie bleibt davon
+unberührt; einmal eingecheckt, bleibt eine Datei über alte Commits abrufbar.
 
 ## Pfade müssen relativ bleiben
 

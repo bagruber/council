@@ -25,7 +25,7 @@ import json, os, re, sys, time, argparse, urllib.parse, urllib.request, html
 from concurrent.futures import ThreadPoolExecutor
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-CRAWL = os.path.join(BASE, 'data', 'crawl')
+CRAWL = os.path.join(BASE, 'quellen', 'crawl')
 CACHE = os.path.join(CRAWL, 'cache')
 UA = 'Mozilla/5.0 (compatible; council-research/1.0; lokale Recherche Stadtrat Moosburg)'
 

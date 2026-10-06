@@ -4,16 +4,14 @@ package.json
 package-lock.json
 __pycache__/
 debug.log
-data/crawl/cache/
-data/crawl/index.json
-data/crawl/sweep.log
-data/crawl/findings.json
-data/crawl/targets.json
-data/crawl/candidates.json
-data/crawl/zuordnung.json
 docs/offene-stimmen/
 docs/anwesenheit-luecken.txt
 docs/selbstauskuenfte/
 
-# Rohdaten des Vote-Trackings nur lokal, eingepflegt wird in votes.json
+# Rohquellen und Arbeitsnotizen bleiben lokal. GitHub Pages liefert das Repo
+# roh aus, also waere hier oeffentlich, was im Repo steht: Mitschriften,
+# Presserecherche im Rohzustand, Projektnotizen. Eingepflegt wird in die
+# JSON-Dateien unter data/, und die sind die Auskunft.
+quellen/
 data/vote_tracking/
+data/*.docx

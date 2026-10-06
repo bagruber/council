@@ -7,13 +7,14 @@ in der Zeitung, wenn ueberhaupt. Entsprechend wird sortiert.
 
 Aufruf:
     python scripts/crawl/targets.py            # Top 40 auf die Konsole
-    python scripts/crawl/targets.py --json     # data/crawl/targets.json
+    python scripts/crawl/targets.py --json     # quellen/crawl/targets.json
     python scripts/crawl/targets.py --limit 80 --since 2023-01-01
 """
 import json, os, re, sys, argparse
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA = os.path.join(BASE, 'data')
+QUELLEN = os.path.join(BASE, 'quellen')
 
 # Woerter, die in jeder zweiten Beschlussvorlage stehen und als Suchbegriff
 # nichts eingrenzen.
@@ -153,7 +154,7 @@ if __name__ == '__main__':
 
     rows = build(a.limit, a.since, a.until)
     if a.json:
-        out = os.path.join(DATA, 'crawl', 'targets.json')
+        out = os.path.join(QUELLEN, 'crawl', 'targets.json')
         os.makedirs(os.path.dirname(out), exist_ok=True)
         json.dump(rows, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
         print(f'{len(rows)} Ziele -> {out}')

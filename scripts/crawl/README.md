@@ -6,7 +6,7 @@ Abstimmungsverhalten genannt werden, und ordnet die Fundstellen den Voten
 in `data/votes.json` zu.
 
 **Die Pipeline schreibt nichts in den Datenbestand.** Ergebnis ist ein
-Vorschlag mit Belegsatz in `data/crawl/`, der von Hand geprüft und dann
+Vorschlag mit Belegsatz in `quellen/crawl/`, der von Hand geprüft und dann
 über `/presseartikel-einarbeiten` bzw. `scripts/apply_presse_stimmen.py`
 eingetragen wird.
 
@@ -48,7 +48,7 @@ python scripts/crawl/fetch.py sweep                 # Volltexte holen (~500, dau
 python scripts/crawl/extract.py --report            # auswerten
 ```
 
-Ergebnis in `data/crawl/`:
+Ergebnis in `quellen/crawl/`:
 
 - `targets.json` — Voten, sortiert danach, wie wahrscheinlich die Zeitung
   Namen genannt hat: knappes Ergebnis, einzelne Gegenstimme, Plenum statt
