@@ -1,7 +1,5 @@
 // Presseschau: alle verlinkten Zeitungsartikel, und woran sie hängen.
-import {
-  sessions, topics, members, pressData, mediaMap,
-} from "../daten.js";
+import { sessions, topics, members, pressData, mediaMap } from "../daten.js";
 import { formatDate } from "../hilfen.js";
 import { backLink } from "../routing.js";
 import { html } from "../html.js";

@@ -2,7 +2,7 @@
 // Bausteine (Brotkrumen, Presse-Links, Kategorie-Chips), die auch andere
 // Views einbetten.
 import {
-  topics, votes, pressData, tagMap, topicMap, voteMap,
+  topics, votes, tagMap, topicMap, voteMap,
   sessionMap, pressMap, mediaMap, bestand,
 } from "../daten.js";
 import { formatDate, kategorieTon } from "../hilfen.js";

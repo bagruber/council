@@ -1,76 +1,18 @@
-// Die drei Übersichtsseiten samt ihrer Diagramme: Sitzungsstatistik
-// (Dauer-Punkte, Jahresstunden, Mediane), Datenlage (Register mit
-// Herkunftsstufen) und Presseschau.
+// Sitzungsstatistik: wie lang die Sitzungen dauern, und wer mit wem stimmt.
 import {
-  sessions, topics, members, pressData, mediaMap,
-  sessionMap, sessionRegister, bestand, votenVon, tierCounts, dauerMin,
-  protocolUrl, isWebauszug, SITZUNGSARTEN, sitzungsart,
+  sessionRegister, bestand, dauerMin, sitzungsart, SITZUNGSARTEN,
 } from "../daten.js";
-import { formatDate, formatDuration, monthNames } from "../hilfen.js";
+import { formatDate, formatDuration } from "../hilfen.js";
 import { navigate, route, backLink } from "../routing.js";
 import { PERIODS } from "../aehnlichkeit.js";
 import { drawSimMatrix, drawSimGraph } from "./naehe.js";
 import { html, roh } from "../html.js";
+import {
+  chartColor, median, monat, monatJahr,
+  chartTipShow, chartTipMove, chartTipHide, chartCard,
+} from "./diagramme.js";
 
 const main = document.getElementById("main");
-
-// -- Statistik --
-
-// Diagramme und Register kennen die Sitzung unter ihrer Art (stadtrat/bpu/
-// hvfa), nicht unter ihrem Gremium — Label und Farbe kommen aus daten.js.
-const chartColor = {};
-SITZUNGSARTEN.forEach(a => { chartColor[a.type] = a.color; });
-
-function median(arr) {
-  const s = [...arr].sort((a, b) => a - b);
-  const mid = s.length >> 1;
-  return s.length % 2 ? s[mid] : Math.round((s[mid - 1] + s[mid]) / 2);
-}
-
-// Zeitraeume stehen nicht mehr fest im Text. "Wahlperiode 2020-2026" und
-// "seit Mai 2020" waren beide falsch, sobald die Daten ueber die Grenzen
-// hinausreichten -- und jede neue Sitzung haette sie wieder veralten lassen.
-const monat = iso => monthNames[Number(iso.slice(5, 7)) - 1];
-const monatJahr = iso => monat(iso) + " " + iso.slice(0, 4);
-
-const chartTip = document.getElementById("tooltip");
-
-function chartTipShow(evt, inhalt) {
-  chartTip.innerHTML = inhalt;
-  chartTip.classList.remove("hidden");
-  chartTipMove(evt);
-}
-function chartTipMove(evt) {
-  const cx = evt.clientX + 14, cy = evt.clientY - 10;
-  const r = chartTip.getBoundingClientRect();
-  chartTip.style.left = Math.min(cx, window.innerWidth - r.width - 8) + "px";
-  chartTip.style.top = Math.max(4, cy - r.height) + "px";
-}
-function chartTipHide() {
-  chartTip.classList.add("hidden");
-}
-
-function chartLegend() {
-  return html`<div class="chart-legend">${SITZUNGSARTEN.map(b =>
-    html`<span><span class="chart-dot" style="background:${b.color}"></span>${b.label}</span>`)}</div>`;
-}
-
-function chartCard(title, foot, drawFn, data, withLegend) {
-  const card = document.createElement("div");
-  card.className = "chart-card";
-  card.innerHTML = html`<h3>${title}</h3>${withLegend && chartLegend()}`;
-  const chartEl = document.createElement("div");
-  card.appendChild(chartEl);
-  if (foot) {
-    const f = document.createElement("div");
-    f.className = "chart-foot";
-    f.textContent = foot;
-    card.appendChild(f);
-  }
-  // Breite erst nach dem Einhängen messbar
-  requestAnimationFrame(() => drawFn(chartEl, data));
-  return card;
-}
 
 function renderStatistik() {
   main.appendChild(backLink("Übersicht", "#/"));
@@ -166,291 +108,6 @@ function periodCard(parent, title, foot, drawFn) {
   drawFn(chartEl, PERIODS[0].id);
   // Höhe festhalten, sonst springt die Seite beim Periodenwechsel
   chartEl.style.minHeight = chartEl.offsetHeight + "px";
-}
-
-// -- Datenlage: was liegt zu welcher Sitzung vor --
-
-const TIERS = [
-  { key: "explicit", label: "namentlich",    hint: "Die Niederschrift nennt jeden Namen." },
-  { key: "implicit", label: "abgeleitet",    hint: "Einstimmig, aus der Anwesenheit erschlossen." },
-  { key: "tracked",  label: "mitgeschrieben", hint: "Im Saal vollständig erfasst — Tool oder Mitschrift." },
-  { key: "press",    label: "aus Presse",    hint: "Aus einem Zeitungsartikel rekonstruiert." },
-  { key: "selbstauskunft", label: "Selbstauskunft", hint: "Aus eigenen Notizen eines Ratsmitglieds rekonstruiert." },
-  { key: "sum",      label: "nur Ergebnis",  hint: "Nur die Gesamtzahlen sind bekannt." },
-];
-
-// Wie viel Presse liegt zu einer Sitzung vor — am Abend selbst und an
-// einzelnen Punkten. Die Zahl ist als Rechercheanzeige gedacht: wo nichts
-// steht, lohnt das Nachsehen, wo etwas steht, ist es schon gesichtet.
-function pressOfSession(session) {
-  if (!session) return { session: 0, tops: 0, total: 0, topsWith: 0, topsVoted: 0 };
-  const ids = new Set(session.press || []);
-  let topsWith = 0, topsVoted = 0;
-  (session.agenda || []).forEach(a => {
-    if ((a.voteIds || []).length) topsVoted++;
-    if ((a.press || []).length) {
-      topsWith++;
-      a.press.forEach(id => ids.add(id));
-    }
-  });
-  return { session: (session.press || []).length, tops: topsWith,
-           total: ids.size, topsWith, topsVoted };
-}
-
-function pressBadge(p) {
-  if (!p.total) {
-    return html`<span class="reg-presse none" title="Kein Zeitungsartikel verknüpft">–</span>`;
-  }
-  const anTops = p.topsWith
-    ? `, davon ${p.topsWith} von ${p.topsVoted} Punkten zugeordnet`
-    : ", noch keinem Punkt zugeordnet";
-  return html`<span class="reg-presse" title="${p.total} Artikel${anTops}">${p.total} Presse</span>`;
-}
-
-// `filter` schränkt auf eine Herkunftsstufe (explicit/implicit/tracked/press/
-// sum) oder eine Erfassungsstufe (protokoll/auszug/keine/presse/ohne-presse) ein.
-function renderDatenlage(filter) {
-  main.appendChild(backLink("Übersicht", "#/"));
-
-  const b = bestand();
-  const reg = sessionRegister();
-  const stufe = x => reg.filter(r => r.niederschrift === x);
-  const protokoll = stufe("vollständig");
-  const auszug = stufe("auszug");
-  const erfasst = reg.filter(r => r.niederschrift !== "keine");
-  const all = tierCounts(reg.flatMap(votenVon));
-  const traceable = b.abstimmungen - all.sum;
-
-  const header = document.createElement("div");
-  header.className = "topic-header";
-  header.innerHTML = html`
-    <h1>Datenlage</h1>
-    <div class="topic-summary">Jede öffentliche Sitzung seit ${monatJahr(b.seit)}, und was von ihr vorliegt.
-      Gezählt ist, was stattgefunden hat — Sitzungen ohne Niederschrift stehen
-      bewusst mit in der Liste, die Lücke gehört zur Auskunft dazu.</div>`;
-  main.appendChild(header);
-
-  const tiles = document.createElement("div");
-  tiles.className = "stat-tiles";
-  tiles.innerHTML = html`
-    <div class="stat-tile"><div class="stat-tile-value">${b.vollstaendig} <small>/ ${b.sitzungen}</small></div><div class="stat-tile-label">Sitzungen mit Niederschrift</div></div>
-    <div class="stat-tile"><div class="stat-tile-value">${b.abstimmungen}</div><div class="stat-tile-label">erfasste Abstimmungen</div></div>
-    <div class="stat-tile"><div class="stat-tile-value">${Math.round(traceable / b.abstimmungen * 100)} %</div><div class="stat-tile-label">Stimmverhalten nachvollziehbar</div></div>`;
-  main.appendChild(tiles);
-
-  // Jede Kennzahl ist ein Filter auf sich selbst. Nochmal draufklicken hebt auf.
-  const chip = (key, cls, label, n, hint) =>
-    html`<a class="tier-chip ${cls}${filter === key ? " on" : ""}"
-        href="#/datenlage${filter === key ? "" : "/" + key}" title="${hint}">${label} <b>${n}</b></a>`;
-
-  const levels = document.createElement("div");
-  levels.className = "tier-legend";
-  levels.innerHTML = html`${[
-    chip("protokoll", "level-protokoll", "Niederschrift", b.vollstaendig,
-         "Niederschrift mit Anwesenheitsliste"),
-    chip("auszug", "level-auszug", "nur Beschlussauszug", b.auszug,
-         "Beschlussauszug der Stadt, ohne Anwesenheitsliste"),
-    chip("keine", "level-keine", "nichts veröffentlicht", b.keine,
-         "Weder Niederschrift noch Auszug veröffentlicht"),
-  ]}`;
-  main.appendChild(levels);
-
-  // Presselage getrennt von der Aktenlage: eine Sitzung kann lückenlos
-  // protokolliert und trotzdem unbeschrieben sein, und umgekehrt.
-  const mitPresse = erfasst.filter(r => pressOfSession(r).total);
-  const presse = document.createElement("div");
-  presse.className = "tier-legend";
-  presse.innerHTML = html`${[
-    chip("presse", "level-protokoll", "mit Presseartikel", mitPresse.length,
-         "Mindestens ein Zeitungsartikel ist verknüpft"),
-    chip("ohne-presse", "level-keine", "ohne Presseartikel",
-         erfasst.length - mitPresse.length,
-         "Noch kein Artikel verknüpft — hier lohnt die Recherche"),
-  ]}`;
-  main.appendChild(presse);
-
-  const legend = document.createElement("div");
-  legend.className = "tier-legend";
-  legend.innerHTML = html`${TIERS.map(t =>
-    chip(t.key, "tier-" + t.key, t.label, all[t.key], t.hint))}`;
-  main.appendChild(legend);
-
-  // Herkunftsstufe: die Abstimmungen selbst auflisten, nicht die Sitzungen —
-  // "elf namentliche Abstimmungen" will man lesen, nicht suchen.
-  const tier = TIERS.find(t => t.key === filter);
-  if (tier) {
-    main.appendChild(tierVoteList(tier, erfasst));
-    return;
-  }
-  const rows = filter === "protokoll"    ? protokoll
-             : filter === "auszug"       ? auszug
-             : filter === "keine"        ? stufe("keine")
-             : filter === "presse"       ? mitPresse
-             : filter === "ohne-presse"  ? erfasst.filter(r => !pressOfSession(r).total)
-             : reg;
-  if (filter && rows !== reg) {
-    const note = document.createElement("p");
-    note.className = "chart-foot";
-    note.textContent = rows.length + " von " + reg.length + " Sitzungen.";
-    main.appendChild(note);
-  }
-
-  let year = null;
-  const table = document.createElement("table");
-  table.className = "register";
-  const body = document.createElement("tbody");
-  rows.forEach(r => {
-    if (r.date.slice(0, 4) !== year) {
-      year = r.date.slice(0, 4);
-      const head = document.createElement("tr");
-      head.className = "register-year";
-      head.innerHTML = html`<th colspan="4">${year}</th>`;
-      body.appendChild(head);
-    }
-    const label = sitzungsart(r.type).label;
-    const min = dauerMin(r);
-    const dur = min ? formatDuration(min) : r.start ? r.start + " Uhr" : "";
-    const voten = votenVon(r);
-    const c = tierCounts(voten);
-    const bar = voten.length > 0 && html`<span class="tier-bar">${TIERS.filter(t => c[t.key])
-          .map(t => html`<span class="tier-${t.key}" style="flex:${c[t.key]}" title="${c[t.key]}× ${t.label}"></span>`)}</span>`;
-
-    const web = isWebauszug(r);
-    const doc = r.niederschrift === "keine" ? ""
-      : web
-        ? ((r.source || {}).url
-            ? html`<a class="reg-pdf" href="${r.source.url}" target="_blank" rel="noopener"
-                  title="Beschlussauszug der Stadt, ohne Anwesenheitsliste"><svg class="icon"><use href="#i-language"/></svg></a>`
-            : "")
-        : html`<a class="reg-pdf" href="${protocolUrl(r)}" target="_blank" rel="noopener"
-              title="Niederschrift als PDF"><svg class="icon"><use href="#i-description"/></svg></a>`;
-
-    const tr = document.createElement("tr");
-    tr.className = r.niederschrift === "keine" ? "register-gap" : web ? "register-partial" : "";
-    tr.innerHTML = html`
-      <td class="reg-date">${formatDate(r.date)}</td>
-      <td class="reg-body"><span class="reg-dot" style="background:${chartColor[r.type]}"></span>${label}</td>
-      <td class="reg-dur">${dur}</td>
-      <td class="reg-data">${r.agenda
-        ? html`<a href="#/session/${r.id}">${voten.length} Abstimmung${
-            voten.length === 1 ? "" : "en"}</a>${
-            web && html`<span class="reg-flag">ohne Anwesenheitsliste</span>`}${bar}${doc}${pressBadge(pressOfSession(r))}`
-        : html`<span class="reg-none">nichts veröffentlicht</span>`}</td>`;
-    body.appendChild(tr);
-  });
-  table.appendChild(body);
-  main.appendChild(table);
-}
-
-// Alle Abstimmungen einer Herkunftsstufe, nach Sitzung gruppiert
-function tierVoteList(tier, erfasst) {
-  const wrap = document.createElement("div");
-  const hit = r => votenVon(r).filter(v => {
-    const t = (v.source || {}).tier;
-    return tier.key === "sum" ? !t
-         : tier.key === "explicit" ? t === "protocol-explicit"
-         : tier.key === "implicit" ? t === "protocol-implicit"
-         : t === tier.key;
-  });
-  const groups = erfasst.map(r => [r, hit(r)]).filter(([, v]) => v.length);
-  const n = groups.reduce((a, [, v]) => a + v.length, 0);
-
-  const note = document.createElement("p");
-  note.className = "chart-foot";
-  note.textContent = n + " Abstimmung" + (n === 1 ? "" : "en") + " in "
-    + groups.length + " Sitzung" + (groups.length === 1 ? "" : "en") + ". " + tier.hint;
-  wrap.appendChild(note);
-
-  const table = document.createElement("table");
-  table.className = "register";
-  const body = document.createElement("tbody");
-  groups.forEach(([r, list]) => {
-    const label = sitzungsart(r.type).label;
-    const head = document.createElement("tr");
-    head.className = "register-group";
-    head.innerHTML = html`<th colspan="2"><a href="#/session/${r.id}"><span class="reg-dot"
-      style="background:${chartColor[r.type]}"></span>${formatDate(r.date)} · ${label}</a></th>`;
-    body.appendChild(head);
-    list.forEach(v => {
-      const res = v.type === "named"
-        ? `${v.results.yes.length}:${v.results.no.length}`
-        : `${v.results.yes}:${v.results.no}`;
-      const tr = document.createElement("tr");
-      tr.innerHTML = html`<td class="reg-title"><a href="#/session/${r.id}">${v.title}</a></td>
-                      <td class="reg-dur">${res}</td>`;
-      body.appendChild(tr);
-    });
-  });
-  table.appendChild(body);
-  wrap.appendChild(table);
-  return wrap;
-}
-
-// -- Presseschau --
-
-// Presseartikel hängen an Sitzungen, Dossiers und Anträgen. Für die Übersicht
-// wird der Weg umgedreht: je Artikel, woran er hängt.
-function pressContext() {
-  const ctx = {};
-  // Ein Artikel hängt oft an der Sitzung und zusätzlich an einem ihrer Punkte.
-  // In der Presseschau ist das derselbe Verweis und soll nur einmal stehen.
-  const add = (ids, entry) => (ids || []).forEach(id => {
-    const list = ctx[id] || (ctx[id] = []);
-    if (!list.some(e => e.href === entry.href && e.kind === entry.kind)) list.push(entry);
-  });
-  sessions.forEach(s => {
-    add(s.press, { kind: "Sitzung", label: s.title, href: "#/session/" + s.id });
-    (s.agenda || []).forEach(a =>
-      add(a.press, { kind: "Sitzung", label: s.title, href: "#/session/" + s.id }));
-  });
-  topics.forEach(t => (t.history || []).forEach(h =>
-    add(h.press, { kind: "Dossier", label: t.title, href: "#/topic/" + t.id })));
-  members.forEach(m => ((m.profile || {}).motions || []).forEach(mo =>
-    add(mo.press, { kind: "Antrag", label: mo.title, href: "#/member/" + m.id })));
-  return ctx;
-}
-
-function renderPresse() {
-  main.appendChild(backLink("Übersicht", "#/"));
-
-  const ctx = pressContext();
-  const arts = [...pressData].sort((a, b) => b.date.localeCompare(a.date));
-
-  const header = document.createElement("div");
-  header.className = "topic-header";
-  header.innerHTML = html`
-    <h1>Presseschau</h1>
-    <div class="topic-summary">Alle Zeitungsartikel, die in dieser App verlinkt sind — zu Sitzungen,
-      Dossiers und Anträgen. Die Artikel bleiben bei ihren Häusern, hier steht nur der Verweis.</div>`;
-  main.appendChild(header);
-
-  let year = null;
-  const list = document.createElement("div");
-  list.className = "press-list";
-  arts.forEach(p => {
-    if (p.date.slice(0, 4) !== year) {
-      year = p.date.slice(0, 4);
-      const h = document.createElement("h2");
-      h.className = "section-label";
-      h.textContent = year;
-      list.appendChild(h);
-    }
-    const src = mediaMap[p.media] || { name: p.media, color: "#999" };
-    const row = document.createElement("div");
-    row.className = "press-row";
-    row.innerHTML = html`
-      <span class="press-medium" style="background:${src.color}">${src.logo
-        ? html`<img src="${src.logo}" alt="${src.name}">` : src.name}</span>
-      <div>
-        <a class="press-title" href="${p.url}" target="_blank" rel="noopener">${p.title}
-          <svg class="icon"><use href="#i-open_in_new"/></svg></a>
-        <div class="press-meta">${formatDate(p.date)} · ${src.name}</div>
-        <div class="press-refs">${(ctx[p.id] || [])
-          .map(c => html`<a href="${c.href}"><span class="press-ref-kind">${c.kind}</span>${c.label}</a>`)}</div>
-      </div>`;
-    list.appendChild(row);
-  });
-  main.appendChild(list);
 }
 
 function drawDurationDots(el, entries) {
@@ -645,7 +302,7 @@ function buildStatsTable(entries) {
 
 // Charts sind auf Containerbreite gezeichnet, bei Größenänderung neu aufbauen
 let statsResizeTimer;
-export function initStatistik() {
+function initStatistik() {
   window.addEventListener("resize", () => {
     const path = (window.location.hash.slice(1) || "/").split("?")[0];
     if (path !== "/statistik") return;
@@ -654,4 +311,5 @@ export function initStatistik() {
   });
 }
 
-export { renderStatistik, renderDatenlage, renderPresse };
+
+export { renderStatistik, initStatistik };

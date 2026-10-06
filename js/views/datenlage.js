@@ -1,12 +1,12 @@
 // Datenlage: das Sitzungsregister mit dem, was von jeder Sitzung vorliegt,
 // und die Herkunftsstufen der Einzelstimmen.
 import {
-  pressData, sessionRegister, bestand, votenVon, tierCounts, dauerMin,
+  sessionRegister, bestand, votenVon, tierCounts, dauerMin,
   protocolUrl, isWebauszug, sitzungsart,
 } from "../daten.js";
 import { formatDate, formatDuration } from "../hilfen.js";
 import { backLink } from "../routing.js";
-import { html, roh } from "../html.js";
+import { html } from "../html.js";
 import { chartColor, monatJahr } from "./diagramme.js";
 
 const main = document.getElementById("main");
@@ -229,4 +229,4 @@ function tierVoteList(tier, erfasst) {
   return wrap;
 }
 
-export { renderDatenlage, TIERS, pressOfSession, pressBadge };
+export { renderDatenlage };
