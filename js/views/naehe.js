@@ -732,3 +732,5 @@ function drawSimGraph(el, periodId) {
 }
 
 export { PERIODS, stances, partyAtDate, renderSimilarity, drawSimMatrix, drawSimGraph };
+// Fuer die Tests in tests/naehe.test.mjs
+export { similarity, simScore };
