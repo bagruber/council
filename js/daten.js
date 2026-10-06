@@ -3,6 +3,8 @@
 // sie stehen erst nach ladeDaten() — der Einstieg (app.js) wartet darauf,
 // bevor er rendert.
 
+import { Council } from "./core.js";
+
 let topics, sessions, votes, tags, pressData, partiesData;
 let members, parties, bodies, seatOrder, mediaSources;
 const mediaMap = {};

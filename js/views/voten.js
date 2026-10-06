@@ -5,6 +5,9 @@ import {
   members, parties, seatOrder, sessionMap, bodyMap, pressMap, mediaMap,
   bodyIdForSession,
 } from "../daten.js";
+import { Council } from "../core.js";
+import { VoteVis } from "../parliament.js";
+import { html } from "../html.js";
 
 // -- Vote block --
 
@@ -20,37 +23,38 @@ function renderVoteSource(vote) {
   const label = Council.sourceLabel(vote);
   if (!label) {
     return vote.type === "anonymous" && vote.results.yes && vote.results.no
-      ? `<div class="vote-source">Nur das Ergebnis ist überliefert, nicht wer wie gestimmt hat.</div>`
+      ? html`<div class="vote-source">Nur das Ergebnis ist überliefert, nicht wer wie gestimmt hat.</div>`
       : "";
   }
-  const parts = [label];
+  const teile = [label];
   // Wer mitschreibt, sitzt nicht zwangsläufig im Rat: Presseleute haben
   // keine Mitglieds-ID. Für sie trägt source.byName den Namen — sonst
   // stünde „mitgeschrieben“ da, ohne zu sagen von wem, und das ist der
   // halbe Wert der Angabe.
   const m = vote.source.by && members.find(x => x.id === vote.source.by);
-  if (m) parts.push(`${m.firstName.charAt(0)}. ${m.lastName}`);
-  else if (vote.source.byName) parts.push(vote.source.byName);
-  let html = parts.join(" · ");
+  if (m) teile.push(`${m.firstName.charAt(0)}. ${m.lastName}`);
+  else if (vote.source.byName) teile.push(vote.source.byName);
+  const zeile = [html`${teile.join(" · ")}`];
+
   // Bei Stufe "press" ist der Artikel die Quelle, nicht die Bestätigung. Wo er
   // zu einer eigenen Erfassung dazukommt, deckt er in aller Regel nur einen
   // Teil der Stimmen ab — "bestätigt" allein verspräche zu viel.
-  const confirm = vote.source.tier === "press" ? "zum Artikel"
+  const bestaetigt = vote.source.tier === "press" ? "zum Artikel"
     : vote.source.pressScope === "full" ? "durch Presse bestätigt"
     : "teilweise durch Presse bestätigt";
   // Eine Abstimmung kann auf mehreren Artikeln ruhen — dann bekommt jeder
   // seinen eigenen Link, mit dem Medium als Beschriftung.
-  const ids = [].concat(vote.source.pressId || []);
-  const arts = ids.map(id => pressMap[id]).filter(Boolean);
+  const arts = [].concat(vote.source.pressId || [])
+    .map(id => pressMap[id]).filter(Boolean);
   if (arts.length === 1) {
-    html += ` · <a href="${arts[0].url}" target="_blank" rel="noopener">${confirm}</a>`;
+    zeile.push(html` · <a href="${arts[0].url}" target="_blank" rel="noopener">${bestaetigt}</a>`);
   } else if (arts.length > 1) {
-    html += " · " + confirm + ": " + arts.map(a =>
-      `<a href="${a.url}" target="_blank" rel="noopener">${
-        (mediaMap[a.media] || {}).name || a.media}</a>`).join(", ");
+    zeile.push(html` · ${bestaetigt}: ${arts.map((a, i) => html`${i ? ", " : ""}<a href="${
+      a.url}" target="_blank" rel="noopener">${(mediaMap[a.media] || {}).name || a.media}</a>`)}`);
   } else if (vote.source.pressVerified) {
-    html += " · " + confirm;
+    zeile.push(html` · ${bestaetigt}`);
   }
+
   // Wo einzelne Positionen nur aus einer Wortmeldung stammen, steht das dabei.
   // Keine eigene Farbe im Halbrund — wer etwas befürwortet hat, wird in der
   // Regel auch dafür gestimmt haben; sicher ist es nur nicht.
@@ -59,10 +63,9 @@ function renderVoteSource(vote) {
   if (weich.length) {
     const namen = weich.map(id => (members.find(m => m.id === id) || {}).lastName)
                        .filter(Boolean).join(", ");
-    html += `<br><span class="vote-source-weich">${namen}: aus der Debatte`
-          + ` erschlossen, nicht als Stimme berichtet.</span>`;
+    zeile.push(html`<br><span class="vote-source-weich">${namen}: aus der Debatte erschlossen, nicht als Stimme berichtet.</span>`);
   }
-  return `<div class="vote-source">${html}</div>`;
+  return html`<div class="vote-source">${zeile}</div>`;
 }
 
 function renderVoteBlock(container, vote) {
@@ -79,15 +82,15 @@ function renderVoteBlock(container, vote) {
   };
   const st = STATUS[vote.result] || { cls: "approved", text: "Angenommen" };
   const isAntrag = /\bAntrag\b|\bAnträge\b/i.test(vote.title);
-  const resultTag = `<span class="vote-result-tag ${st.cls}${isAntrag ? " subtle" : ""}">${st.text}</span>`;
+  const resultTag = html`<span class="vote-result-tag ${st.cls}${isAntrag ? " subtle" : ""}">${st.text}</span>`;
 
-  block.innerHTML = `
+  block.innerHTML = html`
     <button class="vote-help-btn" aria-label="Legende" title="Was bedeutet was?">
       <svg class="icon"><use href="#i-help_outline"/></svg>
     </button>
     <h4>${vote.title}${resultTag}</h4>
     <div class="vote-text">${vote.text}</div>
-    ${vote.note ? `<p class="vote-note">${vote.note}</p>` : ""}
+    ${vote.note && html`<p class="vote-note">${vote.note}</p>`}
     <div class="vote-legend">
       <span><span class="legend-dot yes"></span> Ja</span>
       <span><span class="legend-dot no"></span> Nein</span>

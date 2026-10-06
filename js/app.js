@@ -7,8 +7,9 @@ import { initRouting, route } from "./routing.js";
 import { initSuche } from "./suche.js";
 import { initStatistik } from "./views/statistik.js";
 import { initKalender } from "./views/kalender.js";
-import { initNaehe } from "./views/naehe.js";
+import { initNaehe } from "./aehnlichkeit.js";
 import { initKopf } from "./kopf.js";
+import { html } from "./html.js";
 
 // Der Kopf braucht keine Daten und bleibt auch ohne sie bedienbar.
 initKopf();
@@ -45,7 +46,7 @@ document.addEventListener("click", evt => {
     // Wer das hier liest, sitzt vor der oeffentlichen Seite und nicht vor dem
     // Quelltext. Der Hinweis auf einen lokalen Webserver war an die falschen
     // Leute gerichtet; die Ursache steht in der Konsole.
-    main.innerHTML = `<div class="ladefehler">
+    main.innerHTML = html`<div class="ladefehler">
       <h1>Die Daten lassen sich gerade nicht laden.</h1>
       <p>M\u00f6glicherweise ist die Verbindung unterbrochen \u2014 ein erneutes Laden
       der Seite hilft meistens. Bleibt es dabei, freue ich mich \u00fcber einen

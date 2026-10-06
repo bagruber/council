@@ -1,15 +1,9 @@
-// Prüft js/core.js: Perioden, Gremienbesetzung, Vote-Status, Herkunft.
-// Läuft mit `node --test tests/`, ohne Abhängigkeit.
-//
-// core.js ist ein klassisches Skript mit der Globalen `Council`. Bis es ein
-// ES-Modul ist, wird es hier ausgewertet statt importiert.
+// Prüft js/core.js: Mandate, Gremienbesetzung, Vote-Status, Herkunft.
+// Läuft mit `node --test "tests/*.test.mjs"`, ohne Abhängigkeit.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
-
-const quelle = readFileSync(new URL("../js/core.js", import.meta.url), "utf8");
-const Council = new Function(quelle + "\nreturn Council;")();
+import { Council } from "../js/core.js";
 
 const anon = (yes, no, extra = {}) => ({
   id: "v1", date: "2023-07-24", sessionId: "s1", type: "anonymous",

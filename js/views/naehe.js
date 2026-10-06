@@ -1,128 +1,13 @@
-// Abstimmungsähnlichkeit: das Paar-Maß über geteilte Beschlüsse, die
-// Profil-Rubrik "Wer ähnlich stimmt" sowie Nähe-Matrix und Nähe-Netz.
-import {
-  members, votes, memberMap, partyMap, seatOrder, sessionMap,
-} from "../daten.js";
+// Nähe-Diagramme: die Rubrik "Wer ähnlich stimmt" im Profil, die Nähe-Matrix
+// und das Nähe-Netz in Fläche und Raum. Das Maß selbst steht in
+// js/aehnlichkeit.js.
+import { memberMap, partyMap } from "../daten.js";
 import { navigate } from "../routing.js";
-
-// -- Abstimmungsähnlichkeit --
-//
-// Verglichen wird nur, wo der Rat geteilt war: bei einstimmigen Beschlüssen
-// stimmen alle gleich, das trägt keine Information. Je Paar und geteiltem
-// Votum, bei dem von beiden eine Stimme bekannt ist: +1 gleich, −1 ungleich.
-// Fehlt von einer Seite die Stimme — abwesend, befangen, unbekannt — zählt
-// das Votum gar nicht.
-//
-// Die Summe wird nicht durch n geteilt, sondern durch (n + K). Damit zieht
-// eine dünne Grundlage das Ergebnis zur Mitte: zehn von zehn übereinstimmenden
-// Stimmen ergeben 0,67, fünf von fünf nur 0,50. Genau das ist gewollt —
-// Abwesenheit schwächt das Maß, statt es zu verzerren.
-const SIM_K = 5;
-// Eine einzige gemeinsame Abstimmung ist ein Münzwurf, ab zweien zeigt sich
-// ein Muster. Höher muss die Schwelle nicht sein: die Dämpfung durch (n + K)
-// hält dünne Paare ohnehin in der Mitte — vier übereinstimmende Stimmen
-// ergeben 0,44, während die dichten Paare 0,83 erreichen.
-const SIM_MIN = 2;
-
-// Verglichen wird immer innerhalb einer Wahlperiode — über den Wechsel hinweg
-// säßen Personen im selben Bild, die nie zusammen abgestimmt haben.
-const PERIODS = [
-  { id: "p2020", label: "2020–2026", from: "2020-05-01", to: "2026-04-30" },
-  { id: "p2026", label: "seit 2026", from: "2026-05-01", to: "9999-12-31" },
-];
-const periodOf = date => PERIODS.find(p => date >= p.from && date <= p.to);
-
-// Wer bei diesem Votum eine bekannte Ja/Nein-Stimme hat. Die Auswertung geht
-// über voteStatus, damit hier dieselben Regeln gelten wie in der Anzeige —
-// eine Mitschrift, die jemandem eine Stimme gibt, den die Niederschrift als
-// abwesend führt, zählt sonst nur in der Statistik mit.
-function stances(v) {
-  const session = sessionMap[v.sessionId];
-  const st = {};
-  members.forEach(m => {
-    const s = Council.voteStatus(m.id, v, session, m);
-    if (s === "yes" || s === "no") st[m.id] = s;
-  });
-  return st;
-}
-
-// Wer nachrückt, teilt sich den Sitz mit der Vorgängerin: bis zum
-// Wechselbeschluss stimmt die eine, danach die andere. Gemeinsam abgestimmt
-// haben sie nie, also wird das Paar nicht verglichen. Die Nachfolge steht als
-// `succeeds` am Mitglied; vorher wurde sie aus Fraktion und Abstand geraten,
-// und das traf über den Wahlwechsel hinweg jede Fraktionskollegin.
-const seatSwap = new Set();
-const paarKey = (a, b) => a < b ? a + "|" + b : b + "|" + a;
-
-// Ehemals frei laufende Verdrahtung aus app.js.
-export function initNaehe() {
-  members.forEach(m => (m.succeeds || []).forEach(vorher => {
-    if (memberMap[vorher]) seatSwap.add(paarKey(m.id, vorher));
-  }));
-}
-
-const simCaches = {};
-const simVoteCount = {};
-
-// Unter dieser Zahl streitiger Beschlüsse mit Einzelstimmen wird gar nichts
-// gezeigt. Bei zweien bekäme jedes Paar denselben Betrag — eine Landkarte,
-// die nur abbildet, welche Handvoll Beschlüsse zufällig dokumentiert ist.
-const SIM_FLOOR = 10;
-
-function similarity(periodId) {
-  const per = PERIODS.find(p => p.id === periodId) || PERIODS[0];
-  if (simCaches[per.id]) return simCaches[per.id];
-  const pairs = {};
-  let counted = 0;
-  const key = (a, b) => a < b ? a + "|" + b : b + "|" + a;
-  const bucket = k => pairs[k] || (pairs[k] = { n: 0, raw: 0, joint: 0 });
-  votes.forEach(v => {
-    if (Council.isUnanimous(v)) return;
-    if (v.date < per.from || v.date > per.to) return;
-    const session = sessionMap[v.sessionId];
-
-    // Gelegenheit: beide saßen im Saal und waren stimmberechtigt. Das ist der
-    // Nenner, der zeigt, wie dünn die Kenntnis ist — 19 Vergleiche aus 144
-    // gemeinsamen Beschlüssen liest sich anders als 19 aus 25.
-    const part = members.filter(m => {
-      const s = Council.voteStatus(m.id, v, session, m);
-      return s && s !== "absent" && s !== "excluded"
-               && s !== "abstained" && s !== "restricted";
-    }).map(m => m.id);
-    for (let i = 0; i < part.length; i++)
-      for (let j = i + 1; j < part.length; j++) {
-        const k = key(part[i], part[j]);
-        if (!seatSwap.has(k)) bucket(k).joint++;
-      }
-
-    const st = stances(v);
-    const ids = Object.keys(st);
-    if (ids.length > 1) counted++;
-    for (let i = 0; i < ids.length; i++) {
-      for (let j = i + 1; j < ids.length; j++) {
-        const p = bucket(key(ids[i], ids[j]));
-        p.n++;
-        p.raw += st[ids[i]] === st[ids[j]] ? 1 : -1;
-      }
-    }
-  });
-  simCaches[per.id] = pairs;
-  simVoteCount[per.id] = counted;
-  return pairs;
-}
-
-function similarFor(id, periodId) {
-  const pairs = similarity(periodId);
-  const out = [];
-  Object.entries(pairs).forEach(([key, p]) => {
-    const [a, b] = key.split("|");
-    if (a !== id && b !== id) return;
-    if (p.n < SIM_MIN) return;
-    out.push({ other: a === id ? b : a, n: p.n, joint: p.joint, score: p.raw / (p.n + SIM_K) });
-  });
-  out.sort((x, y) => y.score - x.score);
-  return out;
-}
+import { html, roh } from "../html.js";
+import {
+  PERIODS, SIM_K, SIM_MIN, similarity, similarFor, simScore, simSpread,
+  simThin, simNodes,
+} from "../aehnlichkeit.js";
 
 function renderSimilarity(m) {
   // Die jüngste Periode, in der diese Person genug Vergleiche hat. Für
@@ -143,7 +28,7 @@ function renderSimilarity(m) {
     const o = memberMap[e.other];
     const p = o && partyMap[o.party];
     const pct = Math.round(Math.abs(e.score) * 100);
-    return `<a class="sim-row" href="#/member/${e.other}">
+    return html`<a class="sim-row" href="#/member/${e.other}">
       <span class="member-dot" style="background:${p ? p.color : "#ccc"}"></span>
       <span class="sim-name">${o ? o.name : e.other}</span>
       <span class="sim-bar"><span style="width:${pct}%;background:${e.score >= 0 ? "var(--yes)" : "var(--no)"}"></span></span>
@@ -153,63 +38,16 @@ function renderSimilarity(m) {
 
   const box = document.createElement("details");
   box.className = "profile-section sim-box";
-  box.innerHTML = `
+  box.innerHTML = html`
     <summary>Wer ähnlich stimmt <span class="sim-period">${per.label}</span></summary>
     <p class="sim-note">Nur geteilte Abstimmungen, bei denen von beiden eine Stimme
       bekannt ist. Die letzte Spalte nennt die Zahl dieser Vergleiche und dahinter,
       bei wie vielen geteilten Beschlüssen beide überhaupt im Saal saßen — je
       weiter die zwei Zahlen auseinanderliegen, desto vorsichtiger ist der Wert
       zu lesen.</p>
-    <div class="sim-group">Stimmt am ehesten mit</div>${top.map(line).join("")}
-    <div class="sim-group">Stimmt am seltensten mit</div>${bottom.map(line).join("")}`;
+    <div class="sim-group">Stimmt am ehesten mit</div>${top.map(line)}
+    <div class="sim-group">Stimmt am seltensten mit</div>${bottom.map(line)}`;
   return box;
-}
-
-// -- Nähe-Diagramme --
-
-// Wer in dieser Periode überhaupt vergleichbar ist, nach Fraktion sortiert —
-// damit die Blöcke in der Matrix den Fraktionen entsprechen.
-// Zu dünn, um irgendetwas zu zeigen?
-function simThin(periodId) {
-  similarity(periodId);
-  return (simVoteCount[periodId] || 0) < SIM_FLOOR;
-}
-
-function simNodes(periodId) {
-  const per = PERIODS.find(p => p.id === periodId);
-  const pairs = similarity(periodId);
-  if (simThin(periodId)) return [];
-  const ids = new Set();
-  Object.entries(pairs).forEach(([k, p]) => {
-    if (p.n >= SIM_MIN) k.split("|").forEach(i => ids.add(i));
-  });
-  return [...ids]
-    .map(id => memberMap[id])
-    .filter(Boolean)
-    .map(m => ({ m, party: partyMap[partyAtDate(m, per.to === "9999-12-31" ? per.from : per.to)] }))
-    .sort((a, b) => {
-      const d = seatOrder.indexOf(a.party ? a.party.id : "") - seatOrder.indexOf(b.party ? b.party.id : "");
-      return d || a.m.name.localeCompare(b.m.name);
-    });
-}
-
-const partyAtDate = (m, date) => Council.partyAt(m, date) || m.party;
-
-function simScore(pairs, a, b) {
-  const p = pairs[a < b ? a + "|" + b : b + "|" + a];
-  return p && p.n >= SIM_MIN
-    ? { s: p.raw / (p.n + SIM_K), n: p.n, joint: p.joint } : null;
-}
-
-// Die Farbe reizt den tatsächlich vorkommenden Bereich aus, statt gegen eine
-// feste Obergrenze zu laufen. Untergrenze 0,5, damit eine dünn besetzte
-// Periode nicht drei Werte zu Vollton aufbläst.
-function simSpread(pairs) {
-  let max = 0.5;
-  Object.values(pairs).forEach(p => {
-    if (p.n >= SIM_MIN) max = Math.max(max, Math.abs(p.raw / (p.n + SIM_K)));
-  });
-  return max;
 }
 
 // Grün = stimmt zusammen, Rot = stimmt gegeneinander, Grau = zu wenig Daten
@@ -222,7 +60,7 @@ function drawSimMatrix(el, periodId) {
   const nodes = simNodes(periodId);
   const pairs = similarity(periodId);
   if (nodes.length < 3) {
-    el.innerHTML = '<p class="chart-foot">Für diese Wahlperiode liegen noch zu wenige Einzelstimmen vor.</p>';
+    el.innerHTML = html`<p class="chart-foot">Für diese Wahlperiode liegen noch zu wenige Einzelstimmen vor.</p>`;
     return;
   }
   const W = el.clientWidth || 640;
@@ -233,14 +71,14 @@ function drawSimMatrix(el, periodId) {
   const cell = Math.max(9, Math.min(22, (W - label - 4) / nodes.length));
   const size = cell * nodes.length;
 
-  let cells = "", ticks = "";
+  const cells = [], ticks = [];
   nodes.forEach((a, i) => {
     const color = a.party ? a.party.color : "#999";
-    ticks += `<text class="hm-name" x="${label - 6}" y="${i * cell + cell / 2 + 3}"
-                text-anchor="end" fill="${color}">${a.m.lastName}</text>`
-           + `<text class="hm-name" text-anchor="end" fill="${color}"
+    ticks.push(html`<text class="hm-name" x="${label - 6}" y="${i * cell + cell / 2 + 3}"
+                text-anchor="end" fill="${color}">${a.m.lastName}</text>`,
+               html`<text class="hm-name" text-anchor="end" fill="${color}"
                 transform="rotate(-90 ${label + i * cell + cell / 2 + 3} ${size + 6})"
-                x="${label + i * cell + cell / 2 + 3}" y="${size + 6}">${a.m.lastName}</text>`;
+                x="${label + i * cell + cell / 2 + 3}" y="${size + 6}">${a.m.lastName}</text>`);
 
     // Nur die untere Hälfte: die obere sagte dasselbe noch einmal
     for (let j = 0; j < i; j++) {
@@ -256,15 +94,15 @@ function drawSimMatrix(el, periodId) {
         : never
           ? `${a.m.name} / ${b.m.name}: saßen nie gleichzeitig im Rat`
           : `${a.m.name} / ${b.m.name}: nur ${(p && p.n) || 0} von ${p.joint} gemeinsamen Beschlüssen bekannt`;
-      cells += `<rect x="${x}" y="${y}" width="${cell}" height="${cell}"
-                  ${never ? 'class="hm-gap" ' : ""}fill="${fill}"><title>${title}</title></rect>`;
+      cells.push(html`<rect x="${x}" y="${y}" width="${cell}" height="${cell}"
+                  ${never ? roh('class="hm-gap" ') : ""}fill="${fill}"><title>${title}</title></rect>`);
     }
   });
 
   // In der leeren Hälfte spiegelt je Fraktion ein Winkel ihren eigenen Block
   // an der Diagonale. Wo viel Grün in einem Winkel steckt, hält die Fraktion
   // zusammen — das sieht man, ohne die Namen zu lesen.
-  let frames = "";
+  const frames = [];
   let s0 = 0;
   nodes.forEach((n, i) => {
     const last = i === nodes.length - 1;
@@ -274,24 +112,23 @@ function drawSimMatrix(el, periodId) {
     if (i > s0) {                       // Einerfraktionen haben keinen Block
       const x0 = label + s0 * cell, x1 = label + (i + 1) * cell;
       const y0 = s0 * cell, y1 = (i + 1) * cell;
-      frames += `<path class="hm-frame" d="M${x0} ${y0} H${x1} V${y1}"
-                   stroke="${n.party ? n.party.color : "#999"}"/>`
-              + `<text class="hm-frame-label" x="${x1 - 3}" y="${y0 - 4}"
+      frames.push(html`<path class="hm-frame" d="M${x0} ${y0} H${x1} V${y1}"
+                   stroke="${n.party ? n.party.color : "#999"}"/>`,
+                  html`<text class="hm-frame-label" x="${x1 - 3}" y="${y0 - 4}"
                    text-anchor="end" fill="${n.party ? n.party.color : "#999"}"
-                 >${n.party ? n.party.name : ""}</text>`;
+                 >${n.party ? n.party.name : ""}</text>`);
     }
     s0 = i + 1;
   });
 
-  const defs = `<defs><pattern id="hm-gap-hatch" width="5" height="5"
+  const defs = html`<defs><pattern id="hm-gap-hatch" width="5" height="5"
       patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
       <rect width="5" height="5" fill="#fff"/>
       <rect width="2.2" height="5" fill="var(--accent)" opacity="0.7"/>
     </pattern></defs>`;
-  el.innerHTML = `<svg class="chart heatmap" width="${label + size}" height="${size + foot}"
+  el.innerHTML = html`<svg class="chart heatmap" width="${label + size}" height="${size + foot}"
       viewBox="0 0 ${label + size} ${size + foot}" role="img" aria-label="Ähnlichkeitsmatrix">
-      ${defs}${cells}${frames}${ticks}</svg>`
-    + `<div class="hm-legend">
+      ${defs}${cells}${frames}${ticks}</svg><div class="hm-legend">
          <span><i class="hm-key-scale"></i>stimmt gegeneinander … zusammen</span>
          <span><i class="hm-key-gap"></i>saßen nie gleichzeitig im Rat</span>
          <span><i class="hm-key-none"></i>zu wenig bekannt</span>
@@ -598,7 +435,7 @@ function drawSimGraph(el, periodId) {
   const nodes = simNodes(periodId).map(n => ({ ...n, x: 0, y: 0, dx: 0, dy: 0 }));
   const pairs = similarity(periodId);
   if (nodes.length < 3) {
-    el.innerHTML = '<p class="chart-foot">Für diese Wahlperiode liegen noch zu wenige Einzelstimmen vor.</p>';
+    el.innerHTML = html`<p class="chart-foot">Für diese Wahlperiode liegen noch zu wenige Einzelstimmen vor.</p>`;
     return;
   }
   const idx = {};
@@ -643,12 +480,12 @@ function drawSimGraph(el, periodId) {
     .sort((p, q) => Math.abs(p.s) - Math.abs(q.s))
     .map(e => {
       const a = Math.min(1, Math.abs(e.s) / spread);
-      return `<line x1="${e.a.x.toFixed(1)}" y1="${e.a.y.toFixed(1)}"
+      return html`<line x1="${e.a.x.toFixed(1)}" y1="${e.a.y.toFixed(1)}"
                x2="${e.b.x.toFixed(1)}" y2="${e.b.y.toFixed(1)}"
                stroke="${e.s >= 0 ? "#4F8A16" : "#9B0000"}"
                stroke-opacity="${(a * a * 0.5).toFixed(3)}"
                stroke-width="${(0.4 + a * 2).toFixed(2)}"/>`;
-    }).join("");
+    });
   const ini = sgInitialen(nodes);
   const dots = nodes.map(n => {
     const farbe = n.party ? n.party.color : "#999999";
@@ -657,7 +494,7 @@ function drawSimGraph(el, periodId) {
     // deshalb an der Innenseite des Knotens statt an dessen Mitte.
     const anker = n.x < 60 ? "start" : n.x > W - 60 ? "end" : "middle";
     const nx = anker === "start" ? -SG_R : anker === "end" ? SG_R : 0;
-    return `
+    return html`
     <g class="sg-node" transform="translate(${n.x.toFixed(1)},${n.y.toFixed(1)})">
       <circle r="${SG_R}" fill="${farbe}"/>
       <text class="sg-ini${k.length > 2 ? " lang" : ""}" y="3.6" text-anchor="middle"
@@ -665,13 +502,13 @@ function drawSimGraph(el, periodId) {
       <text class="sg-name" x="${nx}" y="${-(SG_R + 7)}" text-anchor="${anker}">${n.m.name}</text>
       <title>${n.m.name}${n.party ? " · " + n.party.name : ""}</title>
     </g>`;
-  }).join("");
+  });
 
-  el.innerHTML = `<div class="sg-ansicht">
+  el.innerHTML = html`<div class="sg-ansicht">
       <div class="period-switch">
-        <button data-a="flach"${sgRaum ? "" : ' class="on"'}>Fläche</button>
-        <button data-a="raum"${sgRaum ? ' class="on"' : ""}>Raum</button>
-      </div>${sgRaum ? '<span class="sg-hinweis">Versuch. Ziehen dreht das Netz.</span>' : ""}
+        <button data-a="flach"${sgRaum ? "" : roh(' class="on"')}>Fläche</button>
+        <button data-a="raum"${sgRaum ? roh(' class="on"') : ""}>Raum</button>
+      </div>${sgRaum && html`<span class="sg-hinweis">Versuch. Ziehen dreht das Netz.</span>`}
     </div>
     <svg class="chart simgraph${sgRaum ? " raum" : ""}" width="${W}" height="${H}"
       viewBox="0 0 ${W} ${H}" role="img"
@@ -721,6 +558,4 @@ function drawSimGraph(el, periodId) {
   if (sgRaum) sgDrehen(svg, nodes, edges, knoten, W, H);
 }
 
-export { PERIODS, stances, partyAtDate, renderSimilarity, drawSimMatrix, drawSimGraph };
-// Fuer die Tests in tests/naehe.test.mjs
-export { similarity, simScore };
+export { renderSimilarity, drawSimMatrix, drawSimGraph };

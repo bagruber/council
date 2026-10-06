@@ -1,12 +1,11 @@
-// Council Core — Shared period & vote-status helpers.
+// Geteilte Logik für Mandate und Stimmen: war diese Person an diesem Tag im
+// Rat, in welcher Fraktion, auf welchem Gremiensitz, und wie hat sie
+// gestimmt. Die Antwort darf nicht davon abhängen, wer fragt — Profil,
+// Statistik, Nähe-Maß und Halbrund lesen deshalb alle von hier.
 //
-// Single source of truth for "was this person active / a regular committee
-// seat-holder / how did they vote" — consumed by app.js (profile, statistics)
-// and parliament.js (chamber visualisation).
-//
-// See docs/CORE.md for a walkthrough.
+// Der Durchgang steht in docs/CORE.md.
 
-const Council = (() => {
+export const Council = (() => {
 
   // ── Period helpers ────────────────────────────────────────────────────────
 
