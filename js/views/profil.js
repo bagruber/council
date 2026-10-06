@@ -88,16 +88,22 @@ function renderMemberProfile(id) {
   wrap.appendChild(header);
 
   const metaEl = header.querySelector("#profile-meta");
-  if (profile.identity && profile.identity.length) {
+  // Herkunft und sexuelle Orientierung sind besondere Kategorien nach Art. 9
+  // DSGVO. Gezeigt wird deshalb nur, was eine Selbstauskunft deckt — die Quelle
+  // steht im Datensatz. Angaben ohne Quelle bleiben stehen und unsichtbar, bis
+  // der Beleg da ist; der Validator führt sie.
+  const identity = profile.identity;
+  if (identity && identity.source && (identity.values || []).length) {
     const badges = document.createElement("div");
     badges.className = "identity-badges";
+    badges.title = "Selbstauskunft" + (identity.date ? " vom " + formatDate(identity.date) : "");
     const labels = { queer: "LGBTQ+", migrant: "Migrantisch", flinta: "FLINTA", disability: "Barrierefrei" };
     // Die Namen stammten noch aus der Material-Zeit und liefen ins Leere.
     // FLINTA bewusst nicht mit dem Venus-Zeichen: es umfasst auch inter,
     // nicht-binäre, trans und agender Personen.
     const badgeIcons = { queer: "queer", migrant: "migrant",
                          flinta: "flinta", disability: "disability" };
-    profile.identity.forEach(id => {
+    identity.values.forEach(id => {
       const b = document.createElement("span");
       b.className = "id-badge " + id;
       b.innerHTML = (badgeIcons[id] ? `<svg class="icon"><use href="#i-${badgeIcons[id]}"/></svg> ` : "") + (labels[id] || id);

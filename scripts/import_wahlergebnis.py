@@ -1,6 +1,6 @@
 """Traegt die Stimmenzahlen der Kommunalwahl in members.json ein.
 
-Quelle: `data/knowledge/member_intake.txt`, Spalten
+Quelle: `quellen/knowledge/member_intake.txt`, Spalten
     Listenplatz · Name · Platz nach Auszaehlung · Stimmen · Gewaehlt/Nachruecker
 
 Der Abstand zwischen Listenplatz und Platz nach Auszaehlung ist die eigentliche

@@ -23,7 +23,8 @@ import json, os, re, argparse, html, datetime, gzip, zlib
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA = os.path.join(BASE, 'data')
-CRAWL = os.path.join(DATA, 'crawl')
+QUELLEN = os.path.join(BASE, 'quellen')
+CRAWL = os.path.join(QUELLEN, 'crawl')
 CACHE = os.path.join(CRAWL, 'cache')
 
 UML = str.maketrans({'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss',
@@ -278,7 +279,7 @@ def run(window=14):
 
 
 def report(rows):
-    # Aussortiertes bleibt aussortiert - siehe data/knowledge/presse-verworfen.md
+    # Aussortiertes bleibt aussortiert - siehe quellen/knowledge/presse-verworfen.md
     vpath = os.path.join(CRAWL, 'verworfen.json')
     if os.path.exists(vpath):
         weg = {x['url'] for x in json.load(open(vpath, encoding='utf-8'))}

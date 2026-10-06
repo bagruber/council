@@ -25,13 +25,17 @@
 ### Geplant: OParl API
 - Standardisierte REST/JSON-Schnittstelle für Ratsinformationssysteme
 - Anonymer, lesender Zugriff auf Sitzungs-, Gremien- und Dokumentendaten
-- Referenzdoku: `data/knowledge/oparl-api.md`
+- Referenzdoku: `quellen/knowledge/oparl-api.md`
 - Schrittweise Integration: OParl-Daten ersetzen nach und nach hardcoded JSON
-- Mapping: OParl-Objekttypen → lokale Datenstrukturen (siehe `data/knowledge/data-mapping.md`)
+- Mapping: OParl-Objekttypen → lokale Datenstrukturen (siehe `quellen/knowledge/data-mapping.md`)
 
-### Geplant: Knowledge Base
-- Zusätzliche Infos aus Niederschriften, Presseartikeln, manuellen Eingaben
-- Struktur: `data/knowledge/` — themenübergreifendes Wissen, Quellenverweise
+### Nicht im Repo: `quellen/`
+Rohquellen und Arbeitsnotizen liegen in `quellen/` und sind in der `.gitignore`.
+GitHub Pages liefert das Repo roh aus — was hier eingecheckt ist, ist öffentlich.
+Darin: `knowledge/` (themenübergreifendes Wissen, Quellenverweise, OParl-Doku),
+`crawl/` (Presserecherche im Rohzustand). Eingepflegt wird nach `data/*.json`,
+und die sind die Auskunft. Methodik gehört erklärt, aber als Text in der App —
+nicht als Rohfassung im Repo.
 - Ziel: Hochgradig vernetzte Informationen innerhalb der Plattform
 - Aufwärtskompatibel: Datenstruktur muss wachsen können (Vergangenheit + Zukunft)
 

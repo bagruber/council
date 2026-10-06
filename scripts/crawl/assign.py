@@ -28,7 +28,8 @@ import json, os, re, math, gzip, html, argparse, collections
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA = os.path.join(BASE, 'data')
-CRAWL = os.path.join(DATA, 'crawl')
+QUELLEN = os.path.join(BASE, 'quellen')
+CRAWL = os.path.join(QUELLEN, 'crawl')
 
 UML = str.maketrans({'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss',
                      'Ä': 'ae', 'Ö': 'oe', 'Ü': 'ue'})

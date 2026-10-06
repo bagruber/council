@@ -97,12 +97,36 @@ for t in topics:
             if pid not in press_ids:
                 err(f"topic {t['id']} history[{i}]: press '{pid}' missing")
 
+IDENTITY_WERTE = {"queer", "migrant", "flinta", "disability"}
+
 for m in members:
     profile = m.get("profile") or {}
     for i, mo in enumerate(profile.get("motions", []) or []):
         for pid in mo.get("press", []) or []:
             if pid not in press_ids:
                 err(f"member {m['id']} motion[{i}]: press '{pid}' missing")
+
+    # Identitaetsmerkmale sind besondere Kategorien nach Art. 9 DSGVO und
+    # brauchen eine belegte Selbstauskunft. Ohne Quelle zeigt die App sie
+    # nicht; hier stehen sie als Warnung, damit sie nicht vergessen werden.
+    ident = profile.get("identity")
+    if ident is None:
+        pass
+    elif isinstance(ident, list):
+        warn(f"member {m['id']}: identity {ident} ohne Quelle - wird nicht angezeigt")
+    elif not isinstance(ident, dict):
+        err(f"member {m['id']}: identity hat ein unbekanntes Format ({type(ident).__name__})")
+    else:
+        werte = ident.get("values") or []
+        if not werte:
+            err(f"member {m['id']}: identity ohne values")
+        unbekannt = set(werte) - IDENTITY_WERTE
+        if unbekannt:
+            err(f"member {m['id']}: identity kennt {sorted(unbekannt)} nicht")
+        if not ident.get("source"):
+            warn(f"member {m['id']}: identity {werte} ohne Quelle - wird nicht angezeigt")
+        elif not ident.get("date"):
+            warn(f"member {m['id']}: identity belegt, aber ohne Datum der Auskunft")
 
 # ── Vote totals against body composition ─────────────────────────────────────
 def expected_seats(sid):
