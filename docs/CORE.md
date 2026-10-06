@@ -183,8 +183,10 @@ Die vollständige Form aller Dateien steht als JSON Schema in `data/schema/`.
 
 ## Wo wird's benutzt?
 
+`core.js` ist ein ES-Modul; wer es braucht, importiert `{ Council }`.
+
 - `views/profil.js` → `computeVotingStats`, `renderMemberTimeline`
-- `views/naehe.js` → `stances`, `similarity`, `partyAtDate`
+- `aehnlichkeit.js` → `stances`, `similarity`, `partyAtDate`
 - `views/fraktion.js` → `partySpans`
 - `parliament.js` → `voteResMap`, `partyAt` (Sitzfärbung im Halbrund)
 - `js/daten.js` → `memberActiveAt`, und das Ableiten von `from`/`to`/`party`/`role`

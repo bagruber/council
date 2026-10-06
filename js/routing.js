@@ -46,7 +46,7 @@ function navigate(path) {
 function route() {
   const hash = window.location.hash.slice(1) || "/";
   const [path, query] = hash.split("?");
-  // Probe Formsprache: Seitentitel mit Handschrift nur auf den Übersichten
+  // Die Handschrift hinter dem Titel tragen nur die drei Übersichten.
   document.body.toggleAttribute("data-uebersicht",
     ["/", "/kalender", "/gremien"].includes(path));
   if (path === "/kalender") {
@@ -116,7 +116,6 @@ function backLink(label, href) {
 // can return to where the user actually came from (Gremien, Topic, Session, …).
 let lastListHash = "/";
 
-// Ehemals frei laufende Verdrahtung aus app.js, unverändert.
 export function initRouting() {
   tabBtns.forEach(btn => {
     btn.addEventListener("click", () => {

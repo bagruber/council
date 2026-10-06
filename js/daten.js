@@ -111,8 +111,7 @@ function istGehalten(s) {
   return s.date <= nowStr;
 }
 
-// Probe Formsprache: das Gremium einer Sitzung oder eines Termins, für
-// Kategoriezeile und Flächenfarbe.
+// Das Gremium einer Sitzung, für Kategoriezeile und Flächenfarbe.
 function gremium(s) {
   const art = sitzungsart(s.type || "stadtrat");
   const body = art && bodyMap[art.body];
@@ -123,8 +122,8 @@ function gremium(s) {
   };
 }
 
-// Probe Formsprache: die nächste angekündigte Sitzung ab heute. Bestimmt beim
-// Rendern, nie fest eingetragen; ohne Termin null.
+// Die nächste Sitzung ab heute. Beim Rendern bestimmt, nie eingetragen —
+// ein gepflegtes Feld wäre am Tag danach falsch.
 function naechsteSitzung() {
   return sessions
     .filter(s => s.date >= nowStr)

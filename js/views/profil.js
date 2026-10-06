@@ -265,7 +265,7 @@ function renderMemberProfile(id) {
   gremienMain.appendChild(wrap);
 }
 
-// ─── Voting statistics ───────────────────────────────────────────────────
+// -- Voting statistics --
 
 function periodOfDate(d) {
   if (d < "2020-05-01") return "2014–2020";

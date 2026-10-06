@@ -36,7 +36,7 @@ function searchNorm(s) {
     .normalize("NFD").replace(/[̀-ͯ]/g, "");
 }
 
-// ── Globale Suche ────────────────────────────────────────────────────────
+// -- Globale Suche --
 //
 // Ein Index über alle fünf Inhaltsarten. Die Abstimmungen waren bisher gar
 // nicht durchsuchbar, obwohl sie den Grossteil des Bestands ausmachen.
@@ -173,11 +173,9 @@ function renderSearchResults(box, hits, onPick, reihenfolge) {
   box.classList.remove("hidden");
 }
 
-// Ehemals frei laufende Verdrahtung aus app.js, unverändert.
 export function initSuche() {
-  // Probe Formsprache, vorläufig (14.09.2026): Chip-Zeile mit „Alle“ vorn und
-  // dieselben Chips noch einmal im Blatt „Alle Themen“. Welche Themen gewählt
-  // sind, steht in der URL; beide Sätze lesen es von dort.
+  // Dieselben Chips zweimal: in der Zeile und im Blatt „Alle Themen“. Welche
+  // gewählt sind, steht in der URL — beide Sätze lesen es von dort.
   const sheet = document.getElementById("themen-sheet");
   const sheetListe = document.getElementById("themen-sheet-liste");
   const mehr = document.getElementById("themen-alle");

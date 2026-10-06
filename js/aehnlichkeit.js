@@ -53,7 +53,6 @@ function stances(v) {
 const seatSwap = new Set();
 const paarKey = (a, b) => a < b ? a + "|" + b : b + "|" + a;
 
-// Ehemals frei laufende Verdrahtung aus app.js.
 function initNaehe() {
   members.forEach(m => (m.succeeds || []).forEach(vorher => {
     if (memberMap[vorher]) seatSwap.add(paarKey(m.id, vorher));

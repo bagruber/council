@@ -1,10 +1,7 @@
-// Vote visualisations:
-//  – stacked bar (anonymous votes)
-//  – parliament chart (named votes, horseshoe layout)
+// Die beiden Bilder einer Abstimmung: der gestapelte Balken für das
+// Ergebnis und das Halbrund, das jeden Sitz einzeln färbt. Reines DOM und
+// SVG, keine Bibliothek.
 //
-// Pure DOM + SVG (no D3 dependency).
-//
-// Public API (kept stable for app.js):
 //   VoteVis.drawBar(container, results)
 //   VoteVis.drawParliament(container, vote, members, parties, seatOrder [, options])
 
@@ -15,7 +12,7 @@ export const VoteVis = (() => {
   const NS  = "http://www.w3.org/2000/svg";
   const DEG = Math.PI / 180;
 
-  // ─── Defaults (override via options arg on drawParliament) ───────────────
+  // -- Vorgaben, über das options-Argument von drawParliament zu ändern --
 
   const DEFAULTS = {
     rows: null,                   // null = auto-pick
@@ -27,7 +24,7 @@ export const VoteVis = (() => {
     showRowGuides: true,          // subtle arcs behind each row
   };
 
-  // Auto pick rows from seat count
+  // Wie viele Reihen das Halbrund bekommt, hängt an der Zahl der Sitze.
   function autoPickRows(n) {
     if (n <= 12) return 1;
     if (n <= 30) return 2;
@@ -55,16 +52,17 @@ export const VoteVis = (() => {
 
     const radii = Array.from({ length: rows }, (_, i) => R0 + i * u);
 
-    // allocate seats per row proportional to radius (= circumference)
+    // Sitze je Reihe im Verhältnis zum Radius, also zum Bogen
     const sumR = radii.reduce((s, r) => s + r, 0);
     const seatsPerRow = radii.map(r => Math.round(count * r / sumR));
 
-    // patch rounding so we hit exact N – preserve "outer has most" invariant
+    // Rundung nachziehen, bis die Summe genau stimmt; die äußere Reihe
+    // behält dabei die meisten Sitze.
     let diff = count - seatsPerRow.reduce((a, b) => a + b, 0);
     let cursor = rows - 1;
     while (diff > 0) { seatsPerRow[cursor]++; diff--; cursor = (cursor - 1 + rows) % rows; }
     while (diff < 0) {
-      // remove from largest row that still has > 1
+      // abziehen bei der größten Reihe, die danach noch mehr als einen hat
       let idx = -1, mx = -1;
       for (let i = 0; i < rows; i++) if (seatsPerRow[i] > 1 && seatsPerRow[i] > mx) { mx = seatsPerRow[i]; idx = i; }
       if (idx === -1) break;
@@ -98,7 +96,7 @@ export const VoteVis = (() => {
     return { positions, R0, R_outer: radii[rows - 1], radii, seatsPerRow };
   }
 
-  // ─── Vote → colour / icon / label ────────────────────────────────────────
+  // -- Stimme zu Farbe, Icon und Beschriftung --
 
   const VOTE_COLOR = {
     yes:     "var(--yes)",
@@ -115,7 +113,7 @@ export const VoteVis = (() => {
   const VOTE_ICON  = { yes: "✓", no: "✗", absent: "–", unknown: "?",
                        excluded: "§", abstained: "◦", restricted: "◦" };
 
-  // ─── Tooltip (desktop hover) ─────────────────────────────────────────────
+  // -- Tooltip beim Zeigen --
 
   const tooltipEl = document.getElementById("tooltip");
 
@@ -140,7 +138,7 @@ export const VoteVis = (() => {
     tooltipEl.style.top  = Math.max(4, cy - r.height) + "px";
   }
 
-  // ─── Popover (mobile tap) ────────────────────────────────────────────────
+  // -- Popover beim Tippen --
 
   let popoverEl    = null;
   let activeSeatId = null;
@@ -171,7 +169,7 @@ export const VoteVis = (() => {
       <div class="seat-popover-body">${seatInfoHTML(seat)}</div>
       <a href="#/member/${seat.id}" class="seat-popover-link">Profil ansehen →</a>`;
 
-    // position above seat; flip below if it would clip top
+    // über dem Sitz; nach unten gekippt, wenn es oben anstieße
     const cx = seatRect.left - wrapRect.left + seatRect.width  / 2;
     const cy = seatRect.top  - wrapRect.top  + seatRect.height / 2;
     pop.style.left = cx + "px";
@@ -197,7 +195,7 @@ export const VoteVis = (() => {
       <div class="seat-vote vote-${seat.vote.replace("-inferred", "")}">${seat.info || Council.voteStatusTitle(seat.vote)}</div>`;
   }
 
-  // ─── Row guides (subtle arcs behind each row) ────────────────────────────
+  // -- Die feinen Bögen hinter den Reihen --
 
   function drawRowGuides(svg, layout, opts) {
     const arc = opts.arcDeg * DEG;
@@ -221,7 +219,7 @@ export const VoteVis = (() => {
     });
   }
 
-  // ─── Seat rendering ──────────────────────────────────────────────────────
+  // -- Ein Sitz --
 
   function svgEl(tag) { return document.createElementNS(NS, tag); }
 
@@ -240,7 +238,7 @@ export const VoteVis = (() => {
     if (seat.id) g.dataset.seatId = seat.id;
 
     // Backplate (bg-coloured, always fully opaque) — hides row-guide behind seat,
-    // even when the seat is dimmed for absent voters.
+    // auch dann, wenn der Sitz für Abwesende blasser steht.
     const back = svgEl("circle");
     back.setAttribute("cx", pos.x); back.setAttribute("cy", pos.y);
     back.setAttribute("r", r + 1);
@@ -248,8 +246,8 @@ export const VoteVis = (() => {
     back.classList.add("seat-back");
     g.appendChild(back);
 
-    // All visible seat content goes inside this inner group so we can dim it
-    // for absent voters without making the backplate translucent.
+    // Alles Sichtbare liegt in dieser inneren Gruppe. So lässt sich der Sitz
+    // für Abwesende abblenden, ohne dass die Grundplatte durchscheint.
     const content = svgEl("g");
     content.classList.add("seat-content");
     g.appendChild(content);
@@ -279,7 +277,7 @@ export const VoteVis = (() => {
       content.appendChild(star);
     }
 
-    // ─── mini indicator (konzentrisch außen, vom Mittelpunkt weg) ───
+    // -- mini indicator (konzentrisch außen, vom Mittelpunkt weg) --
     const iconR = r * opts.iconRatio;
     const d  = Math.hypot(pos.x, pos.y);
     const ux = d > 0 ? pos.x / d : 0;
@@ -310,7 +308,7 @@ export const VoteVis = (() => {
     txt.textContent = VOTE_ICON[seat.vote.replace("-inferred", "")] || "";
     content.appendChild(txt);
 
-    // ─── interaction ───
+    // -- interaction --
     if (isCoarse) {
       g.addEventListener("click", evt => {
         evt.stopPropagation();
@@ -334,7 +332,7 @@ export const VoteVis = (() => {
     svg.appendChild(g);
   }
 
-  // ─── Chart renderer (any layout) ─────────────────────────────────────────
+  // -- Das Halbrund zeichnen --
 
   function renderChart(container, opts) {
     const o = { ...DEFAULTS, ...opts };
@@ -377,7 +375,7 @@ export const VoteVis = (() => {
     // subtle row guides (behind seats)
     if (o.showRowGuides) drawRowGuides(svg, layout, o);
 
-    // seats (order in array = seating order; nulls leave the slot empty)
+    // Die Reihenfolge im Array ist die Sitzordnung; null lässt den Platz leer.
     o.seats.forEach((seat, i) => {
       if (seat) drawSeat(svg, layout.positions[i], seat, o);
     });
@@ -397,7 +395,7 @@ export const VoteVis = (() => {
     return svg;
   }
 
-  // ─── Stacked bar chart (anonymous votes) ────────────────────────────────
+  // -- Der gestapelte Balken --
 
   function drawBar(container, results, opts = {}) {
     // Default capacity = Gremiengröße laut Ergebnis (Ja + Nein + Abwesend) —
@@ -410,9 +408,9 @@ export const VoteVis = (() => {
     const gap      = 4;
     const h        = absentH + gap + barH;
 
-    // For unanimous votes (no opposition), extend the dominant side with a paler
-    // overlay covering the would-be-absent portion — same inferred-unanimity
-    // styling as the "ja*"/"nein*" chips in member profiles.
+    // Bei einstimmigen Beschlüssen bekommt die Mehrheitsseite einen blasseren
+    // Fortsatz über den Teil, der sonst als abwesend stünde — dieselbe
+    // Lesart wie die Chips „Ja*" und „Nein*" im Profil.
     const unanimousSide = voting > 0 && results.no === 0 ? "yes"
                          : voting > 0 && results.yes === 0 ? "no"
                          : null;
@@ -495,16 +493,16 @@ export const VoteVis = (() => {
     wrap.addEventListener("touchend",   hideTooltip);
   }
 
-  // ─── Public: drawParliament (compat with existing app.js) ───────────────
+  // -- drawParliament --
 
-  // Helpers ──────────────────────────────────────────────────────────
+  // -- Helfer --
 
   function activeAt(occupants, date) {
     return (occupants || []).find(o => Council.withinPeriod(o, date));
   }
 
-  // Check whether the member holds a "...Bürgermeister..." title on the given date.
-  // Falls back to top-level title when no history is available.
+  // Trug die Person am Stichtag ein Bürgermeister-Amt? Ohne Historie gilt der
+  // aktuelle Titel.
   function isViceMayorAt(m, date) {
     if (!m) return false;
     const titles = m.profile && m.profile.titles;
@@ -567,7 +565,7 @@ export const VoteVis = (() => {
     return m;
   }
 
-  // Build seats from a body definition with `seats: [{occupants:[...]}]`.
+  // Die Sitze aus der Gremienbesetzung.
   function buildSeatsFromBody(body, vote, memberMap, partyMap, session) {
     const cfg = Council.bodyConfigAt(body, vote.date);
     const seats = [];
@@ -585,9 +583,8 @@ export const VoteVis = (() => {
       }
     }
 
-    // Committees may have vice-chairs flanking the chair. Place them at the
-    // two ends of the horseshoe (BM-links and BM-rechts) so they sit closest
-    // to the chair, matching the standard Moosburg seating.
+    // Ausschüsse haben Stellvertretungen im Vorsitz. Sie sitzen an den beiden
+    // Enden des Hufeisens, also neben dem Vorsitz — so wie im Saal.
     const vc = cfg.vicechairs || [];
     const seatList = [];
     if (vc[0]) seatList.push({ member: vc[0].member, sub: vc[0].sub });
@@ -634,7 +631,7 @@ export const VoteVis = (() => {
     return { seats, mayor, rows: cfg.rows || body.rows };
   }
 
-  // Build seats from raw vote results (fallback when no body is provided)
+  // Die Sitze allein aus dem Ergebnis, wenn kein Gremium bekannt ist.
   function buildSeatsFromVote(vote, members, parties, seatOrder, memberMap, partyMap) {
     const voteRes = voteResMap(vote);
 
@@ -672,7 +669,7 @@ export const VoteVis = (() => {
 
     if (!seatData.seats.some(s => s) && !seatData.mayor) return;
 
-    // Bar summary: named votes use array length; anonymous uses scalar counts.
+    // Namentlich zählt die Länge der Listen, anonym die Zahlen selbst.
     // options.bar === false, wenn der Balken schon woanders steht.
     if (options.bar !== false) {
       const barCounts = vote.type === "named"
@@ -682,7 +679,7 @@ export const VoteVis = (() => {
       drawBar(container, barCounts, { capacity });
     }
 
-    // Pass seats including potential nulls so geometry stays stable.
+    // Leere Plätze bleiben als null stehen, sonst verschiebt sich die Geometrie.
     renderChart(container, { seats: seatData.seats, mayor: seatData.mayor, ...options });
   }
 

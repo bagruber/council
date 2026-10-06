@@ -54,10 +54,12 @@ council/
 ├── index.html              # Single-page Shell
 ├── css/style.css
 ├── js/
-│   ├── core.js             # geteilte Vote-/Period-Logik (siehe docs/CORE.md)
-│   ├── parliament.js       # Sitzverteilungs-Visualisierung
-│   ├── app.js              # Einstieg als ES-Modul (siehe docs/MODULE.md)
-│   ├── daten.js            # JSON-Bestand und Nachschlage-Maps
+│   ├── app.js              # Einstieg (siehe docs/MODULE.md)
+│   ├── core.js             # geteilte Mandats- und Vote-Logik (docs/CORE.md)
+│   ├── daten.js            # JSON-Bestand, Nachschlage-Maps, Sitzungsregister
+│   ├── html.js             # Markup-Template mit Escaping
+│   ├── aehnlichkeit.js     # das Ähnlichkeitsmaß, ohne DOM
+│   ├── parliament.js       # Ergebnisbalken und Halbrund, reines SVG
 │   ├── routing.js          # Hash-Routen, Tabs
 │   ├── suche.js            # globale Suche
 │   ├── hilfen.js           # Format-Helfer
