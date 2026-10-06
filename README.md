@@ -5,9 +5,10 @@ Ausschüssen) öffentlich nachvollziehbar macht. Themen, Sitzungen, Anträge,
 Pressemitteilungen und Mitglieder-Profile sind miteinander verzahnt und über
 eine Suche und Filter zugänglich.
 
-🔗 **Live:** [bagruber.github.io/council](https://bagruber.github.io/council/)
+**Live:** [moosburg.eu/stadtrat](https://moosburg.eu/stadtrat/) und
+[bagruber.github.io/council](https://bagruber.github.io/council/)
 
-> ⚠️ **Hinweis:** Dieses Projekt ist **nicht** offiziell durch die Stadt
+> **Hinweis:** Dieses Projekt ist **nicht** offiziell durch die Stadt
 > Moosburg a.d. Isar getragen oder beauftragt. Es ist ein privates
 > Public-Interest-Technology-Vorhaben zur Förderung von Transparenz in der
 > Lokalpolitik.
@@ -36,9 +37,11 @@ eine Suche und Filter zugänglich.
 
 Bewusst minimal:
 
-- Vanilla JS, keine Frameworks, keine npm-Runtime-Dependencies.
-- D3 nicht mehr benötigt — die Parlament-Visualisierung läuft auf eigenem
-  Pure-SVG-Code in `js/parliament.js`.
+- Vanilla JS als ES-Module, kein Build-Step, keine Laufzeit-Abhängigkeit.
+  Der Browser lädt die Module direkt; `python scripts/stamp_assets.py` hängt
+  nach jeder Änderung an CSS oder JS eine Inhaltskennung an die Pfade.
+- Die Parlaments-Visualisierung ist eigener SVG-Code in `js/parliament.js`,
+  kein D3.
 - Hash-basiertes Routing (`#/topic/t3`, `#/member/gruber`, `#/session/sr_20240612`).
 - Statische JSON-Dateien als Datenquelle (siehe `data/`).
 - Deployment aus `main`, sowohl auf GitHub Pages als auch nach
@@ -70,16 +73,22 @@ council/
 │   └── niederschriften/    # PDFs der Original-Niederschriften
 ├── img/
 │   ├── members/            # Profilbilder (WebP, 1x + 2x)
-│   │   └── originals/      # PNG-Master-Kopien
-│   └── topics/             # Thumbnails für Themen-Cards
+│   └── topics/             # Bilder für Themen-Timelines
+├── fonts/                  # self-hosted woff2, keine CDN-Requests
+├── tests/                  # node --test, ohne Abhängigkeit
 ├── scripts/
 │   ├── validate_data.py    # Integritätscheck über alle data/*.json
 │   ├── build_data.py       # konsolidiertes bundle.json (optional)
-│   ├── compress_member_images.py
-│   └── add_*_data.py       # historische Integrations-Skripte
+│   ├── stamp_assets.py     # Inhaltskennung an CSS-/JS-Pfade
+│   ├── hole-tokens.mjs     # Farbkanon aus bagruber/moosburg-design holen
+│   └── crawl/              # Presserecherche
 ├── .claude/skills/         # Skill-Dokumentation für Pflege per LLM
 └── docs/CORE.md            # Walkthrough zur geteilten Vote-Logik
 ```
+
+Nicht im Repo, aber lokal vorhanden: `quellen/` (Rohquellen und
+Arbeitsnotizen) und `img/members/originals/` (PNG-Vorlagen der Porträts).
+GitHub Pages liefert `main` roh aus — was eingecheckt ist, ist öffentlich.
 
 ## Lokal entwickeln
 
@@ -113,6 +122,12 @@ python scripts/validate_data.py
 ```
 
 Bei Exit-Code 0 ist alles konsistent. Warnings sind Hinweise, keine Blocker.
+
+Die geteilte Vote- und Perioden-Logik ist getestet:
+
+```bash
+node --test "tests/*.test.mjs"
+```
 
 ## Datenmodell (Kurzfassung)
 
@@ -170,8 +185,9 @@ Datenarbeit in der Kommune Moosburg:
 - **[bagruber/datahub](https://github.com/bagruber/datahub)** — interaktives
   Umfrage- und Daten-Dashboard.
 
-Designsprache (Moosburg-Rot, Gold-Akzent, warmes Off-White) ist über alle
-drei Apps konsistent.
+Die Designsprache ist über alle drei Apps konsistent; der Kanon liegt in
+**[bagruber/moosburg-design](https://github.com/bagruber/moosburg-design)**
+und kommt per `node scripts/hole-tokens.mjs` als `css/tokens.css` herein.
 
 ## Lizenz & Verantwortung
 

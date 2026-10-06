@@ -5,6 +5,8 @@
 - Vanilla JS, kein Framework, keine externen Dependencies (Parliament-Chart ist pure SVG, kein D3)
 - Hash-basiertes Routing (`#/member/id`, `#/topic/id`, `#/?tags=...`, etc.)
 - Lokaler Webserver zum Testen: `npx serve`
+- Tests: `node --test "tests/*.test.mjs"` (ohne Abhängigkeit)
+- Nach jeder Änderung an CSS oder JS: `python scripts/stamp_assets.py`
 - Single-page App: `index.html` + `js/core.js` + `js/app.js` + `js/parliament.js` + `css/style.css`
 - `js/core.js` (`Council`): geteilte Perioden- & Vote-Status-Logik für app.js und parliament.js, siehe `docs/CORE.md`
 - Fonts self-hosted in `fonts/` (DSGVO: keine CDN-Requests), eingebunden über `css/fonts.css`
@@ -50,13 +52,21 @@ nicht als Rohfassung im Repo.
 
 ## UI & Design
 
-- Moosburg-Farbpalette: Rot-Gradient primary, Gold accent, Rainbow secondaries
-- Heller, freundlicher Look
-- Einheitliche Designsprache über die gesamte Plattform
+Maßgeblich ist `docs/formsprache-probe/ERGEBNIS.md`; der Farbkanon liegt in
+`../moosburg-design/css/theme.css` und kommt über `node scripts/hole-tokens.mjs`
+als `css/tokens.css` herein — dort nichts von Hand ändern.
+
+- Gedecktes Wappenrot, Gold als Akzent, Regenbogen für die Nebenfarben. **Keine
+  Verläufe.**
+- Source Serif 4 für Titel, Atkinson Hyperlegible Next für Text, Madelon Script
+  für die Handschrift. Self-hosted in `fonts/` (DSGVO), eingebunden über
+  `css/fonts.css`.
+- Keine Versalien, keine einseitige Farbkante an Karten (siehe PLATTFORM.md).
+- Ein Aufklapp-Muster im Haus: `<details>` mit `+`/`–` rechts.
+- Heller, freundlicher Look, einheitlich über die ganze Plattform
 - Wiederkehrende Elemente (Chips, Badges, Cards, Links) konsistent gestalten
 - Informationsdichte balancieren: Details versteckt oder auf eigenen Seiten
 - Nicht alles muss auf den ersten Blick sichtbar sein
-- Bildmaterial in Themen-Timelines modern und ansprechend einbauen (Zukunft)
 - Parteien haben eigene Farben, die durchgängig verwendet werden
 
 ## Code-Stil
