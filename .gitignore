@@ -14,3 +14,6 @@ data/crawl/zuordnung.json
 docs/offene-stimmen/
 docs/anwesenheit-luecken.txt
 docs/selbstauskuenfte/
+
+# Rohdaten des Vote-Trackings nur lokal, eingepflegt wird in votes.json
+data/vote_tracking/
