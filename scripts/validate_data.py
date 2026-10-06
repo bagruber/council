@@ -3,6 +3,10 @@
 Run via:  python scripts/validate_data.py
 Exit code 0 = clean, 1 = problems found.
 
+Prueft zweierlei: die Form gegen data/schema/*.schema.json (braucht
+jsonschema, siehe scripts/requirements.txt) und den Zusammenhang zwischen
+den Dateien.
+
 Catches the kinds of issues that have bitten us before:
   - Vote yes/no/absent arrays don't sum to expected body size
   - vote.sessionId points to a non-existent session
@@ -14,7 +18,7 @@ Catches the kinds of issues that have bitten us before:
   - history entry references missing sessionId/voteId
   - history entry whose vote carries no topicId (undercounts the dossier)
   - press references with broken ids
-  - member period gaps / overlaps within member.periods[]
+  - Mandatsabschnitte: Reihenfolge, Ueberlappung, Fraktion, Rolle, succeeds
   - BPU composition mismatch (welter-on-BPU-2022 type issues)
   - duplicate ids in press, sessions, votes, topics, members
   - Sitzungsregister: niederschrift-Stufe, ID zu Datum und Gremium, Zeiten
@@ -24,6 +28,7 @@ import json, sys, os
 from collections import Counter, defaultdict
 
 BASE = os.path.join(os.path.dirname(__file__), "..", "data")
+SCHEMA = os.path.join(BASE, "schema")
 
 def load(name):
     with open(os.path.join(BASE, name), encoding="utf-8") as f:
@@ -34,10 +39,48 @@ warnings = []
 def err(msg):  problems.append(msg)
 def warn(msg): warnings.append(msg)
 
-members_doc = load("members.json")
-members = members_doc["members"]
-parties = members_doc.get("parties", [])
-bodies  = members_doc.get("bodies", [])
+
+def schema_pruefer():
+    """Je Datei ein Pruefer gegen data/schema/<name>.schema.json.
+
+    Das Schema sagt, wie eine Datei aussieht; die Pruefungen darunter sagen,
+    ob sie zusammenpasst. Beides wird gebraucht: eine formal gueltige Datei
+    kann immer noch auf eine sessionId zeigen, die es nicht gibt.
+    """
+    schemata = {}
+    for datei in os.listdir(SCHEMA):
+        if datei.endswith(".schema.json"):
+            with open(os.path.join(SCHEMA, datei), encoding="utf-8") as f:
+                schemata[datei] = json.load(f)
+    registry = Registry().with_resources(
+        (name, Resource.from_contents(doc, default_specification=DRAFT202012))
+        for name, doc in schemata.items())
+    return {name.removesuffix(".schema.json"):
+            jsonschema.Draft202012Validator(doc, registry=registry)
+            for name, doc in schemata.items()}
+
+
+try:
+    import jsonschema
+    from referencing import Registry, Resource
+    from referencing.jsonschema import DRAFT202012
+except ImportError:
+    warn("jsonschema fehlt - Formpruefung uebersprungen "
+         "(pip install -r scripts/requirements.txt)")
+else:
+    pruefer = schema_pruefer()
+    for name in ("members", "parties", "bodies", "media", "sessions",
+                 "votes", "topics", "press", "tags"):
+        # Zehn Meldungen reichen; bei einem Formfehler sind sie meist alle
+        # dieselbe Ursache.
+        for fehler in sorted(pruefer[name].iter_errors(load(name + ".json")),
+                             key=str)[:10]:
+            ort = "/".join(str(x) for x in fehler.absolute_path) or "(Wurzel)"
+            err(f"{name}.json {ort}: {fehler.message}")
+
+members = load("members.json")
+parties = load("parties.json")["parties"]
+bodies  = load("bodies.json")
 sessions = load("sessions.json")
 votes    = load("votes.json")
 topics   = load("topics.json")
@@ -212,17 +255,34 @@ for t in topics:
                  f"keine topicId -- zaehlt in keinem Dossier")
 
 # ── Member periods ───────────────────────────────────────────────────────────
+PARTY_IDS = {p["id"] for p in parties}
+ROLLEN = {"councillor", "mayor"}
+
 for m in members:
-    periods = m.get("periods") or [{"from": m.get("from"), "to": m.get("to")}]
-    for p in periods:
+    mandate = m.get("mandates")
+    if not mandate:
+        err(f"member {m['id']}: ohne mandates")
+        continue
+    for i, p in enumerate(mandate):
+        if not p.get("from"):
+            err(f"member {m['id']} mandates[{i}]: ohne from")
         if p.get("from") and p.get("to") and p["from"] > p["to"]:
-            err(f"member {m['id']} period: from {p['from']} > to {p['to']}")
-    # Sort and check for overlap
-    sortable = [p for p in periods if p.get("from")]
-    sortable.sort(key=lambda p: p["from"])
-    for a, b in zip(sortable, sortable[1:]):
-        if a.get("to") and b["from"] <= a["to"]:
-            warn(f"member {m['id']}: periods overlap ({a} / {b})")
+            err(f"member {m['id']} mandates[{i}]: from {p['from']} > to {p['to']}")
+        if p.get("party") not in PARTY_IDS:
+            err(f"member {m['id']} mandates[{i}]: unbekannte Fraktion {p.get('party')!r}")
+        if p.get("role") not in ROLLEN:
+            err(f"member {m['id']} mandates[{i}]: unbekannte Rolle {p.get('role')!r}")
+    # Die Abschnitte stehen in zeitlicher Reihenfolge; sie duerfen sich an
+    # ihrer Grenze beruehren (dort gilt der spaetere), aber nicht ueberlappen.
+    for a, b in zip(mandate, mandate[1:]):
+        if not a.get("to"):
+            err(f"member {m['id']}: Abschnitt ohne Ende, aber ein weiterer folgt")
+        elif b["from"] < a["to"]:
+            warn(f"member {m['id']}: Mandatsabschnitte ueberlappen ({a} / {b})")
+
+    for vorher in m.get("succeeds", []):
+        if vorher not in member_ids:
+            err(f"member {m['id']}: succeeds '{vorher}' ist kein Mitglied")
 
 # ── BPU composition vs actual votes (welter-on-BPU-2022 etc.) ────────────────
 def body_config_at(body, date):

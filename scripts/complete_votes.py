@@ -17,7 +17,7 @@ DATA = os.path.join(BASE, 'data')
 
 
 def active(m, d):
-    sp = m.get('periods') or [{'from': m.get('from'), 'to': m.get('to')}]
+    sp = m['mandates']
     return any((s.get('from') or '0') <= d and (not s.get('to') or s['to'] >= d)
                for s in sp)
 
@@ -26,7 +26,7 @@ def main():
     do_apply = '--apply' in sys.argv
     load = lambda n: json.load(open(os.path.join(DATA, n), encoding='utf-8'))
     votes, sessions = load('votes.json'), load('sessions.json')
-    members = load('members.json')['members']
+    members = load('members.json')
     smap = {s['id']: s for s in sessions}
 
     done = []

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Gremien",
+  "description": "Gremien mit Perioden tragen ihre Besetzung in seatConfigs, Gremien ohne direkt am Objekt. Annahme: ein Sitz ist nie unbesetzt.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name"],
+    "properties": {
+      "id": { "type": "string" },
+      "name": { "type": "string" },
+      "short": { "type": "string" },
+      "icon": { "type": "string" },
+      "type": { "type": "string" },
+      "seatConfigs": { "type": "array", "items": { "$ref": "#/$defs/konfiguration" } },
+      "chair": { "type": ["string", "null"] },
+      "seats": { "type": "array", "items": { "$ref": "#/$defs/sitz" } },
+      "pastSeats": { "type": "array" }
+    }
+  },
+  "$defs": {
+    "sitz": {
+      "type": "object",
+      "properties": {
+        "member": { "type": "string" },
+        "sub": { "type": ["string", "boolean"] },
+        "role": { "type": "string" },
+        "occupants": {
+          "description": "Nachfolge auf einem Sitz, lückenlos.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["member"],
+            "properties": {
+              "member": { "type": "string" },
+              "from": { "$ref": "datum.schema.json" },
+              "to": { "$ref": "datum.schema.json" }
+            }
+          }
+        }
+      }
+    },
+    "konfiguration": {
+      "type": "object",
+      "properties": {
+        "from": { "$ref": "datum.schema.json" },
+        "to": { "$ref": "datum.schema.json" },
+        "chair": { "type": ["string", "null"] },
+        "vicechairs": { "type": "array", "items": { "$ref": "#/$defs/sitz" } },
+        "seats": { "type": "array", "items": { "$ref": "#/$defs/sitz" } }
+      }
+    }
+  }
+}

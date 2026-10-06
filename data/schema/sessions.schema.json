@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sitzungsregister",
+  "description": "Das vollständige Register, auch für Sitzungen ohne Niederschrift und für angekündigte. Ob eine Sitzung stattgefunden hat, sagt ihr Datum.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "date", "type", "niederschrift"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "string", "pattern": "^(sr|bpu|hvfa)_[0-9]{8}$" },
+      "date": { "$ref": "datum.schema.json" },
+      "type": { "enum": ["stadtrat", "bpu", "hvfa"] },
+      "niederschrift": {
+        "description": "vollständig = Niederschrift mit Anwesenheitsliste; auszug = Beschlussauszug der Stadt ohne Anwesenheit; keine = nichts veröffentlicht.",
+        "enum": ["vollständig", "auszug", "keine"]
+      },
+      "start": { "type": "string", "pattern": "^[0-9]{2}:[0-9]{2}$" },
+      "end": { "type": "string", "pattern": "^[0-9]{2}:[0-9]{2}$" },
+      "location": { "type": "string" },
+      "title": { "type": "string", "description": "Nur aus der Niederschrift; eine Sitzungsnummer wird nie erfunden." },
+      "source": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "kind": { "enum": ["webauszug"] },
+          "url": { "type": ["string", "null"] }
+        }
+      },
+      "quellen": { "type": "object", "description": "Abweichende Zeiten aus Nebenquellen, etwa einer Mitschrift." },
+      "absent": { "type": "array", "items": { "type": "string" } },
+      "partial": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["member"],
+          "properties": { "member": { "type": "string" }, "note": { "type": "string" },
+                          "from": { "type": "string" }, "to": { "type": "string" } }
+        }
+      },
+      "substitutes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["member", "substitute"],
+          "additionalProperties": false,
+          "properties": { "member": { "type": "string" }, "substitute": { "type": "string" } }
+        }
+      },
+      "agenda": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["number", "title"],
+          "additionalProperties": false,
+          "properties": {
+            "number": { "type": "string", "description": "Gliederungsnummer, auch \"6.1\" — Text, keine Zahl" },
+            "title": { "type": "string" },
+            "type": { "enum": ["formal", "discussion"] },
+            "topicId": { "type": "string" },
+            "voteIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+            "press": { "type": "array", "items": { "type": "string" } },
+            "note": { "type": "string" }
+          }
+        }
+      },
+      "press": { "type": "array", "items": { "type": "string" } },
+      "notes": {
+        "description": "Vermerke aus der Niederschrift, die keinem Feld entsprechen.",
+        "type": "array", "items": { "type": "string" }
+      }
+    }
+  }
+}

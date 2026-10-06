@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mitglieder des Stadtrats",
+  "description": "Mandat, Fraktion und Rolle stehen als geordnete Abschnittsliste. Eine Lücke zwischen zwei Abschnitten ist eine Unterbrechung des Mandats, kein Abstand heißt Fraktions- oder Rollenwechsel. Berühren sich zwei Abschnitte an ihrer Grenze, gilt der spätere.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "firstName", "lastName", "mandates"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z_]+$" },
+      "firstName": { "type": "string" },
+      "lastName": { "type": "string" },
+      "nickname": { "type": "string" },
+      "nee": { "type": "string", "description": "Geburtsname" },
+      "title": { "type": "string" },
+      "succeeds": {
+        "type": "array",
+        "description": "Für wen nachgerückt wurde. Mehrere, wenn nicht überliefert ist, für wen von ihnen.",
+        "items": { "type": "string" },
+        "minItems": 1
+      },
+      "mandates": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": ["from", "party", "role"],
+          "additionalProperties": false,
+          "properties": {
+            "from": { "$ref": "datum.schema.json" },
+            "to": { "$ref": "datum.schema.json" },
+            "party": { "type": "string" },
+            "role": { "enum": ["councillor", "mayor"] }
+          }
+        }
+      },
+      "profile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "pronouns": { "type": "string" },
+          "birthYear": { "type": "integer" },
+          "identity": {
+            "description": "Besondere Kategorie nach Art. 9 DSGVO. Wird nur angezeigt, wenn eine Selbstauskunft sie deckt; das Altformat (blanke Liste) bleibt unsichtbar.",
+            "oneOf": [
+              { "type": "array", "items": { "type": "string" } },
+              {
+                "type": "object",
+                "required": ["values"],
+                "additionalProperties": false,
+                "properties": {
+                  "values": {
+                    "type": "array", "minItems": 1,
+                    "items": { "enum": ["queer", "migrant", "flinta", "disability"] }
+                  },
+                  "source": { "type": "string" },
+                  "date": { "$ref": "datum.schema.json" }
+                }
+              }
+            ]
+          },
+          "contact": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "email": { "type": "string" }, "website": { "type": "string" },
+              "instagram": { "type": "string" }, "threads": { "type": "string" },
+              "linkedin": { "type": "string" }, "facebook": { "type": "string" }
+            }
+          },
+          "titles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["title"],
+              "additionalProperties": false,
+              "properties": {
+                "title": { "type": "string" },
+                "from": { "$ref": "datum.schema.json" },
+                "to": { "oneOf": [{ "$ref": "datum.schema.json" }, { "type": "null" }] }
+              }
+            }
+          },
+          "elections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["year"],
+              "additionalProperties": false,
+              "properties": {
+                "year": { "type": "integer" },
+                "listRank": { "type": "integer" },
+                "resultRank": { "type": "integer" },
+                "votes": { "type": "integer" },
+                "elected": { "type": "boolean" }
+              }
+            }
+          },
+          "motions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["title", "date"],
+              "properties": {
+                "title": { "type": "string" },
+                "date": { "$ref": "datum.schema.json" },
+                "body": { "type": "string" },
+                "coSigners": { "type": "array", "items": { "type": "string" } },
+                "sessionId": { "type": "string" },
+                "voteId": { "type": "string" },
+                "press": { "type": "array", "items": { "type": "string" } },
+                "text": { "type": "string" },
+                "result": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

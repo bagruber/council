@@ -90,7 +90,7 @@ def main():
     ap.add_argument('--dry', action='store_true')
     args = ap.parse_args()
 
-    members = {m['id'] for m in load('members.json')['members']}
+    members = {m['id'] for m in load('members.json')}
     if args.member not in members:
         sys.exit('Unbekannte member-id: ' + args.member)
 

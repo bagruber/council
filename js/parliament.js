@@ -521,10 +521,7 @@ const VoteVis = (() => {
   // Oktober 2017 fuer die CSU auf einem FW-Platz, Wagner ab Februar 2017 fuer
   // die Gruenen auf einem UMB-Platz.
   function partyAt(m, date) {
-    const h = m.partyHistory;
-    if (!h || !h.length || !date) return m.party;
-    const at = h.find(p => (p.from || "0") <= date && (!p.to || p.to > date));
-    return at ? at.party : m.party;
+    return (date && Council.partyAt(m, date)) || m.party;
   }
 
   // `info`: Statuszeile samt Herkunft, wie sie im Tooltip stehen soll. Wo sie

@@ -63,13 +63,16 @@ council/
 │   ├── hilfen.js           # Format-Helfer
 │   └── views/              # eine Datei je Seite
 ├── data/
-│   ├── members.json        # Mitglieder, Parteien, Gremien, Medien
-│   ├── sessions.json       # Sitzungen + Tagesordnung
+│   ├── members.json        # Mitglieder mit Mandatsabschnitten
+│   ├── parties.json        # Fraktionen + beide Sitzordnungen
+│   ├── bodies.json         # Gremien + Besetzung je Periode
+│   ├── media.json          # Zeitungen und Sender
+│   ├── sessions.json       # Sitzungsregister + Tagesordnung
 │   ├── votes.json          # Einzel-Abstimmungen
 │   ├── topics.json         # Themen + Timeline-History
 │   ├── tags.json           # Themen-Kategorien
 │   ├── press.json          # Presseartikel
-│   ├── termine.json        # angekündigte, noch nicht gehaltene Sitzungen
+│   ├── schema/             # JSON Schema je Datei
 │   └── niederschriften/    # PDFs der Original-Niederschriften
 ├── img/
 │   ├── members/            # Profilbilder (WebP, 1x + 2x)
@@ -118,12 +121,15 @@ und Pressemitteilungen. Pro Aufgabe gibt es eine
 Nach jeder Datenänderung:
 
 ```bash
+pip install -r scripts/requirements.txt   # einmalig
 python scripts/validate_data.py
 ```
 
-Bei Exit-Code 0 ist alles konsistent. Warnings sind Hinweise, keine Blocker.
+Geprüft wird zweierlei: die Form gegen `data/schema/*.schema.json` und der
+Zusammenhang zwischen den Dateien. Bei Exit-Code 0 ist alles konsistent;
+Warnings sind Hinweise, keine Blocker.
 
-Die geteilte Vote- und Perioden-Logik ist getestet:
+Die geteilte Vote- und Mandatslogik ist getestet:
 
 ```bash
 node --test "tests/*.test.mjs"
@@ -131,47 +137,54 @@ node --test "tests/*.test.mjs"
 
 ## Datenmodell (Kurzfassung)
 
+Mandat, Fraktion und Rolle stehen als eine geordnete Liste von Abschnitten am
+Mitglied. Eine Lücke dazwischen ist eine Unterbrechung des Mandats, kein
+Abstand heißt Fraktions- oder Rollenwechsel, und wo zwei Abschnitte sich an
+ihrer Grenze berühren, gilt der spätere.
+
 ```jsonc
 // data/members.json
-{
-  "members": [
-    {
-      "id": "gruber",
-      "name": "Benedict Arya Gruber",
-      "firstName": "Benedict", "lastName": "Gruber",
-      "party": "fresh",
-      "from": "2022-10-24",
-      "role": "councillor"
-    }
-  ],
-  "parties": [...],
-  "bodies": [
-    { "id": "bpu", "name": "Bau-, Planungs- und Umweltausschuss",
-      "seatConfigs": [
-        { "from": "2020-05-01", "to": "2026-04-30",
-          "chair": "dollinger",
-          "vicechairs": [...],
-          "seats": [
-            { "occupants": [
-                { "member": "wittmann", "from": "2020-05-01", "to": "2021-10-24" },
-                { "member": "gruebl",   "from": "2021-10-25", "to": "2024-10-21" },
-                { "member": "hobmaier", "from": "2024-10-22" }
-              ],
-              "sub": "gruber"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": "strobl",
+    "firstName": "…", "lastName": "Strobl",
+    "mandates": [
+      { "from": "2023-07-24", "party": "linke", "role": "councillor" }
+    ],
+    "succeeds": ["john"]
+  }
+]
+```
+
+```jsonc
+// data/bodies.json
+[
+  { "id": "bpu", "name": "Bau-, Planungs- und Umweltausschuss",
+    "seatConfigs": [
+      { "from": "2020-05-01", "to": "2026-04-30",
+        "chair": "dollinger",
+        "vicechairs": [...],
+        "seats": [
+          { "occupants": [
+              { "member": "wittmann", "from": "2020-05-01", "to": "2021-10-24" },
+              { "member": "gruebl",   "from": "2021-10-25", "to": "2024-10-21" },
+              { "member": "hobmaier", "from": "2024-10-22" }
+            ],
+            "sub": "gruber"
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
 Stamm-Annahme: **Sitze sind nie unbesetzt.** Nachrücker:innen übernehmen am
 Folgetag des Ausscheidens — eindeutig per `occupants[]`-Historie.
 
-Mehr Detail dazu im [`docs/CORE.md`](docs/CORE.md), das auch die zentrale
-Vote-Status-Logik (yes / no / absent / inferiert / unknown) beschreibt.
+Die vollständige Form aller Dateien steht als JSON Schema in
+[`data/schema/`](data/schema/). Mehr Detail im [`docs/CORE.md`](docs/CORE.md),
+das auch die Vote-Status-Logik beschreibt.
 
 ## Geschwister-Apps
 

@@ -1,0 +1,1567 @@
+[
+  {
+    "id": "plenum",
+    "name": "Stadtrat",
+    "shortName": "Plenum",
+    "type": "plenum",
+    "icon": "account_balance",
+    "description": "Das Plenum des Stadtrats ist das höchste Beschlussgremium der Stadt Moosburg. Es besteht aus 24 ehrenamtlichen Stadträtinnen und Stadträten sowie dem Ersten Bürgermeister.",
+    "rows": 2,
+    "chair": "mader",
+    "seats": [
+      {
+        "occupants": [
+          {
+            "member": "heinz",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "hadersdorfer",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "linz_karin",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "welter",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "marcus",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "sabanovic",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "grundner",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "lauterbach",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "beibl",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "stanglmaier",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "reither",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "tristl",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "schweiger",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "kehlringer",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "haberl",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "ghadieh",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "marschoun",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "strobl",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "dick",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "meier",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "sixt",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "roeck",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "ruemelin",
+            "from": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "occupants": [
+          {
+            "member": "linz_kilian",
+            "from": "2026-05-01"
+          }
+        ]
+      }
+    ],
+    "seatConfigs": [
+      {
+        "from": "2014-05-01",
+        "to": "2020-04-30",
+        "rows": 2,
+        "chair": "meinelt",
+        "seats": [
+          {
+            "occupants": [
+              {
+                "member": "heinz"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "kerscher"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "tristl"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "hadersdorfer"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "dollinger"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "beubl"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "zitzlsberger",
+                "to": "2017-12-11"
+              },
+              {
+                "member": "john",
+                "from": "2017-12-11"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "wagner"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "bauer"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "stanglmaier"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "linz_karin"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "mueller_a"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "weber"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "schaffer",
+                "to": "2018-05-14"
+              },
+              {
+                "member": "banner",
+                "from": "2018-05-14"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "kieninger"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "reif"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "groeneveld",
+                "to": "2015-12-21"
+              },
+              {
+                "member": "grundner",
+                "from": "2016-01-11"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "marschoun"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "pschorr"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "kaestl"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "koehler"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "hilberg",
+                "to": "2018-11-05"
+              },
+              {
+                "member": "haberl",
+                "from": "2018-11-23"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "altenbeck"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "becher_j"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": "2020-05-01",
+        "to": "2026-04-30",
+        "rows": 2,
+        "chair": "dollinger",
+        "seats": [
+          {
+            "occupants": [
+              {
+                "member": "heinz"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "hadersdorfer"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "beubl",
+                "to": "2025-03-23"
+              },
+              {
+                "member": "marcus",
+                "from": "2025-03-24"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "welter"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "kaestl"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "neumayr",
+                "to": "2022-10-10"
+              },
+              {
+                "member": "gruber",
+                "from": "2022-10-10"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "reif"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "lauterbach"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "beibl"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "stanglmaier"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "weber"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "linz_karin"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "tristl"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "haberl"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "pschorr"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "fincke"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "john",
+                "to": "2023-07-24"
+              },
+              {
+                "member": "strobl",
+                "from": "2023-07-24"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "wittmann",
+                "to": "2021-10-25"
+              },
+              {
+                "member": "gruebl",
+                "from": "2021-10-25",
+                "to": "2024-10-21"
+              },
+              {
+                "member": "hobmaier",
+                "from": "2024-10-21"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "grundner"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "kieninger"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "von_pressentin"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "wagner",
+                "to": "2022-05-31"
+              },
+              {
+                "member": "linz_kilian",
+                "from": "2022-06-20"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "becher_j"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "altenbeck",
+                "to": "2022-05-31"
+              },
+              {
+                "member": "becher_a",
+                "from": "2022-06-20"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": "2026-05-01",
+        "rows": 2,
+        "chair": "mader",
+        "seats": [
+          {
+            "occupants": [
+              {
+                "member": "heinz",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "hadersdorfer",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "linz_karin",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "welter",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "marcus",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "sabanovic",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "grundner",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "lauterbach",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "beibl",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "stanglmaier",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "reither",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "tristl",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "schweiger",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "kehlringer",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "haberl",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "ghadieh",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "marschoun",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "strobl",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "dick",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "meier",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "sixt",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "roeck",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "ruemelin",
+                "from": "2026-05-01"
+              }
+            ]
+          },
+          {
+            "occupants": [
+              {
+                "member": "linz_kilian",
+                "from": "2026-05-01"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bpu",
+    "name": "Bau-, Planungs- und Umweltausschuss",
+    "shortName": "Bauausschuss",
+    "type": "ausschuss",
+    "icon": "engineering",
+    "description": "Der Bauausschuss entscheidet über Bauanträge, Bebauungspläne, Verkehrsplanung und Umweltfragen. Er besteht aus 9 stimmberechtigten Mitgliedern plus dem Vorsitzenden.",
+    "chair": "mader",
+    "seats": [
+      {
+        "member": "linz_karin",
+        "sub": "reither"
+      },
+      {
+        "member": "tristl",
+        "sub": "haberl"
+      },
+      {
+        "member": "schweiger",
+        "sub": "heinz"
+      },
+      {
+        "member": "marschoun",
+        "sub": "marcus"
+      },
+      {
+        "member": "welter",
+        "sub": "ghadieh"
+      },
+      {
+        "member": "sabanovic",
+        "sub": "dick"
+      },
+      {
+        "member": "sixt",
+        "sub": "grundner"
+      },
+      {
+        "member": "meier",
+        "sub": "lauterbach"
+      },
+      {
+        "member": "beibl",
+        "sub": "roeck"
+      },
+      {
+        "member": "hadersdorfer",
+        "sub": "kehlringer"
+      },
+      {
+        "member": "stanglmaier",
+        "sub": "linz_kilian"
+      }
+    ],
+    "pastSeats": [
+      {
+        "member": "beubl",
+        "to": "2025-03"
+      },
+      {
+        "member": "gruebl",
+        "from": "2021-10",
+        "to": "2024-10"
+      },
+      {
+        "member": "wittmann",
+        "from": "2020-05",
+        "to": "2021-10"
+      },
+      {
+        "member": "wagner",
+        "sub": true,
+        "to": "2022-05"
+      }
+    ],
+    "seatConfigs": [
+      {
+        "from": "2020-05-01",
+        "to": "2026-04-30",
+        "chair": "dollinger",
+        "seats": [
+          {
+            "member": "linz_karin",
+            "sub": "weber"
+          },
+          {
+            "member": "tristl",
+            "sub": "haberl"
+          },
+          {
+            "sub": "pschorr",
+            "occupants": [
+              {
+                "member": "beubl",
+                "from": "2020-05-01",
+                "to": "2025-03-23"
+              },
+              {
+                "member": "marcus",
+                "from": "2025-03-24"
+              }
+            ]
+          },
+          {
+            "member": "welter"
+          },
+          {
+            "sub": "gruber",
+            "occupants": [
+              {
+                "member": "wittmann",
+                "from": "2020-05-01",
+                "to": "2021-10-24"
+              },
+              {
+                "member": "gruebl",
+                "from": "2021-10-25",
+                "to": "2024-10-21"
+              },
+              {
+                "member": "hobmaier",
+                "from": "2024-10-22"
+              }
+            ]
+          },
+          {
+            "member": "kieninger",
+            "sub": "lauterbach"
+          },
+          {
+            "member": "reif",
+            "sub": "grundner"
+          },
+          {
+            "member": "beibl",
+            "sub": "von_pressentin"
+          },
+          {
+            "occupants": [
+              {
+                "member": "altenbeck",
+                "to": "2022-05-31"
+              },
+              {
+                "member": "linz_kilian",
+                "from": "2022-06-20"
+              }
+            ]
+          },
+          {
+            "member": "hadersdorfer",
+            "sub": "heinz"
+          },
+          {
+            "member": "stanglmaier",
+            "sub": "becher_j"
+          }
+        ]
+      },
+      {
+        "from": "2026-05-01",
+        "chair": "mader",
+        "seats": [
+          {
+            "member": "linz_karin",
+            "sub": "reither"
+          },
+          {
+            "member": "tristl",
+            "sub": "haberl"
+          },
+          {
+            "member": "schweiger",
+            "sub": "heinz"
+          },
+          {
+            "member": "marschoun",
+            "sub": "marcus"
+          },
+          {
+            "member": "welter",
+            "sub": "ghadieh"
+          },
+          {
+            "member": "sabanovic",
+            "sub": "dick"
+          },
+          {
+            "member": "sixt",
+            "sub": "grundner"
+          },
+          {
+            "member": "meier",
+            "sub": "lauterbach"
+          },
+          {
+            "member": "beibl",
+            "sub": "roeck"
+          },
+          {
+            "member": "hadersdorfer",
+            "sub": "kehlringer"
+          },
+          {
+            "member": "stanglmaier",
+            "sub": "linz_kilian"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hvfa",
+    "name": "Hauptverwaltungs- und Finanzausschuss",
+    "shortName": "HVFA",
+    "type": "ausschuss",
+    "icon": "payments",
+    "description": "Der HVFA bereitet Haushaltsentscheidungen vor und behandelt Finanz- sowie allgemeine Verwaltungsangelegenheiten.",
+    "chair": "mader",
+    "seats": [
+      {
+        "member": "heinz",
+        "sub": "schweiger"
+      },
+      {
+        "member": "reither",
+        "sub": "linz_karin"
+      },
+      {
+        "member": "kehlringer",
+        "sub": "hadersdorfer"
+      },
+      {
+        "member": "tristl",
+        "sub": "haberl"
+      },
+      {
+        "member": "marcus",
+        "sub": "marschoun"
+      },
+      {
+        "member": "ghadieh",
+        "sub": "welter"
+      },
+      {
+        "member": "dick",
+        "sub": "sabanovic"
+      },
+      {
+        "member": "grundner",
+        "sub": "sixt"
+      },
+      {
+        "member": "lauterbach",
+        "sub": "meier"
+      },
+      {
+        "member": "linz_kilian",
+        "sub": "beibl"
+      },
+      {
+        "member": "ruemelin",
+        "sub": "roeck"
+      }
+    ],
+    "pastSeats": [
+      {
+        "member": "wagner",
+        "to": "2022-05"
+      },
+      {
+        "member": "altenbeck",
+        "sub": true,
+        "to": "2022-05"
+      },
+      {
+        "member": "beubl",
+        "sub": true,
+        "to": "2025-03"
+      },
+      {
+        "member": "gruebl",
+        "sub": true,
+        "from": "2021-10",
+        "to": "2024-10"
+      },
+      {
+        "member": "wittmann",
+        "sub": true,
+        "from": "2020-05",
+        "to": "2021-10"
+      }
+    ],
+    "seatConfigs": [
+      {
+        "from": "2020-05-01",
+        "to": "2026-04-30",
+        "chair": "dollinger",
+        "seats": [
+          {
+            "member": "haberl",
+            "sub": "tristl"
+          },
+          {
+            "member": "weber",
+            "sub": "linz_karin"
+          },
+          {
+            "member": "marcus",
+            "sub": "pschorr"
+          },
+          {
+            "member": "gruber",
+            "sub": "hobmaier"
+          },
+          {
+            "member": "reif",
+            "sub": "grundner"
+          },
+          {
+            "member": "becher_a",
+            "sub": "von_pressentin"
+          },
+          {
+            "member": "stanglmaier",
+            "sub": "beibl"
+          }
+        ]
+      },
+      {
+        "from": "2026-05-01",
+        "chair": "mader",
+        "seats": [
+          {
+            "member": "heinz",
+            "sub": "schweiger"
+          },
+          {
+            "member": "reither",
+            "sub": "linz_karin"
+          },
+          {
+            "member": "kehlringer",
+            "sub": "hadersdorfer"
+          },
+          {
+            "member": "tristl",
+            "sub": "haberl"
+          },
+          {
+            "member": "marcus",
+            "sub": "marschoun"
+          },
+          {
+            "member": "ghadieh",
+            "sub": "welter"
+          },
+          {
+            "member": "dick",
+            "sub": "sabanovic"
+          },
+          {
+            "member": "grundner",
+            "sub": "sixt"
+          },
+          {
+            "member": "lauterbach",
+            "sub": "meier"
+          },
+          {
+            "member": "linz_kilian",
+            "sub": "beibl"
+          },
+          {
+            "member": "ruemelin",
+            "sub": "roeck"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pa",
+    "name": "Personalausschuss",
+    "shortName": "Personalausschuss",
+    "type": "ausschuss",
+    "icon": "person",
+    "description": "Der Personalausschuss befasst sich mit Personalangelegenheiten der städtischen Beschäftigten.",
+    "chair": "mader",
+    "seats": [
+      {
+        "member": "reither",
+        "sub": "kehlringer"
+      },
+      {
+        "member": "schweiger",
+        "sub": "linz_karin"
+      },
+      {
+        "member": "dick",
+        "sub": "strobl"
+      },
+      {
+        "member": "meier",
+        "sub": "sixt"
+      },
+      {
+        "member": "roeck",
+        "sub": "ruemelin"
+      }
+    ],
+    "pastSeats": [
+      {
+        "member": "altenbeck",
+        "to": "2022-05"
+      },
+      {
+        "member": "beubl",
+        "sub": true,
+        "to": "2025-03"
+      },
+      {
+        "member": "john",
+        "sub": true,
+        "to": "2023-07"
+      },
+      {
+        "member": "wittmann",
+        "sub": true,
+        "from": "2020-05",
+        "to": "2021-10"
+      }
+    ],
+    "seatConfigs": [
+      {
+        "from": "2020-05-01",
+        "to": "2026-04-30",
+        "chair": "dollinger",
+        "seats": [
+          {
+            "member": "weber",
+            "sub": "linz_karin"
+          },
+          {
+            "member": "pschorr",
+            "sub": "marcus"
+          },
+          {
+            "member": "gruber",
+            "sub": "strobl"
+          },
+          {
+            "member": "kieninger",
+            "sub": "reif"
+          },
+          {
+            "member": "becher_a",
+            "sub": "von_pressentin"
+          }
+        ]
+      },
+      {
+        "from": "2026-05-01",
+        "chair": "mader",
+        "seats": [
+          {
+            "member": "reither",
+            "sub": "kehlringer"
+          },
+          {
+            "member": "schweiger",
+            "sub": "linz_karin"
+          },
+          {
+            "member": "dick",
+            "sub": "strobl"
+          },
+          {
+            "member": "meier",
+            "sub": "sixt"
+          },
+          {
+            "member": "roeck",
+            "sub": "ruemelin"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rpa",
+    "name": "Rechnungsprüfungsausschuss",
+    "shortName": "RPA",
+    "type": "ausschuss",
+    "icon": "fact_check",
+    "description": "Der Rechnungsprüfungsausschuss prüft die Haushalts- und Wirtschaftsführung der Stadt.",
+    "chair": null,
+    "seats": [
+      {
+        "member": "linz_karin",
+        "sub": "heinz"
+      },
+      {
+        "member": "tristl",
+        "sub": "haberl"
+      },
+      {
+        "member": "sabanovic",
+        "sub": "dick"
+      },
+      {
+        "member": "meier",
+        "sub": "sixt"
+      },
+      {
+        "member": "beibl",
+        "sub": "linz_kilian"
+      }
+    ],
+    "pastSeats": [
+      {
+        "member": "beubl",
+        "role": "Vorsitz",
+        "to": "2025-03"
+      },
+      {
+        "member": "gruebl",
+        "from": "2021-10",
+        "to": "2024-10"
+      },
+      {
+        "member": "wagner",
+        "to": "2022-05"
+      },
+      {
+        "member": "wittmann",
+        "sub": true,
+        "from": "2020-05",
+        "to": "2021-10"
+      }
+    ],
+    "seatConfigs": [
+      {
+        "from": "2020-05-01",
+        "to": "2026-04-30",
+        "chair": "lauterbach",
+        "seats": [
+          {
+            "member": "linz_karin",
+            "sub": "weber"
+          },
+          {
+            "member": "tristl",
+            "sub": "heinz"
+          },
+          {
+            "member": "marcus",
+            "sub": "pschorr"
+          },
+          {
+            "member": "hobmaier",
+            "sub": "kaestl",
+            "role": "Stellv. Vorsitzender"
+          },
+          {
+            "member": "becher_a",
+            "sub": "von_pressentin"
+          },
+          {
+            "member": "beibl",
+            "sub": "becher_j"
+          }
+        ],
+        "chairSub": "kieninger"
+      },
+      {
+        "from": "2026-05-01",
+        "chair": null,
+        "seats": [
+          {
+            "member": "linz_karin",
+            "sub": "heinz"
+          },
+          {
+            "member": "tristl",
+            "sub": "haberl"
+          },
+          {
+            "member": "sabanovic",
+            "sub": "dick"
+          },
+          {
+            "member": "meier",
+            "sub": "sixt"
+          },
+          {
+            "member": "beibl",
+            "sub": "linz_kilian"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ar_klaeranlage",
+    "name": "Aufsichtsrat Kläranlage GmbH",
+    "shortName": "AR Kläranlage",
+    "type": "sonstige",
+    "icon": "water_drop",
+    "description": "Der Aufsichtsrat überwacht die Geschäftsführung der Kläranlage Moosburg GmbH.",
+    "chair": "mader",
+    "seats": [
+      {
+        "member": "stanglmaier",
+        "sub": "roeck"
+      },
+      {
+        "member": "dick",
+        "sub": "sabanovic"
+      },
+      {
+        "member": "haberl",
+        "sub": "tristl"
+      },
+      {
+        "member": "hadersdorfer",
+        "sub": "heinz"
+      },
+      {
+        "member": "marcus",
+        "sub": "marschoun"
+      },
+      {
+        "member": "sixt",
+        "sub": "meier"
+      },
+      {
+        "member": "welter",
+        "sub": "ghadieh"
+      }
+    ],
+    "pastSeats": [
+      {
+        "member": "beubl",
+        "to": "2025-03"
+      },
+      {
+        "member": "gruebl",
+        "from": "2021-10",
+        "to": "2024-10"
+      },
+      {
+        "member": "wagner",
+        "to": "2022-05"
+      },
+      {
+        "member": "wittmann",
+        "from": "2020-05",
+        "to": "2021-10"
+      }
+    ],
+    "seatConfigs": [
+      {
+        "from": "2020-05-01",
+        "to": "2026-04-30",
+        "chair": "dollinger",
+        "seats": [
+          {
+            "member": "haberl",
+            "sub": "tristl"
+          },
+          {
+            "member": "weber",
+            "sub": "linz_karin"
+          },
+          {
+            "member": "marcus",
+            "sub": "pschorr"
+          },
+          {
+            "member": "hobmaier",
+            "sub": "gruber"
+          },
+          {
+            "member": "reif",
+            "sub": "grundner"
+          },
+          {
+            "member": "becher_a",
+            "sub": "von_pressentin"
+          },
+          {
+            "member": "stanglmaier",
+            "sub": "beibl"
+          }
+        ]
+      },
+      {
+        "from": "2026-05-01",
+        "chair": "mader",
+        "seats": [
+          {
+            "member": "stanglmaier",
+            "sub": "roeck"
+          },
+          {
+            "member": "dick",
+            "sub": "sabanovic"
+          },
+          {
+            "member": "haberl",
+            "sub": "tristl"
+          },
+          {
+            "member": "hadersdorfer",
+            "sub": "heinz"
+          },
+          {
+            "member": "marcus",
+            "sub": "marschoun"
+          },
+          {
+            "member": "sixt",
+            "sub": "meier"
+          },
+          {
+            "member": "welter",
+            "sub": "ghadieh"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vr_sparkasse",
+    "name": "Verbandsrat der Sparkasse",
+    "shortName": "VR Sparkasse",
+    "type": "sonstige",
+    "icon": "savings",
+    "description": "Der Verbandsrat vertritt die Stadt Moosburg im Zweckverband Sparkasse Freising Moosburg Neufahrn.",
+    "seats": [
+      {
+        "member": "kieninger"
+      },
+      {
+        "member": "hadersdorfer"
+      }
+    ],
+    "memberPeriod": {
+      "from": "2020-05",
+      "to": "2026-05"
+    }
+  }
+]

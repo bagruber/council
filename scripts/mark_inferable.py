@@ -49,7 +49,7 @@ def load(n):
 
 
 def active(m, d):
-    spans = m.get('periods') or [{'from': m.get('from'), 'to': m.get('to')}]
+    spans = m['mandates']
     return any((s.get('from') or '0') <= d and (not s.get('to') or s['to'] >= d)
                for s in spans)
 
@@ -57,16 +57,17 @@ def active(m, d):
 def seats_on(members, date):
     """Aktive Mandate, Wechseltage als ein Sitz gezählt."""
     live = [m for m in members if active(m, date)]
-    incoming = {m['id'] for m in live if m.get('from') == date}
+    incoming = {m['id'] for m in live if m['mandates'][0]['from'] == date}
     if not incoming:
         return live
-    return [m for m in live if not (m.get('to') == date and incoming)]
+    return [m for m in live
+            if not (m['mandates'][-1].get('to') == date and incoming)]
 
 
 def body_size(sid, members, date):
     if sid.startswith('sr_'):
         return len(seats_on(members, date))
-    body = next((b for b in members_data['bodies']
+    body = next((b for b in bodies
                  if b.get('id') == sid.split('_')[0]), None)
     if not body:
         return None
@@ -80,9 +81,9 @@ def body_size(sid, members, date):
 
 
 def main():
-    global members_data
-    members_data = load('members.json')
-    members = members_data['members']
+    global bodies
+    members = load('members.json')
+    bodies = load('bodies.json')
     sessions = {s['id']: s for s in load('sessions.json')}
     path = os.path.join(DATA, 'votes.json')
     votes = json.load(open(path, encoding='utf-8'))

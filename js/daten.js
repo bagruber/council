@@ -1,9 +1,9 @@
-// Datenbestand und Nachschlagewerke. Lädt die sechs JSON-Dateien und baut
+// Datenbestand und Nachschlagewerke. Lädt die neun JSON-Dateien und baut
 // daraus die Maps, die alle Views teilen. Die Exporte sind live bindings:
 // sie stehen erst nach ladeDaten() — der Einstieg (app.js) wartet darauf,
 // bevor er rendert.
 
-let topics, sessions, votes, tags, membersData, pressData;
+let topics, sessions, votes, tags, pressData, partiesData;
 let members, parties, bodies, seatOrder, mediaSources;
 const mediaMap = {};
 const pressMap = {};
@@ -17,22 +17,30 @@ const bodyMap = {};
 let sessionsSorted;
 const votesBySession = {};
 
-async function ladeDaten() {
-  [topics, sessions, votes, tags, membersData, pressData] = await Promise.all([
-    fetch("data/topics.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-    fetch("data/sessions.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-    fetch("data/votes.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-    fetch("data/tags.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-    fetch("data/members.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-    fetch("data/press.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-  ]);
+const hole = pfad => fetch("data/" + pfad)
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
 
-  members = membersData.members;
-  members.forEach(m => { if (!m.name) m.name = m.firstName + " " + m.lastName; });
-  parties = membersData.parties;
-  bodies = membersData.bodies || [];
-  seatOrder = membersData.seatOrder || parties.map(p => p.id);
-  mediaSources = membersData.media || [];
+async function ladeDaten() {
+  [topics, sessions, votes, tags, members, partiesData, bodies, mediaSources, pressData]
+    = await Promise.all([
+      hole("topics.json"), hole("sessions.json"), hole("votes.json"),
+      hole("tags.json"), hole("members.json"), hole("parties.json"),
+      hole("bodies.json"), hole("media.json"), hole("press.json"),
+    ]);
+
+  // Mandat, Fraktion und Rolle stehen als Abschnittsliste am Mitglied. Was
+  // die Views als Jetzt-Zustand lesen, wird hier daraus abgeleitet — so wie
+  // das Datum einer Abstimmung von ihrer Sitzung kommt.
+  members.forEach(m => {
+    const erste = m.mandates[0], letzte = m.mandates[m.mandates.length - 1];
+    m.name = m.firstName + " " + m.lastName;
+    m.from = erste.from;
+    m.to = letzte.to;
+    m.party = letzte.party;
+    m.role = letzte.role;
+  });
+  parties = partiesData.parties;
+  seatOrder = partiesData.seatOrder || parties.map(p => p.id);
   mediaSources.forEach(m => { mediaMap[m.id] = m; });
   pressData.forEach(p => { pressMap[p.id] = p; });
 
@@ -189,8 +197,7 @@ const nowStr = (() => {
        + String(n.getDate()).padStart(2, "0");
 })();
 
-// A member can have one or multiple non-contiguous mandate periods.
-// Period & active-membership: see js/core.js / docs/CORE.md
+// Mandat, Fraktion und Rolle: siehe js/core.js und docs/CORE.md
 const memberActiveAt = Council.memberActiveAt;
 const isActive = (m) => Council.memberActiveAt(m, nowStr);
 
@@ -201,7 +208,7 @@ function bodyIdForSession(s) {
 
 export {
   ladeDaten,
-  topics, sessions, votes, tags, membersData, pressData,
+  topics, sessions, votes, tags, pressData,
   members, parties, bodies, seatOrder, mediaSources, mediaMap, pressMap,
   topicMap, sessionMap, voteMap, tagMap, memberMap, partyMap, bodyMap,
   sessionsSorted, votesBySession,

@@ -29,6 +29,9 @@ def load(name):
 
 bundle = {
     "members":  load("members.json"),
+    "parties":  load("parties.json"),
+    "bodies":   load("bodies.json"),
+    "media":    load("media.json"),
     "sessions": load("sessions.json"),
     "votes":    load("votes.json"),
     "topics":   load("topics.json"),
@@ -85,7 +88,7 @@ bundle["indexes"] = {
 
 bundle["meta"] = {
     "counts": {
-        "members":  len(bundle["members"]["members"]),
+        "members":  len(bundle["members"]),
         "sessions": len(bundle["sessions"]),
         "votes":    len(bundle["votes"]),
         "topics":   len(bundle["topics"]),

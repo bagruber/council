@@ -21,12 +21,16 @@ const KNOTEN = {
 };
 
 // Zwei Fraktionen, vier Personen: a und b stimmen zusammen, c dagegen.
-// d rückt am Tag nach a's Austritt auf dessen Sitz nach.
+// d rückt für a nach.
+const mandat = (party, from, to) =>
+  [to ? { from, to, party, role: "councillor" } : { from, party, role: "councillor" }];
+
 const MITGLIEDER = [
-  { id: "a", firstName: "A", lastName: "Eins", party: "csu", from: "2020-05-01", to: "2023-06-30" },
-  { id: "b", firstName: "B", lastName: "Zwei", party: "csu", from: "2020-05-01" },
-  { id: "c", firstName: "C", lastName: "Drei", party: "spd", from: "2020-05-01" },
-  { id: "d", firstName: "D", lastName: "Vier", party: "csu", from: "2023-07-01" },
+  { id: "a", firstName: "A", lastName: "Eins", mandates: mandat("csu", "2020-05-01", "2023-06-30") },
+  { id: "b", firstName: "B", lastName: "Zwei", mandates: mandat("csu", "2020-05-01") },
+  { id: "c", firstName: "C", lastName: "Drei", mandates: mandat("spd", "2020-05-01") },
+  { id: "d", firstName: "D", lastName: "Vier", mandates: mandat("csu", "2023-07-01"),
+    succeeds: ["a"] },
 ];
 
 // Jedes Votum braucht seine eigene Sitzung: das Datum steht seit AP 4 dort,
@@ -63,13 +67,14 @@ const BESTAND = {
   "data/sessions.json": SITZUNGEN,
   "data/votes.json": VOTEN,
   "data/tags.json": [],
-  "data/members.json": {
-    members: MITGLIEDER,
+  "data/members.json": MITGLIEDER,
+  "data/parties.json": {
     parties: [{ id: "csu", name: "CSU", color: "#111" },
               { id: "spd", name: "SPD", color: "#222" }],
     seatOrder: ["csu", "spd"],
-    bodies: [], media: [],
   },
+  "data/bodies.json": [],
+  "data/media.json": [],
   "data/press.json": [],
 };
 
@@ -132,8 +137,7 @@ test("Gelegenheit zählt die geteilten Beschlüsse, bei denen beide dasaßen", (
 
 test("Vorgänger und Nachfolger auf einem Sitz werden nicht verglichen", () => {
   const p = similarity("p2020");
-  assert.equal(p["a|d"], undefined,
-    "a schied am 30.06.2023 aus, d rückte am 01.07.2023 nach");
+  assert.equal(p["a|d"], undefined, "d steht mit succeeds: [\"a\"] im Datensatz");
 });
 
 test("Jede Wahlperiode wird für sich gerechnet", () => {
