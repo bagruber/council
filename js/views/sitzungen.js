@@ -20,8 +20,8 @@ function renderSession(id) {
   const session = sessionMap[id];
   if (!session) { main.innerHTML = html`<p>Sitzung nicht gefunden.</p>`; return; }
 
-  // Probe Formsprache, vorläufig (15.09.2026): Kopf als Band in der Farbe des
-  // Gremiums; das Gremium steht als Kategoriezeile über dem kurzen Titel.
+  // Band in der Farbe des Gremiums, das Gremium als Kategoriezeile darüber —
+  // deshalb trägt der Titel darunter nur noch Nummer und Datum.
   const header = document.createElement("div");
   header.className = "session-header band";
   const g = gremium(session);

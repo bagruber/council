@@ -35,8 +35,8 @@ function formatPeriod(from, to) {
   return f + "\u2013" + t;
 }
 
-// Probe Formsprache, vorläufig (14.09.2026): Töne einer Themenfarbe aus
-// tags.json. Als Text sind die Farben zu hell, deshalb ein dunkler Ton für
+// Töne einer Themenfarbe. Als Text sind die Farben aus tags.json zu hell,
+// deshalb ein dunkler Ton für
 // Icon und Name und ein heller für die Fläche des Kleckses, nach der Formel
 // aus dem Haushalt. Reicht der dunkle Ton auf Creme nicht für 4,5:1 (Wirtschaft),
 // wird weiter abgedunkelt. Gerechnet wird hier, nicht im Datenbestand.
@@ -66,11 +66,10 @@ function kategorieTon(farbe) {
   return { text, flaeche: mischen(farbe, 255, 0.78), tief: mischen(farbe, 0, 0.6) };
 }
 
-// Probe Formsprache (15.09.2026): Steht das Gremium schon als Kategoriezeile
-// darüber, reicht vom Titel die Nummer. „12. Stadtratssitzung – September 2026“
-// wird „12. Sitzung“; ein Zusatz in Klammern bleibt stehen.
-// Ohne Niederschrift gibt es keine Nummer. Erfinden darf man sie nicht, die
-// Zaehlung der Stadt steht nur dort.
+// Steht das Gremium schon als Kategoriezeile darüber, reicht vom Titel die
+// Nummer: „12. Stadtratssitzung – September 2026“ wird „12. Sitzung“, ein
+// Zusatz in Klammern bleibt stehen. Ohne Niederschrift gibt es keine Nummer,
+// und erfinden darf man sie nicht — die Zählung führt die Stadt.
 function sitzungKurz(s) {
   if (!s.title) return "Sitzung";
   const nr = s.title.match(/^(\d+)\./);

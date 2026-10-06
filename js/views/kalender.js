@@ -11,7 +11,6 @@ const calSheetBody = document.getElementById("cal-sheet-body");
 
 const sessionsByDate = {};
 
-// Ehemals frei laufende Verdrahtung aus app.js, unverändert.
 export function initKalender() {
   sessions.forEach(s => {
     if (!sessionsByDate[s.date]) sessionsByDate[s.date] = [];
@@ -116,7 +115,7 @@ function openDaySheet(dateStr, events) {
     const row = document.createElement("a");
     row.className = "sheet-event";
     row.href = "#/session/" + s.id;
-    // Probe Formsprache (15.09.2026): das Gremium als Kategoriezeile, darunter
+    // Das Gremium als Kategoriezeile, darunter
     // nur Nummer und Datum, ohne den Gremiennamen ein zweites Mal.
     const g = gremium(s);
     row.dataset.gremium = g.art;
@@ -133,9 +132,8 @@ function openDaySheet(dateStr, events) {
   calSheet.classList.remove("hidden");
 }
 
-// Probe Formsprache, vorläufig (14.09.2026): Farbfläche „nächste Sitzung“ oben
-// im Kalender. Ohne Termin ab heute gibt es keine Fläche; den Knopf zur
-// Tagesordnung nur, wenn die Stadt sie schon veröffentlicht hat.
+// Die Farbfläche oben im Kalender. Ohne Sitzung ab heute gibt es keine; den
+// Knopf zur Tagesordnung nur, wenn die Stadt sie schon veröffentlicht hat.
 function renderNaechsteSitzung() {
   const box = document.getElementById("naechste-sitzung");
   const t = naechsteSitzung();

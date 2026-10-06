@@ -1,4 +1,4 @@
-// Probe Formsprache, vorläufig (14.09.2026): „Über das Projekt“ im Kopf. Ab
+// „Über das Projekt“ im Kopf: ab
 // 1024 px ein Panel unter dem Knopf, darunter ein Blatt hinter dem
 // Rosen-Knopf, das zusätzlich auf moosburg.eu führt. Ein Disclosure, kein
 // Menü: aria-expanded an beiden Knöpfen, Esc und ein Klick außerhalb

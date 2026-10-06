@@ -13,8 +13,6 @@ import { html, roh } from "../html.js";
 
 const main = document.getElementById("main");
 
-// Probe Formsprache, vorläufig (14.09.2026): die Bestandszeile steht unter dem
-// Seitentitel „Themen“.
 function bestandZeile(b) {
   document.getElementById("themen-bestand").textContent =
     `${b.sitzungen} Sitzungen, ${b.vollstaendig} davon mit Niederschrift`;
@@ -99,7 +97,6 @@ function renderFilteredTopics(tagIds) {
 
 }
 
-// Probe Formsprache, vorläufig (14.09.2026): Kategoriezeile statt Pille.
 function categoryChip(tid, asLink) {
   const t = tagMap[tid];
   if (!t) return html`<span class="cat-line">${tid}</span>`;
@@ -201,7 +198,7 @@ function renderField(fieldId) {
 
   // Feldseiten tragen ein Band im tiefen Ton ihrer Themenfarbe, Dossiers den
   // hellen Grund. So ist auf einen Blick klar, ob man in einer Übersicht steht
-  // oder in einer Sache (Probe Formsprache, 15.09.2026).
+  // oder in einer Sache.
   const header = document.createElement("div");
   header.className = "topic-header topic-header--field band";
   header.style.setProperty("--band-flaeche", kategorieTon(field.color || "#888888").tief);

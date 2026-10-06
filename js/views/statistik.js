@@ -645,7 +645,6 @@ function buildStatsTable(entries) {
 
 // Charts sind auf Containerbreite gezeichnet, bei Größenänderung neu aufbauen
 let statsResizeTimer;
-// Ehemals frei laufende Verdrahtung aus app.js, unverändert.
 export function initStatistik() {
   window.addEventListener("resize", () => {
     const path = (window.location.hash.slice(1) || "/").split("?")[0];

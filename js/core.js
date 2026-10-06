@@ -7,15 +7,15 @@
 
 export const Council = (() => {
 
-  // ── Period helpers ────────────────────────────────────────────────────────
+  // -- Zeiträume --
 
-  // YYYY-MM end-of-month sentinel ("2024-10" → "2024-10-99" for inclusive compare).
+  // Eine Monatsangabe als Ende meint den Monatsletzten. "2024-10" wird zu
+  // "2024-10-99", damit der Vergleich mit einem Tagesdatum aufgeht.
   function endOfPeriod(p) {
     return p && p.length === 7 ? p + "-99" : p;
   }
 
-  // True if `date` falls inside { from?, to? } (inclusive on both ends; absent
-  // bound = open-ended).
+  // Beide Enden zählen mit; eine fehlende Grenze ist offen.
   function withinPeriod(span, date) {
     if (span.from && date < span.from) return false;
     if (span.to   && date > endOfPeriod(span.to)) return false;
@@ -71,10 +71,10 @@ export const Council = (() => {
     return out;
   }
 
-  // ── Body composition ──────────────────────────────────────────────────────
+  // -- Gremienbesetzung --
 
-  // Returns the seatConfig active on `date`. For bodies without seatConfigs
-  // (e.g. plenum), the body itself is returned as the "config".
+  // Die Besetzung, die am Stichtag galt. Gremien ohne Perioden (Aufsichtsrat,
+  // Verbandsrat) tragen sie direkt am Objekt.
   function bodyConfigAt(body, date) {
     const configs = body && body.seatConfigs;
     // Gremien ohne Perioden (Aufsichtsrat, Verbandsrat) tragen ihre Besetzung
@@ -86,9 +86,9 @@ export const Council = (() => {
     return configs.find(c => withinPeriod(c, date)) || {};
   }
 
-  // Whether `member` holds a regular seat (chair, vice-chair, or seat) in
-  // `body` on `date`. Returns true for the regular occupant — NOT for a
-  // substitute who happens to step in for a specific vote.
+  // Hält diese Person am Stichtag einen Stammsitz — Vorsitz, Stellvertretung
+  // im Vorsitz oder einen regulären Sitz? Wer nur für eine Abstimmung
+  // vertreten hat, zählt nicht.
   function isRegularOf(member, body, date) {
     const cfg = bodyConfigAt(body, date);
     if (cfg.chair === member.id) return true;
@@ -102,34 +102,33 @@ export const Council = (() => {
     });
   }
 
-  // ── Vote status — the heart of the module ─────────────────────────────────
+  // -- Wie hat diese Person gestimmt --
   //
-  // Given a member, a vote, and the session it belongs to, returns one of:
+  // Aus Person, Abstimmung und Sitzung einer von:
   //   'yes' | 'no' | 'absent'
-  //   'yes-inferred' | 'no-inferred'   — anonymous vote, status derivable from
-  //                                       unanimity-of-present
+  //   'yes-inferred' | 'no-inferred'   — anonym und einstimmig, aus der
+  //                                       Anwesenheit abgeleitet
   //   'excluded'                       — anwesend, aber wegen persönlicher
   //                                       Beteiligung (Art. 49 GO) ausgeschlossen
   //   'abstained'                      — anwesend, enthalten
   //   'restricted'                     — anwesend, aber nicht stimmberechtigt
   //                                      (neu gewählt, Niederschrift nicht miterlebt)
-  //   'unknown'                        — anonymous vote, status not derivable
-  //   null                             — member was not on council that day
+  //   'unknown'                        — nicht überliefert
+  //   null                             — an dem Tag nicht im Rat
   //
   // 'excluded' und 'abstained' sind Randfälle (zusammen unter 8 % der Stimmen).
   // Sie werden erfasst, weil "befangen" das Gegenteil von "abwesend" ist —
   // aber sie bleiben in der Darstellung hinter Ja/Nein/Unbekannt zurück.
   //
-  // Sources, in priority order:
-  //   1. Member not active at vote.date          → null
-  //   2. Per-vote exclusion (`vote.excluded`)    → 'excluded' | 'abstained'
-  //   3. Session-level absence                   → 'absent'
-  //   4. Named vote → arrays of ids              → 'yes' | 'no' | 'absent'
-  //   5. Explicit `vote.voters[id].vote`         → that status
-  //   6. Per-vote temporary absence (rare)       → 'absent'
-  //   7. Unanimous anonymous (yes>0, no===0)     → 'yes-inferred'
-  //                          (no>0,  yes===0)    → 'no-inferred'
-  //   8. Anonymous split, no per-voter info      → 'unknown'
+  // Geprüft wird in dieser Reihenfolge:
+  //   1. kein Mandat am Sitzungstag                → null
+  //   2. `vote.excluded` nennt die Person          → je nach Grund
+  //   3. `session.absent` nennt sie                → 'absent'
+  //   4. namentliche Abstimmung, die Listen        → 'yes' | 'no' | 'absent'
+  //   5. `vote.voters[id].vote`                    → diese Stimme
+  //   6. `vote.results.absent_ids` (selten)        → 'absent'
+  //   7. anonym und einstimmig                     → 'yes-inferred' / 'no-inferred'
+  //   8. sonst                                     → 'unknown'
 
   function voteStatus(memberId, vote, session, member) {
     if (member && !memberActiveAt(member, vote.date)) return null;
@@ -185,8 +184,8 @@ export const Council = (() => {
     return "unknown";
   }
 
-  // True if the vote was unanimous — named: leeres Ja- oder Nein-Array,
-  // anonymous: null auf einer Seite.
+  // Einstimmig: namentlich ein leeres Ja- oder Nein-Array, anonym eine Null
+  // auf einer Seite.
   function isUnanimous(vote) {
     const r = vote.results;
     return vote.type === "named"
@@ -194,8 +193,8 @@ export const Council = (() => {
       : (r.no === 0 || r.yes === 0);
   }
 
-  // Compact German label for UI chips ("Ja", "Nein", "–", "?", or empty for unknown).
-  // Pass `withMarker: true` to append "*" to inferred values.
+  // Kurzlabel für die Chips. `withMarker` hängt den Stern an, der eine
+  // abgeleitete Stimme von einer überlieferten unterscheidet.
   function voteStatusLabel(status, withMarker = false) {
     if (!status) return "";
     const base = { yes: "Ja", no: "Nein", absent: "–",
