@@ -14,17 +14,17 @@ const main = document.getElementById("main");
 // dünnsten. Die Schlüssel sind die der Datenlage und stehen in deren Adressen.
 const STUFEN = [
   { key: "explicit", titel: "Namentlich in der Niederschrift",
-    was: "Der Rat hat eine namentliche Abstimmung beschlossen, die Niederschrift nennt jede Stimme. Der sicherste und der seltenste Fall." },
+    was: "Der Rat hat namentlich abgestimmt, die Niederschrift nennt jede Stimme. Der sicherste Fall, und der seltenste." },
   { key: "implicit", titel: "Aus der Anwesenheit abgeleitet",
     was: "Das Ergebnis war einstimmig. Wer laut Anwesenheitsliste da war, hat so gestimmt." },
   { key: "tracked", titel: "Im Saal mitgeschrieben",
-    was: "Während der Sitzung vollständig erfasst. Dabei steht, wer mitgeschrieben hat, und ob ein Presseartikel dasselbe berichtet." },
+    was: "Während der Sitzung erfasst. Dabei steht, wer mitgeschrieben hat und ob die Presse dasselbe berichtet." },
   { key: "press", titel: "Aus der Presse",
-    was: "Ein Zeitungsartikel nennt die Gegenstimmen. Der Artikel ist bei der Abstimmung verlinkt." },
+    was: "Ein Zeitungsartikel nennt die Gegenstimmen und steht bei der Abstimmung." },
   { key: "selbstauskunft", titel: "Aus eigenen Notizen rekonstruiert",
     was: "Ein Ratsmitglied hat aus seinen Notizen ergänzt, auch über andere Mitglieder." },
   { key: "sum", titel: "Nur das Ergebnis",
-    was: "Bekannt sind nur die Zahlen. Bei allen Mitgliedern steht ein Fragezeichen, auch wenn sich eine Vermutung anböte." },
+    was: "Bekannt sind nur die Zahlen. Bei allen Mitgliedern steht ein Fragezeichen, auch wo eine Vermutung nahe läge." },
 ];
 
 // Die Erklärtexte zu den Kästen des Prozessbilds.
@@ -32,50 +32,50 @@ const ERKLAERUNG = {
   niederschrift: {
     titel: "Niederschrift",
     absaetze: [
-      "Die Niederschrift ist das amtliche Protokoll einer Sitzung. Die Stadt veröffentlicht sie als PDF im Ratsinformationssystem, nachdem der Rat sie in einer späteren Sitzung genehmigt hat. Sie nennt die Tagesordnung, den Wortlaut der Beschlüsse, das Ergebnis als Zahlen und, wer anwesend war. Namen zu einzelnen Stimmen enthält sie nur, wenn der Rat eine namentliche Abstimmung beschlossen hat.",
-      "Ein Sprachmodell liest das PDF und überträgt den Inhalt in die Datenstruktur dieser Seite. Es schlägt außerdem vor, zu welchem Dossier ein Beschluss gehört. Danach prüfen Skripte, ob die Zahlen aufgehen. Ein Mensch korrigiert die Übertragung und gibt sie frei, erst dann erscheint sie. Das PDF bleibt bei jeder Sitzung verlinkt.",
+      "Das amtliche Protokoll einer Sitzung. Die Stadt veröffentlicht es als PDF, nachdem der Rat es in einer späteren Sitzung genehmigt hat. Darin stehen Tagesordnung, Beschlusswortlaut, das Ergebnis als Zahlen und die Anwesenheit. Namen zu einzelnen Stimmen nur dann, wenn der Rat namentlich abgestimmt hat.",
+      "Das PDF bleibt bei jeder Sitzung verlinkt. Wo diese Seite und die Niederschrift auseinandergehen, gilt die Niederschrift.",
     ],
   },
   auszug: {
     titel: "Beschlussauszug",
     absaetze: [
-      "Für manche Ausschusssitzungen veröffentlicht die Stadt keine Niederschrift, sondern nur Auszüge der Beschlüsse als Webseite. Sie enthalten Tagesordnung, Beschluss und Stimmenzahlen, aber keine Anwesenheitsliste.",
-      "Ein Skript liest diese Seiten aus, ohne Sprachmodell. Weil niemand weiß, wer gefehlt hat, lässt sich Stimmverhalten nur ableiten, wenn alle Sitze mitgestimmt haben.",
+      "Für manche Ausschusssitzungen veröffentlicht die Stadt keine Niederschrift, sondern nur die Beschlüsse als Webseite: Tagesordnung, Beschluss, Stimmenzahlen — ohne Anwesenheitsliste.",
+      "Weil niemand weiß, wer gefehlt hat, lässt sich Stimmverhalten nur ableiten, wenn alle Sitze mitgestimmt haben.",
     ],
   },
   mitschrift: {
     titel: "Mitschrift im Saal",
     absaetze: [
-      "Während der öffentlichen Sitzung kann eine Person im Saal mit einem eigenen Erfassungswerkzeug festhalten, wer wie gestimmt hat. Bei jeder so erfassten Abstimmung steht, wer mitgeschrieben hat.",
-      "Die Mitschrift ergänzt die Niederschrift um die Einzelstimmen und ersetzt sie nicht. Übertragen wird erst, wenn die Niederschrift vorliegt. Titel und Reihenfolge der Punkte kommen immer aus der Niederschrift.",
+      "Während der öffentlichen Sitzung hält eine Person im Saal fest, wer wie stimmt. Bei jeder so erfassten Abstimmung steht, wer mitgeschrieben hat.",
+      "Sie ergänzt die Niederschrift um die Einzelstimmen, sie ersetzt sie nicht: übertragen wird erst, wenn die Niederschrift vorliegt, und Titel wie Reihenfolge kommen von dort.",
     ],
   },
   presse: {
     titel: "Presse",
     absaetze: [
-      "Lokalzeitungen berichten oft über einzelne Gegenstimmen, die die Niederschrift nicht nennt. Ein Skript durchsucht Artikel aus den Tagen nach einer Sitzung nach den wenigen Wendungen, mit denen Zeitungen das schreiben, etwa „gegen die Stimmen von“ oder „einzige Gegenstimme“, und legt den Satz dazu, in dem der Name steht. Das Skript trägt nichts ein, es macht Vorschläge.",
-      "Ein Sprachmodell hilft, den Artikel der richtigen Sitzung, dem Tagesordnungspunkt und dem Dossier zuzuordnen. Übernommen wird nur, was ein Mensch am Artikel geprüft hat. Der Artikel ist dann bei der Abstimmung verlinkt.",
+      "Lokalzeitungen nennen oft einzelne Gegenstimmen, die in der Niederschrift fehlen. Ein Skript durchsucht Artikel aus den Tagen nach einer Sitzung nach den wenigen Wendungen, mit denen Zeitungen das schreiben — „gegen die Stimmen von“, „einzige Gegenstimme“ — und legt den Satz dazu, in dem der Name steht.",
+      "Eingetragen wird davon nichts. Übernommen wird, was ein Mensch am Artikel geprüft hat; der Artikel steht dann bei der Abstimmung.",
     ],
   },
   notizen: {
     titel: "Eigene Notizen von Ratsmitgliedern",
     absaetze: [
-      "Wo Stimmen offen sind, können Ratsmitglieder aus eigenen Notizen ergänzen. Ein Skript erstellt dafür je Person eine Liste ihrer offenen Abstimmungen. Die Person trägt ein, wie abgestimmt wurde oder dass sie es nicht mehr weiß, und ein zweites Skript liest die Antwort zurück.",
-      "Solche Angaben heißen auf der Seite „aus eigenen Notizen rekonstruiert“ und sind als solche erkennbar, auch wenn jemand über andere Mitglieder Auskunft gibt. Auch hier gilt: erst, wenn die Niederschrift vorliegt.",
+      "Wo Stimmen offen bleiben, können Ratsmitglieder aus eigenen Notizen ergänzen, auch über andere Mitglieder. Ein Skript stellt je Person die Liste ihrer offenen Abstimmungen zusammen; eingetragen wird, wie abgestimmt wurde oder dass die Erinnerung fehlt.",
+      "Solche Angaben heißen „aus eigenen Notizen rekonstruiert“ und sind an jeder Stimme erkennbar. Auch sie warten auf die Niederschrift.",
     ],
   },
   ableiten: {
     titel: "Rechenregeln und Prüfung",
     absaetze: [
-      "Alle Quellen laufen durch dieselben Schritte. Sie sind Rechenregeln ohne Ermessen: Sie laufen bei jeder Änderung gleich ab, für jedes Mitglied, und stehen im Quellcode. Wie sie im Einzelnen aussehen, steht weiter unten unter „Woher die Einzelstimmen stammen“.",
-      "Danach prüft ein Skript die Form jeder Datei und den Zusammenhang zwischen ihnen. Erst wenn alles aufgeht, gibt ein Mensch die Änderung frei.",
+      "Alle Quellen laufen durch dieselben Schritte. Es sind Rechenregeln ohne Ermessen: gleich bei jeder Änderung, gleich für jedes Mitglied, nachlesbar im Quellcode. Im Einzelnen stehen sie unten unter „Woher die Einzelstimmen stammen“.",
+      "Danach prüft ein Skript Form und Zusammenhang aller Dateien. Erst wenn das aufgeht, gibt ein Mensch frei.",
     ],
   },
   bestand: {
     titel: "Öffentliche Dateien",
     absaetze: [
-      "Der gesamte Bestand liegt in neun Dateien in einem öffentlichen Git-Repository. Git hält jede Änderung mit Datum und Beschreibung fest, so lässt sich jede Korrektur zurückverfolgen.",
-      "Beim Aufruf lädt Ihr Browser diese Dateien und rechnet die Anzeige selbst aus. Dabei läuft kein Sprachmodell. Alles, was Sie sehen, wurde vorher geprüft und fest gespeichert.",
+      "Der Bestand liegt in neun Dateien in einem öffentlichen Git-Repository. Git hält jede Änderung mit Datum fest, jede Korrektur bleibt rückverfolgbar.",
+      "Ihr Browser lädt diese Dateien und rechnet die Anzeige selbst aus. Dabei läuft kein Sprachmodell: alles, was Sie sehen, steht vorher geprüft in den Dateien.",
     ],
   },
 };
@@ -163,16 +163,14 @@ function prozessbild(b) {
     <div class="m-fluss">
       <div class="m-kopf m-k1">Quelle</div>
       <div class="m-kopf m-k2">Einarbeiten</div>
-      <div class="m-kopf m-k4">Ableiten und prüfen</div>
-      <div class="m-kopf m-k6">Bestand</div>
 
       ${QUELLEN.map(q => html`
         <button type="button" class="m-knoten m-quelle" data-k="${q.k}">
-          <strong>${q.titel}${q.amtlich && roh(' <span class="m-amtlich">amtlich</span>')}</strong>
-          ${q.was}
-          ${zahlen[q.k] && html`<span class="m-zahl">${zahlen[q.k]}</span>`}
-        </button>
-        <button type="button" class="m-knoten m-schritt" data-k="${q.k}">
+          <span class="m-herkunft">
+            <strong>${q.titel}${q.amtlich && roh(' <span class="m-amtlich">amtlich</span>')}</strong>
+            ${q.was}
+            ${zahlen[q.k] && html`<span class="m-zahl">${zahlen[q.k]}</span>`}
+          </span>
           <ul>${punkte(q.schritte)}</ul>
         </button>`)}
 
@@ -220,12 +218,10 @@ function renderMethodik(abschnitt) {
   wrap.innerHTML = html`
     <div class="topic-header">
       <h1>So entsteht diese Seite</h1>
-      <div class="topic-summary">Alles, was hier über Abstimmungen steht, stammt aus
-        amtlichen Unterlagen der Stadt Moosburg oder ist ausdrücklich anders
-        gekennzeichnet. Diese Seite zeigt, welchen Weg eine Information von der Quelle
-        bis zur Anzeige nimmt, wo dabei ein Sprachmodell mitarbeitet und wo feste
-        Rechenregeln, und wie aus einem Ergebnis wie 20:3 die Angabe wird, wer wie
-        gestimmt hat.</div>
+      <div class="topic-summary">Was hier über Abstimmungen steht, stammt aus amtlichen
+        Unterlagen der Stadt Moosburg oder ist anders gekennzeichnet. Diese Seite zeigt
+        den Weg von der Quelle bis zur Anzeige: wo ein Sprachmodell mitarbeitet und wo feste
+        Rechenregeln, und wie aus einem Ergebnis wie 20:3 wird, wer wie gestimmt hat.</div>
       <ul class="m-inhalt">
         ${[["weg", "Der Weg der Daten"], ["sprachmodell", "Sprachmodell"],
            ["herkunft", "Herkunft der Einzelstimmen"], ["go", "Regeln der Gemeindeordnung"],
@@ -237,20 +233,19 @@ function renderMethodik(abschnitt) {
 
     <section id="weg" class="m-abschnitt m-breit">
       <h2>Der Weg der Daten</h2>
-      <p>Fünf Quellen speisen den Bestand. Jede wird anders eingearbeitet, danach laufen
-        alle durch dieselben Rechenregeln und Prüfungen. Ein Klick auf einen Kasten
-        erklärt den Schritt.</p>
+      <p>Fünf Quellen speisen den Bestand, jede auf ihrem eigenen Weg. Danach laufen alle
+        durch dieselben Rechenregeln. Ein Klick auf eine Karte erklärt sie.</p>
       ${prozessbild(b)}
     </section>
 
     <section id="sprachmodell" class="m-abschnitt">
       <h2>Wo ein Sprachmodell mitarbeitet</h2>
       <p>Seit ${seit} hat die Stadt ${b.vollstaendig} Niederschriften veröffentlicht,
-        mit zusammen ${zahl(ausStufe("vollständig"))} Abstimmungen. Sie ehrenamtlich von
-        Hand abzutippen, wäre nicht zu leisten. Deshalb liest ein Sprachmodell die PDFs und
-        überträgt ihren Inhalt in die Datenstruktur dieser Seite. Welches Modell das ist,
-        spielt kaum eine Rolle. Ein Protokoll in eine feste Struktur zu übertragen, kann
-        heute im Grunde jedes Sprachmodell. Entscheidend sind die Prüfungen danach.</p>
+        mit zusammen ${zahl(ausStufe("vollständig"))} Abstimmungen. Die ehrenamtlich
+        von Hand abzutippen, wäre nicht zu leisten. Deshalb liest ein Sprachmodell die
+        PDFs und überträgt sie in die Datenstruktur dieser Seite.
+        Welches Modell, spielt kaum eine Rolle — entscheidend ist, was danach geprüft
+        wird.</p>
 
       <div class="m-kasten m-zwei">
         <div class="m-tut">
@@ -265,7 +260,7 @@ function renderMethodik(abschnitt) {
         <div class="m-tut-nicht">
           <h3>Das Sprachmodell übernimmt nicht</h3>
           <ul>
-            <li>Einzelstimmen erschließen. Das tun nur die Rechenregeln weiter unten.</li>
+            <li>Einzelstimmen erschließen — das tun nur die Rechenregeln unten</li>
             <li>Lücken füllen oder Ergebnisse schätzen</li>
             <li>Beschlüsse oder Personen bewerten</li>
             <li>etwas veröffentlichen, das kein Mensch durchgesehen hat</li>
@@ -273,21 +268,20 @@ function renderMethodik(abschnitt) {
         </div>
       </div>
 
-      <p>Beim Übertragen können Fehler entstehen. Deshalb prüfen Skripte nach jeder
-        Änderung, ob die Zahlen aufgehen: Ja-Stimmen, Nein-Stimmen und Abwesende müssen
-        die Zahl der Sitze ergeben, und jede Stimme muss zu einem Mitglied gehören, das
-        an diesem Tag ein Mandat hatte. Die Niederschrift bleibt bei jeder Sitzung als
-        PDF verlinkt. Verbindlich ist immer sie.</p>
-      <p>Bei allem gilt dieselbe Arbeitsteilung: Das Sprachmodell liefert einen ersten
-        Aufschlag, ein Mensch korrigiert ihn und gibt ihn frei. Das gilt für
-        Übertragungen, Zuordnungen und Kurztexte gleichermaßen.</p>
+      <p>Beim Übertragen entstehen Fehler. Deshalb prüfen Skripte nach jeder Änderung, ob
+        die Zahlen aufgehen: Ja, Nein und Abwesende müssen die Zahl der Sitze ergeben,
+        und jede Stimme muss zu einem Mitglied mit Mandat an diesem Tag gehören.</p>
+      <p>Dieselbe Arbeitsteilung gilt überall: erster Aufschlag vom Sprachmodell,
+        Korrektur und Freigabe durch einen Menschen. Die Niederschrift bleibt bei jeder
+        Sitzung verlinkt; verbindlich ist sie.</p>
     </section>
 
     <section id="herkunft" class="m-abschnitt">
       <h2>Woher die Einzelstimmen stammen</h2>
-      <p>Die Niederschrift nennt fast immer nur das Ergebnis, etwa 20:3. Wer wie gestimmt
-        hat, lässt sich unterschiedlich sicher sagen. Deshalb trägt jede Abstimmung eine
-        Herkunftsangabe. So verteilen sich die ${zahl(b.abstimmungen)} erfassten
+      <p>Die Niederschrift nennt meist nur das Ergebnis, etwa 20:3. Wie sicher sich
+        daraus Einzelstimmen ergeben, ist sehr verschieden; deshalb trägt jede
+        Abstimmung eine Herkunftsangabe. So verteilen sich die
+        ${zahl(b.abstimmungen)} erfassten
         Abstimmungen:</p>
 
       <div class="m-balken" role="img"
@@ -309,9 +303,8 @@ function renderMethodik(abschnitt) {
       </ol>
 
       <h3 class="m-unter">Drei Rechenregeln</h3>
-      <p>Wo aus einem Ergebnis Einzelstimmen werden, geschieht das nach festen Regeln.
-        Sie gelten für alle Mitglieder gleich und stehen im Quellcode. Die drei Bilder
-        sind erfundene Beispiele.</p>
+      <p>Wo aus einem Ergebnis Einzelstimmen werden, geschieht das nach festen Regeln,
+        für alle gleich und im Quellcode nachlesbar. Die drei Beispiele sind erfunden.</p>
 
       <div class="m-beispiele">
         <div class="m-beispiel">
@@ -319,8 +312,8 @@ function renderMethodik(abschnitt) {
           <div class="m-sitze" role="img" aria-label="22 Ja-Stimmen">
             ${Array.from({ length: 22 }, () => roh("<span></span>"))}
           </div>
-          <p>22 Mitglieder anwesend, Ergebnis <b class="m-ergebnis">22:0</b>. Alle 22 haben
-            mit Ja gestimmt. Hier gibt es nichts zu deuten.</p>
+          <p>22 anwesend, Ergebnis <b class="m-ergebnis">22:0</b>. Dann haben alle 22 mit
+            Ja gestimmt.</p>
         </div>
 
         <div class="m-beispiel">
@@ -328,16 +321,16 @@ function renderMethodik(abschnitt) {
           <div class="m-sitze" role="img" aria-label="22 abgeleitete Ja-Stimmen">
             ${Array.from({ length: 22 }, () => roh('<span class="stern"></span>'))}
           </div>
-          <p>22 anwesend, Ergebnis <b class="m-ergebnis">21:0</b>. Jemand hat nicht
-            mitgestimmt, vielleicht war die Person kurz draußen. Wer, steht nirgends. Die
-            Seite leitet trotzdem für alle 22 ein Ja ab und markiert es mit einem
-            Sternchen, solange mindestens 90 % der Stimmberechtigten mitgestimmt haben.
-            Hier sind es 21 von 22, also 95 %.</p>
-          <p>Der Grund: Sonst gingen 21 richtige Angaben verloren, um eine falsche zu
-            vermeiden. Unter 90 % bleibt es beim Fragezeichen. Zwei bekannte Ursachen für
-            solche Lücken werden vorher herausgerechnet, der Mandatswechsel und die
-            Entlastung eines Aufsichtsrats. Und wo die Niederschrift vermerkt, wer später
-            kam oder früher ging, bleibt nur dessen Stimme offen.</p>
+          <p>22 anwesend, Ergebnis <b class="m-ergebnis">21:0</b>. Eine Stimme fehlt,
+            vielleicht war jemand kurz draußen; wer, steht nirgends. Die Seite leitet
+            trotzdem für alle 22 ein Ja ab und markiert es mit einem Sternchen — solange
+            mindestens 90 % der Stimmberechtigten mitgestimmt haben. Hier sind es 21 von
+            22.</p>
+          <p>Sonst gingen 21 richtige Angaben verloren, um eine falsche zu vermeiden.
+            Unter 90 % bleibt es beim Fragezeichen. Zwei bekannte Ursachen rechnet die
+            Seite vorher heraus, den Mandatswechsel und die Entlastung eines
+            Aufsichtsrats. Und wo die Niederschrift vermerkt, wer später kam oder früher
+            ging, bleibt nur dessen Stimme offen.</p>
         </div>
 
         <div class="m-beispiel">
@@ -349,37 +342,32 @@ function renderMethodik(abschnitt) {
           </div>
           <p class="m-mini"><span><i class="nein"></i>aus der Presse</span><span><i class="gerechnet"></i>errechnet</span></p>
           <p>22 anwesend, Ergebnis <b class="m-ergebnis">15:7</b>. Ein Zeitungsbericht
-            nennt alle sieben Gegenstimmen. Dann haben die übrigen 15 Anwesenden mit Ja
-            gestimmt. Das ist eine Subtraktion und gilt in beide Richtungen. Die
-            errechneten Stimmen tragen dieselbe Herkunftsangabe wie die Quelle, aus der
-            sie folgen.</p>
+            nennt alle sieben Gegenstimmen, also haben die übrigen 15 mit Ja gestimmt.
+            Eine Subtraktion, in beide Richtungen. Die errechneten Stimmen tragen die
+            Herkunft der Quelle, aus der sie folgen.</p>
         </div>
       </div>
 
-      <p>Manchmal geht eine einzelne Stimme nur mittelbar aus einer Quelle hervor, etwa
-        aus einer zitierten Wortmeldung. Solche Stimmen sind eigens als weicher Beleg
-        gekennzeichnet.</p>
+      <p>Geht eine Stimme nur mittelbar aus der Quelle hervor, etwa aus einer zitierten
+        Wortmeldung, ist sie als weicher Beleg gekennzeichnet.</p>
     </section>
 
     <section id="go" class="m-abschnitt">
       <h2>Regeln der Gemeindeordnung</h2>
-      <p>Einige Eigenheiten der Daten erklären sich aus der Bayerischen Gemeindeordnung
-        (GO). Wer sie kennt, liest die Abstimmungen richtig.</p>
+      <p>Einige Eigenheiten der Daten kommen aus der Bayerischen Gemeindeordnung (GO).</p>
 
       <div class="m-regeln">
         <div class="m-regel">
           <div><h3>Enthaltung gibt es nicht</h3><span class="m-paragraf">Art. 48 Abs. 1 Satz 2 GO</span></div>
           <div>
-            <p>„Kein Mitglied darf sich der Stimme enthalten“, heißt es in der
-              Gemeindeordnung. Wer anwesend ist, stimmt mit Ja oder Nein. Zwei Situationen
-              sind die Ausnahme, in denen jemand im Saal sitzt und trotzdem weder Ja noch
-              Nein sagt:</p>
+            <p>„Kein Mitglied darf sich der Stimme enthalten“, sagt die Gemeindeordnung.
+              Wer da ist, stimmt mit Ja oder Nein. Zwei Ausnahmen gibt es:</p>
             <ul>
               <li><b>Niederschriften aus der Zeit vor dem eigenen Mandat.</b> Der Rat
-                genehmigt die Niederschriften früherer Sitzungen. Wer damals noch nicht im
-                Rat saß, kann nicht bestätigen, was dort beschlossen wurde, und enthält
-                sich. <a href="#/session/sr_20260518">Am 18. Mai 2026</a> betraf das elf
-                neu gewählte Mitglieder: Neun enthielten sich, zwei stimmten zu. Welche
+                genehmigt die Niederschriften früherer Sitzungen. Wer damals nicht dabei
+                war, kann sie nicht bestätigen und enthält sich.
+                <a href="#/session/sr_20260518">Am 18. Mai 2026</a> betraf das elf neu
+                gewählte Mitglieder: neun enthielten sich, zwei stimmten zu — welche
                 zwei, hält die Niederschrift nicht fest. Die Seite führt deshalb alle elf
                 als nicht stimmberechtigt und nennt die Aufteilung dazu.</li>
               <li><b>Persönliche Beteiligung</b>, dazu die nächste Regel.</li>
@@ -391,8 +379,8 @@ function renderMethodik(abschnitt) {
           <div><h3>Persönliche Beteiligung</h3><span class="m-paragraf">Art. 49 GO</span></div>
           <div>
             <p>Wer an einer Entscheidung persönlich beteiligt ist, darf weder mitberaten
-              noch mitstimmen. Die Person ist anwesend, gibt aber keine Stimme ab. Auf der
-              Seite steht dafür das Zeichen §. Typische Fälle in Moosburg:</p>
+              noch mitstimmen: anwesend, aber ohne Stimme. Auf der Seite steht dafür das
+              Zeichen §. In Moosburg etwa:</p>
             <ul>
               <li>die Entlastung des Aufsichtsrats der Kläranlage Moosburg GmbH, über die
                 dessen Mitglieder aus dem Rat nicht mitstimmen</li>
@@ -413,29 +401,28 @@ function renderMethodik(abschnitt) {
 
         <div class="m-regel">
           <div><h3>Mandatswechsel</h3></div>
-          <div><p>Scheidet jemand während der Wahlperiode aus, teilen sich ausscheidende
-            und nachrückende Person an diesem Tag einen Sitz. Die ausscheidende Person
-            stimmt bis zum Beschluss über den Wechsel. Bei diesem Beschluss selbst ist sie
-            persönlich beteiligt, die Nachfolge ist noch nicht vereidigt, der Sitz stimmt
-            also nicht mit. Danach gehört er der Nachfolge. Das betraf bisher
+          <div><p>Scheidet jemand während der Wahlperiode aus, teilen sich ausscheidende und
+            nachrückende Person an diesem Tag einen Sitz. Die ausscheidende stimmt bis
+            zum Beschluss über den Wechsel; bei diesem Beschluss ist sie persönlich
+            beteiligt und die Nachfolge noch nicht vereidigt, der Sitz stimmt also nicht
+            mit. Danach gehört er der Nachfolge. Bisher betraf das
             ${sitzungenMitGrund("kein_mandat")} Sitzungen.</p></div>
         </div>
 
         <div class="m-regel">
           <div><h3>Kurz draußen ist nicht abwesend</h3></div>
-          <div><p>Wer während einer Sitzung den Saal kurz verlässt, verpasst einzelne
-            Abstimmungen, war aber da. Die Niederschrift vermerkt bei manchen Namen „ab
-            18:15 Uhr“ oder „bis 20:30 Uhr“. Diese Vermerke werden ausgewertet. Ganz
-            abwesend und für eine Abstimmung abwesend sind auf der Seite zwei verschiedene
-            Angaben.</p></div>
+          <div><p>Wer den Saal kurz verlässt, verpasst einzelne Abstimmungen, war aber da. Die
+            Niederschrift vermerkt das als „ab 18:15 Uhr“ oder „bis 20:30 Uhr“; diese
+            Vermerke werden ausgewertet. Ganz abwesend und für eine Abstimmung abwesend
+            sind zweierlei.</p></div>
         </div>
       </div>
     </section>
 
     <section id="hausregeln" class="m-abschnitt">
       <h2>Hausregeln</h2>
-      <p>Über die Gemeindeordnung hinaus gelten für diese Seite eigene Regeln. Sie sollen
-        verhindern, dass mehr behauptet wird, als belegt ist.</p>
+      <p>Dazu kommen eigene Regeln. Sie sollen verhindern, dass hier mehr steht, als
+        belegt ist.</p>
       <div class="m-regeln">
         <div class="m-regel">
           <div><h3>Nur Amtliches wird zum Bestand</h3></div>
@@ -449,9 +436,9 @@ function renderMethodik(abschnitt) {
         </div>
         <div class="m-regel">
           <div><h3>Die Niederschrift hat Vorrang</h3></div>
-          <div><p>Reihenfolge, Nummerierung und Titel der Tagesordnungspunkte kommen aus
-            der Niederschrift. Nennt eine andere Quelle etwas anderes, wird das als
-            Widerspruch vermerkt und nicht stillschweigend angeglichen.</p></div>
+          <div><p>Reihenfolge, Nummerierung und Titel der Tagesordnungspunkte kommen aus der
+            Niederschrift. Weicht eine andere Quelle ab, wird das als Widerspruch
+            vermerkt und nicht stillschweigend angeglichen.</p></div>
         </div>
         <div class="m-regel">
           <div><h3>Lücken bleiben sichtbar</h3></div>
@@ -462,10 +449,10 @@ function renderMethodik(abschnitt) {
         </div>
         <div class="m-regel">
           <div><h3>Beschreiben, nicht bewerten</h3></div>
-          <div><p>Die Seite gibt wieder, was beschlossen wurde und wer wie abgestimmt hat.
-            Die Texte zu Themen fassen Beschlusslage und Verlauf zusammen und enthalten
-            keine Meinung. Auch Kennzahlen wie die Abweichung von der eigenen Fraktion
-            sind Zählungen und keine Urteile.</p></div>
+          <div><p>Die Seite gibt wieder, was beschlossen wurde und wer wie abgestimmt hat. Die
+            Texte zu Themen fassen Beschlusslage und Verlauf zusammen, ohne Meinung.
+            Auch Kennzahlen wie die Abweichung von der eigenen Fraktion sind Zählungen,
+            keine Urteile.</p></div>
         </div>
         <div class="m-regel">
           <div><h3>Nur der öffentliche Teil</h3></div>
@@ -478,75 +465,68 @@ function renderMethodik(abschnitt) {
     <section id="betreiber" class="m-abschnitt">
       <h2>Wer dahintersteht</h2>
       <div class="m-brief">
-        <p>Die Seite wird privat von Benedict Gruber betrieben. Er war von Oktober 2022
-          bis April 2026 für fresh Mitglied des Moosburger Stadtrats und
-          Digitalisierungsreferent der Stadt. Seit Mai 2026 gehört er dem Rat nicht mehr
-          an. Über viele der Beschlüsse, die hier stehen, hat er selbst mit abgestimmt.
-          Das soll wissen, wer die Seite liest.</p>
-        <p>Ziel ist eine sachliche Übersicht ohne Wertung: was beschlossen wurde, wer wie
-          abgestimmt hat und wie sicher das jeweils feststeht. Damit das kein bloßes
-          Versprechen bleibt:</p>
+        <p>Die Seite wird privat von Benedict Gruber betrieben. Er saß von Oktober 2022
+          bis April 2026 für fresh im Moosburger Stadtrat und war
+          Digitalisierungsreferent der Stadt. Über viele der Beschlüsse, die hier
+          stehen, hat er mit abgestimmt.</p>
+        <p>Ziel ist eine sachliche Übersicht: was beschlossen wurde, wer wie abgestimmt
+          hat, wie sicher das feststeht. Abgesichert ist das so:</p>
         <ul>
-          <li>Für alle Mitglieder gelten dieselben Rechenregeln, auch für die
-            Abstimmungen des Betreibers. Sie stehen öffentlich im Quellcode.</li>
+          <li>Dieselben Rechenregeln für alle, auch für die eigenen Abstimmungen. Sie
+            stehen im Quellcode.</li>
           <li>Was aus eigenen Notizen stammt, ist gekennzeichnet, gleich von wem.</li>
           <li>Jede Änderung am Bestand ist mit Datum öffentlich nachvollziehbar.</li>
-          <li>Jede und jeder kann Fehler melden. Korrekturen werden eingearbeitet und sind
-            ebenso nachvollziehbar.</li>
+          <li>Fehler kann jede und jeder melden; Korrekturen sind genauso nachvollziehbar.</li>
         </ul>
-        <p>Idealerweise hängt die Seite künftig nicht an einer einzelnen Person.
-          Wünschenswert wäre, dass Ratsmitglieder aller Fraktionen, die Verwaltung, die
-          Lokalpresse, Vereine und Bürger:innen sie gemeinsam tragen: Daten prüfen, Fehler
-          melden, Notizen beisteuern und mitentscheiden, wie es weitergeht. Je mehr
-          Blickwinkel beteiligt sind, desto neutraler kann sie werden. Wer sich beteiligen
-          möchte, ist eingeladen, sich über das
-          <button type="button" class="m-link" data-modal="kontakt-modal">Kontaktformular</button>
-          zu melden.</p>
+        <p>Auf Dauer sollte die Seite nicht an einer Person hängen. Ratsmitglieder aller
+          Fraktionen, Verwaltung, Lokalpresse, Vereine und Bürger:innen könnten sie
+          gemeinsam tragen: Daten prüfen, Fehler melden, Notizen beisteuern,
+          mitentscheiden, wie es weitergeht. Wer mitmachen will, meldet sich über das
+          <button type="button" class="m-link" data-modal="kontakt-modal">Kontaktformular</button>.</p>
       </div>
     </section>
 
     <section id="technik" class="m-abschnitt">
       <h2>Technik</h2>
-      <p>Für alle, die es genauer wissen wollen.</p>
       ${[
         ["Kein Server, keine Datenbank",
-         html`<p>Die Seite besteht aus einer HTML-Datei, etwas JavaScript und neun
-           Datendateien im JSON-Format. Ihr Browser lädt sie und rechnet alles Weitere
-           selbst aus, etwa wer bei einer Abstimmung als abwesend gilt. Es gibt kein
-           Framework und keinen Server, der Daten verarbeitet. Dieselben Dateien laufen
-           auf moosburg.eu und auf GitHub Pages.</p>`],
+         html`<p>Eine HTML-Datei, etwas JavaScript, neun JSON-Dateien. Ihr Browser lädt sie
+           und rechnet den Rest selbst aus, etwa wer bei einer Abstimmung als abwesend
+           gilt. Kein Framework, kein Server, der Daten verarbeitet. Dieselben Dateien
+           laufen auf moosburg.eu und auf GitHub Pages.</p>`],
         ["Git als Gedächtnis",
-         html`<p>Code und Daten liegen in einem öffentlichen Git-Repository. Git hält jede
-           Änderung mit Datum und Beschreibung fest. Wer wissen will, wann eine Stimme
-           eingetragen oder korrigiert wurde und warum, findet es in der
+         html`<p>Code und Daten liegen in einem öffentlichen Git-Repository, jede Änderung mit
+           Datum und Begründung. Wann eine Stimme eingetragen oder korrigiert wurde und
+           warum, steht in der
            <a href="https://github.com/bagruber/council/commits/main" target="_blank"
               rel="noopener">Änderungshistorie</a>.</p>`],
-        ["Kein Tracking, keine Anfragen an Dritte",
-         html`<p>Die Seite setzt keine Cookies, zählt keine Besuche und bindet keine
-           fremden Dienste ein. Auch die Schriften liegen auf dem eigenen Server. Erst
-           wenn Sie einen Link zu einem Zeitungsartikel oder zur Stadt anklicken,
-           verlassen Sie die Seite.</p>`],
+        ["Was gemessen wird",
+         html`<p>Keine Cookies, keine fremden Dienste, nichts, was auf Ihrem Gerät abgelegt
+           oder ausgelesen wird. Auch die Schriften liegen auf dem eigenen Server. Auf
+           moosburg.eu zählt der Server die Aufrufe mit: Aufrufe derselben Sitzung fasst
+           er über einen Hash aus IP, Browserkennung und einem täglich wechselnden
+           Zufallswert zusammen, der sich nicht zurückrechnen lässt. Erst ein Klick auf
+           einen Link zur Zeitung oder zur Stadt führt von hier weg.</p>`],
         ["Offene Daten",
-         html`<p>Die Datendateien sind direkt abrufbar und mit JSON Schema beschrieben.
-           Daten, Texte und Code dürfen weiterverwendet werden, solange das nicht
-           kommerziell geschieht und die Quelle genannt wird. Daten und Texte stehen unter
-           CC BY-NC 4.0, der Code unter PolyForm Noncommercial 1.0.0.</p>
+         html`<p>Die Datendateien sind direkt abrufbar und mit JSON Schema beschrieben. Daten
+           und Texte stehen unter CC BY-NC 4.0, der Code unter PolyForm Noncommercial
+           1.0.0: weiterverwenden ja, kommerziell nein, Quelle nennen.</p>
            <p>Über die Lizenz hinaus dürfen Medien die Daten und Grafiken für
            redaktionelle Berichterstattung nutzen, auch wenn sie kommerziell arbeiten,
            sofern die Quelle genannt wird.</p>`],
         ["Wie Fehler abgefangen werden",
-         html`<p>Nach jeder Änderung prüft ein Skript jede Datei gegen ihre beschriebene
-           Form und den Zusammenhang zwischen den Dateien: Jede Abstimmung gehört zu einer
-           Sitzung, jede Stimme zu einem Mitglied mit Mandat an diesem Tag, und die Zahlen
-           gehen auf. Automatische Tests sichern die Rechenregeln ab.</p>`],
+         html`<p>Nach jeder Änderung prüft ein Skript Form und Zusammenhang aller Dateien:
+           jede Abstimmung gehört zu einer Sitzung, jede Stimme zu einem Mitglied mit
+           Mandat an diesem Tag, die Zahlen gehen auf. Tests sichern die Rechenregeln
+           ab.</p>`],
         ["Geplant: Daten direkt aus dem Ratsinformationssystem",
-         html`<p>OParl ist eine offene Schnittstelle, über die Ratsinformationssysteme
-           Sitzungen, Gremien und Dokumente maschinenlesbar bereitstellen. Wo sie
-           verfügbar ist, soll sie nach und nach das Auslesen der PDFs ersetzen.</p>`],
+         html`<p>OParl ist eine offene Schnittstelle, über die Ratsinformationssysteme ihre
+           Daten maschinenlesbar bereitstellen. Wo es sie gibt, soll sie das Auslesen
+           der PDFs ersetzen.</p>`],
         ["Barrierefreiheit",
-         html`<p>Unter „Über das Projekt“ lassen sich eine größere Schrift und
-           farbenblind-sichere Farben einschalten. Die Grundschrift Atkinson Hyperlegible
-           ist für gute Lesbarkeit bei eingeschränkter Sehkraft entworfen.</p>`],
+         html`<p>Unter „Über das Projekt“ lassen sich größere Schrift und farbenblind-sichere
+           Farben einschalten. Die Grundschrift Atkinson Hyperlegible ist für
+           eingeschränkte Sehkraft entworfen.</p>`],
       ].map(([titel, inhalt]) => html`
         <details class="m-details">
           <summary>${titel}</summary>
@@ -556,11 +536,9 @@ function renderMethodik(abschnitt) {
 
     <div class="m-familie">
       <h2>Teil von moosburg.eu</h2>
-      <p>Diese Seite gehört zu <a href="https://moosburg.eu/">moosburg.eu</a>, einer
-        Sammlung ehrenamtlicher Projekte für Moosburg. Sie zeigen, wie viel heute mit
-        offenen Werkzeugen und freiwilliger Arbeit möglich ist. Alle Projekte sind
-        quelloffen und für die Bürger:innen gemacht. Sie sind kostenlos, ohne Werbung und
-        ohne Tracking, und das bleibt so.</p>
+      <p>Diese Seite gehört zu <a href="https://moosburg.eu/">moosburg.eu</a>, einer Sammlung
+        ehrenamtlicher Projekte für Moosburg. Alle sind quelloffen, kostenlos und ohne
+        Werbung.</p>
     </div>`;
 
   main.appendChild(backLink("Übersicht", "#/"));
@@ -605,7 +583,7 @@ function verdrahteProzessbild(wrap) {
     kasten.innerHTML = html`
       <h3>${e.titel}</h3>
       ${e.absaetze.map(a => html`<p>${a}</p>`)}
-      <p class="m-hinweis">Einen anderen Kasten anklicken, um dessen Schritt zu erklären.</p>`;
+      <p class="m-hinweis">Eine andere Karte anklicken für deren Erklärung.</p>`;
   };
 
   fluss.addEventListener("click", e => {
@@ -634,16 +612,16 @@ function verdrahteProzessbild(wrap) {
 function schiene() {
   const fluss = document.querySelector(".m-fluss");
   const s = fluss && fluss.querySelector(".m-schiene");
-  const schritte = fluss ? fluss.querySelectorAll(".m-schritt") : [];
-  if (!s || !schritte.length) return;
+  const karten = fluss ? fluss.querySelectorAll(".m-quelle") : [];
+  if (!s || !karten.length) return;
   const box = s.getBoundingClientRect();
   if (!box.height) return;
   const mitte = el => {
     const r = el.getBoundingClientRect();
     return r.top + r.height / 2;
   };
-  s.style.setProperty("--oben", (mitte(schritte[0]) - box.top - 1) + "px");
-  s.style.setProperty("--unten", (box.bottom - mitte(schritte[schritte.length - 1]) - 1) + "px");
+  s.style.setProperty("--oben", (mitte(karten[0]) - box.top - 1) + "px");
+  s.style.setProperty("--unten", (box.bottom - mitte(karten[karten.length - 1]) - 1) + "px");
 }
 
 window.addEventListener("resize", schiene);
