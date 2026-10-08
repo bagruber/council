@@ -13,10 +13,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Nach stadtrat/ spiegeln
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        # Ab v4.3.6 bricht der Lauf nicht mehr ab, wenn das Löschen eines
+        # Ordners mit 550 scheitert — die Action adressiert ihn absolut
+        # (/stadtrat/…), während der FTP-Login schon dort wurzelt. Seither
+        # ist das eine Warnung; der Lauf speichert am Ende seinen Sync-Stand,
+        # und der nächste Push fängt nicht wieder von vorn an.
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
