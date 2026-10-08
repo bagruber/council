@@ -3849,6 +3849,7 @@ body { overflow-x: clip; }
 }
 .m-kopf {
   grid-row: 1;
+  padding-left: 14px;
   font-size: 0.82rem;
   letter-spacing: 0.04em;
   color: var(--text-muted);
@@ -3856,8 +3857,6 @@ body { overflow-x: clip; }
 }
 .m-k1 { grid-column: 1; }
 .m-k2 { grid-column: 2; }
-.m-k4 { grid-column: 4; }
-.m-k6 { grid-column: 6; }
 
 .m-knoten {
   position: relative;
@@ -3900,8 +3899,16 @@ body { overflow-x: clip; }
   background: var(--color-red-50);
   color: var(--primary);
 }
-.m-quelle { grid-column: 1; }
-.m-schritt { grid-column: 2; }
+/* Quelle und Einarbeiten sind eine Karte mit zwei Haelften. `subgrid` setzt
+   die Haelften auf dieselben Spuren wie die Spaltenkoepfe darueber. */
+.m-quelle {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: start;
+  padding: 0;
+}
+.m-herkunft, .m-quelle > ul { display: block; padding: 11px 13px; }
 /* Zeile 1 sind die Spaltenkoepfe, darunter je Quelle eine Zeile. Die fuenf
    stehen als QUELLEN in js/views/methodik.js; `-1` ginge nicht, das Raster
    hat keine ausdruecklichen Zeilen. */
@@ -3910,24 +3917,15 @@ body { overflow-x: clip; }
 .m-pfeil { grid-column: 5; grid-row: 2 / span 5; position: relative; }
 .m-bestand { grid-column: 6; grid-row: 2 / span 5; align-self: center; }
 
-/* Pfeil von der Quelle zum Einarbeiten, und vom Einarbeiten an die Schiene */
-.m-quelle::after, .m-schritt::after {
+/* Von der Karte an die Schiene: 22px Spalten-Abstand plus 15px bis zum Strich */
+.m-quelle::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 100%;
-  width: 22px;
+  width: 37px;
   height: 1.5px;
   background: var(--text-muted);
-}
-.m-schritt::after { width: 37px; }
-.m-quelle::before {
-  content: "";
-  position: absolute;
-  top: calc(50% - 4px);
-  left: calc(100% + 15px);
-  border: 4.5px solid transparent;
-  border-left: 6px solid var(--text-muted);
 }
 .m-schiene::before {
   content: "";
@@ -3959,7 +3957,7 @@ body { overflow-x: clip; }
 .m-pfeil i { left: -22px; right: -18px; }
 
 /* Die Legende ist zugleich ein Filter */
-.m-fluss[data-hl] .m-knoten li, .m-fluss[data-hl] .m-quelle { opacity: 0.28; }
+.m-fluss[data-hl] .m-knoten li, .m-fluss[data-hl] .m-herkunft { opacity: 0.28; }
 .m-fluss[data-hl="ki"] .m-knoten li.ki,
 .m-fluss[data-hl="skript"] .m-knoten li.skript,
 .m-fluss[data-hl="mensch"] .m-knoten li.mensch { opacity: 1; }
@@ -3981,10 +3979,10 @@ body { overflow-x: clip; }
 @media (max-width: 860px) {
   .m-fluss { display: flex; flex-direction: column; gap: 0; }
   .m-kopf, .m-schiene, .m-pfeil { display: none; }
-  .m-quelle, .m-sammel, .m-bestand { margin-bottom: 6px; }
-  .m-schritt { margin-left: 22px; margin-bottom: 14px; }
-  .m-quelle::after { left: 22px; top: 100%; width: 1.5px; height: 7px; }
-  .m-quelle::before, .m-schritt::after { display: none; }
+  .m-quelle, .m-sammel, .m-bestand { margin-bottom: 14px; }
+  .m-quelle { grid-template-columns: 1fr; }
+  .m-herkunft { padding-bottom: 0; }
+  .m-quelle::after { display: none; }
   .m-sammel::before, .m-bestand::before {
     content: attr(data-vorspann);
     display: block;
