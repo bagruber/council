@@ -3797,7 +3797,7 @@ body { overflow-x: clip; }
   text-underline-offset: 2px;
 }
 
-/* -- Markierungen: Raute Sprachmodell, Quadrat Skript, Kreis Mensch -- */
+/* -- Die drei Arten von Schritt: Raute, Quadrat, Kreis -- */
 .m-mark { position: relative; padding-left: 20px; }
 .m-mark::before {
   content: "";
@@ -3998,7 +3998,7 @@ body { overflow-x: clip; }
   .m-bestand { margin-top: 18px; }
 }
 
-/* -- Wo ein Sprachmodell mitarbeitet -- */
+/* -- Gegenueberstellung: uebernimmt / uebernimmt nicht -- */
 .m-kasten {
   background: var(--surface);
   border: 1px solid var(--border);

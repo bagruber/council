@@ -13,9 +13,12 @@ eine Suche und Filter zugänglich.
 > Public-Interest-Technology-Vorhaben zur Förderung von Transparenz in der
 > Lokalpolitik.
 >
-> Inhalte werden weitgehend automatisiert aus den öffentlichen Niederschriften
-> extrahiert. Trotz sorgfältiger Prüfung können Übertragungsfehler entstehen —
-> im Zweifel sind die [Original-Niederschriften der Stadt
+> Die Inhalte stammen aus den öffentlichen Niederschriften der Stadt. Ein
+> Sprachmodell liefert beim Einarbeiten den ersten Aufschlag, ein Mensch
+> korrigiert und gibt frei; wie genau, erklärt die Seite
+> [„So entsteht diese Seite"](https://moosburg.eu/stadtrat/#/methodik). Trotz
+> sorgfältiger Prüfung können Übertragungsfehler entstehen — im Zweifel sind
+> die [Original-Niederschriften der Stadt
 > Moosburg](https://moosburg.ratsinfomanagement.net/) verbindlich.
 
 ## Was zeigt die App?
@@ -206,8 +209,25 @@ und kommt per `node scripts/hole-tokens.mjs` als `css/tokens.css` herein.
 
 ## Lizenz & Verantwortung
 
-Code: MIT. Daten: Auszug aus öffentlich zugänglichen Niederschriften der Stadt
-Moosburg — die Niederschriften selbst sind die maßgebliche Quelle.
+Alles nichtkommerziell:
+
+| | |
+|---|---|
+| **Code** | [PolyForm Noncommercial 1.0.0](LICENSE) |
+| **Daten und Texte** | [CC BY-NC 4.0](LICENSE-DATA) |
+
+**Zusätzlich für die Presse:** Über die Lizenz hinaus dürfen Medien die Daten
+und Grafiken für redaktionelle Berichterstattung nutzen, auch wenn sie
+kommerziell arbeiten, sofern die Quelle genannt wird.
+
+Nicht davon erfasst: die Niederschriften in `data/niederschriften/` als
+amtliche Werke der Stadt, die Schriften in `fonts/` (SIL OFL) und die
+Phosphor-Icons (MIT). Weil die Lizenzen nichtkommerziell sind, ist der
+Quellcode zwar einsehbar, aber nicht Open Source im Sinne der OSI —
+„quelloffen" trifft es.
+
+Die Daten sind ein Auszug aus öffentlich zugänglichen Unterlagen der Stadt
+Moosburg; die Niederschriften selbst bleiben die maßgebliche Quelle.
 
 Verantwortlich für Inhalt und Betrieb: Benedict Arya Gruber, von 2022 bis 2026
 Digitalisierungsreferent der Stadt Moosburg a.d. Isar. Dieses Projekt entsteht

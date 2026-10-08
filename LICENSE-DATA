@@ -1,0 +1,46 @@
+# Lizenz für Daten und Texte
+
+Creative Commons Namensnennung – Nicht kommerziell 4.0 International
+(**CC BY-NC 4.0**)
+
+Lizenztext: <https://creativecommons.org/licenses/by-nc/4.0/legalcode.de>
+Kurzfassung: <https://creativecommons.org/licenses/by-nc/4.0/deed.de>
+
+Rechteinhaber: Benedict Gruber
+
+## Wofür sie gilt
+
+- die Datendateien in `data/` samt den JSON-Schemata in `data/schema/`
+- die Texte der Anwendung, also alles, was die Seite anzeigt
+
+## Wofür sie nicht gilt
+
+- **`data/niederschriften/`.** Die Niederschriften sind amtliche Werke der
+  Stadt Moosburg a.d. Isar und liegen hier nur als Beleg bei. Für sie gilt,
+  was die Stadt für sie bestimmt.
+- **Der Quellcode.** Er steht unter der PolyForm Noncommercial License 1.0.0,
+  siehe `LICENSE`. Creative-Commons-Lizenzen sind für Software nicht
+  geeignet.
+- **Fremde Bestandteile**, die ihre eigene Lizenz behalten: die Schriften in
+  `fonts/` (SIL Open Font License) und die Icons von Phosphor (MIT).
+
+## Namensnennung
+
+„Stadtrat Moosburg, https://moosburg.eu/stadtrat/“ — bei Bearbeitungen mit
+dem Hinweis, dass bearbeitet wurde.
+
+## Zusätzliche Erlaubnis für die Presse
+
+Über die Lizenz hinaus dürfen Medien die Daten und Grafiken dieser Seite für
+redaktionelle Berichterstattung nutzen, auch wenn sie kommerziell arbeiten,
+sofern die Quelle genannt wird.
+
+Das ist eine zusätzliche Erlaubnis des Rechteinhabers neben CC BY-NC 4.0 und
+keine Änderung der Lizenz. Creative Commons sieht solche Zusatzerlaubnisse
+ausdrücklich vor.
+
+## Verbindlich bleibt die Niederschrift
+
+Die Daten sind ein Auszug aus öffentlich zugänglichen Unterlagen der Stadt
+Moosburg a.d. Isar. Trotz sorgfältiger Prüfung können Übertragungsfehler
+entstehen; im Zweifel gelten die amtlichen Niederschriften.

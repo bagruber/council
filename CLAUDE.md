@@ -61,6 +61,10 @@ nicht als Rohfassung im Repo.
   Dossier-Zuordnung warten auf die Niederschrift. Liegt nur die eigene
   Mitschrift vor, bleiben die Ergebnisse draußen — die Tagesordnung darf
   stehen. Dasselbe gilt für Sitzungen, die noch bevorstehen.
+- **Die Methodik-Seite zieht mit.** `js/views/methodik.js` beschreibt den
+  Pflege-Ablauf. Ändert er sich — neuer Skill, neues Skript, neue
+  Herkunftsstufe, neue Quelle —, gehört die Seite im selben Schritt angepasst,
+  sonst erklärt sie etwas, das es nicht mehr gibt.
 
 ## UI & Design
 
