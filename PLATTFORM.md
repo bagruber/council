@@ -41,6 +41,20 @@ muss deshalb aus dem Repo und nicht bloß aus dem Deploy. Dafür gibt es
 `quellen/`: in der `.gitignore`, lokal vollständig. Die Historie bleibt davon
 unberührt; einmal eingecheckt, bleibt eine Datei über alte Commits abrufbar.
 
+## Wenn ein Ordner aus dem Bestand fällt
+
+Die FTP-Deploy-Action löscht serverseitig nach, was lokal verschwunden ist.
+Zu löschende Ordner adressiert sie absolut (`/stadtrat/…`), während der
+FTP-Login schon in `stadtrat/` wurzelt — der Server antwortet mit `550 No such
+file or directory`. Bis v4.3.5 brach der Lauf daran ab, ohne seinen Sync-Stand
+zu speichern, und jeder weitere Deploy scheiterte an derselben Stelle. Am
+06.10.2026 so geschehen mit `data/vote_tracking/` und `data/knowledge/`.
+
+Seit **v4.4.0** ist der 550 eine Warnung: der Ordner bleibt leer auf dem Server
+stehen, der Lauf läuft durch. Leere Ordner sind harmlos, solange die
+Verzeichnisauflistung aus ist. Wer sie trotzdem weghaben will, löscht sie
+einmalig per FTP von Hand.
+
 ## Pfade müssen relativ bleiben
 
 Die App liegt auf moosburg.eu in einem Unterordner. Alle Verweise sind relativ
