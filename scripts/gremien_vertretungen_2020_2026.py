@@ -31,7 +31,7 @@ PFAD = os.path.join(DATA, 'bodies.json')
 # Wer 2022 fuer Wagner und Altenbeck nachrueckte, sass ab der Vereidigung am
 # 20.06.2022 im Rat. Wann genau die Gremiensitze uebergingen, ist nicht
 # belegt; zwischen Juni und September 2022 lag keine BPU-Sitzung.
-GRUENE_NACHRUECKER = '2022-06-20'
+GRUENE_NACHRUECKER = '2022-07-04'
 
 BPU_SUBS = {
     'john': [{'member': 'kaestl', 'from': '2020-05-01', 'to': '2023-03-05'}],

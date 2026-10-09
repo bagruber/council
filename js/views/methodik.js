@@ -350,6 +350,17 @@ function renderMethodik(abschnitt) {
 
       <p>Geht eine Stimme nur mittelbar aus der Quelle hervor, etwa aus einer zitierten
         Wortmeldung, ist sie als weicher Beleg gekennzeichnet.</p>
+
+      <p>Wer einen Antrag gestellt hat, wird bei der Abstimmung über diesen Antrag mit Ja
+        geführt, auch wenn die Niederschrift nur das Ergebnis nennt. Dass jemand gegen den
+        eigenen Antrag stimmt, kommt praktisch nicht vor; die Stimme gilt deshalb als
+        belegt und trägt den Vermerk „Antragsteller“.</p>
+
+      <p>Manchmal geht die Zählung nicht auf, ohne dass die Niederschrift einen Grund
+        nennt. Fehlt dieselbe eine Stimme bei allen Beschlüssen eines Abends, geht die
+        Seite von einem Zählfehler aus und führt alle Anwesenden; der Beschluss trägt
+        dann einen Hinweis. Fehlt sie nur bei einzelnen Beschlüssen, gilt die
+        90-%-Regel von oben.</p>
     </section>
 
     <section id="go" class="m-abschnitt">

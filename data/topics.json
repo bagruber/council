@@ -65,12 +65,34 @@
         "text": "Die Stadt Moosburg erwirbt das Bahnhofsgebäude von der Deutschen Bahn."
       },
       {
+        "date": "2022-02-07",
+        "type": "vote",
+        "title": "Ärztehaus im Bahnhof abgelehnt",
+        "text": "Welters Antrag findet nur seine eigene Stimme (20:1); die CSU setzt den Anstrich der Fassade durch.",
+        "sessionId": "sr_20220207",
+        "voteId": "sr_20220207_03",
+        "press": [
+          "merkur_2022-02-10_aerztehaus-bahnhof"
+        ]
+      },
+      {
         "date": "2023-04-24",
         "type": "vote",
         "title": "Fahrgastbefragung Bahnhof",
         "text": "Einstimmig: Online-Befragung zum Nutzungsverhalten am Bahnhof.",
         "sessionId": "sr_20230424",
         "voteId": "sr_20230424_05"
+      },
+      {
+        "date": "2023-09-25",
+        "type": "vote",
+        "title": "Generalsanierung statt Neubau",
+        "text": "Weil nur die Sanierung nennenswert gefördert wird, beschließt der Stadtrat mit 18:2 die Generalsanierung.",
+        "sessionId": "sr_20230925",
+        "voteId": "sr_20230925_07",
+        "press": [
+          "merkur_2023-09-29_bahnhof-sanierung"
+        ]
       },
       {
         "date": "2025-06-23",
@@ -438,6 +460,14 @@
         "text": "2.720.121 € für 4 zusätzliche Klassenzimmer (21:0).",
         "sessionId": "sr_20230724",
         "voteId": "sr_20230724_06"
+      },
+      {
+        "date": "2024-01-15",
+        "type": "vote",
+        "title": "Erweiterung auf dem Nachbargrundstück",
+        "text": "Einstimmig: Die Grundschule wird auf dem früheren Rockermaier-Grundstück erweitert.",
+        "sessionId": "sr_20240115",
+        "voteId": "sr_20240115_03"
       },
       {
         "date": "2024-10-21",
@@ -868,6 +898,17 @@
     "summary": "Das städtische Freibad an der Stadtbadstraße. Sanierungsplanung, Bundesförderung sowie Anpassungen der Badegebühren.",
     "history": [
       {
+        "date": "2022-04-04",
+        "type": "vote",
+        "title": "Neue Badegebühren",
+        "text": "Die Saisonkarten nach dem Antrag Stanglmaier gehen einstimmig durch, der Verwaltungsvorschlag scheitert.",
+        "sessionId": "sr_20220404",
+        "voteId": "sr_20220404_06",
+        "press": [
+          "mz_2022-04-05_freibadgebuehren"
+        ]
+      },
+      {
         "date": "2022-09-05",
         "type": "milestone",
         "title": "Bundesprogramm Schwimmbäder/SJK 2022 – Teilnahme",
@@ -1263,6 +1304,17 @@
         "text": "Einvernehmen erteilt (6:5).",
         "sessionId": "bpu_20230921",
         "voteId": "bpu_20230921_05"
+      },
+      {
+        "date": "2023-09-25",
+        "type": "vote",
+        "title": "B-Plan Nr. 80 aufgestellt",
+        "text": "Einstimmig: Aufstellung für die Erweiterung von Jungheinrich, mit städtebaulichem Vertrag.",
+        "sessionId": "sr_20230925",
+        "voteId": "sr_20230925_02",
+        "press": [
+          "merkur_2023-09-26_jungheinrich"
+        ]
       },
       {
         "date": "2024-02-19",
@@ -1866,6 +1918,25 @@
         "voteId": "sr_20211206_01"
       },
       {
+        "date": "2022-02-21",
+        "type": "vote",
+        "title": "Kitagebühren steigen",
+        "text": "Mit 13:7 setzt sich der Vorschlag des Bürgermeisters durch: 20 % in diesem, 8 % im nächsten Jahr, danach 3 % jährlich.",
+        "sessionId": "sr_20220221",
+        "voteId": "sr_20220221_02",
+        "press": [
+          "merkur_2022-02-22_kitagebuehren"
+        ]
+      },
+      {
+        "date": "2022-07-04",
+        "type": "vote",
+        "title": "Krippe Sonnensiedlung in Hybridbauweise",
+        "text": "Die reine Holzbauweise (Antrag Stanglmaier) scheitert mit 7:12, gebaut wird hybrid.",
+        "sessionId": "sr_20220704",
+        "voteId": "sr_20220704_08"
+      },
+      {
         "date": "2023-06-12",
         "type": "vote",
         "title": "Kita Sonnensiedlung – drei Gruppen mit Wohnungen darüber",
@@ -1901,5 +1972,241 @@
     "field": "education",
     "type": "vorhaben",
     "status": "laufend"
+  },
+  {
+    "id": "t32",
+    "title": "Bebauungsplan Nr. 66 „Oberes Gereut Nordost“",
+    "tags": [
+      "building"
+    ],
+    "image": null,
+    "summary": "Wohngebiet an der Fischerstraße im Südosten Moosburgs, zwischen Isar und Flugplatz, für rund 275 Menschen. Die Grünen wollten das Verfahren 2022 ruhen lassen, bis Schulen und Kinderbetreuung nachkommen; die Mehrheit hat weitergeplant. 2024 wechselte das Verfahren ins Regelverfahren.",
+    "field": "building",
+    "type": "gebiet",
+    "status": "laufend",
+    "history": [
+      {
+        "date": "2022-03-14",
+        "type": "vote",
+        "title": "Vertagung abgelehnt",
+        "text": "Die Grünen wollen das Verfahren ruhen lassen, bis die Infrastruktur nachkommt; abgelehnt mit 9:14. Danach wird ein erster Teil der Stellungnahmen abgewogen, zwei Änderungsanträge für Gutachten scheitern ebenfalls mit 9:14.",
+        "sessionId": "sr_20220314",
+        "voteId": "sr_20220314_05",
+        "press": [
+          "merkur_2022-03-17_oberes-gereut"
+        ]
+      },
+      {
+        "date": "2022-07-11",
+        "type": "vote",
+        "title": "Billigung und Auslegung",
+        "text": "Die restlichen Stellungnahmen werden einstimmig abgewogen, der Entwurf gebilligt und ausgelegt.",
+        "sessionId": "sr_20220711",
+        "voteId": "sr_20220711_05"
+      },
+      {
+        "date": "2024-10-21",
+        "type": "vote",
+        "title": "B-Plan 66 Oberes Gereut Nordost – Verfahrenswechsel",
+        "text": "Wechsel ins Regelverfahren beschlossen; bisherige Auslegung gilt als § 3/§ 4 Abs. 1 BauGB.",
+        "sessionId": "sr_20241021",
+        "voteId": "sr_20241021_07"
+      },
+      {
+        "date": "2026-03-25",
+        "type": "vote",
+        "title": "B-Plan Nr. 66 „Oberes Gereuth Nord-Ost\" – Billigungsbeschluss",
+        "text": "Der Stadtrat nimmt den Entwurf des Bebauungsplans mit Grünordnungsplan, Begründung und Umweltbericht in der Fassung vom 26.02.2026 zur Kenntnis und billigt die Planunterlagen zur öffentlichen Auslegung nach § 3 Abs. 2 BauGB.",
+        "sessionId": "sr_20260325",
+        "voteId": "sr_20260325_04"
+      }
+    ]
+  },
+  {
+    "id": "t33",
+    "title": "Bebauungsplan Nr. 74 „Feldkirchen“",
+    "tags": [
+      "building",
+      "economy"
+    ],
+    "image": null,
+    "summary": "Sondergebiet für die Saatgutbetriebe in Feldkirchen, mit der 10. Änderung des Flächennutzungsplans. Der Stadtrat hat die Stellungnahmen aus zwei Beteiligungsrunden abgewogen und den Plan 2023 abgeschlossen.",
+    "field": "building",
+    "type": "gebiet",
+    "status": "abgeschlossen",
+    "history": [
+      {
+        "date": "2020-07-06",
+        "type": "vote",
+        "title": "Vollzug der Baugesetze; Auslegungsbeschluss zum Bebauungsplan Nr. 74 \"Feldkirchen\" und zur…",
+        "text": "3 Abs. 1 BauGB und § 4 Abs. 1 BauGB durchzuführen und die Ergebnisse dem Stadtrat zur beschlussmäßigen Behandlung vorzulegen.",
+        "sessionId": "sr_20200706",
+        "voteId": "sr_20200706_01"
+      },
+      {
+        "date": "2022-07-11",
+        "type": "vote",
+        "title": "Abwägung und Billigung",
+        "text": "Gut zwanzig Stellungnahmen werden einstimmig abgewogen, Plan und FNP-Änderung gebilligt und ausgelegt.",
+        "sessionId": "sr_20220711",
+        "voteId": "sr_20220711_10"
+      },
+      {
+        "date": "2023-05-22",
+        "type": "vote",
+        "title": "B-Plan 74 Feldkirchen + 10. FNP-Änderung",
+        "text": "In 18 Einzelabstimmungen werden die Stellungnahmen abgewogen (alle einstimmig 19-21:0).",
+        "sessionId": "sr_20230522",
+        "voteId": "sr_20230522_10"
+      }
+    ]
+  },
+  {
+    "id": "t34",
+    "title": "Wasserversorgung",
+    "tags": [
+      "infrastructure"
+    ],
+    "image": null,
+    "summary": "Das städtische Wasserwerk, seine Sanierung und die Gebühren, die sie bezahlen. 2022 wurde der Eigenbetrieb aufgelöst und das Wasserwerk wieder in die Verwaltung geholt; seit 2023 wird die Aufbereitungsanlage saniert, und die Gebühren steigen in zwei Stufen.",
+    "field": "infrastructure",
+    "type": "einrichtung",
+    "status": "laufend",
+    "history": [
+      {
+        "date": "2022-10-10",
+        "type": "vote",
+        "title": "Aufhebung der Betriebssatzung des städtischen Wasserwerks",
+        "text": "Der Stadtrat beschließt, die Betriebssatzung vom 01.12.2010 zum 31.12.2022 aufzuheben. Die Verwaltung wird beauftragt die notwendigen Schritte zur Rückführung zum Regiebetrieb durch- zuführen.",
+        "sessionId": "sr_20221010",
+        "voteId": "sr_20221010_04"
+      },
+      {
+        "date": "2022-11-07",
+        "type": "vote",
+        "title": "Eigenbetrieb aufgelöst",
+        "text": "Die Betriebssatzung des Wasserwerks wird aufgehoben; dazu eine Vereinbarung mit dem Wasserzweckverband Baumgartner Gruppe über künftige Neubaugebiete.",
+        "sessionId": "sr_20221107",
+        "voteId": "sr_20221107_03"
+      },
+      {
+        "date": "2023-05-22",
+        "type": "vote",
+        "title": "Sanierung Aufbereitungsanlage Wasserwerk",
+        "text": "Einstimmig: Sanierung beschlossen.",
+        "sessionId": "sr_20230522",
+        "voteId": "sr_20230522_04"
+      },
+      {
+        "date": "2023-10-16",
+        "type": "vote",
+        "title": "Sanierung der Aufbereitungsanlage",
+        "text": "Ausführungsplanung und Ausschreibung beschlossen, die Netzersatzanlage wird vorab ausgeschrieben. Die Kosten liegen über eine halbe Million höher als geplant.",
+        "sessionId": "sr_20231016",
+        "voteId": "sr_20231016_01",
+        "press": [
+          "merkur_2023-10-19_wasserwerk"
+        ]
+      },
+      {
+        "date": "2023-11-23",
+        "type": "vote",
+        "title": "Wasserwerk-Erweiterung",
+        "text": "Einstimmig: Einvernehmen erteilt.",
+        "sessionId": "bpu_20231123",
+        "voteId": "bpu_20231123_10"
+      },
+      {
+        "date": "2023-12-04",
+        "type": "vote",
+        "title": "Neue Wassergebühren",
+        "text": "Grundgebühr plus 50 %, Verbrauch 1,89 €/m³ ab 2024 und 2,15 €/m³ ab 2026. Alles einstimmig.",
+        "sessionId": "sr_20231204",
+        "voteId": "sr_20231204_04"
+      },
+      {
+        "date": "2025-11-10",
+        "type": "vote",
+        "title": "Änderungssatzung Wasserabgabe",
+        "text": "Der Stadtrat beschließt die 3. Änderungssatzung zur Wasserabgabesatzung.",
+        "sessionId": "sr_20251110",
+        "voteId": "sr_20251110_03"
+      },
+      {
+        "date": "2025-11-10",
+        "type": "vote",
+        "title": "Neuerlass BGS-WAS",
+        "text": "Der Stadtrat beschließt den Neuerlass der Beitrags- und Gebührensatzung zur Wasserabgabesatzung.",
+        "sessionId": "sr_20251110",
+        "voteId": "sr_20251110_04"
+      }
+    ]
+  },
+  {
+    "id": "t35",
+    "title": "Sparkasse",
+    "tags": [
+      "economy",
+      "budget"
+    ],
+    "image": null,
+    "summary": "Die Stadt- und Kreissparkasse Moosburg und ihr Zweckverband. 2022 fusionierte sie mit der Sparkasse Freising; der Stadtrat stimmte knapp zu und stritt über die Besetzung der Verbandsräte.",
+    "field": "economy",
+    "type": "einrichtung",
+    "status": "laufend",
+    "history": [
+      {
+        "date": "2020-05-04",
+        "type": "vote",
+        "title": "Bestellung der Mitglieder und Stellvertreter zur Verbandsversammlung der Stadt- und…",
+        "text": "Der Stadtrat beschließt, folgende Stadträte in die Verbandsversammlung der Stadt- und Kreis- sparkasse Moosburg zu entsenden: Ordentliches Mitglied: Georg Hadersdorfer Vertreterin: Karin Linz Ordentliches Mitglied: Ludwig Kieninger Vertreter: Thomas Grundner",
+        "sessionId": "sr_20200504",
+        "voteId": "sr_20200504_14"
+      },
+      {
+        "date": "2022-03-14",
+        "type": "vote",
+        "title": "Fusion mit Freising",
+        "text": "Mit 14:9 stimmt der Stadtrat der Vereinigung mit der Sparkasse Freising zum 1. Juni 2022 zu.",
+        "sessionId": "sr_20220314",
+        "voteId": "sr_20220314_01",
+        "press": [
+          "merkur_2022-03-15_sparkassenfusion"
+        ]
+      },
+      {
+        "date": "2022-03-31",
+        "type": "milestone",
+        "title": "Vereinigungsvertrag unterzeichnet",
+        "text": "Die beiden Sparkassen, die Städte und der Landkreis unterzeichnen den Vertrag; die Fusion gilt ab 1. Juni 2022.",
+        "press": [
+          "mz_2022-03-31_sparkasse-vertrag"
+        ]
+      },
+      {
+        "date": "2022-04-04",
+        "type": "vote",
+        "title": "Verbandsräte",
+        "text": "Die Grünen beanspruchen einen Sitz; mit 13:8 bleibt es bei Hadersdorfer und Kieninger.",
+        "sessionId": "sr_20220404",
+        "voteId": "sr_20220404_02"
+      },
+      {
+        "date": "2026-05-11",
+        "type": "vote",
+        "title": "Bestellung der Mitglieder und Stellvertreter zur Verbandsversammlung der Sparkasse Freising…",
+        "text": "Der Stadtrat beschließt, folgende Stadträte in die Verbandsversammlung der Sparkasse Frei- sing Moosburg zu entsenden: Ordentliches Mitglied: Georg Hadersdorfer Vertreterin: Lorena Kehlringer Ordentliches Mitglied: Dr. Michael Stanglmaier Vertreter: Thomas Grundner",
+        "sessionId": "sr_20260511",
+        "voteId": "sr_20260511_18"
+      },
+      {
+        "date": "2026-05-11",
+        "type": "vote",
+        "title": "Bestellung der Mitglieder und Stellvertreter zur Verbandsversammlung der Sparkasse Freising…",
+        "text": "Der Stadtrat beschließt, Ersten Bürgermeister Mader sowie StR Heinz als Vertreter der Stadt im Erholungsflächenverein zu bestellen.",
+        "sessionId": "sr_20260511",
+        "voteId": "sr_20260511_19"
+      }
+    ]
   }
 ]
