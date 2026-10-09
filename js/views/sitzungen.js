@@ -79,15 +79,25 @@ function renderSession(id) {
     main.appendChild(note);
   }
 
-  if (session.substitutes && session.substitutes.length) {
+  // Vertretungen und Vermerke zur Sitzung als Ganzes, etwa wer sie geleitet hat
+  // oder warum eine Z\u00e4hlung nicht aufgeht.
+  const subsListe = session.substitutes || [];
+  const notizen = session.notes || [];
+  if (subsListe.length || notizen.length) {
     const subs = document.createElement("div");
     subs.className = "session-subs";
-    session.substitutes.forEach(s => {
+    subsListe.forEach(s => {
       const member = memberMap[s.member];
       const sub = memberMap[s.substitute];
       const row = document.createElement("div");
       row.className = "sub-row";
       row.innerHTML = html`<svg class="icon"><use href="#i-swap_horiz"/></svg> ${sub ? sub.name : s.substitute} f\u00fcr ${member ? member.name : s.member}`;
+      subs.appendChild(row);
+    });
+    notizen.forEach(n => {
+      const row = document.createElement("div");
+      row.className = "sub-row";
+      row.innerHTML = html`<svg class="icon"><use href="#i-info"/></svg> ${n}`;
       subs.appendChild(row);
     });
     main.appendChild(subs);

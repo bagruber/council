@@ -93,7 +93,7 @@ NIEDERSCHRIFT = 'Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift
 ZAEHLFEHLER = ('Die Niederschrift weist 19:0 aus, anwesend waren 20. Weil alle Beschlüsse dieser '
                'Sitzung eine Stimme weniger zählen und keine Abwesenheit vermerkt ist, gehen wir '
                'von einem Zählfehler aus und führen alle Anwesenden.')
-NACHRUECKER = ('{wer} hat über Niederschriften aus der Zeit vor dem eigenen Mandat nicht '
+NACHRUECKER = ('{wer} über Niederschriften aus der Zeit vor dem eigenen Mandat nicht '
                'mitgestimmt. Die Niederschrift vermerkt das nicht; nur so geht die Zahl auf.')
 ANTRAG = 'Antragsteller'
 
@@ -256,12 +256,12 @@ SITZUNGEN = [
                  ('9', 'Genehmigung der Niederschriften (StR 07.02., 21.02.2022; BA 24.03.2022)'),
                  ('10', 'Neubau eines Abenteuerspielplatzes – Vorstellung der Planung', None, 'Zur Kenntnis genommen.'),
                  ('11', 'PV-Anlage mit 99,2 kWp auf dem Neubau der Anton-Vitzthum-Grundschule'), ('12', 'Anfragen', 'formal')],
-         notes=['Sitzungsleitung: Zweiter Bürgermeister Hadersdorfer.'],
+         notes=['Sitzungsleitung: Zweiter Bürgermeister Hadersdorfer.', ZAEHLFEHLER],
          beschluesse=[
-             ('9', 'Genehmigung der Niederschriften', NIEDERSCHRIFT, 19, 0, dict(alle=True, note=ZAEHLFEHLER)),
-             ('11', 'PV-Anlage Anton-Vitzthum-Grundschule', 'Auf dem Neubau entsteht eine PV-Anlage mit 99,2 kWp und 24-kWh-Speicher.', 19, 0, dict(alle=True, note=ZAEHLFEHLER)),
-             ('11', 'PV-Anlage – Finanzierung', 'Die überplanmäßige Ausgabe wird genehmigt; 110 T€ kommen aus dem Ansatz für den Schulneubau.', 19, 0, dict(alle=True, note=ZAEHLFEHLER)),
-             ('11', 'PV-Anlage – Umsetzung', 'Die Verwaltung setzt das Vorhaben um.', 19, 0, dict(alle=True, note=ZAEHLFEHLER)),
+             ('9', 'Genehmigung der Niederschriften', NIEDERSCHRIFT, 19, 0, dict(alle=True)),
+             ('11', 'PV-Anlage Anton-Vitzthum-Grundschule', 'Auf dem Neubau entsteht eine PV-Anlage mit 99,2 kWp und 24-kWh-Speicher.', 19, 0, dict(alle=True)),
+             ('11', 'PV-Anlage – Finanzierung', 'Die überplanmäßige Ausgabe wird genehmigt; 110 T€ kommen aus dem Ansatz für den Schulneubau.', 19, 0, dict(alle=True)),
+             ('11', 'PV-Anlage – Umsetzung', 'Die Verwaltung setzt das Vorhaben um.', 19, 0, dict(alle=True)),
          ]),
     dict(id='sr_20220509', titel='8. Stadtratssitzung – Mai 2022', absent=['stanglmaier', 'fincke', 'heinz', 'john', 'tristl', 'wagner', 'welter'],
          agenda=[('1', 'Mitteilungen des Ersten Bürgermeisters', 'formal'), ('2', 'Bürgerfragen', 'formal'),
@@ -331,7 +331,8 @@ SITZUNGEN = [
                  ('8.26', 'Billigungs- und Auslegungsbeschluss'),
                  ('9', 'Landschaftsschutzgebiet „Ampertal“ – Anhörung zur 6. Änderungsverordnung'), ('10', 'Anfragen', 'formal')],
          beschluesse=[
-             ('4', 'Genehmigung der Niederschrift BA 23.05.2022', NIEDERSCHRIFT, 19, 0),
+             ('4', 'Genehmigung der Niederschrift BA 23.05.2022', NIEDERSCHRIFT, 19, 0,
+              dict(nsb=['becher_a', 'linz_kilian'], note=NACHRUECKER.format(wer='Alexandra Becher und Kilian Linz haben'))),
              ('5', 'Saliterstraße – Teileinziehung', 'Rund 140 m der Saliterstraße werden eingezogen.', 20, 0),
              ('6.1', 'Lager- und Gerätehaus Sempt 7', 'Einvernehmen erteilt.', 20, 0),
              ('7.2–7.8', 'BP 66 – 7 Stellungnahmen (Sammelvote)', 'Sieben Stellungnahmen, jeweils 21:0: Straßenverkehrsbehörde (Wohnwege, Geh- und Radweg über die Wiesenstraße), SWM, Fliegerclub (Emissionen sind hinzunehmen) und vier private Einwände (Wohnhöfe, Grundwasser mit Beweissicherung, Verkehr und Naturschutz).', 21, 0, dict(thema=[T_BP66])),
@@ -360,7 +361,7 @@ SITZUNGEN = [
                  ('5', 'Heizkraftwerk Bader Energie – dritter Biomassekessel (BImSchG)'), ('6', 'Anfragen', 'formal')],
          beschluesse=[
              ('3', 'Genehmigung der Niederschriften', NIEDERSCHRIFT, 17, 0,
-              dict(nsb=['linz_kilian'], note=NACHRUECKER.format(wer='Kilian Linz'))),
+              dict(nsb=['linz_kilian'], note=NACHRUECKER.format(wer='Kilian Linz hat'))),
              ('4.1', 'Kläranlage – Jahresabschluss 2021', 'Empfehlung an die Gesellschafterversammlung, den Jahresabschluss festzustellen; der Überschuss wird vorgetragen.', 18, 0, dict(thema=['t30'])),
              ('4.2', 'Kläranlage – Entlastung des Aufsichtsrats 2021', 'Empfehlung, den Aufsichtsrat zu entlasten.', 13, 0,
               dict(beteiligt=['dollinger', 'weber', 'haberl', 'reif', 'beubl'], thema=['t30'])),

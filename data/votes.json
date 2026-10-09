@@ -13530,8 +13530,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "note": "Die Niederschrift weist 19:0 aus, anwesend waren 20. Weil alle Beschlüsse dieser Sitzung eine Stimme weniger zählen und keine Abwesenheit vermerkt ist, gehen wir von einem Zählfehler aus und führen alle Anwesenden."
+    }
   },
   {
     "id": "sr_20220502_02",
@@ -13573,8 +13572,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "note": "Die Niederschrift weist 19:0 aus, anwesend waren 20. Weil alle Beschlüsse dieser Sitzung eine Stimme weniger zählen und keine Abwesenheit vermerkt ist, gehen wir von einem Zählfehler aus und führen alle Anwesenden."
+    }
   },
   {
     "id": "sr_20220502_03",
@@ -13616,8 +13614,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "note": "Die Niederschrift weist 19:0 aus, anwesend waren 20. Weil alle Beschlüsse dieser Sitzung eine Stimme weniger zählen und keine Abwesenheit vermerkt ist, gehen wir von einem Zählfehler aus und führen alle Anwesenden."
+    }
   },
   {
     "id": "sr_20220502_04",
@@ -13659,8 +13656,7 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    },
-    "note": "Die Niederschrift weist 19:0 aus, anwesend waren 20. Weil alle Beschlüsse dieser Sitzung eine Stimme weniger zählen und keine Abwesenheit vermerkt ist, gehen wir von einem Zählfehler aus und führen alle Anwesenden."
+    }
   },
   {
     "id": "sr_20220509_01",
@@ -14459,15 +14455,53 @@
     "sessionId": "sr_20220711",
     "title": "Genehmigung der Niederschrift BA 23.05.2022",
     "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 19,
-      "no": 0,
-      "absent": 6
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "john"
+      ]
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "becher_a",
+        "reason": "nicht_stimmberechtigt"
+      },
+      {
+        "member": "linz_kilian",
+        "reason": "nicht_stimmberechtigt"
+      }
+    ],
+    "note": "Alexandra Becher und Kilian Linz haben über Niederschriften aus der Zeit vor dem eigenen Mandat nicht mitgestimmt. Die Niederschrift vermerkt das nicht; nur so geht die Zahl auf."
   },
   {
     "id": "sr_20220711_02",

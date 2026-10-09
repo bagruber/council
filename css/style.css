@@ -1109,11 +1109,13 @@ a.cat-line:hover { text-decoration: underline; }
 
 .sub-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 6px;
 }
 
 .sub-row .icon {
+  flex: none;
+  margin-top: 1px;
   font-size: 16px;
   color: var(--text-muted);
 }
