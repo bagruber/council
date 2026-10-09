@@ -102,6 +102,20 @@ export const Council = (() => {
     });
   }
 
+  // Die Vertretung eines Sitzes wechselt unabhängig vom Sitzinhaber. `sub` ist
+  // ein Name, wenn sie die ganze Periode dieselbe blieb, sonst eine Liste
+  // `[{member, from, to}]`. Beide Formen laufen hier zusammen.
+  function subSpans(seat) {
+    const sub = seat && seat.sub;
+    if (!sub || sub === true) return [];
+    return typeof sub === "string" ? [{ member: sub }] : sub;
+  }
+
+  function subAt(seat, date) {
+    const e = subSpans(seat).find(s => withinPeriod(s, date));
+    return e ? e.member : null;
+  }
+
   // -- Wie hat diese Person gestimmt --
   //
   // Aus Person, Abstimmung und Sitzung einer von:
@@ -280,7 +294,7 @@ export const Council = (() => {
   return {
     withinPeriod, endOfPeriod,
     memberActiveAt, mandateAt, mandateSpans, partyAt, partySpans,
-    bodyConfigAt, isRegularOf,
+    bodyConfigAt, isRegularOf, subSpans, subAt,
     voteStatus, voteStatusLabel, voteStatusTitle, sourceLabel, isUnanimous,
     evidenceNote, statusProvenance, voterTiers,
   };

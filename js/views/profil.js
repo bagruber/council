@@ -458,12 +458,19 @@ function committeeRoles(m) {
       else if (cfg.chairSub === m.id)  role = "Vorsitz, Vertretung";
       else if ((cfg.vicechairs || []).some(v => v.member === m.id))
         role = "Stellv. Vorsitz";
-      else if ((cfg.vicechairs || []).some(v => v.sub === m.id))
+      else if ((cfg.vicechairs || []).some(v => Council.subSpans(v).some(e => e.member === m.id)))
         role = "Stellv. Vorsitz, Vertretung";
       else {
         for (const s of cfg.seats || []) {
           if (s.member === m.id) { role = ""; break; }
-          if (s.sub === m.id)    { role = "Vertretung"; break; }
+          // Die Vertretung wechselt unabhängig vom Sitz und hat ihren eigenen Zeitraum
+          const vertretung = Council.subSpans(s).find(e => e.member === m.id);
+          if (vertretung) {
+            role = "Vertretung";
+            if (vertretung.from) from = vertretung.from;
+            if (vertretung.to)   to = vertretung.to;
+            break;
+          }
           const occ = (s.occupants || []).find(o => o.member === m.id);
           if (occ) {
             role = "";

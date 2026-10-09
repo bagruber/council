@@ -925,10 +925,26 @@
                 "member": "welter",
                 "from": "2023-03-06"
               }
+            ],
+            "sub": [
+              {
+                "member": "kaestl",
+                "from": "2020-05-01",
+                "to": "2023-03-05"
+              }
             ]
           },
           {
-            "sub": "gruber",
+            "sub": [
+              {
+                "member": "neumayr",
+                "to": "2022-10-09"
+              },
+              {
+                "member": "gruber",
+                "from": "2022-10-10"
+              }
+            ],
             "occupants": [
               {
                 "member": "wittmann",
@@ -968,6 +984,12 @@
                 "member": "linz_kilian",
                 "from": "2022-06-20"
               }
+            ],
+            "sub": [
+              {
+                "member": "becher_a",
+                "from": "2022-06-20"
+              }
             ]
           },
           {
@@ -976,7 +998,16 @@
           },
           {
             "member": "stanglmaier",
-            "sub": "becher_j"
+            "sub": [
+              {
+                "member": "wagner",
+                "to": "2022-05-31"
+              },
+              {
+                "member": "becher_j",
+                "from": "2022-06-20"
+              }
+            ]
           }
         ]
       },
@@ -1116,37 +1147,48 @@
     ],
     "seatConfigs": [
       {
-        "from": "2020-05-01",
+        "from": "2023-03-06",
         "to": "2026-04-30",
         "chair": "dollinger",
         "seats": [
           {
-            "member": "haberl",
-            "sub": "tristl"
+            "member": "stanglmaier"
           },
           {
-            "member": "weber",
-            "sub": "linz_karin"
+            "member": "fincke"
           },
           {
-            "member": "marcus",
-            "sub": "pschorr"
+            "member": "lauterbach"
+          },
+          {
+            "member": "linz_kilian"
+          },
+          {
+            "member": "pschorr"
+          },
+          {
+            "member": "weber"
+          },
+          {
+            "member": "welter"
           },
           {
             "member": "gruber",
-            "sub": "hobmaier"
+            "sub": [
+              {
+                "member": "hobmaier",
+                "from": "2024-10-21"
+              }
+            ]
           },
           {
-            "member": "reif",
-            "sub": "grundner"
+            "member": "grundner"
           },
           {
-            "member": "becher_a",
-            "sub": "von_pressentin"
+            "member": "heinz"
           },
           {
-            "member": "stanglmaier",
-            "sub": "beibl"
+            "member": "von_pressentin"
           }
         ]
       },
@@ -1266,11 +1308,31 @@
           },
           {
             "member": "pschorr",
-            "sub": "marcus"
+            "sub": [
+              {
+                "member": "beubl",
+                "from": "2023-03-27",
+                "to": "2025-03-23"
+              },
+              {
+                "member": "marcus",
+                "from": "2025-03-24"
+              }
+            ]
           },
           {
             "member": "gruber",
-            "sub": "strobl"
+            "sub": [
+              {
+                "member": "john",
+                "from": "2023-06-26",
+                "to": "2023-07-23"
+              },
+              {
+                "member": "strobl",
+                "from": "2023-07-24"
+              }
+            ]
           },
           {
             "member": "kieninger",
@@ -1365,8 +1427,56 @@
     "seatConfigs": [
       {
         "from": "2020-05-01",
+        "to": "2025-03-23",
+        "chair": "beubl",
+        "chairSub": "pschorr",
+        "seats": [
+          {
+            "member": "linz_karin",
+            "sub": "weber"
+          },
+          {
+            "member": "tristl",
+            "sub": "heinz"
+          },
+          {
+            "member": "lauterbach",
+            "sub": "kieninger",
+            "role": "Stellv. Vorsitzender"
+          },
+          {
+            "occupants": [
+              {
+                "member": "gruebl",
+                "to": "2024-10-20"
+              },
+              {
+                "member": "hobmaier",
+                "from": "2024-10-21"
+              }
+            ],
+            "sub": [
+              {
+                "member": "kaestl",
+                "from": "2023-06-26"
+              }
+            ]
+          },
+          {
+            "member": "becher_a",
+            "sub": "von_pressentin"
+          },
+          {
+            "member": "beibl",
+            "sub": "becher_j"
+          }
+        ]
+      },
+      {
+        "from": "2025-03-24",
         "to": "2026-04-30",
         "chair": "lauterbach",
+        "chairSub": "kieninger",
         "seats": [
           {
             "member": "linz_karin",
@@ -1381,8 +1491,22 @@
             "sub": "pschorr"
           },
           {
-            "member": "hobmaier",
-            "sub": "kaestl",
+            "occupants": [
+              {
+                "member": "gruebl",
+                "to": "2024-10-20"
+              },
+              {
+                "member": "hobmaier",
+                "from": "2024-10-21"
+              }
+            ],
+            "sub": [
+              {
+                "member": "kaestl",
+                "from": "2023-06-26"
+              }
+            ],
             "role": "Stellv. Vorsitzender"
           },
           {
@@ -1393,8 +1517,7 @@
             "member": "beibl",
             "sub": "becher_j"
           }
-        ],
-        "chairSub": "kieninger"
+        ]
       },
       {
         "from": "2026-05-01",
@@ -1489,32 +1612,73 @@
         "chair": "dollinger",
         "seats": [
           {
-            "member": "haberl",
-            "sub": "tristl"
-          },
-          {
             "member": "weber",
             "sub": "linz_karin"
           },
           {
-            "member": "marcus",
-            "sub": "pschorr"
+            "member": "haberl",
+            "sub": "tristl"
           },
           {
-            "member": "hobmaier",
-            "sub": "gruber"
+            "occupants": [
+              {
+                "member": "wagner",
+                "to": "2022-05-31"
+              },
+              {
+                "member": "becher_a",
+                "from": "2022-06-20"
+              }
+            ],
+            "sub": "von_pressentin"
+          },
+          {
+            "member": "stanglmaier",
+            "sub": "beibl"
           },
           {
             "member": "reif",
             "sub": "grundner"
           },
           {
-            "member": "becher_a",
-            "sub": "von_pressentin"
+            "occupants": [
+              {
+                "member": "beubl",
+                "to": "2025-03-23"
+              },
+              {
+                "member": "marcus",
+                "from": "2025-03-24"
+              }
+            ],
+            "sub": "pschorr"
           },
           {
-            "member": "stanglmaier",
-            "sub": "beibl"
+            "occupants": [
+              {
+                "member": "wittmann",
+                "to": "2021-10-24"
+              },
+              {
+                "member": "gruebl",
+                "from": "2021-10-25",
+                "to": "2024-10-20"
+              },
+              {
+                "member": "hobmaier",
+                "from": "2024-10-21"
+              }
+            ],
+            "sub": [
+              {
+                "member": "neumayr",
+                "to": "2022-10-09"
+              },
+              {
+                "member": "gruber",
+                "from": "2022-10-10"
+              }
+            ]
           }
         ]
       },

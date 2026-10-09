@@ -111,7 +111,9 @@ def main():
         # Wechsels den Sitz. Der Sitz stimmt mit, nur eben durch sie.
         excl = len([e for e in v.get('excluded', [])
                     if e.get('reason') != 'kein_mandat'])
-        entitled = size - len(sess.get('absent', [])) - excl
+        # Wer vertreten wurde, steht in `absent`; die Vertretung stimmt mit.
+        entitled = (size - len(sess.get('absent', [])) - excl
+                    + len(sess.get('substitutes') or []))
         voted = r['yes'] + r['no']
 
         if ENTLASTUNG.search(v['title']):

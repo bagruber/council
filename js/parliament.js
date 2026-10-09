@@ -593,6 +593,7 @@ export const VoteVis = (() => {
 
     seatList.forEach(seatDef => {
       let m = null, voteVal = "unknown";
+      let reg = null;
       if (seatDef.occupants) {
         // An einem Wechseltag stehen beide Namen am selben Sitz. Wer ihn zu
         // dieser Abstimmung nicht hielt, trägt `kein_mandat` — der kommt hier
@@ -603,22 +604,26 @@ export const VoteVis = (() => {
         const moeglich = seatDef.occupants.filter(o => !ohneMandat.has(o.member));
         // Danach: wer tatsächlich mitgestimmt hat (überlappende Zeiträume)
         const inVote = moeglich.find(o => voteRes[o.member] != null);
-        if (inVote) m = memberMap[inVote.member];
+        if (inVote) reg = memberMap[inVote.member];
         else {
           const occ = activeAt(moeglich, vote.date);
-          if (occ) m = memberMap[occ.member];
+          if (occ) reg = memberMap[occ.member];
         }
       } else if (seatDef.member) {
-        // committee-style {member, sub}: pick whoever cast a vote, fall back to regular
-        const reg = memberMap[seatDef.member];
-        const sub = seatDef.sub ? memberMap[seatDef.sub] : null;
-        const cast = x => x && voteRes[x.id] != null && voteRes[x.id] !== "absent";
-        if (cast(reg)) m = reg;
-        else if (cast(sub)) m = sub;
-        // Fehlt der Sitzinhaber laut Anwesenheitsliste, sitzt die Vertretung da
-        else if (sub && reg && voteRes[reg.id] === "absent" && voteRes[sub.id] == null) m = sub;
-        else m = reg;
+        reg = memberMap[seatDef.member];
       }
+      // Wer an diesem Abend vertreten hat, steht in der Niederschrift; sonst
+      // die Vertretung, die der Sitz zu dem Datum hatte. Die setzt sich aber
+      // nur auf den Platz, wenn sie mitgestimmt hat — fehlten beide, bleibt
+      // der Sitzinhaber als abwesend stehen.
+      const genannt = reg && ((session && session.substitutes) || []).find(x => x.member === reg.id);
+      const subId = genannt ? genannt.substitute : Council.subAt(seatDef, vote.date);
+      const sub = subId ? memberMap[subId] : null;
+      const cast = x => x && voteRes[x.id] != null && voteRes[x.id] !== "absent";
+      if (cast(reg)) m = reg;
+      else if (cast(sub)) m = sub;
+      else if (genannt && sub && voteRes[sub.id] == null) m = sub;
+      else m = reg;
       if (!m) { seats.push(null); return; }
       // Anonyme Beschlüsse führen keine Einzelstimmen. Was sich aus Anwesenheit
       // und Einstimmigkeit ergibt, weiß Council — dieselbe Quelle wie Profil

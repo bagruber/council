@@ -9747,6 +9747,24 @@
     "start": "17:00",
     "end": "19:15",
     "title": "3. Sitzung Hauptverwaltungs- und Finanzausschuss – November 2024",
+    "absent": [
+      "gruber",
+      "grundner",
+      "heinz",
+      "von_pressentin"
+    ],
+    "partial": [
+      {
+        "member": "stanglmaier",
+        "from": "18:15"
+      }
+    ],
+    "substitutes": [
+      {
+        "member": "gruber",
+        "substitute": "hobmaier"
+      }
+    ],
     "agenda": [
       {
         "number": "1",

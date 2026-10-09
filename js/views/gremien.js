@@ -3,6 +3,7 @@
 import {
   members, bodies, seatOrder, partyMap, memberMap, isActive, nowStr,
 } from "../daten.js";
+import { Council } from "../core.js";
 import { formatMonthPeriod, formatPeriod } from "../hilfen.js";
 import { factionHistory, renderFraktion } from "./fraktion.js";
 import { renderMemberProfile } from "./profil.js";
@@ -154,11 +155,14 @@ function makeBodyCard(body) {
     const allIds = new Set();
     body.seats.forEach(s => {
       allIds.add(s.member);
-      if (s.sub) allIds.add(s.sub);
+      Council.subSpans(s).forEach(e => allIds.add(e.member));
     });
     if (body.chair) allIds.add(body.chair);
     if (body.chairSub) allIds.add(body.chairSub);
-    if (body.vicechairs) body.vicechairs.forEach(v => { allIds.add(v.member); if (v.sub) allIds.add(v.sub); });
+    if (body.vicechairs) body.vicechairs.forEach(v => {
+      allIds.add(v.member);
+      Council.subSpans(v).forEach(e => allIds.add(e.member));
+    });
 
     allIds.forEach(id => {
       const m = memberMap[id];
@@ -223,11 +227,11 @@ function makeBodyCard(body) {
     }
     (body.vicechairs || []).forEach(vc => {
       const m = memberMap[vc.member];
-      if (m) zeilen.push(html`<tr>${nameCell(m, "Stellv. Vorsitz")}${subCells(vc.sub)}</tr>`);
+      if (m) zeilen.push(html`<tr>${nameCell(m, "Stellv. Vorsitz")}${subCells(Council.subAt(vc, nowStr))}</tr>`);
     });
     body.seats.forEach(seat => {
       const m = memberMap[seat.member];
-      if (m) zeilen.push(html`<tr>${nameCell(m, seat.role)}${subCells(seat.sub)}</tr>`);
+      if (m) zeilen.push(html`<tr>${nameCell(m, seat.role)}${subCells(Council.subAt(seat, nowStr))}</tr>`);
     });
 
     table.innerHTML = html`<thead><tr><th>Mitglied</th>${
