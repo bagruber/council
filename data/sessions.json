@@ -445,6 +445,9 @@
     "end": "20:55",
     "title": "5. Stadtratssitzung – Mai 2020 (konstituierend)",
     "absent": [],
+    "press": [
+      "merkur_2020-05-05_moosburgs-neue-buergermeister"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -626,9 +629,6 @@
         "title": "Anfragen (konstituierende Sitzung) vom 04.05.2020",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2020-05-05_moosburgs-neue-buergermeister"
     ]
   },
   {
@@ -1176,6 +1176,20 @@
       "kaestl",
       "linz_karin"
     ],
+    "partial": [
+      {
+        "member": "dollinger",
+        "from": "18:20"
+      },
+      {
+        "member": "welter",
+        "from": "18:50"
+      },
+      {
+        "member": "wittmann",
+        "from": "18:30"
+      }
+    ],
     "agenda": [
       {
         "number": "1",
@@ -1227,11 +1241,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "notes": [
-      "Dollinger, Josef (anwesend ab 18.20 Uhr)",
-      "Zweiter Bürgermeister (anwesend ab 18.50 Uhr)",
-      "(anwesend ab 18.30 Uhr)"
     ]
   },
   {
@@ -1459,6 +1468,28 @@
       "reif",
       "wittmann"
     ],
+    "partial": [
+      {
+        "member": "stanglmaier",
+        "from": "18:35"
+      },
+      {
+        "member": "heinz",
+        "from": "18:10"
+      },
+      {
+        "member": "kaestl",
+        "from": "18:30"
+      },
+      {
+        "member": "von_pressentin",
+        "from": "18:15",
+        "to": "20:35"
+      }
+    ],
+    "press": [
+      "mz_2020-10-06_geaenderte-vorfahrt-beschlossen"
+    ],
     "agenda": [
       {
         "number": "3",
@@ -1526,15 +1557,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "mz_2020-10-06_geaenderte-vorfahrt-beschlossen"
-    ],
-    "notes": [
-      "Dollinger, Josef anwesend ab 18.35 Uhr",
-      "Zweiter Bürgermeister anwesend ab 18.10 Uur",
-      "anwesend ab 18.30 Uhr",
-      "Hadersdorfer, Georg anwesend von 18.15 Uhr bis 20.35 Uhr"
     ]
   },
   {
@@ -1551,6 +1573,15 @@
       "linz_karin",
       "tristl",
       "von_pressentin"
+    ],
+    "partial": [
+      {
+        "member": "wittmann",
+        "from": "19:05"
+      }
+    ],
+    "press": [
+      "merkur_2020-10-27_buergerbegehren-fuer-vertraeglicheres"
     ],
     "agenda": [
       {
@@ -1628,12 +1659,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2020-10-27_buergerbegehren-fuer-vertraeglicheres"
-    ],
-    "notes": [
-      "Dollinger, Josef (anwesend ab 19.05 Uhr)"
     ]
   },
   {
@@ -1789,6 +1814,16 @@
     "absent": [
       "becher_j"
     ],
+    "partial": [
+      {
+        "member": "altenbeck",
+        "from": "18:10"
+      },
+      {
+        "member": "pschorr",
+        "from": "18:15"
+      }
+    ],
     "agenda": [
       {
         "number": "1",
@@ -1846,10 +1881,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "notes": [
-      "Dollinger, Josef anwesend ab 18.10 Uhr",
-      "anwesend ab 18.15 Uhr"
     ]
   },
   {
@@ -1959,6 +1990,12 @@
     "absent": [
       "von_pressentin"
     ],
+    "partial": [
+      {
+        "member": "kaestl",
+        "to": "20:55"
+      }
+    ],
     "agenda": [
       {
         "number": "1",
@@ -2012,9 +2049,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "notes": [
-      "Dollinger, Josef (anwesend bis 20.55 Uhr)"
     ]
   },
   {
@@ -2119,6 +2153,10 @@
       "heinz",
       "von_pressentin"
     ],
+    "press": [
+      "mz_2021-02-09_moria-aufnahme",
+      "mz_2021-02-08_ganztagsbetreuung"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -2181,10 +2219,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "mz_2021-02-09_moria-aufnahme",
-      "mz_2021-02-08_ganztagsbetreuung"
     ]
   },
   {
@@ -2199,6 +2233,12 @@
       "kaestl",
       "von_pressentin",
       "wittmann"
+    ],
+    "partial": [
+      {
+        "member": "haberl",
+        "from": "18:35"
+      }
     ],
     "agenda": [
       {
@@ -2648,9 +2688,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "notes": [
-      "Dollinger, Josef (anwesend ab 18.35 Uhr)"
     ]
   },
   {
@@ -2964,6 +3001,20 @@
       "reif",
       "tristl"
     ],
+    "partial": [
+      {
+        "member": "stanglmaier",
+        "to": "21:00"
+      },
+      {
+        "member": "kaestl",
+        "from": "19:25"
+      },
+      {
+        "member": "pschorr",
+        "to": "21:05"
+      }
+    ],
     "agenda": [
       {
         "number": "1",
@@ -3006,11 +3057,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "notes": [
-      "Dollinger, Josef (anwesend bis 21.00 Uhr)",
-      "Zweiter Bürgermeister (anwesend ab 19.25 Uhr)",
-      "(anwesend bis 21.05 Uhr)"
     ]
   },
   {
@@ -3024,6 +3070,19 @@
     "absent": [
       "reif",
       "wittmann"
+    ],
+    "partial": [
+      {
+        "member": "stanglmaier",
+        "from": "20:00"
+      },
+      {
+        "member": "beubl",
+        "to": "21:00"
+      }
+    ],
+    "press": [
+      "mz_2021-04-13_moosburger-will-breitbandfoerderung"
     ],
     "agenda": [
       {
@@ -3083,13 +3142,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "mz_2021-04-13_moosburger-will-breitbandfoerderung"
-    ],
-    "notes": [
-      "Dollinger, Josef (anwesend ab 20.00 Uhr)",
-      "(anwesend bis 21.00 Uhr)"
     ]
   },
   {
@@ -3104,6 +3156,9 @@
       "hadersdorfer",
       "beubl",
       "reif"
+    ],
+    "press": [
+      "merkur_2021-04-28_trotz-mehrheit-fuer"
     ],
     "agenda": [
       {
@@ -3160,9 +3215,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2021-04-28_trotz-mehrheit-fuer"
     ]
   },
   {
@@ -3347,6 +3399,9 @@
       "reif",
       "von_pressentin"
     ],
+    "press": [
+      "merkur_2021-06-08_beschlossene-sache-kinder"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -3404,9 +3459,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2021-06-08_beschlossene-sache-kinder"
     ]
   },
   {
@@ -3618,6 +3670,12 @@
     "absent": [
       "stanglmaier"
     ],
+    "partial": [
+      {
+        "member": "kaestl",
+        "to": "21:50"
+      }
+    ],
     "agenda": [
       {
         "number": "2",
@@ -3664,9 +3722,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "notes": [
-      "Dollinger, Josef (anwesend bis 21.50 Uhr)"
     ]
   },
   {
@@ -3852,6 +3907,9 @@
       "kaestl",
       "lauterbach"
     ],
+    "press": [
+      "merkur_2021-09-07_debatte-firmen-erweiterung"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -3906,9 +3964,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2021-09-07_debatte-firmen-erweiterung"
     ]
   },
   {
@@ -4033,6 +4088,9 @@
     "absent": [
       "wittmann"
     ],
+    "press": [
+      "mz_2021-10-13_moosburger-stalag-kunst"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -4107,9 +4165,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "mz_2021-10-13_moosburger-stalag-kunst"
     ]
   },
   {
@@ -4262,6 +4317,9 @@
       "kieninger",
       "welter"
     ],
+    "press": [
+      "merkur_2021-11-24_beschlossen-moosburger-innenstadt"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -4325,9 +4383,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2021-11-24_beschlossen-moosburger-innenstadt"
     ]
   },
   {
@@ -5327,7 +5382,8 @@
       "lauterbach"
     ],
     "notes": [
-      "Sitzungsleitung: Zweiter Bürgermeister Hadersdorfer."
+      "Sitzungsleitung: Zweiter Bürgermeister Hadersdorfer.",
+      "Die Niederschrift weist 19:0 aus, anwesend waren 20. Weil alle Beschlüsse dieser Sitzung eine Stimme weniger zählen und keine Abwesenheit vermerkt ist, gehen wir von einem Zählfehler aus und führen alle Anwesenden."
     ],
     "agenda": [
       {
@@ -6000,6 +6056,9 @@
       "tristl",
       "weber"
     ],
+    "press": [
+      "mz_2022-09-06_erzgebirgstrasse-beschlossen"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -6077,9 +6136,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "mz_2022-09-06_erzgebirgstrasse-beschlossen"
     ]
   },
   {
@@ -6097,6 +6153,9 @@
       "pschorr",
       "weber",
       "welter"
+    ],
+    "press": [
+      "mz_2022-09-20_hoehere-gebuehren-fuer"
     ],
     "agenda": [
       {
@@ -6200,9 +6259,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "mz_2022-09-20_hoehere-gebuehren-fuer"
     ]
   },
   {
@@ -6321,6 +6377,9 @@
       "john",
       "tristl"
     ],
+    "press": [
+      "sz_2022-10-13_wasserwerk"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -6381,9 +6440,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "sz_2022-10-13_wasserwerk"
     ]
   },
   {
@@ -8308,6 +8364,9 @@
     "absent": [
       "becher_a"
     ],
+    "press": [
+      "merkur_2023-07-25_wechsel-moosburger-alexander"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -8383,9 +8442,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2023-07-25_wechsel-moosburger-alexander"
     ]
   },
   {
@@ -8402,6 +8458,9 @@
       "lauterbach",
       "reif",
       "von_pressentin"
+    ],
+    "press": [
+      "merkur_2023-09-05_regenbogenfahne-rathaus-flaggenfrage"
     ],
     "agenda": [
       {
@@ -8471,9 +8530,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2023-09-05_regenbogenfahne-rathaus-flaggenfrage"
     ]
   },
   {
@@ -9880,6 +9936,9 @@
       "stanglmaier",
       "grundner"
     ],
+    "press": [
+      "merkur_2024-05-08_plant-windrad-kirchamper"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -9931,9 +9990,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2024-05-08_plant-windrad-kirchamper"
     ]
   },
   {
@@ -9952,6 +10008,12 @@
       "beubl",
       "heinz",
       "welter"
+    ],
+    "press": [
+      "sz_2024-06_kitas-arbeitsmarktzulage",
+      "mz_2024-06-11_moosburger-hebt-kindergartengebuehren",
+      "sz_2024-06-12_grundschulen-schulwegplaene-abgelehnt",
+      "merkur_2024-06-14_probleme-elterntaxis-forderung"
     ],
     "agenda": [
       {
@@ -10066,12 +10128,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "sz_2024-06_kitas-arbeitsmarktzulage",
-      "mz_2024-06-11_moosburger-hebt-kindergartengebuehren",
-      "sz_2024-06-12_grundschulen-schulwegplaene-abgelehnt",
-      "merkur_2024-06-14_probleme-elterntaxis-forderung"
     ]
   },
   {
@@ -10087,6 +10143,10 @@
       "stanglmaier",
       "beubl",
       "von_pressentin"
+    ],
+    "press": [
+      "merkur_2024-06-20_adeliger-strassenname-fuer",
+      "sz_2024-06-27_graf-burkhard"
     ],
     "agenda": [
       {
@@ -10180,10 +10240,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2024-06-20_adeliger-strassenname-fuer",
-      "sz_2024-06-27_graf-burkhard"
     ]
   },
   {
@@ -10199,6 +10255,9 @@
       "heinz",
       "kaestl",
       "von_pressentin"
+    ],
+    "press": [
+      "sz_2024-07-03_haushalt-halbjahresbericht-ruecklagen"
     ],
     "agenda": [
       {
@@ -10259,9 +10318,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "sz_2024-07-03_haushalt-halbjahresbericht-ruecklagen"
     ]
   },
   {
@@ -10574,6 +10630,9 @@
       "kaestl",
       "linz_karin"
     ],
+    "press": [
+      "mz_2024-09-24_moosburger-zwingt-investor"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -10643,9 +10702,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "mz_2024-09-24_moosburger-zwingt-investor"
     ]
   },
   {
@@ -10674,6 +10730,9 @@
         "member": "gruebl",
         "substitute": "gruber"
       }
+    ],
+    "press": [
+      "sz_2024-10-01_bahnhofstrasse-bahnhofsviertel-stadtentwicklung"
     ],
     "agenda": [
       {
@@ -10767,9 +10826,6 @@
         "title": "Anfragen und Sonstiges",
         "type": "formal"
       }
-    ],
-    "press": [
-      "sz_2024-10-01_bahnhofstrasse-bahnhofsviertel-stadtentwicklung"
     ]
   },
   {
@@ -11010,6 +11066,9 @@
       "becher_j",
       "heinz"
     ],
+    "press": [
+      "sz_2024-11-06_hallenbad"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -11068,9 +11127,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "sz_2024-11-06_hallenbad"
     ]
   },
   {
@@ -11085,6 +11141,10 @@
       "heinz",
       "reif",
       "tristl"
+    ],
+    "press": [
+      "sz_2024-11-19_deutscher-alpenverein-kletterhalle",
+      "merkur_2024-11-22_fast-moosburger-genehmigt"
     ],
     "agenda": [
       {
@@ -11147,10 +11207,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "sz_2024-11-19_deutscher-alpenverein-kletterhalle",
-      "merkur_2024-11-22_fast-moosburger-genehmigt"
     ]
   },
   {
@@ -11306,6 +11362,9 @@
       "linz_karin",
       "reif"
     ],
+    "press": [
+      "merkur_2024-12-10_sanierungsplaene-fuer-moosburgs"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -11388,9 +11447,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2024-12-10_sanierungsplaene-fuer-moosburgs"
     ]
   },
   {
@@ -11559,6 +11615,9 @@
       "linz_karin",
       "von_pressentin"
     ],
+    "press": [
+      "sz_2025-01-31_haushaltsreste-uebertragung-haushalt"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -11641,9 +11700,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "sz_2025-01-31_haushaltsreste-uebertragung-haushalt"
     ]
   },
   {
@@ -11734,6 +11790,9 @@
       "kaestl",
       "von_pressentin"
     ],
+    "press": [
+      "sz_2025-02-25_hallenbad-hohe-auslastung"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -11810,9 +11869,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "sz_2025-02-25_hallenbad-hohe-auslastung"
     ]
   },
   {
@@ -11896,6 +11952,9 @@
     "absent": [
       "dollinger"
     ],
+    "press": [
+      "merkur_2025-03-26_nach-jahren-gerhard"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -11970,9 +12029,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2025-03-26_nach-jahren-gerhard"
     ]
   },
   {
@@ -12052,6 +12108,9 @@
       "von_pressentin",
       "welter"
     ],
+    "press": [
+      "sz_2025-05-04_bebauungsplan-isarstrasse-ablehnung"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -12116,9 +12175,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "sz_2025-05-04_bebauungsplan-isarstrasse-ablehnung"
     ]
   },
   {
@@ -12719,6 +12775,9 @@
       "tristl",
       "weber"
     ],
+    "press": [
+      "merkur_2025-09-09_nach-schwerem-schueler"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -12797,9 +12856,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2025-09-09_nach-schwerem-schueler"
     ]
   },
   {
@@ -13143,6 +13199,9 @@
       "grundner",
       "hobmaier"
     ],
+    "press": [
+      "merkur_2025-11-10_kreisverkehr"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -13226,9 +13285,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2025-11-10_kreisverkehr"
     ]
   },
   {
@@ -13532,6 +13588,9 @@
       "becher_a",
       "becher_j"
     ],
+    "press": [
+      "merkur_2026-01-14_bahnhof-moosburgs-stadtraete"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -13604,9 +13663,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2026-01-14_bahnhof-moosburgs-stadtraete"
     ]
   },
   {
@@ -14055,6 +14111,9 @@
     "end": "20:20",
     "title": "6. Stadtratssitzung – Mai 2026 (konstituierend)",
     "absent": [],
+    "press": [
+      "merkur_2026-05-13_konstituierende-sitzung"
+    ],
     "agenda": [
       {
         "number": "1",
@@ -14216,9 +14275,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2026-05-13_konstituierende-sitzung"
     ]
   },
   {
@@ -14238,6 +14294,9 @@
     "absent": [
       "marschoun",
       "stanglmaier"
+    ],
+    "press": [
+      "merkur_2026-05-23_lehnt-sonderzuschuss-fuer"
     ],
     "agenda": [
       {
@@ -14305,9 +14364,6 @@
         "title": "Anfragen",
         "type": "formal"
       }
-    ],
-    "press": [
-      "merkur_2026-05-23_lehnt-sonderzuschuss-fuer"
     ]
   },
   {

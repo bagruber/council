@@ -66,7 +66,7 @@
       },
       "press": { "type": "array", "items": { "type": "string" } },
       "notes": {
-        "description": "Vermerke aus der Niederschrift, die keinem Feld entsprechen.",
+        "description": "Vermerke zur Sitzung, die keinem Feld entsprechen. Erscheinen öffentlich auf der Sitzungsseite; Interna gehören nach quellen/.",
         "type": "array", "items": { "type": "string" }
       }
     }
