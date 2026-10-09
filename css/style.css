@@ -3917,14 +3917,16 @@ body { overflow-x: clip; }
 .m-pfeil { grid-column: 5; grid-row: 2 / span 5; position: relative; }
 .m-bestand { grid-column: 6; grid-row: 2 / span 5; align-self: center; }
 
-/* Von der Karte an die Schiene: 22px Spalten-Abstand plus 15px bis zum Strich */
+/* Alle Linien 2px, eckig. Die Schiene liegt bei 14–16px ihrer Spalte; ein
+   Abzweig ueberbrueckt 22px Spalten-Abstand plus 16px und endet buendig an
+   ihrer Aussenkante. schiene() in methodik.js rechnet mit der halben Staerke. */
 .m-quelle::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: calc(50% - 1px);
   left: 100%;
-  width: 37px;
-  height: 1.5px;
+  width: 38px;
+  height: 2px;
   background: var(--text-muted);
 }
 .m-schiene::before {
@@ -3933,28 +3935,27 @@ body { overflow-x: clip; }
   left: 14px;
   top: var(--oben, 40px);
   bottom: var(--unten, 40px);
-  width: 3px;
-  border-radius: 2px;
+  width: 2px;
   background: var(--text-muted);
 }
+/* Die Spitze endet 4px vor der naechsten Karte, die Linie an ihrer Basis */
 .m-schiene::after, .m-pfeil::after {
   content: "";
   position: absolute;
-  top: calc(50% - 6px);
-  right: -22px;
-  border: 6px solid transparent;
-  border-left: 8px solid var(--text-muted);
+  top: calc(50% - 5px);
+  right: -18px;
+  border-block: 5px solid transparent;
+  border-left: 9px solid var(--text-muted);
 }
 .m-schiene i, .m-pfeil i {
   position: absolute;
-  top: calc(50% - 0.75px);
-  left: 15px;
-  right: 0;
-  height: 1.5px;
+  top: calc(50% - 1px);
+  left: 16px;
+  right: -9px;
+  height: 2px;
   background: var(--text-muted);
 }
-.m-schiene i { right: -18px; }
-.m-pfeil i { left: -22px; right: -18px; }
+.m-pfeil i { left: -22px; }
 
 /* Die Legende ist zugleich ein Filter */
 .m-fluss[data-hl] .m-knoten li, .m-fluss[data-hl] .m-herkunft { opacity: 0.28; }
