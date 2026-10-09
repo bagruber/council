@@ -915,7 +915,17 @@
             ]
           },
           {
-            "member": "welter"
+            "occupants": [
+              {
+                "member": "john",
+                "from": "2020-05-01",
+                "to": "2023-03-05"
+              },
+              {
+                "member": "welter",
+                "from": "2023-03-06"
+              }
+            ]
           },
           {
             "sub": "gruber",
