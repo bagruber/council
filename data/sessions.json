@@ -3138,6 +3138,9 @@
         "title": "Antrag StR Fincke und StR John\"; Schluss mit dem Parksuchverkehr",
         "voteIds": [
           "sr_20210426_03"
+        ],
+        "press": [
+          "merkur_2021-04-28_parkleitsystem"
         ]
       },
       {
@@ -3254,9 +3257,78 @@
     "id": "sr_20210510",
     "date": "2021-05-10",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "22:15"
+    "end": "22:15",
+    "title": "8. Stadtratssitzung – Mai 2021",
+    "absent": [
+      "kaestl",
+      "reif",
+      "wittmann"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift vom 12.04.2021",
+        "voteIds": [
+          "sr_20210510_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Einführung eines digitalen Parktickets / Smart City (Antrag StR Fincke)",
+        "voteIds": [
+          "sr_20210510_02"
+        ]
+      },
+      {
+        "number": "4.1",
+        "title": "Schluss mit dem Parksuchverkehr (Antrag StRe Fincke und John, 2. Teilantrag)",
+        "voteIds": [
+          "sr_20210510_03"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Voranfrage Aufstockung und Neubau von Wohngebäuden Stadtplatz 12, Georg-Hummel-Str./Rentamtstr.; Anhörung wegen Ersetzung des Einvernehmens",
+        "voteIds": [
+          "sr_20210510_04",
+          "sr_20210510_05"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Verlängerung der Personenunterführung am Bahnhof; Machbarkeitsstudie und weiteres Vorgehen",
+        "voteIds": [
+          "sr_20210510_06",
+          "sr_20210510_07"
+        ],
+        "topicId": "t2",
+        "press": [
+          "merkur_2021-05-14_unterfuehrung"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Vorlage der Jahresrechnung 2020",
+        "note": "Zur Kenntnis genommen."
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20210607",
@@ -4485,9 +4557,80 @@
     "id": "sr_20220117",
     "date": "2022-01-17",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "21:55"
+    "end": "21:55",
+    "title": "1. Stadtratssitzung – Januar 2022",
+    "absent": [
+      "lauterbach",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschriften (StR 11.10., 08.11., 06.12.2021; HVFA 25.11., 29.11.2021)",
+        "voteIds": [
+          "sr_20220117_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "FF Thonstetten – Bestätigung des 1. und 2. Kommandanten",
+        "voteIds": [
+          "sr_20220117_02",
+          "sr_20220117_03"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Bauangelegenheiten",
+        "type": "formal"
+      },
+      {
+        "number": "5.1",
+        "title": "Vorbescheid Wohnanlage mit Tiefgarage Landshuter Str. 28/28a; Anhörung wegen Ersetzung des Einvernehmens",
+        "voteIds": [
+          "sr_20220117_04",
+          "sr_20220117_05"
+        ],
+        "press": [
+          "merkur_2022-01-20_volksfestplatz"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Erlass einer Stadtgrünverordnung – Beschluss über die Variante",
+        "voteIds": [
+          "sr_20220117_06",
+          "sr_20220117_07",
+          "sr_20220117_08",
+          "sr_20220117_09",
+          "sr_20220117_10"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Breitbandförderung Bundesprogramm",
+        "voteIds": [
+          "sr_20220117_11"
+        ]
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "bpu_20220124",
@@ -4642,25 +4785,273 @@
     "id": "sr_20220207",
     "date": "2022-02-07",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "21:45"
+    "end": "21:45",
+    "title": "2. Stadtratssitzung – Februar 2022",
+    "absent": [
+      "fincke",
+      "heinz",
+      "john"
+    ],
+    "partial": [
+      {
+        "member": "kaestl",
+        "from": "20:05"
+      }
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Genehmigung der Niederschriften (StR 22.11.2021, HVFA 02.12.2021)",
+        "voteIds": [
+          "sr_20220207_01"
+        ]
+      },
+      {
+        "number": "3",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Einziehung eines Teilabschnitts der Saliterstraße",
+        "voteIds": [
+          "sr_20220207_02"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Anträge zum Bahnhof",
+        "type": "formal"
+      },
+      {
+        "number": "5.1",
+        "title": "Erweiterung des Bahnhofsgebäudes für ein Ärztehaus (Antrag StR Welter)",
+        "voteIds": [
+          "sr_20220207_03"
+        ],
+        "topicId": "t2",
+        "press": [
+          "merkur_2022-02-10_aerztehaus-bahnhof"
+        ]
+      },
+      {
+        "number": "5.2",
+        "title": "Streichen der Außenwände des Bahnhofsgebäudes (Antrag CSU-Fraktion)",
+        "voteIds": [
+          "sr_20220207_04"
+        ],
+        "topicId": "t2",
+        "press": [
+          "merkur_2022-02-10_aerztehaus-bahnhof"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20220221",
     "date": "2022-02-21",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "18:30",
-    "end": "22:30"
+    "end": "22:30",
+    "title": "3. Stadtratssitzung – Februar 2022",
+    "absent": [
+      "heinz",
+      "john",
+      "neumayr",
+      "weber",
+      "welter"
+    ],
+    "partial": [
+      {
+        "member": "kaestl",
+        "from": "19:10"
+      },
+      {
+        "member": "beibl",
+        "to": "21:00"
+      }
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschriften vom 13.12.2021 und 17.01.2022",
+        "voteIds": [
+          "sr_20220221_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Änderung der Kindertageseinrichtungs-Gebührensatzung",
+        "voteIds": [
+          "sr_20220221_02",
+          "sr_20220221_03",
+          "sr_20220221_04"
+        ],
+        "topicId": "t31",
+        "press": [
+          "merkur_2022-02-22_kitagebuehren"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20220314",
     "date": "2022-03-14",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "22:20"
+    "end": "22:20",
+    "title": "4. Stadtratssitzung – März 2022",
+    "absent": [
+      "dollinger",
+      "von_pressentin"
+    ],
+    "notes": [
+      "Sitzungsleitung: Zweiter Bürgermeister Hadersdorfer; Bürgermeister Dollinger war erkrankt."
+    ],
+    "agenda": [
+      {
+        "number": "2",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Vereinigung der Stadt- und Kreissparkasse Moosburg mit der Sparkasse Freising",
+        "voteIds": [
+          "sr_20220314_01",
+          "sr_20220314_02",
+          "sr_20220314_03"
+        ],
+        "topicId": "t35",
+        "press": [
+          "merkur_2022-03-15_sparkassenfusion"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Verordnung für einen verkaufsoffenen Sonntag am 10.04.2022",
+        "voteIds": [
+          "sr_20220314_04"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Bebauungsplan Nr. 66 „Oberes Gereut Nordost“",
+        "type": "formal"
+      },
+      {
+        "number": "6.1",
+        "title": "Vorstellung der Planung (Antrag auf Vertagung)",
+        "voteIds": [
+          "sr_20220314_05"
+        ],
+        "topicId": "t32",
+        "press": [
+          "merkur_2022-03-17_oberes-gereut"
+        ]
+      },
+      {
+        "number": "6.2–6.18",
+        "title": "Sammelvote: 12 Stellungnahmen aus der Beteiligung (einstimmig)",
+        "voteIds": [
+          "sr_20220314_06"
+        ],
+        "topicId": "t32"
+      },
+      {
+        "number": "6.3",
+        "title": "Stellungnahme LRA Freising, Gesundheitsamt",
+        "voteIds": [
+          "sr_20220314_07"
+        ],
+        "topicId": "t32"
+      },
+      {
+        "number": "6.4",
+        "title": "Stellungnahme Wasserwirtschaftsamt München (Änderungsantrag Grundwassergutachten)",
+        "voteIds": [
+          "sr_20220314_08"
+        ],
+        "topicId": "t32"
+      },
+      {
+        "number": "6.7",
+        "title": "Stellungnahme Regierung von Oberbayern",
+        "voteIds": [
+          "sr_20220314_09"
+        ],
+        "topicId": "t32"
+      },
+      {
+        "number": "6.8",
+        "title": "Stellungnahme Deutsche Telekom",
+        "voteIds": [
+          "sr_20220314_10"
+        ],
+        "topicId": "t32"
+      },
+      {
+        "number": "6.12",
+        "title": "Stellungnahme LRA Freising, Immissionsschutz (Änderungsantrag Immissionsgutachten)",
+        "voteIds": [
+          "sr_20220314_11",
+          "sr_20220314_12"
+        ],
+        "topicId": "t32"
+      },
+      {
+        "number": "6.14",
+        "title": "Stellungnahme LRA Freising, Naturschutz",
+        "voteIds": [
+          "sr_20220314_13"
+        ],
+        "topicId": "t32"
+      },
+      {
+        "number": "6.19–6.26",
+        "title": "Private Einwände, Billigung und Auslegung",
+        "note": "Zurückgestellt."
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "bpu_20220324",
@@ -4774,33 +5165,281 @@
     "id": "sr_20220328",
     "date": "2022-03-28",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "22:00"
+    "end": "22:00",
+    "title": "5. Stadtratssitzung – März 2022",
+    "absent": [
+      "beibl",
+      "fincke",
+      "john",
+      "tristl"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Teilfortschreibung des Landesentwicklungsprogramms (LEP)",
+        "voteIds": [
+          "sr_20220328_01",
+          "sr_20220328_02"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Straßenverkehrsangelegenheiten",
+        "type": "formal"
+      },
+      {
+        "number": "4.1",
+        "title": "Mitgliedschaft bei der Initiative „Lebenswerte Städte durch angemessene Geschwindigkeit“ (Antrag Stanglmaier, Beubl, Grübl, Reif)",
+        "voteIds": [
+          "sr_20220328_03"
+        ],
+        "topicId": "t4"
+      },
+      {
+        "number": "5",
+        "title": "Bebauungsplan Nr. 71 „Oberreit“ – Einstellung des Verfahrens",
+        "voteIds": [
+          "sr_20220328_04"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Bebauungsplan Nr. 76 „SO Montessori Moosburg“ – Einstellung des Verfahrens",
+        "voteIds": [
+          "sr_20220328_05"
+        ],
+        "press": [
+          "merkur_2022-03-29_montessori"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Kaltmiete bei Neuvermietung, Sudetenlandstr. 46 und 48",
+        "voteIds": [
+          "sr_20220328_06"
+        ]
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20220404",
     "date": "2022-04-04",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "22:15"
+    "end": "22:15",
+    "title": "6. Stadtratssitzung – April 2022",
+    "absent": [
+      "becher_j",
+      "fincke",
+      "wagner"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Lehmabbau mit Wiederverfüllung, Abbaugebiet Stießberg",
+        "voteIds": [
+          "sr_20220404_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Verbandsräte des Zweckverbands Sparkasse Freising Moosburg",
+        "voteIds": [
+          "sr_20220404_02"
+        ],
+        "topicId": "t35"
+      },
+      {
+        "number": "5",
+        "title": "Zustandsbericht städtische Bäume",
+        "type": "discussion"
+      },
+      {
+        "number": "6",
+        "title": "Neubau eines Abenteuerspielplatzes – Standort",
+        "voteIds": [
+          "sr_20220404_03"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Neufassung der Badegebührenordnung Freibad",
+        "voteIds": [
+          "sr_20220404_04",
+          "sr_20220404_05",
+          "sr_20220404_06",
+          "sr_20220404_07",
+          "sr_20220404_08"
+        ],
+        "topicId": "t12",
+        "press": [
+          "mz_2022-04-05_freibadgebuehren"
+        ]
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20220502",
     "date": "2022-05-02",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "18:00",
-    "end": "20:35"
+    "end": "20:35",
+    "title": "7. Stadtratssitzung – Mai 2022",
+    "absent": [
+      "dollinger",
+      "becher_j",
+      "fincke",
+      "kaestl",
+      "lauterbach"
+    ],
+    "notes": [
+      "Sitzungsleitung: Zweiter Bürgermeister Hadersdorfer."
+    ],
+    "agenda": [
+      {
+        "number": "7",
+        "title": "Mitteilungen des Zweiten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "8",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "9",
+        "title": "Genehmigung der Niederschriften (StR 07.02., 21.02.2022; BA 24.03.2022)",
+        "voteIds": [
+          "sr_20220502_01"
+        ]
+      },
+      {
+        "number": "10",
+        "title": "Neubau eines Abenteuerspielplatzes – Vorstellung der Planung",
+        "note": "Zur Kenntnis genommen."
+      },
+      {
+        "number": "11",
+        "title": "PV-Anlage mit 99,2 kWp auf dem Neubau der Anton-Vitzthum-Grundschule",
+        "voteIds": [
+          "sr_20220502_02",
+          "sr_20220502_03",
+          "sr_20220502_04"
+        ],
+        "press": [
+          "merkur_2022-05-05_pv-schuldach"
+        ]
+      },
+      {
+        "number": "12",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20220509",
     "date": "2022-05-09",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "22:10"
+    "end": "22:10",
+    "title": "8. Stadtratssitzung – Mai 2022",
+    "absent": [
+      "stanglmaier",
+      "fincke",
+      "heinz",
+      "john",
+      "tristl",
+      "wagner",
+      "welter"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschriften vom 14.03. und 28.03.2022",
+        "voteIds": [
+          "sr_20220509_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Ausbau der Lände; Ausweisung als Fahrradstraße",
+        "note": "Zurückgestellt."
+      },
+      {
+        "number": "5",
+        "title": "Änderung des Flächennutzungsplans an der Moosstraße, Aich",
+        "voteIds": [
+          "sr_20220509_02",
+          "sr_20220509_03"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Schulsprengel für das Baugebiet Amperauen",
+        "voteIds": [
+          "sr_20220509_04"
+        ],
+        "press": [
+          "merkur_2022-05-11_schuelerzahlen"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Vorlage der Jahresrechnung 2021",
+        "note": "Zur Kenntnis genommen."
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "bpu_20220523",
@@ -4917,41 +5556,434 @@
     "id": "sr_20220530",
     "date": "2022-05-30",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "21:30"
+    "end": "21:30",
+    "title": "9. Stadtratssitzung – Mai 2022",
+    "absent": [],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Bebauungsplan Nr. 78 „Dr.-Schels-Straße“ – städtebaulicher Entwurf",
+        "type": "discussion"
+      },
+      {
+        "number": "4",
+        "title": "Trauerpark/Naturfriedhof – Grundsatzbeschluss (Antrag StRin Altenbeck)",
+        "voteIds": [
+          "sr_20220530_01",
+          "sr_20220530_02",
+          "sr_20220530_03"
+        ],
+        "press": [
+          "merkur_2022-05-19_naturfriedhof"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Stadtratsangelegenheiten",
+        "type": "formal"
+      },
+      {
+        "number": "5.1",
+        "title": "Niederlegung des Mandats durch Evelin Altenbeck; Listennachfolge",
+        "voteIds": [
+          "sr_20220530_04"
+        ],
+        "press": [
+          "merkur_2022-05-06_gruene-legen-nieder",
+          "merkur_2022-05-31_gruene-verabschiedet"
+        ]
+      },
+      {
+        "number": "5.2",
+        "title": "Niederlegung des Mandats durch Alfred Wagner; Listennachfolge",
+        "voteIds": [
+          "sr_20220530_05"
+        ],
+        "press": [
+          "merkur_2022-05-06_gruene-legen-nieder",
+          "merkur_2022-05-31_gruene-verabschiedet"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20220704",
     "date": "2022-07-04",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "22:30"
+    "end": "22:30",
+    "location": "Schäfflerhalle",
+    "title": "10. Stadtratssitzung – Juli 2022",
+    "absent": [
+      "becher_j",
+      "fincke",
+      "john",
+      "kaestl",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift vom 02.05.2022",
+        "voteIds": [
+          "sr_20220704_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Stadtratsangelegenheiten",
+        "type": "formal"
+      },
+      {
+        "number": "4.1",
+        "title": "Vereidigung von Alexandra Becher",
+        "type": "formal",
+        "press": [
+          "merkur_2022-07-05_vereidigung"
+        ]
+      },
+      {
+        "number": "4.2",
+        "title": "Vereidigung von Kilian Linz",
+        "type": "formal",
+        "press": [
+          "merkur_2022-07-05_vereidigung"
+        ]
+      },
+      {
+        "number": "4.3",
+        "title": "Neubesetzung von Ausschüssen und Aufsichtsrat Kläranlage",
+        "voteIds": [
+          "sr_20220704_02",
+          "sr_20220704_03"
+        ],
+        "topicId": "t30"
+      },
+      {
+        "number": "5",
+        "title": "Verkehrskonzept Moosburg – Endbericht",
+        "voteIds": [
+          "sr_20220704_04"
+        ],
+        "topicId": "t4"
+      },
+      {
+        "number": "6",
+        "title": "Bebauungsplan Nr. 51 „Großer Anger West“ (Gemeinde Langenbach) – Beteiligung",
+        "voteIds": [
+          "sr_20220704_05"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Dreigruppige Kinderkrippe Sonnensiedlung 1",
+        "type": "formal"
+      },
+      {
+        "number": "7.1",
+        "title": "Vorplanung und Bauweise (Antrag Stanglmaier)",
+        "voteIds": [
+          "sr_20220704_06",
+          "sr_20220704_07",
+          "sr_20220704_08"
+        ],
+        "topicId": "t31"
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20220711",
     "date": "2022-07-11",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "18:30",
-    "end": "20:25"
+    "end": "20:25",
+    "title": "11. Stadtratssitzung – Juli 2022",
+    "absent": [
+      "hadersdorfer",
+      "becher_j",
+      "grundner",
+      "john"
+    ],
+    "agenda": [
+      {
+        "number": "2",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Genehmigung der Niederschrift der Bauausschuss-Sitzung vom 23.05.2022",
+        "voteIds": [
+          "sr_20220711_01"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Einziehung eines Teilabschnitts der Saliterstraße",
+        "voteIds": [
+          "sr_20220711_02"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Bauangelegenheiten",
+        "type": "formal"
+      },
+      {
+        "number": "6.1",
+        "title": "Lager- und Gerätehaus Sempt 7",
+        "voteIds": [
+          "sr_20220711_03"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Bebauungsplan Nr. 66 „Oberes Gereut Nordost“ – Abwägung",
+        "type": "formal"
+      },
+      {
+        "number": "7.1",
+        "title": "Sachstandsbericht",
+        "type": "discussion"
+      },
+      {
+        "number": "7.2–7.8",
+        "title": "Sammelvote: 7 Stellungnahmen (einstimmig)",
+        "voteIds": [
+          "sr_20220711_04"
+        ],
+        "topicId": "t32"
+      },
+      {
+        "number": "7.9",
+        "title": "Billigungs- und Auslegungsbeschluss",
+        "voteIds": [
+          "sr_20220711_05"
+        ],
+        "topicId": "t32"
+      },
+      {
+        "number": "8",
+        "title": "Bebauungsplan Nr. 74 „Feldkirchen“ und 10. FNP-Änderung – Abwägung",
+        "type": "formal"
+      },
+      {
+        "number": "8.1",
+        "title": "Sachstandsbericht",
+        "type": "discussion"
+      },
+      {
+        "number": "8.2–8.25",
+        "title": "Sammelvote: 16 Stellungnahmen (einstimmig)",
+        "voteIds": [
+          "sr_20220711_06"
+        ],
+        "topicId": "t33"
+      },
+      {
+        "number": "8.7–8.10",
+        "title": "Sammelvote: 4 Stellungnahmen (Beibl kurz abwesend)",
+        "voteIds": [
+          "sr_20220711_07"
+        ],
+        "topicId": "t33"
+      },
+      {
+        "number": "8.11–8.12",
+        "title": "Sammelvote: 2 Stellungnahmen (Beibl und Fincke kurz abwesend)",
+        "voteIds": [
+          "sr_20220711_08"
+        ],
+        "topicId": "t33"
+      },
+      {
+        "number": "8.13–8.14",
+        "title": "Sammelvote: 2 Stellungnahmen (Fincke kurz abwesend)",
+        "voteIds": [
+          "sr_20220711_09"
+        ],
+        "topicId": "t33"
+      },
+      {
+        "number": "8.26",
+        "title": "Billigungs- und Auslegungsbeschluss",
+        "voteIds": [
+          "sr_20220711_10"
+        ],
+        "topicId": "t33"
+      },
+      {
+        "number": "9",
+        "title": "Landschaftsschutzgebiet „Ampertal“ – Anhörung zur 6. Änderungsverordnung",
+        "voteIds": [
+          "sr_20220711_11"
+        ]
+      },
+      {
+        "number": "10",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20220718",
     "date": "2022-07-18",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "20:30"
+    "end": "20:30",
+    "title": "12. Stadtratssitzung – Juli 2022",
+    "absent": [
+      "stanglmaier",
+      "becher_a",
+      "becher_j",
+      "heinz",
+      "tristl"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Globalkalkulation Abwasser, Änderung der BGS-EWS",
+        "voteIds": [
+          "sr_20220718_01",
+          "sr_20220718_02"
+        ],
+        "topicId": "t30"
+      },
+      {
+        "number": "4",
+        "title": "Finanzbericht des Kämmerers zum 1. Halbjahr 2022",
+        "voteIds": [
+          "sr_20220718_03"
+        ],
+        "topicId": "t7"
+      },
+      {
+        "number": "5",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20220725",
     "date": "2022-07-25",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "18:00",
-    "end": "20:30"
+    "end": "20:30",
+    "title": "13. Stadtratssitzung – Juli 2022",
+    "absent": [
+      "stanglmaier",
+      "becher_a",
+      "gruebl",
+      "heinz",
+      "john",
+      "neumayr",
+      "von_pressentin"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschriften vom 09.05. und 30.05.2022",
+        "voteIds": [
+          "sr_20220725_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Kläranlage Moosburg GmbH",
+        "type": "formal"
+      },
+      {
+        "number": "4.1",
+        "title": "Jahresabschluss 2021 und Ergebnisverwendung",
+        "voteIds": [
+          "sr_20220725_02"
+        ],
+        "topicId": "t30"
+      },
+      {
+        "number": "4.2",
+        "title": "Entlastung des Aufsichtsrats für 2021",
+        "voteIds": [
+          "sr_20220725_03"
+        ],
+        "topicId": "t30"
+      },
+      {
+        "number": "5",
+        "title": "Heizkraftwerk Bader Energie – dritter Biomassekessel (BImSchG)",
+        "voteIds": [
+          "sr_20220725_04"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20220905",
@@ -5479,9 +6511,89 @@
     "id": "sr_20221107",
     "date": "2022-11-07",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "21:10"
+    "end": "21:10",
+    "title": "18. Stadtratssitzung – November 2022",
+    "absent": [
+      "beubl",
+      "john",
+      "reif"
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift vom 19.09.2022",
+        "voteIds": [
+          "sr_20221107_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Zuschuss für den FC Moosburg (Rasenmäher)",
+        "voteIds": [
+          "sr_20221107_02"
+        ],
+        "press": [
+          "merkur_2022-11-08_rasenmaeher"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Aufhebungssatzung zur Betriebssatzung des Wasserwerks",
+        "voteIds": [
+          "sr_20221107_03"
+        ],
+        "topicId": "t34"
+      },
+      {
+        "number": "6",
+        "title": "Städtebauliche Vereinbarungen des Wasserzweckverbands Baumgartner Gruppe",
+        "voteIds": [
+          "sr_20221107_04"
+        ],
+        "topicId": "t34"
+      },
+      {
+        "number": "7",
+        "title": "Örtliche Rechnungsprüfung – Jahresrechnung 2020",
+        "type": "formal",
+        "press": [
+          "merkur_2022-11-09_eisstadion"
+        ]
+      },
+      {
+        "number": "7.1",
+        "title": "Feststellung der Jahresrechnung 2020",
+        "voteIds": [
+          "sr_20221107_05"
+        ],
+        "topicId": "t7"
+      },
+      {
+        "number": "7.2",
+        "title": "Entlastung zur Jahresrechnung 2020",
+        "voteIds": [
+          "sr_20221107_06"
+        ],
+        "topicId": "t7"
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "bpu_20221117",
@@ -5677,6 +6789,9 @@
         "title": "Erhöhung der Gebühren für die städtischen Veranstaltungshallen",
         "voteIds": [
           "sr_20221121_06"
+        ],
+        "press": [
+          "merkur_2022-11-24_hallenmieten"
         ]
       },
       {
@@ -7475,17 +8590,176 @@
     "id": "sr_20230925",
     "date": "2023-09-25",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "22:30"
+    "end": "22:30",
+    "title": "15. Stadtratssitzung – September 2023",
+    "absent": [
+      "stanglmaier",
+      "becher_a",
+      "beubl",
+      "linz_karin"
+    ],
+    "partial": [
+      {
+        "member": "kaestl",
+        "from": "19:15"
+      },
+      {
+        "member": "beibl",
+        "to": "20:45"
+      },
+      {
+        "member": "heinz",
+        "to": "21:30"
+      },
+      {
+        "member": "von_pressentin",
+        "to": "22:00"
+      },
+      {
+        "member": "grundner",
+        "to": "22:20"
+      }
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift vom 12.06.2023",
+        "voteIds": [
+          "sr_20230925_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Bebauungsplan Nr. 80 „Degernpoint Nordost“ und 16. FNP-Änderung – Aufstellung",
+        "voteIds": [
+          "sr_20230925_02",
+          "sr_20230925_03",
+          "sr_20230925_04"
+        ],
+        "topicId": "t18",
+        "press": [
+          "merkur_2023-09-26_jungheinrich"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "1. Änderung des Bebauungsplans Nr. 52 „WA Amperauen“",
+        "type": "formal"
+      },
+      {
+        "number": "5.1",
+        "title": "Stellungnahmen aus der Beteiligung",
+        "voteIds": [
+          "sr_20230925_05"
+        ],
+        "topicId": "t20"
+      },
+      {
+        "number": "5.2",
+        "title": "Satzungsbeschluss",
+        "voteIds": [
+          "sr_20230925_06"
+        ],
+        "topicId": "t20"
+      },
+      {
+        "number": "6",
+        "title": "Empfangsgebäude Bahnhof Moosburg",
+        "type": "formal"
+      },
+      {
+        "number": "6.1",
+        "title": "Ergebnisse der Bahnhofsumfrage",
+        "type": "discussion"
+      },
+      {
+        "number": "6.2",
+        "title": "Fördermöglichkeiten und Ausbauvariante",
+        "voteIds": [
+          "sr_20230925_07"
+        ],
+        "topicId": "t2",
+        "press": [
+          "merkur_2023-09-29_bahnhof-sanierung"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Verkaufsoffener Sonntag am 15.10.2023",
+        "voteIds": [
+          "sr_20230925_08"
+        ]
+      },
+      {
+        "number": "8",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20231016",
     "date": "2023-10-16",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "18:00",
-    "end": "21:10"
+    "end": "21:10",
+    "title": "16. Stadtratssitzung – Oktober 2023",
+    "absent": [
+      "stanglmaier",
+      "becher_j",
+      "beibl",
+      "tristl"
+    ],
+    "agenda": [
+      {
+        "number": "2",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Sanierung der Aufbereitungsanlage des Wasserwerks – Entwurfsplanung",
+        "voteIds": [
+          "sr_20231016_01",
+          "sr_20231016_02"
+        ],
+        "topicId": "t34",
+        "press": [
+          "merkur_2023-10-19_wasserwerk"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Theresia-Gerhardinger-Grundschule – 2. Bauabschnitt mit Aufzug",
+        "voteIds": [
+          "sr_20231016_03"
+        ],
+        "topicId": "t6"
+      },
+      {
+        "number": "6",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20231023",
@@ -7756,9 +9030,82 @@
     "id": "sr_20231204",
     "date": "2023-12-04",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "18:00",
-    "end": "21:25"
+    "end": "21:25",
+    "title": "19. Stadtratssitzung – Dezember 2023",
+    "absent": [
+      "lauterbach",
+      "linz_kilian",
+      "pschorr",
+      "von_pressentin"
+    ],
+    "partial": [
+      {
+        "member": "gruber",
+        "from": "18:25"
+      },
+      {
+        "member": "beibl",
+        "from": "18:40",
+        "to": "19:15"
+      },
+      {
+        "member": "kaestl",
+        "from": "18:50"
+      }
+    ],
+    "agenda": [
+      {
+        "number": "2",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "4",
+        "title": "Genehmigung der Niederschrift vom 16.10.2023",
+        "voteIds": [
+          "sr_20231204_01"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Neufestsetzung der Wassergebühren",
+        "type": "formal",
+        "press": [
+          "merkur_2023-12-09_wassergebuehren"
+        ]
+      },
+      {
+        "number": "5.1",
+        "title": "Gebührenkalkulation Wasser 2024 bis 2027",
+        "voteIds": [
+          "sr_20231204_02",
+          "sr_20231204_03",
+          "sr_20231204_04"
+        ],
+        "topicId": "t34"
+      },
+      {
+        "number": "5.2",
+        "title": "Änderungssatzung zur Wasserabgabesatzung und Neufassung der BGS-WAS",
+        "voteIds": [
+          "sr_20231204_05",
+          "sr_20231204_06"
+        ],
+        "topicId": "t34"
+      },
+      {
+        "number": "6",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "hvfa_20231207",
@@ -7960,9 +9307,92 @@
     "id": "sr_20240115",
     "date": "2024-01-15",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "start": "19:00",
-    "end": "21:45"
+    "end": "21:45",
+    "title": "1. Stadtratssitzung – Januar 2024",
+    "absent": [
+      "tristl"
+    ],
+    "partial": [
+      {
+        "member": "stanglmaier",
+        "from": "19:15"
+      },
+      {
+        "member": "gruber",
+        "from": "19:20"
+      },
+      {
+        "member": "kaestl",
+        "from": "19:20"
+      },
+      {
+        "member": "beibl",
+        "to": "19:50"
+      }
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Genehmigung der Niederschrift vom 04.12.2023",
+        "voteIds": [
+          "sr_20240115_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Gutachten über Schülerprognosen für die Grund- und Mittelschulen",
+        "voteIds": [
+          "sr_20240115_02"
+        ],
+        "topicId": "t6"
+      },
+      {
+        "number": "5",
+        "title": "Erweiterung der Theresia-Gerhardinger-Grundschule – Planung",
+        "voteIds": [
+          "sr_20240115_03",
+          "sr_20240115_04"
+        ],
+        "topicId": "t6"
+      },
+      {
+        "number": "6",
+        "title": "Baugesuche und Anträge",
+        "type": "formal"
+      },
+      {
+        "number": "6.1",
+        "title": "Vorbescheid Abbruch des Postgebäudes und Wohn- und Geschäftsgebäude mit Tiefgarage, Bahnhofstr. 12",
+        "voteIds": [
+          "sr_20240115_05"
+        ]
+      },
+      {
+        "number": "6.2",
+        "title": "Vorbescheid zwei Gemeinschaftsunterkünfte nach § 246 BauGB, Degernpoint G7 und G8",
+        "voteIds": [
+          "sr_20240115_06"
+        ],
+        "topicId": "t18"
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20240201",

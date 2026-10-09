@@ -1230,6 +1230,9 @@
   {
     "id": "sr_20200504_14",
     "sessionId": "sr_20200504",
+    "topicIds": [
+      "t35"
+    ],
     "title": "Bestellung der Mitglieder und Stellvertreter zur Verbandsversammlung der Stadt- und…",
     "text": "Der Stadtrat beschließt, folgende Stadträte in die Verbandsversammlung der Stadt- und Kreis- sparkasse Moosburg zu entsenden: Ordentliches Mitglied: Georg Hadersdorfer Vertreterin: Karin Linz Ordentliches Mitglied: Ludwig Kieninger Vertreter: Thomas Grundner",
     "type": "anonymous",
@@ -2188,6 +2191,9 @@
   {
     "id": "sr_20200706_01",
     "sessionId": "sr_20200706",
+    "topicIds": [
+      "t33"
+    ],
     "title": "Vollzug der Baugesetze; Auslegungsbeschluss zum Bebauungsplan Nr. 74 \"Feldkirchen\" und zur…",
     "text": "3 Abs. 1 BauGB und § 4 Abs. 1 BauGB durchzuführen und die Ergebnisse dem Stadtrat zur beschlussmäßigen Behandlung vorzulegen.",
     "type": "named",
@@ -7649,6 +7655,239 @@
     }
   },
   {
+    "id": "sr_20210510_01",
+    "sessionId": "sr_20210510",
+    "title": "Genehmigung der Niederschrift vom 12.04.2021",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "welter",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "reif",
+        "wittmann",
+        "kaestl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20210510_02",
+    "sessionId": "sr_20210510",
+    "title": "Digitales Parkticket (Antrag Fincke)",
+    "text": "Das digitale Parkticket wird über den Anbieter Pay by Phone eingeführt; die Zusatzgebühren tragen die Nutzer.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "welter",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "reif",
+        "wittmann",
+        "kaestl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20210510_03",
+    "sessionId": "sr_20210510",
+    "title": "Parkbelegung in der App anzeigen (Antrag Fincke/John)",
+    "text": "Kommt ein Parkleitsystem, prüft die Stadt, ob die Belegung auch über MeinMoosburg.de oder eine App angezeigt werden kann.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 1,
+      "absent": 3
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20210510_04",
+    "sessionId": "sr_20210510",
+    "title": "Stadtplatz 12 – Aufstockung: Einvernehmen verweigern",
+    "text": "Antrag, das Einvernehmen zur Aufstockung zu verweigern, abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 8,
+      "no": 13,
+      "absent": 4
+    },
+    "source": {
+      "tier": "result-only"
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
+  },
+  {
+    "id": "sr_20210510_05",
+    "sessionId": "sr_20210510",
+    "title": "Georg-Hummel-/Rentamtstraße – Einvernehmen erteilen",
+    "text": "Antrag, das Einvernehmen für die Neubauten zu erteilen (beide Dachvarianten fügen sich ein), abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 12,
+      "absent": 4
+    },
+    "source": {
+      "tier": "result-only"
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
+  },
+  {
+    "id": "sr_20210510_06",
+    "sessionId": "sr_20210510",
+    "topicIds": [
+      "t2"
+    ],
+    "title": "Personenunterführung Bahnhof – Varianten 3 und 1a",
+    "text": "Die Machbarkeitsstudie wird zur Kenntnis genommen; die Varianten 3 und 1a werden weiterverfolgt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "welter",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "reif",
+        "wittmann",
+        "kaestl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20210510_07",
+    "sessionId": "sr_20210510",
+    "topicIds": [
+      "t2"
+    ],
+    "title": "Personenunterführung Bahnhof – Kosten und Planung",
+    "text": "Die Stadt übernimmt die Kosten; die Verwaltung wählt mit der Bahn ein Planungsbüro und legt eine Planungsvereinbarung für die Leistungsphasen 1 und 2 vor.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "welter",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "reif",
+        "wittmann",
+        "kaestl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
     "id": "sr_20210607_01",
     "sessionId": "sr_20210607",
     "title": "Genehmigung der Niederschrift der Stadtratssitzung vom 26. April 2021 (öffentlicher Teil)",
@@ -11221,6 +11460,351 @@
     }
   },
   {
+    "id": "sr_20220117_01",
+    "sessionId": "sr_20220117",
+    "title": "Genehmigung der Niederschriften",
+    "text": "Der Stadtrat genehmigt die öffentlichen Teile der genannten Niederschriften.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "von_pressentin",
+        "lauterbach"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220117_02",
+    "sessionId": "sr_20220117",
+    "title": "FF Thonstetten – 1. Kommandant Martin Hörhammer",
+    "text": "Martin Hörhammer wird als 1. Kommandant bestätigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "von_pressentin",
+        "lauterbach"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220117_03",
+    "sessionId": "sr_20220117",
+    "title": "FF Thonstetten – 2. Kommandant Reinhard Meilinger",
+    "text": "Reinhard Meilinger wird als 2. Kommandant bestätigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "von_pressentin",
+        "lauterbach"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220117_04",
+    "sessionId": "sr_20220117",
+    "title": "Landshuter Str. 28 – kein Bebauungsplan",
+    "text": "Die Empfehlung des Bauausschusses wird zur Kenntnis genommen; für das Gebiet zwischen Gärtnerstraße, Landshuter Straße und Staatsstraße wird kein Bebauungsplan aufgestellt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 13,
+      "no": 10,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    },
+    "voters": {
+      "altenbeck": {
+        "vote": "no",
+        "tiers": [
+          "protocol-explicit"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sr_20220117_05",
+    "sessionId": "sr_20220117",
+    "title": "Landshuter Str. 28 – Einvernehmen zum Vorbescheid",
+    "text": "Nach der Anhörung zur Ersetzung erteilt der Stadtrat das Einvernehmen für die Wohnanlage mit Tiefgarage.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "grundner",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "welter",
+        "fincke"
+      ],
+      "no": [
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "beubl",
+        "neumayr",
+        "gruebl",
+        "kaestl",
+        "john"
+      ],
+      "absent": [
+        "von_pressentin",
+        "lauterbach"
+      ]
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2022-01-20_volksfestplatz"
+    },
+    "voters": {
+      "altenbeck": {
+        "tiers": [
+          "protocol-explicit"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sr_20220117_06",
+    "sessionId": "sr_20220117",
+    "title": "Stadtgrünverordnung – Stammumfang 100 cm (Antrag Pschorr)",
+    "text": "Antrag, den geschützten Stammumfang von 80 auf 100 cm anzuheben, abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 2,
+      "no": 21,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    },
+    "voters": {
+      "pschorr": {
+        "vote": "yes",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      }
+    }
+  },
+  {
+    "id": "sr_20220117_07",
+    "sessionId": "sr_20220117",
+    "title": "Stadtgrünverordnung – Entwurf 1 (Antrag Neumayr/Becher)",
+    "text": "Antrag, Verordnungsentwurf 1 zum Verfahrensentwurf zu machen, abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 10,
+      "no": 13,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    },
+    "voters": {
+      "neumayr": {
+        "vote": "yes",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      },
+      "becher_j": {
+        "vote": "yes",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      }
+    }
+  },
+  {
+    "id": "sr_20220117_08",
+    "sessionId": "sr_20220117",
+    "title": "Stadtgrünverordnung – Entwurf 2 (Änderungsantrag CSU)",
+    "text": "Verordnungsentwurf 2 wird Verfahrensentwurf und öffentlich bekanntgemacht.",
+    "type": "anonymous",
+    "results": {
+      "yes": 15,
+      "no": 8,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220117_09",
+    "sessionId": "sr_20220117",
+    "title": "Stadtgrünverordnung – Ortsteile ausnehmen",
+    "text": "Antrag, Niederambach, Kirchamper, Pfrombach/Aich und Thonstetten aus dem Geltungsbereich zu nehmen, abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 5,
+      "no": 18,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220117_10",
+    "sessionId": "sr_20220117",
+    "title": "Stadtgrünverordnung – Geltungsbereich",
+    "text": "Der Entwurf des Geltungsbereichs wird gebilligt und mit dem Verordnungsentwurf bekanntgemacht.",
+    "type": "anonymous",
+    "results": {
+      "yes": 16,
+      "no": 7,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220117_11",
+    "sessionId": "sr_20220117",
+    "title": "Breitbandförderung – Teilnahme am Bundesprogramm",
+    "text": "Die Stadt nimmt am Bundesförderprogramm Breitband und an der Kofinanzierungsrichtlinie teil.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "von_pressentin",
+        "lauterbach"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
     "id": "bpu_20220124_01",
     "sessionId": "bpu_20220124",
     "title": "Wasserrecht; Nassabbau \"Semptwiesen II - Erweiter.-Süd\", Tieferlegung der Abbausohle u. Tektur zur Rekultivierung;",
@@ -11438,6 +12022,781 @@
     },
     "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
     "inferable": false
+  },
+  {
+    "id": "sr_20220207_01",
+    "sessionId": "sr_20220207",
+    "title": "Genehmigung der Niederschriften",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "kaestl",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "note": "Die Niederschrift druckt 23:0. Stimmberechtigt anwesend waren zu diesem Zeitpunkt 21; vermutlich ein Druckfehler."
+  },
+  {
+    "id": "sr_20220207_02",
+    "sessionId": "sr_20220207",
+    "title": "Saliterstraße – Teileinziehung einleiten",
+    "text": "Für rund 140 m der Saliterstraße wird das Verfahren zur Teileinziehung eingeleitet.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 1,
+      "absent": 4,
+      "absent_ids": [
+        "kaestl"
+      ]
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220207_03",
+    "sessionId": "sr_20220207",
+    "topicIds": [
+      "t2"
+    ],
+    "title": "Ärztehaus im Bahnhofsgebäude (Antrag Welter) abgelehnt",
+    "text": "Der Stadtrat lehnt den Antrag ab, das Bahnhofsgebäude für ein Ärztehaus zu erweitern.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl"
+      ],
+      "no": [
+        "welter"
+      ],
+      "absent": [
+        "heinz",
+        "kaestl",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2022-02-10_aerztehaus-bahnhof"
+    }
+  },
+  {
+    "id": "sr_20220207_04",
+    "sessionId": "sr_20220207",
+    "topicIds": [
+      "t2"
+    ],
+    "title": "Bahnhof – Außenwände streichen (Antrag CSU)",
+    "text": "Die Fassade des Bahnhofsgebäudes wird neu gestrichen; 25.000 € werden überplanmäßig bereitgestellt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "kaestl",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220221_01",
+    "sessionId": "sr_20220221",
+    "title": "Genehmigung der Niederschriften",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "weber",
+        "neumayr",
+        "welter",
+        "kaestl",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220221_02",
+    "sessionId": "sr_20220221",
+    "topicIds": [
+      "t31"
+    ],
+    "title": "Kitagebühren: +20 %, +8 %, dann 3 % jährlich",
+    "text": "Kindergarten- und Hortgebühren steigen zum 01.09.2022 um 20 %, 2023/24 um 8 % und danach jährlich um 3 % bis 2027/28 (Vorschlag des Bürgermeisters).",
+    "type": "anonymous",
+    "results": {
+      "yes": 13,
+      "no": 7,
+      "absent": 5
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2022-02-22_kitagebuehren"
+    },
+    "voters": {
+      "dollinger": {
+        "vote": "yes",
+        "tiers": [
+          "press"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sr_20220221_03",
+    "sessionId": "sr_20220221",
+    "topicIds": [
+      "t31"
+    ],
+    "title": "Kitagebühren – Geschwisterermäßigung für alle Einrichtungen",
+    "text": "Die Geschwisterermäßigung gilt trägerunabhängig in allen Moosburger Einrichtungen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "weber",
+        "neumayr",
+        "welter",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220221_04",
+    "sessionId": "sr_20220221",
+    "topicIds": [
+      "t31"
+    ],
+    "title": "Kitagebühren – Änderungssatzung",
+    "text": "Die vierte Änderung der Gebührensatzung wird zum 01.09.2022 erlassen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "weber",
+        "neumayr",
+        "welter",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220314_01",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t35"
+    ],
+    "title": "Sparkassen Moosburg und Freising – Vereinigung",
+    "text": "Die Stadt stimmt der Auflösung des Zweckverbands zum 01.06.2022 und dem Beitritt zum Trägerzweckverband der Sparkasse Freising zu.",
+    "type": "anonymous",
+    "results": {
+      "yes": 14,
+      "no": 9,
+      "absent": 2
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2022-03-15_sparkassenfusion"
+    },
+    "voters": {
+      "hadersdorfer": {
+        "vote": "yes",
+        "evidence": "soft"
+      },
+      "heinz": {
+        "vote": "yes",
+        "evidence": "soft"
+      },
+      "pschorr": {
+        "vote": "yes",
+        "evidence": "soft"
+      },
+      "wagner": {
+        "vote": "no",
+        "evidence": "soft"
+      },
+      "grundner": {
+        "vote": "no",
+        "evidence": "soft"
+      },
+      "beubl": {
+        "vote": "no",
+        "evidence": "soft"
+      },
+      "kaestl": {
+        "vote": "no",
+        "evidence": "soft"
+      }
+    }
+  },
+  {
+    "id": "sr_20220314_02",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t35"
+    ],
+    "title": "Sparkasse – drei Verbandsräte",
+    "text": "Moosburg entsendet drei Verbandsräte: den Ersten Bürgermeister und zwei vom Stadtrat gewählte, je mit Vertretung.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "von_pressentin"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220314_03",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t35"
+    ],
+    "title": "Sparkasse – Vorbehalt der übrigen Beschlüsse",
+    "text": "Der Vollzug steht unter dem Vorbehalt gleichlautender Beschlüsse des Landkreises und der Sparkassengremien.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "von_pressentin"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220314_04",
+    "sessionId": "sr_20220314",
+    "title": "Verkaufsoffener Sonntag 10.04.2022",
+    "text": "Die Verordnung wird erlassen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 22,
+      "no": 1,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220314_05",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – Vertagung der Abwägung",
+    "text": "Antrag der Grünen, das Verfahren zu vertagen, bis die Infrastruktur für weitere Wohngebiete geschaffen ist, abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 14,
+      "absent": 2
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2022-03-17_oberes-gereut"
+    },
+    "voters": {
+      "stanglmaier": {
+        "vote": "yes",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      },
+      "heinz": {
+        "vote": "no",
+        "evidence": "soft"
+      }
+    }
+  },
+  {
+    "id": "sr_20220314_06",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – 12 Stellungnahmen (Sammelvote)",
+    "text": "Zwölf Stellungnahmen, jeweils 23:0: gleichlautende (ALE, ADBV), Wasserwirtschaftsamt (Verwaltung fragt nach einem Grundwassergutachten), Staatliches Bauamt, Regionaler Planungsverband, Eisenbahn-Bundesamt, Kläranlage, Vodafone, Altlasten, Kreisbrandrat (Wendehammer für die Drehleiter), AELF Erding, Bauernverband, Wasserwerk.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "von_pressentin"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220314_07",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – Gesundheitsamt",
+    "text": "Alle Gebäude werden an Kanal und Trinkwasser angeschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "linz_karin",
+        "von_pressentin"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "linz_karin",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20220314_08",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – Änderungsantrag Grundwasserströmungsgutachten",
+    "text": "Antrag, ein Grundwasserströmungsgutachten zu verlangen, abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 14,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220314_09",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – Regierung von Oberbayern",
+    "text": "Der Plan entspricht den Erfordernissen der Raumordnung.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "beibl",
+        "von_pressentin"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "beibl",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20220314_10",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – Deutsche Telekom",
+    "text": "Keine Einwände; die Hinweise werden berücksichtigt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "wagner",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "beibl",
+        "altenbeck",
+        "von_pressentin"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "beibl",
+        "reason": "kurz_abwesend"
+      },
+      {
+        "member": "altenbeck",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20220314_11",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – Änderungsantrag Immissionsschutzgutachten",
+    "text": "Antrag, ein Immissionsschutzgutachten für den Verkehr zum bestehenden Wohngebiet zu empfehlen, abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 14,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220314_12",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – Immissionsschutzbehörde",
+    "text": "Hinweise zu Tierhaltung und Flugplatz werden in den Plan aufgenommen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 14,
+      "no": 9,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220314_13",
+    "sessionId": "sr_20220314",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – Naturschutzbehörde",
+    "text": "FFH-Verträglichkeit und artenschutzrechtliche Prüfung ergeben keine Beeinträchtigung.",
+    "type": "anonymous",
+    "results": {
+      "yes": 15,
+      "no": 8,
+      "absent": 2
+    },
+    "source": {
+      "tier": "result-only"
+    }
   },
   {
     "id": "bpu_20220324_01",
@@ -11733,6 +13092,722 @@
     }
   },
   {
+    "id": "sr_20220328_01",
+    "sessionId": "sr_20220328",
+    "title": "LEP – dritte Startbahn streichen",
+    "text": "Der Stadtrat fordert, das Ziel einer dritten Startbahn ersatzlos aus dem Landesentwicklungsprogramm zu streichen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "beibl",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220328_02",
+    "sessionId": "sr_20220328",
+    "title": "LEP – Vorranggebiet Flughafen aufheben",
+    "text": "Der Stadtrat fordert, das Vorranggebiet Flughafen München aufzuheben, hilfsweise die Flächen für eine dritte Startbahn herauszunehmen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "stanglmaier",
+        "becher_j",
+        "altenbeck",
+        "wagner",
+        "von_pressentin",
+        "reif",
+        "grundner",
+        "gruebl",
+        "neumayr",
+        "kaestl",
+        "beubl",
+        "haberl",
+        "dollinger"
+      ],
+      "no": [
+        "hadersdorfer",
+        "kieninger",
+        "lauterbach",
+        "heinz",
+        "pschorr",
+        "weber",
+        "welter",
+        "linz_karin"
+      ],
+      "absent": [
+        "tristl",
+        "beibl",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-explicit"
+    }
+  },
+  {
+    "id": "sr_20220328_03",
+    "sessionId": "sr_20220328",
+    "topicIds": [
+      "t4"
+    ],
+    "title": "Beitritt „Lebenswerte Städte durch angemessene Geschwindigkeit“",
+    "text": "Die Stadt beantragt die Mitgliedschaft in der Initiative.",
+    "type": "anonymous",
+    "results": {
+      "yes": 16,
+      "no": 5,
+      "absent": 4
+    },
+    "source": {
+      "tier": "result-only"
+    },
+    "voters": {
+      "stanglmaier": {
+        "vote": "yes",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      },
+      "beubl": {
+        "vote": "yes",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      },
+      "gruebl": {
+        "vote": "yes",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      },
+      "reif": {
+        "vote": "yes",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      }
+    }
+  },
+  {
+    "id": "sr_20220328_04",
+    "sessionId": "sr_20220328",
+    "title": "BP 71 „Oberreit“ – Verfahren eingestellt",
+    "text": "Das Bauleitplanverfahren und die 6. FNP-Änderung werden eingestellt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "beibl",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220328_05",
+    "sessionId": "sr_20220328",
+    "title": "BP 76 „SO Montessori“ – Verfahren eingestellt",
+    "text": "Das Bauleitplanverfahren und die 13. FNP-Änderung werden eingestellt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "beibl",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220328_06",
+    "sessionId": "sr_20220328",
+    "title": "Kaltmiete Sudetenlandstraße 46/48",
+    "text": "Bei Neuvermietung steigt die Kaltmiete von 7,00 auf 8,00 €/m², die Garagenmiete von 42,50 auf 50,00 €.",
+    "type": "anonymous",
+    "results": {
+      "yes": 12,
+      "no": 9,
+      "absent": 4
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220404_01",
+    "sessionId": "sr_20220404",
+    "title": "Lehmabbau Stießberg",
+    "text": "Einvernehmen für Lehmabbau mit Wiederverfüllung und Rekultivierung erteilt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 1,
+      "absent": 4
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220404_02",
+    "sessionId": "sr_20220404",
+    "topicIds": [
+      "t35"
+    ],
+    "title": "Sparkasse – Verbandsräte Hadersdorfer und Kieninger",
+    "text": "Verbandsräte werden Georg Hadersdorfer (Vertretung Karin Linz) und Ludwig Kieninger (Vertretung Thomas Grundner).",
+    "type": "anonymous",
+    "results": {
+      "yes": 13,
+      "no": 8,
+      "absent": 4
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220404_03",
+    "sessionId": "sr_20220404",
+    "title": "Abenteuerspielplatz – Standort 1",
+    "text": "Der Abenteuerspielplatz entsteht am Standort 1 (Flurstück 1135, südlicher Teil).",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 5,
+      "absent": 3
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220404_04",
+    "sessionId": "sr_20220404",
+    "topicIds": [
+      "t12"
+    ],
+    "title": "Badegebühren – Einzel- und Mehrfachkarten",
+    "text": "Einzel- und 12er-Karten nach Vorschlag der Verwaltung; die Abendkarte gilt auch am Wochenende.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 1,
+      "absent": 3
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220404_05",
+    "sessionId": "sr_20220404",
+    "topicIds": [
+      "t12"
+    ],
+    "title": "Badegebühren – Saisonkarten nach Verwaltungsvorschlag",
+    "text": "Saisonkarten nach Vorschlag der Verwaltung abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 8,
+      "no": 14,
+      "absent": 3
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220404_06",
+    "sessionId": "sr_20220404",
+    "topicIds": [
+      "t12"
+    ],
+    "title": "Badegebühren – Saisonkarten (Antrag Stanglmaier)",
+    "text": "Saisonkarten: Erwachsene 75 €, ermäßigt 55 €, Kinder 40 €, Familien 100/135 €.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "altenbeck",
+        "von_pressentin",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "wagner",
+        "becher_j",
+        "fincke"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220404_07",
+    "sessionId": "sr_20220404",
+    "topicIds": [
+      "t12"
+    ],
+    "title": "Badegebühren – ermäßigte Familienkarten",
+    "text": "Ermäßigte Familienkarten (75/100 €) abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 8,
+      "no": 14,
+      "absent": 3
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220404_08",
+    "sessionId": "sr_20220404",
+    "topicIds": [
+      "t12"
+    ],
+    "title": "Badegebührenordnung",
+    "text": "Die Badegebührenordnung wird mit den beschlossenen Sätzen neu gefasst.",
+    "type": "anonymous",
+    "results": {
+      "yes": 21,
+      "no": 1,
+      "absent": 3
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220502_01",
+    "sessionId": "sr_20220502",
+    "title": "Genehmigung der Niederschriften",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "becher_j",
+        "lauterbach",
+        "kaestl",
+        "fincke"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "note": "Die Niederschrift weist 19:0 aus, anwesend waren 20. Weil alle Beschlüsse dieser Sitzung eine Stimme weniger zählen und keine Abwesenheit vermerkt ist, gehen wir von einem Zählfehler aus und führen alle Anwesenden."
+  },
+  {
+    "id": "sr_20220502_02",
+    "sessionId": "sr_20220502",
+    "title": "PV-Anlage Anton-Vitzthum-Grundschule",
+    "text": "Auf dem Neubau entsteht eine PV-Anlage mit 99,2 kWp und 24-kWh-Speicher.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "becher_j",
+        "lauterbach",
+        "kaestl",
+        "fincke"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "note": "Die Niederschrift weist 19:0 aus, anwesend waren 20. Weil alle Beschlüsse dieser Sitzung eine Stimme weniger zählen und keine Abwesenheit vermerkt ist, gehen wir von einem Zählfehler aus und führen alle Anwesenden."
+  },
+  {
+    "id": "sr_20220502_03",
+    "sessionId": "sr_20220502",
+    "title": "PV-Anlage – Finanzierung",
+    "text": "Die überplanmäßige Ausgabe wird genehmigt; 110 T€ kommen aus dem Ansatz für den Schulneubau.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "becher_j",
+        "lauterbach",
+        "kaestl",
+        "fincke"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "note": "Die Niederschrift weist 19:0 aus, anwesend waren 20. Weil alle Beschlüsse dieser Sitzung eine Stimme weniger zählen und keine Abwesenheit vermerkt ist, gehen wir von einem Zählfehler aus und führen alle Anwesenden."
+  },
+  {
+    "id": "sr_20220502_04",
+    "sessionId": "sr_20220502",
+    "title": "PV-Anlage – Umsetzung",
+    "text": "Die Verwaltung setzt das Vorhaben um.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "altenbeck",
+        "von_pressentin",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "becher_j",
+        "lauterbach",
+        "kaestl",
+        "fincke"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "note": "Die Niederschrift weist 19:0 aus, anwesend waren 20. Weil alle Beschlüsse dieser Sitzung eine Stimme weniger zählen und keine Abwesenheit vermerkt ist, gehen wir von einem Zählfehler aus und führen alle Anwesenden."
+  },
+  {
+    "id": "sr_20220509_01",
+    "sessionId": "sr_20220509",
+    "title": "Genehmigung der Niederschriften",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220509_02",
+    "sessionId": "sr_20220509",
+    "title": "FNP-Änderung Moosstraße, Aich",
+    "text": "Der Flächennutzungsplan wird für einen Teil der Moosstraße geändert; die Verwaltung beauftragt ein Planungsbüro.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "tristl",
+        "stanglmaier",
+        "wagner",
+        "welter",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220509_03",
+    "sessionId": "sr_20220509",
+    "title": "Moosstraße – Planungskostenvertrag",
+    "text": "Mit dem Antragsteller wird ein Vertrag über die Planungskosten geschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "tristl",
+        "stanglmaier",
+        "wagner",
+        "welter",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220509_04",
+    "sessionId": "sr_20220509",
+    "topicIds": [
+      "t6",
+      "t20"
+    ],
+    "title": "Schulsprengel Amperauen",
+    "text": "Das Baugebiet Amperauen wird der Theresia-Gerhardinger-Grundschule zugeordnet.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "tristl",
+        "stanglmaier",
+        "wagner",
+        "welter",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
     "id": "bpu_20220523_01",
     "sessionId": "bpu_20220523",
     "title": "20-kV-Schalthaus Am Kraftwerk 1, Pfrombach",
@@ -11962,6 +14037,1179 @@
         "john",
         "beibl",
         "hadersdorfer"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220530_01",
+    "sessionId": "sr_20220530",
+    "title": "Naturfriedhof – Antrag ablehnen",
+    "text": "Vorschlag, den Antrag mangels Bedarf abzulehnen, abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 11,
+      "no": 14,
+      "absent": 0
+    },
+    "source": {
+      "tier": "result-only"
+    },
+    "voters": {
+      "altenbeck": {
+        "vote": "no",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      }
+    }
+  },
+  {
+    "id": "sr_20220530_02",
+    "sessionId": "sr_20220530",
+    "title": "Naturfriedhof – nur Gespräch mit der Kirchenverwaltung",
+    "text": "Vorschlag, lediglich das Gespräch mit der katholischen Kirchenverwaltung zu suchen, abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 16,
+      "absent": 0
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20220530_03",
+    "sessionId": "sr_20220530",
+    "title": "Naturfriedhof – grundsätzlich unterstützt",
+    "text": "Der Stadtrat unterstützt einen Naturfriedhof grundsätzlich; die Verwaltung prüft Standort, Genehmigung, Erschließung, Betrieb und Kosten.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 8,
+      "absent": 0
+    },
+    "source": {
+      "tier": "result-only"
+    },
+    "voters": {
+      "altenbeck": {
+        "vote": "yes",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      }
+    }
+  },
+  {
+    "id": "sr_20220530_04",
+    "sessionId": "sr_20220530",
+    "title": "Niederlegung Altenbeck – A. Becher rückt nach",
+    "text": "Der Stadtrat stellt das Ausscheiden zum 31.05.2022 fest; Alexandra Becher rückt nach.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "wagner",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "altenbeck"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "altenbeck",
+        "reason": "beteiligung"
+      }
+    ],
+    "note": "Die Niederschrift vermerkt nicht, wer nicht mitgestimmt hat; vermutlich die Ausscheidende selbst."
+  },
+  {
+    "id": "sr_20220530_05",
+    "sessionId": "sr_20220530",
+    "title": "Niederlegung Wagner – K. Linz rückt nach",
+    "text": "Der Stadtrat stellt das Ausscheiden zum 31.05.2022 fest; Kilian Linz rückt nach.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "altenbeck",
+        "von_pressentin",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "wagner"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "wagner",
+        "reason": "beteiligung"
+      }
+    ],
+    "note": "Die Niederschrift vermerkt nicht, wer nicht mitgestimmt hat; vermutlich der Ausscheidende selbst."
+  },
+  {
+    "id": "sr_20220704_01",
+    "sessionId": "sr_20220704",
+    "title": "Genehmigung der Niederschrift vom 02.05.2022",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "anonymous",
+    "results": {
+      "yes": 17,
+      "no": 0,
+      "absent": 8
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "becher_a",
+        "reason": "nicht_stimmberechtigt"
+      },
+      {
+        "member": "linz_kilian",
+        "reason": "nicht_stimmberechtigt"
+      }
+    ]
+  },
+  {
+    "id": "sr_20220704_02",
+    "sessionId": "sr_20220704",
+    "title": "Neubesetzung der Ausschüsse",
+    "text": "Die geänderte Besetzung der Ausschüsse wird bestätigt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220704_03",
+    "sessionId": "sr_20220704",
+    "topicIds": [
+      "t30"
+    ],
+    "title": "Aufsichtsrat Kläranlage: A. Becher für Wagner",
+    "text": "Alexandra Becher wird als Nachfolgerin von Alfred Wagner in den Aufsichtsrat berufen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220704_04",
+    "sessionId": "sr_20220704",
+    "topicIds": [
+      "t4"
+    ],
+    "title": "Verkehrskonzept – Endbericht als Leitlinie",
+    "text": "Der Endbericht wird zustimmend zur Kenntnis genommen; seine Ziele gelten als Leitlinie.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "kaestl",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "beibl",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20220704_05",
+    "sessionId": "sr_20220704",
+    "title": "BP 51 Großer Anger West (Langenbach) – keine Einwände",
+    "text": "Belange der Stadt sind nicht berührt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "von_pressentin",
+        "becher_j",
+        "kaestl",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220704_06",
+    "sessionId": "sr_20220704",
+    "topicIds": [
+      "t31"
+    ],
+    "title": "Kinderkrippe Sonnensiedlung – Variante V2",
+    "text": "Gebaut wird eine dreigruppige Krippe mit Wohngeschoss; Förderung und Raumprogramm werden mit der Regierung geklärt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220704_07",
+    "sessionId": "sr_20220704",
+    "topicIds": [
+      "t31"
+    ],
+    "title": "Kinderkrippe – Holzbauweise (Antrag Stanglmaier)",
+    "text": "Antrag, die ganze Krippe in Holz zu bauen, abgelehnt.",
+    "result": "rejected",
+    "type": "anonymous",
+    "results": {
+      "yes": 7,
+      "no": 12,
+      "absent": 6
+    },
+    "source": {
+      "tier": "result-only"
+    },
+    "voters": {
+      "stanglmaier": {
+        "vote": "yes",
+        "tiers": [
+          "protocol-implicit"
+        ],
+        "note": "Antragsteller"
+      }
+    }
+  },
+  {
+    "id": "sr_20220704_08",
+    "sessionId": "sr_20220704",
+    "topicIds": [
+      "t31"
+    ],
+    "title": "Kinderkrippe – Hybridbauweise",
+    "text": "Die Krippe wird in Hybridbauweise errichtet: Erdgeschoss massiv, Obergeschoss in Holz.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "von_pressentin",
+        "becher_j",
+        "kaestl",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
+  },
+  {
+    "id": "sr_20220711_01",
+    "sessionId": "sr_20220711",
+    "title": "Genehmigung der Niederschrift BA 23.05.2022",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 0,
+      "absent": 6
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220711_02",
+    "sessionId": "sr_20220711",
+    "title": "Saliterstraße – Teileinziehung",
+    "text": "Rund 140 m der Saliterstraße werden eingezogen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220711_03",
+    "sessionId": "sr_20220711",
+    "title": "Lager- und Gerätehaus Sempt 7",
+    "text": "Einvernehmen erteilt.",
+    "type": "anonymous",
+    "results": {
+      "yes": 20,
+      "no": 0,
+      "absent": 5
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220711_04",
+    "sessionId": "sr_20220711",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – 7 Stellungnahmen (Sammelvote)",
+    "text": "Sieben Stellungnahmen, jeweils 21:0: Straßenverkehrsbehörde (Wohnwege, Geh- und Radweg über die Wiesenstraße), SWM, Fliegerclub (Emissionen sind hinzunehmen) und vier private Einwände (Wohnhöfe, Grundwasser mit Beweissicherung, Verkehr und Naturschutz).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "becher_j",
+        "grundner",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220711_05",
+    "sessionId": "sr_20220711",
+    "topicIds": [
+      "t32"
+    ],
+    "title": "BP 66 – Billigung und öffentliche Auslegung",
+    "text": "Der Entwurf in der Fassung vom 14.03.2022 wird gebilligt und öffentlich ausgelegt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "becher_j",
+        "grundner",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220711_06",
+    "sessionId": "sr_20220711",
+    "topicIds": [
+      "t33"
+    ],
+    "title": "BP 74 – 16 Stellungnahmen (Sammelvote)",
+    "text": "Sechzehn Stellungnahmen, jeweils 21:0, darunter Altlasten, Gesundheitsamt, Kreisarchäologie, Wasserwirtschaftsamt, Immissionsschutz, Naturschutz, Regierung von Oberbayern (Sondergebiet „Saatgutbetriebe Feldkirchen“), Denkmalpflege (Baufenster 7a bis 7 m Wandhöhe) und Kreisbrandrat.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "becher_j",
+        "grundner",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220711_07",
+    "sessionId": "sr_20220711",
+    "topicIds": [
+      "t33"
+    ],
+    "title": "BP 74 – 4 Stellungnahmen (Sammelvote)",
+    "text": "Staatliches Bauamt, Eisenbahn-Bundesamt, Telekom, Handwerkskammer, jeweils 20:0.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "beibl",
+        "becher_j",
+        "grundner",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "beibl",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20220711_08",
+    "sessionId": "sr_20220711",
+    "topicIds": [
+      "t33"
+    ],
+    "title": "BP 74 – 2 Stellungnahmen (Sammelvote)",
+    "text": "AELF und Energienetze Bayern, jeweils 19:0.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "beibl",
+        "becher_j",
+        "grundner",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "beibl",
+        "reason": "kurz_abwesend"
+      },
+      {
+        "member": "fincke",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20220711_09",
+    "sessionId": "sr_20220711",
+    "topicIds": [
+      "t33"
+    ],
+    "title": "BP 74 – 2 Stellungnahmen (Sammelvote)",
+    "text": "bayernets und gleichlautende Stellungnahmen ohne Äußerung, jeweils 20:0.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "becher_j",
+        "grundner",
+        "fincke",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "fincke",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20220711_10",
+    "sessionId": "sr_20220711",
+    "topicIds": [
+      "t33"
+    ],
+    "title": "BP 74 – Billigung und öffentliche Auslegung",
+    "text": "Bebauungsplan mit Grünordnungsplan und 10. FNP-Änderung in der Fassung vom 09.06.2022 werden gebilligt und ausgelegt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "becher_j",
+        "grundner",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220711_11",
+    "sessionId": "sr_20220711",
+    "title": "LSG Ampertal – keine Einwände",
+    "text": "Gegen die 6. Änderungsverordnung bestehen keine Einwände.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "becher_j",
+        "grundner",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220718_01",
+    "sessionId": "sr_20220718",
+    "topicIds": [
+      "t30"
+    ],
+    "title": "Kanalherstellungsbeiträge erhöht",
+    "text": "Die Beiträge steigen auf 1,40 €/m² Grundstücks- und 11,50 €/m² Geschossfläche.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "tristl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220718_02",
+    "sessionId": "sr_20220718",
+    "topicIds": [
+      "t30"
+    ],
+    "title": "Änderung der BGS-EWS",
+    "text": "Die Änderungssatzung tritt zum 01.08.2022 in Kraft.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "tristl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220718_03",
+    "sessionId": "sr_20220718",
+    "topicIds": [
+      "t7"
+    ],
+    "title": "Halbjahresbericht 2022",
+    "text": "Der Halbjahresbericht wird zur Kenntnis genommen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "neumayr",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "john"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "tristl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220725_01",
+    "sessionId": "sr_20220725",
+    "title": "Genehmigung der Niederschriften",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "becher_j",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "neumayr",
+        "gruebl",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "linz_kilian",
+        "reason": "nicht_stimmberechtigt"
+      }
+    ],
+    "note": "Kilian Linz hat über Niederschriften aus der Zeit vor dem eigenen Mandat nicht mitgestimmt. Die Niederschrift vermerkt das nicht; nur so geht die Zahl auf."
+  },
+  {
+    "id": "sr_20220725_02",
+    "sessionId": "sr_20220725",
+    "topicIds": [
+      "t30"
+    ],
+    "title": "Kläranlage – Jahresabschluss 2021",
+    "text": "Empfehlung an die Gesellschafterversammlung, den Jahresabschluss festzustellen; der Überschuss wird vorgetragen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "neumayr",
+        "gruebl",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20220725_03",
+    "sessionId": "sr_20220725",
+    "topicIds": [
+      "t30"
+    ],
+    "title": "Kläranlage – Entlastung des Aufsichtsrats 2021",
+    "text": "Empfehlung, den Aufsichtsrat zu entlasten.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "beibl",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "heinz",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "reif",
+        "beubl",
+        "neumayr",
+        "gruebl",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "dollinger",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "weber",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "haberl",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "reif",
+        "reason": "beteiligung"
+      },
+      {
+        "member": "beubl",
+        "reason": "beteiligung"
+      }
+    ]
+  },
+  {
+    "id": "sr_20220725_04",
+    "sessionId": "sr_20220725",
+    "title": "Heizkraftwerk Bader Energie – keine Einwendungen",
+    "text": "Gegen die Neugenehmigung mit drittem Biomassekessel bestehen keine Einwendungen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_a",
+        "neumayr",
+        "gruebl",
+        "john"
       ]
     },
     "source": {
@@ -12687,6 +15935,9 @@
   {
     "id": "sr_20221010_04",
     "sessionId": "sr_20221010",
+    "topicIds": [
+      "t34"
+    ],
     "title": "Aufhebung der Betriebssatzung des städtischen Wasserwerks",
     "text": "Der Stadtrat beschließt, die Betriebssatzung vom 01.12.2010 zum 31.12.2022 aufzuheben. Die Verwaltung wird beauftragt die notwendigen Schritte zur Rückführung zum Regiebetrieb durch- zuführen.",
     "type": "named",
@@ -12965,6 +16216,280 @@
     "source": {
       "tier": "protocol-implicit"
     }
+  },
+  {
+    "id": "sr_20221107_01",
+    "sessionId": "sr_20221107",
+    "title": "Genehmigung der Niederschrift vom 19.09.2022",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "reif",
+        "beubl",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20221107_02",
+    "sessionId": "sr_20221107",
+    "title": "Zuschuss FC Moosburg – 50 % für den Rasenmäher",
+    "text": "Der FC Moosburg erhält 50 % der Kosten eines Rasenmähertraktors, höchstens 21.250 €.",
+    "type": "anonymous",
+    "results": {
+      "yes": 13,
+      "no": 9,
+      "absent": 3
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2022-11-08_rasenmaeher"
+    },
+    "voters": {
+      "heinz": {
+        "vote": "yes",
+        "evidence": "soft"
+      },
+      "lauterbach": {
+        "vote": "yes",
+        "evidence": "soft"
+      },
+      "dollinger": {
+        "vote": "no",
+        "evidence": "soft"
+      },
+      "beibl": {
+        "vote": "no",
+        "evidence": "soft"
+      }
+    }
+  },
+  {
+    "id": "sr_20221107_03",
+    "sessionId": "sr_20221107",
+    "topicIds": [
+      "t34"
+    ],
+    "title": "Wasserwerk – Aufhebungssatzung zur Betriebssatzung",
+    "text": "Die Betriebssatzung des Eigenbetriebs Wasserwerk wird aufgehoben.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "reif",
+        "beubl",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "hadersdorfer",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20221107_04",
+    "sessionId": "sr_20221107",
+    "topicIds": [
+      "t34"
+    ],
+    "title": "Wasserzweckverband – städtebauliche Vereinbarung",
+    "text": "Die Stadt verpflichtet sich, künftige Neubaugebiete im Verbandsgebiet nach der Vereinbarung des Zweckverbands zu erschließen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer",
+        "reif",
+        "beubl",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "hadersdorfer",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20221107_05",
+    "sessionId": "sr_20221107",
+    "topicIds": [
+      "t7"
+    ],
+    "title": "Jahresrechnung 2020 festgestellt",
+    "text": "Die Jahresrechnung 2020 wird festgestellt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "reif",
+        "beubl",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20221107_06",
+    "sessionId": "sr_20221107",
+    "topicIds": [
+      "t7"
+    ],
+    "title": "Entlastung zur Jahresrechnung 2020",
+    "text": "Entlastung wird erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke"
+      ],
+      "no": [],
+      "absent": [
+        "dollinger",
+        "reif",
+        "beubl",
+        "john"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "dollinger",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "bpu_20221117_01",
@@ -13425,14 +16950,50 @@
     "sessionId": "sr_20221121",
     "title": "Erhöhung der Gebühren für die städtischen Veranstaltungshallen",
     "text": "Der Stadtrat beschließt für die städtischen Veranstaltungshallen folgende Gebühren: Ab dem 01.01.2023 ist zu den bisherigen Gebühren die gesetzliche Mehrwertsteuer anzuset- zen, ab dem 01.04.2023 gelten dann die neuen Gebühren entsprechend der vorliegenden Zu- sammenstellung einschließlich der gesetzlichen Mehrwertsteuer mit der folgenden beantragten Änderung: Veranstaltungen/Feiern von…",
-    "type": "anonymous",
+    "type": "named",
     "results": {
-      "yes": 18,
-      "no": 1,
-      "absent": 6
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "john"
+      ],
+      "no": [
+        "fincke"
+      ],
+      "absent": [
+        "hadersdorfer",
+        "kaestl",
+        "kieninger",
+        "beibl",
+        "reif",
+        "tristl"
+      ]
     },
     "source": {
-      "tier": "result-only"
+      "tier": "press",
+      "pressId": "merkur_2022-11-24_hallenmieten"
+    },
+    "voters": {
+      "fincke": {
+        "tiers": [
+          "press"
+        ]
+      }
     }
   },
   {
@@ -15847,6 +19408,9 @@
   {
     "id": "sr_20230522_04",
     "sessionId": "sr_20230522",
+    "topicIds": [
+      "t34"
+    ],
     "title": "Sanierung Aufbereitungsanlage Wasserwerk",
     "text": "Einstimmig: Sanierung beschlossen.",
     "type": "named",
@@ -15965,6 +19529,9 @@
   {
     "id": "sr_20230522_10",
     "sessionId": "sr_20230522",
+    "topicIds": [
+      "t33"
+    ],
     "title": "B-Plan 74 Feldkirchen + 10. FNP-Änderung",
     "text": "In 18 Einzelabstimmungen werden die Stellungnahmen abgewogen (alle einstimmig 19-21:0).",
     "type": "anonymous",
@@ -17239,6 +20806,468 @@
     }
   },
   {
+    "id": "sr_20230925_01",
+    "sessionId": "sr_20230925",
+    "title": "Genehmigung der Niederschrift vom 12.06.2023",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "linz_karin",
+        "stanglmaier",
+        "becher_a",
+        "beubl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20230925_02",
+    "sessionId": "sr_20230925",
+    "topicIds": [
+      "t18"
+    ],
+    "title": "BP 80 Degernpoint Nordost II – Aufstellung",
+    "text": "Der Bebauungsplan wird aufgestellt; mit dem Antragsteller wird ein städtebaulicher Vertrag verhandelt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "linz_karin",
+        "stanglmaier",
+        "becher_a",
+        "beubl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20230925_03",
+    "sessionId": "sr_20230925",
+    "topicIds": [
+      "t18"
+    ],
+    "title": "BP 80 – 16. FNP-Änderung",
+    "text": "Der Flächennutzungsplan wird im Parallelverfahren geändert.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "linz_karin",
+        "stanglmaier",
+        "becher_a",
+        "beubl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20230925_04",
+    "sessionId": "sr_20230925",
+    "topicIds": [
+      "t18"
+    ],
+    "title": "BP 80 – frühzeitige Beteiligung",
+    "text": "Die Verwaltung führt die frühzeitige Beteiligung durch.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "linz_karin",
+        "stanglmaier",
+        "becher_a",
+        "beubl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20230925_05",
+    "sessionId": "sr_20230925",
+    "topicIds": [
+      "t20"
+    ],
+    "title": "BP 52 Amperauen, 1. Änderung – keine Stellungnahmen",
+    "text": "Während der Auslegung gingen keine Stellungnahmen ein.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "linz_karin",
+        "weber",
+        "stanglmaier",
+        "becher_a",
+        "beubl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "weber",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20230925_06",
+    "sessionId": "sr_20230925",
+    "topicIds": [
+      "t20"
+    ],
+    "title": "BP 52 Amperauen, 1. Änderung – Satzungsbeschluss",
+    "text": "Die 1. Änderung wird als Satzung beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "linz_karin",
+        "stanglmaier",
+        "becher_a",
+        "beubl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20230925_07",
+    "sessionId": "sr_20230925",
+    "topicIds": [
+      "t2"
+    ],
+    "title": "Bahnhof – Generalsanierung",
+    "text": "Das Empfangsgebäude wird generalsaniert, im Rahmen der Förderbedingungen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 18,
+      "no": 2,
+      "absent": 5
+    },
+    "source": {
+      "tier": "press",
+      "pressId": "merkur_2023-09-29_bahnhof-sanierung"
+    },
+    "voters": {
+      "dollinger": {
+        "vote": "yes",
+        "evidence": "soft"
+      },
+      "becher_j": {
+        "vote": "yes",
+        "evidence": "soft"
+      },
+      "welter": {
+        "vote": "no",
+        "evidence": "soft"
+      }
+    }
+  },
+  {
+    "id": "sr_20230925_08",
+    "sessionId": "sr_20230925",
+    "title": "Verkaufsoffener Sonntag 15.10.2023",
+    "text": "Die Verordnung wird erlassen.",
+    "type": "anonymous",
+    "results": {
+      "yes": 19,
+      "no": 1,
+      "absent": 5
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20231016_01",
+    "sessionId": "sr_20231016",
+    "topicIds": [
+      "t34"
+    ],
+    "title": "Wasserwerk – Ausführungsplanung und Ausschreibung",
+    "text": "Die Entwurfsplanung wird zur Ausführungsplanung weiterentwickelt; das Büro Kienlein schreibt aus.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "beibl",
+        "stanglmaier",
+        "becher_j"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20231016_02",
+    "sessionId": "sr_20231016",
+    "topicIds": [
+      "t34"
+    ],
+    "title": "Wasserwerk – Netzersatzanlage vorab ausschreiben",
+    "text": "Die neue Netzersatzanlage wird vorab im Oktober 2023 ausgeschrieben.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "beibl",
+        "stanglmaier",
+        "becher_j"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20231016_03",
+    "sessionId": "sr_20231016",
+    "topicIds": [
+      "t6"
+    ],
+    "title": "Grundschule – barrierefreier Umbau mit Aufzug",
+    "text": "Der 2. Bauabschnitt wird mit geschätzten Kosten von 552.369 € beauftragt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "von_pressentin",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "heinz",
+        "tristl",
+        "beibl",
+        "stanglmaier",
+        "becher_j"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
+  },
+  {
     "id": "sr_20231023_01",
     "sessionId": "sr_20231023",
     "topicIds": [
@@ -17584,6 +21613,9 @@
   {
     "id": "bpu_20231123_10",
     "sessionId": "bpu_20231123",
+    "topicIds": [
+      "t34"
+    ],
     "title": "Wasserwerk-Erweiterung",
     "text": "Einstimmig: Einvernehmen erteilt.",
     "type": "named",
@@ -17830,6 +21862,285 @@
     }
   },
   {
+    "id": "sr_20231204_01",
+    "sessionId": "sr_20231204",
+    "title": "Genehmigung der Niederschrift vom 16.10.2023",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "lauterbach",
+        "pschorr"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20231204_02",
+    "sessionId": "sr_20231204",
+    "topicIds": [
+      "t34"
+    ],
+    "title": "Wasser – kalkulatorischer Zinssatz 3 %",
+    "text": "Der kalkulatorische Zinssatz wird auf 3,0 % festgesetzt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "lauterbach",
+        "pschorr"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20231204_03",
+    "sessionId": "sr_20231204",
+    "topicIds": [
+      "t34"
+    ],
+    "title": "Wasser – Grundgebühren +50 %",
+    "text": "Die Grundgebühren steigen um 50 %.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "lauterbach",
+        "pschorr"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20231204_04",
+    "sessionId": "sr_20231204",
+    "topicIds": [
+      "t34"
+    ],
+    "title": "Wasser – Verbrauchsgebühr",
+    "text": "Die Verbrauchsgebühr beträgt 1,89 €/m³ für 2024/25 und 2,15 €/m³ für 2026/27.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "lauterbach",
+        "pschorr"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20231204_05",
+    "sessionId": "sr_20231204",
+    "topicIds": [
+      "t34"
+    ],
+    "title": "Änderungssatzung Wasserabgabesatzung",
+    "text": "Die Änderungssatzung zum 01.01.2024 wird beschlossen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "lauterbach",
+        "pschorr",
+        "gruber"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "gruber",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20231204_06",
+    "sessionId": "sr_20231204",
+    "topicIds": [
+      "t34"
+    ],
+    "title": "Neufassung BGS-WAS",
+    "text": "Die Beitrags- und Gebührensatzung zum 01.01.2024 wird neu gefasst.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "becher_j",
+        "becher_a",
+        "grundner",
+        "reif",
+        "kieninger",
+        "beubl",
+        "gruebl",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "von_pressentin",
+        "linz_kilian",
+        "lauterbach",
+        "pschorr",
+        "gruber"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "gruber",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
     "id": "sr_20231214_01",
     "sessionId": "sr_20231214",
     "title": "Genehmigung Niederschriften",
@@ -18042,6 +22353,246 @@
         "beibl",
         "gruber",
         "pschorr"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20240115_01",
+    "sessionId": "sr_20240115",
+    "title": "Genehmigung der Niederschrift vom 04.12.2023",
+    "text": "Der Stadtrat genehmigt den öffentlichen Teil der Niederschrift.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "welter",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "stanglmaier",
+        "gruber",
+        "kaestl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20240115_02",
+    "sessionId": "sr_20240115",
+    "topicIds": [
+      "t6"
+    ],
+    "title": "Schülerprognose zur Kenntnis genommen",
+    "text": "Die Einwohner- und Schulbedarfsprognose wird zur Kenntnis genommen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "beibl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20240115_03",
+    "sessionId": "sr_20240115",
+    "topicIds": [
+      "t6"
+    ],
+    "title": "Grundschule – Erweiterung auf dem Nachbargrundstück",
+    "text": "Die Grundschule wird auf dem früheren Rockermaier-Grundstück erweitert, mit einer Brücke zum Bestand.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20240115_04",
+    "sessionId": "sr_20240115",
+    "topicIds": [
+      "t6"
+    ],
+    "title": "Grundschule – Vergabe der Planung",
+    "text": "Die Verwaltung vergibt die Planungsleistungen an Stein und Partner Projektmanagement, München.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20240115_05",
+    "sessionId": "sr_20240115",
+    "title": "Postgebäude Bahnhofstr. 12 – Einvernehmen verweigert",
+    "text": "Die nötige Befreiung vom Bebauungsplan kann mit Rücksicht auf die Nachbarn nicht erteilt werden.",
+    "type": "anonymous",
+    "results": {
+      "yes": 22,
+      "no": 1,
+      "absent": 2,
+      "absent_ids": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "sr_20240115_06",
+    "sessionId": "sr_20240115",
+    "topicIds": [
+      "t18"
+    ],
+    "title": "Gemeinschaftsunterkünfte Degernpoint – Einvernehmen verweigert",
+    "text": "Im Industriegebiet sind die Anforderungen an den Lärmschutz für Wohnnutzung nicht erfüllt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "weber",
+        "haberl",
+        "stanglmaier",
+        "von_pressentin",
+        "becher_j",
+        "becher_a",
+        "linz_kilian",
+        "grundner",
+        "lauterbach",
+        "reif",
+        "kieninger",
+        "beubl",
+        "pschorr",
+        "gruebl",
+        "gruber",
+        "welter",
+        "kaestl",
+        "fincke",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "beibl"
       ]
     },
     "source": {
@@ -21483,6 +26034,9 @@
   {
     "id": "sr_20241021_07",
     "sessionId": "sr_20241021",
+    "topicIds": [
+      "t32"
+    ],
     "title": "B-Plan 66 Oberes Gereut Nordost – Verfahrenswechsel",
     "text": "Wechsel ins Regelverfahren beschlossen; bisherige Auslegung gilt als § 3/§ 4 Abs. 1 BauGB.",
     "type": "anonymous",
@@ -27489,6 +32043,9 @@
   {
     "id": "sr_20251110_03",
     "sessionId": "sr_20251110",
+    "topicIds": [
+      "t34"
+    ],
     "title": "Änderungssatzung Wasserabgabe",
     "text": "Der Stadtrat beschließt die 3. Änderungssatzung zur Wasserabgabesatzung.",
     "type": "anonymous",
@@ -27504,6 +32061,9 @@
   {
     "id": "sr_20251110_04",
     "sessionId": "sr_20251110",
+    "topicIds": [
+      "t34"
+    ],
     "title": "Neuerlass BGS-WAS",
     "text": "Der Stadtrat beschließt den Neuerlass der Beitrags- und Gebührensatzung zur Wasserabgabesatzung.",
     "type": "anonymous",
@@ -29432,6 +33992,9 @@
   {
     "id": "sr_20260325_04",
     "sessionId": "sr_20260325",
+    "topicIds": [
+      "t32"
+    ],
     "title": "B-Plan Nr. 66 „Oberes Gereuth Nord-Ost\" – Billigungsbeschluss",
     "text": "Der Stadtrat nimmt den Entwurf des Bebauungsplans mit Grünordnungsplan, Begründung und Umweltbericht in der Fassung vom 26.02.2026 zur Kenntnis und billigt die Planunterlagen zur öffentlichen Auslegung nach § 3 Abs. 2 BauGB.",
     "type": "named",
@@ -30778,6 +35341,9 @@
   {
     "id": "sr_20260511_18",
     "sessionId": "sr_20260511",
+    "topicIds": [
+      "t35"
+    ],
     "title": "Bestellung der Mitglieder und Stellvertreter zur Verbandsversammlung der Sparkasse Freising…",
     "text": "Der Stadtrat beschließt, folgende Stadträte in die Verbandsversammlung der Sparkasse Frei- sing Moosburg zu entsenden: Ordentliches Mitglied: Georg Hadersdorfer Vertreterin: Lorena Kehlringer Ordentliches Mitglied: Dr. Michael Stanglmaier Vertreter: Thomas Grundner",
     "type": "named",
@@ -30819,6 +35385,9 @@
   {
     "id": "sr_20260511_19",
     "sessionId": "sr_20260511",
+    "topicIds": [
+      "t35"
+    ],
     "title": "Bestellung der Mitglieder und Stellvertreter zur Verbandsversammlung der Sparkasse Freising…",
     "text": "Der Stadtrat beschließt, Ersten Bürgermeister Mader sowie StR Heinz als Vertreter der Stadt im Erholungsflächenverein zu bestellen.",
     "type": "named",
