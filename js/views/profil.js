@@ -303,8 +303,6 @@ function computeVotingStats(member) {
     if (!bucket[key]) bucket[key] = STAT_ZERO();
     bucket[key][status]++;
     bucket[key].total++;
-    out.total[status]++;
-    out.total.total++;
   };
 
   votes.forEach(v => {
@@ -328,6 +326,8 @@ function computeVotingStats(member) {
     inc(out.byYear,   v.date.substring(0, 4), status);
     inc(out.byPeriod, periodOfDate(v.date),   status);
     inc(out.byBody,   bid,                    status);
+    out.total[status]++;
+    out.total.total++;
   });
 
   return out;
