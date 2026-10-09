@@ -199,12 +199,14 @@ def main():
         body = bodies.get(bid)
         if not body:
             continue
+        # Wer an dem Abend jemanden vertreten hat, hat mitgestimmt, auch ohne eigenen Sitz.
+        vertretung = {s['substitute'] for s in session.get('substitutes') or []}
         for mid in args.ids:
             m = members[mid]
             if bid == 'plenum':
                 if not aktiv_am(m, session['date']):
                     continue
-            elif not regulaer(mid, body, session['date']):
+            elif not regulaer(mid, body, session['date']) and mid not in vertretung:
                 continue
             if status(mid, v, session, m) == 'unknown':
                 offen[mid].append((v, session, bid))

@@ -216,6 +216,38 @@
     "summary": "Auf Antrag von SPD und Grünen werden Tempo-20- und Tempo-30-Zonen in der Innenstadt ausgeweitet. Auch die Bahnhofstraße soll verkehrlich überprüft werden.",
     "history": [
       {
+        "date": "2020-11-09",
+        "type": "vote",
+        "title": "Fahrradstraße Viehmarktstraße",
+        "text": "Auf Antrag der Grünen wird die Viehmarktstraße samt einem Stück Landshuter Straße zur Fahrradstraße (10:2).",
+        "sessionId": "bpu_20201109",
+        "voteId": "bpu_20201109_01"
+      },
+      {
+        "date": "2020-11-09",
+        "type": "vote",
+        "title": "Fahrradzone um die Graf-Konrad-Straße",
+        "text": "Auf Antrag der Grünen wird die Tempo-30-Zone für zwei Jahre zur Fahrradzone (9:3).",
+        "sessionId": "bpu_20201109",
+        "voteId": "bpu_20201109_02"
+      },
+      {
+        "date": "2021-04-29",
+        "type": "vote",
+        "title": "Lände: Prüfauftrag statt Sackgasse",
+        "text": "Anwohner wollten eine Sackgasse; der Ausschuss lässt stattdessen Fahrradstraße oder verkehrsberuhigten Bereich prüfen (8:3).",
+        "sessionId": "bpu_20210429",
+        "voteId": "bpu_20210429_02"
+      },
+      {
+        "date": "2022-09-26",
+        "type": "vote",
+        "title": "Lände bleibt, wie sie ist",
+        "text": "Keine Änderung an der Lände, die Verwaltung beobachtet das Verkehrsaufkommen (10:1).",
+        "sessionId": "bpu_20220926",
+        "voteId": "bpu_20220926_01"
+      },
+      {
         "date": "2023-03-20",
         "type": "vote",
         "title": "Verkehrsführung Thalbacher/Bahnhofstr.",
@@ -340,6 +372,14 @@
         "type": "proposal",
         "title": "Baugenehmigung erteilt",
         "text": "Das Landratsamt Freising erteilt die Baugenehmigung für den Neubau eines Studentenwohnheims aus vier Gebäuden mit Tiefgarage im Geltungsbereich des B-Plans Nr. 77."
+      },
+      {
+        "date": "2025-07-21",
+        "type": "vote",
+        "title": "Bauausschuss verweigert Einvernehmen zum Studentenwohnheim",
+        "text": "Einstimmig (8:0): kein allgemeines Wohnen im Sinne des Bebauungsplans, Stellplatzsatzung nicht eingehalten.",
+        "sessionId": "bpu_20250721",
+        "voteId": "bpu_20250721_05"
       },
       {
         "date": "2026-02-02",
@@ -624,6 +664,17 @@
         "text": "Einstimmig: Zusätzliche Fußgängerampel auf der Münchener Straße zur Schulwegsicherung; Verwaltung prüft parallel die Verlegung der bestehenden LSA.",
         "sessionId": "bpu_20240715",
         "voteId": "bpu_20240715_01"
+      },
+      {
+        "date": "2025-07-21",
+        "type": "vote",
+        "title": "Einbahnregelung am Schulzentrum Süd",
+        "text": "Einstimmig (8:0): Einbahnregelung für zwei Jahre und Elternhaltestellen statt Straßensperrung. Nach Protesten der Anwohner ist die Regelung eine Woche später wieder vom Tisch.",
+        "sessionId": "bpu_20250721",
+        "voteId": "bpu_20250721_02",
+        "press": [
+          "mz_2025-07-29_einbahnregelung-gestoppt"
+        ]
       },
       {
         "date": "2025-09-08",
@@ -1137,6 +1188,16 @@
     "summary": "Mehrjähriges Sanierungsprojekt am historischen Rathaus: Fassade sowie 1. und 2. Obergeschoss in mehreren Bauabschnitten. Die Verwaltung wurde mit Planung und Kostenberechnung beauftragt.",
     "history": [
       {
+        "date": "2022-05-23",
+        "type": "milestone",
+        "title": "Abriss des Huber-Hauses genehmigt",
+        "text": "Im Bauausschuss gibt der Bürgermeister bekannt, dass die Abrissgenehmigung für das Huber-Haus an der Herrnstraße vorliegt. Damit kann die Erweiterung des Rathauses geplant werden.",
+        "sessionId": "bpu_20220523",
+        "press": [
+          "merkur_2022-05-25_huber-haus-abriss"
+        ]
+      },
+      {
         "date": "2023-02-13",
         "type": "vote",
         "title": "Rathaus – Erweiterungsbau Herrnstr. 2",
@@ -1187,6 +1248,14 @@
     "image": null,
     "summary": "Erweiterung und Anpassung des Gewerbegebiets Degernpoint im Norden Moosburgs: Aufstellung und Satzungsbeschluss für \"Degernpoint Nordost II\" (B-Plan 80) sowie 4. Änderung des bestehenden B-Plans Nr. 50 mit flexiblerer Parzellierung.",
     "history": [
+      {
+        "date": "2021-09-27",
+        "type": "vote",
+        "title": "Fachmärkte Degernpoint M 2 – namentlich",
+        "text": "Erweiterung und Non-Food-Discounter mit 5:4 genehmigt, Textil-, Schuh- und Backshop-Nutzung mit 6:3 verweigert; die Niederschrift nennt alle Namen.",
+        "sessionId": "bpu_20210927",
+        "voteId": "bpu_20210927_07"
+      },
       {
         "date": "2023-09-21",
         "type": "vote",
@@ -1288,6 +1357,14 @@
         "text": "Knapp mehrheitlich für „Amperpark\" als Name der neuen Erschließungsstraße.",
         "sessionId": "sr_20220905",
         "voteId": "sr_20220905_03"
+      },
+      {
+        "date": "2022-09-26",
+        "type": "vote",
+        "title": "Spielplatz Sanddornstraße",
+        "text": "Einstimmig: Spielplatz nach dem Konzept von KomPlan, ergänzt um eine Nestschaukel.",
+        "sessionId": "bpu_20220926",
+        "voteId": "bpu_20220926_09"
       },
       {
         "date": "2023-04-24",
@@ -1771,6 +1848,14 @@
         "text": "Standort festgelegt und Mittel bereitgestellt; der Neubau erfolgt mit vorgefertigten Einrichtungen.",
         "sessionId": "sr_20200525",
         "voteId": "sr_20200525_03"
+      },
+      {
+        "date": "2020-11-09",
+        "type": "vote",
+        "title": "Großtagespflege Rhenobotstraße",
+        "text": "Einvernehmen für die Umnutzung einer Wohnung in eine Großtagespflege, ohne zusätzliche Stellplätze (9:3).",
+        "sessionId": "bpu_20201109",
+        "voteId": "bpu_20201109_05"
       },
       {
         "date": "2021-12-06",
