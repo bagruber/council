@@ -2894,7 +2894,6 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": false,
     "source": {
       "tier": "protocol-explicit"
     },
@@ -2916,7 +2915,8 @@
         "reason": "beteiligung"
       }
     ],
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich. Die Zahl der Ja-Stimmen liegt zusätzlich um 2 unter der Zahl der übrigen Anwesenden; wer nicht mitgestimmt hat, hält die Niederschrift nicht fest."
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich. Die Zahl der Ja-Stimmen liegt zusätzlich um 2 unter der Zahl der übrigen Anwesenden; wer nicht mitgestimmt hat, hält die Niederschrift nicht fest.",
+    "inferable": false
   },
   {
     "id": "sr_20200722_03",
@@ -11231,11 +11231,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_02",
@@ -11263,11 +11263,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_04",
@@ -11280,11 +11280,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_05",
@@ -11297,11 +11297,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_06",
@@ -11314,11 +11314,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_07",
@@ -11331,11 +11331,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_08",
@@ -11348,11 +11348,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_09",
@@ -11365,11 +11365,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_10",
@@ -11382,11 +11382,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_11",
@@ -11399,11 +11399,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_12",
@@ -11416,11 +11416,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220124_13",
@@ -11433,11 +11433,11 @@
       "no": 0,
       "absent": 1
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "bpu_20220324_01",
@@ -15252,10 +15252,10 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 5 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -15707,10 +15707,10 @@
       "no": 0,
       "absent": 7
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 3 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -16637,7 +16637,6 @@
       "no": 0,
       "absent": 9
     },
-    "inferable": false,
     "source": {
       "tier": "protocol-explicit"
     },
@@ -16671,7 +16670,8 @@
         "reason": "kein_mandat"
       }
     ],
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich. Die Zahl der Ja-Stimmen liegt zusätzlich um 3 unter der Zahl der übrigen Anwesenden; wer nicht mitgestimmt hat, hält die Niederschrift nicht fest."
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich. Die Zahl der Ja-Stimmen liegt zusätzlich um 3 unter der Zahl der übrigen Anwesenden; wer nicht mitgestimmt hat, hält die Niederschrift nicht fest.",
+    "inferable": false
   },
   {
     "id": "sr_20230724_05",
@@ -17840,10 +17840,10 @@
       "no": 0,
       "absent": 12
     },
-    "inferable": false,
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "inferable": false
   },
   {
     "id": "sr_20231214_02",
@@ -17856,10 +17856,10 @@
       "no": 0,
       "absent": 9
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -17891,10 +17891,10 @@
       "no": 0,
       "absent": 10
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -17942,10 +17942,10 @@
       "no": 0,
       "absent": 9
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -17959,10 +17959,10 @@
       "no": 0,
       "absent": 10
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -17976,10 +17976,10 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 5 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -17997,10 +17997,10 @@
       "no": 0,
       "absent": 7
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 5 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -18317,10 +18317,10 @@
       "no": 0,
       "absent": 5
     },
-    "inferable": false,
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "inferable": false
   },
   {
     "id": "sr_20240304_03",
@@ -21194,10 +21194,10 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": false,
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "inferable": false
   },
   {
     "id": "sr_20241007_02",
@@ -21315,7 +21315,6 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
@@ -21325,6 +21324,7 @@
         "reason": "kein_mandat"
       }
     ],
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -21338,7 +21338,6 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
@@ -21352,6 +21351,7 @@
         "reason": "beteiligung"
       }
     ],
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -21422,7 +21422,6 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
@@ -21432,6 +21431,7 @@
         "reason": "kein_mandat"
       }
     ],
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -21445,7 +21445,6 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
@@ -21455,6 +21454,7 @@
         "reason": "kein_mandat"
       }
     ],
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -21468,7 +21468,6 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
@@ -21478,6 +21477,7 @@
         "reason": "kein_mandat"
       }
     ],
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -21491,7 +21491,6 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
@@ -21501,6 +21500,7 @@
         "reason": "kein_mandat"
       }
     ],
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -21555,7 +21555,6 @@
       "no": 0,
       "absent": 7
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
@@ -21565,6 +21564,7 @@
         "reason": "kein_mandat"
       }
     ],
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -21578,7 +21578,6 @@
       "no": 0,
       "absent": 7
     },
-    "inferable": "teilweise",
     "source": {
       "tier": "protocol-implicit"
     },
@@ -21588,6 +21587,7 @@
         "reason": "kein_mandat"
       }
     ],
+    "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
@@ -22022,11 +22022,13 @@
     "results": {
       "yes": 8,
       "no": 0,
-      "absent": 0
+      "absent": 4
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "inferable": "teilweise",
+    "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 1 Person, die später kam oder früher ging — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
   {
     "id": "sr_20241202_01",
@@ -25596,7 +25598,6 @@
       "no": 0,
       "absent": 5
     },
-    "inferable": false,
     "source": {
       "tier": "protocol-implicit"
     },
@@ -25608,7 +25609,8 @@
         ],
         "by": "marcus"
       }
-    }
+    },
+    "inferable": false
   },
   {
     "id": "sr_20250728_02",
@@ -25722,7 +25724,6 @@
       "no": 0,
       "absent": 8
     },
-    "inferable": false,
     "source": {
       "tier": "protocol-explicit"
     },
@@ -25757,7 +25758,8 @@
         "by": "marcus"
       }
     },
-    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich. Die Zahl der Ja-Stimmen liegt zusätzlich um 1 unter der Zahl der übrigen Anwesenden; wer nicht mitgestimmt hat, hält die Niederschrift nicht fest."
+    "note": "Die Mitglieder des Aufsichtsrats stimmen über ihre eigene Entlastung nicht mit. Die Niederschrift nennt sie namentlich. Die Zahl der Ja-Stimmen liegt zusätzlich um 1 unter der Zahl der übrigen Anwesenden; wer nicht mitgestimmt hat, hält die Niederschrift nicht fest.",
+    "inferable": false
   },
   {
     "id": "sr_20250728_06",
@@ -31170,11 +31172,11 @@
       "yes": 23,
       "no": 0
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_02",
@@ -31189,11 +31191,11 @@
       "yes": 23,
       "no": 0
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_03",
@@ -31205,11 +31207,11 @@
       "yes": 24,
       "no": 0
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_04",
@@ -31221,11 +31223,11 @@
       "yes": 23,
       "no": 0
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_05",
@@ -31237,11 +31239,11 @@
       "yes": 24,
       "no": 0
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_06",
@@ -31281,11 +31283,11 @@
       "yes": 24,
       "no": 0
     },
-    "inferable": false,
     "source": {
       "tier": "result-only"
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen."
+    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
+    "inferable": false
   },
   {
     "id": "sr_20260615_09",

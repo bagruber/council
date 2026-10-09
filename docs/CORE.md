@@ -58,11 +58,18 @@ Jetzt-Zustand direkt lesen können.
 ```js
 Council.bodyConfigAt(bpu, "2026-01-01")   // → seatConfig, am Datum gültig
 Council.isRegularOf(member, body, date)   // → true bei Stamm-Sitz, nicht bei Vertretung
+Council.subAt(seat, date)                 // → Vertretung des Sitzes am Datum, oder null
+Council.subSpans(seat)                    // → alle Vertretungen als [{member, from, to}]
 ```
 
 Gremien ohne Perioden (Aufsichtsrat, Verbandsrat) tragen ihre Besetzung direkt
 am Objekt. Gremien mit Perioden haben außerhalb aller Perioden **keine**
 bekannte Besetzung — nicht etwa die heutige.
+
+Die Vertretung wechselt unabhängig vom Sitzinhaber. `sub` ist deshalb ein Name,
+wenn sie die ganze Periode dieselbe blieb, sonst eine Liste mit Zeiträumen.
+Wer an einem Abend tatsächlich vertreten hat, steht in `session.substitutes`
+und geht im Sitzplan vor.
 
 ## Vote-Status
 
@@ -154,8 +161,8 @@ kommt schon aus `vote.excluded`.
 **„Die Ableitung aus Einstimmigkeit ist mir zu mutig":** in Punkt 7 die beiden
 `return`s auf `'unknown'` setzen. Ja\*/Nein\* verschwinden überall.
 
-**„Vertretungen sollen als regulär zählen":** in `isRegularOf` zusätzlich durch
-`cfg.seats[].sub` und `cfg.vicechairs[].sub` gehen. Die Statistik zählte dann
+**„Vertretungen sollen als regulär zählen":** in `isRegularOf` zusätzlich
+`subAt(seat, date)` für `cfg.seats[]` und `cfg.vicechairs[]` prüfen. Die Statistik zählte dann
 auch Vertretungs-Stimmen mit.
 
 ## Datenmodell (Kurzfassung)
@@ -169,7 +176,10 @@ auch Vertretungs-Stimmen mit.
   "seats": [
     { "member": "kieninger", "sub": "…" },
     { "occupants": [{ "member": "john", "to": "2023-07-23" },
-                    { "member": "strobl", "from": "2023-07-24" }] }
+                    { "member": "strobl", "from": "2023-07-24" }] },
+    { "member": "stanglmaier",
+      "sub": [{ "member": "wagner", "to": "2022-05-31" },
+              { "member": "becher_j", "from": "2022-06-20" }] }
   ]
 }
 ```

@@ -214,7 +214,8 @@ for m in members:
 # ── Vote totals against body composition ─────────────────────────────────────
 def expected_seats(sid):
     if sid.startswith("bpu"):  return 12
-    if sid.startswith("hvfa"): return 8 if sid < "hvfa_20260501" else 12
+    # 11 Stadträte und Vorsitz, so beschlossen am 04.05.2020 (TOP 3.2)
+    if sid.startswith("hvfa"): return 12
     return 25
 
 for v in votes:

@@ -23,7 +23,25 @@
       "type": "object",
       "properties": {
         "member": { "type": "string" },
-        "sub": { "type": ["string", "boolean"] },
+        "sub": {
+          "description": "Die Vertretung: ein Name, wenn sie die ganze Periode dieselbe blieb, sonst eine Liste mit Zeiträumen. Sie wechselt unabhängig vom Sitzinhaber.",
+          "oneOf": [
+            { "type": ["string", "boolean"] },
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["member"],
+                "additionalProperties": false,
+                "properties": {
+                  "member": { "type": "string" },
+                  "from": { "$ref": "datum.schema.json" },
+                  "to": { "$ref": "datum.schema.json" }
+                }
+              }
+            }
+          ]
+        },
         "role": { "type": "string" },
         "occupants": {
           "description": "Nachfolge auf einem Sitz, lückenlos.",

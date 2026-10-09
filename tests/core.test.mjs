@@ -97,6 +97,20 @@ test("Gremium: die Besetzung zum Datum, außerhalb aller Perioden keine", () => 
   assert.deepEqual(Council.bodyConfigAt(bpu, "2019-01-01"), {});
 });
 
+test("Vertretung: fester Name oder Liste mit Zeiträumen", () => {
+  const fest = { member: "reif", sub: "grundner" };
+  assert.equal(Council.subAt(fest, "2021-03-18"), "grundner");
+  const wechselnd = { member: "stanglmaier", sub: [
+    { member: "wagner", to: "2022-05-31" },
+    { member: "becher_j", from: "2022-06-20" },
+  ] };
+  assert.equal(Council.subAt(wechselnd, "2021-09-27"), "wagner");
+  assert.equal(Council.subAt(wechselnd, "2022-06-10"), null, "dazwischen niemand");
+  assert.equal(Council.subAt(wechselnd, "2024-07-15"), "becher_j");
+  assert.deepEqual(Council.subSpans({ member: "x" }), []);
+  assert.deepEqual(Council.subSpans({ member: "x", sub: true }), [], "pastSeats markieren Vertretung mit true");
+});
+
 test("Gremium ohne Perioden trägt seine Besetzung direkt", () => {
   const rat = { id: "aufsichtsrat", seats: [{ member: "gruber" }] };
   assert.equal(Council.bodyConfigAt(rat, "2023-07-24"), rat);
