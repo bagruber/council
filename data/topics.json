@@ -1309,6 +1309,14 @@
         "voteId": "bpu_20210927_07"
       },
       {
+        "date": "2022-01-24",
+        "type": "vote",
+        "title": "Fachmärkte Degernpoint M 2 – Getränkemarkt und Außenlager",
+        "text": "Einstimmig: Einvernehmen zum Getränkemarkt mit höchstens 400 m² Verkaufsfläche und zum Außenlager, samt Befreiungen vom Bebauungsplan.",
+        "sessionId": "bpu_20220124",
+        "voteId": "bpu_20220124_16"
+      },
+      {
         "date": "2023-09-21",
         "type": "vote",
         "title": "Degernpoint – Parkplatz mit E-Ladestationen",
@@ -2258,6 +2266,139 @@
         "text": "Einstimmig (19:0): Der Entwurf vom 15.09.2026 geht in die öffentliche Auslegung.",
         "sessionId": "sr_20260928",
         "voteId": "sr_20260928_02"
+      }
+    ]
+  },
+  {
+    "id": "t37",
+    "title": "Geschäftsordnung und Entschädigung",
+    "tags": [
+      "budget"
+    ],
+    "image": null,
+    "summary": "Wie der Stadtrat arbeitet und was seine Mitglieder dafür bekommen. Zu Beginn einer Wahlperiode beschließt er es neu, zuletzt im Juli 2020 und im Juli 2026: die Geschäftsordnung, die Satzung mit den Aufwandsentschädigungen und die Entschädigung der Bürgermeister.",
+    "field": "budget",
+    "type": "zyklus",
+    "history": [
+      {
+        "date": "2020-05-04",
+        "type": "vote",
+        "title": "Alte Geschäftsordnung gilt vorerst weiter",
+        "text": "Einstimmig: Die Geschäftsordnung von 2015 bleibt, bis eine neue beschlossen ist.",
+        "sessionId": "sr_20200504",
+        "voteId": "sr_20200504_11"
+      },
+      {
+        "date": "2020-07-06",
+        "type": "vote",
+        "title": "Neue Geschäftsordnung",
+        "text": "Einstimmig beschlossen (24:0).",
+        "sessionId": "sr_20200706",
+        "voteId": "sr_20200706_03"
+      },
+      {
+        "date": "2020-07-06",
+        "type": "vote",
+        "title": "Entschädigung: 110 € Pauschale, 40 € Sitzungsgeld",
+        "text": "Ein Änderungsantrag von StR Pschorr für 102,50 € scheitert mit 3:21, beschlossen werden 110 € im Monat und 40 € je Sitzung (22:2).",
+        "sessionId": "sr_20200706",
+        "voteId": "sr_20200706_05"
+      },
+      {
+        "date": "2020-07-06",
+        "type": "vote",
+        "title": "Entschädigung der Bürgermeister",
+        "text": "Der Erste Bürgermeister bekommt den Höchstbetrag nach KWBG (23:0), Zweiter und Dritter bleiben bei 1.161,31 € und 466,98 € (21:0).",
+        "sessionId": "sr_20200706",
+        "voteId": "sr_20200706_12"
+      },
+      {
+        "date": "2024-02-01",
+        "type": "vote",
+        "title": "Ersatzleistungen für ehrenamtliche Stadträte",
+        "text": "Die Satzung wird rückwirkend zum 01.01.2024 geändert (19:1).",
+        "sessionId": "sr_20240201",
+        "voteId": "sr_20240201_04"
+      },
+      {
+        "date": "2024-10-21",
+        "type": "vote",
+        "title": "Entschädigung für den Jugendreferenten",
+        "text": "Einstimmig: eine monatliche Entschädigung in Höhe der Referentenpauschale.",
+        "sessionId": "sr_20241021",
+        "voteId": "sr_20241021_05"
+      },
+      {
+        "date": "2026-03-25",
+        "type": "vote",
+        "title": "1. Änderung der Geschäftsordnung: „Bauturbo“",
+        "text": "Die Änderung regelt die Zustimmung der Gemeinde nach § 36a BauGB (17:4).",
+        "sessionId": "sr_20260325",
+        "voteId": "sr_20260325_06"
+      },
+      {
+        "date": "2026-05-11",
+        "type": "vote",
+        "title": "Geschäftsordnung gilt vorerst weiter",
+        "text": "Einstimmig: Die Geschäftsordnung von 2020 bleibt, bis eine neue beschlossen ist.",
+        "sessionId": "sr_20260511",
+        "voteId": "sr_20260511_14"
+      },
+      {
+        "date": "2026-06-15",
+        "type": "vote",
+        "title": "Entschädigung der Bürgermeister",
+        "text": "Der Erste Bürgermeister bekommt 878,10 € im Monat (21:2), Zweiter und Dritter bleiben bei 1.337,91 € und 538,00 € (21:1).",
+        "sessionId": "sr_20260615",
+        "voteId": "sr_20260615_06"
+      },
+      {
+        "date": "2026-07-27",
+        "type": "vote",
+        "title": "Entschädigung: 125 € Pauschale, 45 € Sitzungsgeld",
+        "text": "Mit 23:1 beschlossen, die Satzung mit 22:2. Die Moosburg Card wird freiwillig. Fresh scheitert mit dem gestaffelten Sitzungsgeld, setzt aber die Dynamisierung ab 2029 durch (18:6).",
+        "sessionId": "sr_20260727",
+        "voteId": "sr_20260727_08"
+      },
+      {
+        "date": "2026-07-27",
+        "type": "vote",
+        "title": "Live-Stream abgelehnt",
+        "text": "Fresh beantragt, öffentliche Sitzungen als Audio live zu übertragen und danach eine Zeit lang abrufbar zu halten. Abgelehnt mit 9:15.",
+        "sessionId": "sr_20260727",
+        "voteId": "sr_20260727_11"
+      },
+      {
+        "date": "2026-07-27",
+        "type": "vote",
+        "title": "Namentliche Abstimmung abgelehnt",
+        "text": "Fresh beantragt, dass die Niederschrift bei nicht einstimmigen Beschlüssen festhält, wer wie gestimmt hat. Abgelehnt mit 9:15, schon die namentliche Abstimmung darüber scheitert mit 11:13.",
+        "sessionId": "sr_20260727",
+        "voteId": "sr_20260727_13"
+      },
+      {
+        "date": "2026-07-27",
+        "type": "vote",
+        "title": "Veröffentlichung der Niederschriften vertagt",
+        "text": "Einstimmig auf Antrag von StR Heinz: Die Verwaltung prüft, welche Inhalte der Niederschrift veröffentlicht und wie weit die Sitzungsunterlagen zugänglich gemacht werden können.",
+        "sessionId": "sr_20260727",
+        "voteId": "sr_20260727_14"
+      },
+      {
+        "date": "2026-07-27",
+        "type": "vote",
+        "title": "Ordnungsgeld eingeführt",
+        "text": "Der neue § 29 führt ein Ordnungsgeld ein (17:7).",
+        "sessionId": "sr_20260727",
+        "voteId": "sr_20260727_21"
+      },
+      {
+        "date": "2026-07-27",
+        "type": "vote",
+        "title": "Neue Geschäftsordnung",
+        "text": "Einstimmig beschlossen, mit den Änderungen des Abends. Sechs Referate und zwei Beauftragte kommen hinein, ein Digitalisierungsreferent nicht (9:15). Der Verhaltenskodex wird vertagt.",
+        "sessionId": "sr_20260727",
+        "voteId": "sr_20260727_24"
       }
     ]
   }

@@ -128,8 +128,8 @@ function renderWartezeit() {
 
   const herkunft = document.createElement("p");
   herkunft.className = "chart-foot";
-  herkunft.textContent = "Das Datum der Veröffentlichung zeigt das Ratsinformationssystem öffentlich nicht. "
-    + "Seit Juli 2026 liegt es trotzdem vor, ältere Niederschriften zählen bis zum Erstellungsdatum der PDF. "
+  herkunft.textContent = "Für Veröffentlichungen seit Juli 2026 liegt das Datum aus dem Ratsinformationssystem vor, "
+    + "ältere Niederschriften zählen bis zum Erstellungsdatum der PDF. "
     + "Das ist eine Näherung: Die Datei kann jünger sein als die Veröffentlichung.";
   main.appendChild(herkunft);
 

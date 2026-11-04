@@ -1159,6 +1159,9 @@
   {
     "id": "sr_20200504_11",
     "sessionId": "sr_20200504",
+    "topicIds": [
+      "t37"
+    ],
     "title": "Beschluss über den Fortbestand der Geschäftsordnung für den Stadtrat vom 29. Juli 2015 bis…",
     "text": "Der Stadtrat beschließt, dass die Geschäftsordnung des Stadtrates vom 29. Juli 2015 samt An- lage bis zum Erlass einer neuen Geschäftsordnung fortbestehen soll.",
     "type": "named",
@@ -2251,8 +2254,11 @@
   {
     "id": "sr_20200706_03",
     "sessionId": "sr_20200706",
-    "title": "Stadtratsangelegenheiten",
-    "text": "5 Stadtratsangelegenheiten Beschluss I: Der Stadtrat beschließt die Geschäftsordnung in der vorliegenden Fassung mit den in der Sit- zung beschlossen Änderungen.",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Neue Geschäftsordnung",
+    "text": "Der Stadtrat beschließt die Geschäftsordnung in der vorliegenden Fassung mit den in der Sitzung beschlossenen Änderungen.",
     "type": "named",
     "results": {
       "yes": [
@@ -2293,8 +2299,11 @@
   {
     "id": "sr_20200706_04",
     "sessionId": "sr_20200706",
-    "title": "Stadtratsangelegenheiten",
-    "text": "Beschluss Änderungsantrag StR Pschorr: Der Stadtrat beschließt folgende Aufwandsentschädigungen für die Stadträte: a) Pauschale Aufwandsentschädigung 102,50 €/mtl. b-g) wie Beschluss II",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Entschädigung – 102,50 € Pauschale (Antrag Pschorr)",
+    "text": "Die monatliche Pauschale beträgt 102,50 € statt 110 €, alles Übrige wie im Beschluss zur Höhe der Aufwandsentschädigungen.",
     "type": "anonymous",
     "result": "rejected",
     "results": {
@@ -2309,8 +2318,11 @@
   {
     "id": "sr_20200706_05",
     "sessionId": "sr_20200706",
-    "title": "Stadtratsangelegenheiten",
-    "text": "Beschluss II: Der Stadtrat beschließt folgende Aufwandsentschädigungen für die Stadträte: a) Pauschale Aufwandsentschädigung 110,-- €/mtl. b) Sitzungsgeld 40,-- € je Sitzung c) Referentenentschädigung 80,-- €/mtl. d) Fraktionszuschuss je StR-Mitglied 70,-- €/jährl. e) Fraktionsvorsitzende: Grundbetrag 40,-- €/mtl. Je Fraktionsmitglied 5,-- €/mtl. f) Ortssprecher Pauschale Aufwandsentschädigung…",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Höhe der Aufwandsentschädigungen",
+    "text": "Im Monat 110 € Pauschale, 80 € für Referenten, 5 € Technikpauschale; 40 € Sitzungsgeld. Fraktionen: 70 € je Mitglied im Jahr, Vorsitz 40 € im Monat plus 5 € je Mitglied. Ortssprecher: 70 € im Monat und 40 € je Stadtratssitzung.",
     "type": "anonymous",
     "results": {
       "yes": 22,
@@ -2324,8 +2336,11 @@
   {
     "id": "sr_20200706_06",
     "sessionId": "sr_20200706",
-    "title": "Stadtratsangelegenheiten",
-    "text": "Beschluss III: Der Stadtrat beschließt den Erlass der „Satzung zur Regelung von Fragen des örtlichen Ge- meindeverfassungsrechtes“ gemäß der vorgelegten Entwurfsfassung mit den beschlossenen Änderungen.",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Satzung zum Gemeindeverfassungsrecht erlassen",
+    "text": "Die „Satzung zur Regelung von Fragen des örtlichen Gemeindeverfassungsrechtes“ wird mit den beschlossenen Änderungen erlassen.",
     "type": "named",
     "results": {
       "yes": [
@@ -2516,6 +2531,9 @@
   {
     "id": "sr_20200706_11",
     "sessionId": "sr_20200706",
+    "topicIds": [
+      "t37"
+    ],
     "title": "Beschluss über die Festsetzung der Aufwandsentschädigung für den Zweiten und Dritten…",
     "text": "Der Stadtrat beschließt, die Aufwandsentschädigung für den Zweiten und Dritten Bürgermeister in unveränderter Höhe weiter zu gewähren. Beim Zweiten Bürgermeister sind dies derzeit 1.161,31 €, beim Dritten Bürgermeister 466,98 €. Künftige Besoldungserhöhungen sind zu berücksichtigen.",
     "type": "anonymous",
@@ -2541,6 +2559,9 @@
   {
     "id": "sr_20200706_12",
     "sessionId": "sr_20200706",
+    "topicIds": [
+      "t37"
+    ],
     "title": "Festsetzung der Dienstaufwandsentschädigung für Ersten Bürgermeister Josef Dollinger",
     "text": "Der Stadtrat beschließt, die Dienstaufwandsentschädigung für den Ersten Bürgermeister Josef Dollinger ab dem 01.05.2020 monatlich mit dem Höchstbetrag nach der Anlage 2 des Gesetzes über kommunale Wahlbeamte (KWBG) festzusetzen.",
     "type": "anonymous",
@@ -11807,25 +11828,37 @@
   {
     "id": "bpu_20220124_01",
     "sessionId": "bpu_20220124",
-    "title": "Wasserrecht; Nassabbau \"Semptwiesen II - Erweiter.-Süd\", Tieferlegung der Abbausohle u. Tektur zur Rekultivierung;",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "Nassabbau Semptwiesen II – Tektur zur Rekultivierung",
+    "text": "Die Stadt stimmt der beantragten Tektur im wasserrechtlichen Verfahren zu.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
-      "tier": "result-only"
-    },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_02",
     "sessionId": "bpu_20220124",
-    "title": "Errichtung eines Fahrradweges / Fahrradstreifens beidseitig auf der Westerbergstraße; Antrag des Ortsverbands Moosburg der Frauenunion",
-    "text": "Beschlossen mit 10:1.",
+    "title": "Westerbergstraße – Fahrradschutzstreifen stadtauswärts",
+    "text": "Auf Antrag der Frauen Union wird stadtauswärts ein einseitiger Fahrradschutzstreifen markiert, beginnend etwa 70 m nach der Einmündung Münchener Straße.",
     "type": "anonymous",
     "results": {
       "yes": 10,
@@ -11839,189 +11872,492 @@
   {
     "id": "bpu_20220124_03",
     "sessionId": "bpu_20220124",
-    "title": "Errichtung einer Querungshilfe auf der Westerbergstraße in Höhe der Münchener Straße; Antrag des Ortsverbands Moosburg der Frauenunion",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "Westerbergstraße – Querungshilfe an der Münchener Straße",
+    "text": "Antrag der Frauen Union zur Kenntnis genommen. Die Verwaltung plant beim endgültigen Kreuzungsumbau eine optimale Lösung für den Querungsverkehr ein.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
-      "tier": "result-only"
-    },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_04",
     "sessionId": "bpu_20220124",
-    "title": "Vollzug des Bayer. Straßen- u. Wegegesetzes; Widmung des Grundstücks Fl.-Nr. 977/128 als Ortsstraße zwecks Verlängerung des Unterreiterwegs, Gemark. Moosburg",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "Unterreiterweg – Widmung als Ortsstraße",
+    "text": "Die Verlängerung auf Fl.-Nr. 977/128 wird auf 50 m Länge als Ortsstraße gewidmet.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
-      "tier": "result-only"
-    },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_05",
     "sessionId": "bpu_20220124",
-    "title": "Neubau eines Mehrfamilienhauses (7 WE) mit Garage u. Stellplätzen a.d. Mainburger Str. 23, Moosburg; Anhörung wegen Ersetzung des gemeindl. Einvernehmens",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "MFH 7 WE Mainburger Str. 23 – Einvernehmen verweigert",
+    "text": "Anhörung wegen Ersetzung des gemeindlichen Einvernehmens. Das Vorhaben entspricht nicht dem Bebauungsplan, eine Befreiung ist bei Würdigung der nachbarlichen Interessen nicht möglich.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
-      "tier": "result-only"
-    },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_06",
     "sessionId": "bpu_20220124",
-    "title": "Vorbescheid - Errichtung eines Einfamilienhauses mit Einliegerwohnung a.d. Moosstr., Moosburg-Aich",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "Vorbescheid EFH mit Einliegerwohnung Moosstr., Aich",
+    "text": "Einvernehmen erteilt.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20220124_14",
+    "sessionId": "bpu_20220124",
+    "title": "Vorbescheid MFH 6 WE Statzenbachstr. 8 – Einvernehmen erteilen",
+    "text": "Antrag, das Einvernehmen zu erteilen.",
+    "type": "anonymous",
+    "result": "rejected",
+    "results": {
+      "yes": 5,
+      "no": 6,
       "absent": 1
     },
     "source": {
       "tier": "result-only"
+    }
+  },
+  {
+    "id": "bpu_20220124_15",
+    "sessionId": "bpu_20220124",
+    "title": "Vorbescheid MFH 6 WE Statzenbachstr. 8 – Einvernehmen verweigert",
+    "text": "Das Gebäude fügt sich in der Bauweise (Wandhöhe, Flachdach) nicht in die nähere Umgebung ein.",
+    "type": "anonymous",
+    "results": {
+      "yes": 6,
+      "no": 5,
+      "absent": 1
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "bpu_20220124_16",
+    "sessionId": "bpu_20220124",
+    "topicIds": [
+      "t18"
+    ],
+    "title": "Fachmärkte Degernpoint M 2 – Getränkemarkt",
+    "text": "Einvernehmen zur Nutzung als Getränkemarkt mit höchstens 400 m² Verkaufsfläche, samt Befreiung vom Bebauungsplan in der Fassung der 3. Änderung.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20220124_17",
+    "sessionId": "bpu_20220124",
+    "topicIds": [
+      "t18"
+    ],
+    "title": "Fachmärkte Degernpoint M 2 – Außenlager",
+    "text": "Einvernehmen zum Außenlager, samt Befreiungen vom Bebauungsplan.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_07",
     "sessionId": "bpu_20220124",
-    "title": "Aufstockung des besteh. Wohngebäudes und Neubau eines Carports a.d. Holzlandstr. 22, Moosburg",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "Aufstockung und Carport Holzlandstr. 22",
+    "text": "Einvernehmen erteilt.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
-      "tier": "result-only"
-    },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_08",
     "sessionId": "bpu_20220124",
-    "title": "Ersatzbau e. Lagerschuppens für Bienenhaltung u. Bewirtschaftung e. Streuobstwiese, Abbruch e. besteh. Lagerschuppens a.d. Neustadtstr., Moosburg",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "Lagerschuppen für Bienenhaltung, Neustadtstr.",
+    "text": "Einvernehmen zum Ersatzbau und zum Abbruch des bestehenden Schuppens erteilt.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
-      "tier": "result-only"
-    },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_09",
     "sessionId": "bpu_20220124",
-    "title": "Vorbescheid - Erweiterung der HNO-Praxis a.d.Münchener Str. 7, Moosburg",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "Vorbescheid Erweiterung HNO-Praxis Münchener Str. 7",
+    "text": "Einvernehmen und Befreiungen erteilt. Vor der Baugenehmigung muss für die fehlenden Pkw- und Fahrradstellplätze ein Ablösevertrag geschlossen werden.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
-      "tier": "result-only"
-    },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_10",
     "sessionId": "bpu_20220124",
-    "title": "Vorbescheid - Errichtung eines Doppelhauses a.d. Münchener Str. 9 u. 9a, Moosburg",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "Vorbescheid Doppelhaus Münchener Str. 9 und 9a",
+    "text": "Einvernehmen und Befreiungen erteilt. Mit der Eingabeplanung ist ein qualifizierter Freiflächengestaltungsplan einzureichen.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
-      "tier": "result-only"
-    },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_11",
     "sessionId": "bpu_20220124",
-    "title": "Vorbescheid - Überdachung des besteh. Reitplatzes a.d. Holzlandstr. 6 a, Moosburg",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "Vorbescheid Überdachung Reitplatz Holzlandstr. 6 a",
+    "text": "Einvernehmen erteilt.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
-      "tier": "result-only"
-    },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_12",
     "sessionId": "bpu_20220124",
-    "title": "Neubau eines Generationenwohnhauses für 3 Familien mit Garagen u. Carports a.d. Nandlstädter Str. 6, Moosburg",
-    "text": "Beschlossen mit 11:0.",
-    "type": "anonymous",
+    "title": "Generationenwohnhaus Nandlstädter Str. 6",
+    "text": "Einvernehmen und Befreiungen erteilt.",
+    "type": "named",
     "results": {
-      "yes": 11,
-      "no": 0,
-      "absent": 1
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
     "source": {
-      "tier": "result-only"
-    },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+      "tier": "protocol-implicit"
+    }
   },
   {
     "id": "bpu_20220124_13",
     "sessionId": "bpu_20220124",
-    "title": "Erweiterungsbau eines Pferdestalles u. Umbau von Lagerräumen in 3 Mitarbeiterwohnungen a.d. Amperstr. 24, Moosburg",
-    "text": "Beschlossen mit 11:0.",
+    "title": "Pferdestall und Mitarbeiterwohnungen Amperstr. 24",
+    "text": "Einvernehmen zum Erweiterungsbau und zum Umbau von Lagerräumen in drei Mitarbeiterwohnungen erteilt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "no": [],
+      "absent": [
+        "hadersdorfer"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20220124_18",
+    "sessionId": "bpu_20220124",
+    "title": "Vorbescheid Hotel „Zur Länd“, Lände 1 – Variante 2",
+    "text": "Einvernehmen zur Erweiterung von Hotel, Restaurant und Wohnhaus in der Ausführung der Variante 2.",
     "type": "anonymous",
     "results": {
-      "yes": 11,
-      "no": 0,
+      "yes": 6,
+      "no": 5,
       "absent": 1
     },
     "source": {
       "tier": "result-only"
+    }
+  },
+  {
+    "id": "bpu_20220124_19",
+    "sessionId": "bpu_20220124",
+    "title": "Vorbescheid Hotel „Zur Länd“, Lände 1 – Variante 1",
+    "text": "Antrag, das Einvernehmen für die Variante 1 zu erteilen.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [],
+      "no": [
+        "dollinger",
+        "linz_karin",
+        "tristl",
+        "beubl",
+        "john",
+        "gruebl",
+        "kieninger",
+        "reif",
+        "beibl",
+        "altenbeck",
+        "stanglmaier"
+      ],
+      "absent": [
+        "hadersdorfer"
+      ]
     },
-    "note": "Für diese Sitzung ist keine Anwesenheitsliste veröffentlicht. Da nicht alle Sitze mitgestimmt haben, lässt sich das Stimmverhalten niemandem zuordnen.",
-    "inferable": false
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "bpu_20220124_20",
+    "sessionId": "bpu_20220124",
+    "title": "Tektur Freiflächenplan MFH Gärtnerstr. 51 b – Einvernehmen erteilen",
+    "text": "Antrag, das Einvernehmen zu erteilen.",
+    "type": "anonymous",
+    "result": "rejected",
+    "results": {
+      "yes": 5,
+      "no": 6,
+      "absent": 1
+    },
+    "source": {
+      "tier": "result-only"
+    }
+  },
+  {
+    "id": "bpu_20220124_21",
+    "sessionId": "bpu_20220124",
+    "title": "Tektur Freiflächenplan MFH Gärtnerstr. 51 b – Einvernehmen verweigert",
+    "text": "Das Maß der baulichen Nutzung (Grundflächenzahl) fügt sich nicht in die nähere Umgebung ein.",
+    "type": "anonymous",
+    "results": {
+      "yes": 9,
+      "no": 2,
+      "absent": 1
+    },
+    "source": {
+      "tier": "result-only"
+    }
   },
   {
     "id": "sr_20220207_01",
@@ -22735,6 +23071,9 @@
   {
     "id": "sr_20240201_04",
     "sessionId": "sr_20240201",
+    "topicIds": [
+      "t37"
+    ],
     "title": "Beschluss über die Änderung der Satzung zur Regelung von Fragen des örtlichen…",
     "text": "Der Stadtrat beschließt die Änderung der Satzung zur Regelung von Fragen des örtlichen Ge- meindeverfassungsrechts in der vorliegenden Fassung. Die Satzung tritt rückwirkend zum 01.01.2024 in Kraft.",
     "type": "anonymous",
@@ -26022,6 +26361,9 @@
   {
     "id": "sr_20241021_05",
     "sessionId": "sr_20241021",
+    "topicIds": [
+      "t37"
+    ],
     "title": "Aufwandsentschädigung Jugendreferent",
     "text": "Monatliche Aufwandsentschädigung in Höhe der Referentenpauschale festgesetzt.",
     "type": "anonymous",
@@ -34141,6 +34483,9 @@
   {
     "id": "sr_20260325_06",
     "sessionId": "sr_20260325",
+    "topicIds": [
+      "t37"
+    ],
     "title": "„Bauturbo\" – Anpassung der Geschäftsordnung",
     "text": "Der Stadtrat beschließt die 1. Änderung der Geschäftsordnung des Stadtrats. Die Änderung betrifft § 13 Abs. 2 Nr. 4 Nr. 1 und regelt die Zustimmung der Gemeinde nach § 36a BauGB.",
     "type": "anonymous",
@@ -35214,6 +35559,9 @@
   {
     "id": "sr_20260511_14",
     "sessionId": "sr_20260511",
+    "topicIds": [
+      "t37"
+    ],
     "title": "Beschluss über den Fortbestand der Geschäftsordnung für den Stadtrat vom 7. Juli 2020 mit…",
     "text": "Der Stadtrat beschließt, dass die Geschäftsordnung des Stadtrates vom 7. Juli 2020 mit Ände- rung vom 26.03.2026 samt Anlage bis zum Erlass einer neuen Geschäftsordnung fortbestehen soll.",
     "type": "named",
@@ -35936,6 +36284,9 @@
   {
     "id": "sr_20260615_06",
     "sessionId": "sr_20260615",
+    "topicIds": [
+      "t37"
+    ],
     "title": "Festsetzung der Dienstaufwandsentschädigung für den Ersten Bürgermeister",
     "text": "Die monatliche Dienstaufwandsentschädigung des Ersten Bürgermeisters wird auf 878,10 € festgesetzt; der Betrag liegt innerhalb des gesetzlichen Rahmens.",
     "type": "anonymous",
@@ -35967,6 +36318,9 @@
   {
     "id": "sr_20260615_07",
     "sessionId": "sr_20260615",
+    "topicIds": [
+      "t37"
+    ],
     "title": "Beschluss über die Festsetzung der Aufwandsentschädigung für den Zweiten und Dritten Bürgermeister",
     "text": "Die Aufwandsentschädigung bleibt unverändert: 1.337,91 € monatlich für den Zweiten, 538,00 € für den Dritten Bürgermeister.",
     "type": "named",
@@ -37196,6 +37550,1362 @@
       "no": [],
       "absent": [
         "hobmaier"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260727_01",
+    "sessionId": "sr_20260727",
+    "title": "Ersatzbeschaffung LF10 für die Feuerwehr",
+    "text": "Die Stadt beschafft ein neues LF10 für die Freiwillige Feuerwehr Moosburg. Die Verwaltung schreibt es gemeinsam mit einem Ingenieurbüro aus.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "welter",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "grundner"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260727_02",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Entschädigung – gestaffeltes Sitzungsgeld (Antrag Fresh)",
+    "text": "Statt 45 € je Sitzung: eine Grundpauschale bis zwei Stunden und ein Zuschlag für jede weitere angefangene halbe Stunde.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "marcus",
+        "sabanovic"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marschoun",
+        "welter",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_03",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Entschädigung – Dynamisierung (Antrag Fresh)",
+    "text": "Pauschalen, Sitzungsgeld, Fraktionsgelder und Entschädigungen steigen zum 01.05.2029 um die bis dahin festgelegten Erhöhungen der Dienstaufwandsentschädigung nach Art. 46 Abs. 3 KWBG.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [
+        "ghadieh",
+        "grundner",
+        "lauterbach",
+        "meier",
+        "sixt",
+        "welter"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_04",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Entschädigung – Angleichung auf 45 € (Antrag Fresh)",
+    "text": "Referenten und Beauftragte bekommen einheitlich 45 €.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "sabanovic"
+      ],
+      "no": [
+        "mader",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "welter",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "absent": [
+        "linz_karin",
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    },
+    "excluded": [
+      {
+        "member": "linz_karin",
+        "reason": "kurz_abwesend"
+      }
+    ],
+    "note": "Die Niederschrift druckt 6:18. Karin Linz war in diesem Moment laut Mitschrift kurz draußen; vermutlich wurde das beim Zählen übersehen. Am Ergebnis ändert es nichts."
+  },
+  {
+    "id": "sr_20260727_05",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Entschädigung – Angleichung auf 90 € (Antrag Marschoun)",
+    "text": "Referenten und Beauftragte bekommen einheitlich 90 €.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "linz_kilian",
+        "marcus",
+        "marschoun",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "stanglmaier",
+        "strobl"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "welter",
+        "ghadieh",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_06",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Entschädigung – keine Moosburg Card (Antrag Strobl)",
+    "text": "Die monatliche Pauschale wird nicht in Moosburg Card und Auszahlung geteilt.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "strobl"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "welter",
+        "ghadieh",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_07",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Entschädigung – Moosburg Card freiwillig (Antrag Rümelin)",
+    "text": "Die Pauschale wird nur mit Zustimmung des jeweiligen Mitglieds geteilt: 50 € Moosburg Card, 75 € Auszahlung.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "tristl",
+        "kehlringer",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "sixt",
+        "meier",
+        "dick",
+        "sabanovic",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [
+        "ghadieh",
+        "haberl",
+        "hadersdorfer",
+        "lauterbach",
+        "marcus",
+        "marschoun",
+        "reither",
+        "welter"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    },
+    "note": "Die Niederschrift druckt 19:9, das wären 28 Stimmen bei 24 Anwesenden. Hier steht die Zählung aus der Mitschrift. Beschlossen ist der Antrag in beiden Fassungen."
+  },
+  {
+    "id": "sr_20260727_08",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Höhe der Aufwandsentschädigungen",
+    "text": "Im Monat 125 € Pauschale, 90 € für Referenten, 45 € für Beauftragte, 15 € Technikpauschale; 45 € Sitzungsgeld. Fraktionen: 70 € je Mitglied im Jahr, Vorsitz 40 € im Monat plus 5 € je Mitglied. Ortssprecher: 75 € im Monat und 45 € je Stadtratssitzung.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "welter",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [
+        "ghadieh"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_09",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Satzung zum Gemeindeverfassungsrecht erlassen",
+    "text": "Die „Satzung zur Regelung von Fragen des örtlichen Gemeindeverfassungsrechtes“ wird mit den beschlossenen Änderungen erlassen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [
+        "ghadieh",
+        "welter"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_10",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – namentlich über die namentliche Abstimmung",
+    "text": "Über den Änderungsvorschlag „Namentliche Abstimmung“ wird namentlich abgestimmt.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "ghadieh",
+        "kehlringer",
+        "linz_kilian",
+        "marcus",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "stanglmaier",
+        "strobl",
+        "welter"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "reither",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marschoun",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_11",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – Live-Stream und Mediathek (Antrag Fresh)",
+    "text": "§ 21: Öffentliche Sitzungen werden als Audio live übertragen und sechs Wochen zum Abruf bereitgestellt, oder bis zum Ende der nächsten Sitzung, falls sie später stattfindet. Wer teilnimmt, muss freiwillig einwilligen.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "kehlringer",
+        "linz_kilian",
+        "marcus",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "stanglmaier",
+        "strobl"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "reither",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marschoun",
+        "welter",
+        "ghadieh",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_12",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – Themenbeauftragte (Antrag Fresh)",
+    "text": "§ 3: Der Stadtrat kann Beauftragte bestimmen, die ihm nicht angehören müssen, etwa für Wirtschaft, Integration, Stalag und Städtepartnerschaften. Die Posten werden öffentlich ausgeschrieben.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "linz_kilian",
+        "marcus",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "stanglmaier",
+        "strobl"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marschoun",
+        "welter",
+        "ghadieh",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_13",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – namentliche Abstimmung (Antrag Fresh)",
+    "text": "§ 30 Abs. 6: Ist ein Beschluss nicht einstimmig, hält die Niederschrift fest, wer mit Ja und wer mit Nein gestimmt hat.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "ghadieh",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "stanglmaier",
+        "strobl",
+        "welter"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_14",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – Veröffentlichung der Niederschriften vertagt (Antrag Heinz)",
+    "text": "Die Entscheidung wird vertagt. Die Verwaltung prüft, welche Inhalte der Niederschrift veröffentlicht werden können und in welchem Umfang die Sitzungsunterlagen den Bürgerinnen und Bürgern zugänglich gemacht werden können.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "welter",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260727_15",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – Digitalisierungsreferent (Antrag Marcus)",
+    "text": "Die Funktion des Digitalisierungsreferenten kommt in die Geschäftsordnung.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "linz_kilian",
+        "marcus",
+        "marschoun",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "stanglmaier",
+        "strobl"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "welter",
+        "ghadieh",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_16",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – sechs Referate",
+    "text": "In die Geschäftsordnung kommen: Energie, Mobilität und Umwelt; Verein und Sport; Kultur; Senioren und Soziales einschließlich Inklusion; Schulen und Kindertageseinrichtungen; Jugend.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "welter",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260727_17",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – Einzelabstimmung über die Beauftragten (Antrag Rümelin)",
+    "text": "Über die Aufnahme jedes Beauftragten wird einzeln abgestimmt.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "ghadieh",
+        "linz_kilian",
+        "marcus",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "stanglmaier",
+        "strobl"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marschoun",
+        "welter",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_18",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – vier Beauftragte",
+    "text": "Wirtschaft, Migration und Integration, Stalag, Städtepartnerschaften.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "ghadieh",
+        "linz_kilian",
+        "marcus",
+        "marschoun",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "stanglmaier",
+        "strobl"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "welter",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_19",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – drei Beauftragte",
+    "text": "Wirtschaft, Migration und Integration, Stalag.",
+    "type": "named",
+    "result": "rejected",
+    "results": {
+      "yes": [
+        "dick",
+        "ghadieh",
+        "linz_kilian",
+        "marcus",
+        "marschoun",
+        "roeck",
+        "ruemelin",
+        "sabanovic",
+        "stanglmaier",
+        "strobl"
+      ],
+      "no": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "welter",
+        "schweiger"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_20",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – zwei Beauftragte",
+    "text": "Wirtschaft und Stalag.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "welter",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [
+        "ghadieh",
+        "sabanovic"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_21",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – Ordnungsgeld",
+    "text": "Der neue § 29 führt ein Ordnungsgeld mit den angegebenen Höchstsätzen ein.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "meier",
+        "marcus",
+        "marschoun",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [
+        "dick",
+        "ghadieh",
+        "sabanovic",
+        "sixt",
+        "stanglmaier",
+        "tristl",
+        "welter"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_22",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – Einleitung (Antrag Dick)",
+    "text": "Neuer einleitender Satz: „Alle personenbezogenen Bezeichnungen gelten für alle Mitglieder des Stadtrates unabhängig von deren Geschlecht“.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "welter",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [
+        "ghadieh"
+      ],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "tracked",
+      "by": "gruber",
+      "pressVerified": false
+    }
+  },
+  {
+    "id": "sr_20260727_23",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Geschäftsordnung – Verhaltenskodex vertagt (Antrag Reither)",
+    "text": "Die Entscheidung über einen Verhaltenskodex als Anlage zur Geschäftsordnung wird vertagt.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "welter",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260727_24",
+    "sessionId": "sr_20260727",
+    "topicIds": [
+      "t37"
+    ],
+    "title": "Neue Geschäftsordnung beschlossen",
+    "text": "Der Stadtrat beschließt die Geschäftsordnung mit den in der Sitzung beschlossenen Änderungen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "welter",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [],
+      "absent": [
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    }
+  },
+  {
+    "id": "sr_20260727_25",
+    "sessionId": "sr_20260727",
+    "title": "Besetzung der sechs Referate (Sammelvote)",
+    "text": "Sechs Beschlüsse, jeweils 23:0: Dr. Michael Stanglmaier (Energie, Mobilität, Umwelt), Josef Sixt (Verein, Sport), Matthias Röck (Kultur), Karin Linz (Senioren, Soziales, Inklusion), Lorena Kehlringer (Schulen, Kindertageseinrichtungen), Johanna Dick (Jugend).",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "welter",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "beibl"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "tristl",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20260727_26",
+    "sessionId": "sr_20260727",
+    "title": "Beauftragter für Stalag",
+    "text": "Dr. Dominik Reither wird Beauftragter für Stalag.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "welter",
+        "ghadieh",
+        "strobl"
+      ],
+      "no": [],
+      "absent": [
+        "tristl",
+        "beibl",
+        "sabanovic",
+        "schweiger"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "tristl",
+        "reason": "kurz_abwesend"
+      },
+      {
+        "member": "schweiger",
+        "reason": "kurz_abwesend"
+      },
+      {
+        "member": "sabanovic",
+        "reason": "kurz_abwesend"
+      }
+    ]
+  },
+  {
+    "id": "sr_20260727_27",
+    "sessionId": "sr_20260727",
+    "title": "Erster Bürgermeister wird Eheschließungsstandesbeamter",
+    "text": "Maximilian Mader wird Standesbeamter für den Standesamtsbezirk Moosburg, beschränkt auf Eheschließungen.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "lauterbach",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "welter",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [],
+      "absent": [
+        "mader",
+        "tristl",
+        "beibl",
+        "sabanovic"
+      ]
+    },
+    "source": {
+      "tier": "protocol-implicit"
+    },
+    "excluded": [
+      {
+        "member": "tristl",
+        "reason": "kurz_abwesend"
+      },
+      {
+        "member": "sabanovic",
+        "reason": "kurz_abwesend"
+      },
+      {
+        "member": "mader",
+        "reason": "beteiligung"
+      }
+    ]
+  },
+  {
+    "id": "sr_20260727_28",
+    "sessionId": "sr_20260727",
+    "title": "Gigabitförderung 2.0 – weiteres Verfahren",
+    "text": "Der Stadtrat nimmt die Präsentation zur Kenntnis und beschließt die weiteren Verfahrensschritte. Wird der Infrastruktur-Förderantrag bewilligt, plant er den Eigenanteil von voraussichtlich 550.000 € im Haushalt ein.",
+    "type": "named",
+    "results": {
+      "yes": [
+        "mader",
+        "linz_karin",
+        "heinz",
+        "hadersdorfer",
+        "tristl",
+        "haberl",
+        "kehlringer",
+        "reither",
+        "stanglmaier",
+        "linz_kilian",
+        "roeck",
+        "ruemelin",
+        "grundner",
+        "sixt",
+        "meier",
+        "marcus",
+        "marschoun",
+        "dick",
+        "sabanovic",
+        "welter",
+        "ghadieh",
+        "strobl",
+        "schweiger"
+      ],
+      "no": [],
+      "absent": [
+        "beibl",
+        "lauterbach"
       ]
     },
     "source": {

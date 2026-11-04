@@ -2,8 +2,8 @@
 
 `veroeffentlichtQuelle` sagt, woher das Datum kommt:
 
-- ris: aus dem Ratsinformationssystem, das es öffentlich nicht anzeigt. Wird von
-  Hand eingetragen, dieses Skript lässt es stehen.
+- ris: aus dem Ratsinformationssystem, das es nur für die letzten 120 Tage auflistet.
+  Wird von Hand eingetragen, dieses Skript lässt es stehen.
 - pdf: Erstellungsdatum der PDF. Eine Obergrenze, die Datei kann jünger sein als
   die Veröffentlichung. Geprüft im November 2026 an 23 Niederschriften mit beiden
   Daten: neunmal gleich, 14-mal die PDF bis zu 33 Tage später, nie früher.

@@ -586,7 +586,8 @@
         "title": "Beschluss über den Fortbestand der Geschäftsordnung für den Stadtrat vom 29. Juli 2015 bis zum Erlass einer neuen Geschäftsordnung",
         "voteIds": [
           "sr_20200504_11"
-        ]
+        ],
+        "topicId": "t37"
       },
       {
         "number": "6",
@@ -1030,7 +1031,8 @@
           "sr_20200706_04",
           "sr_20200706_05",
           "sr_20200706_06"
-        ]
+        ],
+        "topicId": "t37"
       },
       {
         "number": "6",
@@ -1053,14 +1055,16 @@
         "title": "Beschluss über die Festsetzung der Aufwandsentschädigung für den Zweiten und Dritten Bürgermeister",
         "voteIds": [
           "sr_20200706_11"
-        ]
+        ],
+        "topicId": "t37"
       },
       {
         "number": "9",
         "title": "Festsetzung der Dienstaufwandsentschädigung für Ersten Bürgermeister Josef Dollinger",
         "voteIds": [
           "sr_20200706_12"
-        ]
+        ],
+        "topicId": "t37"
       },
       {
         "number": "10",
@@ -4781,17 +4785,20 @@
     "id": "bpu_20220124",
     "date": "2022-01-24",
     "type": "bpu",
-    "niederschrift": "auszug",
+    "niederschrift": "vollständig",
     "veroeffentlicht": "2026-09-02",
     "veroeffentlichtQuelle": "ris",
     "genehmigt": "2022-03-24",
     "start": "19:00",
     "end": "20:20",
+    "location": "Stadthalle Moosburg",
     "title": "1. Sitzung Bau-, Planungs- und Umweltausschuss – Januar 2022",
-    "source": {
-      "kind": "webauszug",
-      "url": "https://buergerinfo-moosburg.digitalfabrix.de/si0057.asp?__ksinr=2379&smcmode=32832"
-    },
+    "absent": [
+      "hadersdorfer"
+    ],
+    "notes": [
+      "Hadersdorfer und sein Stellvertreter Heinz waren entschuldigt."
+    ],
     "agenda": [
       {
         "number": "1",
@@ -4812,7 +4819,8 @@
       },
       {
         "number": "4",
-        "title": "Vollzug der Straßenverkehrsordnung"
+        "title": "Vollzug der Straßenverkehrsordnung",
+        "type": "formal"
       },
       {
         "number": "4.1",
@@ -4837,13 +4845,17 @@
       },
       {
         "number": "6",
-        "title": "Baugesuche und Anträge"
+        "title": "Baugesuche und Anträge",
+        "type": "formal"
       },
       {
         "number": "6.1",
         "title": "Neubau eines Mehrfamilienhauses (7 WE) mit Garage u. Stellplätzen a.d. Mainburger Str. 23, Moosburg; Anhörung wegen Ersetzung des gemeindl. Einvernehmens",
         "voteIds": [
           "bpu_20220124_05"
+        ],
+        "press": [
+          "mz_2022-01-26_mehrfamilienhaeuser-abgelehnt"
         ]
       },
       {
@@ -4856,12 +4868,19 @@
       {
         "number": "6.3",
         "title": "Vorbescheid - Errichtung eines Mehrfamilienhauses mit 6 Wohneinh. und Tiefgarage a.d. Statzenbachstr. 8, Moosburg",
-        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+        "voteIds": [
+          "bpu_20220124_14",
+          "bpu_20220124_15"
+        ]
       },
       {
         "number": "6.4",
         "title": "Vorbescheid - Erweiterung der besteh. Fachmärkte mit Stellplatzanlage in Degernpoint M 2, Moosburg",
-        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+        "voteIds": [
+          "bpu_20220124_16",
+          "bpu_20220124_17"
+        ],
+        "topicId": "t18"
       },
       {
         "number": "6.5",
@@ -4915,12 +4934,18 @@
       {
         "number": "6.12",
         "title": "Vorbescheid - Erweiterung Hotel / Restaurant und Wohnhaus \"Zur Länd\" a.d. Lände 1, Moosburg",
-        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+        "voteIds": [
+          "bpu_20220124_18",
+          "bpu_20220124_19"
+        ]
       },
       {
         "number": "6.13",
         "title": "Tektur zur Freiflächenplanung zum Vorbescheid Errichtung e. Mehrfamilienhauses (5 WE) a.d. Gärtnerstr. 51 b, Moosburg",
-        "note": "Mehrere Einzelbeschlüsse. Der Beschlussauszug der Stadt weist dafür keine Stimmenzahlen aus."
+        "voteIds": [
+          "bpu_20220124_20",
+          "bpu_20220124_21"
+        ]
       },
       {
         "number": "7",
@@ -9737,7 +9762,8 @@
         "title": "Beschluss über die Änderung der Satzung zur Regelung von Fragen des örtlichen Gemeindeverfassungsrechts - Ersatzleistungen für ehrenamtliche Stadträtinnen und…",
         "voteIds": [
           "sr_20240201_04"
-        ]
+        ],
+        "topicId": "t37"
       },
       {
         "number": "7",
@@ -11268,7 +11294,8 @@
         "title": "Aufwandsentschädigung Jugendreferent",
         "voteIds": [
           "sr_20241021_05"
-        ]
+        ],
+        "topicId": "t37"
       },
       {
         "number": "4.4",
@@ -14289,7 +14316,8 @@
         "title": "Vollzug der Baugesetze; \"Bauturbo\" - Zustimmung der Gemeinde gem. § 36a BauGB - Anpassung der Geschäftsordnung",
         "voteIds": [
           "sr_20260325_06"
-        ]
+        ],
+        "topicId": "t37"
       },
       {
         "number": "11",
@@ -14622,7 +14650,8 @@
         "title": "Beschluss über den Fortbestand der Geschäftsordnung für den Stadtrat vom 7. Juli 2020 mit Änderung vom 26.03.2026 bis zum Erlass einer neuen Geschäftsordnung",
         "voteIds": [
           "sr_20260511_14"
-        ]
+        ],
+        "topicId": "t37"
       },
       {
         "number": "6",
@@ -14840,14 +14869,16 @@
         "title": "Festsetzung der Dienstaufwandsentschädigung für den Ersten Bürgermeister",
         "voteIds": [
           "sr_20260615_06"
-        ]
+        ],
+        "topicId": "t37"
       },
       {
         "number": "6.3",
         "title": "Beschluss über die Festsetzung der Aufwandsentschädigung für den Zweiten und Dritten Bürgermeister",
         "voteIds": [
           "sr_20260615_07"
-        ]
+        ],
+        "topicId": "t37"
       },
       {
         "number": "6.4",
@@ -15161,7 +15192,7 @@
     "id": "sr_20260727",
     "date": "2026-07-27",
     "type": "stadtrat",
-    "niederschrift": "keine",
+    "niederschrift": "vollständig",
     "veroeffentlicht": "2026-08-25",
     "veroeffentlichtQuelle": "ris",
     "start": "18:30",
@@ -15171,7 +15202,121 @@
         "start": "18:37",
         "end": "21:19"
       }
-    }
+    },
+    "title": "11. Stadtratssitzung – Juli 2026",
+    "absent": [
+      "beibl"
+    ],
+    "partial": [
+      {
+        "member": "grundner",
+        "from": "19:10"
+      },
+      {
+        "member": "lauterbach",
+        "to": "21:00"
+      },
+      {
+        "member": "heinz",
+        "to": "21:30"
+      },
+      {
+        "member": "strobl",
+        "to": "22:00"
+      },
+      {
+        "member": "haberl",
+        "to": "22:20"
+      }
+    ],
+    "agenda": [
+      {
+        "number": "1",
+        "title": "Mitteilungen des Ersten Bürgermeisters",
+        "type": "formal"
+      },
+      {
+        "number": "2",
+        "title": "Bürgerfragen gem. § 27 Abs. 2 GeschO/StR",
+        "type": "formal"
+      },
+      {
+        "number": "3",
+        "title": "Beschluss zur Ersatzbeschaffung eines LF10 für die Freiwillige Feuerwehr Moosburg",
+        "voteIds": [
+          "sr_20260727_01"
+        ]
+      },
+      {
+        "number": "4",
+        "title": "Stadtratsangelegenheiten",
+        "type": "formal"
+      },
+      {
+        "number": "4.1",
+        "title": "Erlass der Satzung zur Regelung von Fragen des örtlichen Gemeindeverfassungsrechtes",
+        "topicId": "t37",
+        "voteIds": [
+          "sr_20260727_02",
+          "sr_20260727_03",
+          "sr_20260727_04",
+          "sr_20260727_05",
+          "sr_20260727_06",
+          "sr_20260727_07",
+          "sr_20260727_08",
+          "sr_20260727_09"
+        ]
+      },
+      {
+        "number": "4.2",
+        "title": "Erlass der Geschäftsordnung für den Stadtrat der Stadt Moosburg a.d. Isar",
+        "topicId": "t37",
+        "voteIds": [
+          "sr_20260727_10",
+          "sr_20260727_11",
+          "sr_20260727_12",
+          "sr_20260727_13",
+          "sr_20260727_14",
+          "sr_20260727_15",
+          "sr_20260727_16",
+          "sr_20260727_17",
+          "sr_20260727_18",
+          "sr_20260727_19",
+          "sr_20260727_20",
+          "sr_20260727_21",
+          "sr_20260727_22",
+          "sr_20260727_23",
+          "sr_20260727_24"
+        ]
+      },
+      {
+        "number": "4.3",
+        "title": "Besetzung der Referenten- und Beauftragtenposten",
+        "voteIds": [
+          "sr_20260727_25",
+          "sr_20260727_26"
+        ]
+      },
+      {
+        "number": "5",
+        "title": "Bestellung des Ersten Bürgermeisters als Eheschließungsstandesbeamter",
+        "voteIds": [
+          "sr_20260727_27"
+        ]
+      },
+      {
+        "number": "6",
+        "title": "Gigabitförderung 2.0 – Vorstellung Ergebnis Markterkundung und Beschluss zum weiteren Verfahren",
+        "voteIds": [
+          "sr_20260727_28"
+        ]
+      },
+      {
+        "number": "7",
+        "title": "Anfragen",
+        "type": "formal"
+      }
+    ]
   },
   {
     "id": "sr_20260907",

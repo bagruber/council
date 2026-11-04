@@ -107,6 +107,7 @@
     "id": "linz_karin",
     "firstName": "Karin",
     "lastName": "Linz",
+    "title": "Senioren- und Sozialreferentin",
     "mandates": [
       {
         "from": "2014-05-01",
@@ -116,6 +117,13 @@
     ],
     "profile": {
       "pronouns": "sie/ihr",
+      "titles": [
+        {
+          "title": "Senioren- und Sozialreferentin",
+          "from": "2026-07-27",
+          "to": null
+        }
+      ],
       "contact": {
         "email": "karin.linz@csu-moosburg.de",
         "facebook": "/karin.linz"
@@ -149,7 +157,7 @@
         {
           "title": "Kulturreferent",
           "from": "2020-05",
-          "to": null
+          "to": "2026-05"
         }
       ],
       "contact": {
@@ -173,7 +181,6 @@
     "firstName": "Georg",
     "lastName": "Hadersdorfer",
     "nickname": "Hadschi",
-    "title": "Ehrenamtsreferent",
     "mandates": [
       {
         "from": "2014-05-01",
@@ -198,7 +205,7 @@
         {
           "title": "Ehrenamtsreferent",
           "from": "2020-05",
-          "to": null
+          "to": "2026-05"
         }
       ],
       "contact": {
@@ -315,6 +322,7 @@
     "id": "kehlringer",
     "firstName": "Lorena",
     "lastName": "Kehlringer",
+    "title": "Referentin für Schulen und Kindertageseinrichtungen",
     "mandates": [
       {
         "from": "2026-05-01",
@@ -324,6 +332,13 @@
     ],
     "profile": {
       "pronouns": "sie/ihr",
+      "titles": [
+        {
+          "title": "Referentin für Schulen und Kindertageseinrichtungen",
+          "from": "2026-07-27",
+          "to": null
+        }
+      ],
       "contact": {
         "email": "lorena.kehlringer@gmx.de",
         "instagram": "@lorenakehlringer"
@@ -343,6 +358,7 @@
     "id": "reither",
     "firstName": "Dr. Dominikus",
     "lastName": "Reither",
+    "title": "Beauftragter für Stalag",
     "mandates": [
       {
         "from": "2026-05-01",
@@ -352,6 +368,13 @@
     ],
     "profile": {
       "pronouns": "er/ihn",
+      "titles": [
+        {
+          "title": "Beauftragter für Stalag",
+          "from": "2026-07-27",
+          "to": null
+        }
+      ],
       "contact": {
         "email": "reither-stadtrat@web.de"
       },
@@ -384,7 +407,7 @@
         {
           "title": "Sportreferentin",
           "from": "2020-05",
-          "to": null
+          "to": "2026-05"
         }
       ],
       "contact": {
@@ -426,6 +449,11 @@
         {
           "title": "Dritter Bürgermeister",
           "from": "2020-05",
+          "to": null
+        },
+        {
+          "title": "Energie-, Mobilitäts- und Umweltreferent",
+          "from": "2026-07-27",
           "to": null
         }
       ],
@@ -607,6 +635,7 @@
     "id": "roeck",
     "firstName": "Matthias",
     "lastName": "Röck",
+    "title": "Kulturreferent",
     "mandates": [
       {
         "from": "2026-05-01",
@@ -616,6 +645,13 @@
     ],
     "profile": {
       "pronouns": "er/ihn",
+      "titles": [
+        {
+          "title": "Kulturreferent",
+          "from": "2026-07-27",
+          "to": null
+        }
+      ],
       "contact": {
         "email": "matthias.roeck@gruene-moosburg.de",
         "instagram": "@roecknroller"
@@ -783,6 +819,7 @@
     "id": "sixt",
     "firstName": "Josef",
     "lastName": "Sixt",
+    "title": "Vereins- und Sportreferent",
     "mandates": [
       {
         "from": "2026-05-01",
@@ -792,6 +829,13 @@
     ],
     "profile": {
       "pronouns": "er/ihn",
+      "titles": [
+        {
+          "title": "Vereins- und Sportreferent",
+          "from": "2026-07-27",
+          "to": null
+        }
+      ],
       "contact": {
         "email": "sepp.sixt@googlemail.com",
         "instagram": "@josef_sixt96"
@@ -1133,6 +1177,7 @@
     "id": "dick",
     "firstName": "Johanna",
     "lastName": "Dick",
+    "title": "Jugendreferentin",
     "mandates": [
       {
         "from": "2026-05-01",
@@ -1142,6 +1187,13 @@
     ],
     "profile": {
       "pronouns": "sie/ihr",
+      "titles": [
+        {
+          "title": "Jugendreferentin",
+          "from": "2026-07-27",
+          "to": null
+        }
+      ],
       "elections": [
         {
           "year": 2026,
