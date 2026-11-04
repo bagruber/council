@@ -767,6 +767,17 @@
         "text": "Variante 1 scheitert mit 4:7, Variante 2 geht einstimmig durch: Tempo 30 werktags von 7 bis 16.30 Uhr in der Münchener Straße.",
         "sessionId": "bpu_20260713",
         "voteId": "bpu_20260713_08"
+      },
+      {
+        "date": "2026-09-28",
+        "type": "vote",
+        "title": "Digitaler Schulwegplan auf Probe",
+        "text": "Mit 12:7 beschließt der Stadtrat, einen digitalen Schulwegplan ein Jahr lang zu testen.",
+        "sessionId": "sr_20260928",
+        "voteId": "sr_20260928_03",
+        "press": [
+          "merkur_2026-10-09_schulwegplaene"
+        ]
       }
     ],
     "field": "mobility",
@@ -1265,8 +1276,8 @@
       {
         "date": "2026-06-15",
         "type": "vote",
-        "title": "Rathaus 3. BA – Farbkonzept der Fassade",
-        "text": "Nach einer Ortseinsicht mit Farbmustern entscheidet sich der Stadtrat mit 12:11 für ein Farbkonzept. Die knappste Abstimmung des Abends.",
+        "title": "Rathaus 3. BA – Grau für die Fassade",
+        "text": "Nach einer Ortseinsicht mit Farbmustern lehnt der Stadtrat eine Vertagung ab (4:19) und wählt mit 12:11 den Grauton. Die knappste Abstimmung des Abends.",
         "sessionId": "sr_20260615",
         "voteId": "sr_20260615_09",
         "press": [
@@ -1668,6 +1679,14 @@
         "text": "Der Stadtrat beschließt den Abschluss eines Dienstleistungsvertrags mit der enPORTAL GmbH zur Durchführung von Bündelausschreibungen für Strom- und Gasbeschaffung.",
         "sessionId": "sr_20250224",
         "voteId": "sr_20250224_02"
+      },
+      {
+        "date": "2026-09-28",
+        "type": "vote",
+        "title": "Ausschreibung ab 2028: Ökostrom ohne Neuanlagenquote",
+        "text": "Der Vorschlag mit Neuanlagenquote scheitert mit 6:12, einstimmig wird 100 % Ökostrom ohne Quote beschafft. Gas läuft weiter über enPORTAL.",
+        "sessionId": "sr_20260928",
+        "voteId": "sr_20260928_08"
       }
     ]
   },
@@ -2206,6 +2225,39 @@
         "text": "Der Stadtrat beschließt, Ersten Bürgermeister Mader sowie StR Heinz als Vertreter der Stadt im Erholungsflächenverein zu bestellen.",
         "sessionId": "sr_20260511",
         "voteId": "sr_20260511_19"
+      }
+    ]
+  },
+  {
+    "id": "t36",
+    "title": "Bebauungsplan Nr. 3 „Thalbacher Au Süd-Ost“",
+    "tags": [
+      "building"
+    ],
+    "image": null,
+    "summary": "Im Dreieck zwischen Neustadt-, Birken- und Schillerstraße will die Stadt auf eigenen Grundstücken verdichten: 16 Parzellen mit Doppelhäusern und einem Einfamilienhaus, für 50 bis 60 neue Anwohner. Der Plan stammt von 1963 und wird dafür ein zweites Mal geändert.",
+    "field": "building",
+    "type": "gebiet",
+    "status": "laufend",
+    "history": [
+      {
+        "date": "2026-04-20",
+        "type": "vote",
+        "title": "Entwurf zur Kenntnis, 2. Änderung beschlossen",
+        "text": "Einstimmig: 2. Änderung im vereinfachten Verfahren auf Grundlage der Variante 3. Die Grünen wünschen mehr Grün und einen Spielplatz.",
+        "sessionId": "sr_20260420",
+        "voteId": "sr_20260420_06",
+        "press": [
+          "merkur_2026-04-28_neues-bauland-neustadt"
+        ]
+      },
+      {
+        "date": "2026-09-28",
+        "type": "vote",
+        "title": "Billigung und Auslegung",
+        "text": "Einstimmig (19:0): Der Entwurf vom 15.09.2026 geht in die öffentliche Auslegung.",
+        "sessionId": "sr_20260928",
+        "voteId": "sr_20260928_02"
       }
     ]
   }

@@ -34,6 +34,7 @@ const ERKLAERUNG = {
     absaetze: [
       "Das amtliche Protokoll einer Sitzung. Die Stadt veröffentlicht es als PDF, nachdem der Rat es in einer späteren Sitzung genehmigt hat. Darin stehen Tagesordnung, Beschlusswortlaut, das Ergebnis als Zahlen und die Anwesenheit. Namen zu einzelnen Stimmen nur dann, wenn der Rat namentlich abgestimmt hat.",
       "Das PDF bleibt bei jeder Sitzung verlinkt. Wo diese Seite und die Niederschrift auseinandergehen, gilt die Niederschrift.",
+      "Wann eine Niederschrift online ging, zeigt das Ratsinformationssystem öffentlich nicht. Für Veröffentlichungen seit Juli 2026 liegt das Datum trotzdem vor, ältere Niederschriften zählen in der Statistik bis zum Erstellungsdatum der PDF auf dem Server der Stadt. Das ist eine Näherung: Wo sich beides vergleichen lässt, stimmt das PDF-Datum in 9 von 23 Fällen, in den übrigen 14 ist die Datei bis zu 33 Tage jünger. 55 Stadtrats-Niederschriften von 2020 bis 2024 tragen das Datum 27.07.2026, gehören aber nicht zu den Veröffentlichungen dieses Tages. Für sie nennt die Statistik keine Wartezeit (Stand November 2026). Wann der Rat eine Niederschrift genehmigt hat, steht in der jeweils späteren Niederschrift.",
     ],
   },
   auszug: {

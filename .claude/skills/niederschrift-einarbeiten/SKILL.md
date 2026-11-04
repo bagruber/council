@@ -69,6 +69,11 @@ For BPU/HVFA: use the `seatConfigs` to determine the right composition for that 
   `niederschrift` auf `"vollständig"` setzen, `title`, `absent`, `agenda`
   hinzufügen, `start`/`end` gegen die Niederschrift prüfen. **ID, Datum und
   Gremium nicht ändern** — der Validator prüft, dass die ID zu beidem passt.
+- `python scripts/niederschrift_datum.py` trägt `veroeffentlicht` aus dem
+  PDF-Datum und `genehmigt` aus den späteren Niederschriften ein. Der Validator
+  verlangt `veroeffentlichtQuelle` bei jeder vollständigen Niederschrift. Liegt
+  das Datum aus dem Session-Tool vor, von Hand mit `veroeffentlichtQuelle: "ris"`
+  eintragen, das Skript lässt es dann stehen.
 - Session shape:
   ```json
   {

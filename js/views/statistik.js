@@ -1,6 +1,7 @@
-// Sitzungsstatistik: wie lang die Sitzungen dauern, und wer mit wem stimmt.
+// Sitzungsstatistik: wie lang die Sitzungen dauern, wann die Niederschrift
+// online ist, und wer mit wem stimmt.
 import {
-  sessionRegister, bestand, dauerMin, sitzungsart, SITZUNGSARTEN,
+  sessionRegister, bestand, dauerMin, sitzungsart, SITZUNGSARTEN, nowStr,
 } from "../daten.js";
 import { formatDate, formatDuration } from "../hilfen.js";
 import { navigate, route, backLink } from "../routing.js";
@@ -55,6 +56,8 @@ function renderStatistik() {
 
   main.appendChild(buildStatsTable(entries));
 
+  renderWartezeit();
+
   const nh = document.createElement("h2");
   nh.className = "section-label naehe-ueberschrift";
   nh.textContent = "Wer stimmt mit wem";
@@ -77,6 +80,162 @@ function renderStatistik() {
     "Alle Kanten, ohne Schwellenwert: schwache Verbindungen verblassen, statt zu verschwinden. "
     + "Grün zieht zusammen, rot drückt auseinander. Klick öffnet das Profil.",
     drawSimGraph);
+}
+
+// Fehlt die Niederschrift noch, zählt das Alter der Sitzung: Der Punkt wandert
+// weiter nach oben, solange nichts kommt.
+function wartezeiten() {
+  const tageBis = (von, bis) => Math.round((Date.parse(bis) - Date.parse(von)) / 864e5);
+  return sessionRegister()
+    .map(s => ({ id: s.id, date: s.date, body: s.type, online: s.veroeffentlicht, quelle: s.veroeffentlichtQuelle,
+                 tage: tageBis(s.date, s.veroeffentlicht || nowStr),
+                 bisGenehmigung: s.genehmigt && tageBis(s.date, s.genehmigt),
+                 danach: s.genehmigt && s.veroeffentlicht && tageBis(s.genehmigt, s.veroeffentlicht),
+                 erfasst: !!s.agenda }))
+    .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+const medianVon = (liste, feld) => median(liste.map(e => e[feld]).filter(t => t !== undefined));
+
+const wartezeitText = tage => tage === 1 ? "1 Tag"
+  : tage < 730 ? `${tage} Tage`
+  : `${(tage / 365.25).toFixed(1).replace(".", ",")} Jahre`;
+
+function renderWartezeit() {
+  const register = wartezeiten();
+  const alle = register.filter(e => e.quelle !== "unbekannt");
+  const ohneDatum = register.filter(e => e.quelle === "unbekannt");
+  const online = alle.filter(e => e.online);
+  const vorEinemJahr = new Date(Date.parse(nowStr) - 365 * 864e5).toISOString().slice(0, 10);
+  const jung = online.filter(e => e.date >= vorEinemJahr);
+
+  const jeTag = {};
+  online.forEach(e => { jeTag[e.online] = (jeTag[e.online] || 0) + 1; });
+  const [stapelTag, stapelZahl] = Object.entries(jeTag).sort((a, b) => b[1] - a[1])[0];
+
+  const nh = document.createElement("h2");
+  nh.className = "section-label naehe-ueberschrift";
+  nh.textContent = "Bis die Niederschrift online ist";
+  main.appendChild(nh);
+
+  const intro = document.createElement("p");
+  intro.className = "chart-foot";
+  intro.textContent = "Der Rat genehmigt eine Niederschrift in einer späteren Sitzung, danach stellt die "
+    + `Stadt sie online. Bei den Sitzungen der letzten zwölf Monate vergingen im Median ${medianVon(jung, "bisGenehmigung")} `
+    + `Tage bis zur Genehmigung und danach ${medianVon(jung, "danach")} bis zur Veröffentlichung. Wer nachlesen will, was `
+    + "beschlossen wurde, wartet beides ab.";
+  main.appendChild(intro);
+
+  const herkunft = document.createElement("p");
+  herkunft.className = "chart-foot";
+  herkunft.textContent = "Das Datum der Veröffentlichung zeigt das Ratsinformationssystem öffentlich nicht. "
+    + "Seit Juli 2026 liegt es trotzdem vor, ältere Niederschriften zählen bis zum Erstellungsdatum der PDF. "
+    + "Das ist eine Näherung: Die Datei kann jünger sein als die Veröffentlichung.";
+  main.appendChild(herkunft);
+
+  const tiles = document.createElement("div");
+  tiles.className = "stat-tiles wartezeit-tiles";
+  tiles.innerHTML = html`
+    <div class="stat-tile"><div class="stat-tile-value">${medianVon(jung, "tage")} Tage</div><div class="stat-tile-label">im Median, Sitzungen der letzten zwölf Monate</div></div>
+    <div class="stat-tile"><div class="stat-tile-value">${online.filter(e => e.tage > 365).length}</div><div class="stat-tile-label">Niederschriften erst nach mehr als einem Jahr online</div></div>
+    <div class="stat-tile"><div class="stat-tile-value">${alle.length - online.length}</div><div class="stat-tile-label">Sitzungen ohne veröffentlichte Niederschrift</div></div>`;
+  main.appendChild(tiles);
+
+  const nichtImBild = ohneDatum.length
+    ? ` Nicht im Bild: ${ohneDatum.length} Niederschriften von ${ohneDatum[0].date.slice(0, 4)} bis `
+      + `${ohneDatum[ohneDatum.length - 1].date.slice(0, 4)}, deren Veröffentlichungsdatum nicht vorliegt.`
+    : "";
+  const karte = chartCard("Jede Sitzung nach Wartezeit",
+    "Jeder Punkt ist eine Sitzung, die Höhe zeigt die Wartezeit bis zur Veröffentlichung. Hohle Punkte stehen "
+    + "beim heutigen Alter der Sitzung und zählen im Median nicht mit. Die Achse ist gestaucht, damit Wochen "
+    + `und Jahre ins selbe Bild passen. ${stapelZahl} Niederschriften tragen dasselbe Datum, den ${formatDate(stapelTag)}.`
+    + nichtImBild,
+    drawWartezeit, alle, true);
+  karte.querySelector(".chart-legend").insertAdjacentHTML("beforeend",
+    html`<span><span class="chart-dot hohl"></span>noch keine Niederschrift</span>`);
+  main.appendChild(karte);
+
+  main.appendChild(wartezeitTabelle(register));
+}
+
+// Logarithmisch, sonst wäre alles unter einem Jahr ein Strich am unteren Rand.
+const WARTEZEIT_TICKS = [[7, "1 Woche"], [30, "1 Monat"], [90, "3 Monate"],
+                         [365, "1 Jahr"], [1095, "3 Jahre"], [2190, "6 Jahre"]];
+
+function drawWartezeit(el, entries) {
+  const W = el.clientWidth || 640;
+  const H = 280, top = 10, right = 8, bottom = 22, left = 54;
+  const plotW = W - left - right, plotH = H - top - bottom;
+  const t0 = Date.parse(entries[0].date);
+  const t1 = Date.parse(entries[entries.length - 1].date);
+  const unten = Math.log(7), oben = Math.log(Math.max(...entries.map(e => e.tage)) * 1.1);
+  const x = d => left + (Date.parse(d) - t0) / (t1 - t0) * plotW;
+  const y = tage => top + plotH * (1 - (Math.log(Math.max(tage, 7)) - unten) / (oben - unten));
+
+  const grid = [], ticks = [];
+  WARTEZEIT_TICKS.filter(([tage]) => Math.log(tage) <= oben).forEach(([tage, label]) => {
+    grid.push(html`<line x1="${left}" x2="${W - right}" y1="${y(tage).toFixed(1)}" y2="${y(tage).toFixed(1)}"/>`);
+    ticks.push(html`<text class="chart-tick" x="${left - 6}" y="${(y(tage) + 3).toFixed(1)}" text-anchor="end">${label}</text>`);
+  });
+  const firstYear = +entries[0].date.slice(0, 4);
+  if (x(firstYear + 1 + "-01-01") - left > 44) {
+    ticks.push(html`<text class="chart-tick" x="${left}" y="${H - 6}" text-anchor="start">${firstYear}</text>`);
+  }
+  for (let yr = firstYear + 1; Date.parse(yr + "-01-01") <= t1; yr++) {
+    ticks.push(html`<text class="chart-tick" x="${x(yr + "-01-01").toFixed(1)}" y="${H - 6}" text-anchor="middle">${yr}</text>`);
+  }
+
+  const dots = entries.map((e, i) => {
+    const linked = e.erfasst ? " linked" : "";
+    return e.online
+      ? html`<circle class="dt-dot${linked}" data-i="${i}" cx="${x(e.date).toFixed(1)}" cy="${y(e.tage).toFixed(1)}" r="4" fill="${chartColor[e.body]}"/>`
+      : html`<circle class="dt-dot offen${linked}" data-i="${i}" cx="${x(e.date).toFixed(1)}" cy="${y(e.tage).toFixed(1)}" r="3.5" style="stroke:${chartColor[e.body]}"/>`;
+  });
+
+  el.innerHTML = html`<svg class="chart" width="${W}" height="${H}" role="img" aria-label="Wartezeit bis zur Niederschrift je Sitzung">
+    <g class="chart-grid">${grid}</g>${ticks}${dots}</svg>`;
+
+  el.querySelectorAll(".dt-dot").forEach(dot => {
+    const e = entries[dot.dataset.i];
+    const kopf = html`<strong>${sitzungsart(e.body).label} · ${formatDate(e.date)}</strong><br>`;
+    dot.addEventListener("mouseenter", evt => chartTipShow(evt, e.online
+      ? html`${kopf}${e.quelle === "ris" ? "online seit" : "PDF vom"} ${formatDate(e.online)} · ${wartezeitText(e.tage)} später`
+      : html`${kopf}noch keine Niederschrift · Sitzung vor ${wartezeitText(e.tage)}`));
+    dot.addEventListener("mousemove", chartTipMove);
+    dot.addEventListener("mouseleave", chartTipHide);
+    if (e.erfasst) dot.addEventListener("click", () => {
+      chartTipHide();
+      navigate("/session/" + e.id);
+    });
+  });
+}
+
+function wartezeitTabelle(register) {
+  const years = [...new Set(register.map(e => e.date.slice(0, 4)))].sort();
+  const zelle = (liste, feld) => liste.some(e => e[feld] !== undefined) ? wartezeitText(medianVon(liste, feld)) : "–";
+  const rows = years.map(yr => {
+    const imJahr = register.filter(e => e.date.slice(0, 4) === yr);
+    const mitDatum = imJahr.filter(e => e.online);
+    return html`<tr>
+      <td>${yr}</td>
+      <td>${mitDatum.length}</td>
+      <td>${zelle(mitDatum, "tage")}</td>
+      <td>${zelle(imJahr, "bisGenehmigung")}</td>
+      <td>${zelle(imJahr, "danach")}</td>
+      <td>${imJahr.filter(e => !e.online && e.quelle !== "unbekannt").length}</td>
+    </tr>`;
+  });
+  const details = document.createElement("details");
+  details.className = "stats-table";
+  details.innerHTML = html`
+    <summary><svg class="icon"><use href="#i-table_rows"/></svg> Daten als Tabelle</summary>
+    <table>
+      <thead><tr><th>Jahr</th><th>Mit Datum</th><th>Median</th><th>Bis Geneh­migung</th><th>Danach</th><th>Noch offen</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="chart-foot">Jahr der Sitzung, nicht der Veröffentlichung. Mit Datum: Niederschriften, deren
+    Veröffentlichungsdatum vorliegt. Danach: von der Genehmigung bis zur Veröffentlichung.</div>`;
+  return details;
 }
 
 // Kartenrahmen mit Umschalter für die Wahlperiode. Wird sofort eingehängt,

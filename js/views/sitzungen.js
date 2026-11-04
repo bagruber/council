@@ -57,7 +57,12 @@ function renderSession(id) {
   } else if (session.niederschrift === "keine") {
     const note = document.createElement("div");
     note.className = "source-note";
-    note.innerHTML = html`
+    note.innerHTML = session.veroeffentlicht ? html`
+      <svg class="icon"><use href="#i-info"/></svg>
+      <div><strong>Noch nicht eingearbeitet.</strong>
+      Die Stadt hat die <a href="${protocolUrl(session)}" target="_blank" rel="noopener">Niederschrift</a>
+      am ${formatDate(session.veroeffentlicht)} veröffentlicht. Beschlüsse und Abstimmungen
+      fehlen hier noch.</div>` : html`
       <svg class="icon"><use href="#i-info"/></svg>
       <div><strong>Nichts veröffentlicht.</strong>
       Dass diese Sitzung stattgefunden hat, steht im Sitzungsregister der Stadt.

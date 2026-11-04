@@ -3016,6 +3016,15 @@ a.cat-line:hover { text-decoration: underline; }
 
 .dt-dot.linked { cursor: pointer; }
 
+.dt-dot.offen { fill: var(--surface); stroke-width: 1.5; }
+
+.wartezeit-tiles { margin-top: 12px; }
+
+.chart-dot.hohl {
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px var(--text-muted);
+}
+
 .stats-table {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -3258,6 +3267,7 @@ a.tier-chip.on {
 }
 .source-note .icon { font-size: 18px; color: var(--accent-text); flex-shrink: 0; }
 .source-note strong { color: var(--text); }
+.source-note a { color: var(--accent-text); }
 
 /* -- Kerndaten zur Person -- */
 

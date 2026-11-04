@@ -1379,7 +1379,7 @@
     "type": "ausschuss",
     "icon": "fact_check",
     "description": "Der Rechnungsprüfungsausschuss prüft die Haushalts- und Wirtschaftsführung der Stadt.",
-    "chair": null,
+    "chair": "beibl",
     "seats": [
       {
         "member": "linz_karin",
@@ -1387,7 +1387,8 @@
       },
       {
         "member": "tristl",
-        "sub": "haberl"
+        "sub": "haberl",
+        "role": "Stellv. Vorsitzender"
       },
       {
         "member": "sabanovic",
@@ -1396,10 +1397,6 @@
       {
         "member": "meier",
         "sub": "sixt"
-      },
-      {
-        "member": "beibl",
-        "sub": "linz_kilian"
       }
     ],
     "pastSeats": [
@@ -1521,7 +1518,7 @@
       },
       {
         "from": "2026-05-01",
-        "chair": null,
+        "chair": "beibl",
         "seats": [
           {
             "member": "linz_karin",
@@ -1529,7 +1526,8 @@
           },
           {
             "member": "tristl",
-            "sub": "haberl"
+            "sub": "haberl",
+            "role": "Stellv. Vorsitzender"
           },
           {
             "member": "sabanovic",
@@ -1538,14 +1536,12 @@
           {
             "member": "meier",
             "sub": "sixt"
-          },
-          {
-            "member": "beibl",
-            "sub": "linz_kilian"
           }
-        ]
+        ],
+        "chairSub": "linz_kilian"
       }
-    ]
+    ],
+    "chairSub": "linz_kilian"
   },
   {
     "id": "ar_klaeranlage",

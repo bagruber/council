@@ -19,7 +19,7 @@
 - `data/bodies.json` — Gremien mit `seatConfigs`
 - `data/media.json` — Medien
 - `data/topics.json` — Themen mit Timeline-History
-- `data/sessions.json` — das vollständige Sitzungsregister: auch Sitzungen ohne Niederschrift und angekündigte, mit `niederschrift` und Zeiten
+- `data/sessions.json` — das vollständige Sitzungsregister: auch Sitzungen ohne Niederschrift und angekündigte, mit `niederschrift`, Zeiten, `veroeffentlicht` samt `veroeffentlichtQuelle` und `genehmigt` (aus `scripts/niederschrift_datum.py`, Daten aus dem Session-Tool von Hand)
 - `data/votes.json` — Abstimmungen; `source` für den Beschluss, `voters` für die einzelne Stimme, `topicIds` als Liste (ein Beschluss kann in zwei Dossiers gehören), kein eigenes Datum
 - `data/tags.json` — Themen-Tags
 - `data/press.json` — Presseartikel als eigenständige Entitäten (ID-Format: `{media}_{YYYY-MM-DD}_{slug}`)

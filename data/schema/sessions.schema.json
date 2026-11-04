@@ -15,6 +15,18 @@
         "description": "vollständig = Niederschrift mit Anwesenheitsliste; auszug = Beschlussauszug der Stadt ohne Anwesenheit; keine = nichts veröffentlicht.",
         "enum": ["vollständig", "auszug", "keine"]
       },
+      "veroeffentlicht": {
+        "description": "Tag, an dem die Niederschrift online ging; woher er stammt, sagt veroeffentlichtQuelle. Kann schon stehen, solange niederschrift noch auf keine oder auszug steht: dann ist die PDF online, aber nicht eingearbeitet.",
+        "$ref": "datum.schema.json"
+      },
+      "veroeffentlichtQuelle": {
+        "description": "ris = aus dem Ratsinformationssystem, von Hand eingetragen; pdf = Erstellungsdatum der PDF, eine Obergrenze; unbekannt = online, aber das PDF-Datum sagt nichts über die Veröffentlichung, veroeffentlicht fehlt dann. pdf und unbekannt schreibt scripts/niederschrift_datum.py.",
+        "enum": ["ris", "pdf", "unbekannt"]
+      },
+      "genehmigt": {
+        "description": "Sitzung, in der die Niederschrift genehmigt wurde. Schreibt scripts/niederschrift_datum.py aus der späteren Niederschrift.",
+        "$ref": "datum.schema.json"
+      },
       "start": { "type": "string", "pattern": "^[0-9]{2}:[0-9]{2}$" },
       "end": { "type": "string", "pattern": "^[0-9]{2}:[0-9]{2}$" },
       "location": { "type": "string" },

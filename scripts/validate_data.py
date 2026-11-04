@@ -137,6 +137,14 @@ for s in sessions:
         err(f"session {s['id']}: {stufe} veroeffentlicht, aber ohne Tagesordnung")
     if s.get("end") and not s.get("start"):
         err(f"session {s['id']}: Ende ohne Beginn")
+    if stufe == "vollständig" and not s.get("veroeffentlichtQuelle"):
+        err(f"session {s['id']}: Niederschrift ohne Datumsquelle, scripts/niederschrift_datum.py laufen lassen")
+    if bool(s.get("veroeffentlicht")) != (s.get("veroeffentlichtQuelle") in ("ris", "pdf")):
+        err(f"session {s['id']}: veroeffentlicht und veroeffentlichtQuelle passen nicht zusammen")
+    if s.get("veroeffentlicht", s["date"]) < s["date"]:
+        err(f"session {s['id']}: veroeffentlicht {s['veroeffentlicht']} liegt vor der Sitzung")
+    if s.get("genehmigt", "9999") <= s["date"]:
+        err(f"session {s['id']}: genehmigt {s['genehmigt']} liegt nicht nach der Sitzung")
 
     for i, item in enumerate(s.get("agenda", [])):
         for vid in item.get("voteIds", []):
