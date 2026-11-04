@@ -11999,7 +11999,15 @@
     },
     "source": {
       "tier": "result-only"
-    }
+    },
+    "voters": {
+      "stanglmaier": {
+        "vote": "no",
+        "evidence": "soft",
+        "note": "Redebeitrag zu TOP 6.3, ergänzt in der Niederschrift vom 24.03.2022: „da sich die Kubatur nicht in die nähere Umgebungsbebauung einfügt“"
+      }
+    },
+    "note": "Den Redebeitrag von Dr. Stanglmaier („da sich die Kubatur nicht in die nähere Umgebungsbebauung einfügt“) hat der Ausschuss am 24.03.2022 in die Niederschrift ergänzt."
   },
   {
     "id": "bpu_20220124_15",
@@ -12014,7 +12022,15 @@
     },
     "source": {
       "tier": "result-only"
-    }
+    },
+    "voters": {
+      "stanglmaier": {
+        "vote": "yes",
+        "evidence": "soft",
+        "note": "Redebeitrag zu TOP 6.3, ergänzt in der Niederschrift vom 24.03.2022: „da sich die Kubatur nicht in die nähere Umgebungsbebauung einfügt“"
+      }
+    },
+    "note": "Den Redebeitrag von Dr. Stanglmaier („da sich die Kubatur nicht in die nähere Umgebungsbebauung einfügt“) hat der Ausschuss am 24.03.2022 in die Niederschrift ergänzt."
   },
   {
     "id": "bpu_20220124_16",

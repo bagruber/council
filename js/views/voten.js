@@ -20,11 +20,24 @@ function bodyForVote(vote) {
 // bewusst eine ruhige Fußzeile, kein Siegel: die Herkunft qualifiziert das
 // Ergebnis, sie ist nicht die Nachricht.
 function renderVoteSource(vote) {
+  // Wo einzelne Positionen nur aus einer Wortmeldung stammen, steht das dabei.
+  // Keine eigene Farbe im Halbrund — wer etwas befürwortet hat, wird in der
+  // Regel auch dafür gestimmt haben; sicher ist es nur nicht.
+  const weich = Object.entries(vote.voters || {})
+    .filter(([, w]) => w.evidence === "soft")
+    .map(([id]) => (members.find(m => m.id === id) || {}).lastName)
+    .filter(Boolean).join(", ");
+  const weichZeile = weich
+    ? html`<br><span class="vote-source-weich">${weich}: aus der Debatte erschlossen, nicht als Stimme berichtet.</span>`
+    : "";
+
   const label = Council.sourceLabel(vote);
   if (!label) {
-    return vote.type === "anonymous" && vote.results.yes && vote.results.no
-      ? html`<div class="vote-source">Nur das Ergebnis ist überliefert, nicht wer wie gestimmt hat.</div>`
-      : "";
+    if (vote.type !== "anonymous" || !vote.results.yes || !vote.results.no) return "";
+    const einzelne = Object.values(vote.voters || {}).some(w => w.evidence !== "soft");
+    const satz = einzelne ? "Überliefert sind das Ergebnis und einzelne Stimmen."
+                          : "Nur das Ergebnis ist überliefert, nicht wer wie gestimmt hat.";
+    return html`<div class="vote-source">${satz}${weichZeile}</div>`;
   }
   const teile = [label];
   // Wer mitschreibt, sitzt nicht zwangsläufig im Rat: Presseleute haben
@@ -55,17 +68,7 @@ function renderVoteSource(vote) {
     zeile.push(html` · ${bestaetigt}`);
   }
 
-  // Wo einzelne Positionen nur aus einer Wortmeldung stammen, steht das dabei.
-  // Keine eigene Farbe im Halbrund — wer etwas befürwortet hat, wird in der
-  // Regel auch dafür gestimmt haben; sicher ist es nur nicht.
-  const weich = Object.entries(vote.voters || {})
-    .filter(([, w]) => w.evidence === "soft").map(([id]) => id);
-  if (weich.length) {
-    const namen = weich.map(id => (members.find(m => m.id === id) || {}).lastName)
-                       .filter(Boolean).join(", ");
-    zeile.push(html`<br><span class="vote-source-weich">${namen}: aus der Debatte erschlossen, nicht als Stimme berichtet.</span>`);
-  }
-  return html`<div class="vote-source">${zeile}</div>`;
+  return html`<div class="vote-source">${zeile}${weichZeile}</div>`;
 }
 
 function renderVoteBlock(container, vote) {
