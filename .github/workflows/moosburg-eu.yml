@@ -31,31 +31,6 @@ jobs:
           if grep -q importmap index.html; then echo "Import Map noch in index.html"; exit 1; fi
           if grep -rqE '(from|import)\s*\(?\s*"\.\.?/[^"?]+\.js"' js; then echo "Import ohne Kennung"; exit 1; fi
 
-      # Einmalig, 06.11.2026: Ein Push von parliament-v2 hat dessen alten
-      # Workflow ausgeloest. Der hat live Dateien ersetzt und geloescht und ist
-      # abgebrochen, bevor er seinen Sync-Stand schrieb. Ohne Sync-Stand laedt
-      # die Action unten alles neu hoch. Die Dateien, die nur der alte Stand
-      # hatte, werden hier geloescht. Das Zertifikat lautet auf *.hstgr.io.
-      - name: Sync-Stand und Altlasten loeschen
-        env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_USER: ${{ secrets.FTP_USER }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        run: |
-          s=stadtrat
-          args=(-Q "DELE $s/.ftp-deploy-sync-state.json")
-          for f in data/sessionlengths.json data/sitzungenlaenge_2020-2026.json data/termine.json \
-                   data/vote_tracking/protokoll-2026-04-13_bpu.zip data/vote_tracking/protokoll-2026-05-18_plenum.zip \
-                   data/vote_tracking/protokoll-2026-06-29_plenum.zip data/vote_tracking/protokoll-2026-07-20_plenum.zip \
-                   data/vote_tracking/protokoll-2026-07-27_plenum.zip fonts/Inter-latin-var.woff2 \
-                   fonts/PlayfairDisplay-latin-400.woff2 fonts/PlayfairDisplay-latin-700.woff2 \
-                   img/brushstrokeexample.svg img/exampleplacement.png img/hauptstrasse.svg img/logos/CSU.svg \
-                   img/logos/Merkur.de_Logo_10.2022.svg img/topics/legal-wall.jpg; do
-            args+=(-Q "*DELE $s/$f")
-          done
-          for d in data/knowledge data/vote_tracking fonts; do args+=(-Q "*RMD $s/$d"); done
-          curl -sS --ssl-reqd --connect-to "ftp.hstgr.io:21:$FTP_HOST:21" -u "$FTP_USER:$FTP_PASSWORD" "${args[@]}" "ftp://ftp.hstgr.io/" -o /dev/null
-
       - name: Nach stadtrat/ spiegeln
         # Ab v4.3.6 bricht der Lauf nicht mehr ab, wenn das Löschen eines
         # Ordners mit 550 scheitert — die Action adressiert ihn absolut
