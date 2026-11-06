@@ -89,8 +89,8 @@ function renderMemberProfile(id) {
   const metaEl = header.querySelector("#profile-meta");
   // Herkunft und sexuelle Orientierung sind besondere Kategorien nach Art. 9
   // DSGVO. Gezeigt wird deshalb nur, was eine Selbstauskunft deckt — die Quelle
-  // steht im Datensatz. Angaben ohne Quelle bleiben stehen und unsichtbar, bis
-  // der Beleg da ist; der Validator führt sie.
+  // steht im Datensatz. Angaben ohne Quelle lehnt der Validator ab, sie
+  // gehören auch nicht unsichtbar in die öffentlichen Daten.
   const identity = profile.identity;
   if (identity && identity.source && (identity.values || []).length) {
     const badges = document.createElement("div");
