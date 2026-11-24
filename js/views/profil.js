@@ -605,8 +605,14 @@ function renderMemberTimeline(container, member) {
   let currentMonth = "";
 
   relevant.forEach(session => {
+    // Der Status entscheidet schon hier, was in die Sitzung gehört: Im
+    // Ausschuss bleibt ohne Stammsitz nur, was die Quelle nennt. Vorher bekam
+    // jedes Ratsmitglied dort ein abgeleitetes Ja.
+    const body = bodyMap[bodyIdForSession(session)];
     const votedVotes = (session.agenda || [])
-      .flatMap(a => (a.voteIds || []).map(vid => voteMap[vid]).filter(Boolean));
+      .flatMap(a => (a.voteIds || []).map(vid => voteMap[vid]).filter(Boolean))
+      .map(vote => ({ vote, status: Council.voteStatusIn(body, member.id, vote, session, member) }))
+      .filter(v => v.status !== null);
     if (!votedVotes.length) return;
 
     // Der Monatskopf erst, wenn feststeht, dass etwas unter ihm steht. Seit
@@ -631,9 +637,7 @@ function renderMemberTimeline(container, member) {
     sHeader.innerHTML = html`<svg class="icon"><use href="#i-${icon}"/></svg> <a href="#/session/${session.id}">${session.title}</a>`;
     sessionEl.appendChild(sHeader);
 
-    votedVotes.forEach(vote => {
-      const status = Council.voteStatus(member.id, vote, session, member);
-      if (status === null) return;
+    votedVotes.forEach(({ vote, status }) => {
       // Einstimmig mitgegangen \u2192 blasser Chip (gleiche Logik wie Statistik)
       const isUnanimous = Council.isUnanimous(vote);
       const base = status.replace("-inferred", "");

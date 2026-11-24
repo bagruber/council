@@ -249,3 +249,30 @@ test("Nur das Ergebnis bekannt: die Stufe steht da, zu benennen gibt es nichts",
     "views/voten.js setzt dort seinen eigenen Satz");
   assert.equal(Council.statusProvenance("unknown", v, "a"), "Nicht überliefert");
 });
+
+// Der Profil-Zeitstrahl zeigte jedem Ratsmitglied ein abgeleitetes Ja zu
+// einstimmigen Ausschussbeschlüssen, auch ohne Sitz im Ausschuss.
+test("Ausschuss: Abgeleitetes gilt nur für den Stammsitz", () => {
+  const v = anon(9, 0);
+  const in_ = id => Council.voteStatusIn(bpu, id, v, null, null);
+  assert.equal(in_("kieninger"), "yes-inferred");
+  assert.equal(in_("becher_j"), null, "Stellvertreter ohne Eintrag an dem Abend");
+  assert.equal(in_("fremd"), null, "kein Sitz im Ausschuss");
+  assert.equal(Council.voteStatusIn(bpu, "fremd", anon(5, 4), null, null), null,
+    "auch kein Fragezeichen");
+});
+
+test("Ausschuss: wen die Quelle nennt, der bleibt, auch ohne Stammsitz", () => {
+  const namentlich = named(["becher_j"], []);
+  assert.equal(Council.voteStatusIn(bpu, "becher_j", namentlich, null, null), "yes");
+  const eigen = anon(8, 1, { voters: { becher_j: { vote: "no" } } });
+  assert.equal(Council.voteStatusIn(bpu, "becher_j", eigen, null, null), "no");
+  const befangen = anon(8, 0, { excluded: [{ member: "becher_j", reason: "beteiligung" }] });
+  assert.equal(Council.voteStatusIn(bpu, "becher_j", befangen, null, null), "excluded");
+});
+
+test("Plenum: voteStatusIn ändert nichts", () => {
+  const v = anon(20, 0);
+  assert.equal(Council.voteStatusIn({ id: "plenum" }, "a", v, null, null), "yes-inferred");
+  assert.equal(Council.voteStatusIn(null, "a", v, null, null), "yes-inferred");
+});

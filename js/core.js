@@ -198,6 +198,18 @@ export const Council = (() => {
     return "unknown";
   }
 
+  // Wie voteStatus, aber mit Blick aufs Gremium. Im Ausschuss gilt das
+  // Abgeleitete nur für den Stammsitz: Sonst stünde bei jedem Ratsmitglied
+  // ein Ja zu einstimmigen Beschlüssen eines Ausschusses, in dem es nie saß.
+  // Wer dort ohne Stammsitz überliefert ist, hat an dem Abend vertreten und
+  // behält seinen Eintrag.
+  function voteStatusIn(body, memberId, vote, session, member) {
+    const status = voteStatus(memberId, vote, session, member);
+    if (status === null || !body || body.id === "plenum") return status;
+    if (isRegularOf({ id: memberId }, body, vote.date)) return status;
+    return status === "unknown" || status.endsWith("-inferred") ? null : status;
+  }
+
   // Einstimmig: namentlich ein leeres Ja- oder Nein-Array, anonym eine Null
   // auf einer Seite.
   function isUnanimous(vote) {
@@ -295,7 +307,7 @@ export const Council = (() => {
     withinPeriod, endOfPeriod,
     memberActiveAt, mandateAt, mandateSpans, partyAt, partySpans,
     bodyConfigAt, isRegularOf, subSpans, subAt,
-    voteStatus, voteStatusLabel, voteStatusTitle, sourceLabel, isUnanimous,
+    voteStatus, voteStatusIn, voteStatusLabel, voteStatusTitle, sourceLabel, isUnanimous,
     evidenceNote, statusProvenance, voterTiers,
   };
 })();
