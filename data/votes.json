@@ -1488,7 +1488,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20200525_06",
@@ -1503,7 +1509,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20200525_07",
@@ -1518,7 +1530,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20200525_08",
@@ -1534,7 +1552,13 @@
     },
     "source": {
       "tier": "result-only"
-    }
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20200525_09",
@@ -1549,7 +1573,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20200525_10",
@@ -2553,6 +2583,10 @@
       {
         "member": "wittmann",
         "reason": "kurz_abwesend"
+      },
+      {
+        "member": "hadersdorfer",
+        "reason": "beteiligung"
       }
     ]
   },
@@ -7282,6 +7316,10 @@
       {
         "member": "beibl",
         "reason": "kurz_abwesend"
+      },
+      {
+        "member": "neumayr",
+        "reason": "kurz_abwesend"
       }
     ]
   },
@@ -8775,7 +8813,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "becher_j",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20210621_05",
@@ -14721,7 +14765,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20220704_07",
@@ -22659,6 +22709,12 @@
     "source": {
       "tier": "protocol-implicit"
     },
+    "excluded": [
+      {
+        "member": "welter",
+        "reason": "kurz_abwesend"
+      }
+    ],
     "inferable": "teilweise",
     "note": "Es haben weniger mitgestimmt als anwesend waren. Die Niederschrift vermerkt 4 Personn, die später kamn oder früher gingn — deren Stimme bleibt offen, für die übrigen Anwesenden gilt das einstimmige Ergebnis."
   },
@@ -23602,7 +23658,13 @@
     },
     "source": {
       "tier": "protocol-implicit"
-    }
+    },
+    "excluded": [
+      {
+        "member": "heinz",
+        "reason": "beteiligung"
+      }
+    ]
   },
   {
     "id": "sr_20240318_03",
