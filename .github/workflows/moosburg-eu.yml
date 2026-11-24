@@ -14,6 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Daten und Regeln prüfen
+        run: |
+          python3 scripts/validate_data.py
+          node --test "tests/*.test.mjs"
 
       - name: Import Map fuer die CSP aufloesen
         # moosburg.eu erlaubt Skripte nur als Datei (CSP script-src 'self') und
