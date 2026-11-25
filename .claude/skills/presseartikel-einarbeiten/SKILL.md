@@ -112,7 +112,7 @@ Confirm the link shows up in the right place by grepping for the new press id in
 
 ### 7. Commit
 
-Concise message, e.g. `press: SZ-Artikel zu Windenergie + Merkur Kitagebühren`. Push and fast-forward main.
+Concise message, e.g. `press: SZ-Artikel zu Windenergie + Merkur Kitagebühren`. Commit locally and stop there. Do not push: a push to `main` goes live. Show Benedict the diff and the output of the validator (`python scripts/validate_data.py`) and the tests (`node --test "tests/*.test.mjs"`); he pushes himself.
 
 ## Edge cases
 

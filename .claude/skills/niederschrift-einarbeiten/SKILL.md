@@ -229,7 +229,7 @@ Rules:
 
 - Stage all changes including the new PDFs (in `data/niederschriften/`) and the helper script.
 - Commit message format: `+N sessions {Monat range}; topics: …` — short, factual, no emojis, no "Co-Authored-By Claude".
-- Push to working branch and fast-forward `main` so Pages picks it up.
+- Commit locally and stop there. Do not push: a push to `main` goes live. Show Benedict the diff and the output of the validator (`python scripts/validate_data.py`) and the tests (`node --test "tests/*.test.mjs"`); he pushes himself.
 
 ## Edge cases & traps
 
